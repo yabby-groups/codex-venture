@@ -283,6 +283,7 @@
   "1c12433325e475eb6afc30ab1c55665058637f21434e452bfa45b1ff13958db8": {
     "articles": [
       "/daily/2026-11-24/",
+      "/daily/weekly-2026-11-24/",
       "/news/docling-2152-cancel-pdf/"
     ],
     "category": "open-source",
@@ -779,6 +780,7 @@
   },
   "51c01b0a9ef73c74e79d4f0cf2f197af41d588c165236c0f600f51d3ef686c16": {
     "articles": [
+      "/daily/weekly-2026-11-24/",
       "/news/qwen-code-0284-artifact-library/"
     ],
     "category": "coding",
@@ -1205,6 +1207,7 @@
   "824283cf95f0a1c656bb60f37b16aff1de556f61b36071898573a285c262385c": {
     "articles": [
       "/daily/2026-11-24/",
+      "/daily/weekly-2026-11-24/",
       "/news/codex-cli-0-172-session-navigation/"
     ],
     "category": "coding",
@@ -1384,6 +1387,7 @@
   },
   "9566e4a73e7bad1a8e1af887eae6983b3325b233d6c2a807e12bc4445cef9adf": {
     "articles": [
+      "/daily/weekly-2026-11-24/",
       "/news/openai-agents-026-realtime/"
     ],
     "category": "agents",
@@ -1545,6 +1549,7 @@
   "a9972b90c90a6092227e4e0f516814192d93532067095ed211bdc795ae567de3": {
     "articles": [
       "/daily/2026-11-24/",
+      "/daily/weekly-2026-11-24/",
       "/news/claude-code-2-1-331-terminal-code-mode/"
     ],
     "category": "coding",
