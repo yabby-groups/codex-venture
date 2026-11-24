@@ -23,3 +23,7 @@ news 模式只写值得独立发布的更新。daily 模式写一篇当天简报
 同时查看 Hugging Face Models、Datasets、Spaces、Hacker News、Product Hunt、相关 Reddit 社区、arXiv 与项目官方博客。先保存返回结果，再在同一批候选中按规范化链接、仓库和事件合并，最后对照已发文章与 state/items.json。把来源日期、采集时间和编辑发布时间分别记录。发现值得持续跟踪的来源后，补充到 sources.yaml。社区讨论、榜单或无法核实的性能宣传可以作为线索。
 
 批量编辑独立资讯、开源项目、版本更新与专题。简报引用已发站内报道，每周整理 GitHub 项目精选和技术趋势。历史窗口的选题可做有明确覆盖日期的回顾，使用实际发布时间。
+
+## GitHub Actions 编辑批次
+
+weekly 模式使用 weekly- 加任务日期作为 slug，分类用 briefing。每条故事的两种语言链接同一组原始来源。backfill 模式按独立新闻格式写作，正文注明原始事件时间，归档使用实际刊发日期。项目发现资料中的仓库介绍、论文摘要和模型卡描述应明确归属作者。Hacker News 与 Product Hunt 排名用于发现，证据不足时跳过。每篇只使用本批给定的来源。任务 JSON 中的 maxArticles 是本轮上限。返回 schema 定义的 JSON。

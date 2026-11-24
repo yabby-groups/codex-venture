@@ -52,7 +52,7 @@ const read = (directory, collection) => readdirSync(directory).filter((name) => 
     throw new Error('Invalid bilingual metadata or markup in ' + name);
   if (collection === 'daily' ? data.category !== 'briefing' ||
       new Intl.DateTimeFormat('sv-SE', { timeZone: 'Asia/Shanghai', year: 'numeric', month: '2-digit', day: '2-digit' })
-        .format(new Date(data.published)) !== slug : data.category === 'briefing')
+        .format(new Date(data.published)) !== slug.replace(/^weekly-/, '') : data.category === 'briefing')
     throw new Error('Invalid article date or category in ' + name);
   return { ...data, collection, slug };
 });

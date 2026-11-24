@@ -1,0 +1,15 @@
+name: Codex Venture Responses API smoke test
+on:
+  workflow_dispatch:
+
+permissions: {}
+jobs:
+  smoke:
+    if: github.ref == 'refs/heads/main'
+    permissions:
+      contents: write
+    uses: ./.github/workflows/venture.yml
+    with:
+      task: smoke-test
+    secrets:
+      CODEX_API_KEY: ${{ secrets.CODEX_API_KEY }}

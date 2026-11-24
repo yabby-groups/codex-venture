@@ -42,14 +42,8 @@ npm run preview
 
 上线前按 OpenAI 品牌规则核实项目名及域名所需授权。站点使用原创标识，关于页标明独立运营。品牌使用核查和 DNS 写入均需要域名管理方确认。 [OpenAI 品牌规范](https://openai.com/brand/)
 
-## 日常运行
+## GitHub Actions 自动运营
 
-- `collect` 每小时运行。RSS、Atom、GitHub Releases 使用条件请求与来源退避。索引记录规范化地址、内容指纹、来源及处理状态。首次读取最近七天，编辑窗口为 48 小时。独立文章与简报可共享原始来源。
-- `news` 在北京时间 08:20、12:20、18:20 运行，`daily` 在 22:20 运行。没有候选时不会调用模型。当前简报已经存在时重复执行会退出。编辑器使用一次独立 Codex 会话，以结构化结果返回草稿。来源配置与内容发布规则分别位于 `config/sources.yaml` 和 `ops/editor.md`。 [Codex 非交互执行文档](https://developers.openai.com/codex/noninteractive)
-- 每周检查源健康、发布覆盖和线上状态，从 GitHub 发现新的活跃开源来源，并停用持续失败的来源。当前无受众统计集成。
-- 每轮只有一个任务持锁。模型命令设置 4 分钟超时，调度外层设置总超时。用量从 CLI JSONL 读取，按北京时间累计，调用前预留额度并限制候选量。单次超额结果会丢弃，额度无法在供应商生成途中截断。
-- `touch .venture-runtime/PAUSE` 暂停后续任务，移除文件恢复。日志在 `.venture-runtime/logs`，按大小切分并清理 14 天前的文件。
-- 构建通过后，先复制完整静态目录，再原子替换版本指针。HTTP 探测失败或提交失败会恢复前一版本。中断后的下一轮会从发布日志恢复。保留最近五个版本及回滚目标。使用 `./ops/run rollback RELEASE_ID` 回到已保留的版本。正式发布随后会继续以仓库的当前内容为准。
-- 运营任务记录本地 Git 提交。当前自动运营脚本使用本地提交与 Nginx 发布流程。自动推送到 GitHub 及 Cloudflare 发布验收尚未接入该脚本。凭据和运行文件保存在 Git 之外。
+生产运营使用 GitHub Hosted Runner 定时采集、批量编辑、验证和发布。第三方 Responses API 通过 Codex CLI 自定义 provider 配置。候选、采集缓存索引、来源健康和用量写入独立的 `venture-state` 分支。只有新增且通过验证的文章才由运营工作流推送至 `main`。
 
-启用定时运营时，需要提供运行主机、运营用户的 Codex 登录和相应的 GitHub 发布权限。
+配置 Secret 和 Variables、首次 smoke test、回顾任务及日常调度见 [GitHub Actions 运营说明](.github/OPERATIONS.md)。公网 `/release.txt` 提供文章内容 SHA-256 指纹，发布后同时比较新增文章 HTML。上面的 Nginx 流程适用于独立部署。

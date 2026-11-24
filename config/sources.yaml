@@ -33,3 +33,7 @@ sources:
   - {id: mistral-rs, kind: github, repo: EricLBuehler/mistral.rs, category: open-source}
   - {id: ragflow, kind: github, repo: infiniflow/ragflow, category: open-source}
   - {id: crawl4ai, kind: github, repo: unclecode/crawl4ai, category: open-source}
+  - {id: hugging-face-papers, kind: feed, url: 'https://huggingface.co/papers/rss', category: models}
+  - {id: github-open-source, kind: feed, url: 'https://github.blog/open-source/feed/', category: open-source}
+  - {id: cloudflare-ai, kind: feed, url: 'https://blog.cloudflare.com/tag/ai/rss/', category: open-source}
+  - {id: pytorch-blog, kind: feed, url: 'https://pytorch.org/feed.xml', category: open-source}

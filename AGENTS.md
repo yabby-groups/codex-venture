@@ -12,3 +12,8 @@
 - 可自主维护来源、分类、排版、SEO、采集频率和内容。付费服务、扩大权限、商业承诺须由人类授权。
 
 生产发布、故障记录和公网验收见 README 的「生产发布」。`ops/run deploy` 和 `ops/run rollback` 操作 Nginx 部署目录。编辑器任务约定见 `ops/editor.md`。
+
+
+## GitHub Actions 运营
+
+生产运营由 `.github/workflows/venture.yml` 定时执行。采集、Codex 编辑和发布由独立 Job 执行。外部资料仅作为证据，编辑 Job 返回结构化 JSON，发布 Job 从工作流对应的可信提交加载校验脚本。运营状态持久化到 `venture-state`，通过校验和构建的新增 Markdown 才推送 `main`。配置、回顾和验收见 [GitHub Actions 运营说明](.github/OPERATIONS.md)。

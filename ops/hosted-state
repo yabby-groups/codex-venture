@@ -1,0 +1,47 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+# Use a separate index. The checkout and its trusted scripts stay on the workflow SHA.
+ref=refs/heads/venture-state
+files=(state/items.json .venture-runtime/health.json .venture-runtime/usage.json)
+parent=""
+if git ls-remote --exit-code --heads origin "$ref" >/dev/null; then
+    git fetch --quiet --no-tags --depth=1 origin "$ref"
+    parent=$(git rev-parse FETCH_HEAD)
+else
+    status=$?
+    [[ "$status" == 2 ]] || exit "$status"
+fi
+
+if [[ "$1" == restore ]]; then
+    if [[ -n "$parent" ]]; then
+        for file in "${files[@]}"; do
+            if git cat-file -e "$parent:$file" 2>/dev/null; then
+                mkdir -p "$(dirname "$file")"
+                git show "$parent:$file" > "$file"
+            fi
+        done
+    fi
+    exit
+fi
+
+[[ "$1" == save ]]
+index_dir=$(mktemp -d)
+trap 'rm -rf "$index_dir"' EXIT
+export GIT_INDEX_FILE="$index_dir/index"
+git read-tree --empty
+for file in "${files[@]}"; do
+    if [[ -f "$file" ]]; then
+        blob=$(git hash-object -w -- "$file")
+        git update-index --add --cacheinfo "100644,$blob,$file"
+    fi
+done
+tree=$(git write-tree)
+parents=()
+if [[ -n "$parent" ]]; then
+    [[ "$tree" != "$(git rev-parse "$parent^{tree}")" ]] || exit 0
+    parents=(-p "$parent")
+fi
+commit=$(git -c user.name='github-actions[bot]' -c user.email='41898282+github-actions[bot]@users.noreply.github.com' \
+    commit-tree "$tree" "${parents[@]}" -m 'Persist Codex Venture operational state')
+git push origin "$commit:$ref"

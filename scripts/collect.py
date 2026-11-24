@@ -36,7 +36,8 @@ def digest(value):
 
 def canonical(url):
     parts = urlsplit(url)
-    if parts.scheme != 'https' or not parts.hostname or parts.username or parts.password:
+    if (parts.scheme != 'https' or not parts.hostname or parts.username or parts.password
+            or re.search(r'[\\<>"\s\x00-\x1f]', url)):
         raise ValueError('expected a public HTTPS URL')
     query = sorted((key, value) for key, value in parse_qsl(parts.query, keep_blank_values=True)
                    if not key.lower().startswith('utm_') and key.lower() not in {'fbclid', 'gclid'})
@@ -129,12 +130,13 @@ def timestamp(value):
     return date.astimezone(timezone.utc)
 
 
-def collect():
+def collect(days=7, extra=(), only_extra=False, refresh=False):
     config = json.loads(subprocess.check_output([
         'node', '--input-type=module', '-e',
         "import {parse} from 'yaml'; import {readFileSync} from 'node:fs';"
         "console.log(JSON.stringify(parse(readFileSync('config/sources.yaml','utf8'))));",
     ]))['sources']
+    config = list(extra) if only_extra else config + list(extra)
     items_path = Path('state/items.json')
     health_path = Path('.venture-runtime/health.json')
     items, health = load(items_path, {}), load(health_path, {})
@@ -143,7 +145,7 @@ def collect():
     healthy = 0
     for source in config:
         key, kind = source['id'], source['kind']
-        if source['category'] not in CATEGORIES or kind not in ('github', 'feed'):
+        if source['category'] not in CATEGORIES or kind not in ('github', 'feed', 'discovery'):
             raise ValueError(f'{key}: invalid source configuration')
         if source.get('enabled') is False:
             continue
@@ -154,12 +156,14 @@ def collect():
         if status.get('retry_after') and timestamp(status['retry_after']) > now:
             print(f'{key}: backoff', flush=True)
             continue
-        validators = status.get('validators', {}) if status.get('url') == url else {}
+        validators = status.get('validators', {}) if status.get('url') == url and not refresh else {}
         try:
             body, headers = fetch(url, validators)
             if body is not None:
                 rows = ((row['name'] or row['tag_name'], row['html_url'], row['published_at'], row['body'])
-                        for row in json.loads(body) if not row['draft'] and not row['prerelease']) if kind == 'github' else feed_rows(body)
+                        for row in json.loads(body) if not row['draft'] and not row['prerelease']) if kind == 'github' else feed_rows(body) if kind == 'feed' else ()
+                if kind == 'discovery':
+                    rows = source['parse'](body)
                 for title, link, published, summary in rows:
                     if not (title and link and published):
                         continue
@@ -167,9 +171,11 @@ def collect():
                         date, link = timestamp(published), canonical(link)
                     except (ValueError, TypeError):
                         continue
-                    if not now - timedelta(days=7) <= date <= now + timedelta(minutes=5):
+                    if not now - timedelta(days=days) <= date <= now + timedelta(minutes=5):
                         continue
-                    title, summary = clean(title), clean(summary)
+                    title, summary = clean(title)[:300], clean(summary)[:3200]
+                    if not title or not summary:
+                        continue
                     fingerprint = digest((title + '\n' + summary).casefold())
                     item_id = digest(link)
                     if item_id in items:

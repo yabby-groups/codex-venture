@@ -1,0 +1,234 @@
+name: Codex Venture
+on:
+  schedule:
+    - cron: '0 * * * *'
+    - cron: '30 23 * * *'
+    - cron: '20 0,4,10 * * *'
+    - cron: '20 14 * * *'
+    - cron: '30 13 * * 0'
+  workflow_dispatch:
+    inputs:
+      task:
+        type: choice
+        default: health
+        options: [collect, discover, news, daily, weekly, backfill, health, smoke-test]
+      days:
+        description: Backfill lookback in days
+        type: number
+        default: 7
+  workflow_call:
+    inputs:
+      task:
+        type: string
+        required: true
+    secrets:
+      CODEX_API_KEY:
+        required: false
+      VENTURE_PUBLISH_TOKEN:
+        required: false
+
+permissions: {}
+concurrency:
+  group: codex-venture-production
+  cancel-in-progress: false
+
+env:
+  ASTRO_TELEMETRY_DISABLED: '1'
+  PYTHONUNBUFFERED: '1'
+
+jobs:
+  prepare:
+    if: github.ref == 'refs/heads/main' && (inputs.task == 'health' || inputs.task == 'smoke-test' || vars.VENTURE_ENABLED == 'true')
+    runs-on: ubuntu-24.04
+    timeout-minutes: 12
+    permissions:
+      contents: write
+    outputs:
+      task: ${{ steps.task.outputs.task }}
+      edit: ${{ steps.prepare.outputs.edit }}
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          persist-credentials: false
+      - id: task
+        env:
+          INPUT_TASK: ${{ inputs.task }}
+          SCHEDULE: ${{ github.event.schedule }}
+        run: |
+          task="$INPUT_TASK"
+          if [[ -z "$task" ]]; then
+            case "$SCHEDULE" in
+              '0 * * * *') task=collect ;;
+              '30 23 * * *') task=discover ;;
+              '20 0,4,10 * * *') task=news ;;
+              '20 14 * * *') task=daily ;;
+              '30 13 * * 0') task=weekly ;;
+              *) exit 1 ;;
+            esac
+          fi
+          case "$task" in
+            collect|discover|news|daily|weekly|backfill|health|smoke-test) ;;
+            *) exit 1 ;;
+          esac
+          echo "task=$task" >> "$GITHUB_OUTPUT"
+      - uses: actions/setup-node@v6
+        with:
+          node-version: '24'
+      - run: npm ci --ignore-scripts
+      - name: Restore operating state
+        env:
+          VENTURE_GIT_TOKEN: ${{ github.token }}
+        run: ops/hosted-git ops/hosted-state restore
+      - id: prepare
+        if: steps.task.outputs.task != 'health'
+        env:
+          TASK: ${{ steps.task.outputs.task }}
+          BACKFILL_DAYS: ${{ inputs.days }}
+          VENTURE_DAILY_TOKEN_LIMIT: ${{ vars.VENTURE_DAILY_TOKEN_LIMIT }}
+          VENTURE_MAX_ARTICLES_PER_RUN: ${{ vars.VENTURE_MAX_ARTICLES_PER_RUN }}
+          VENTURE_MAX_MODEL_CALLS_PER_DAY: ${{ vars.VENTURE_MAX_MODEL_CALLS_PER_DAY }}
+        run: |
+          timeout --kill-after=10s 8m python3 scripts/hosted.py prepare "$TASK"
+          if [[ -f "$RUNNER_TEMP/venture/batch.json" ]]; then
+            echo 'edit=true' >> "$GITHUB_OUTPUT"
+          fi
+      - name: Save candidates and reserve model usage
+        if: always() && steps.prepare.outcome != 'skipped'
+        env:
+          VENTURE_GIT_TOKEN: ${{ github.token }}
+        run: ops/hosted-git ops/hosted-state save
+      - uses: actions/upload-artifact@v4
+        if: steps.prepare.outputs.edit == 'true'
+        with:
+          name: venture-batch-${{ github.run_attempt }}
+          path: ${{ runner.temp }}/venture/batch.json
+          retention-days: 3
+          if-no-files-found: error
+      - name: Show source health
+        if: steps.task.outputs.task == 'health'
+        run: |
+          python3 -c 'import json; from pathlib import Path; p=Path(".venture-runtime/health.json"); print(json.dumps({k:{f:v.get(f) for f in ("failures","last_success","retry_after")} for k,v in json.loads(p.read_text()).items()}, indent=2) if p.exists() else "State branch has no source health yet")'
+
+  edit:
+    if: needs.prepare.outputs.edit == 'true'
+    needs: prepare
+    runs-on: ubuntu-24.04
+    timeout-minutes: 8
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v6
+        with:
+          node-version: '24'
+      - uses: actions/download-artifact@v4
+        with:
+          name: venture-batch-${{ github.run_attempt }}
+          path: ${{ runner.temp }}/venture
+      - name: Install selected Codex CLI
+        env:
+          CLI_VERSION: ${{ vars.CODEX_CLI_VERSION || '0.171.0' }}
+        run: |
+          [[ "$CLI_VERSION" =~ ^[0-9]+\.[0-9]+\.[0-9]+$ ]]
+          npm install --global --ignore-scripts "@openai/codex@$CLI_VERSION"
+          codex --version | grep -Fx "codex-cli $CLI_VERSION"
+      - name: Run isolated Responses session
+        env:
+          CODEX_BASE_URL: ${{ vars.CODEX_BASE_URL }}
+          CODEX_API_KEY: ${{ secrets.CODEX_API_KEY }}
+          CODEX_MODEL: ${{ vars.CODEX_MODEL }}
+          CODEX_REASONING_EFFORT: ${{ vars.CODEX_REASONING_EFFORT }}
+          CODEX_ADVANCED_MODEL: ${{ vars.CODEX_ADVANCED_MODEL }}
+          CODEX_ADVANCED_REASONING_EFFORT: ${{ vars.CODEX_ADVANCED_REASONING_EFFORT }}
+        run: python3 scripts/hosted.py invoke
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: venture-result-${{ github.run_attempt }}
+          path: |
+            ${{ runner.temp }}/venture/model/response.json
+            ${{ runner.temp }}/venture/model/usage.json
+          retention-days: 3
+          if-no-files-found: ignore
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: venture-events-${{ github.run_attempt }}
+          path: ${{ runner.temp }}/venture/model/events.jsonl
+          retention-days: 3
+          if-no-files-found: ignore
+
+  publish:
+    needs: [prepare, edit]
+    if: >-
+      always() && !cancelled() && needs.prepare.result == 'success' &&
+      (needs.prepare.outputs.edit == 'true' || needs.prepare.outputs.task == 'health')
+    runs-on: ubuntu-24.04
+    timeout-minutes: 16
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v6
+        with:
+          node-version: '24'
+      - run: npm ci --ignore-scripts
+      - name: Restore operating state
+        env:
+          VENTURE_GIT_TOKEN: ${{ github.token }}
+        run: ops/hosted-git ops/hosted-state restore
+      - uses: actions/download-artifact@v4
+        if: needs.prepare.outputs.edit == 'true'
+        with:
+          name: venture-batch-${{ github.run_attempt }}
+          path: ${{ runner.temp }}/venture
+      - uses: actions/download-artifact@v4
+        if: needs.prepare.outputs.edit == 'true'
+        continue-on-error: ${{ needs.edit.result != 'success' }}
+        with:
+          name: venture-result-${{ github.run_attempt }}
+          path: ${{ runner.temp }}/venture/result
+      - name: Record model usage
+        if: needs.prepare.outputs.edit == 'true'
+        env:
+          VENTURE_GIT_TOKEN: ${{ github.token }}
+        run: |
+          python3 scripts/hosted.py settle
+          ops/hosted-git ops/hosted-state save
+      - name: Validate editorial output
+        if: needs.edit.result == 'success' && needs.prepare.outputs.task != 'smoke-test'
+        run: python3 scripts/hosted.py accept
+      - id: changes
+        run: |
+          python3 -c 'import json,os; from pathlib import Path; p=Path(os.environ["RUNNER_TEMP"])/"venture/routes.json"; print("content=true" if p.exists() and json.loads(p.read_text()) else "content=false")' >> "$GITHUB_OUTPUT"
+      - name: Build and verify static site
+        if: steps.changes.outputs.content == 'true' || needs.prepare.outputs.task == 'health' || needs.edit.result == 'success' && needs.prepare.outputs.task == 'smoke-test'
+        run: npm run build
+      - name: Push validated content to production branch
+        if: steps.changes.outputs.content == 'true'
+        env:
+          VENTURE_GIT_TOKEN: ${{ secrets.VENTURE_PUBLISH_TOKEN || github.token }}
+        run: |
+          git add -- src/content/news src/content/daily
+          git diff --cached --name-status | python3 -c 'import re,sys; lines=sys.stdin.read().splitlines(); sys.exit(not lines or any(not re.fullmatch(r"A\tsrc/content/(news|daily)/[a-z0-9]+(?:-[a-z0-9]+)*\.md", line) for line in lines))'
+          git -c user.name='github-actions[bot]' -c user.email='41898282+github-actions[bot]@users.noreply.github.com' commit -m 'Publish Codex Venture bilingual coverage'
+          ops/hosted-git git push origin HEAD:refs/heads/main
+      - name: Save editorial decisions
+        if: needs.edit.result == 'success' && needs.prepare.outputs.task != 'smoke-test'
+        env:
+          VENTURE_GIT_TOKEN: ${{ github.token }}
+        run: ops/hosted-git ops/hosted-state save
+      - name: Verify Cloudflare production
+        if: steps.changes.outputs.content == 'true' || needs.prepare.outputs.task == 'health'
+        env:
+          CONTENT_CHANGED: ${{ steps.changes.outputs.content }}
+        run: |
+          if [[ "$CONTENT_CHANGED" == true ]]; then
+            python3 scripts/hosted.py health wait
+          else
+            python3 scripts/hosted.py health
+          fi

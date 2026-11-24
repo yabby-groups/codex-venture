@@ -2,7 +2,7 @@
   "name": "codex-venture",
   "version": "1.0.0",
   "scripts": {
-    "build": "node scripts/metadata.mjs >/dev/null && astro build && pagefind --site dist && python3 scripts/check.py",
+    "build": "node scripts/metadata.mjs >/dev/null && astro build && pagefind --site dist && python3 scripts/check.py && node scripts/release-marker.mjs",
     "dev": "astro dev",
     "check": "astro check",
     "preview": "astro preview"

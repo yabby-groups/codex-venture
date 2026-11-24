@@ -2,6 +2,7 @@ import json
 import os
 import re
 import signal
+from html import unescape
 import subprocess
 from datetime import datetime, timedelta
 from pathlib import Path
@@ -95,16 +96,17 @@ def invoke(prompt, day):
     return load(result, {})
 
 
-def choose(mode, items, now):
+def choose(mode, items, now, days=2):
     day = now.date().isoformat()
     candidates = {}
     for key, item in sorted(items.items(), key=lambda pair: pair[1]['published'], reverse=True):
-        if timestamp(item['published']) < now - timedelta(hours=48):
+        if timestamp(item['published']) < now - timedelta(days=days):
             continue
-        eligible = item['status'] == 'pending'
-        if mode == 'daily':
+        eligible = item['status'] == 'pending' or (mode == 'backfill' and item['status'] == 'expired')
+        if mode in ('daily', 'weekly'):
             eligible = eligible or any(path.startswith('/news/') for path in item.get('articles', []))
-            eligible = eligible and not any(path.startswith('/daily/') for path in item.get('articles', []))
+            if mode == 'daily':
+                eligible = eligible and not any(path.startswith('/daily/') for path in item.get('articles', []))
         if eligible and item.get('summary'):
             candidates[key] = {field: item[field] for field in ('title', 'url', 'published', 'summary', 'category')}
         if len(candidates) == CANDIDATE_LIMIT:
@@ -112,29 +114,34 @@ def choose(mode, items, now):
     return candidates
 
 
-def write_articles(response, mode, candidates, now):
+def write_articles(response, mode, candidates, now, limit=3):
     day = now.date().isoformat()
     writes = {}
-    if len(response['articles']) > (1 if mode == 'daily' else 3):
+    if mode in ('daily', 'weekly'):
+        limit = min(limit, 1)
+    if len(response['articles']) > limit:
         raise ValueError('too many articles')
     used = set()
     for article in response['articles']:
         slug, ids, body = [article.pop(key) for key in ('slug', 'itemIds', 'body')]
         if not re.fullmatch(r'[a-z0-9]+(?:-[a-z0-9]+)*', slug) or len(slug) > 100:
             raise ValueError('invalid article slug')
+        if mode == 'weekly' and slug != 'weekly-' + day:
+            raise ValueError('invalid weekly edition date')
         if mode == 'daily' and slug != day:
             raise ValueError('invalid briefing date')
         if not ids or len(set(ids)) != len(ids) or used.intersection(ids):
             raise ValueError('missing or duplicated evidence')
         used.update(ids)
         evidence = [candidates[key] for key in ids]
-        links = set(re.findall(r'href="([^"]+)"', body))
+        links = set(map(unescape, re.findall(r'href="([^"]+)"', body)))
         valid_links = {item['url'] for item in evidence}
-        if not links <= valid_links or (mode == 'daily' and links != valid_links):
+        if not links <= valid_links or (mode in ('daily', 'weekly') and links != valid_links):
             raise ValueError('article links do not match its evidence')
         if len(body) > 12000:
             raise ValueError('article too long')
-        path = Path('src/content') / mode / (slug + '.md')
+        collection = 'daily' if mode in ('daily', 'weekly') else 'news'
+        path = Path('src/content') / collection / (slug + '.md')
         if path.exists() or path in writes:
             raise ValueError(f'article already exists: {slug}')
         article['published'] = now.isoformat(timespec='seconds')
