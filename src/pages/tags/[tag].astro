@@ -1,0 +1,11 @@
+---
+import Listing from '../../layouts/Listing.astro';
+import { allStories } from '../../lib/content';
+export async function getStaticPaths() {
+  const stories = await allStories();
+  return [...new Set(stories.flatMap((story) => story.data.tags))].map((tag) => ({
+    params: { tag }, props: { zh: '#' + tag, en: 'Tagged stories', stories: stories.filter((story) => story.data.tags.includes(tag)) },
+  }));
+}
+---
+<Listing {...Astro.props} />

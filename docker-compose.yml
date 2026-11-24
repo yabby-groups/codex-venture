@@ -1,0 +1,15 @@
+services:
+  web:
+    build: .
+    ports:
+      - "${VENTURE_BIND:-127.0.0.1}:${VENTURE_PORT:-8080}:8080"
+    volumes:
+      - type: bind
+        source: ${VENTURE_DEPLOY_ROOT:-./.venture-runtime/site}
+        target: /srv/venture
+        read_only: true
+    restart: unless-stopped
+    logging:
+      options:
+        max-size: "10m"
+        max-file: "3"

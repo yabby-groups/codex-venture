@@ -1,0 +1,21 @@
+{
+  "name": "codex-venture",
+  "version": "1.0.0",
+  "scripts": {
+    "build": "node scripts/metadata.mjs >/dev/null && astro build && pagefind --site dist && python3 scripts/check.py",
+    "dev": "astro dev",
+    "check": "astro check",
+    "preview": "astro preview"
+  },
+  "type": "module",
+  "dependencies": {
+    "@astrojs/check": "^0.9.12",
+    "@astrojs/rss": "^4.0.19",
+    "@astrojs/sitemap": "^3.7.6",
+    "astro": "^7.4.13",
+    "pagefind": "^1.6.0",
+    "typescript": "^6.0.3",
+    "yaml": "^2.9.1"
+  },
+  "private": true
+}

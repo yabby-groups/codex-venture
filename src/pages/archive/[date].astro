@@ -1,0 +1,11 @@
+---
+import Listing from '../../layouts/Listing.astro';
+import { allStories, dateKey } from '../../lib/content';
+export async function getStaticPaths() {
+  const stories = await allStories();
+  return [...new Set(stories.map((story) => dateKey(story.data.published)))].map((date) => ({
+    params: { date }, props: { zh: date, en: 'Daily Archive', stories: stories.filter((story) => dateKey(story.data.published) === date) },
+  }));
+}
+---
+<Listing {...Astro.props} />

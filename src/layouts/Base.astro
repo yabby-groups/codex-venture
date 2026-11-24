@@ -1,0 +1,74 @@
+---
+import '../styles/site.css';
+import { categories } from '../lib/content';
+const { title = '全球 AI 资讯', description = '每日追踪全球 AI 模型、工具和产品更新。 Daily coverage of AI models, tools and product updates.', article = false, noindex = false } = Astro.props;
+const canonical = new URL(Astro.url.pathname, Astro.site);
+const pageTitle = title + ' · Codex Venture';
+const navigation = [['/daily/', '每日简报'], ['/news/', '最新资讯'], ['/archive/', '归档']];
+---
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="color-scheme" content="light dark" />
+  <title>{pageTitle}</title>
+  <meta name="description" content={description} />
+  <link rel="canonical" href={canonical} />
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  <link rel="alternate" type="application/rss+xml" title="Codex Venture" href="/rss.xml" />
+  <meta property="og:site_name" content="Codex Venture" />
+  <meta property="og:title" content={pageTitle} />
+  <meta property="og:description" content={description} />
+  <meta property="og:url" content={canonical} />
+  <meta property="og:type" content={article ? 'article' : 'website'} />
+  <meta property="og:locale" content="zh_CN" />
+  <meta property="og:locale:alternate" content="en_US" />
+  {noindex && <meta name="robots" content="noindex,follow" />}
+  <script is:inline>
+    try {
+      const saved = localStorage.getItem('venture-theme');
+      if (saved === 'dark' || saved === 'light') document.documentElement.dataset.theme = saved;
+    } catch {}
+  </script>
+  <slot name="head" />
+</head>
+<body>
+  <a class="skip" href="#main">跳至正文 / Skip to content</a>
+  <header class="masthead">
+    <div class="wrap masthead-inner">
+      <a class="brand" href="/" aria-label="Codex Venture 首页"><span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i></span><span>Codex<span class="brand-accent"> Venture</span></span></a>
+      <nav class="primary" aria-label="主导航">
+        {navigation.map(([url, label]) => <a href={url} aria-current={Astro.url.pathname.startsWith(url) ? 'page' : undefined}>{label}</a>)}
+        <a href="/search/">搜索<small lang="en"> / Search</small></a>
+      </nav>
+      <button id="theme" type="button" aria-label="切换亮暗模式 / Toggle theme" title="切换亮暗模式 / Toggle theme" hidden>◐</button>
+    </div>
+    <nav class="wrap topics" aria-label="资讯分类">
+      {Object.entries(categories).filter(([key]) => key !== 'briefing').map(([key, [zh, en]]) => (
+        <a href={`/category/${key}/`} aria-current={Astro.url.pathname === `/category/${key}/` ? 'page' : undefined}>{zh}<small lang="en">{en}</small></a>
+      ))}
+    </nav>
+  </header>
+  <main id="main" class="wrap"><slot /></main>
+  <footer class="wrap footer">
+    <span lang="en">Codex Venture</span>
+    <nav aria-label="页脚"><a href="/about/">关于 / About</a><a href="/tags/">标签 / Tags</a><a href="/rss.xml">RSS ↗</a></nav>
+  </footer>
+  <script>
+    const button = document.querySelector<HTMLButtonElement>('#theme')!;
+    const scheme = matchMedia('(prefers-color-scheme: dark)');
+    const dark = () => (document.documentElement.dataset.theme ?? (scheme.matches ? 'dark' : 'light')) === 'dark';
+    const sync = () => button.setAttribute('aria-pressed', String(dark()));
+    button.hidden = false;
+    sync();
+    scheme.addEventListener('change', sync);
+    button.addEventListener('click', () => {
+      const theme = dark() ? 'light' : 'dark';
+      document.documentElement.dataset.theme = theme;
+      try { localStorage.setItem('venture-theme', theme); } catch {}
+      sync();
+    });
+  </script>
+</body>
+</html>

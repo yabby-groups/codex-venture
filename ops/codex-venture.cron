@@ -1,0 +1,8 @@
+# User crontab. Install after deploying and logging in as the site operator.
+CRON_TZ=Asia/Shanghai
+PATH=/usr/local/bin:/usr/bin:/bin
+VENTURE_REPO=/opt/codex-venture
+7 * * * * "$VENTURE_REPO/ops/run" collect
+20 8,12,18 * * * "$VENTURE_REPO/ops/run" news
+20 22 * * * "$VENTURE_REPO/ops/run" daily
+20 10 * * 1 "$VENTURE_REPO/ops/run" weekly

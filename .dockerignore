@@ -1,0 +1,10 @@
+.git
+.agents
+.codex
+.aws
+node_modules
+.astro
+dist
+.venture-runtime
+.env*
+__pycache__

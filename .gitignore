@@ -1,0 +1,9 @@
+.venture-runtime/
+__pycache__/
+.DS_Store
+node_modules/
+.astro/
+dist/
+.env
+.env.*
+!.env.example

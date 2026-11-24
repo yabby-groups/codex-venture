@@ -1,0 +1,11 @@
+---
+import Base from './Base.astro';
+import StoryList from '../components/StoryList.astro';
+import type { Story } from '../lib/content';
+interface Props { zh: string; en: string; stories: Story[] }
+const { zh, en, stories } = Astro.props;
+---
+<Base title={zh} description={zh + ' · ' + en}>
+  <h1 class="page-heading">{zh}<span lang="en">{en}</span></h1>
+  <StoryList stories={stories} />
+</Base>

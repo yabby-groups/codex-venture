@@ -1,0 +1,7 @@
+---
+import Base from '../../layouts/Base.astro';
+import { allStories, dateKey } from '../../lib/content';
+const dates = [...new Set((await allStories()).map((story) => dateKey(story.data.published)))];
+---
+<Base title="日期归档"><h1 class="page-heading">日期归档<span lang="en">Archive</span></h1>
+<ul class="archive-list">{dates.map((date) => <li><a href={`/archive/${date}/`}><time datetime={date}>{date}</time> ↗</a></li>)}</ul></Base>

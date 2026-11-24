@@ -1,0 +1,45 @@
+---
+import { render } from 'astro:content';
+import Base from './Base.astro';
+import { allStories, categories, dateKey, storyUrl, type Story } from '../lib/content';
+interface Props { story: Story }
+const { story } = Astro.props;
+const { Content } = await render(story);
+const stories = await allStories();
+const sameType = stories.filter((item) => item.collection === story.collection);
+const index = sameType.findIndex((item) => item.id === story.id);
+const related = stories.filter((item) => storyUrl(item) !== storyUrl(story) && (
+  item.data.sources.some((source) => story.data.sources.some((original) => source.url === original.url)) ||
+  item.data.tags.some((tag) => story.data.tags.includes(tag))
+)).slice(0, 3);
+const { data } = story;
+const canonical = new URL(storyUrl(story), Astro.site).href;
+const jsonLd = JSON.stringify({
+  '@context': 'https://schema.org', '@type': 'NewsArticle',
+  headline: data.titleZh, alternativeHeadline: data.titleEn, datePublished: data.published.toISOString(),
+  description: data.summaryZh, mainEntityOfPage: canonical, inLanguage: ['zh-CN', 'en'],
+  citation: data.sources.map(({ url }) => url), author: { '@type': 'Organization', name: 'Codex Venture' },
+  publisher: { '@type': 'Organization', name: 'Codex Venture', url: Astro.site?.href },
+}).replaceAll('<', '\\u003c');
+---
+<Base title={data.titleZh} description={data.summaryZh + ' ' + data.summaryEn} article>
+  <Fragment slot="head"><script type="application/ld+json" set:html={jsonLd} /><meta property="article:published_time" content={data.published.toISOString()} /></Fragment>
+  <article class="article" data-pagefind-body>
+    <div class="story-meta"><span>{categories[data.category][0]}</span><time datetime={data.published.toISOString()}>{dateKey(data.published)} · 北京时间</time></div>
+    <h1 data-pagefind-meta="title">{data.titleZh}<span lang="en">{data.titleEn}</span></h1>
+    <p class="article-summary">{data.summaryZh}<span lang="en">{data.summaryEn}</span></p>
+    <div class="prose"><Content /></div>
+    <section class="article-links" data-pagefind-ignore>
+      <h2>原始来源 <span lang="en">Primary Sources</span></h2>
+      <ul>{data.sources.map(({ url, title }) => <li><a href={url} lang="en">{title} ↗</a></li>)}</ul>
+      <div class="tag-list">{data.tags.map((tag) => <a href={`/tags/${tag}/`}>#{tag}</a>)}</div>
+    </section>
+  </article>
+  <aside class="article article-links" aria-label="更多资讯">
+    {related.length > 0 && <><h2>相关资讯 <span lang="en">Related Stories</span></h2><ul>{related.map((item) => <li><a href={storyUrl(item)}>{item.data.titleZh}<span lang="en">{item.data.titleEn}</span></a></li>)}</ul></>}
+    <nav class="adjacent" aria-label="上一篇和下一篇">
+      {sameType[index + 1] && <a href={storyUrl(sameType[index + 1])}>← 较早 · Older<span>{sameType[index + 1].data.titleZh}</span></a>}
+      {sameType[index - 1] && <a href={storyUrl(sameType[index - 1])}>较新 · Newer →<span>{sameType[index - 1].data.titleZh}</span></a>}
+    </nav>
+  </aside>
+</Base>

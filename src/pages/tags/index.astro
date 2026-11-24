@@ -1,0 +1,7 @@
+---
+import Base from '../../layouts/Base.astro';
+import { allStories } from '../../lib/content';
+const tags = [...new Set((await allStories()).flatMap((story) => story.data.tags))].sort();
+---
+<Base title="标签"><h1 class="page-heading">标签<span lang="en">Tags</span></h1>
+<div class="tag-list">{tags.map((tag) => <a href={`/tags/${tag}/`}>#{tag}</a>)}</div></Base>

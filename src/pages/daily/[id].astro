@@ -1,0 +1,9 @@
+---
+import { getCollection } from 'astro:content';
+import Article from '../../layouts/Article.astro';
+export async function getStaticPaths() {
+  return (await getCollection('daily')).map((story) => ({ params: { id: story.id }, props: { story } }));
+}
+const { story } = Astro.props;
+---
+<Article story={story} />

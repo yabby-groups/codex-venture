@@ -1,0 +1,23 @@
+#!/bin/sh
+set -eu
+cd "$(dirname "$0")/.."
+if [ -f .env ]; then
+    set -a
+    . ./.env
+    set +a
+fi
+umask 022
+mkdir -p .venture-runtime/logs
+TZ=Asia/Shanghai
+export TZ
+find .venture-runtime/logs -type f -name '*.log' -mtime +14 -delete
+log=".venture-runtime/logs/$(date +%Y-%m-%d).log"
+# A supervisor timeout releases the lock even if collection or a build stalls.
+if [ -s "$log" ] && [ "$(wc -c < "$log")" -gt 5000000 ]; then
+    mv -f "$log" "$log.1.log"
+fi
+if timeout --kill-after=15s 18m python3 -u scripts/operate.py "$@" >>"$log" 2>&1; then
+    exit 0
+fi
+tail -n 30 "$log" >&2
+exit 1

@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://codex-venture.com/sitemap-index.xml

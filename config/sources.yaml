@@ -1,0 +1,22 @@
+sources:
+  - {id: codex, kind: github, repo: openai/codex, category: coding}
+  - {id: claude-code, kind: github, repo: anthropics/claude-code, category: coding}
+  - {id: gemini-cli, kind: github, repo: google-gemini/gemini-cli, category: coding}
+  - {id: google-ai, kind: feed, url: 'https://blog.google/innovation-and-ai/rss/', category: models}
+  - {id: github-changelog, kind: feed, url: 'https://github.blog/changelog/feed/', category: coding}
+  - {id: hugging-face, kind: feed, url: 'https://huggingface.co/blog/feed.xml', category: open-source}
+  - {id: openclaw, kind: github, repo: openclaw/openclaw, category: agents}
+  - {id: mcp, kind: github, repo: modelcontextprotocol/modelcontextprotocol, category: agents}
+  - {id: ollama, kind: github, repo: ollama/ollama, category: open-source}
+  - {id: llama-cpp, kind: github, repo: ggml-org/llama.cpp, category: open-source}
+  - {id: transformers, kind: github, repo: huggingface/transformers, category: open-source}
+  - {id: comfyui, kind: github, repo: Comfy-Org/ComfyUI, category: image}
+  - {id: mistral-common, kind: github, repo: mistralai/mistral-common, category: open-source}
+  - {id: deepseek-v3, kind: github, repo: deepseek-ai/DeepSeek-V3, category: models}
+  - {id: cursor, kind: feed, url: 'https://cursor.com/changelog/rss.xml', category: coding}
+  - {id: qwen-code, kind: github, repo: QwenLM/qwen-code, category: coding}
+  - {id: openai-agents, kind: github, repo: openai/openai-agents-python, category: agents}
+  - {id: elevenlabs-python, kind: github, repo: ElevenLabs/elevenlabs-python, category: audio}
+  - {id: f5-tts, kind: github, repo: SWivid/F5-TTS, category: audio}
+  - {id: llama-models, kind: github, repo: meta-llama/llama-models, category: models}
+  - {id: xai-sdk, kind: github, repo: xai-org/xai-sdk-python, category: models}

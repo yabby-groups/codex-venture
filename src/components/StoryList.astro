@@ -1,0 +1,13 @@
+---
+import { categories, dateKey, storyUrl, type Story } from '../lib/content';
+interface Props { stories: Story[]; nested?: boolean }
+const { stories, nested = false } = Astro.props;
+const Heading = nested ? 'h3' : 'h2';
+---
+{stories.length ? <ul class="story-list">
+  {stories.map((story) => <li>
+    <div class="story-meta"><a href={story.collection === 'daily' ? '/daily/' : `/category/${story.data.category}/`}>{categories[story.data.category][0]}</a><time datetime={story.data.published.toISOString()}>{dateKey(story.data.published)}</time></div>
+    <Heading><a href={storyUrl(story)}>{story.data.titleZh}<span lang="en">{story.data.titleEn}</span></a></Heading>
+    <p>{story.data.summaryZh}<span lang="en">{story.data.summaryEn}</span></p>
+  </li>)}
+</ul> : <p class="empty">暂无已发布资讯。<span lang="en">No stories published yet.</span></p>}

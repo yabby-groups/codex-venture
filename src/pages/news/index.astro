@@ -1,0 +1,5 @@
+---
+import Listing from '../../layouts/Listing.astro';
+import { allStories } from '../../lib/content';
+---
+<Listing zh="最新资讯" en="Latest News" stories={(await allStories()).filter((story) => story.collection === 'news')} />

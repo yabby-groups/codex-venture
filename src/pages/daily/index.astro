@@ -1,0 +1,5 @@
+---
+import Listing from '../../layouts/Listing.astro';
+import { allStories } from '../../lib/content';
+---
+<Listing zh="每日 AI 简报" en="Daily AI Briefing" stories={(await allStories()).filter((story) => story.collection === 'daily')} />

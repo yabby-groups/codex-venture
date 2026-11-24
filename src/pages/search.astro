@@ -1,0 +1,50 @@
+---
+import Base from '../layouts/Base.astro';
+---
+<Base title="全文搜索" noindex>
+  <h1 class="page-heading">全文搜索<span lang="en">Search</span></h1>
+  <form id="search" role="search"><label for="q">关键词 / Keyword</label>
+    <div class="search-controls"><input type="search" name="q" id="q" required /><button type="submit">搜索 / Search</button></div>
+  </form>
+  <p id="status" role="status"></p><ul id="results" class="story-list"></ul>
+  <noscript>搜索需要 JavaScript。 Search requires JavaScript.</noscript>
+  <script>
+    const form = document.querySelector<HTMLFormElement>('#search')!;
+    const input = document.querySelector<HTMLInputElement>('#q')!;
+    const results = document.querySelector<HTMLUListElement>('#results')!;
+    const status = document.querySelector<HTMLParagraphElement>('#status')!;
+    const indexUrl = '/pagefind/pagefind.js';
+    let sequence = 0;
+    async function search(query: string) {
+      const current = ++sequence;
+      results.replaceChildren();
+      status.textContent = '搜索中 / Searching…';
+      try {
+        const index = await import(/* @vite-ignore */ indexUrl);
+        const response = await index.search(query);
+        const matches = await Promise.all(response.results.slice(0, 30).map((match: { data: () => Promise<{ url: string; meta: { title: string } }> }) => match.data()));
+        if (current !== sequence) return;
+        for (const match of matches) {
+          const link = document.createElement('a');
+          link.href = match.url;
+          link.textContent = match.meta.title;
+          const row = document.createElement('li');
+          row.append(link);
+          results.append(row);
+        }
+        status.textContent = matches.length ? `显示 ${matches.length} / ${response.results.length} 条结果 · Showing ${matches.length} of ${response.results.length} results` : '无匹配结果 / No results';
+      } catch {
+        if (current === sequence) status.textContent = '搜索暂不可用 / Search unavailable';
+      }
+    }
+    form.addEventListener('submit', (event) => {
+      event.preventDefault();
+      const query = input.value.trim();
+      if (!query) return;
+      history.replaceState(null, '', '?q=' + encodeURIComponent(query));
+      void search(query);
+    });
+    input.value = new URL(location.href).searchParams.get('q') ?? '';
+    if (input.value.trim()) void search(input.value.trim());
+  </script>
+</Base>

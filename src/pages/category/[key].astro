@@ -1,0 +1,11 @@
+---
+import Listing from '../../layouts/Listing.astro';
+import { allStories, categories } from '../../lib/content';
+export async function getStaticPaths() {
+  const stories = await allStories();
+  return Object.entries(categories).filter(([key]) => key !== 'briefing').map(([key, [zh, en]]) => ({
+    params: { key }, props: { zh, en, stories: stories.filter((story) => story.data.category === key) },
+  }));
+}
+---
+<Listing {...Astro.props} />
