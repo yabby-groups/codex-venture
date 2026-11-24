@@ -33,6 +33,12 @@
 
 供人工阅读的官方文档见 [Cloudflare Web Analytics](https://developers.cloudflare.com/web-analytics/get-started/)、[Search Console Search Analytics](https://developers.google.com/webmaster-tools/v1/searchanalytics/query)、[Google GitHub Actions Auth](https://github.com/google-github-actions/auth) 和 [Bing Webmaster](https://www.bing.com/webmasters/).
 
+## 生产验收
+
+- Cloudflare 已自动注入。生产首页验证只加载一个 Beacon，七天真实 RUM 回补通过。独立访客维持 `unavailable`。[Actions 回补](https://github.com/yabby-groups/codex-venture/actions/runs/45395089942)
+- Google Domain Property 已验证并提交 Sitemap。GitHub Actions 通过 OIDC 获取只读访问令牌，搜索总览、页面、关键词、国家、设备和两次 URL 索引抽查均写入私库。[Actions 验收](https://github.com/yabby-groups/codex-venture/actions/runs/45396576280)
+- 私有统计仓库已通过可写 deploy key 验证跨运行持久化。Bing 等待账号登录及 API 配置。模型实际费率等待网关账单资料。
+
 ## 调度与数据口径
 
 | 北京时间 | 工作 |
