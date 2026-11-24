@@ -1,0 +1,6 @@
+---
+interface Props { level?: 1 | 2 | 3; zh: string; en: string; id?: string; search?: boolean }
+const { level = 2, zh, en, id, search = false } = Astro.props;
+const Heading = `h${level}` as const;
+---
+<Heading {id} class="bilingual-heading" data-pagefind-meta={search ? `title:${zh}` : undefined}><span lang="zh-CN">{zh}</span><span lang="en" data-pagefind-meta={search ? `titleEn:${en}` : undefined}>{en}</span></Heading>

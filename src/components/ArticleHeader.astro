@@ -1,0 +1,21 @@
+---
+import BilingualHeading from './BilingualHeading.astro';
+import BilingualParagraph from './BilingualParagraph.astro';
+import { dateKey, type Story } from '../lib/content';
+interface Props { data: Story['data']; label: string[]; href: string; minutes: number }
+const { data, label, href, minutes } = Astro.props;
+---
+<header class="article-header">
+  <nav class="breadcrumbs" aria-label="面包屑 / Breadcrumb">
+    <a href="/">首页 <span lang="en">Home</span></a><span aria-hidden="true">/</span>
+    <a href={href} class="article-section">{label[0]} <span lang="en">{label[1]}</span></a>
+  </nav>
+  <BilingualHeading level={1} zh={data.titleZh} en={data.titleEn} search />
+  <div class="article-byline" data-pagefind-ignore>
+    <span>Codex Venture 编辑部 <small lang="en">Editorial</small></span>
+    <time datetime={data.published.toISOString()}>{dateKey(data.published)}</time>
+    <span>约 {minutes} 分钟 <small lang="en">{minutes} min read</small></span>
+    {data.updated && <span>更新 <small lang="en">Updated</small> <time datetime={data.updated}>{data.updated}</time></span>}
+  </div>
+  <BilingualParagraph class="article-lead" zh={data.summaryZh} en={data.summaryEn} />
+</header>

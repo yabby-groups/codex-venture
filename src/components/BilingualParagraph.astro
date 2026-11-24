@@ -1,0 +1,5 @@
+---
+interface Props { zh: string; en: string; class?: string }
+const { zh, en, class: className } = Astro.props;
+---
+<p class:list={['bilingual-paragraph', className]}><span lang="zh-CN">{zh}</span><span lang="en">{en}</span></p>

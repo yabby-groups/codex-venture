@@ -31,6 +31,12 @@ const read = (directory, collection) => readdirSync(directory).filter((name) => 
     throw new Error('Invalid content lifecycle metadata in ' + name);
   const blocks = body.trim().split(/\n\s*\n/);
   let pairs = 0;
+  for (const block of data.blocks ?? []) {
+    if (block.kind === 'code' && block.language === 'json') {
+      try { JSON.parse(block.code); }
+      catch { throw new Error('Invalid JSON example in ' + name); }
+    }
+  }
   const zh = '<p lang="zh-CN">';
   const en = '<p lang="en">';
   const han = /\p{Script=Han}/u;

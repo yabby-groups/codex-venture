@@ -1,0 +1,26 @@
+---
+import BilingualHeading from './BilingualHeading.astro';
+import { storyUrl, type Story } from '../lib/content';
+interface Props { data: Story['data']; related: Story[]; label: string[]; href: string }
+const { data, related, label, href } = Astro.props;
+---
+<footer class="article-footer" data-pagefind-ignore>
+  <section aria-label="来源 / Sources">
+    <BilingualHeading zh="原始来源" en="Primary sources" />
+    <ol>{data.sources.map(({ url, title }) => <li><a href={url}>{title} ↗</a></li>)}</ol>
+    {data.verified && <details class="article-evidence">
+      <summary>核实记录 <span lang="en">Verification details</span></summary>
+      <dl>
+        <div><dt>核实日期 <span lang="en">Verified</span></dt><dd><time datetime={data.verified}>{data.verified}</time></dd></div>
+        {data.version && <div><dt>适用版本 <span lang="en">Version</span></dt><dd>{data.version}</dd></div>}
+        <div><dt>依据 <span lang="en">Basis</span></dt><dd>{data.tested ? '已验证操作' : '依据资料整理'} <span lang="en">{data.tested ? 'Procedure checked' : 'Documentation-based'}</span></dd></div>
+      </dl>
+    </details>}
+  </section>
+  {related.length > 0 && <section aria-label="相关阅读 / Related reading">
+    <BilingualHeading zh="相关阅读" en="Related reading" />
+    <ul class="article-related">{related.map((item) => <li><a href={storyUrl(item)}><span lang="zh-CN">{item.data.titleZh}</span><span lang="en">{item.data.titleEn}</span></a></li>)}</ul>
+  </section>}
+  <div class="tag-list">{[...new Set(data.tags)].map((tag) => <a href={`/tags/${tag}/`}>#{tag}</a>)}</div>
+  <a class="article-back" href={href}>返回{label[0]} <span lang="en">Back to {label[1]}</span></a>
+</footer>

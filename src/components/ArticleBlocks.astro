@@ -1,0 +1,60 @@
+---
+import { Code } from 'astro:components';
+import BilingualHeading from './BilingualHeading.astro';
+import BilingualParagraph from './BilingualParagraph.astro';
+import type { ArticleBlock } from '../lib/article-blocks';
+interface Props { blocks: ArticleBlock[] }
+const { blocks } = Astro.props;
+const languageLabel = { json: 'JSON', yaml: 'YAML', toml: 'TOML', bash: 'Bash', shell: 'Shell', python: 'Python', javascript: 'JavaScript', docker: 'Dockerfile', nginx: 'Nginx', text: 'Text' };
+---
+{blocks.map((block, index) => (
+  <section class:list={['article-block', `block-${block.kind}`]} aria-labelledby={`article-block-${index + 1}`}>
+    <BilingualHeading id={`article-block-${index + 1}`} zh={block.title.zh} en={block.title.en} />
+    {'items' in block && (block.kind === 'takeaways' || block.kind === 'changes'
+      ? <ul>{block.items.map((item) => <li><BilingualParagraph {...item} /></li>)}</ul>
+      : <ol class:list={['article-steps', { 'workflow-steps': block.kind === 'workflow' }]}>{block.items.map((item) => <li><BilingualParagraph {...item} /></li>)}</ol>)}
+    {'rows' in block && <div class="article-table-scroll" tabindex="0" role="region" aria-labelledby={`article-block-${index + 1}`}>
+      <table><thead><tr>{block.columns.map((cell) => <th scope="col"><BilingualParagraph {...cell} /></th>)}</tr></thead>
+        <tbody>{block.rows.map((row) => <tr>{row.map((cell, column) => column === 0
+          ? <th scope="row"><BilingualParagraph {...cell} /></th>
+          : <td><BilingualParagraph {...cell} /></td>)}</tr>)}</tbody>
+      </table>
+    </div>}
+    {block.kind === 'notice' && <BilingualParagraph {...block.text} />}
+    {block.kind === 'figure' && <figure class="article-figure">
+      <img src={block.src} alt={block.alt.zh} aria-describedby={`figure-caption-${index}`} width={block.width} height={block.height} loading="lazy" decoding="async" />
+      <figcaption id={`figure-caption-${index}`}>
+        <BilingualParagraph {...block.caption} />
+        <span lang="en" class="figure-alt">{block.alt.en}</span>
+        <a href={block.source}>素材来源 <span lang="en">Asset source ↗</span></a> · {block.rights}
+      </figcaption>
+    </figure>}
+    {block.kind === 'code' && <div class="article-code" data-copy-code>
+      <div class="article-code-bar">
+        <span lang="en">{languageLabel[block.language]}{block.file && <> · <bdi>{block.file}</bdi></>}</span>
+        <button type="button" data-copy hidden>复制 <span lang="en">Copy</span></button>
+      </div>
+      <span role="status" class="article-copy-status"></span>
+      <Code code={block.code} lang={block.language === 'shell' ? 'bash' : block.language} themes={{ light: 'github-light', dark: 'github-dark' }} tabindex={0} />
+      <template data-raw-code>{block.code}</template>
+    </div>}
+  </section>
+))}
+<script>
+  if (navigator.clipboard) {
+    for (const block of document.querySelectorAll('[data-copy-code]')) {
+      const button = block.querySelector<HTMLButtonElement>('[data-copy]')!;
+      const source = block.querySelector<HTMLTemplateElement>('[data-raw-code]')!;
+      const status = block.querySelector('[role="status"]')!;
+      button.hidden = false;
+      button.addEventListener('click', async () => {
+        try {
+          await navigator.clipboard.writeText(source.content.textContent ?? '');
+          status.textContent = '已复制 / Copied';
+        } catch {
+          status.textContent = '复制失败 / Copy failed';
+        }
+      });
+    }
+  }
+</script>

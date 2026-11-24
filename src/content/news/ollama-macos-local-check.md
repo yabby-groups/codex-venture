@@ -12,11 +12,16 @@ status: "current"
 tested: false
 tags: ["local-inference","ollama"]
 sources: [{"title":"Verify an Ollama service on macOS – primary reference","url":"https://docs.ollama.com/macos"}]
+updated: "2026-11-24"
+blocks: [{"kind": "steps", "title": {"zh": "按顺序排查", "en": "Work through the checks"}, "items": [{"zh": "打开 Ollama 应用并在终端查看模型清单。", "en": "Open the Ollama app and inspect the model list in a terminal."}, {"zh": "调用本机 HTTP 接口并检查响应。", "en": "Call the local HTTP endpoint and inspect the response."}]}, {"kind": "code", "title": {"zh": "本机检查命令", "en": "Local verification commands"}, "language": "bash", "file": "", "code": "ollama list\ncurl --fail --show-error http://localhost:11434/api/tags"}]
 ---
-<p lang="zh-CN">从 Ollama 官方 macOS 页面下载应用，移入 Applications 并打开。确保下载目录有足够空间，并先查看模型的尺寸、许可证和内存需求。在终端运行 <code>ollama list</code> 查看已下载模型。刚安装时列表可能为空。</p>
 
-<p lang="en">Download Ollama from its official macOS page, move it to Applications, and open it. Check disk space and review model size, license, and memory needs. Run <code>ollama list</code> to see downloaded models. A fresh install may return an empty list.</p>
+<p lang="zh-CN">本地客户端连不上时，先分别确认 Ollama 应用、模型列表和 HTTP 接口。先从官方页面下载 macOS 应用，移到 Applications 文件夹并打开。下载模型前查看磁盘空间、内存需求和模型许可证。</p>
 
-<p lang="zh-CN">可从同一台机器访问 <code>http://localhost:11434/api/tags</code>，预期得到可解析的 JSON 模型列表。连接被拒绝时先确认应用已启动。仅在本机测试默认地址，避免把服务端口直接暴露到公网。命令依据文档整理，本站未安装实测。</p>
+<p lang="en">When a local client cannot connect, check the Ollama app, model inventory, and HTTP API individually. Download the macOS app from the official page, move it to Applications, and open it. Before downloading a model, check disk space, memory requirements, and the model license.</p>
 
-<p lang="en">From the same machine, request <code>http://localhost:11434/api/tags</code> and expect a parseable JSON model list. If the connection is refused, check that the app is running first. Test the default address locally and avoid exposing the service directly to the public internet. These steps are documentation-based and were not run by this site.</p>
+<h2><span lang="zh-CN">怎样读检查结果</span><span lang="en">How to read the results</span></h2>
+
+<p lang="zh-CN">新安装的模型列表可能为空。访问本地标签接口时，预期得到可解析的 JSON。连接被拒绝时，先检查应用是否已经启动，然后核对客户端地址和端口。默认检查在同一台机器完成。</p>
+
+<p lang="en">A fresh installation may have an empty model list. The local tags endpoint should return JSON. If the connection is refused, check that the app is running, then verify the client address and port. Run the default check on the same machine.</p>

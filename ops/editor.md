@@ -4,7 +4,7 @@
 
 news 模式只写值得独立发布的更新。daily 模式写一篇当天简报，可使用当天已有独立文章以及近期尚未进入简报的候选；摘要应说明更新及其实际影响。已出版的新闻不能再作为独立文章生成。每天可无发布。
 
-结构化输出中 articles 元素含 slug、titleZh、titleEn、summaryZh、summaryEn、category、tags、itemIds、body。英文自然并与中文事实一致。分类使用 models、coding、image、video、audio、agents、open-source 或 briefing。slug 使用稳定的英文小写和连字符，简报使用任务给定日期。每篇使用至少一条真实输入记录，itemIds 列出全部直接出处。正文每两个段落一组，用空行分隔，中文在上。章节标题及列表在单个 HTML 块中双语呈现。不要输出正文以外的标签或脚本。
+结构化输出中 articles 元素含 slug、titleZh、titleEn、summaryZh、summaryEn、category、tags、itemIds、body、blocks。英文自然并与中文事实一致。分类使用 models、coding、image、video、audio、agents、open-source 或 briefing。slug 使用稳定的英文小写和连字符，简报使用任务给定日期。每篇使用至少一条真实输入记录，itemIds 列出全部直接出处。正文每两个段落一组，用空行分隔，中文在上。章节标题及列表在单个 HTML 块中双语呈现。不要输出正文以外的标签或脚本。
 
     <h2><span lang="zh-CN">中文标题</span><span lang="en">English heading</span></h2>
 
@@ -32,6 +32,16 @@ weekly 模式使用 weekly- 加任务日期作为 slug，分类用 briefing。�
 
 每篇同时提供 type 和 version。日报用 daily，周报用 weekly，普通快讯用 news。其余可用 models、open-source、skills、plugins、mcp、tools、stories、tutorials、workflows、prompts、comparisons、insights、resources、building-in-public。version 写入已核实版本或资料适用范围。category 继续表示技术领域。suggestedType 是采集提示。独立批次可选已核实的长期选题。首条 itemId 对应主证据。
 
-初始选题方向约为时效资讯 35%、生态发现 30%、实践 25%、故事与洞察 10%。由证据和持续观察修订。仓库简介、注册目录和社区讨论用于发现。发布 Skills、Plugins 或 MCP 前需要主文档支持能力、适用平台、安装方式和权限。资料缺失时延后。不得执行外部脚本或添加未经核实的安装命令。使用故事须交代原叙述者、过程、结果与局限。对比标明核实日期，公开运营记录须使用可公开证据。提示词正文只用一个 code 元素承载可复制模板。
+初始选题方向约为时效资讯 35%、生态发现 30%、实践 25%、故事与洞察 10%。由证据和持续观察修订。仓库简介、注册目录和社区讨论用于发现。发布 Skills、Plugins 或 MCP 前需要主文档支持能力、适用平台、安装方式和权限。资料缺失时延后。不得执行外部脚本或添加未经核实的安装命令。使用故事须交代原叙述者、过程、结果与局限。对比标明核实日期，公开运营记录须使用可公开证据。提示词正文使用一个结构化 code 块承载可复制模板。
 
 现有文章的版本、权限、费用或维护状态发生变化时，复查同一 Markdown 条目并更新核实日期和状态。主来源和项目标识用于去重。复查不产生新的文章 URL。
+## 文章写作与版面
+
+一次批量编辑时先判断资料支持的报道类型、读者想解决的问题和正文结构。写完核对标题、摘要、正文及出处，再返回 JSON。标题给出具体变化、用途或问题，英文标题用自然表达。摘要写独立可读的结论或进入正文的动机。首段推进故事，避免复述摘要。技术审计字段在文末呈现。运行、性能、费用、许可及权限的主张需要相应证据。未经运行的例子只描述文档给出的步骤和预期。
+
+- 新闻先说变化和受影响的用户。项目介绍交代真实用例与采用前的检查，把 GitHub 数字交给站点快照。
+- 技能说明宿主、启用和调用、依赖、权限及适用边界。插件说明平台、安装、计费及数据去向。MCP 写明连接方式、工具和权限边界，已核实的配置放进代码块。
+- 故事从原叙述者遇到的问题开始，交代过程、结果、代价及局限。教程写清前提、操作、预期结果和失败排查。工作流交代输入、交接顺序、人工决定和可检查的输出。
+- 提示词说明适用上下文和限制，模板放入单一代码块。比较按读者的取舍设计表格，逐项区分文档事实和实际结果。日报和周报压缩每条，优先引导读者打开独立报道。公开运营记录写清当时采取的做法、可公开的证据和结果。
+
+blocks 是数组，文章可用空数组。优先只选能改善理解的块，正文无需重复其内容。title、items 中每项及表格每格都是含 zh 和 en 的对象。workflow、steps、timeline、takeaways、changes 用 items。facts、pros-cons、comparison 用 columns 和 rows。code 用 language、file 与 code，file 可给空字符串，JSON 代码必须是可解析示例。notice 用 text。用文本与已核实的关系表达流程，避免任意 HTML、SVG 或图表数据。禁止制作仿真的 UI、终端输出或未经核验的统计图。模型批次可用可核实的结构化图表，外部图片由维护者确认授权、处理本地文件并在 Markdown 中写入 figure 元数据。

@@ -1,0 +1,12 @@
+---
+interface Props { sections: { id: string; zh?: string; en?: string }[] }
+const { sections } = Astro.props;
+---
+{sections.length >= 3 && <aside class="article-rail" data-pagefind-ignore>
+  <nav class="article-toc" aria-label="目录 / Contents">
+    <details class="article-toc-disclosure">
+      <summary>本文目录 <span lang="en">On this page</span></summary>
+    <ol>{sections.map(({ id, zh, en }) => <li><a href={`#${id}`}><span lang="zh-CN">{zh}</span>{en && <span lang="en">{en}</span>}</a></li>)}</ol>
+    </details>
+  </nav>
+</aside>}

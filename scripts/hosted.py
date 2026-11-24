@@ -319,6 +319,8 @@ def accept():
                     raise ValueError(f'Invalid field {name}')
                 if name != 'body' and re.search(r'[<>\x00-\x1f]', value):
                     raise ValueError(f'Unsupported metadata characters in {name}')
+            elif name == 'blocks':
+                continue  # Validated by write_articles in both publishing paths.
             elif not string_list(value, 8, 64):
                 raise ValueError(f'Invalid array {name}')
     before = {(article['collection'], article['slug']) for article in metadata()}

@@ -8,6 +8,7 @@ from datetime import datetime, timedelta
 from pathlib import Path
 from zoneinfo import ZoneInfo
 
+from article_schema import BLOCKS, conforms
 from collect import canonical, digest, load, save, timestamp
 from release import RUNTIME
 
@@ -23,7 +24,7 @@ def output_schema():
     string = {'type': 'string'}
     strings = {'type': 'array', 'items': string}
     fields = {key: string for key in ('slug', 'titleZh', 'titleEn', 'summaryZh', 'summaryEn', 'category', 'body', 'type', 'version')}
-    fields.update(tags=strings, itemIds=strings)
+    fields.update(tags=strings, itemIds=strings, blocks=BLOCKS)
 
     def obj(properties):
         return dict(type='object', properties=properties, required=list(properties), additionalProperties=False)
@@ -169,6 +170,11 @@ def write_articles(response, mode, candidates, now, limit=3):
         raise ValueError('too many articles')
     used = set()
     for article in response['articles']:
+        blocks = article.pop('blocks', [])
+        if not conforms(blocks, BLOCKS) or len(blocks) > 8:
+            raise ValueError('invalid editorial blocks')
+        if blocks:
+            article['blocks'] = blocks
         slug, ids, body = [article.pop(key) for key in ('slug', 'itemIds', 'body')]
         if not re.fullmatch(r'[a-z0-9]+(?:-[a-z0-9]+)*', slug) or len(slug) > 100:
             raise ValueError('invalid article slug')

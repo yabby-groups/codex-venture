@@ -261,6 +261,11 @@ jobs:
       - name: Build and verify static site
         if: steps.changes.outputs.content == 'true' || needs.prepare.outputs.task == 'health' || needs.edit.result == 'success' && needs.prepare.outputs.task == 'smoke-test'
         run: npm run build
+      - name: Verify changed articles in Chromium
+        if: steps.changes.outputs.content == 'true'
+        run: |
+          npx playwright install --with-deps chromium
+          node scripts/check-articles-browser.mjs "$RUNNER_TEMP/venture/routes.json"
       - id: push
         name: Push validated content to production branch
         if: steps.changes.outputs.content == 'true'

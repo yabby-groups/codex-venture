@@ -1,24 +1,45 @@
 ---
 import { render } from 'astro:content';
+import '../styles/article.css';
+import ArticleHeader from '../components/ArticleHeader.astro';
+import ArticleTOC from '../components/ArticleTOC.astro';
+import ArticleBlocks from '../components/ArticleBlocks.astro';
+import ArticleFooter from '../components/ArticleFooter.astro';
+import BilingualParagraph from '../components/BilingualParagraph.astro';
+import { articleHeadings } from '../lib/article-headings.mjs';
 import Repository from '../components/Repository.astro';
 import { repositoryFor } from '../lib/repositories';
 import Base from './Base.astro';
-import { allStories, dateKey, isWeekly, storySection, storyUrl, type Story } from '../lib/content';
+import { allStories, dateKey, storySection, storyUrl, type Story } from '../lib/content';
 interface Props { story: Story }
 const { story } = Astro.props;
 const { Content } = await render(story);
 const stories = await allStories();
-const sameType = stories.filter((item) => item.collection === story.collection && isWeekly(item) === isWeekly(story));
-const index = sameType.findIndex((item) => item.id === story.id);
-const related = stories.filter((item) => storyUrl(item) !== storyUrl(story) && (
-  item.data.sources.some((source) => story.data.sources.some((original) => source.url === original.url)) ||
-  item.data.tags.some((tag) => story.data.tags.includes(tag))
-)).slice(0, 3);
 const { data } = story;
+const blocks = data.blocks ?? [];
+const sections = [
+  ...articleHeadings(story.body ?? ''),
+  ...blocks.map(({ title }, index) => ({ id: `article-block-${index + 1}`, ...title })),
+];
+const short = story.collection === 'news' && (!data.type || ['news', 'models'].includes(data.type)) &&
+  (story.body?.length ?? 0) < 2400 && !blocks.length;
+const showContents = !short && sections.length >= 3;
+const related = stories
+  .filter((item) => storyUrl(item) !== storyUrl(story) && item.collection === 'news')
+  .map((item) => ({
+    item,
+    score: (item.data.project && item.data.project === data.project ? 8 : 0)
+      + (item.data.sources.some((source) => data.sources.some((original) => source.url === original.url)) ? 5 : 0)
+      + new Set(item.data.tags.filter((tag) => data.tags.includes(tag))).size,
+  }))
+  .filter(({ score }) => score > 0)
+  .sort((a, b) => b.score - a.score)
+  .slice(0, short ? 2 : 3)
+  .map(({ item }) => item);
 const canonical = new URL(storyUrl(story), Astro.site).href;
 const { label, href } = storySection(story);
 const repo = repositoryFor(story);
-const bodyText = (story.body ?? '').replace(/<[^>]+>/g, '').replace(/https?:\/\/\S+/g, '');
+const bodyText = ((story.body ?? '') + ' ' + JSON.stringify(blocks)).replace(/<[^>]+>/g, '').replace(/https?:\/\/\S+/g, '');
 const chinese = bodyText.match(/\p{Script=Han}/gu)?.length ?? 0;
 const english = bodyText.match(/\b[A-Za-z]+\b/g)?.length ?? 0;
 const minutes = Math.max(1, Math.ceil(chinese / 350 + english / 220));
@@ -33,7 +54,7 @@ const breadcrumb = JSON.stringify({
 const jsonLd = JSON.stringify({
   '@context': 'https://schema.org', '@type': data.type && !['news', 'models'].includes(data.type) ? 'Article' : 'NewsArticle',
   headline: data.titleZh, alternativeHeadline: data.titleEn, datePublished: data.published.toISOString(),
-  dateModified: data.verified,
+  dateModified: data.updated ?? data.published.toISOString(),
   description: data.summaryZh, mainEntityOfPage: canonical, inLanguage: ['zh-CN', 'en'],
   citation: data.sources.map(({ url }) => url), author: { '@type': 'Organization', name: 'Codex Venture' },
   publisher: { '@type': 'Organization', name: 'Codex Venture', url: Astro.site?.href },
@@ -41,83 +62,22 @@ const jsonLd = JSON.stringify({
 ---
 <Base title={data.titleZh} description={data.summaryZh + ' ' + data.summaryEn} article>
   <Fragment slot="head"><script type="application/ld+json" set:html={jsonLd} /><script type="application/ld+json" set:html={breadcrumb} /><meta property="article:published_time" content={data.published.toISOString()} /></Fragment>
-  <article class="article" data-pagefind-body>
-    <nav class="breadcrumbs" aria-label="面包屑 / Breadcrumb">
-      <ol><li><a href="/">首页<span lang="en">Home</span></a></li><li aria-hidden="true">/</li><li><a href={href}>{label[0]}<span lang="en">{label[1]}</span></a></li></ol>
-    </nav>
-    <h1 data-pagefind-meta={`title:${data.titleZh}`}>{data.titleZh}<span lang="en" data-pagefind-meta={`titleEn:${data.titleEn}`}>{data.titleEn}</span></h1>
-    <div class="article-byline" data-pagefind-ignore>
-      <div>Codex Venture 编辑部 · <time datetime={data.published.toISOString()}>{dateKey(data.published)} · UTC+8</time> · 约 {minutes} 分钟</div>
-      <span lang="en">Codex Venture editorial · {minutes} min read</span>
-    </div>
+  <article class:list={['editorial-article', { 'article-short': short, 'article-with-rail': showContents }]} data-pagefind-body>
+    <ArticleHeader {data} {label} {href} {minutes} />
     <meta data-pagefind-meta={`section:${label[0]}`} />
     <meta data-pagefind-meta={`sectionEn:${label[1]}`} />
     <meta data-pagefind-meta={`date:${dateKey(data.published)}`} />
-    <p class="article-summary">{data.summaryZh}<span lang="en">{data.summaryEn}</span></p>
-    {repo && <Repository {repo} {story} detail />}
-    <nav class="article-toc" aria-label="目录 / Contents" data-pagefind-ignore hidden>
-      <strong>目录 <span lang="en">Contents</span></strong><ol></ol>
-    </nav>
-    {data.verified && <div class="article-byline">
-      <div>核实日期 {data.verified} · {data.version} · {data.tested ? '已验证操作' : '依据资料整理'}
-        {data.status !== 'current' && (data.status === 'archived' ? ' · 已归档' : ' · 待复查')}</div>
-      <span lang="en">Verified {data.verified} · {data.version} · {data.tested ? 'Procedure checked' : 'Documentation-based'}
-        {data.status !== 'current' && (data.status === 'archived' ? ' · Archived' : ' · Needs review')}</span>
-    </div>}
-    <div class="prose"><Content /></div>
-    {data.type === 'prompts' && <button type="button" id="copy-prompt" hidden>复制提示词 / Copy prompt</button>}
-    {data.type === 'prompts' && <span id="copy-status" role="status"></span>}
-    <section class="article-links" data-pagefind-ignore>
-      <h2>原始来源 <span lang="en">Primary Sources</span></h2>
-      <ul>{data.sources.map(({ url, title }) => <li><a href={url} lang="en">{title} ↗</a></li>)}</ul>
-      <div class="tag-list">{data.tags.map((tag) => <a href={`/tags/${tag}/`}>#{tag}</a>)}</div>
-    </section>
+    <div class="article-grid">
+      {showContents && <ArticleTOC {sections} />}
+      <div class="article-content">
+        {data.status && data.status !== 'current' && <BilingualParagraph class="article-notice" zh={data.status === 'archived' ? '此文已归档，操作和版本信息可能过时。' : '此文等待复查，使用前请核对当前文档。'} en={data.status === 'archived' ? 'Archived. Instructions and version information may be outdated.' : 'Pending review. Check current documentation before use.'} />}
+        {data.tested === false && data.type && ['skills', 'plugins', 'mcp', 'tutorials', 'workflows', 'comparisons'].includes(data.type) &&
+          <BilingualParagraph class="article-notice" zh="依据公开资料整理，操作未经本站实测。" en="Based on public documentation. The editorial team did not run the procedure." />}
+        <div class="prose"><Content /></div>
+        <ArticleBlocks {blocks} />
+        {repo && <Repository {repo} {story} detail />}
+        <ArticleFooter {data} {related} {label} {href} />
+      </div>
+    </div>
   </article>
-  <aside class="article article-links" aria-label="更多资讯">
-    {related.length > 0 && <><h2>相关资讯 <span lang="en">Related Stories</span></h2><ul>{related.map((item) => <li><a href={storyUrl(item)}>{item.data.titleZh}<span lang="en">{item.data.titleEn}</span></a></li>)}</ul></>}
-    <a href={href}>返回{label[0]} <span lang="en">Back to {label[1]}</span></a>
-    <nav class="adjacent" aria-label="上一篇和下一篇">
-      {sameType[index + 1] && <a href={storyUrl(sameType[index + 1])}>← 较早 · Older<span>{sameType[index + 1].data.titleZh}</span></a>}
-      {sameType[index - 1] && <a href={storyUrl(sameType[index - 1])}>较新 · Newer →<span>{sameType[index - 1].data.titleZh}</span></a>}
-    </nav>
-  </aside>
 </Base>
-
-<script>
-  const copy = document.querySelector<HTMLButtonElement>('#copy-prompt');
-  const prompt = document.querySelector<HTMLElement>('.prose code');
-  const status = document.querySelector<HTMLElement>('#copy-status');
-  if (copy && prompt && status && navigator.clipboard) {
-    copy.hidden = false;
-    copy.addEventListener('click', async () => {
-      try {
-        await navigator.clipboard.writeText(prompt.textContent ?? '');
-        status.textContent = '已复制 / Copied';
-      } catch {
-        status.textContent = '复制失败，请选择文本 / Copy failed, select the text manually';
-      }
-    });
-  }
-  const toc = document.querySelector<HTMLElement>('.article-toc');
-  const headings = [...document.querySelectorAll<HTMLElement>('article .prose h2')];
-  if (toc && headings.length >= 4) {
-    const list = toc.querySelector('ol')!;
-    headings.forEach((heading, index) => {
-      heading.id ||= `section-${index + 1}`;
-      const item = document.createElement('li');
-      const link = document.createElement('a');
-      link.href = '#' + heading.id;
-      const parts = heading.querySelectorAll<HTMLElement>(':scope > [lang]');
-      if (parts.length) parts.forEach((part) => {
-        const span = document.createElement('span');
-        span.lang = part.lang;
-        span.textContent = part.textContent;
-        link.append(span);
-      });
-      else link.textContent = heading.textContent;
-      item.append(link);
-      list.append(item);
-    });
-    toc.hidden = false;
-  }
-</script>

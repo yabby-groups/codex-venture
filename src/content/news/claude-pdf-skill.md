@@ -13,6 +13,8 @@ tested: false
 project: "claude-pdf"
 tags: ["agent-skills","claude"]
 sources: [{"title":"How Anthropic’s PDF Skill extracts tables – primary reference","url":"https://github.com/anthropics/skills/blob/main/skills/pdf/SKILL.md"},{"title":"Anthropic skills repository","url":"https://github.com/anthropics/skills"},{"title":"PDF skill license","url":"https://github.com/anthropics/skills/blob/main/skills/pdf/LICENSE.txt"}]
+updated: "2026-11-24"
+blocks: [{"kind": "code", "title": {"zh": "在 Claude Code 中安装", "en": "Install in Claude Code"}, "language": "text", "code": "/plugin marketplace add anthropics/skills\n/plugin install document-skills@anthropic-agent-skills"}, {"kind": "code", "title": {"zh": "指定页码和输出格式", "en": "Specify a page and output format"}, "language": "text", "code": "Use the PDF skill to extract the table on page 2 of sample.pdf as CSV. Mark any ambiguous cells for manual review."}]
 ---
 <p lang="zh-CN">Anthropic 的 PDF 技能文档给出 pypdf 读写页面与 pdfplumber 提取表格的两套做法。对于版式固定的账单，可以先用 pdfplumber 处理一页，再逐列核对标题、金额和跨行单元格。</p>
 
