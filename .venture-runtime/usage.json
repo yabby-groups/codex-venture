@@ -1,6 +1,13 @@
 {
   "2026-11-24": {
     "calls": 3,
-    "tokens": 75000
+    "tokens": 101157,
+    "usage": {
+      "45348216831-1": {
+        "cached_input_tokens": 19200,
+        "input_tokens": 51054,
+        "output_tokens": 103
+      }
+    }
   }
 }
