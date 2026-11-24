@@ -33,7 +33,7 @@ def number(name, default, minimum, maximum):
     return value
 
 
-def cost_allows(root, day, tokens, price):
+def cost_allows(root, day, tokens, price, reserved_calls):
     limit = os.getenv('VENTURE_DAILY_COST_LIMIT')
     if not limit:
         return True
@@ -43,6 +43,7 @@ def cost_allows(root, day, tokens, price):
     ):
         return False
     spent = Decimal(0)
+    accounted_calls = 0
     for file in (root / 'operations' / day).glob('*.json'):
         receipt = load(file, {}).get('model')
         if not receipt or not receipt.get('sessions'):
@@ -51,7 +52,8 @@ def cost_allows(root, day, tokens, price):
         if not cost or cost['currency'] != currency:
             return False
         spent += Decimal(cost['amount'])
-    return spent + worst_case(price, tokens) <= Decimal(limit)
+        accounted_calls += receipt['sessions']
+    return accounted_calls >= reserved_calls and spent + worst_case(price, tokens) <= Decimal(limit)
 
 
 def prepare(task):
@@ -103,7 +105,7 @@ def prepare(task):
     model = (os.getenv('CODEX_ADVANCED_MODEL') if task == 'weekly' else None) or os.getenv('CODEX_MODEL')
     price = configured_price('venture', model, day)
     root = store()
-    if not cost_allows(root, day, reserved, price):
+    if not cost_allows(root, day, reserved, price, usage['calls']):
         print('Configured cost allowance cannot reserve this session')
         return
     usage['calls'] += 1

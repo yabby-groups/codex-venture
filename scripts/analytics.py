@@ -96,6 +96,9 @@ def report(root, start, end, stats):
     paths = stats['inventory']
     views, categories = Counter(), Counter()
     clicks, impressions = Counter(), Counter()
+    keyword_clicks, keyword_impressions = Counter(), Counter()
+    source_yield = Counter(source for article in paths.values() if article['date'] in dates
+                           for source in article['sources'])
     provider_days = Counter()
     totals = defaultdict(dict)
     for day in dates:
@@ -123,6 +126,18 @@ def report(root, start, end, stats):
             if path in paths:
                 clicks[path] += row['clicks']
                 impressions[path] += row['impressions']
+        for row in (enabled_data(search, 'query') or {}).get('rows', []):
+            keyword = row['keys'][0]
+            keyword_clicks[keyword] += row['clicks']
+            keyword_impressions[keyword] += row['impressions']
+    projects = Counter()
+    for path, count in views.items():
+        for project in paths[path]['projects']:
+            projects[project] += count
+    bing_snapshots = [day for day in dates
+                      if load(root / 'search/bing' / (day + '.json'), {}).get('status') == 'available']
+    if bing_snapshots:
+        provider_days['bing_snapshots'] = len(bing_snapshots)
     runs = [load(file, {}) for day in dates for file in (root / 'operations' / day).glob('*.json')]
     costs = defaultdict(Decimal)
     models = defaultdict(lambda: Counter())
@@ -151,6 +166,11 @@ def report(root, start, end, stats):
                 top_articles=[{'path': path, 'views': count, **paths[path]}
                               for path, count in views.most_common(20)],
                 category_views=categories,
+                project_article_views=dict(projects.most_common(20)),
+                sources_by_article_yield=dict(source_yield.most_common(20)),
+                latest_bing_rolling_snapshot=bing_snapshots[-1] if bing_snapshots else None,
+                google_queries=[dict(query=key, clicks=count, impressions=keyword_impressions[key])
+                                for key, count in keyword_clicks.most_common(20)],
                 google_pages=[dict(path=path, clicks=clicks[path], impressions=count,
                                    ctr=clicks[path] / count if count else None)
                               for path, count in impressions.most_common(20)],
@@ -171,16 +191,29 @@ def store():
 
 
 def sync(root, task, today, lookback):
+    providers = {}
     if task in ('all', 'traffic'):
         for day in days_between(today - timedelta(days=lookback), today - timedelta(days=1)):
-            save(root / 'traffic' / (day + '.json'), cloudflare(day))
+            snapshot = cloudflare(day)
+            save(root / 'traffic' / (day + '.json'), snapshot)
+            providers['Cloudflare RUM'] = snapshot['status']
     if task in ('all', 'search'):
         search_day = datetime.now(ZoneInfo('America/Los_Angeles')).date()
         end = search_day - timedelta(days=3)
         urls = [SITE + route(f"/{a['collection']}/{a['slug']}/") for a in metadata()[:2]]
         for day in days_between(end - timedelta(days=lookback - 1), end):
-            save(root / 'search/google' / (day + '.json'), google(day, urls if day == end.isoformat() else ()))
-        save(root / 'search/bing' / (today.isoformat() + '.json'), bing())
+            snapshot = google(day, urls if day == end.isoformat() else ())
+            save(root / 'search/google' / (day + '.json'), snapshot)
+            providers['Google Search Console'] = snapshot['status']
+        snapshot = bing()
+        save(root / 'search/bing' / (today.isoformat() + '.json'), snapshot)
+        providers['Bing Webmaster Tools'] = snapshot['status']
+    summary = os.getenv('GITHUB_STEP_SUMMARY')
+    if summary:
+        with open(summary, 'a') as output:
+            output.write('| Provider | Latest sync status |\n| --- | --- |\n')
+            for provider, status in providers.items():
+                output.write(f'| {provider} | {status} |\n')
 
 
 def main(task, domain='all', lookback='7'):

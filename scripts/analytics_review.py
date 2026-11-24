@@ -44,7 +44,7 @@ def reserve():
     root, today, stamp, data = context()
     if not data or (root / 'reports/analysis' / (stamp + '.json')).exists():
         return
-    observations = max(data['observed_days'].values(), default=0)
+    observations = max((data['observed_days'].get(key, 0) for key in ('google', 'cloudflare')), default=0)
     if observations < 3:
         save(root / 'reports/analysis' / (stamp + '.json'),
              {'status': 'insufficient_data', 'observed_provider_days': observations})
@@ -58,7 +58,7 @@ def reserve():
     calls = hosted.number('VENTURE_MAX_MODEL_CALLS_PER_DAY', 6, 0, 1000)
     price = configured_price('venture', os.getenv('CODEX_MODEL'), day)
     if (allowance['calls'] >= calls or (tokens is not None and allowance['tokens'] + 25000 > tokens)
-            or not hosted.cost_allows(root, day, 25000, price)):
+            or not hosted.cost_allows(root, day, 25000, price, allowance['calls'])):
         return
     allowance['calls'] += 1
     allowance['tokens'] += 25000
@@ -108,7 +108,10 @@ def main():
         response = workspace / 'result.json'
         env = {key: os.environ[key] for key in ('PATH', 'HOME', 'LANG', 'CODEX_API_KEY') if key in os.environ}
         # Use publisher-owned route IDs and numerical aggregates. Do not send raw query strings or referrals.
-        safe = {key: value for key, value in data.items() if key not in ('sessions_by_model', 'operation_tasks')}
+        safe = {key: value for key, value in data.items()
+                if key not in ('sessions_by_model', 'operation_tasks', 'google_queries')}
+        safe['query_metrics'] = [{'id': index, 'clicks': row['clicks'], 'impressions': row['impressions']}
+                                 for index, row in enumerate(data.get('google_queries', []), 1)]
         safe['models'] = list(data['sessions_by_model'].values())
         try:
             result = subprocess.run(['codex', 'exec', '--skip-git-repo-check', '--ephemeral', '--json',

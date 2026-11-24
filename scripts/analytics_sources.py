@@ -1,6 +1,8 @@
 """Read-only provider adapters. Store each provider's native date and metric definitions."""
 import json
 import os
+from datetime import date, datetime, timedelta, timezone
+from functools import lru_cache
 from urllib.parse import quote, urlencode
 from urllib.request import Request, urlopen
 
@@ -24,6 +26,32 @@ def result(read):
                 'http_status': getattr(error, 'code', None)}
 
 
+RUM_PAGES = 'rumPageloadEventsAdaptiveGroups'
+RUM_VITALS = 'rumWebVitalsEventsAdaptiveGroups'
+
+
+def cloudflare_account(token, account, query, **variables):
+    response = api('https://api.cloudflare.com/client/v4/graphql', token,
+                   {'query': query, 'variables': {'account': account, **variables}})
+    if response.get('errors'):
+        raise RuntimeError('GraphQL dataset or field unavailable')
+    accounts = response['data']['viewer']['accounts']
+    if not accounts:
+        raise RuntimeError('Cloudflare account unavailable')
+    return accounts[0]
+
+
+@lru_cache(maxsize=4)
+def cloudflare_settings(token, account, dataset):
+    query = '''
+    query($account: string) {
+      viewer { accounts(filter: {accountTag: $account}) {
+        settings { DATASET { enabled availableFields maxPageSize notOlderThan maxDuration } }
+      } }
+    }'''.replace('DATASET', dataset)
+    return result(lambda: cloudflare_account(token, account, query)['settings'][dataset])
+
+
 def cloudflare(day):
     token = os.getenv('CLOUDFLARE_ANALYTICS_TOKEN')
     account = os.getenv('CLOUDFLARE_ACCOUNT_ID')
@@ -31,7 +59,19 @@ def cloudflare(day):
     if not all((token, account, tag)):
         return {'status': 'disabled'}
 
-    def query(dataset, fields, limit=1, extra=''):
+    capabilities = {dataset: cloudflare_settings(token, account, dataset)
+                    for dataset in (RUM_PAGES, RUM_VITALS)}
+    start = datetime.fromisoformat(day).replace(tzinfo=timezone.utc)
+
+    def query(dataset, fields, required, limit=1, extra=''):
+        capability = capabilities[dataset].get('data') or {}
+        if capability:
+            if not capability['enabled'] or not set(required) <= set(capability['availableFields']):
+                raise RuntimeError('Metric disabled by account settings')
+            if (capability['maxDuration'] < 86400 or
+                    start < datetime.now(timezone.utc) - timedelta(seconds=capability['notOlderThan'])):
+                raise RuntimeError('Date outside dataset limits')
+            limit = min(limit, capability['maxPageSize'])
         query_text = '''
         query($account: string, $site: string, $start: Time, $end: Time) {
           viewer { accounts(filter: {accountTag: $account}) {
@@ -41,32 +81,29 @@ def cloudflare(day):
           } }
         }'''.replace('DATASET', dataset).replace('LIMIT', str(limit)).replace(
             'FIELDS', fields).replace('EXTRA', extra)
-        from datetime import timedelta, date
         end = (date.fromisoformat(day) + timedelta(days=1)).isoformat()
-        response = api('https://api.cloudflare.com/client/v4/graphql', token,
-                       {'query': query_text, 'variables': {
-                           'account': account, 'site': tag, 'start': day + 'T00:00:00Z',
-                           'end': end + 'T00:00:00Z'}})
-        if response.get('errors'):
-            raise RuntimeError('GraphQL dataset or field unavailable')
-        return response['data']['viewer']['accounts'][0]['rows']
+        return cloudflare_account(token, account, query_text, site=tag,
+                                  start=day + 'T00:00:00Z', end=end + 'T00:00:00Z')['rows']
 
-    dataset = 'rumPageloadEventsAdaptiveGroups'
-    fields = {
-        'page_views': 'sum { pageViews }', 'visits': 'sum { visits }',
-        'load_performance_ms': 'quantiles { pageLoadTimeP50 pageLoadTimeP75 pageLoadTimeP95 }',
-    }
-    metrics = {key: result(lambda: query(dataset, select)) for key, select in fields.items()}
+    metrics = {key: result(lambda: query(RUM_PAGES, f'sum {{ {field} }}', ['sum_' + field]))
+               for key, field in {'page_views': 'pageViews', 'visits': 'visits'}.items()}
+    performance = ['pageLoadTimeP50', 'pageLoadTimeP75', 'pageLoadTimeP95']
+    for field in performance:
+        metrics[field] = result(lambda: query(RUM_PAGES, f'quantiles {{ {field} }}',
+                                              ['quantiles_' + field]))
     for key, dimension in {'pages': 'requestPath', 'referrers': 'refererHost',
                            'countries': 'countryName', 'devices': 'deviceType',
                            'browsers': 'browserName'}.items():
-        metrics[key] = result(lambda: query(dataset, f'dimensions {{ {dimension} }} sum {{ pageViews }}',
+        metrics[key] = result(lambda: query(RUM_PAGES, f'dimensions {{ {dimension} }} sum {{ pageViews }}',
+                                            ['dimensions_' + dimension, 'sum_pageViews'],
                                             100, ', orderBy: [sum_pageViews_DESC]'))
-    metrics['core_web_vitals'] = result(lambda: query(
-        'rumWebVitalsEventsAdaptiveGroups', 'quantiles { lcpP75 inpP75 clsP75 }'))
+    for field in ('lcpP75', 'inpP75', 'clsP75'):
+        metrics[field] = result(lambda: query(RUM_VITALS, f'quantiles {{ {field} }}',
+                                              ['quantiles_' + field]))
     metrics['unique_visitors'] = {'status': 'unavailable'}
     return {'status': 'available' if any(v['status'] == 'available' for v in metrics.values())
-            else 'unavailable', 'timezone': 'UTC', 'source': 'Cloudflare RUM', 'metrics': metrics}
+            else 'unavailable', 'timezone': 'UTC', 'source': 'Cloudflare RUM', 'metrics': metrics,
+            'capabilities': capabilities}
 
 
 def google(day, inspection_urls=()):

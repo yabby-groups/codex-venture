@@ -1,5 +1,5 @@
 import os
-from datetime import date
+from datetime import date, datetime, timedelta, timezone
 from pathlib import Path
 import sys
 from tempfile import TemporaryDirectory
@@ -8,7 +8,7 @@ from unittest.mock import patch
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / 'scripts'))
 from analytics import content, period, report, route, sync
-from analytics_sources import bing, cloudflare, google
+from analytics_sources import RUM_PAGES, bing, cloudflare, cloudflare_settings, google
 from analytics_review import valid
 from collect import save
 from editor import metadata
@@ -63,6 +63,29 @@ class AnalyticsTests(unittest.TestCase):
         self.assertTrue(valid(baseline))
         self.assertFalse(valid({**baseline, 'budget': 999}))
         self.assertFalse(valid({**baseline, 'category_weights': {'models': -20}}))
+
+    def test_cloudflare_settings_gate_and_retention(self):
+        def account_response(token, account, query, **variables):
+            if 'settings' in query:
+                dataset = RUM_PAGES if RUM_PAGES in query else 'rumWebVitalsEventsAdaptiveGroups'
+                return {'settings': {dataset: dict(enabled=dataset == RUM_PAGES,
+                         availableFields=['sum_pageViews'], maxPageSize=10,
+                         notOlderThan=3 * 86400, maxDuration=86400)}}
+            self.assertIn('sum { pageViews }', query)
+            return {'rows': [{'sum': {'pageViews': 7}}]}
+
+        env = {'CLOUDFLARE_ANALYTICS_TOKEN': 'fixture', 'CLOUDFLARE_ACCOUNT_ID': 'fixture',
+               'CLOUDFLARE_WEB_ANALYTICS_SITE_TAG': 'fixture'}
+        cloudflare_settings.cache_clear()
+        self.addCleanup(cloudflare_settings.cache_clear)
+        with patch.dict(os.environ, env, clear=True), patch(
+                'analytics_sources.cloudflare_account', side_effect=account_response) as api:
+            today = datetime.now(timezone.utc).date()
+            recent = cloudflare((today - timedelta(days=1)).isoformat())
+            self.assertEqual(recent['metrics']['page_views']['data'][0]['sum']['pageViews'], 7)
+            self.assertEqual(recent['metrics']['visits']['status'], 'unavailable')
+            self.assertEqual(cloudflare((today - timedelta(days=5)).isoformat())['status'], 'unavailable')
+            self.assertEqual(api.call_count, 3)
 
 
 if __name__ == '__main__':
