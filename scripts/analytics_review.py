@@ -113,6 +113,16 @@ def main():
         # Use publisher-owned route IDs and numerical aggregates. Do not send raw query strings or referrals.
         safe = {key: value for key, value in data.items()
                 if key not in ('sessions_by_model', 'operation_tasks', 'google_queries')}
+        inventory = {row['path'] for row in data.get('top_articles', []) + data.get('google_pages', [])}
+        citations = data.get('geo', {}).get('bing_ai_citations', {})
+        if citations:
+            dimensions = citations.get('dimensions', {})
+            safe['geo'] = {**data['geo'], 'bing_ai_citations': {
+                'status': citations['status'],
+                'citations_by_known_url': {url: count for url, count in dimensions.get('url', {}).items()
+                                           if url.removeprefix("https://codex-venture.com") in inventory},
+                'query_count': len(dimensions.get('query', {})),
+            }}
         safe['query_metrics'] = [{'id': index, 'clicks': row['clicks'], 'impressions': row['impressions']}
                                  for index, row in enumerate(data.get('google_queries', []), 1)]
         safe['models'] = list(data['sessions_by_model'].values())

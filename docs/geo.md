@@ -39,3 +39,12 @@ GitHub 仓库已有 Cloudflare、Google 和 Bing 的分析配置项，账号权�
 - `node scripts/check-articles-browser.mjs`，覆盖已有文章桌面和移动视口。
 - `python3 scripts/geo.py`，检查公开响应及模拟用户代理，并检查不存在路径返回 404。
 - 部署时比对公网 release.txt 和本地 dist/release.txt，抽样比对新增实体 JSON 和文章 HTML。
+
+
+## 生产验收记录
+
+内容部署提交 1c63348a76e7accd17b5f9dcf5c2ff6a6daeed04 的 Cloudflare Workers Build 成功。公网 release.txt 与本地一致，公网实体 JSON 逐字节一致。GitHub GEO 检查运行 45421153133 成功。模拟 Googlebot、Bingbot、OAI-SearchBot、PerplexityBot 请求均为 200，随机缺失页为 404。Chromium 通过七条文章路由的桌面和移动测试。Ego 浏览器另检查技术主题和修订文章的页面截图及桌面宽度。
+
+Cloudflare AI Crawl Control 后台可访问。最近七天 Metrics 界面显示 Googlebot、OAI-SearchBot 和 PerplexityBot 标签，提供请求状态码和热门路径视图。数据自动采集、验证身份口径和完整日志仍为 UNKNOWN。Signals 页面提供 Bot Preference Sync 和 robots.txt 可用性视图，生产抽样以实际 robots.txt 为准。
+
+Bing AI Performance 如可导出，将官方数据映射到私有存储的 `analytics/geo/bing/<开始日>_<结束日>.csv`，日期使用 ISO 格式，与报告窗口一致。文件表头为 `kind,value,citations`，kind 可为 url、query、date。URL 使用本站 canonical，date 使用 ISO 日期。每个维度独立汇总，保留原始导出于私有存储。周报读取规范化 CSV，查询原文留在私有报告。账号真实导入和报告覆盖仍待验证。

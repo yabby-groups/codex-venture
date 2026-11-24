@@ -12,7 +12,7 @@ from urllib.parse import urlsplit
 from analytics_sources import bing, cloudflare, google, myna_billing
 from collect import canonical, load, save
 from editor import DATE_ZONE, metadata
-from geo import referral_totals
+from geo import bing_citation_export, referral_totals
 
 SITE = 'https://codex-venture.com'
 ALIASES = load(Path('config/article-aliases.json'), {})
@@ -173,10 +173,11 @@ def report(root, start, end, stats):
         for model, amount in snapshot['by_model'].items():
             billed_by_model[model] += Decimal(amount)
     published = sum(run.get('published', 0) for run in runs)
+    citation_data = bing_citation_export(root / 'geo' / 'bing' / f'{start}_{end}.csv')
     return dict(start=start.isoformat(), end=end.isoformat(), expected_days=len(dates),
                 geo={'referrer_pageviews': dict(ai_referrals), 'referrer_observed_days': referral_days,
                      'referrer_scope': 'Cloudflare RUM top 100 reported hosts per day (UTC)',
-                     'verified_crawler_logs': 'UNKNOWN', 'bing_ai_citations': 'UNKNOWN',
+                     'verified_crawler_logs': 'UNKNOWN', 'bing_ai_citations': citation_data,
                      'google_ai_performance': 'UNKNOWN'},
                 observed_days=provider_days, daily_metrics=totals,
                 new_articles={d: stats['days'].get(d, 0) for d in dates},

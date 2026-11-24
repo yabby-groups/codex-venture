@@ -1,4 +1,5 @@
 """Public GEO checks and private analytics aggregation."""
+import csv
 import re
 from collections import Counter
 from urllib.error import HTTPError
@@ -22,6 +23,31 @@ def referral_totals(rows):
         host = row.get('dimensions', {}).get('refererHost', '').lower().rstrip('.')
         counts[REFERRERS.get(host, 'unknown')] += row['count']
     return counts
+
+
+def bing_citation_export(path):
+    if not path.is_file():
+        return {'status': 'UNKNOWN'}
+    # One export per report window. Keep queries private and URL rows restricted to the site.
+    with path.open(encoding='utf-8-sig', newline='') as source:
+        reader = csv.DictReader(source)
+        if reader.fieldnames != ['kind', 'value', 'citations']:
+            raise ValueError('Expected Bing CSV columns: kind,value,citations')
+        groups = {'url': {}, 'query': {}, 'date': {}}
+        for row in reader:
+            kind, value, count = row['kind'], row['value'], row['citations']
+            if kind not in groups or not value or not re.fullmatch(r'[0-9]+', count or ''):
+                raise ValueError('Invalid Bing citation export row')
+            if kind == 'url':
+                url = urlsplit(value)
+                if url.scheme != 'https' or url.netloc != urlsplit(SITE).netloc or url.query or url.fragment:
+                    raise ValueError('Bing citation URL must be a public site URL')
+            if kind == 'date' and not re.fullmatch(r'[0-9]{4}-[0-9]{2}-[0-9]{2}', value):
+                raise ValueError('Bing trend row requires an ISO date')
+            if value in groups[kind]:
+                raise ValueError('Duplicate Bing export row')
+            groups[kind][value] = int(count)
+        return {'status': 'available' if any(groups.values()) else 'UNKNOWN', 'dimensions': groups}
 
 
 def robot_groups(body, require_sitemap=False):
