@@ -97,9 +97,21 @@ def invoke(prompt, day):
 
 
 def choose(mode, items, now, days=2):
-    day = now.date().isoformat()
     candidates = {}
-    for key, item in sorted(items.items(), key=lambda pair: pair[1]['published'], reverse=True):
+    selected_sources = set()
+    deferred = []
+
+    def priority(pair):
+        item = pair[1]
+        previously_reported = mode in ('daily', 'weekly') and any(
+            path.startswith('/news/') for path in item.get('articles', [])
+        )
+        discovery_lead = item.get('source', '').startswith(
+            ('github-search-', 'trending-', 'hacker-news-', 'product-hunt')
+        )
+        return previously_reported, not discovery_lead, timestamp(item['published'])
+
+    for key, item in sorted(items.items(), key=priority, reverse=True):
         if timestamp(item['published']) < now - timedelta(days=days):
             continue
         eligible = item['status'] == 'pending' or (mode == 'backfill' and item['status'] == 'expired')
@@ -108,9 +120,16 @@ def choose(mode, items, now, days=2):
             if mode == 'daily':
                 eligible = eligible and not any(path.startswith('/daily/') for path in item.get('articles', []))
         if eligible and item.get('summary'):
-            candidates[key] = {field: item[field] for field in ('title', 'url', 'published', 'summary', 'category')}
+            source = item.get('source', item['url'])
+            evidence = {field: item[field] for field in ('title', 'url', 'published', 'summary', 'category')}
+            if source in selected_sources:
+                deferred.append((key, evidence))
+            else:
+                selected_sources.add(source)
+                candidates[key] = evidence
         if len(candidates) == CANDIDATE_LIMIT:
             break
+    candidates.update(deferred[:CANDIDATE_LIMIT - len(candidates)])
     return candidates
 
 
