@@ -1,12 +1,16 @@
 {
   "00d52199bef25f9eda98fa79c30b3c80d4e34af93f50b3c1b0911b599d05708b": {
+    "articles": [
+      "/daily/2026-11-24/",
+      "/news/agent-evals-scenario-traces/"
+    ],
     "category": "open-source",
     "discovered": "2026-11-24T05:44:12.654742+00:00",
     "fingerprint": "18382b852c04c3b387ca6c91515e9d38d925d3559b36aafeea0b1e6670ad6569",
     "published": "2026-11-23T00:00:00+00:00",
     "source": "hugging-face",
     "source_url": "https://huggingface.co/blog/feed.xml",
-    "status": "pending",
+    "status": "published",
     "summary": "",
     "title": "How to build and maintain an agentic evaluation",
     "url": "https://huggingface.co/blog/agentic-evals"
@@ -48,13 +52,16 @@
     "url": "https://github.com/QwenLM/qwen-code/releases/tag/sdk-typescript-v0.1.35"
   },
   "20a6c91a795bac88eb084e3fe788d72d88c0311a2b7e4c7394d158428457ea07": {
+    "articles": [
+      "/news/watch-duty-gemini-dispatch-transcription/"
+    ],
     "category": "models",
     "discovered": "2026-11-24T05:44:12.654742+00:00",
     "fingerprint": "1422cc8de885b5dfc00d90beb8c3f74ec0b804ff3c4ba485dec13ceb2db44dd9",
     "published": "2026-11-20T17:00:00+00:00",
     "source": "google-ai",
     "source_url": "https://blog.google/innovation-and-ai/rss/",
-    "status": "expired",
+    "status": "published",
     "summary": "Watch Duty uses Gemini to turn noisy fire radio into text, spotting wildfire dispatches in under 30 seconds so alerts go out faster.",
     "title": "How Watch Duty is using Gemini to get wildfire alerts out faster",
     "url": "https://blog.google/company-news/outreach-and-initiatives/google-org/watch-duty-gemini-tool"
@@ -195,13 +202,16 @@
     "url": "https://github.com/huggingface/transformers/releases/tag/v5.24.0"
   },
   "51c01b0a9ef73c74e79d4f0cf2f197af41d588c165236c0f600f51d3ef686c16": {
+    "articles": [
+      "/news/qwen-code-0284-artifact-library/"
+    ],
     "category": "coding",
     "discovered": "2026-11-24T05:51:53.805288+00:00",
     "fingerprint": "652a418fe3ecb6c7b2619c0b8863ad6d3858424c1ad649c5fdfdbfce73f5e696",
     "published": "2026-11-22T12:04:21+00:00",
     "source": "qwen-code",
     "source_url": "https://api.github.com/repos/QwenLM/qwen-code/releases?per_page=10",
-    "status": "pending",
+    "status": "published",
     "summary": "## Highlights - Web Shell local daemon mode adds a workspace artifact library page with progressive scanning and streaming updates. ([#18071](https://github.com/QwenLM/qwen-code/pull/18071)) - Web Shell chat adds a shared ChatSurface, Continue badges, suggestion chips, and mobile layout fixes for sessions. ([#17952](https://github.com/QwenLM/qwen-code/pull/17952), [#18044](https://github.com/QwenLM/qwen-code/pull/18044), [#17918](https://github.com/QwenLM/qwen-code/pull/17918), [#17883](https://github.com/QwenLM/qwen-code/pull/17883), [#18011](https://github.com/QwenLM/qwen-code/pull/18011)) - Core adds built-in Gemini 4 reasoning defaults. ([#18039](https://github.com/QwenLM/qwen-code/pull/18039)) - Local Runtime now creates its state directory at process spawn with owner-private permissions. ([#17964](https://github.com/QwenLM/qwen-code/pull/17964)) - Command migration creates Markdown destinations exclusively and preserves the original TOML on destination conflicts. ([#17873](https://github.com/QwenLM/qwen-code/pull/17873)) - Extensions now load manifests saved with a UTF-8 BOM. ([#15786](https://github.com/QwenLM/qwen-code/pull/15786)) ## Breaking Changes No known breaking changes. ## Web Shell Improves the Web Shell chat experience with session continuation, artifact browsing, mobile layout, suggestion chips, and clearer status cues. - web-shell: keep mobile Send above software keyboard ([#17883](https://github.com/QwenLM/qwen-code/pull/17883)) - Adds a tappable suggestion chip in Web Shell composers so touch users can insert and edit follow-up suggestions before sending. ([#17918](https://github.com/QwenLM/qwen-code/pull/17918)) - Web Shell now renders Mod rewrites of expanded thinking rows while preserving the original stored thought and collapsed Done thinking line. ([#17920](https://github.com/QwenLM/qwen-code/pull/17920)) ![All thoughts collapsed](https://raw.githubusercontent.com/qqqys/qwen-code/391247dcbc302013c0dd6938c0b15fa1f862efba/collapsed.png) ![Thoughts expanded and rewritten](https://raw.githubusercontent.com/qqqys/qwen-code/391247dcbc302013c0dd6938c0b15fa1f862efba/folded.png) - web-shell: update sidebar logo for dark theme ([#17935](https://github.com/QwenLM/qwen-code/pull/17935)) - Web Shell adds a shared ChatSurface chat column that renders transcript, approvals, questions, and composer from session state. ([#17952](https://github.com/QwenLM/qwen-code/pull/17952)) - web-shell: compact automatic trigger messages ([#17970](https://github.com/QwenLM/qwen-code/pull/17970)) - Gives session titles more space on mobile and desktop by moving optional row actions into the More menu. ([#18011](https://github.com/QwenLM/qwen-code/pull/18011)) - Web Shell sidebar now shows a Continue badge for sessions whose last turn was interrupted and needs continuation. ([#18044](https://github.com/QwenLM/qwen-code/pull/18044)) - web-shell: scope ChatSurface admission locks to the owning session and bind loadOlder ([#18066](https://github.com/QwenLM/qwen-code/pull/18066)) - web-shell: align session hover status with the row's status cues ([#18070](https://github.com/QwenLM/qwen-code/pull/18070)) - Adds the workspace artifact library page in Web",
     "title": "Release v0.28.4",
     "url": "https://github.com/QwenLM/qwen-code/releases/tag/v0.28.4"
@@ -219,13 +229,16 @@
     "url": "https://github.blog/changelog/2026-11-20-github-enterprise-server-3-23-release-candidate"
   },
   "5b89a2db7f60ae9099b72ca73768977f61c082125cbaf94b72c9c9bced5f17aa": {
+    "articles": [
+      "/news/rumble-2-flash-open-asr/"
+    ],
     "category": "open-source",
     "discovered": "2026-11-24T05:44:12.654742+00:00",
     "fingerprint": "87cde58d8f1bdb45dcc33060b0515ebb944f5071871f1dd9bd7f720b68d7351a",
     "published": "2026-11-18T00:00:00+00:00",
     "source": "hugging-face",
     "source_url": "https://huggingface.co/blog/feed.xml",
-    "status": "expired",
+    "status": "published",
     "summary": "",
     "title": "Rumble-2-Flash: an open 0.5B speech model for 40+ languages",
     "url": "https://huggingface.co/blog/rumble-2-flash"
@@ -243,13 +256,16 @@
     "url": "https://github.blog/changelog/2026-11-19-improvements-on-the-pull-request-overview-in-public-preview"
   },
   "64f86253d337d99b1a5ac567d96a6eb0262f88386dd5567e74b0109cfc124dd6": {
+    "articles": [
+      "/news/comfyui-046-video-workflows/"
+    ],
     "category": "image",
     "discovered": "2026-11-24T05:44:12.654742+00:00",
     "fingerprint": "7cbf4fad4010e2e7e47f5b93939c83df888c558a56a89d1bcfd568b1d05a73a0",
     "published": "2026-11-18T22:55:32+00:00",
     "source": "comfyui",
     "source_url": "https://api.github.com/repos/Comfy-Org/ComfyUI/releases?per_page=10",
-    "status": "expired",
+    "status": "published",
     "summary": "## What's Changed * [Partner Nodes] feat(LTX): add AlphaGen, SDR to HDR, Reframe and Upscale nodes by @bigcat88 in https://github.com/Comfy-Org/ComfyUI/pull/17664 * [Partner Nodes] feat(MiniMax): add MiniMax H3 Image node by @bigcat88 in https://github.com/Comfy-Org/ComfyUI/pull/17661 * Update workflow templates to v0.11.106 by @comfyui-wiki in https://github.com/Comfy-Org/ComfyUI/pull/17668 * Fix for some workflows not working properly. by @comfyanonymous in https://github.com/Comfy-Org/ComfyUI/pull/17675 * Conform Concatenate Video clips to the first clip's frame rate and audio (FRONT-3775) by @jtydhr88 in https://github.com/Comfy-Org/ComfyUI/pull/17621 * [Partner Nodes] feat(Wan): move Wan nodes to Comfy Router by @bigcat88 in https://github.com/Comfy-Org/ComfyUI/pull/17639 * [Partner Nodes] feat(Krea): move Krea nodes to Comfy Router by @bigcat88 in https://github.com/Comfy-Org/Comfy",
     "title": "v0.46.0",
     "url": "https://github.com/Comfy-Org/ComfyUI/releases/tag/v0.46.0"
@@ -295,13 +311,16 @@
     "url": "https://github.com/openai/codex/releases/tag/rust-v0.172.0"
   },
   "824c03b970f1dc58cad676334e63167d2af3b369add30c83b73e4ecb318d913d": {
+    "articles": [
+      "/news/inkling-2-mini-looped-local-model/"
+    ],
     "category": "open-source",
     "discovered": "2026-11-24T05:44:12.654742+00:00",
     "fingerprint": "d1da3f945340c482ed0879daf131dd368ddf544b081554f5665e1e1eed6f9eea",
     "published": "2026-11-20T00:00:00+00:00",
     "source": "hugging-face",
     "source_url": "https://huggingface.co/blog/feed.xml",
-    "status": "expired",
+    "status": "published",
     "summary": "",
     "title": "Welcome Inkling 2 Mini, Cutting-edge Performance for your Local Setup",
     "url": "https://huggingface.co/blog/inkling2mini"
@@ -319,13 +338,16 @@
     "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.327"
   },
   "9566e4a73e7bad1a8e1af887eae6983b3325b233d6c2a807e12bc4445cef9adf": {
+    "articles": [
+      "/news/openai-agents-026-realtime/"
+    ],
     "category": "agents",
     "discovered": "2026-11-24T05:51:53.805288+00:00",
     "fingerprint": "6160d6f9c5e2174454d68b9eba42a0a60fc68c35ac796f6fd76ef823a810e322",
     "published": "2026-11-24T03:15:47+00:00",
     "source": "openai-agents",
     "source_url": "https://api.github.com/repos/openai/openai-agents-python/releases?per_page=10",
-    "status": "pending",
+    "status": "published",
     "summary": "## [0.26.0](https://github.com/openai/openai-agents-python/compare/v0.25.0...v0.26.0) (2026-11-24) ### Features * Upgrade the GPT-Live demo to 1.1 ([6c4e4a2](https://github.com/openai/openai-agents-python/commit/6c4e4a29cd08eef454db6980d74da6afc8939d24)) ### Bug Fixes * allow SDK 0.25 in the external provider example ([#6068](https://github.com/openai/openai-agents-python/issues/6068)) ([9b17858](https://github.com/openai/openai-agents-python/commit/9b17858afb5b45f48bbf695cc7c8f34778425156)) * apply the Docker removal CPU limit to path inspection ([14d13f4](https://github.com/openai/openai-agents-python/commit/14d13f468b0da7e6b721379200bd150cea60add1)) * bound TAR path validation work per component ([abc55bd](https://github.com/openai/openai-agents-python/commit/abc55bd1b3d1b942b5c227545247dad23d104e99)) * check Realtime output guardrails at turn completion ([dc84a13](https://github.com/openai/openai-agents-python/commit/dc84a13735dd7818847c20e7e023b0fbad2a88de)) * give per-call MCP metadata priority over discovery defaults ([7f6f5ea](https://github.com/openai/openai-agents-python/commit/7f6f5ea075646ad13651fad96ac30b6e37da230b)) * honor the global tracing switch in Realtime ([96b2799](https://github.com/openai/openai-agents-python/commit/96b27992a8aaf8cb29244f5e0d90a5b6c7d2373f)) * limit UnixLocal snapshot link rebasing to regular files ([dd444fb](https://github.com/openai/openai-agents-python/commit/dd444fb313a398a006b99ee0fbecb9ec513b55e5)) * preserve handoff redaction in Session history ([6f45b21](https://github.com/openai/openai-agents-python/commit/6f45b21d42bceb68dd5db397b95d4df575689d77)) * protect apply_patch staging during alias moves ([a29070b](https://github.com/openai/openai-agents-python/commit/a29070b207103d389a3626eca5dab88814bba556)) * require application approval for local images in codex_tool ([#6171](https://github.com/openai/openai-agents-python/issues/6171)) ([2a98dcd](https://github.com/openai/openai-agents-python/commit/2a98dcd0563c35ffd3b3ac3bfc95035a50915522)) * sandbox memory selection across UTC offsets ([#6066](https://github.com/openai/openai-agents-python/issues/6066)) ([e7ce15a](https://github.com/openai/openai-agents-python/commit/e7ce15a25b336bb3d0840ad16dee597f69a6e6d3)) * **sandbox:** restrict Docker storage mount privileges ([#6189](https://github.com/openai/openai-agents-python/issues/6189)) ([b40fb80](https://github.com/openai/openai-agents-python/commit/b40fb8097f007de181db9c382da53d8e0b7d6eaf)) * stop queued function tools after input guardrail rejection ([90300af](https://github.com/openai/openai-agents-python/commit/90300af67e75977dcb017be3ad259232a5dcc1d0)) * support opt-in JSON validation for Codex tool parameters ([#6067](https://github.com/openai/openai-agents-python/issues/6067)) ([54492d1](https://github.com/openai/openai-agents-python/commit/54492d112b5c3366cc30f35abd60c46fa92140c2)) ### Release readiness review (v0.25.0 → v0.26.0) Final candidate review with the repository's `$final-release-review` skill for #6069. ### Diff https://github.com/openai/openai-agents-python/compare/v0.25.0...726370798ba2814141b5e2a14d30f451aca8d056 ### Release intent | Review mode | Intended release | Minimum req",
     "title": "v0.26.0",
     "url": "https://github.com/openai/openai-agents-python/releases/tag/v0.26.0"
@@ -467,37 +489,46 @@
     "url": "https://blog.google/innovation-and-ai/models-and-research/google-research/blue-origin-project-suncatcher-partnership"
   },
   "eb2701ff66febea2729388256362b1e990ea44c9d3e87f78378f64a362cb43e9": {
+    "articles": [
+      "/news/robotrack-manipulation-point-tracking/"
+    ],
     "category": "open-source",
     "discovered": "2026-11-24T05:44:12.654742+00:00",
     "fingerprint": "c3b48cee84361fd8bd056e38a61bc2d0c8780946552551dc88fe429b8f9ea145",
     "published": "2026-11-23T17:20:37+00:00",
     "source": "hugging-face",
     "source_url": "https://huggingface.co/blog/feed.xml",
-    "status": "pending",
+    "status": "published",
     "summary": "",
     "title": "RoboTrack: Point tracking for real-world robotic manipulation",
     "url": "https://huggingface.co/blog/allenai/robotrack"
   },
   "ec56b5eff9affb1c339e466ce0f8237f0117032663d5db85034279f9f2a19228": {
+    "articles": [
+      "/news/moe-experts-ssd-local-inference/"
+    ],
     "category": "open-source",
     "discovered": "2026-11-24T05:44:12.654742+00:00",
     "fingerprint": "fc281b1b5aecfc3c47847cd0987ba4c6e3260b653d6da6e3bc695fec3649bb86",
     "published": "2026-11-18T00:00:00+00:00",
     "source": "hugging-face",
     "source_url": "https://huggingface.co/blog/feed.xml",
-    "status": "expired",
+    "status": "published",
     "summary": "",
     "title": "180B Parameters, 32GB of RAM: Pushing MoE Inference to the Limit with Transformers",
     "url": "https://huggingface.co/blog/moe-expert-streaming"
   },
   "f0b81ce3c14612880642c854f15f292b941326a9491f444584b41bfe82ab7a56": {
+    "articles": [
+      "/news/daisyrose-27b-agent-post-training/"
+    ],
     "category": "open-source",
     "discovered": "2026-11-24T05:44:12.654742+00:00",
     "fingerprint": "41074d3657297fe6a05ee793e3b1863be2ed765d916082b88dca0e9773cda4a3",
     "published": "2026-11-18T19:54:56+00:00",
     "source": "hugging-face",
     "source_url": "https://huggingface.co/blog/feed.xml",
-    "status": "expired",
+    "status": "published",
     "summary": "",
     "title": "DaisyRose-27B: Pushing the Frontier of Post-Training Efficiency",
     "url": "https://huggingface.co/blog/RadixArk/daisyrose-27b-pushing-the-frontier-of-post-trainin"

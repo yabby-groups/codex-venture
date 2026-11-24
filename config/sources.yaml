@@ -20,3 +20,16 @@ sources:
   - {id: f5-tts, kind: github, repo: SWivid/F5-TTS, category: audio}
   - {id: llama-models, kind: github, repo: meta-llama/llama-models, category: models}
   - {id: xai-sdk, kind: github, repo: xai-org/xai-sdk-python, category: models}
+  - {id: openai-news, kind: feed, url: 'https://openai.com/news/rss.xml', category: models}
+  - {id: tensorrt-llm, kind: github, repo: NVIDIA/TensorRT-LLM, category: open-source}
+  - {id: docling, kind: github, repo: docling-project/docling, category: open-source}
+  - {id: browser-use, kind: github, repo: browser-use/browser-use, category: agents}
+  - {id: cline, kind: github, repo: cline/cline, category: coding}
+  - {id: opencode, kind: github, repo: anomalyco/opencode, category: coding}
+  - {id: litellm, kind: github, repo: BerriAI/litellm, category: open-source}
+  - {id: n8n, kind: github, repo: n8n-io/n8n, category: agents}
+  - {id: pibot, kind: github, repo: w01fb0ss/PiBot, category: agents}
+  - {id: handy, kind: github, repo: cjpais/Handy, category: audio}
+  - {id: mistral-rs, kind: github, repo: EricLBuehler/mistral.rs, category: open-source}
+  - {id: ragflow, kind: github, repo: infiniflow/ragflow, category: open-source}
+  - {id: crawl4ai, kind: github, repo: unclecode/crawl4ai, category: open-source}

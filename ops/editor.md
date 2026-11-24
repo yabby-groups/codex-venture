@@ -15,3 +15,11 @@ news 模式只写值得独立发布的更新。daily 模式写一篇当天简报
     <ul><li><span lang="zh-CN">中文条目</span><span lang="en">English list item</span></li></ul>
 
 每日简报每条故事的中英文段落分别链接同一原始 URL，使用普通 HTML a 标签。脚本还会根据 itemIds 生成文末来源栏。正文保持原创，不复制发布说明或声明亲测。skipped 只列已判断无发布价值的候选 ID，其余自动留给后续轮次。没有高价值内容时返回空 articles。
+
+## 主动发现
+
+每日先查 GitHub Trending 的日榜、周榜和月榜，再用 GitHub Search 的 created、pushed、topic 和 language 条件分批发现项目。轮换英语、中文、日语等关键词，兼顾近期创建的项目和已有项目的重要更新。保留筛选后的仓库，通过 Releases、README、许可证与项目文档核实事实。检索结果和榜单仅用于发现。被限流的查询记入覆盖缺口，等待限流窗口恢复后补查。
+
+同时查看 Hugging Face Models、Datasets、Spaces、Hacker News、Product Hunt、相关 Reddit 社区、arXiv 与项目官方博客。先保存返回结果，再在同一批候选中按规范化链接、仓库和事件合并，最后对照已发文章与 state/items.json。把来源日期、采集时间和编辑发布时间分别记录。发现值得持续跟踪的来源后，补充到 sources.yaml。社区讨论、榜单或无法核实的性能宣传可以作为线索。
+
+批量编辑独立资讯、开源项目、版本更新与专题。简报引用已发站内报道，每周整理 GitHub 项目精选和技术趋势。历史窗口的选题可做有明确覆盖日期的回顾，使用实际发布时间。
