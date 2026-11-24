@@ -1,6 +1,7 @@
 """Validate resource metadata in the existing editorial response."""
 import json
 import re
+from datetime import date, datetime
 from urllib.parse import urlsplit
 
 from article_schema import PAIR, STRING, array, conforms, enum, object_schema
@@ -8,8 +9,10 @@ from collect import canonical, digest
 
 TYPES = ('skills', 'plugins', 'mcp', 'tools', 'models', 'open-source', 'prompts', 'workflows', 'resources')
 OPTIONAL = ('nameZh', 'repository', 'license', 'install', 'transport', 'deployment', 'kind', 'version', 'releasedAt')
+OPTIONAL_FIELDS = dict.fromkeys(OPTIONAL, STRING)
+OPTIONAL_FIELDS['releasedAt'] = {**STRING, 'description': 'Release calendar date (YYYY-MM-DD), or empty if unknown.'}
 FIELDS = object_schema(type=enum(*TYPES), name=STRING, site=STRING, summary=PAIR,
-                       platforms=array(STRING), categories=array(PAIR), **dict.fromkeys(OPTIONAL, STRING))
+                       platforms=array(STRING), categories=array(PAIR), **OPTIONAL_FIELDS)
 UPDATES = array(object_schema(id=STRING, itemIds=array(STRING), resource=FIELDS))
 PROFILES = array(FIELDS)
 
@@ -41,6 +44,17 @@ def resource_profile(value, evidence, existing, day):
         ):
             raise ValueError('Resource repository lacks source evidence')
     row = {key: value[key] for key in OPTIONAL if value[key]}
+    if released_at := row.get('releasedAt'):
+        try:
+            if re.fullmatch(r'\d{4}-\d{2}-\d{2}', released_at):
+                released_date = date.fromisoformat(released_at)
+            elif re.match(r'^\d{4}-\d{2}-\d{2}T', released_at):
+                released_date = datetime.fromisoformat(released_at.replace('Z', '+00:00')).date()
+            else:
+                raise ValueError
+        except ValueError as error:
+            raise ValueError('Resource releasedAt must be an ISO release date or timestamp') from error
+        row['releasedAt'] = released_date.isoformat()
     row.update(id=old['id'] if old else 'resource-' + digest(value['type'] + ':' + identity),
                type=value['type'], name=value['name'], site=site, verifiedAt=day,
                verificationSources=sorted({item['url'] for item in evidence}),
