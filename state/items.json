@@ -1,12 +1,15 @@
 {
   "0036760884c182b9038219f317260fa6ecc12c617d66fe84c9995b170b032789": {
+    "articles": [
+      "/news/tesseraflow-dynamic-medical-image-reconstruction/"
+    ],
     "category": "models",
     "discovered": "2026-11-24T14:07:11.513641+00:00",
     "fingerprint": "771fa7267b849d8e09f2fe011aa7a02383f09ed14d77f2cc1c3adbac0188c9d1",
     "published": "2026-11-24T05:00:00+00:00",
     "source": "arxiv-ai",
     "source_url": "https://rss.arxiv.org/rss/cs.AI",
-    "status": "pending",
+    "status": "published",
     "summary": "arXiv:2611.29099v1 Announce Type: cross Abstract: Generative priors are state-of-the-art for modeling medical images in image reconstruction tasks, but reconstruction with video priors takes tens of seconds to minutes per frame. Latent priors inherit the errors of their autoencoder, the memory of pixel-space whole-frame priors grows with the frame size, and pixel-space patch priors are slow for two reasons. First, their deep networks process every frame at full resolution at every sampling step, even though early steps resolve only low frequencies. Second, their samplers spend many network evaluations per sampling step on overlapping windows, multiple re-noising rounds, or backpropagation through the prior. We introduce TesseraFlow, a complex-valued pixel-space flow prior that reduces the first cost. A global encoder reads a low-resolution view of every frame once per sampling step. A single shallow decoder operates on this view during early steps and on full-resolution space-time tiles during later steps, so no network processes a whole frame at full resolution. Our sampler, ReTile, addresses the second reason. We use randomized grid shifting at every sampling step along with re-noising, which acts as a stochastic gradient instead of computing overlapping tiles, so a single network pass per sampling step suffices. On its own, ReTile speeds up an existing global-context patch prior by 6-9x, and our prior adds a further 3-5x speedup. TesseraFlow reconstructs about one 256x256 frame per second, 20-367x faster than patch and latent video priors, and can match or exceed the best generative baseline on cardiac, brain, and abdominal MRI and lung CT, at a fraction of its GPU time.",
     "title": "TesseraFlow: Scalable Video Diffusion for Dynamic Medical Imaging Inverse Problems",
     "url": "https://arxiv.org/abs/2611.29099"
@@ -3591,7 +3594,7 @@
     "published": "2026-11-24T16:13:08+00:00",
     "source": "transformers",
     "source_url": "https://api.github.com/repos/huggingface/transformers/releases?per_page=10",
-    "status": "pending",
+    "status": "skipped",
     "summary": "# Patch release v5.24.1 A patch to fix a bunch of stuff for vLLM, a few distributed issues, and some model fixes (llama4, dory); see the full list ### vLLM related - Fix backward compatibility of the cache rename for remote code (#51085) by @hmellor - Restore modeling_attn_mask_utils for remote code (one-off to unblock vLLM) (#51124) by @hmellor - Expose past_key_values in MBartDecoderLayer.forward signature for remote code (#51177) by @hmellor - [OmniASR] Support a padding_mask kept on the CPU in the audio encoder (#51100) by @El-euchidali ### Model fixes - Fix Llama4 forward crash on missing image_outputs (#51144) by @kylesayrs - Fix dory static cache (#50993) by @ArthurZucker ### Distributed - Allow expert parallelism alone with tp_plan={} (#50996) by @3outeille - Fix strided checkpoint reads on PyTorch 2.9 (#51042) by @satsuki2486441738 **Full Changelog**: https://github.com/huggingface/transformers/compare/v5.24.0...v5.24.1",
     "title": "Patch release v5.24.1",
     "url": "https://github.com/huggingface/transformers/releases/tag/v5.24.1"
@@ -7990,7 +7993,7 @@
     "published": "2026-11-24T06:28:41+00:00",
     "source": "handy",
     "source_url": "https://api.github.com/repos/cjpais/Handy/releases?per_page=10",
-    "status": "pending",
+    "status": "published",
     "summary": "Hopefully should fix a MacOS bug getting stuck on onboarding ## What's Changed * feat: add Thai translation by @botnick in https://github.com/cjpais/Handy/pull/2529 * fix: let the output device pick the feedback sound buffer size by @BrOrlandi in https://github.com/cjpais/Handy/pull/2525 * feat: add Hungarian translation by @sebestyenistvan in https://github.com/cjpais/Handy/pull/2549 * revert: stop resetting macOS permissions before asking (#2546) by @cjpais in https://github.com/cjpais/Handy/pull/2552 * release v0.10.2 by @cjpais in https://github.com/cjpais/Handy/pull/2553 ## New Contributors * @botnick made their first contribution in https://github.com/cjpais/Handy/pull/2529 * @BrOrlandi made their first contribution in https://github.com/cjpais/Handy/pull/2525 * @sebestyenistvan made their first contribution in https://github.com/cjpais/Handy/pull/2549 **Full Changelog**: https://github.com/cjpais/Handy/compare/v0.10.1...v0.10.2",
     "title": "v0.10.2",
     "url": "https://github.com/cjpais/Handy/releases/tag/v0.10.2"
@@ -12289,13 +12292,16 @@
     "url": "https://arxiv.org/abs/2611.29327"
   },
   "f685f29774415ff5645b802209a2c3a1629898b2024d4a3f35243c6c22b3a8ee": {
+    "articles": [
+      "/news/elevenlabs-python-2-80-0-agents-as-code/"
+    ],
     "category": "audio",
     "discovered": "2026-11-24T19:53:54.561219+00:00",
     "fingerprint": "39ce811f73c80c2a509815fc1804587b6e96cbb6f164b2b326fa864f9e78347f",
     "published": "2026-11-24T13:20:44+00:00",
     "source": "elevenlabs-python",
     "source_url": "https://api.github.com/repos/ElevenLabs/elevenlabs-python/releases?per_page=10",
-    "status": "pending",
+    "status": "published",
     "summary": "## What's Changed * feat: @client_tool decorator for client tools by @PaulAsjes in https://github.com/elevenlabs/elevenlabs-python/pull/936 * Model workflow edge direction by condition presence by @PaulAsjes in https://github.com/elevenlabs/elevenlabs-python/pull/938 * fix: allow synchronous client tools after restarting by @Apeksha9389 in https://github.com/elevenlabs/elevenlabs-python/pull/900 * feat: Agents as code: Agent builder, agents.push/pull and CLI project layout by @PaulAsjes in https://github.com/elevenlabs/elevenlabs-python/pull/939 * Push manages only webhook and client tools; branches never write the main file by @PaulAsjes in https://github.com/elevenlabs/elevenlabs-python/pull/941 * Accept transfer_to_number tools that use transfer_rules by @PaulAsjes in https://github.com/elevenlabs/elevenlabs-python/pull/940 * Add diarize and infer_speaker_names to the realtime speech-to-text wrapper by @JacekDuszenko in https://github.com/elevenlabs/elevenlabs-python/pull/945 * SDK regeneration by @fern-api[bot] in https://github.com/elevenlabs/elevenlabs-python/pull/946 ## New Contributors * @Apeksha9389 made their first contribution in https://github.com/elevenlabs/elevenlabs-python/pull/900 **Full Changelog**: https://github.com/elevenlabs/elevenlabs-python/compare/v2.79.0...v2.80.0",
     "title": "v2.80.0",
     "url": "https://github.com/elevenlabs/elevenlabs-python/releases/tag/v2.80.0"
