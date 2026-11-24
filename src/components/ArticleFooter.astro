@@ -4,6 +4,9 @@ import { storyUrl, type Story } from '../lib/content';
 import { entityUrl, entities as entityCatalog } from '../lib/entities';
 interface Props { data: Story['data']; related: Story[]; entities: typeof entityCatalog; label: string[]; href: string }
 const { data, related, entities, label, href } = Astro.props;
+const primaryUrls = new Set(data.sources.map(({ url }) => url));
+const verificationUrls = [...new Set(data.resource?.verificationSources ?? [])]
+  .filter((url) => !primaryUrls.has(url));
 ---
 <footer class="article-footer" data-pagefind-ignore>
   <section aria-label="来源 / Sources">
@@ -16,6 +19,10 @@ const { data, related, entities, label, href } = Astro.props;
         {data.version && <div><dt>适用版本 <span lang="en">Version</span></dt><dd>{data.version}</dd></div>}
         <div><dt>依据 <span lang="en">Basis</span></dt><dd>{data.tested ? '已验证操作' : '依据资料整理'} <span lang="en">{data.tested ? 'Procedure checked' : 'Documentation-based'}</span></dd></div>
       </dl>
+    </details>}
+    {verificationUrls.length > 0 && <details class="article-evidence">
+      <summary>资源核实来源 <span lang="en">Resource verification sources</span></summary>
+      <ul>{verificationUrls.map((url) => <li><a href={url}>{url}</a></li>)}</ul>
     </details>}
   </section>
   {related.length > 0 && <section aria-label="相关阅读 / Related reading">
