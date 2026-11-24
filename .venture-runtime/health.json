@@ -1,0 +1,563 @@
+{
+  "arxiv-ai": {
+    "error": null,
+    "failures": 0,
+    "last_success": "2026-11-24T07:40:13.461356+00:00",
+    "retry_after": null,
+    "url": "https://rss.arxiv.org/rss/cs.AI",
+    "validators": {
+      "If-None-Match": "30aa23a8d387a2295df3c290292171a77be36bc2613e031eec3a299ac7b2bb3d"
+    }
+  },
+  "browser-use": {
+    "error": null,
+    "failures": 0,
+    "last_success": "2026-11-24T07:39:38.717042+00:00",
+    "retry_after": null,
+    "url": "https://api.github.com/repos/browser-use/browser-use/releases?per_page=10",
+    "validators": {
+      "If-None-Match": "W/\"369d5ac62495ce408babfb004bf673d21584d7c6b12d39eeae2689ef8c7359be\""
+    }
+  },
+  "claude-code": {
+    "error": null,
+    "failures": 0,
+    "last_success": "2026-11-24T07:39:38.717042+00:00",
+    "retry_after": null,
+    "url": "https://api.github.com/repos/anthropics/claude-code/releases?per_page=10",
+    "validators": {
+      "If-None-Match": "W/\"be90d18c31d51b0c726294ac5f2982e32ffbab01536e85ef05b2d20f4770b366\""
+    }
+  },
+  "cline": {
+    "error": null,
+    "failures": 0,
+    "last_success": "2026-11-24T07:39:38.717042+00:00",
+    "retry_after": null,
+    "url": "https://api.github.com/repos/cline/cline/releases?per_page=10",
+    "validators": {
+      "If-None-Match": "W/\"b973dda2a46a011470e8a1d44663d348c3708e1ed0941d18dc3fc349891cdbe8\""
+    }
+  },
+  "cloudflare-ai": {
+    "error": null,
+    "failures": 0,
+    "last_success": "2026-11-24T07:39:38.717042+00:00",
+    "retry_after": null,
+    "url": "https://blog.cloudflare.com/tag/ai/rss/",
+    "validators": {}
+  },
+  "codex": {
+    "error": null,
+    "failures": 0,
+    "last_success": "2026-11-24T07:39:38.717042+00:00",
+    "retry_after": null,
+    "url": "https://api.github.com/repos/openai/codex/releases?per_page=10",
+    "validators": {
+      "If-None-Match": "W/\"67f4876b3e7b3eb94bf93fbff8f3f1ec9462157cde5d6213ae9e272779a68e4e\""
+    }
+  },
+  "comfyui": {
+    "error": null,
+    "failures": 0,
+    "last_success": "2026-11-24T07:39:38.717042+00:00",
+    "retry_after": null,
+    "url": "https://api.github.com/repos/Comfy-Org/ComfyUI/releases?per_page=10",
+    "validators": {
+      "If-None-Match": "W/\"097a966b3af80db3a484a5a21321434478e582a2eaa2b5b07c0aa31a55f7785d\""
+    }
+  },
+  "crawl4ai": {
+    "error": null,
+    "failures": 0,
+    "last_success": "2026-11-24T07:39:38.717042+00:00",
+    "retry_after": null,
+    "url": "https://api.github.com/repos/unclecode/crawl4ai/releases?per_page=10",
+    "validators": {
+      "If-None-Match": "W/\"ac6a364b6c5e051fc05ca57c96345ef39db4dce37a9c67a64352735f05cd6896\""
+    }
+  },
+  "cursor": {
+    "error": null,
+    "failures": 0,
+    "last_success": "2026-11-24T07:39:38.717042+00:00",
+    "retry_after": null,
+    "url": "https://cursor.com/changelog/rss.xml",
+    "validators": {}
+  },
+  "deepseek-v3": {
+    "error": null,
+    "failures": 0,
+    "last_success": "2026-11-24T07:39:38.717042+00:00",
+    "retry_after": null,
+    "url": "https://api.github.com/repos/deepseek-ai/DeepSeek-V3/releases?per_page=10",
+    "validators": {
+      "If-None-Match": "W/\"058a620b3b417ae9363294103107411fb7216933d31fdc92ff0c81575399afb2\""
+    }
+  },
+  "docling": {
+    "error": null,
+    "failures": 0,
+    "last_success": "2026-11-24T07:39:38.717042+00:00",
+    "retry_after": null,
+    "url": "https://api.github.com/repos/docling-project/docling/releases?per_page=10",
+    "validators": {
+      "If-None-Match": "W/\"d3d5db9f509d58591b771696eed97b7ae40983bd72c0aea687c57682a112a941\""
+    }
+  },
+  "elevenlabs-python": {
+    "error": null,
+    "failures": 0,
+    "last_success": "2026-11-24T07:39:38.717042+00:00",
+    "retry_after": null,
+    "url": "https://api.github.com/repos/ElevenLabs/elevenlabs-python/releases?per_page=10",
+    "validators": {
+      "If-None-Match": "W/\"1598b18389c11193bb456d2db589c3efa0bc4f9e4f30da2f3b61654af280829d\""
+    }
+  },
+  "f5-tts": {
+    "error": null,
+    "failures": 0,
+    "last_success": "2026-11-24T07:39:38.717042+00:00",
+    "retry_after": null,
+    "url": "https://api.github.com/repos/SWivid/F5-TTS/releases?per_page=10",
+    "validators": {
+      "If-None-Match": "W/\"7bb5a92f5335b16f60a4cd86271bee5c3594fd67f716d468d47924b89478c32c\""
+    }
+  },
+  "gemini-cli": {
+    "error": null,
+    "failures": 0,
+    "last_success": "2026-11-24T07:39:38.717042+00:00",
+    "retry_after": null,
+    "url": "https://api.github.com/repos/google-gemini/gemini-cli/releases?per_page=10",
+    "validators": {
+      "If-None-Match": "W/\"9af37eaa67ea005d85a8e41330d05eb95e8a9fcae5a5dcd932708722c4d21eb6\""
+    }
+  },
+  "github-changelog": {
+    "error": null,
+    "failures": 0,
+    "last_success": "2026-11-24T07:39:38.717042+00:00",
+    "retry_after": null,
+    "url": "https://github.blog/changelog/feed/",
+    "validators": {
+      "If-Modified-Since": "Mon, 23 Nov 2026 22:36:19 GMT",
+      "If-None-Match": "\"a2879f9ef2c2d8d6daadf27f4035e53a\""
+    }
+  },
+  "github-open-source": {
+    "error": null,
+    "failures": 0,
+    "last_success": "2026-11-24T07:39:38.717042+00:00",
+    "retry_after": null,
+    "url": "https://github.blog/open-source/feed/",
+    "validators": {
+      "If-Modified-Since": "Mon, 23 Nov 2026 22:36:19 GMT",
+      "If-None-Match": "\"a2879f9ef2c2d8d6daadf27f4035e53a\""
+    }
+  },
+  "github-search-3d": {
+    "error": null,
+    "failures": 0,
+    "last_success": "2026-11-24T07:40:13.461356+00:00",
+    "retry_after": null,
+    "url": "https://api.github.com/search/repositories?q=topic%3A3d+pushed%3A%3E%3D2026-11-17+archived%3Afalse+stars%3A%3E%3D25&sort=stars&per_page=10",
+    "validators": {}
+  },
+  "github-search-image-generation": {
+    "error": null,
+    "failures": 0,
+    "last_success": "2026-11-24T07:40:13.461356+00:00",
+    "retry_after": null,
+    "url": "https://api.github.com/search/repositories?q=topic%3Aimage-generation+created%3A%3E%3D2026-11-17+archived%3Afalse+stars%3A%3E%3D25&sort=stars&per_page=10",
+    "validators": {}
+  },
+  "github-search-video-generation": {
+    "error": null,
+    "failures": 0,
+    "last_success": "2026-11-24T07:40:13.461356+00:00",
+    "retry_after": null,
+    "url": "https://api.github.com/search/repositories?q=topic%3Avideo-generation+pushed%3A%3E%3D2026-11-17+archived%3Afalse+stars%3A%3E%3D25&sort=stars&per_page=10",
+    "validators": {}
+  },
+  "google-ai": {
+    "error": null,
+    "failures": 0,
+    "last_success": "2026-11-24T07:39:38.717042+00:00",
+    "retry_after": null,
+    "url": "https://blog.google/innovation-and-ai/rss/",
+    "validators": {}
+  },
+  "hacker-news-ai": {
+    "error": null,
+    "failures": 0,
+    "last_success": "2026-11-24T07:40:13.461356+00:00",
+    "retry_after": null,
+    "url": "https://hn.algolia.com/api/v1/search_by_date?query=AI&tags=story&hitsPerPage=20",
+    "validators": {}
+  },
+  "handy": {
+    "error": null,
+    "failures": 0,
+    "last_success": "2026-11-24T07:39:38.717042+00:00",
+    "retry_after": null,
+    "url": "https://api.github.com/repos/cjpais/Handy/releases?per_page=10",
+    "validators": {
+      "If-None-Match": "W/\"d322a24bdbab7d33604227319739006a6cac65bc25aea2bc3aae890fc83758c9\""
+    }
+  },
+  "hf-models": {
+    "error": null,
+    "failures": 0,
+    "last_success": "2026-11-24T07:40:13.461356+00:00",
+    "retry_after": null,
+    "url": "https://huggingface.co/api/models?sort=trendingScore&limit=12&full=true&cardData=true",
+    "validators": {
+      "If-None-Match": "W/\"75f3-CY7dd9tyCnLyiB0RHV5GH/WUBfg\""
+    }
+  },
+  "hugging-face": {
+    "error": null,
+    "failures": 0,
+    "last_success": "2026-11-24T07:39:38.717042+00:00",
+    "retry_after": null,
+    "url": "https://huggingface.co/blog/feed.xml",
+    "validators": {
+      "If-None-Match": "W/\"42298-tXD2I7mC5oUSAGFcKFwWRx+ANhs\""
+    }
+  },
+  "hugging-face-papers": {
+    "error": "HTTP Error 401: Unauthorized",
+    "failures": 1,
+    "first_failure": "2026-11-24T07:39:38.717042+00:00",
+    "retry_after": "2026-11-24T08:39:38.717042+00:00"
+  },
+  "litellm": {
+    "error": null,
+    "failures": 0,
+    "last_success": "2026-11-24T07:39:38.717042+00:00",
+    "retry_after": null,
+    "url": "https://api.github.com/repos/BerriAI/litellm/releases?per_page=10",
+    "validators": {
+      "If-None-Match": "W/\"218fc00f534b2a032301f0152d7eef56126bd1b6386ff258a2df4198a3120630\""
+    }
+  },
+  "llama-cpp": {
+    "error": null,
+    "failures": 0,
+    "last_success": "2026-11-24T07:39:38.717042+00:00",
+    "retry_after": null,
+    "url": "https://api.github.com/repos/ggml-org/llama.cpp/releases?per_page=10",
+    "validators": {
+      "If-None-Match": "W/\"eb750073b2c32b5672e47c8854bde21adeec520f1edfd5bce3d1f3ee383d4adf\""
+    }
+  },
+  "llama-models": {
+    "error": null,
+    "failures": 0,
+    "last_success": "2026-11-24T07:39:38.717042+00:00",
+    "retry_after": null,
+    "url": "https://api.github.com/repos/meta-llama/llama-models/releases?per_page=10",
+    "validators": {
+      "If-None-Match": "W/\"eb16e32475b8d10c58805f998adfaefb3adc28f7eef7967cf76078bc0caec0a5\""
+    }
+  },
+  "mcp": {
+    "error": null,
+    "failures": 0,
+    "last_success": "2026-11-24T07:39:38.717042+00:00",
+    "retry_after": null,
+    "url": "https://api.github.com/repos/modelcontextprotocol/modelcontextprotocol/releases?per_page=10",
+    "validators": {
+      "If-None-Match": "W/\"845ebbc604764bf081891f8ace40fc16c137e2248da16d5c9fda4526a5342bc9\""
+    }
+  },
+  "mistral-common": {
+    "error": null,
+    "failures": 0,
+    "last_success": "2026-11-24T07:39:38.717042+00:00",
+    "retry_after": null,
+    "url": "https://api.github.com/repos/mistralai/mistral-common/releases?per_page=10",
+    "validators": {
+      "If-None-Match": "W/\"14791a058924ffeabc2f8f4d8540839b95834f55e5b17fcda0e6595b94cbabd4\""
+    }
+  },
+  "mistral-rs": {
+    "error": null,
+    "failures": 0,
+    "last_success": "2026-11-24T07:39:38.717042+00:00",
+    "retry_after": null,
+    "url": "https://api.github.com/repos/EricLBuehler/mistral.rs/releases?per_page=10",
+    "validators": {
+      "If-None-Match": "W/\"28da9718b9f9df4ea01c71dced59145100f961630dac60ec7f83153821a8ac3c\""
+    }
+  },
+  "n8n": {
+    "error": null,
+    "failures": 0,
+    "last_success": "2026-11-24T07:39:38.717042+00:00",
+    "retry_after": null,
+    "url": "https://api.github.com/repos/n8n-io/n8n/releases?per_page=10",
+    "validators": {
+      "If-None-Match": "W/\"be735a86283a40465ee5fee27d2f67ca05b76560f931af49f9737a3c8adf889a\""
+    }
+  },
+  "ollama": {
+    "error": null,
+    "failures": 0,
+    "last_success": "2026-11-24T07:39:38.717042+00:00",
+    "retry_after": null,
+    "url": "https://api.github.com/repos/ollama/ollama/releases?per_page=10",
+    "validators": {
+      "If-None-Match": "W/\"c51f5da283e78fd0a03383e2a474ec05d7ce662310741d2c4fe053f377db442c\""
+    }
+  },
+  "openai-agents": {
+    "error": null,
+    "failures": 0,
+    "last_success": "2026-11-24T07:39:38.717042+00:00",
+    "retry_after": null,
+    "url": "https://api.github.com/repos/openai/openai-agents-python/releases?per_page=10",
+    "validators": {
+      "If-None-Match": "W/\"bfab9c1087d357425b57b1ee29675932d9a22dbf9eaafe352942a23fd1e2a315\""
+    }
+  },
+  "openai-news": {
+    "error": null,
+    "failures": 0,
+    "last_success": "2026-11-24T07:39:38.717042+00:00",
+    "retry_after": null,
+    "url": "https://openai.com/news/rss.xml",
+    "validators": {}
+  },
+  "openclaw": {
+    "error": null,
+    "failures": 0,
+    "last_success": "2026-11-24T07:39:38.717042+00:00",
+    "retry_after": null,
+    "url": "https://api.github.com/repos/openclaw/openclaw/releases?per_page=10",
+    "validators": {
+      "If-None-Match": "W/\"8bde2aa80403e055af94ea373869fad2bb839ab6f21e2c72b54b87f1205585ef\""
+    }
+  },
+  "opencode": {
+    "error": null,
+    "failures": 0,
+    "last_success": "2026-11-24T07:39:38.717042+00:00",
+    "retry_after": null,
+    "url": "https://api.github.com/repos/anomalyco/opencode/releases?per_page=10",
+    "validators": {
+      "If-None-Match": "W/\"8f4a6cfcf36356a29518dc451a2fd6997614aab24c297ed61f96189d11711e79\""
+    }
+  },
+  "pibot": {
+    "error": null,
+    "failures": 0,
+    "last_success": "2026-11-24T07:39:38.717042+00:00",
+    "retry_after": null,
+    "url": "https://api.github.com/repos/w01fb0ss/PiBot/releases?per_page=10",
+    "validators": {
+      "If-None-Match": "W/\"b73cb11154941f8855951769896ac46f385fd51b47c5bf788cfb54b9ae8b0437\""
+    }
+  },
+  "product-hunt": {
+    "error": null,
+    "failures": 0,
+    "last_success": "2026-11-24T07:40:13.461356+00:00",
+    "retry_after": null,
+    "url": "https://www.producthunt.com/feed",
+    "validators": {
+      "If-Modified-Since": "Tue, 24 Nov 2026 07:39:30 GMT",
+      "If-None-Match": "W/\"7417b6a60d5c47f8295a0698e27c10e7\""
+    }
+  },
+  "pytorch-blog": {
+    "error": "HTTP Error 404: Not Found",
+    "failures": 1,
+    "first_failure": "2026-11-24T07:39:38.717042+00:00",
+    "retry_after": "2026-11-24T08:39:38.717042+00:00"
+  },
+  "qwen-code": {
+    "error": null,
+    "failures": 0,
+    "last_success": "2026-11-24T07:39:38.717042+00:00",
+    "retry_after": null,
+    "url": "https://api.github.com/repos/QwenLM/qwen-code/releases?per_page=10",
+    "validators": {
+      "If-None-Match": "W/\"d3c379febc702ddaeb66be53f9954d8c246c58ab4df11a2f93b18d898056e0aa\""
+    }
+  },
+  "ragflow": {
+    "error": null,
+    "failures": 0,
+    "last_success": "2026-11-24T07:39:38.717042+00:00",
+    "retry_after": null,
+    "url": "https://api.github.com/repos/infiniflow/ragflow/releases?per_page=10",
+    "validators": {
+      "If-None-Match": "W/\"f37b6f505edf24631d68328934ac4c39512ecb75ca49be12d7bd6c5889f1f65a\""
+    }
+  },
+  "tensorrt-llm": {
+    "error": null,
+    "failures": 0,
+    "last_success": "2026-11-24T07:39:38.717042+00:00",
+    "retry_after": null,
+    "url": "https://api.github.com/repos/NVIDIA/TensorRT-LLM/releases?per_page=10",
+    "validators": {
+      "If-None-Match": "W/\"99d7d81e678575424309a4eb7b2bd1de1b8dd2f87942fd2aca6f07e15683f309\""
+    }
+  },
+  "transformers": {
+    "error": null,
+    "failures": 0,
+    "last_success": "2026-11-24T07:39:38.717042+00:00",
+    "retry_after": null,
+    "url": "https://api.github.com/repos/huggingface/transformers/releases?per_page=10",
+    "validators": {
+      "If-None-Match": "W/\"86fa5cb0bd4c5d66720b6c9e820ba13a3e1983fe87ee246aee0728bfe4289c98\""
+    }
+  },
+  "trending-ag-ui-protocol-ag-ui": {
+    "error": null,
+    "failures": 0,
+    "last_success": "2026-11-24T07:40:13.461356+00:00",
+    "retry_after": null,
+    "url": "https://api.github.com/repos/ag-ui-protocol/ag-ui",
+    "validators": {
+      "If-Modified-Since": "Tue, 24 Nov 2026 07:37:43 GMT",
+      "If-None-Match": "W/\"bb52bd5ce2501e40b1a729c22b82f00e607215d6511343963d1045d0ed1cb3b8\""
+    }
+  },
+  "trending-alibaba-open-code-review": {
+    "error": null,
+    "failures": 0,
+    "last_success": "2026-11-24T07:40:13.461356+00:00",
+    "retry_after": null,
+    "url": "https://api.github.com/repos/alibaba/open-code-review",
+    "validators": {
+      "If-Modified-Since": "Tue, 24 Nov 2026 07:33:59 GMT",
+      "If-None-Match": "W/\"c47d81ea8186d5c89079865b966dfe623841a0092ceb54324a5587e71b727456\""
+    }
+  },
+  "trending-anthropics-skills": {
+    "error": null,
+    "failures": 0,
+    "last_success": "2026-11-24T07:40:13.461356+00:00",
+    "retry_after": null,
+    "url": "https://api.github.com/repos/anthropics/skills",
+    "validators": {
+      "If-Modified-Since": "Tue, 24 Nov 2026 07:39:23 GMT",
+      "If-None-Match": "W/\"83caf1831ba4aa7b3399053d81a3cff424053745dbcc53a35b140fe8c7320b31\""
+    }
+  },
+  "trending-backnotprop-plannotator": {
+    "error": null,
+    "failures": 0,
+    "last_success": "2026-11-24T07:40:13.461356+00:00",
+    "retry_after": null,
+    "url": "https://api.github.com/repos/backnotprop/plannotator",
+    "validators": {
+      "If-Modified-Since": "Tue, 24 Nov 2026 07:37:23 GMT",
+      "If-None-Match": "W/\"ad977ed50f7af09babdc4e7a6a87af87ac62d42afad6d4fa80d7a88c24c8234a\""
+    }
+  },
+  "trending-cathrynlavery-diagram-design": {
+    "error": null,
+    "failures": 0,
+    "last_success": "2026-11-24T07:40:13.461356+00:00",
+    "retry_after": null,
+    "url": "https://api.github.com/repos/cathrynlavery/diagram-design",
+    "validators": {
+      "If-Modified-Since": "Tue, 24 Nov 2026 07:40:17 GMT",
+      "If-None-Match": "W/\"f0f7995f8a46f50d1b51850371575aeaf91770d3f995220512a400e3b343aa4d\""
+    }
+  },
+  "trending-chromedevtools-chrome-devtools-mcp": {
+    "error": null,
+    "failures": 0,
+    "last_success": "2026-11-24T07:40:13.461356+00:00",
+    "retry_after": null,
+    "url": "https://api.github.com/repos/ChromeDevTools/chrome-devtools-mcp",
+    "validators": {
+      "If-Modified-Since": "Tue, 24 Nov 2026 07:39:46 GMT",
+      "If-None-Match": "W/\"5a432f1e3a43ee7053a012d6b20a7e753ec59318c461d52e4c816a21a4473b93\""
+    }
+  },
+  "trending-cloudflare-security-audit-skill": {
+    "error": null,
+    "failures": 0,
+    "last_success": "2026-11-24T07:40:13.461356+00:00",
+    "retry_after": null,
+    "url": "https://api.github.com/repos/cloudflare/security-audit-skill",
+    "validators": {
+      "If-Modified-Since": "Tue, 24 Nov 2026 07:37:46 GMT",
+      "If-None-Match": "W/\"f3ac334a1cdf8c6178bac8328e615088b1b8683f5a1bc613011c8db8a39d43cd\""
+    }
+  },
+  "trending-googlechrome-modern-web-guidance-src": {
+    "error": null,
+    "failures": 0,
+    "last_success": "2026-11-24T07:40:13.461356+00:00",
+    "retry_after": null,
+    "url": "https://api.github.com/repos/GoogleChrome/modern-web-guidance-src",
+    "validators": {
+      "If-Modified-Since": "Tue, 24 Nov 2026 07:39:51 GMT",
+      "If-None-Match": "W/\"6b01a221a05d2ee17a4adfb195737ac37f7dd45ae2830f6dbcd08d034bfe74ae\""
+    }
+  },
+  "trending-hkuds-cli-anything": {
+    "error": null,
+    "failures": 0,
+    "last_success": "2026-11-24T07:40:13.461356+00:00",
+    "retry_after": null,
+    "url": "https://api.github.com/repos/HKUDS/CLI-Anything",
+    "validators": {
+      "If-Modified-Since": "Tue, 24 Nov 2026 07:37:11 GMT",
+      "If-None-Match": "W/\"beb53468498f7956701bc46dafced5c07319a36020d478dc7343dd498938717b\""
+    }
+  },
+  "trending-hkuds-deeptutor": {
+    "error": null,
+    "failures": 0,
+    "last_success": "2026-11-24T07:40:13.461356+00:00",
+    "retry_after": null,
+    "url": "https://api.github.com/repos/HKUDS/DeepTutor",
+    "validators": {
+      "If-Modified-Since": "Tue, 24 Nov 2026 07:39:50 GMT",
+      "If-None-Match": "W/\"99ca73fb672126de25ec37e07205dee8532337b32f4795733ae0cb9be4ed91d9\""
+    }
+  },
+  "trending-jakeschincariol-instagram-agent-skill": {
+    "error": null,
+    "failures": 0,
+    "last_success": "2026-11-24T07:40:13.461356+00:00",
+    "retry_after": null,
+    "url": "https://api.github.com/repos/Jakeschincariol/instagram-agent-skill",
+    "validators": {
+      "If-Modified-Since": "Tue, 24 Nov 2026 07:24:20 GMT",
+      "If-None-Match": "W/\"fe763108586874c95eccbbe9f60379fce60ab2f7a35fd233e0262ffae1a51259\""
+    }
+  },
+  "trending-nutlope-hallmark": {
+    "error": null,
+    "failures": 0,
+    "last_success": "2026-11-24T07:40:13.461356+00:00",
+    "retry_after": null,
+    "url": "https://api.github.com/repos/Nutlope/hallmark",
+    "validators": {
+      "If-Modified-Since": "Tue, 24 Nov 2026 07:39:10 GMT",
+      "If-None-Match": "W/\"7062f069158ed26498b07136b5d717139ca815a05ad0bf07e84b61902b82406a\""
+    }
+  },
+  "xai-sdk": {
+    "error": null,
+    "failures": 0,
+    "last_success": "2026-11-24T07:39:38.717042+00:00",
+    "retry_after": null,
+    "url": "https://api.github.com/repos/xai-org/xai-sdk-python/releases?per_page=10",
+    "validators": {
+      "If-None-Match": "W/\"9771d4fc2ef942427a6b363a009b4c887875663ea9821585661c5c3b677f5d90\""
+    }
+  }
+}
