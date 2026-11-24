@@ -51,11 +51,10 @@ jobs:
       task: ${{ steps.task.outputs.task }}
       edit: ${{ steps.prepare.outputs.edit }}
       day: ${{ steps.task.outputs.day }}
-    env:
-      ANALYTICS_STORE: ${{ runner.temp }}/venture-operations
     steps:
       - name: Start operation timer
         run: |
+          echo "ANALYTICS_STORE=$RUNNER_TEMP/venture-operations" >> "$GITHUB_ENV"
           echo "PHASE_START=$(date -Iseconds)" >> "$GITHUB_ENV"
           echo "VENTURE_RUN_DAY=$(TZ=Asia/Shanghai date +%F)" >> "$GITHUB_ENV"
       - uses: actions/checkout@v6
@@ -158,11 +157,10 @@ jobs:
     timeout-minutes: 8
     permissions:
       contents: read
-    env:
-      ANALYTICS_STORE: ${{ runner.temp }}/venture-operations
     steps:
       - name: Start operation timer
         run: |
+          echo "ANALYTICS_STORE=$RUNNER_TEMP/venture-operations" >> "$GITHUB_ENV"
           echo "PHASE_START=$(date -Iseconds)" >> "$GITHUB_ENV"
           echo "VENTURE_RUN_DAY=${{ needs.prepare.outputs.day }}" >> "$GITHUB_ENV"
       - uses: actions/checkout@v6
@@ -224,11 +222,10 @@ jobs:
     timeout-minutes: 16
     permissions:
       contents: write
-    env:
-      ANALYTICS_STORE: ${{ runner.temp }}/venture-operations
     steps:
       - name: Start operation timer
         run: |
+          echo "ANALYTICS_STORE=$RUNNER_TEMP/venture-operations" >> "$GITHUB_ENV"
           echo "PHASE_START=$(date -Iseconds)" >> "$GITHUB_ENV"
           echo "VENTURE_RUN_DAY=${{ needs.prepare.outputs.day }}" >> "$GITHUB_ENV"
       - uses: actions/checkout@v6

@@ -27,9 +27,8 @@ jobs:
     permissions:
       contents: write
       id-token: write
-    env:
-      ANALYTICS_STORE: ${{ runner.temp }}/venture-analytics
     steps:
+      - run: echo "ANALYTICS_STORE=$RUNNER_TEMP/venture-analytics" >> "$GITHUB_ENV"
       - uses: actions/checkout@v6
         with:
           persist-credentials: false
