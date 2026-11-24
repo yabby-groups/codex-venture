@@ -2,11 +2,11 @@
   "arxiv-ai": {
     "error": null,
     "failures": 0,
-    "last_success": "2026-11-24T07:40:13.461356+00:00",
+    "last_success": "2026-11-24T14:07:11.513641+00:00",
     "retry_after": null,
     "url": "https://rss.arxiv.org/rss/cs.AI",
     "validators": {
-      "If-None-Match": "30aa23a8d387a2295df3c290292171a77be36bc2613e031eec3a299ac7b2bb3d"
+      "If-None-Match": "d78fbd20dd3837364f03966655342927921d5363414d0d9105c103dcaf47af2d"
     }
   },
   "browser-use": {
@@ -105,6 +105,40 @@
       "If-None-Match": "W/\"d3d5db9f509d58591b771696eed97b7ae40983bd72c0aea687c57682a112a941\""
     }
   },
+  "ecosystem-mcp-registry": {
+    "error": null,
+    "failures": 0,
+    "last_success": "2026-11-24T14:07:11.513641+00:00",
+    "retry_after": null,
+    "url": "https://registry.modelcontextprotocol.io/v0.1/servers?version=latest&limit=12&search=testing",
+    "validators": {}
+  },
+  "ecosystem-open-vsx": {
+    "error": null,
+    "failures": 0,
+    "last_success": "2026-11-24T14:07:11.513641+00:00",
+    "retry_after": null,
+    "url": "https://open-vsx.org/api/-/search?query=AI+testing&size=10",
+    "validators": {
+      "If-None-Match": "\"0a02319822e56db35d6cd044ce5a6dcaf\""
+    }
+  },
+  "ecosystem-show-hn": {
+    "error": null,
+    "failures": 0,
+    "last_success": "2026-11-24T14:07:11.513641+00:00",
+    "retry_after": null,
+    "url": "https://hn.algolia.com/api/v1/search?query=AI&tags=show_hn&hitsPerPage=15",
+    "validators": {}
+  },
+  "ecosystem-skill-search": {
+    "error": null,
+    "failures": 0,
+    "last_success": "2026-11-24T14:07:11.513641+00:00",
+    "retry_after": null,
+    "url": "https://api.github.com/search/repositories?q=agent-skills+testing+in%3Aname%2Cdescription%2Creadme+archived%3Afalse&sort=updated&per_page=10",
+    "validators": {}
+  },
   "elevenlabs-python": {
     "error": null,
     "failures": 0,
@@ -160,7 +194,7 @@
   "github-search-3d": {
     "error": null,
     "failures": 0,
-    "last_success": "2026-11-24T07:40:13.461356+00:00",
+    "last_success": "2026-11-24T14:07:11.513641+00:00",
     "retry_after": null,
     "url": "https://api.github.com/search/repositories?q=topic%3A3d+pushed%3A%3E%3D2026-11-17+archived%3Afalse+stars%3A%3E%3D25&sort=stars&per_page=10",
     "validators": {}
@@ -168,7 +202,7 @@
   "github-search-image-generation": {
     "error": null,
     "failures": 0,
-    "last_success": "2026-11-24T07:40:13.461356+00:00",
+    "last_success": "2026-11-24T14:07:11.513641+00:00",
     "retry_after": null,
     "url": "https://api.github.com/search/repositories?q=topic%3Aimage-generation+created%3A%3E%3D2026-11-17+archived%3Afalse+stars%3A%3E%3D25&sort=stars&per_page=10",
     "validators": {}
@@ -176,7 +210,7 @@
   "github-search-video-generation": {
     "error": null,
     "failures": 0,
-    "last_success": "2026-11-24T07:40:13.461356+00:00",
+    "last_success": "2026-11-24T14:07:11.513641+00:00",
     "retry_after": null,
     "url": "https://api.github.com/search/repositories?q=topic%3Avideo-generation+pushed%3A%3E%3D2026-11-17+archived%3Afalse+stars%3A%3E%3D25&sort=stars&per_page=10",
     "validators": {}
@@ -192,7 +226,7 @@
   "hacker-news-ai": {
     "error": null,
     "failures": 0,
-    "last_success": "2026-11-24T07:40:13.461356+00:00",
+    "last_success": "2026-11-24T14:07:11.513641+00:00",
     "retry_after": null,
     "url": "https://hn.algolia.com/api/v1/search_by_date?query=AI&tags=story&hitsPerPage=20",
     "validators": {}
@@ -210,11 +244,11 @@
   "hf-models": {
     "error": null,
     "failures": 0,
-    "last_success": "2026-11-24T07:40:13.461356+00:00",
+    "last_success": "2026-11-24T14:07:11.513641+00:00",
     "retry_after": null,
     "url": "https://huggingface.co/api/models?sort=trendingScore&limit=12&full=true&cardData=true",
     "validators": {
-      "If-None-Match": "W/\"75f3-CY7dd9tyCnLyiB0RHV5GH/WUBfg\""
+      "If-None-Match": "W/\"769d-/gBnaeJfpiPDloOt0wR2Illq9oY\""
     }
   },
   "hugging-face": {
@@ -364,12 +398,12 @@
   "product-hunt": {
     "error": null,
     "failures": 0,
-    "last_success": "2026-11-24T07:40:13.461356+00:00",
+    "last_success": "2026-11-24T14:07:11.513641+00:00",
     "retry_after": null,
     "url": "https://www.producthunt.com/feed",
     "validators": {
-      "If-Modified-Since": "Tue, 24 Nov 2026 07:39:30 GMT",
-      "If-None-Match": "W/\"7417b6a60d5c47f8295a0698e27c10e7\""
+      "If-Modified-Since": "Tue, 24 Nov 2026 14:06:43 GMT",
+      "If-None-Match": "W/\"7fa5a7b214fea22efc8b9613f35093bb\""
     }
   },
   "pytorch-blog": {
@@ -421,133 +455,133 @@
   "trending-ag-ui-protocol-ag-ui": {
     "error": null,
     "failures": 0,
-    "last_success": "2026-11-24T07:40:13.461356+00:00",
+    "last_success": "2026-11-24T14:07:11.513641+00:00",
     "retry_after": null,
     "url": "https://api.github.com/repos/ag-ui-protocol/ag-ui",
     "validators": {
-      "If-Modified-Since": "Tue, 24 Nov 2026 07:37:43 GMT",
-      "If-None-Match": "W/\"bb52bd5ce2501e40b1a729c22b82f00e607215d6511343963d1045d0ed1cb3b8\""
+      "If-Modified-Since": "Tue, 24 Nov 2026 13:56:47 GMT",
+      "If-None-Match": "W/\"55dba0a2b009dd7b32b6b59bb8a5cf25630d414b39ac923e89da5b226af0e0c6\""
     }
   },
   "trending-alibaba-open-code-review": {
     "error": null,
     "failures": 0,
-    "last_success": "2026-11-24T07:40:13.461356+00:00",
+    "last_success": "2026-11-24T14:07:11.513641+00:00",
     "retry_after": null,
     "url": "https://api.github.com/repos/alibaba/open-code-review",
     "validators": {
-      "If-Modified-Since": "Tue, 24 Nov 2026 07:33:59 GMT",
-      "If-None-Match": "W/\"c47d81ea8186d5c89079865b966dfe623841a0092ceb54324a5587e71b727456\""
+      "If-Modified-Since": "Tue, 24 Nov 2026 14:07:04 GMT",
+      "If-None-Match": "W/\"42026262e700b7663507959834338e6a0163bc693d0b356dabc36e79ec4b43f6\""
     }
   },
   "trending-anthropics-skills": {
     "error": null,
     "failures": 0,
-    "last_success": "2026-11-24T07:40:13.461356+00:00",
+    "last_success": "2026-11-24T14:07:11.513641+00:00",
     "retry_after": null,
     "url": "https://api.github.com/repos/anthropics/skills",
     "validators": {
-      "If-Modified-Since": "Tue, 24 Nov 2026 07:39:23 GMT",
-      "If-None-Match": "W/\"83caf1831ba4aa7b3399053d81a3cff424053745dbcc53a35b140fe8c7320b31\""
+      "If-Modified-Since": "Tue, 24 Nov 2026 14:06:38 GMT",
+      "If-None-Match": "W/\"8eb380f6d7981ef6311fbe9f1bfe4e3b2b5c7d45679247be085971f7bd918aa3\""
     }
   },
   "trending-backnotprop-plannotator": {
     "error": null,
     "failures": 0,
-    "last_success": "2026-11-24T07:40:13.461356+00:00",
+    "last_success": "2026-11-24T14:07:11.513641+00:00",
     "retry_after": null,
     "url": "https://api.github.com/repos/backnotprop/plannotator",
     "validators": {
-      "If-Modified-Since": "Tue, 24 Nov 2026 07:37:23 GMT",
-      "If-None-Match": "W/\"ad977ed50f7af09babdc4e7a6a87af87ac62d42afad6d4fa80d7a88c24c8234a\""
+      "If-Modified-Since": "Tue, 24 Nov 2026 14:07:15 GMT",
+      "If-None-Match": "W/\"b9bfd8c400f9c13722c852db6b9c26861f8c0758d5a041000e0729ac4c839de0\""
     }
   },
   "trending-cathrynlavery-diagram-design": {
     "error": null,
     "failures": 0,
-    "last_success": "2026-11-24T07:40:13.461356+00:00",
+    "last_success": "2026-11-24T14:07:11.513641+00:00",
     "retry_after": null,
     "url": "https://api.github.com/repos/cathrynlavery/diagram-design",
     "validators": {
-      "If-Modified-Since": "Tue, 24 Nov 2026 07:40:17 GMT",
-      "If-None-Match": "W/\"f0f7995f8a46f50d1b51850371575aeaf91770d3f995220512a400e3b343aa4d\""
+      "If-Modified-Since": "Tue, 24 Nov 2026 14:02:10 GMT",
+      "If-None-Match": "W/\"6398e6e8f6c46c192c9e72610ce0f95c64519439895130ab678f9ebd5b86eed0\""
     }
   },
   "trending-chromedevtools-chrome-devtools-mcp": {
     "error": null,
     "failures": 0,
-    "last_success": "2026-11-24T07:40:13.461356+00:00",
+    "last_success": "2026-11-24T14:07:11.513641+00:00",
     "retry_after": null,
     "url": "https://api.github.com/repos/ChromeDevTools/chrome-devtools-mcp",
     "validators": {
-      "If-Modified-Since": "Tue, 24 Nov 2026 07:39:46 GMT",
-      "If-None-Match": "W/\"5a432f1e3a43ee7053a012d6b20a7e753ec59318c461d52e4c816a21a4473b93\""
+      "If-Modified-Since": "Tue, 24 Nov 2026 13:59:15 GMT",
+      "If-None-Match": "W/\"4e2e7eff112230f1c4ec1fd31ac4edd1d69d9daf81ad762eaa0045b5192c6dd5\""
     }
   },
   "trending-cloudflare-security-audit-skill": {
     "error": null,
     "failures": 0,
-    "last_success": "2026-11-24T07:40:13.461356+00:00",
+    "last_success": "2026-11-24T14:07:11.513641+00:00",
     "retry_after": null,
     "url": "https://api.github.com/repos/cloudflare/security-audit-skill",
     "validators": {
-      "If-Modified-Since": "Tue, 24 Nov 2026 07:37:46 GMT",
-      "If-None-Match": "W/\"f3ac334a1cdf8c6178bac8328e615088b1b8683f5a1bc613011c8db8a39d43cd\""
+      "If-Modified-Since": "Tue, 24 Nov 2026 14:07:12 GMT",
+      "If-None-Match": "W/\"7f04ae5827ede63384594712367ffc12b53aee4db236a6715a644d2c384e4d14\""
     }
   },
   "trending-googlechrome-modern-web-guidance-src": {
     "error": null,
     "failures": 0,
-    "last_success": "2026-11-24T07:40:13.461356+00:00",
+    "last_success": "2026-11-24T14:07:11.513641+00:00",
     "retry_after": null,
     "url": "https://api.github.com/repos/GoogleChrome/modern-web-guidance-src",
     "validators": {
-      "If-Modified-Since": "Tue, 24 Nov 2026 07:39:51 GMT",
-      "If-None-Match": "W/\"6b01a221a05d2ee17a4adfb195737ac37f7dd45ae2830f6dbcd08d034bfe74ae\""
+      "If-Modified-Since": "Tue, 24 Nov 2026 14:05:04 GMT",
+      "If-None-Match": "W/\"825f8fd6c0051680edca3f90ba889331f1d5d32efa483dc9884a2a6ea43e5e15\""
     }
   },
   "trending-hkuds-cli-anything": {
     "error": null,
     "failures": 0,
-    "last_success": "2026-11-24T07:40:13.461356+00:00",
+    "last_success": "2026-11-24T14:07:11.513641+00:00",
     "retry_after": null,
     "url": "https://api.github.com/repos/HKUDS/CLI-Anything",
     "validators": {
-      "If-Modified-Since": "Tue, 24 Nov 2026 07:37:11 GMT",
-      "If-None-Match": "W/\"beb53468498f7956701bc46dafced5c07319a36020d478dc7343dd498938717b\""
+      "If-Modified-Since": "Tue, 24 Nov 2026 14:05:40 GMT",
+      "If-None-Match": "W/\"4d566f7324cde49be98ff50b7cc62b69da0291f57a50c44437c84a73caca870c\""
     }
   },
   "trending-hkuds-deeptutor": {
     "error": null,
     "failures": 0,
-    "last_success": "2026-11-24T07:40:13.461356+00:00",
+    "last_success": "2026-11-24T14:07:11.513641+00:00",
     "retry_after": null,
     "url": "https://api.github.com/repos/HKUDS/DeepTutor",
     "validators": {
-      "If-Modified-Since": "Tue, 24 Nov 2026 07:39:50 GMT",
-      "If-None-Match": "W/\"99ca73fb672126de25ec37e07205dee8532337b32f4795733ae0cb9be4ed91d9\""
+      "If-Modified-Since": "Tue, 24 Nov 2026 14:05:05 GMT",
+      "If-None-Match": "W/\"3713d5b7e4ff47031c0b8798d0a05a57f54c9de36dcec6462c79af507b6977ca\""
     }
   },
   "trending-jakeschincariol-instagram-agent-skill": {
     "error": null,
     "failures": 0,
-    "last_success": "2026-11-24T07:40:13.461356+00:00",
+    "last_success": "2026-11-24T14:07:11.513641+00:00",
     "retry_after": null,
     "url": "https://api.github.com/repos/Jakeschincariol/instagram-agent-skill",
     "validators": {
-      "If-Modified-Since": "Tue, 24 Nov 2026 07:24:20 GMT",
-      "If-None-Match": "W/\"fe763108586874c95eccbbe9f60379fce60ab2f7a35fd233e0262ffae1a51259\""
+      "If-Modified-Since": "Tue, 24 Nov 2026 14:04:58 GMT",
+      "If-None-Match": "W/\"82c28320869146ca522a0a928b431525eecf081b1b5fbbca6d5faacc433b9df9\""
     }
   },
   "trending-nutlope-hallmark": {
     "error": null,
     "failures": 0,
-    "last_success": "2026-11-24T07:40:13.461356+00:00",
+    "last_success": "2026-11-24T14:07:11.513641+00:00",
     "retry_after": null,
     "url": "https://api.github.com/repos/Nutlope/hallmark",
     "validators": {
-      "If-Modified-Since": "Tue, 24 Nov 2026 07:39:10 GMT",
-      "If-None-Match": "W/\"7062f069158ed26498b07136b5d717139ca815a05ad0bf07e84b61902b82406a\""
+      "If-Modified-Since": "Tue, 24 Nov 2026 14:04:45 GMT",
+      "If-None-Match": "W/\"67ff23c3eb0bcddf814bfcd897863b82d30df735e903f526750dbbbb6efa2809\""
     }
   },
   "xai-sdk": {
