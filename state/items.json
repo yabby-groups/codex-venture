@@ -595,13 +595,14 @@
   "0d49fc0091f486355c54ed4cbcafb93785fc9fbd631423bd37b2daf64cf9b90d": {
     "category": "agents",
     "discovered": "2026-11-24T07:39:38.717042+00:00",
-    "fingerprint": "fb4ba592f22644f4ea2c9ca0b4d7f794b5bab42f6f77a7f9a5a50a82f62b3ed2",
+    "fingerprint": "0571a7b4fdd8eae430be7cd296061a17bc2ea1f720b440ba97308594a4a8b1b2",
     "published": "2026-11-23T08:34:03+00:00",
     "source": "n8n",
     "source_url": "https://api.github.com/repos/n8n-io/n8n/releases?per_page=10",
     "status": "pending",
-    "summary": "## [2.48.8](https://github.com/n8n-io/n8n/compare/n8n@2.48.7...n8n@2.48.8) (2026-11-23) ### Bug Fixes * Broken e2e test in source-control-helper ([#44756](https://github.com/n8n-io/n8n/issues/44756)) ([0a1c9f0](https://github.com/n8n-io/n8n/commit/0a1c9f05346a1f3c8ce8a474b3acbe98fccc808c)) * **core:** Give custom instance roles access to the Migration Report ([#44667](https://github.com/n8n-io/n8n/issues/44667)) ([b7378d4](https://github.com/n8n-io/n8n/commit/b7378d43a412509f891fb4cab9ba263d75b3064f)) * **core:** Throw when an expression reaches the memory limit on the quickjs engine ([#44687](https://github.com/n8n-io/n8n/issues/44687)) ([ef0df0c](https://github.com/n8n-io/n8n/commit/ef0df0c8a2baa7600ad4859472865ebbba5871a1)) * **editor:** Keep Migration Report controls inside narrow screens ([#44658](https://github.com/n8n-io/n8n/issues/44658)) ([311c382](https://github.com/n8n-io/n8n/commit/311c3821f7d95ee6ee6df9eff5fcebe97bfb8f82)) * Report MCP workflow trigger activation failures ([#44589](https://github.com/n8n-io/n8n/issues/44589)) ([08cc487](https://github.com/n8n-io/n8n/commit/08cc4876696b6261919b7f90207ad24f720dca6a)) ### Features * **editor:** Explain the last run state of workflows in the migration report ([#44282](https://github.com/n8n-io/n8n/issues/44282)) ([261ad69](https://github.com/n8n-io/n8n/commit/261ad69303f823f197d9bc3d9ffbf1844d1dd26e))",
+    "summary": "## [2.49.5](https://github.com/n8n-io/n8n/compare/n8n@2.49.4...n8n@2.49.5) (2026-11-23) ### Bug Fixes * **core:** Refresh the cached token of an expirable credential during its test ([#44832](https://github.com/n8n-io/n8n/issues/44832)) ([5041b0d](https://github.com/n8n-io/n8n/commit/5041b0deb0aefe88b339b36c33372038cb50ff8f)) * **core:** Return an item that holds a value the vm expression engine cannot copy ([#44879](https://github.com/n8n-io/n8n/issues/44879)) ([36ef1a5](https://github.com/n8n-io/n8n/commit/36ef1a51854c6a55e24561b2bda40f2009fa9247))",
     "title": "stable",
+    "updated": "2026-11-24T19:53:54.561219+00:00",
     "url": "https://github.com/n8n-io/n8n/releases/tag/stable"
   },
   "0db9f73f2e521775c972e2ce4e386e3c9fe6c0c917d794d4b293ded1e93d54c2": {
@@ -1545,13 +1546,14 @@
     ],
     "category": "open-source",
     "discovered": "2026-11-24T07:39:38.717042+00:00",
-    "fingerprint": "d98e91f7844b0efd10e3768224edb2de0df4cc16945397b673970bf48cf21f83",
+    "fingerprint": "75a83caf9bbc14b3ca0af2a8a06ea4caa4f8d5bf26ff2575e4e2219355b9cb4f",
     "published": "2026-11-24T04:11:03+00:00",
     "source": "litellm",
     "source_url": "https://api.github.com/repos/BerriAI/litellm/releases?per_page=10",
     "status": "published",
-    "summary": "## Verify Docker Image Signature ```bash cosign verify \\ --certificate-identity https://github.com/BerriAI/project-releaser/.github/workflows/release.yml@refs/heads/main \\ --certificate-oidc-issuer https://token.actions.githubusercontent.com \\ ghcr.io/berriai/litellm:v1.110.3 ``` ## What's Changed * fix(mcp)!: backport gateway DCR opt-in to 1.110 (#53059) by @shrey-berri in https://github.com/BerriAI/litellm/pull/53178 * fix(proxy): backport audit log fixes to stable/1.110.x (#50929, #53305) by @kerry-berri in https://github.com/BerriAI/litellm/pull/53298 * chore(release): backport #53171, #53210 to stable/1.110.x by @kerry-berri in https://github.com/BerriAI/litellm/pull/53207 * fix(router): fall back by the group a pick was routed to (backport #52510 to stable/1.110.x) by @kerry-berri in https://github.com/BerriAI/litellm/pull/53109 * chore: bump versions on stable/1.110.x by @yuneng-berri in https://github.com/BerriAI/litellm/pull/54010 **Full Changelog**: https://github.com/BerriAI/litellm/compare/v1.110.2...v1.110.3",
+    "summary": "## Verify this release ```bash cosign verify \\ --certificate-identity https://github.com/BerriAI/project-releaser/.github/workflows/release.yml@refs/heads/main \\ --certificate-oidc-issuer https://token.actions.githubusercontent.com \\ ghcr.io/berriai/litellm:v1.110.3 ``` Same command for `litellm-database`, `litellm-non_root` and the `docker.io/litellm/*` images ## What's new in 1.110.3 7 PRs. 3 fixed, 1 changed. 1 needs action ### Action required - **MCP:** Set `LITELLM_MCP_DCR_GATEWAY_CLIENT=true` to keep automatic gateway-owned registration for new clientless DCR bridges (#53059) Also in [1.108.16](https://github.com/BerriAI/litellm/releases/tag/v1.108.16), [1.109.4](https://github.com/BerriAI/litellm/releases/tag/v1.109.4) ### Changes - **Batches and files:** Fixed `/gemini` pass-through file get, download and delete skipping the file ownership check `/v1/files` applies (#53171, #53210) - **MCP:** Changed gateway-owned DCR client registration to opt-in, fixing `403 oauth_principal_mismatch` for shared service keys (#53059) Also in [1.108.16](https://github.com/BerriAI/litellm/releases/tag/v1.108.16), [1.109.4](https://github.com/BerriAI/litellm/releases/tag/v1.109.4) - **Routing and fallbacks:** Fixed a complexity-routed request to a model in cooldown failing instead of using that model's fallbacks (#52510) - **Logging and observability:** Fixed `GET /audit` returning 500 after a key or team update, which left the Admin UI Audit Logs page empty, broken since v1.108.0 (#50929, #53305) --- Backport #53109 · Backport #53178 · Backport #53207 · Backport #53298 · [Full changelog](https://github.com/BerriAI/litellm/compare/v1.110.2...v1.110.3)",
     "title": "v1.110.3",
+    "updated": "2026-11-24T19:53:54.561219+00:00",
     "url": "https://github.com/BerriAI/litellm/releases/tag/v1.110.3"
   },
   "1d6c2de79c75a78f7bba003986851e4dd6a146b35ca7a0a519851b988ba35e21": {
@@ -3582,6 +3584,18 @@
     "title": "MF-EDA: Joining Membership Functions to Adapt the Number of Distributions in Gaussian Estimation-of-Distribution Algorithms",
     "url": "https://arxiv.org/abs/2611.30436"
   },
+  "417be228cec59f8a2ed91a21e64c0e3a5f00f3445cf305bf0e10c1b8169d2c3c": {
+    "category": "open-source",
+    "discovered": "2026-11-24T19:53:54.561219+00:00",
+    "fingerprint": "81dbf34e7e15f042e567261fe972b5ce478fd01bc20c89fe290488d7ea2c2b0f",
+    "published": "2026-11-24T16:13:08+00:00",
+    "source": "transformers",
+    "source_url": "https://api.github.com/repos/huggingface/transformers/releases?per_page=10",
+    "status": "pending",
+    "summary": "# Patch release v5.24.1 A patch to fix a bunch of stuff for vLLM, a few distributed issues, and some model fixes (llama4, dory); see the full list ### vLLM related - Fix backward compatibility of the cache rename for remote code (#51085) by @hmellor - Restore modeling_attn_mask_utils for remote code (one-off to unblock vLLM) (#51124) by @hmellor - Expose past_key_values in MBartDecoderLayer.forward signature for remote code (#51177) by @hmellor - [OmniASR] Support a padding_mask kept on the CPU in the audio encoder (#51100) by @El-euchidali ### Model fixes - Fix Llama4 forward crash on missing image_outputs (#51144) by @kylesayrs - Fix dory static cache (#50993) by @ArthurZucker ### Distributed - Allow expert parallelism alone with tp_plan={} (#50996) by @3outeille - Fix strided checkpoint reads on PyTorch 2.9 (#51042) by @satsuki2486441738 **Full Changelog**: https://github.com/huggingface/transformers/compare/v5.24.0...v5.24.1",
+    "title": "Patch release v5.24.1",
+    "url": "https://github.com/huggingface/transformers/releases/tag/v5.24.1"
+  },
   "422f13105ac5fb6f5c5d9dabb652c4f2fc06707147c59d461bf3ac4495eaa281": {
     "category": "models",
     "discovered": "2026-11-24T14:07:11.513641+00:00",
@@ -4268,6 +4282,18 @@
     "summary": "arXiv:2611.29975v1 Announce Type: new Abstract: Technical governance of AI models will soon require them to reason over and follow thousands of rules from different jurisdictions. However, as we show in this work, presenting an entire ruleset to a judge model---rather than asking it to judge one rule at a time---changes the way the model interprets the requirements, making it reach conclusions that conflict with its rule-by-rule judgments. We call this challenge multi-rule inconsistency and find that models are more lenient when judging rules embedded within the full ruleset than when judging rules separately. For example, we find that when a safety-critical rule prohibiting a model from pursuing objectives other than those it was given appears in a larger ruleset, all tested judge models are less likely to deem it violated. We examine several methods for reducing inconsistency, including prompting, consistency training using GRPO, and iterative rule refinement. As in human statutory interpretation, surrounding rules shape how a rule is interpreted. Unlike the legal setting, however, these interactions are currently happening implicitly inside the judge model's reasoning. We argue that multi-rule interactions must be measured and handled explicitly by ruleset designers to prevent undetected shifts in interpretation from causing downstream alignment failures.",
     "title": "Aligning Judge Models to Be Logically Consistent Multi-Rule Interpreters",
     "url": "https://arxiv.org/abs/2611.29975"
+  },
+  "4ea1aa9275dcdc332b52ecd8a9af8ac6d2d1b30625fd2e248aea7ffdf4f46212": {
+    "category": "agents",
+    "discovered": "2026-11-24T19:53:54.561219+00:00",
+    "fingerprint": "59159754edbdf593d09fe29bc4a78bd0df29cb68f586e4064ae0b1349c21cdf4",
+    "published": "2026-11-24T11:54:30+00:00",
+    "source": "openclaw",
+    "source_url": "https://api.github.com/repos/openclaw/openclaw/releases?per_page=10",
+    "status": "pending",
+    "summary": "## OpenClaw v2026.11.8 314 commits · 210 pull requests · 86 contributors ### Changes included in this release The release notes and changelog contain the same content, presented in two formats: - [Release notes](https://docs.openclaw.ai/releases/2026.11.8) — formatted for people. - [Changelog](https://raw.githubusercontent.com/openclaw/openclaw/main/CHANGELOG/2026.11.8.md) — plain Markdown for AI agents and tools. ### Thanks [@1052326311](https://github.com/1052326311) [@555aaditya](https://github.com/555aaditya) [@Abinithishkumarprabakaran](https://github.com/Abinithishkumarprabakaran) [@alfredjbclaw](https://github.com/alfredjbclaw) [@Alix-007](https://github.com/Alix-007) [@alter](https://github.com/alter) [@AmelioMansour](https://github.com/AmelioMansour) [@andone-07](https://github.com/andone-07) [@anmol0b](https://github.com/anmol0b) [@antontuzov](https://github.com/antontuzov) [@ArcueidMP](https://github.com/ArcueidMP) [@blackapodidae](https://github.com/blackapodidae) [@brandonulrich](https://github.com/brandonulrich) [@chelsealong](https://github.com/chelsealong) [@copystring](https://github.com/copystring) [@D41910](https://github.com/D41910) [@daniel-lxs](https://github.com/daniel-lxs) [@DasX](https://github.com/DasX) [@drobison00](https://github.com/drobison00) [@dubr1k](https://github.com/dubr1k) [@elbourne12345](https://github.com/elbourne12345) [@ericcaiwx-star](https://github.com/ericcaiwx-star) [@ericcurtin](https://github.com/ericcurtin) [@etzelm](https://github.com/etzelm) [@fhgffy](https://github.com/fhgffy) [@fransqaas](https://github.com/fransqaas) [@fuller-stack-dev](https://github.com/fuller-stack-dev) [@galiniliev](https://github.com/galiniliev) [@geekforlife](https://github.com/geekforlife) [@GodBlf](https://github.com/GodBlf) [@GoldArowana](https://github.com/GoldArowana) [@gouyu-hou](https://github.com/gouyu-hou) [@grootbro](https://github.com/grootbro) [@hannesrudolph](https://github.com/hannesrudolph) [@hehuang139](https://github.com/hehuang139) [@heithmurray](https://github.com/heithmurray) [@HootRock](https://github.com/HootRock) [@huidongchen148](https://github.com/huidongchen148) [@InsanusMokrassar](https://github.com/InsanusMokrassar) [@jacobtomlinson](https://github.com/jacobtomlinson) [@jalehman](https://github.com/jalehman) [@jerome-queck](https://github.com/jerome-queck) [@Jo2234](https://github.com/Jo2234) [@josephjyzeng](https://github.com/josephjyzeng) [@joshavant](https://github.com/joshavant) [@kaguranananana](https://github.com/kaguranananana) [@KhanCold](https://github.com/KhanCold) [@Leon-SK668](https://github.com/Leon-SK668) [@Linux2010](https://github.com/Linux2010) [@LinzeShi](https://github.com/LinzeShi) [@LiuwqGit](https://github.com/LiuwqGit) [@Malpin07](https://github.com/Malpin07) [@masatohoshino](https://github.com/masatohoshino) [@MertBasar0](https://github.com/MertBasar0) [@mmaps](https://github.com/mmaps) [@montrellcruse](https://github.com/montrellcruse) [@nocodet888-arch](https://github.com/nocodet888-arch) [@obviyus](https://github.com/obviyus) [@ooiuuii](https://github.com/ooiuuii) [@Patrick-Erichsen](https://github.com/Patrick-Erichsen) [@qodelicious](https://github.com/qodelicio",
+    "title": "openclaw 2026.11.8",
+    "url": "https://github.com/openclaw/openclaw/releases/tag/v2026.11.8"
   },
   "4ef6ddedb2e4f33bddb28d3c2df004c48b7c9e8ee681f2f2713565fe2a62e80d": {
     "category": "open-source",
@@ -6346,6 +6372,18 @@
     "title": "Know When to Abstain: Conformal Confidence Estimation for Text-to-SQL",
     "url": "https://arxiv.org/abs/2611.31190"
   },
+  "7450adb57091544b5a4eaf1c8cac49653734b1c5b6c053bcc61b39df8b03475d": {
+    "category": "coding",
+    "discovered": "2026-11-24T19:53:54.561219+00:00",
+    "fingerprint": "fba5a96ca74d9d00b39cd9debce13615d3b2ce7b1f65c612737f0e5247b41945",
+    "published": "2026-11-24T16:40:59+00:00",
+    "source": "github-changelog",
+    "source_url": "https://github.blog/changelog/feed/",
+    "status": "pending",
+    "summary": "Starting December 1, 2026, we’re migrating notifications on GitHub.com over the course of a week to make subscriptions more predictable, correct unexpected behavior, and support the growing scale of activity.… The post More predictable notifications on GitHub.com appeared first on The GitHub Blog .",
+    "title": "More predictable notifications on GitHub.com",
+    "url": "https://github.blog/changelog/2026-11-24-more-predictable-notifications-on-github-com"
+  },
   "74ac66a0f5284086ae8a64057575c7d7259933093444ac1eb13b34a883d528ea": {
     "category": "models",
     "discovered": "2026-11-24T14:07:11.513641+00:00",
@@ -6466,6 +6504,18 @@
     "summary": "arXiv:2611.29238v1 Announce Type: new Abstract: AI-driven game development holds the potential to transform diverse human inspirations into interactive experiences. However, existing systems and benchmarks primarily focus on explicit development specifications, with limited support for adapting multimodal references and evaluating actual gameplay experiences. We introduce GameAnything, an open-source agentic platform that transforms multimodal inspirations into playable extensions of existing games through iterative development. GameAnything integrates coding agents with an independent playtesting critic, persistent development state, and reusable experience memory to support continuous refinement. We further present GameAnything-Bench, a benchmark spanning diverse reference modalities, game creation objectives, and gaming environments, with exploratory gameplay testing to assess both functional correctness and gameplay quality. Evaluations of nine coding agent configurations reveal that current agents can adapt reference content but still struggle with playable interactions and precise modifications. Moreover, multimodal references improve content fidelity, while iterative refinement yields substantial but varying improvements across agents. These findings highlight both the potential and remaining challenges of inspiration-driven game development.",
     "title": "GameAnything: From Any Inspirations to Playable Game Worlds",
     "url": "https://arxiv.org/abs/2611.29238"
+  },
+  "7758c04a629331bf96383fb7f46e256dce8c50dc19007956b18ca6b429d0aeb8": {
+    "category": "models",
+    "discovered": "2026-11-24T19:53:54.561219+00:00",
+    "fingerprint": "b7c4f5847b37b05a0c8014d44007a518fdb99a2075fa3ef0587f5d4c8148ae22",
+    "published": "2026-11-24T11:00:00+00:00",
+    "source": "openai-news",
+    "source_url": "https://openai.com/news/rss.xml",
+    "status": "pending",
+    "summary": "See how two amateur astronomers used Codex and Astra to find potential exoplanets in public data from NASA’s Kepler and TESS space telescopes.",
+    "title": "Searching for distant planets with Astra",
+    "url": "https://openai.com/index/searching-for-distant-planets-with-astra"
   },
   "77ae6306f70e378dbffab2d29832e3121eae4b7bcdc2d8f3907863f85b990e42": {
     "category": "models",
@@ -6682,6 +6732,30 @@
     "summary": "arXiv:2606.12814v2 Announce Type: replace-cross Abstract: Recent reinforcement learning approaches have shown great promise in improving humanoid motion tracking performance and achieving fall recovery under disturbances. However, most existing works treat motion tracking and fall recovery as different tasks and require multi-stage training with specialized recovery rewards and/or separate recovery policies. Moreover, existing reinforcement learning-based methods often terminate training episodes immediately after severe tracking failures, limiting recovery-oriented exploration in unstable or fallen states. To address the above issues, we propose Stubborn, a streamlined and unified reinforcement learning framework to achieve robust humanoid motion tracking and fall recovery. Specifically, Stubborn uses an asymmetric Actor-Critic architecture and consists of three major components. First, a yaw-aligned tracking representation is adopted to reduce sensitivity to global drift and heading disturbances while preserving gravity-related balance information. Second, we introduce a Bernoulli-based probabilistic termination mechanism that enables the policy to encourage exploration of fall-recovery behaviors under varying failure modes. Third, we propose a probabilistic termination and tracking-error-driven strategy that dynamically reshapes the sampling distribution based on tracking performance, increasing the training efficiency for difficult motion segments and unstable states. Extensive comparisons with SOTA methods and ablation studies show that Stubborn achieved competitive performance and avoided the reward-hacking tendency of baseline methods, and the proposed probabilistic termination mechanism and adaptive sampling strategy contributed to the performance and robustness gains. For real-world demonstrations, please refer to the project page at https://aislab-sustech.github.io/Stubborn/.",
     "title": "Stubborn: A Streamlined and Unified Reinforcement Learning Framework for Robust Motion Tracking and Fall Recovery for Humanoids",
     "url": "https://arxiv.org/abs/2606.12814"
+  },
+  "7e14b56be674430859075a7f0bce62ec43b4bbfbd056d91f846c666ac01fbfaf": {
+    "category": "models",
+    "discovered": "2026-11-24T19:53:54.561219+00:00",
+    "fingerprint": "877893c88efb2a182d80ccbe023d89bf925905d5c9ade7f541c3c82df38fac15",
+    "published": "2026-11-24T00:00:00+00:00",
+    "source": "openai-news",
+    "source_url": "https://openai.com/news/rss.xml",
+    "status": "pending",
+    "summary": "Marina Petrova’s dot Aria helps research websites and build proposals, while proactively flagging messages and resolving issues.",
+    "title": "How Intentful uses dots to make more time for growth",
+    "url": "https://openai.com/business/customer-stories/intentful-dots"
+  },
+  "7e5ea08b03eca9c263c505d784b26d41dd92d5d1e165fd698e1e900ecfae0b69": {
+    "category": "agents",
+    "discovered": "2026-11-24T19:53:54.561219+00:00",
+    "fingerprint": "04a3a5f2f42d1d7126b8f5ca2a8f7dd965943c98f4effc8c0bb3319526441b68",
+    "published": "2026-11-23T15:25:29+00:00",
+    "source": "n8n",
+    "source_url": "https://api.github.com/repos/n8n-io/n8n/releases?per_page=10",
+    "status": "pending",
+    "summary": "## [2.49.5](https://github.com/n8n-io/n8n/compare/n8n@2.49.4...n8n@2.49.5) (2026-11-23) ### Bug Fixes * **core:** Refresh the cached token of an expirable credential during its test ([#44832](https://github.com/n8n-io/n8n/issues/44832)) ([5041b0d](https://github.com/n8n-io/n8n/commit/5041b0deb0aefe88b339b36c33372038cb50ff8f)) * **core:** Return an item that holds a value the vm expression engine cannot copy ([#44879](https://github.com/n8n-io/n8n/issues/44879)) ([36ef1a5](https://github.com/n8n-io/n8n/commit/36ef1a51854c6a55e24561b2bda40f2009fa9247))",
+    "title": "n8n@2.49.5",
+    "url": "https://github.com/n8n-io/n8n/releases/tag/n8n%402.49.5"
   },
   "7eafee319b918faaec8ceb3d900ce756bd6d9238a60ce6e78127963cbe7fff98": {
     "category": "models",
@@ -7059,13 +7133,14 @@
   "845876460c50859707d418aac55873268d3db04d4cd8684ed1612efc6f0387aa": {
     "category": "open-source",
     "discovered": "2026-11-24T07:39:38.717042+00:00",
-    "fingerprint": "df1719dbb13597f23fd0069aef504e8a2638fa66225ea7a2617cc8f7df41adaf",
+    "fingerprint": "18f9e94a54ac87877ec29ae9660e92b5aaf3e33f67d9732529bf7102432d1761",
     "published": "2026-11-24T04:15:26+00:00",
     "source": "litellm",
     "source_url": "https://api.github.com/repos/BerriAI/litellm/releases?per_page=10",
     "status": "pending",
-    "summary": "## Verify Docker Image Signature ```bash cosign verify \\ --certificate-identity https://github.com/BerriAI/project-releaser/.github/workflows/release.yml@refs/heads/main \\ --certificate-oidc-issuer https://token.actions.githubusercontent.com \\ ghcr.io/berriai/litellm:v1.109.4 ``` ## What's Changed * fix(mcp)!: backport gateway DCR opt-in to 1.109 (#53059) by @shrey-berri in https://github.com/BerriAI/litellm/pull/53179 * chore: bump versions on stable/1.109.x by @yuneng-berri in https://github.com/BerriAI/litellm/pull/54009 **Full Changelog**: https://github.com/BerriAI/litellm/compare/v1.109.3...v1.109.4",
+    "summary": "## Verify this release ```bash cosign verify \\ --certificate-identity https://github.com/BerriAI/project-releaser/.github/workflows/release.yml@refs/heads/main \\ --certificate-oidc-issuer https://token.actions.githubusercontent.com \\ ghcr.io/berriai/litellm:v1.109.4 ``` Same command for `litellm-database`, `litellm-non_root` and the `docker.io/litellm/*` images ## What's new in 1.109.4 2 PRs. 1 changed. 1 needs action ### Action required - **MCP:** Set `LITELLM_MCP_DCR_GATEWAY_CLIENT=true` to keep automatic gateway-owned registration for new clientless DCR bridges (#53059) Also in [1.108.16](https://github.com/BerriAI/litellm/releases/tag/v1.108.16), [1.110.3](https://github.com/BerriAI/litellm/releases/tag/v1.110.3) ### Changes - **MCP:** Changed gateway-owned DCR client registration to opt-in, fixing `403 oauth_principal_mismatch` for shared service keys (#53059) Also in [1.108.16](https://github.com/BerriAI/litellm/releases/tag/v1.108.16), [1.110.3](https://github.com/BerriAI/litellm/releases/tag/v1.110.3) --- Backport #53179 · [Full changelog](https://github.com/BerriAI/litellm/compare/v1.109.3...v1.109.4)",
     "title": "v1.109.4",
+    "updated": "2026-11-24T19:53:54.561219+00:00",
     "url": "https://github.com/BerriAI/litellm/releases/tag/v1.109.4"
   },
   "849b1e0d9b5ea853ae7dde4244b0ba106d7402efebb037b8f69fdae6f054fc50": {
@@ -9822,13 +9897,14 @@
   "c56a9b81f11e6602776b3dbdf92e5b2096f92023bdaadb4a807f15b0e955a532": {
     "category": "open-source",
     "discovered": "2026-11-24T07:39:38.717042+00:00",
-    "fingerprint": "3c7c50c9719efa07004c4ef00241dacbab3cbe757ffaf48c3f3bbaca4daa4939",
+    "fingerprint": "4f9bd9d39ca0439fc01561500e4cd2ee50079d6523c9fd3fef6272c8525bfe00",
     "published": "2026-11-23T22:12:26+00:00",
     "source": "litellm",
     "source_url": "https://api.github.com/repos/BerriAI/litellm/releases?per_page=10",
     "status": "pending",
-    "summary": "## Verify Docker Image Signature ```bash cosign verify \\ --certificate-identity https://github.com/BerriAI/project-releaser/.github/workflows/release.yml@refs/heads/main \\ --certificate-oidc-issuer https://token.actions.githubusercontent.com \\ ghcr.io/berriai/litellm:v1.108.16 ``` ## What's Changed * fix(decisions): support the litellm_proxy provider (#51611, #53195) [lts/1.108.x] by @zoveki in https://github.com/BerriAI/litellm/pull/53196 * test(otel): backport excluded services matrix fixes (#51554, #51759) [lts/1.108.x] by @yuneng-berri in https://github.com/BerriAI/litellm/pull/53399 * test(auth): expect null error param for blocked keys (#39540) [lts/1.108.x] by @yuneng-berri in https://github.com/BerriAI/litellm/pull/53401 * fix(azure_ai): use the v1 chat path for Azure OpenAI resource bases on lts/1.108.x by @martenj4 in https://github.com/BerriAI/litellm/pull/53408 * test(providers): cover ResetData in the internal params chat route matrix (#53398) [lts/1.108.x] by @yuneng-berri in https://github.com/BerriAI/litellm/pull/53437 * fix(streaming): read missing generic chunk fields with defaults on lts/1.108.x (#43501) by @martenj4 in https://github.com/BerriAI/litellm/pull/53417 * fix(bedrock): backport runtime endpoint routing for native chat and Responses to lts/1.108.x (#50582) by @zoveki in https://github.com/BerriAI/litellm/pull/53414 * fix(gemini): backport keeping thought images out of message.images to lts/1.108.x by @edvinsq in https://github.com/BerriAI/litellm/pull/53441 * fix(sap): backport list-shaped reasoning_content handling to lts/1.108.x (#52741) by @linhqm in https://github.com/BerriAI/litellm/pull/53458 * fix(anthropic)!: backport #48373 to lts/1.108.x, send extra_body fields at the top level by @chaznm in https://github.com/BerriAI/litellm/pull/53411 * fix(caching): prevent duplicate success logging on cache hits (lts/1.108.x) by @drewv19 in https://github.com/BerriAI/litellm/pull/53465 * fix(anthropic): drop or reject sampling params under anthropic-version 2026-10-21 (lts) by @rhea-tk in https://github.com/BerriAI/litellm/pull/53395 * feat(gradium): add text-to-speech support for /v1/audio/speech (lts/1.108.x) by @martenj4 in https://github.com/BerriAI/litellm/pull/53463 * fix(gemini): send video_url content parts to Gemini instead of dropping them by @chaznm in https://github.com/BerriAI/litellm/pull/53420 * fix(azure_ai)!: backport Foundry project and /openai/v1 chat routing to lts/1.108.x by @drewv19 in https://github.com/BerriAI/litellm/pull/53409 * fix(cost-map): add count_tokens framing for grok-4.3 hosts and Azure grok-4-1-fast-non-reasoning by @martenj4 in https://github.com/BerriAI/litellm/pull/53443 * fix(responses): backport #53410 tool call replay to lts/1.108.x by @owen-hj in https://github.com/BerriAI/litellm/pull/53584 * fix(router): register a model_id Bedrock deployment after an ARN deployment for the same profile by @zoveki in https://github.com/BerriAI/litellm/pull/53462 * fix(vertex_ai): pin const values on Gemini tool and response schemas (lts/1.108.x) by @owen-hj in https://github.com/BerriAI/litellm/pull/53415 * fix(vertex_ai)!: send the caller's anthropic-version in the Vertex Claude /v1/mes",
-    "title": "v1.108.16",
+    "summary": "> [!TIP] > The `lts` image tag always points to the latest LTS release. Pull `ghcr.io/berriai/litellm:lts` to stay on the newest LTS patch ## Verify this release ```bash cosign verify \\ --certificate-identity https://github.com/BerriAI/project-releaser/.github/workflows/release.yml@refs/heads/main \\ --certificate-oidc-issuer https://token.actions.githubusercontent.com \\ ghcr.io/berriai/litellm:v1.108.16 ``` Same command for `litellm-database`, `litellm-non_root` and the `docker.io/litellm/*` images ## What's new in 1.108.16 (LTS) 46 PRs. 4 added, 34 fixed, 1 changed. 2 need action ### Action required - **MCP:** Set `LITELLM_MCP_DCR_GATEWAY_CLIENT=true` to keep automatic gateway-owned registration for new clientless DCR bridges (#53059) Also in [1.109.4](https://github.com/BerriAI/litellm/releases/tag/v1.109.4), [1.110.3](https://github.com/BerriAI/litellm/releases/tag/v1.110.3) - **Azure:** Set `api_key` or `AZURE_API_KEY` on `azure` `/openai/v1` deployments that relied on `OPENAI_API_KEY` (#51144, #53408) ### Highlights - **Responses API:** Fixed Codex over `ws /v1/responses` failing after its first tool call on Bedrock, Azure AI and OpenRouter (#53410) - **Other providers:** Added the Perplexity Orchestrator provider (`perplexity_orchestrator/`) with cost tracking (#53585) - **Other providers:** Added Gradium text-to-speech on `/v1/audio/speech` (#53463) - **Vertex AI and Gemini:** Added `gemini-decision-1` on `/v1/decisions` and `/v1/systemone` (#53696) - **Vertex AI and Gemini:** Fixed Gemini prompt caching never hitting when a conversation carries later system messages (#53635) - **Anthropic:** Fixed `/v1/messages` with `temperature`, `top_p` or `top_k` failing under `anthropic-version: 2026-10-21` (#53395) - **Anthropic:** Fixed `extra_body` fields reaching Claude nested and failing with 400 `Extra inputs are not permitted` (#53411) - **Cost tracking and pricing:** Fixed DB-only models losing custom pricing after a price data reload and logging $0 spend (#53870) ### All changes Azure (2) - Fixed `azure_ai` calls that authenticate with only an Entra token failing with 400 from Foundry (#49769) - Fixed `azure_ai` chat and `/v1/messages` on Foundry project, resource and `/openai/v1` bases failing with 4xx errors (#51144, #53408) Anthropic (2) - Fixed `/v1/messages` with `temperature`, `top_p` or `top_k` failing under `anthropic-version: 2026-10-21` (#53395) - Fixed `extra_body` fields reaching Claude nested and failing with 400 `Extra inputs are not permitted` (#53411) AWS Bedrock (3) - Fixed Bedrock native chat and `/v1/responses` ignoring `aws_bedrock_runtime_endpoint` when `api_base` is also set (#50582) - Fixed a Bedrock `model_id` profile model failing next to a deployment that names the same profile by ARN (#53462) - Fixed Mistral Large 3 and Ministral 3 on Bedrock Converse answering 400 to `tool_choice` (#53591) Vertex AI and Gemini (12) - Added `gemini-decision-1` on `/v1/decisions` and `/v1/systemone` (#53696) - Fixed Gemini image chat returning the thought draft image next to the final one in `message.images` (#50709) - Fixed Gemini dropping `const` from tool and response schemas, so const fields came back empty or made up (#5341",
+    "title": "1.108.16 (LTS)",
+    "updated": "2026-11-24T19:53:54.561219+00:00",
     "url": "https://github.com/BerriAI/litellm/releases/tag/v1.108.16"
   },
   "c629156f045e62f7c9c56747a9c26bc251c2a0e905b077dd5bd9c29bb5033148": {
@@ -10882,6 +10958,18 @@
     "title": "openclaw 2026.10.33",
     "updated": "2026-11-24T07:39:38.717042+00:00",
     "url": "https://github.com/openclaw/openclaw/releases/tag/v2026.10.33"
+  },
+  "dbf3279a2f3448f95b8e3d987c47d03af8e9a44eacb8a22c6bd7e0f0d2858399": {
+    "category": "open-source",
+    "discovered": "2026-11-24T19:53:54.561219+00:00",
+    "fingerprint": "5dc6ab9a09fccd6e7e6b3131c4aaf125739971df9fd721e6c879a2e4c0587d7c",
+    "published": "2026-11-24T04:18:13+00:00",
+    "source": "ollama",
+    "source_url": "https://api.github.com/repos/ollama/ollama/releases?per_page=10",
+    "status": "pending",
+    "summary": "## What's Changed * mlx: fuse Inkling residual mixing on Metal by @dhiltgen in https://github.com/ollama/ollama/pull/19808 * mlxrunner: share tensor helpers and model setup across architectures by @jaingaurav in https://github.com/ollama/ollama/pull/19805 * llama.cpp: version bump b12651 + remove jetpack5 support by @pdevine in https://github.com/ollama/ollama/pull/19865 * inkling2: faster Metal decode, prefill and draft rounds by @dhiltgen in https://github.com/ollama/ollama/pull/19843 **Full Changelog**: https://github.com/ollama/ollama/compare/v0.40.17...v0.40.18-rc0",
+    "title": "v0.40.18",
+    "url": "https://github.com/ollama/ollama/releases/tag/v0.40.18"
   },
   "dc4b3f786946cabc32261a55c2a7d0c1afaa5d07c8939d3462fe941ddf46421e": {
     "category": "models",
@@ -12199,6 +12287,18 @@
     "summary": "arXiv:2611.29327v1 Announce Type: cross Abstract: Visual token pruning can reduce the inference cost of vision language models, but its effectiveness depends on preserving complementary visual information under a limited token budget. A central challenge is to quantify the additional information a candidate token contributes beyond the retained set, a contribution that conventional scores based on attention or similarity struggle to capture directly. In this work, we revisit visual token pruning from the perspective of information gain and use mutual information to characterize the incremental value of candidate tokens. We further establish theoretically that frame potential serves as an effective surrogate for mutual information. Building on this observation, we propose FP-Prune, a training-free visual token pruning method that iteratively removes tokens with low information gain to preserve as much complementary visual information as possible. Experiments on three widely used VLMs and eight datasets demonstrate that FP-Prune outperforms baseline methods in both accuracy and inference efficiency. Further analysis shows that the surrogate objective closely aligns with model performance. Our work provides theoretical grounding and an effective method for visual token pruning.",
     "title": "FP-Prune: Rethinking Visual Token Pruning from an Information Gain Perspective",
     "url": "https://arxiv.org/abs/2611.29327"
+  },
+  "f685f29774415ff5645b802209a2c3a1629898b2024d4a3f35243c6c22b3a8ee": {
+    "category": "audio",
+    "discovered": "2026-11-24T19:53:54.561219+00:00",
+    "fingerprint": "39ce811f73c80c2a509815fc1804587b6e96cbb6f164b2b326fa864f9e78347f",
+    "published": "2026-11-24T13:20:44+00:00",
+    "source": "elevenlabs-python",
+    "source_url": "https://api.github.com/repos/ElevenLabs/elevenlabs-python/releases?per_page=10",
+    "status": "pending",
+    "summary": "## What's Changed * feat: @client_tool decorator for client tools by @PaulAsjes in https://github.com/elevenlabs/elevenlabs-python/pull/936 * Model workflow edge direction by condition presence by @PaulAsjes in https://github.com/elevenlabs/elevenlabs-python/pull/938 * fix: allow synchronous client tools after restarting by @Apeksha9389 in https://github.com/elevenlabs/elevenlabs-python/pull/900 * feat: Agents as code: Agent builder, agents.push/pull and CLI project layout by @PaulAsjes in https://github.com/elevenlabs/elevenlabs-python/pull/939 * Push manages only webhook and client tools; branches never write the main file by @PaulAsjes in https://github.com/elevenlabs/elevenlabs-python/pull/941 * Accept transfer_to_number tools that use transfer_rules by @PaulAsjes in https://github.com/elevenlabs/elevenlabs-python/pull/940 * Add diarize and infer_speaker_names to the realtime speech-to-text wrapper by @JacekDuszenko in https://github.com/elevenlabs/elevenlabs-python/pull/945 * SDK regeneration by @fern-api[bot] in https://github.com/elevenlabs/elevenlabs-python/pull/946 ## New Contributors * @Apeksha9389 made their first contribution in https://github.com/elevenlabs/elevenlabs-python/pull/900 **Full Changelog**: https://github.com/elevenlabs/elevenlabs-python/compare/v2.79.0...v2.80.0",
+    "title": "v2.80.0",
+    "url": "https://github.com/elevenlabs/elevenlabs-python/releases/tag/v2.80.0"
   },
   "f74d9ae95b67d80e9a051f199cec61483430e4d451b3abfd1ce4e184068fc7d4": {
     "category": "models",

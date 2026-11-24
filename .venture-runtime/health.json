@@ -12,7 +12,7 @@
   "browser-use": {
     "error": null,
     "failures": 0,
-    "last_success": "2026-11-24T07:39:38.717042+00:00",
+    "last_success": "2026-11-24T19:53:54.561219+00:00",
     "retry_after": null,
     "url": "https://api.github.com/repos/browser-use/browser-use/releases?per_page=10",
     "validators": {
@@ -22,27 +22,27 @@
   "claude-code": {
     "error": null,
     "failures": 0,
-    "last_success": "2026-11-24T07:39:38.717042+00:00",
+    "last_success": "2026-11-24T19:53:54.561219+00:00",
     "retry_after": null,
     "url": "https://api.github.com/repos/anthropics/claude-code/releases?per_page=10",
     "validators": {
-      "If-None-Match": "W/\"be90d18c31d51b0c726294ac5f2982e32ffbab01536e85ef05b2d20f4770b366\""
+      "If-None-Match": "W/\"f71854ae0b5a8cc8c79c402970e9bc9637825abee12693f79953052fa592649c\""
     }
   },
   "cline": {
     "error": null,
     "failures": 0,
-    "last_success": "2026-11-24T07:39:38.717042+00:00",
+    "last_success": "2026-11-24T19:53:54.561219+00:00",
     "retry_after": null,
     "url": "https://api.github.com/repos/cline/cline/releases?per_page=10",
     "validators": {
-      "If-None-Match": "W/\"b973dda2a46a011470e8a1d44663d348c3708e1ed0941d18dc3fc349891cdbe8\""
+      "If-None-Match": "W/\"8a46b872d9ce7d4d056d51dc33805f2a974a8960891de717548b8712935a3fa3\""
     }
   },
   "cloudflare-ai": {
     "error": null,
     "failures": 0,
-    "last_success": "2026-11-24T07:39:38.717042+00:00",
+    "last_success": "2026-11-24T19:53:54.561219+00:00",
     "retry_after": null,
     "url": "https://blog.cloudflare.com/tag/ai/rss/",
     "validators": {}
@@ -50,28 +50,29 @@
   "codex": {
     "error": null,
     "failures": 0,
-    "last_success": "2026-11-24T07:39:38.717042+00:00",
+    "last_success": "2026-11-24T19:53:54.561219+00:00",
     "retry_after": null,
     "url": "https://api.github.com/repos/openai/codex/releases?per_page=10",
     "validators": {
-      "If-None-Match": "W/\"67f4876b3e7b3eb94bf93fbff8f3f1ec9462157cde5d6213ae9e272779a68e4e\""
+      "If-None-Match": "W/\"1d79c2694e1e054bced774d0a1ca8d58bea6044d7b323b85e23339d7a6acec98\""
     }
   },
   "comfyui": {
     "error": null,
     "failures": 0,
-    "last_success": "2026-11-24T07:39:38.717042+00:00",
+    "last_success": "2026-11-24T19:53:54.561219+00:00",
     "retry_after": null,
     "url": "https://api.github.com/repos/Comfy-Org/ComfyUI/releases?per_page=10",
     "validators": {
-      "If-None-Match": "W/\"097a966b3af80db3a484a5a21321434478e582a2eaa2b5b07c0aa31a55f7785d\""
+      "If-None-Match": "W/\"860f73e63a0c5f25e586945e9597e32b907ed20ef0b515601b8aaecf74ad1ea1\""
     }
   },
   "crawl4ai": {
-    "error": null,
-    "failures": 0,
+    "error": "HTTP Error 403: rate limit exceeded",
+    "failures": 1,
+    "first_failure": "2026-11-24T19:53:54.561219+00:00",
     "last_success": "2026-11-24T07:39:38.717042+00:00",
-    "retry_after": null,
+    "retry_after": "2026-11-24T20:53:54.561219+00:00",
     "url": "https://api.github.com/repos/unclecode/crawl4ai/releases?per_page=10",
     "validators": {
       "If-None-Match": "W/\"ac6a364b6c5e051fc05ca57c96345ef39db4dce37a9c67a64352735f05cd6896\""
@@ -80,7 +81,7 @@
   "cursor": {
     "error": null,
     "failures": 0,
-    "last_success": "2026-11-24T07:39:38.717042+00:00",
+    "last_success": "2026-11-24T19:53:54.561219+00:00",
     "retry_after": null,
     "url": "https://cursor.com/changelog/rss.xml",
     "validators": {}
@@ -88,7 +89,7 @@
   "deepseek-v3": {
     "error": null,
     "failures": 0,
-    "last_success": "2026-11-24T07:39:38.717042+00:00",
+    "last_success": "2026-11-24T19:53:54.561219+00:00",
     "retry_after": null,
     "url": "https://api.github.com/repos/deepseek-ai/DeepSeek-V3/releases?per_page=10",
     "validators": {
@@ -98,7 +99,7 @@
   "docling": {
     "error": null,
     "failures": 0,
-    "last_success": "2026-11-24T07:39:38.717042+00:00",
+    "last_success": "2026-11-24T19:53:54.561219+00:00",
     "retry_after": null,
     "url": "https://api.github.com/repos/docling-project/docling/releases?per_page=10",
     "validators": {
@@ -142,17 +143,17 @@
   "elevenlabs-python": {
     "error": null,
     "failures": 0,
-    "last_success": "2026-11-24T07:39:38.717042+00:00",
+    "last_success": "2026-11-24T19:53:54.561219+00:00",
     "retry_after": null,
     "url": "https://api.github.com/repos/ElevenLabs/elevenlabs-python/releases?per_page=10",
     "validators": {
-      "If-None-Match": "W/\"1598b18389c11193bb456d2db589c3efa0bc4f9e4f30da2f3b61654af280829d\""
+      "If-None-Match": "W/\"ef9ff6f618dd153a1ceede4d3701e23714815584b36ee6c1eeeecd99371370fa\""
     }
   },
   "f5-tts": {
     "error": null,
     "failures": 0,
-    "last_success": "2026-11-24T07:39:38.717042+00:00",
+    "last_success": "2026-11-24T19:53:54.561219+00:00",
     "retry_after": null,
     "url": "https://api.github.com/repos/SWivid/F5-TTS/releases?per_page=10",
     "validators": {
@@ -162,33 +163,33 @@
   "gemini-cli": {
     "error": null,
     "failures": 0,
-    "last_success": "2026-11-24T07:39:38.717042+00:00",
+    "last_success": "2026-11-24T19:53:54.561219+00:00",
     "retry_after": null,
     "url": "https://api.github.com/repos/google-gemini/gemini-cli/releases?per_page=10",
     "validators": {
-      "If-None-Match": "W/\"9af37eaa67ea005d85a8e41330d05eb95e8a9fcae5a5dcd932708722c4d21eb6\""
+      "If-None-Match": "W/\"0ea2b0f0aa717c253bac3120b96682304e1521898657c3324171280fac47bfe1\""
     }
   },
   "github-changelog": {
     "error": null,
     "failures": 0,
-    "last_success": "2026-11-24T07:39:38.717042+00:00",
+    "last_success": "2026-11-24T19:53:54.561219+00:00",
     "retry_after": null,
     "url": "https://github.blog/changelog/feed/",
     "validators": {
-      "If-Modified-Since": "Mon, 23 Nov 2026 22:36:19 GMT",
-      "If-None-Match": "\"a2879f9ef2c2d8d6daadf27f4035e53a\""
+      "If-Modified-Since": "Tue, 24 Nov 2026 16:43:56 GMT",
+      "If-None-Match": "\"d0b96e1057fa6a94834c4d202b203a4a\""
     }
   },
   "github-open-source": {
     "error": null,
     "failures": 0,
-    "last_success": "2026-11-24T07:39:38.717042+00:00",
+    "last_success": "2026-11-24T19:53:54.561219+00:00",
     "retry_after": null,
     "url": "https://github.blog/open-source/feed/",
     "validators": {
-      "If-Modified-Since": "Mon, 23 Nov 2026 22:36:19 GMT",
-      "If-None-Match": "\"a2879f9ef2c2d8d6daadf27f4035e53a\""
+      "If-Modified-Since": "Tue, 24 Nov 2026 16:43:56 GMT",
+      "If-None-Match": "\"d0b96e1057fa6a94834c4d202b203a4a\""
     }
   },
   "github-search-3d": {
@@ -218,7 +219,7 @@
   "google-ai": {
     "error": null,
     "failures": 0,
-    "last_success": "2026-11-24T07:39:38.717042+00:00",
+    "last_success": "2026-11-24T19:53:54.561219+00:00",
     "retry_after": null,
     "url": "https://blog.google/innovation-and-ai/rss/",
     "validators": {}
@@ -234,11 +235,11 @@
   "handy": {
     "error": null,
     "failures": 0,
-    "last_success": "2026-11-24T07:39:38.717042+00:00",
+    "last_success": "2026-11-24T19:53:54.561219+00:00",
     "retry_after": null,
     "url": "https://api.github.com/repos/cjpais/Handy/releases?per_page=10",
     "validators": {
-      "If-None-Match": "W/\"d322a24bdbab7d33604227319739006a6cac65bc25aea2bc3aae890fc83758c9\""
+      "If-None-Match": "W/\"416146f784bc2c798404f2146d55f2e7bbe1c71d99cc92b4a93097664d22cae2\""
     }
   },
   "hf-models": {
@@ -254,43 +255,43 @@
   "hugging-face": {
     "error": null,
     "failures": 0,
-    "last_success": "2026-11-24T07:39:38.717042+00:00",
+    "last_success": "2026-11-24T19:53:54.561219+00:00",
     "retry_after": null,
     "url": "https://huggingface.co/blog/feed.xml",
     "validators": {
-      "If-None-Match": "W/\"42298-tXD2I7mC5oUSAGFcKFwWRx+ANhs\""
+      "If-None-Match": "W/\"42297-gdOLeX4aOiXgJqDSfT5VUj3SY3k\""
     }
   },
   "hugging-face-papers": {
     "error": "HTTP Error 401: Unauthorized",
-    "failures": 1,
+    "failures": 2,
     "first_failure": "2026-11-24T07:39:38.717042+00:00",
-    "retry_after": "2026-11-24T08:39:38.717042+00:00"
+    "retry_after": "2026-11-24T21:53:54.561219+00:00"
   },
   "litellm": {
     "error": null,
     "failures": 0,
-    "last_success": "2026-11-24T07:39:38.717042+00:00",
+    "last_success": "2026-11-24T19:53:54.561219+00:00",
     "retry_after": null,
     "url": "https://api.github.com/repos/BerriAI/litellm/releases?per_page=10",
     "validators": {
-      "If-None-Match": "W/\"218fc00f534b2a032301f0152d7eef56126bd1b6386ff258a2df4198a3120630\""
+      "If-None-Match": "W/\"49f13828fa237c92905f5acc340bc843bf2935b943fd2240b40f7106efac31c9\""
     }
   },
   "llama-cpp": {
     "error": null,
     "failures": 0,
-    "last_success": "2026-11-24T07:39:38.717042+00:00",
+    "last_success": "2026-11-24T19:53:54.561219+00:00",
     "retry_after": null,
     "url": "https://api.github.com/repos/ggml-org/llama.cpp/releases?per_page=10",
     "validators": {
-      "If-None-Match": "W/\"eb750073b2c32b5672e47c8854bde21adeec520f1edfd5bce3d1f3ee383d4adf\""
+      "If-None-Match": "W/\"56860fa0b2aa47a7c10435b5e5108d5af933f5191eea06fd1b630c1712feab25\""
     }
   },
   "llama-models": {
     "error": null,
     "failures": 0,
-    "last_success": "2026-11-24T07:39:38.717042+00:00",
+    "last_success": "2026-11-24T19:53:54.561219+00:00",
     "retry_after": null,
     "url": "https://api.github.com/repos/meta-llama/llama-models/releases?per_page=10",
     "validators": {
@@ -300,7 +301,7 @@
   "mcp": {
     "error": null,
     "failures": 0,
-    "last_success": "2026-11-24T07:39:38.717042+00:00",
+    "last_success": "2026-11-24T19:53:54.561219+00:00",
     "retry_after": null,
     "url": "https://api.github.com/repos/modelcontextprotocol/modelcontextprotocol/releases?per_page=10",
     "validators": {
@@ -310,7 +311,7 @@
   "mistral-common": {
     "error": null,
     "failures": 0,
-    "last_success": "2026-11-24T07:39:38.717042+00:00",
+    "last_success": "2026-11-24T19:53:54.561219+00:00",
     "retry_after": null,
     "url": "https://api.github.com/repos/mistralai/mistral-common/releases?per_page=10",
     "validators": {
@@ -320,47 +321,47 @@
   "mistral-rs": {
     "error": null,
     "failures": 0,
-    "last_success": "2026-11-24T07:39:38.717042+00:00",
+    "last_success": "2026-11-24T19:53:54.561219+00:00",
     "retry_after": null,
     "url": "https://api.github.com/repos/EricLBuehler/mistral.rs/releases?per_page=10",
     "validators": {
-      "If-None-Match": "W/\"28da9718b9f9df4ea01c71dced59145100f961630dac60ec7f83153821a8ac3c\""
+      "If-None-Match": "W/\"445a2af3ce2e707364925886c8192681e3bfdd98e3b422839810ec3c8c50f619\""
     }
   },
   "n8n": {
     "error": null,
     "failures": 0,
-    "last_success": "2026-11-24T07:39:38.717042+00:00",
+    "last_success": "2026-11-24T19:53:54.561219+00:00",
     "retry_after": null,
     "url": "https://api.github.com/repos/n8n-io/n8n/releases?per_page=10",
     "validators": {
-      "If-None-Match": "W/\"be735a86283a40465ee5fee27d2f67ca05b76560f931af49f9737a3c8adf889a\""
+      "If-None-Match": "W/\"2e33e2240be8d3385867603ff4ae5cd6e92c09b07bc0eac6d7ca3830243d750f\""
     }
   },
   "ollama": {
     "error": null,
     "failures": 0,
-    "last_success": "2026-11-24T07:39:38.717042+00:00",
+    "last_success": "2026-11-24T19:53:54.561219+00:00",
     "retry_after": null,
     "url": "https://api.github.com/repos/ollama/ollama/releases?per_page=10",
     "validators": {
-      "If-None-Match": "W/\"c51f5da283e78fd0a03383e2a474ec05d7ce662310741d2c4fe053f377db442c\""
+      "If-None-Match": "W/\"99bb9bdd7f906adaf027874d83d84f013f955ba66d7706818fab401374f14f76\""
     }
   },
   "openai-agents": {
     "error": null,
     "failures": 0,
-    "last_success": "2026-11-24T07:39:38.717042+00:00",
+    "last_success": "2026-11-24T19:53:54.561219+00:00",
     "retry_after": null,
     "url": "https://api.github.com/repos/openai/openai-agents-python/releases?per_page=10",
     "validators": {
-      "If-None-Match": "W/\"bfab9c1087d357425b57b1ee29675932d9a22dbf9eaafe352942a23fd1e2a315\""
+      "If-None-Match": "W/\"f9c04c52f57814dfa960e52d3d8595eabc7a2f3cd649185d99c3f88bc8978c76\""
     }
   },
   "openai-news": {
     "error": null,
     "failures": 0,
-    "last_success": "2026-11-24T07:39:38.717042+00:00",
+    "last_success": "2026-11-24T19:53:54.561219+00:00",
     "retry_after": null,
     "url": "https://openai.com/news/rss.xml",
     "validators": {}
@@ -368,31 +369,31 @@
   "openclaw": {
     "error": null,
     "failures": 0,
-    "last_success": "2026-11-24T07:39:38.717042+00:00",
+    "last_success": "2026-11-24T19:53:54.561219+00:00",
     "retry_after": null,
     "url": "https://api.github.com/repos/openclaw/openclaw/releases?per_page=10",
     "validators": {
-      "If-None-Match": "W/\"8bde2aa80403e055af94ea373869fad2bb839ab6f21e2c72b54b87f1205585ef\""
+      "If-None-Match": "W/\"da64fe57b1e208ff65a2694ef1658c5beceba602c6c3dd246c2eca2bd972ae0c\""
     }
   },
   "opencode": {
     "error": null,
     "failures": 0,
-    "last_success": "2026-11-24T07:39:38.717042+00:00",
+    "last_success": "2026-11-24T19:53:54.561219+00:00",
     "retry_after": null,
     "url": "https://api.github.com/repos/anomalyco/opencode/releases?per_page=10",
     "validators": {
-      "If-None-Match": "W/\"8f4a6cfcf36356a29518dc451a2fd6997614aab24c297ed61f96189d11711e79\""
+      "If-None-Match": "W/\"e2648e7b699827bd1b8c8ee340ca6fae80582d0813196e33b9e5a571fc82f712\""
     }
   },
   "pibot": {
     "error": null,
     "failures": 0,
-    "last_success": "2026-11-24T07:39:38.717042+00:00",
+    "last_success": "2026-11-24T19:53:54.561219+00:00",
     "retry_after": null,
     "url": "https://api.github.com/repos/w01fb0ss/PiBot/releases?per_page=10",
     "validators": {
-      "If-None-Match": "W/\"b73cb11154941f8855951769896ac46f385fd51b47c5bf788cfb54b9ae8b0437\""
+      "If-None-Match": "W/\"6f07c2f3b2d2a4d8d9d9d170fae384cddc91b3f7defed2552396876d03b637a2\""
     }
   },
   "product-hunt": {
@@ -408,34 +409,34 @@
   },
   "pytorch-blog": {
     "error": "HTTP Error 404: Not Found",
-    "failures": 1,
+    "failures": 2,
     "first_failure": "2026-11-24T07:39:38.717042+00:00",
-    "retry_after": "2026-11-24T08:39:38.717042+00:00"
+    "retry_after": "2026-11-24T21:53:54.561219+00:00"
   },
   "qwen-code": {
     "error": null,
     "failures": 0,
-    "last_success": "2026-11-24T07:39:38.717042+00:00",
+    "last_success": "2026-11-24T19:53:54.561219+00:00",
     "retry_after": null,
     "url": "https://api.github.com/repos/QwenLM/qwen-code/releases?per_page=10",
     "validators": {
-      "If-None-Match": "W/\"d3c379febc702ddaeb66be53f9954d8c246c58ab4df11a2f93b18d898056e0aa\""
+      "If-None-Match": "W/\"d20bcba7a1e8a0bb8ac987a76602e9e0e1071fa15f66fe8d17c01df27739ad4c\""
     }
   },
   "ragflow": {
     "error": null,
     "failures": 0,
-    "last_success": "2026-11-24T07:39:38.717042+00:00",
+    "last_success": "2026-11-24T19:53:54.561219+00:00",
     "retry_after": null,
     "url": "https://api.github.com/repos/infiniflow/ragflow/releases?per_page=10",
     "validators": {
-      "If-None-Match": "W/\"f37b6f505edf24631d68328934ac4c39512ecb75ca49be12d7bd6c5889f1f65a\""
+      "If-None-Match": "W/\"f594ba16b610c9f80c80e2923e67af4239ac24987cb6d17afdc68ba7143d0d6b\""
     }
   },
   "tensorrt-llm": {
     "error": null,
     "failures": 0,
-    "last_success": "2026-11-24T07:39:38.717042+00:00",
+    "last_success": "2026-11-24T19:53:54.561219+00:00",
     "retry_after": null,
     "url": "https://api.github.com/repos/NVIDIA/TensorRT-LLM/releases?per_page=10",
     "validators": {
@@ -445,11 +446,11 @@
   "transformers": {
     "error": null,
     "failures": 0,
-    "last_success": "2026-11-24T07:39:38.717042+00:00",
+    "last_success": "2026-11-24T19:53:54.561219+00:00",
     "retry_after": null,
     "url": "https://api.github.com/repos/huggingface/transformers/releases?per_page=10",
     "validators": {
-      "If-None-Match": "W/\"86fa5cb0bd4c5d66720b6c9e820ba13a3e1983fe87ee246aee0728bfe4289c98\""
+      "If-None-Match": "W/\"7a4b95daf0fca2797233b5dd2c427adac12d0ec66fb02ee26e1d7362730b1f67\""
     }
   },
   "trending-ag-ui-protocol-ag-ui": {
@@ -587,11 +588,11 @@
   "xai-sdk": {
     "error": null,
     "failures": 0,
-    "last_success": "2026-11-24T07:39:38.717042+00:00",
+    "last_success": "2026-11-24T19:53:54.561219+00:00",
     "retry_after": null,
     "url": "https://api.github.com/repos/xai-org/xai-sdk-python/releases?per_page=10",
     "validators": {
-      "If-None-Match": "W/\"9771d4fc2ef942427a6b363a009b4c887875663ea9821585661c5c3b677f5d90\""
+      "If-None-Match": "W/\"b20f26e5e146ae9ad1d160e05c91346f1333c361029a505f5c82e90b86f1c042\""
     }
   }
 }
