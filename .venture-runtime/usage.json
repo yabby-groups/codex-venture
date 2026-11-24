@@ -1,38 +1,10 @@
 {
   "2026-11-24": {
     "calls": 6,
-    "tokens": 160370,
-    "usage": {
-      "45348216831-1": {
-        "cached_input_tokens": 19200,
-        "input_tokens": 51054,
-        "output_tokens": 103
-      },
-      "45348975861-1": {
-        "cached_input_tokens": 4736,
-        "input_tokens": 35867,
-        "output_tokens": 95
-      },
-      "45349483611-1": {
-        "cached_input_tokens": 4736,
-        "input_tokens": 23824,
-        "output_tokens": 67
-      },
-      "45349668585-1": {
-        "cached_input_tokens": 0,
-        "input_tokens": 13789,
-        "output_tokens": 122
-      },
-      "45349986343-1": {
-        "cached_input_tokens": 0,
-        "input_tokens": 13817,
-        "output_tokens": 139
-      },
-      "45350279313-1": {
-        "cached_input_tokens": 0,
-        "input_tokens": 19522,
-        "output_tokens": 1971
-      }
-    }
+    "tokens": 160370
+  },
+  "2026-11-25": {
+    "calls": 1,
+    "tokens": 25000
   }
 }
