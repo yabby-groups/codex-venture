@@ -163,6 +163,8 @@ def write_articles(response, mode, candidates, now, limit=3):
         path = Path('src/content') / collection / (slug + '.md')
         if path.exists() or path in writes:
             raise ValueError(f'article already exists: {slug}')
+        tags = (re.sub(r'[^a-z0-9]+', '-', tag.lower()).strip('-') for tag in article['tags'])
+        article['tags'] = list(dict.fromkeys(tag for tag in tags if tag))
         article['published'] = now.isoformat(timespec='seconds')
         article['sources'] = [dict(title=item['title'], url=item['url']) for item in evidence]
         # JSON scalar values are valid in YAML frontmatter.
