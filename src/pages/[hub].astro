@@ -1,0 +1,13 @@
+---
+import Listing from '../layouts/Listing.astro';
+import { allStories, hubs } from '../lib/content';
+import { listingSections } from '../lib/listing';
+
+export async function getStaticPaths() {
+  const sections = listingSections(await allStories());
+  return Object.keys(hubs).map((hub) => ({
+    params: { hub }, props: sections.find(({ base }) => base === `/${hub}/`)!,
+  }));
+}
+---
+<Listing {...Astro.props} />

@@ -7,7 +7,7 @@ const Heading = nested ? 'h3' : 'h2';
 {stories.length ? <ul class:list={['story-list', { compact }]}>
   {stories.map((story) => {
     const section = storySection(story);
-    return <li>
+    return <li data-tags={story.data.tags.join(" ")}>
       <div class="story-meta">
         <a href={section.href}>{section.label[0]}<span lang="en">{section.label[1]}</span></a>
         <time datetime={story.data.published.toISOString()}>{dateKey(story.data.published)}</time>

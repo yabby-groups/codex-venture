@@ -1,6 +1,6 @@
 ---
 import '../styles/site.css';
-import { allStories, categories } from '../lib/content';
+import { allStories, categories, hubs } from '../lib/content';
 const { title = '全球 AI 资讯', description = '每日追踪全球 AI 模型、工具和产品更新。 Daily coverage of AI models, tools and product updates.', article = false, noindex = false } = Astro.props;
 const canonical = new URL(Astro.url.pathname, Astro.site);
 const mode = import.meta.env.VENTURE_WEB_ANALYTICS_MODE || 'automatic';
@@ -12,14 +12,13 @@ if (!['automatic', 'manual', 'disabled'].includes(mode) ||
 const pageTitle = title + ' · Codex Venture';
 const available = new Set((await allStories()).map((story) => story.data.category));
 const categoryLinks = Object.entries(categories).filter(([key]) => key !== 'briefing' && available.has(key as keyof typeof categories));
-const mainKeys = ['open-source', 'coding', 'agents', 'models'];
 const navigation = [
   ['/', '首页', 'Home'], ['/news/', '最新资讯', 'Latest'],
-  ...mainKeys.flatMap((key) => categoryLinks.filter(([id]) => key === id).map(([id, [zh, en]]) => [`/category/${id}/`, zh, en])),
+  ...Object.entries(hubs).map(([key, [zh, en]]) => [`/${key}/`, zh, en]),
   ['/daily/', '每日简报', 'Daily'], ['/weekly/', '每周精选', 'Weekly'],
 ];
 const more = [
-  ...categoryLinks.filter(([key]) => !mainKeys.includes(key)).map(([key, [zh, en]]) => [`/category/${key}/`, zh, en]),
+  ...categoryLinks.map(([key, [zh, en]]) => [`/category/${key}/`, zh, en]),
   ['/archive/', '归档', 'Archive'], ['/tags/', '标签', 'Tags'],
 ];
 const current = (url: string) => (url === '/' ? Astro.url.pathname === url :

@@ -14,6 +14,7 @@ from release import RUNTIME
 ITEMS = Path('state/items.json')
 DATE_ZONE = ZoneInfo('Asia/Shanghai')
 CANDIDATE_LIMIT = 8
+CONTENT_TYPES = load(Path('config/content-types.json'), {})
 DAILY_BUDGET = int(os.environ.get('VENTURE_DAILY_TOKENS', '100000'))
 RUN_BUDGET = int(os.environ.get('VENTURE_RUN_TOKENS', '25000'))
 
@@ -21,7 +22,7 @@ RUN_BUDGET = int(os.environ.get('VENTURE_RUN_TOKENS', '25000'))
 def output_schema():
     string = {'type': 'string'}
     strings = {'type': 'array', 'items': string}
-    fields = {key: string for key in ('slug', 'titleZh', 'titleEn', 'summaryZh', 'summaryEn', 'category', 'body')}
+    fields = {key: string for key in ('slug', 'titleZh', 'titleEn', 'summaryZh', 'summaryEn', 'category', 'body', 'type', 'version')}
     fields.update(tags=strings, itemIds=strings)
 
     def obj(properties):
@@ -114,8 +115,10 @@ def choose(mode, items, now, days=2, strategy=None):
         )
         return previously_reported, weights.get(item['category'], 0), not discovery_lead, timestamp(item['published'])
 
+    briefing = mode in ('daily', 'weekly')
     for key, item in sorted(items.items(), key=priority, reverse=True):
-        if timestamp(item['published']) < now - timedelta(days=days):
+        evergreen = bool(item.get('content_type'))
+        if (briefing and evergreen) or (not evergreen and timestamp(item['published']) < now - timedelta(days=days)):
             continue
         eligible = item['status'] == 'pending' or (mode == 'backfill' and item['status'] == 'expired')
         if mode in ('daily', 'weekly'):
@@ -125,6 +128,8 @@ def choose(mode, items, now, days=2, strategy=None):
         if eligible and item.get('summary'):
             source = item.get('source', item['url'])
             evidence = {field: item[field] for field in ('title', 'url', 'published', 'summary', 'category')}
+            if evergreen:
+                evidence['suggestedType'] = item['content_type']
             if source in selected_sources:
                 deferred.append((key, evidence))
             else:
@@ -132,6 +137,16 @@ def choose(mode, items, now, days=2, strategy=None):
                 candidates[key] = evidence
         if len(candidates) == limit:
             break
+    if not briefing and limit > 1:
+        # Give an evergreen lead room even when recent releases dominate the queue.
+        if not any(item.get('suggestedType') for item in candidates.values()):
+            for key, item in sorted(items.items(), key=priority, reverse=True):
+                if item.get('content_type') and item['status'] == 'pending' and item.get('summary'):
+                    if len(candidates) == limit:
+                        candidates.pop(next(reversed(candidates)))
+                    candidates[key] = {field: item[field] for field in ('title', 'url', 'published', 'summary', 'category')}
+                    candidates[key]['suggestedType'] = item['content_type']
+                    break
     if weights:
         # Reserve one slot for an otherwise eligible item outside the promoted categories.
         exploration = next(((key, item) for key, item in deferred if weights.get(item['category'], 0) <= 0), None)
@@ -173,6 +188,17 @@ def write_articles(response, mode, candidates, now, limit=3):
             raise ValueError('article too long')
         collection = 'daily' if mode in ('daily', 'weekly') else 'news'
         path = Path('src/content') / collection / (slug + '.md')
+        content_type = article.pop('type')
+        version = article.pop('version').strip()
+        if collection == 'daily':
+            if content_type != mode:
+                raise ValueError('Invalid briefing type')
+        elif content_type not in CONTENT_TYPES:
+            raise ValueError('Invalid content type')
+        elif content_type != 'news':
+            article.update(type=content_type, version=version, verified=day, status='current', tested=False)
+            if content_type in ('skills', 'plugins', 'mcp', 'open-source', 'tools'):
+                article['project'] = digest(canonical(evidence[0]['url']))
         if path.exists() or path in writes:
             raise ValueError(f'article already exists: {slug}')
         tags = (re.sub(r'[^a-z0-9]+', '-', tag.lower()).strip('-') for tag in article['tags'])
@@ -206,7 +232,7 @@ def edit(mode):
     now = datetime.now(DATE_ZONE)
     day = now.date().isoformat()
     for entry in items.values():
-        if entry['status'] == 'pending' and timestamp(entry['published']) < now - timedelta(hours=48):
+        if entry['status'] == 'pending' and not entry.get('content_type') and timestamp(entry['published']) < now - timedelta(hours=48):
             entry['status'] = 'expired'
     save(ITEMS, items)
     if mode == 'daily' and any(story['collection'] == 'daily' and story['slug'] == day for story in articles):

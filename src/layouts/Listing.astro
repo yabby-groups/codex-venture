@@ -4,10 +4,10 @@ import StoryList from '../components/StoryList.astro';
 import SectionHeading from '../components/SectionHeading.astro';
 import { pageSize } from '../lib/listing';
 import { dateKey, type Story } from '../lib/content';
-interface Props { zh: string; en: string; stories: Story[]; intro?: string[]; page?: number; base?: string }
-const { zh, en, stories, intro, page = 1, base, } = Astro.props;
-const lastPage = base ? Math.ceil(stories.length / pageSize) : 1;
-const visible = base ? stories.slice((page - 1) * pageSize, page * pageSize) : stories;
+interface Props { zh: string; en: string; stories: Story[]; intro?: string[]; page?: number; base?: string; topics?: [string, string[]][]; directory?: boolean }
+const { zh, en, stories, intro, page = 1, base, topics, directory, } = Astro.props;
+const lastPage = base && !directory ? Math.ceil(stories.length / pageSize) : 1;
+const visible = base && !directory ? stories.slice((page - 1) * pageSize, page * pageSize) : stories;
 const dates = [...new Set(visible.map(({ data }) => dateKey(data.published)))];
 const url = (index: number) => index === 1 ? base : `${base}page/${index}/`;
 ---
@@ -17,10 +17,19 @@ const url = (index: number) => index === 1 ? base : `${base}page/${index}/`;
     <div class="count">{stories.length} 篇<span lang="en">{stories.length} articles</span></div>
     {intro && <p>{intro[0]}<span lang="en">{intro[1]}</span></p>}
   </header>
+  {topics?.length && <nav class="tag-list" aria-label="内容栏目 / Topics">
+    {topics.map(([key, [zh, en]]) => <a href={`/topics/${key}/`}>{zh} · <span lang="en">{en}</span></a>)}
+  </nav>}
   <div class="reading-grid">
     <section>
       <SectionHeading zh="文章" en="Articles" />
+      {directory && <label>按标签筛选 <span lang="en">Filter by tag</span>
+        <select id="directory-tag"><option value="">全部 / All</option>
+          {[...new Set(visible.flatMap(({ data }) => data.tags))].sort().map((tag) => <option value={tag}>{tag}</option>)}
+        </select>
+      </label>}
       <StoryList stories={visible} nested />
+      {directory && <p id="directory-empty" role="status" hidden>没有匹配文章 / No matching articles</p>}
       {lastPage > 1 && <nav class="pagination" aria-label="分页 / Pagination">
         {page > 1 && <a href={url(page - 1)}>← 上一页 <span lang="en">Previous</span></a>}
         <span>{page} / {lastPage}</span>
@@ -33,3 +42,19 @@ const url = (index: number) => index === 1 ? base : `${base}page/${index}/`;
     </aside>}
   </div>
 </Base>
+
+<script>
+  const select = document.querySelector<HTMLSelectElement>('#directory-tag');
+  const empty = document.querySelector<HTMLElement>('#directory-empty');
+  if (select && empty) {
+    const rows = [...document.querySelectorAll<HTMLElement>('.story-list > li[data-tags]')];
+    select.addEventListener('change', () => {
+      for (const row of rows) row.hidden = !!select.value && !row.dataset.tags?.split(' ').includes(select.value);
+      empty.hidden = rows.some((row) => !row.hidden);
+    });
+  }
+</script>
+<style>
+  :global(.story-list > li[hidden]), #directory-empty[hidden] { display: none !important; }
+  select { max-width: 100%; color: inherit; background: transparent; font: inherit; }
+</style>

@@ -174,7 +174,7 @@ def collect(days=7, extra=(), only_extra=False, refresh=False):
                         date, link = timestamp(published), canonical(link)
                     except (ValueError, TypeError):
                         continue
-                    if not now - timedelta(days=days) <= date <= now + timedelta(minutes=5):
+                    if date > now + timedelta(minutes=5) or (not source.get('content_type') and date < now - timedelta(days=days)):
                         continue
                     title, summary = clean(title)[:300], clean(summary)[:3200]
                     if not title or not summary:
@@ -195,6 +195,8 @@ def collect(days=7, extra=(), only_extra=False, refresh=False):
                     items[item_id] = dict(url=link, published=date.isoformat(), discovered=now.isoformat(),
                                           source=key, source_url=url, category=source['category'], title=title,
                                           summary=summary[:3200], fingerprint=fingerprint, status='pending')
+                    if source.get('content_type'):
+                        items[item_id]['content_type'] = source['content_type']
                     known[fingerprint] = item_id
                     discovered += 1
                 validators = {request_header: headers[response_header] for request_header, response_header in

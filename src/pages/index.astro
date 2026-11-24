@@ -6,7 +6,8 @@ import Repository from '../components/Repository.astro';
 import { allStories, categories, dateKey, isWeekly, storyUrl, storySection, type Story } from '../lib/content';
 import { repositoryFor } from '../lib/repositories';
 const stories = await allStories();
-const news = stories.filter((story) => story.collection === 'news');
+const news = stories.filter((story) => story.collection === 'news' && (!story.data.type || ['news', 'models'].includes(story.data.type)));
+const ecosystem = stories.filter(({ data }) => data.type && !['news', 'models'].includes(data.type));
 const briefing = stories.find((story) => story.collection === 'daily' && !isWeekly(story));
 const weekly = stories.find(isWeekly);
 const lead = news[0] ?? briefing ?? weekly;
@@ -24,7 +25,7 @@ const editions = [briefing, weekly].filter((story): story is Story => Boolean(st
 ---
 <Base>
   <header class="edition">
-    <h1>全球 AI 资讯<span lang="en">Global AI News</span></h1>
+    <h1>全球 AI 资讯与实践<span lang="en">Global AI News & Practice</span></h1>
     {latest && <div>最近发布 <span lang="en">Latest update</span> <time datetime={latest.toISOString()}>{dateKey(latest)} · UTC+8</time></div>}
   </header>
   {lead && <section class="lead-grid" aria-label="头条 / Top stories">
@@ -45,6 +46,10 @@ const editions = [briefing, weekly].filter((story): story is Story => Boolean(st
       <StoryList stories={news.slice(0, 7)} nested />
     </section>
     <aside class="rail">
+      {ecosystem.length > 0 && <section>
+        <SectionHeading zh="生态与实践" en="Ecosystem & practice" href="/discover/" />
+        <StoryList stories={ecosystem.slice(0, 4)} nested compact />
+      </section>}
       {editions.length > 0 && <section class="editions">
         <SectionHeading zh="简报与精选" en="Briefings & reviews" />
         {editions.map((story) => {

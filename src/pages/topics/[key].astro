@@ -1,0 +1,12 @@
+---
+import Listing from '../../layouts/Listing.astro';
+import { allStories } from '../../lib/content';
+import { listingSections } from '../../lib/listing';
+
+export async function getStaticPaths() {
+  return listingSections(await allStories()).filter(({ base }) => base.startsWith('/topics/')).map((section) => ({
+    params: { key: section.base.split('/')[2] }, props: section,
+  }));
+}
+---
+<Listing {...Astro.props} />

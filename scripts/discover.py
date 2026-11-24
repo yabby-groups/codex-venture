@@ -37,6 +37,24 @@ def hn_rows(body):
                    row['created_at'], 'Community discussion. Linked source: ' + row['url'])
 
 
+def open_vsx_rows(body):
+    for extension in json.loads(body)['extensions']:
+        publisher, name = extension['namespace'], extension['name']
+        if not extension.get('deprecated') and extension.get('description'):
+            yield (extension.get('displayName') or name, f'https://open-vsx.org/extension/{publisher}/{name}',
+                   extension['timestamp'], f"Open VSX version {extension['version']}. Publisher description: {extension['description']}")
+
+
+def registry_rows(body):
+    for entry in json.loads(body)['servers']:
+        server = entry['server']
+        official = entry['_meta']['io.modelcontextprotocol.registry/official']
+        repo = server.get('repository', {}).get('url', '')
+        if official.get('isLatest') and official['status'] == 'active' and repo.startswith('https://github.com/'):
+            yield (server['name'], repo, official['publishedAt'],
+                   f"Registry listing {server['version']}. Publisher description: {server['description']}")
+
+
 def discovery(days=7):
     start = (datetime.now(timezone.utc) - timedelta(days=days)).date()
     sources = []
@@ -77,5 +95,21 @@ def discovery(days=7):
         dict(id='product-hunt', kind='feed', category='open-source', url='https://www.producthunt.com/feed'),
         dict(id='arxiv-ai', kind='discovery', category='models', parse=arxiv_rows,
              url='https://rss.arxiv.org/rss/cs.AI'),
+    ])
+    keywords = ('automation', 'documents', 'testing', 'video', 'design', 'research', 'data')
+    keyword = keywords[datetime.now(timezone.utc).date().toordinal() % len(keywords)]
+    skill_query = urlencode({'q': f'agent-skills {keyword} in:name,description,readme archived:false',
+                             'sort': 'updated', 'per_page': 10})
+    registry_query = urlencode({'version': 'latest', 'limit': 12, 'search': keyword})
+    extension_query = urlencode({'query': f'AI {keyword}', 'size': 10})
+    sources.extend([
+        dict(id='ecosystem-skill-search', kind='discovery', category='agents', content_type='skills',
+             url='https://api.github.com/search/repositories?' + skill_query, parse=github_rows),
+        dict(id='ecosystem-open-vsx', kind='discovery', category='coding', content_type='plugins',
+             url='https://open-vsx.org/api/-/search?' + extension_query, parse=open_vsx_rows),
+        dict(id='ecosystem-mcp-registry', kind='discovery', category='agents', content_type='mcp',
+             url='https://registry.modelcontextprotocol.io/v0.1/servers?' + registry_query, parse=registry_rows),
+        dict(id='ecosystem-show-hn', kind='discovery', category='coding', content_type='stories',
+             url='https://hn.algolia.com/api/v1/search?query=AI&tags=show_hn&hitsPerPage=15', parse=hn_rows),
     ])
     return collect(days, sources, only_extra=True, refresh=days > 7)

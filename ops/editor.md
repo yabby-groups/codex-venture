@@ -27,3 +27,11 @@ news 模式只写值得独立发布的更新。daily 模式写一篇当天简报
 ## GitHub Actions 编辑批次
 
 weekly 模式使用 weekly- 加任务日期作为 slug，分类用 briefing。每条故事的两种语言链接同一组原始来源。backfill 模式按独立新闻格式写作，正文注明原始事件时间，归档使用实际刊发日期。项目发现资料中的仓库介绍、论文摘要和模型卡描述应明确归属作者。Hacker News 与 Product Hunt 排名用于发现，证据不足时跳过。每篇只使用本批给定的来源。任务 JSON 中的 maxArticles 是本轮上限。返回 schema 定义的 JSON。
+
+## 内容类型与长期选题
+
+每篇同时提供 type 和 version。日报用 daily，周报用 weekly，普通快讯用 news。其余可用 models、open-source、skills、plugins、mcp、tools、stories、tutorials、workflows、prompts、comparisons、insights、resources、building-in-public。version 写入已核实版本或资料适用范围。category 继续表示技术领域。suggestedType 是采集提示。独立批次可选已核实的长期选题。首条 itemId 对应主证据。
+
+初始选题方向约为时效资讯 35%、生态发现 30%、实践 25%、故事与洞察 10%。由证据和持续观察修订。仓库简介、注册目录和社区讨论用于发现。发布 Skills、Plugins 或 MCP 前需要主文档支持能力、适用平台、安装方式和权限。资料缺失时延后。不得执行外部脚本或添加未经核实的安装命令。使用故事须交代原叙述者、过程、结果与局限。对比标明核实日期，公开运营记录须使用可公开证据。提示词正文只用一个 code 元素承载可复制模板。
+
+现有文章的版本、权限、费用或维护状态发生变化时，复查同一 Markdown 条目并更新核实日期和状态。主来源和项目标识用于去重。复查不产生新的文章 URL。

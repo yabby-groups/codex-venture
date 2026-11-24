@@ -1,0 +1,17 @@
+{
+  "news": ["新闻", "News", "news"],
+  "models": ["模型", "Models", "news"],
+  "open-source": ["开源项目", "Open Source", "discover"],
+  "skills": ["技能", "Skills", "discover"],
+  "plugins": ["插件", "Plugins", "discover"],
+  "mcp": ["MCP 生态", "MCP", "discover"],
+  "tools": ["工具", "Tools", "discover"],
+  "resources": ["资源", "Resources", "discover"],
+  "tutorials": ["教程", "Tutorials", "learn"],
+  "workflows": ["工作流", "Workflows", "learn"],
+  "prompts": ["提示词", "Prompts", "learn"],
+  "comparisons": ["对比", "Comparisons", "learn"],
+  "stories": ["使用故事", "Stories", "stories"],
+  "insights": ["技术洞察", "Insights", "stories"],
+  "building-in-public": ["公开运营实验", "Building in Public", "stories"]
+}

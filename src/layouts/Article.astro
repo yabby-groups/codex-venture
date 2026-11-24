@@ -31,8 +31,9 @@ const breadcrumb = JSON.stringify({
   ],
 }).replaceAll('<', '\\u003c');
 const jsonLd = JSON.stringify({
-  '@context': 'https://schema.org', '@type': 'NewsArticle',
+  '@context': 'https://schema.org', '@type': data.type && !['news', 'models'].includes(data.type) ? 'Article' : 'NewsArticle',
   headline: data.titleZh, alternativeHeadline: data.titleEn, datePublished: data.published.toISOString(),
+  dateModified: data.verified,
   description: data.summaryZh, mainEntityOfPage: canonical, inLanguage: ['zh-CN', 'en'],
   citation: data.sources.map(({ url }) => url), author: { '@type': 'Organization', name: 'Codex Venture' },
   publisher: { '@type': 'Organization', name: 'Codex Venture', url: Astro.site?.href },
@@ -57,7 +58,15 @@ const jsonLd = JSON.stringify({
     <nav class="article-toc" aria-label="目录 / Contents" data-pagefind-ignore hidden>
       <strong>目录 <span lang="en">Contents</span></strong><ol></ol>
     </nav>
+    {data.verified && <div class="article-byline">
+      <div>核实日期 {data.verified} · {data.version} · {data.tested ? '已验证操作' : '依据资料整理'}
+        {data.status !== 'current' && (data.status === 'archived' ? ' · 已归档' : ' · 待复查')}</div>
+      <span lang="en">Verified {data.verified} · {data.version} · {data.tested ? 'Procedure checked' : 'Documentation-based'}
+        {data.status !== 'current' && (data.status === 'archived' ? ' · Archived' : ' · Needs review')}</span>
+    </div>}
     <div class="prose"><Content /></div>
+    {data.type === 'prompts' && <button type="button" id="copy-prompt" hidden>复制提示词 / Copy prompt</button>}
+    {data.type === 'prompts' && <span id="copy-status" role="status"></span>}
     <section class="article-links" data-pagefind-ignore>
       <h2>原始来源 <span lang="en">Primary Sources</span></h2>
       <ul>{data.sources.map(({ url, title }) => <li><a href={url} lang="en">{title} ↗</a></li>)}</ul>
@@ -75,6 +84,20 @@ const jsonLd = JSON.stringify({
 </Base>
 
 <script>
+  const copy = document.querySelector<HTMLButtonElement>('#copy-prompt');
+  const prompt = document.querySelector<HTMLElement>('.prose code');
+  const status = document.querySelector<HTMLElement>('#copy-status');
+  if (copy && prompt && status && navigator.clipboard) {
+    copy.hidden = false;
+    copy.addEventListener('click', async () => {
+      try {
+        await navigator.clipboard.writeText(prompt.textContent ?? '');
+        status.textContent = '已复制 / Copied';
+      } catch {
+        status.textContent = '复制失败，请选择文本 / Copy failed, select the text manually';
+      }
+    });
+  }
   const toc = document.querySelector<HTMLElement>('.article-toc');
   const headings = [...document.querySelectorAll<HTMLElement>('article .prose h2')];
   if (toc && headings.length >= 4) {

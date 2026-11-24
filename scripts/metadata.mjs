@@ -1,6 +1,8 @@
 import { readdirSync, readFileSync } from 'node:fs';
 import { parse } from 'yaml';
 
+const types = JSON.parse(readFileSync('config/content-types.json', 'utf8'));
+
 const read = (directory, collection) => readdirSync(directory).filter((name) => name.endsWith('.md')).map((name) => {
   const slug = name.slice(0, -3);
   const text = readFileSync(directory + '/' + name, 'utf8');
@@ -20,6 +22,13 @@ const read = (directory, collection) => readdirSync(directory).filter((name) => 
       typeof data.published !== 'string' ||
       !/^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}(?:\.\d+)?(?:Z|[+-]\d{2}:\d{2})$/.test(data.published) ||
       !Number.isFinite(Date.parse(data.published))) throw new Error('Invalid frontmatter in ' + name);
+  if (data.type && (collection !== 'news' || !Object.hasOwn(types, data.type) ||
+      !/^\d{4}-\d{2}-\d{2}$/.test(data.verified ?? '') ||
+      !['current', 'needs-review', 'archived'].includes(data.status) ||
+      typeof data.tested !== 'boolean' || typeof data.version !== 'string' || !data.version.trim() ||
+      (data.project !== undefined && !slugPattern.test(data.project)) ||
+      (['skills', 'plugins', 'mcp', 'open-source', 'tools'].includes(data.type) && !data.project)))
+    throw new Error('Invalid content lifecycle metadata in ' + name);
   const blocks = body.trim().split(/\n\s*\n/);
   let pairs = 0;
   const zh = '<p lang="zh-CN">';
@@ -60,7 +69,12 @@ const read = (directory, collection) => readdirSync(directory).filter((name) => 
 const articles = ['news', 'daily'].flatMap((kind) => read('src/content/' + kind, kind));
 const used = new Set();
 const titles = new Set();
+const projects = new Set();
 for (const story of articles) {
+  if (story.project) {
+    if (projects.has(story.project)) throw new Error('Duplicate project profile ' + story.project);
+    projects.add(story.project);
+  }
   const title = story.titleEn.toLowerCase().trim();
   if (titles.has(title)) throw new Error('Duplicate article title ' + title);
   titles.add(title);
@@ -72,8 +86,8 @@ for (const story of articles) {
       if (/^(utm_|fbclid$|gclid$)/i.test(key)) url.searchParams.delete(key);
     }
     url.searchParams.sort();
-    if (story.collection === 'news') {
-      if (used.has(url.href)) throw new Error('Duplicate news source ' + url.href);
+    if (story.collection === 'news' && (!story.type || source === story.sources[0])) {
+      if (used.has(url.href)) throw new Error('Duplicate primary article source ' + url.href);
       used.add(url.href);
     }
   }

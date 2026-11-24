@@ -1,5 +1,14 @@
 import { getCollection, type CollectionEntry } from 'astro:content';
 
+import types from '../../config/content-types.json';
+export { types };
+
+export const hubs = {
+  discover: ['发现', 'Discover'],
+  learn: ['实践', 'Learn'],
+  stories: ['故事', 'Stories'],
+};
+
 export type Story = CollectionEntry<'news'> | CollectionEntry<'daily'>;
 export const categories = {
   models: ['AI 模型', 'AI Models'],
@@ -20,7 +29,9 @@ export const dateKey = (date: Date) => new Intl.DateTimeFormat('sv-SE', {
 
 export const isWeekly = (story: Story) => story.collection === 'daily' && story.id.startsWith('weekly-');
 export const storySection = (story: Story) => story.collection === 'news'
-  ? { href: `/category/${story.data.category}/`, label: categories[story.data.category] }
+  ? story.data.type && story.data.type !== 'news'
+    ? { href: `/topics/${story.data.type}/`, label: types[story.data.type].slice(0, 2) }
+    : { href: `/category/${story.data.category}/`, label: categories[story.data.category] }
   : isWeekly(story)
     ? { href: '/weekly/', label: ['每周精选', 'Weekly Review'] }
     : { href: '/daily/', label: ['每日简报', 'Daily Briefing'] };

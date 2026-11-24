@@ -2,6 +2,8 @@ import { defineCollection } from 'astro:content';
 import { z } from 'astro/zod';
 import { glob } from 'astro/loaders';
 
+import types from '../config/content-types.json';
+
 const schema = z.object({
   titleZh: z.string().min(1),
   titleEn: z.string().min(1),
@@ -9,6 +11,12 @@ const schema = z.object({
   summaryEn: z.string().min(1),
   published: z.iso.datetime({ offset: true }).transform((value) => new Date(value)),
   category: z.enum(['models', 'coding', 'image', 'video', 'audio', 'agents', 'open-source', 'briefing']),
+  type: z.enum(Object.keys(types) as [keyof typeof types, ...(keyof typeof types)[]]).optional(),
+  verified: z.iso.date().optional(),
+  version: z.string().min(1).optional(),
+  status: z.enum(['current', 'needs-review', 'archived']).optional(),
+  tested: z.boolean().optional(),
+  project: z.string().regex(/^[a-z0-9]+(?:-[a-z0-9]+)*$/).optional(),
   tags: z.array(z.string().regex(/^[a-z0-9]+(?:-[a-z0-9]+)*$/)).min(1),
   sources: z.array(z.object({
     title: z.string().min(1),
