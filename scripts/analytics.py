@@ -110,7 +110,7 @@ def report(root, start, end, stats):
         for key in ('page_views', 'visits'):
             rows = enabled_data(traffic, key)
             if rows:
-                totals[day][key] = rows[0]['sum'].get('pageViews' if key == 'page_views' else 'visits')
+                totals[day][key] = rows[0].get('count', rows[0].get('sum', {}).get('pageViews')) if key == 'page_views' else rows[0]['sum'].get('visits')
         search_totals = enabled_data(search, 'totals')
         if search_totals and search_totals['rows']:
             totals[day]['google'] = {key: search_totals['rows'][0].get(key)
@@ -118,7 +118,7 @@ def report(root, start, end, stats):
         for row in enabled_data(traffic, 'pages') or []:
             path = route(row['dimensions']['requestPath'])
             if path in paths:
-                count = row['sum']['pageViews']
+                count = row.get('count', row.get('sum', {}).get('pageViews'))
                 views[path] += count
                 categories[paths[path]['category']] += count
         for row in (enabled_data(search, 'page') or {}).get('rows', []):

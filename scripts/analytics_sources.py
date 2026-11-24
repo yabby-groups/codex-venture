@@ -85,19 +85,18 @@ def cloudflare(day):
         return cloudflare_account(token, account, query_text, site=tag,
                                   start=day + 'T00:00:00Z', end=end + 'T00:00:00Z')['rows']
 
-    metrics = {key: result(lambda: query(RUM_PAGES, f'sum {{ {field} }}', ['sum_' + field]))
-               for key, field in {'page_views': 'pageViews', 'visits': 'visits'}.items()}
-    performance = ['pageLoadTimeP50', 'pageLoadTimeP75', 'pageLoadTimeP95']
-    for field in performance:
-        metrics[field] = result(lambda: query(RUM_PAGES, f'quantiles {{ {field} }}',
-                                              ['quantiles_' + field]))
+    metrics = {
+        'page_views': result(lambda: query(RUM_PAGES, 'count', ['count'])),
+        'visits': result(lambda: query(RUM_PAGES, 'sum { visits }', ['sum_visits'])),
+    }
     for key, dimension in {'pages': 'requestPath', 'referrers': 'refererHost',
                            'countries': 'countryName', 'devices': 'deviceType',
-                           'browsers': 'browserName'}.items():
-        metrics[key] = result(lambda: query(RUM_PAGES, f'dimensions {{ {dimension} }} sum {{ pageViews }}',
-                                            ['dimensions_' + dimension, 'sum_pageViews'],
-                                            100, ', orderBy: [sum_pageViews_DESC]'))
-    for field in ('lcpP75', 'inpP75', 'clsP75'):
+                           'browsers': 'userAgentBrowser'}.items():
+        metrics[key] = result(lambda: query(RUM_PAGES, f'dimensions {{ {dimension} }} count',
+                                            ['dimensions_' + dimension, 'count'],
+                                            100, ', orderBy: [count_DESC]'))
+    for field in ('largestContentfulPaintP75', 'interactionToNextPaintP75',
+                  'cumulativeLayoutShiftP75', 'firstContentfulPaintP75', 'timeToFirstByteP75'):
         metrics[field] = result(lambda: query(RUM_VITALS, f'quantiles {{ {field} }}',
                                               ['quantiles_' + field]))
     metrics['unique_visitors'] = {'status': 'unavailable'}

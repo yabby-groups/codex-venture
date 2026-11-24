@@ -69,10 +69,10 @@ class AnalyticsTests(unittest.TestCase):
             if 'settings' in query:
                 dataset = RUM_PAGES if RUM_PAGES in query else 'rumWebVitalsEventsAdaptiveGroups'
                 return {'settings': {dataset: dict(enabled=dataset == RUM_PAGES,
-                         availableFields=['sum_pageViews'], maxPageSize=10,
+                         availableFields=['count'], maxPageSize=10,
                          notOlderThan=3 * 86400, maxDuration=86400)}}
-            self.assertIn('sum { pageViews }', query)
-            return {'rows': [{'sum': {'pageViews': 7}}]}
+            self.assertIn('{ count }', query)
+            return {'rows': [{'count': 7}]}
 
         env = {'CLOUDFLARE_ANALYTICS_TOKEN': 'fixture', 'CLOUDFLARE_ACCOUNT_ID': 'fixture',
                'CLOUDFLARE_WEB_ANALYTICS_SITE_TAG': 'fixture'}
@@ -82,7 +82,7 @@ class AnalyticsTests(unittest.TestCase):
                 'analytics_sources.cloudflare_account', side_effect=account_response) as api:
             today = datetime.now(timezone.utc).date()
             recent = cloudflare((today - timedelta(days=1)).isoformat())
-            self.assertEqual(recent['metrics']['page_views']['data'][0]['sum']['pageViews'], 7)
+            self.assertEqual(recent['metrics']['page_views']['data'][0]['count'], 7)
             self.assertEqual(recent['metrics']['visits']['status'], 'unavailable')
             self.assertEqual(cloudflare((today - timedelta(days=5)).isoformat())['status'], 'unavailable')
             self.assertEqual(api.call_count, 3)
