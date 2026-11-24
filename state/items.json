@@ -18,7 +18,7 @@
     "published": "2026-11-19T01:14:04+00:00",
     "source": "claude-code",
     "source_url": "https://api.github.com/repos/anthropics/claude-code/releases?per_page=10",
-    "status": "pending",
+    "status": "expired",
     "summary": "## What's changed - Added auto mode for Claude Opus 4.6 and Sonnet 4.6 on Amazon Bedrock, Google Cloud's Agent Platform, Microsoft Foundry and Claude apps gateway; interactive sessions with no permission mode start in it - Added `\"onFailure\": \"block\"` for `mcp_tool` hooks, as for command and HTTP hooks: a hook whose call fails blocks the action - Added a warning when a message from a session that skips permission prompts may be held and dropped by a cloud session - Added a notice in `/status` and `claude doctor` when an OpenTelemetry exporter has no endpoint and its data would likely be lost - Added `CLAUDE_CODE_DISABLE_DEFERRED_TOOL_RESUME`, which lets a host stop `claude -p --resume` and `--continue` from running a tool call that a hook deferred - Added support for apps that embed Claude Code to switch on the policy plugin's `allowManagedModsOnly` option; an admin's managed settings st",
     "title": "v2.1.328",
     "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.328"
@@ -30,7 +30,7 @@
     "published": "2026-11-20T00:44:47+00:00",
     "source": "codex",
     "source_url": "https://api.github.com/repos/openai/codex/releases?per_page=10",
-    "status": "pending",
+    "status": "expired",
     "summary": "## New Features - Added GPT-6.2 Sol and Astra to model catalogs, with Sol as the default catalog selection. (#62106) - Enabled the TUI workspace by default, with searchable document previews, image previews, and subagent transcripts alongside the main conversation. (#61352, #61888, #61889, #61919, #62157) - Added configurable undo and redo shortcuts to the non-Vim prompt composer, including restoration of attachments and large pastes. (#61954) - Added `codex exec --remote ` to start or resume noninteractive sessions on an existing app server. (#61707) - Added `/rc` and `/remote` to manage local remote control and display device pairing codes from the TUI. (#62121) - Added custom MCP status line selection and authoring through `/statusline` when `tui_extensions_statusline` is enabled. (#61979, #61988, #62037) ## Bug Fixes - Preserved drafts, queued follow-ups, and interrupted input with t",
     "title": "0.171.0",
     "url": "https://github.com/openai/codex/releases/tag/rust-v0.171.0"
@@ -42,7 +42,7 @@
     "published": "2026-11-17T12:07:45+00:00",
     "source": "qwen-code",
     "source_url": "https://api.github.com/repos/QwenLM/qwen-code/releases?per_page=10",
-    "status": "pending",
+    "status": "expired",
     "summary": "## Bundled CLI Version This SDK release bundles CLI version: 0.28.0 Source: CLI built from source (same branch/ref as SDK) --- ## Bundled CLI Version This SDK release bundles CLI version: 0.27.4 Source: CLI built from source (same branch/ref as SDK) --- ## Bundled CLI Version This SDK release bundles CLI version: 0.27.3 Source: CLI built from source (same branch/ref as SDK) --- ## Bundled CLI Version This SDK release bundles CLI version: 0.27.2 Source: CLI built from source (same branch/ref as SDK) --- ## Bundled CLI Version This SDK release bundles CLI version: 0.27.1 Source: CLI built from source (same branch/ref as SDK) --- ## Bundled CLI Version This SDK release bundles CLI version: 0.27.0 Source: CLI built from source (same branch/ref as SDK) --- See commit history for changes.",
     "title": "SDK TypeScript Release v0.1.35",
     "url": "https://github.com/QwenLM/qwen-code/releases/tag/sdk-typescript-v0.1.35"
@@ -54,7 +54,7 @@
     "published": "2026-11-20T17:00:00+00:00",
     "source": "google-ai",
     "source_url": "https://blog.google/innovation-and-ai/rss/",
-    "status": "pending",
+    "status": "expired",
     "summary": "Watch Duty uses Gemini to turn noisy fire radio into text, spotting wildfire dispatches in under 30 seconds so alerts go out faster.",
     "title": "How Watch Duty is using Gemini to get wildfire alerts out faster",
     "url": "https://blog.google/company-news/outreach-and-initiatives/google-org/watch-duty-gemini-tool"
@@ -78,7 +78,7 @@
     "published": "2026-11-19T18:50:57+00:00",
     "source": "github-changelog",
     "source_url": "https://github.blog/changelog/feed/",
-    "status": "pending",
+    "status": "expired",
     "summary": "Enterprise Live Migrations (ELM) from Azure DevOps Services to GitHub Enterprise Cloud with data residency is now generally available. You can move your repositories while your teams keep working, then… The post Enterprise Live Migrations from Azure DevOps generally available appeared first on The GitHub Blog .",
     "title": "Enterprise Live Migrations from Azure DevOps generally available",
     "url": "https://github.blog/changelog/2026-11-19-enterprise-live-migrations-from-azure-devops-generally-available"
@@ -102,7 +102,7 @@
     "published": "2026-11-20T14:12:05+00:00",
     "source": "github-changelog",
     "source_url": "https://github.blog/changelog/feed/",
-    "status": "pending",
+    "status": "expired",
     "summary": "Editor’s note (November 23, 2026): We have temporarily rolled back this change while we improve the experience based on user feedback. Choose which repositories appear on the Dashboard with the… The post Pin your favorite repositories to your dashboard appeared first on The GitHub Blog .",
     "title": "Pin your favorite repositories to your dashboard",
     "url": "https://github.blog/changelog/2026-11-20-pin-your-favorite-repositories-to-your-dashboard"
@@ -114,7 +114,7 @@
     "published": "2026-11-20T21:49:29+00:00",
     "source": "github-changelog",
     "source_url": "https://github.blog/changelog/feed/",
-    "status": "pending",
+    "status": "expired",
     "summary": "Organization owners can now let people work on repository security advisories, including private vulnerability reports, through custom repository roles. You no longer have to make them repository administrators or give… The post Security advisory permissions are now generally available appeared first on The GitHub Blog .",
     "title": "Security advisory permissions are now generally available",
     "url": "https://github.blog/changelog/2026-11-20-security-advisory-permissions-are-now-generally-available"
@@ -126,7 +126,7 @@
     "published": "2026-11-18T00:22:25+00:00",
     "source": "openai-agents",
     "source_url": "https://api.github.com/repos/openai/openai-agents-python/releases?per_page=10",
-    "status": "pending",
+    "status": "expired",
     "summary": "## [0.25.0](https://github.com/openai/openai-agents-python/compare/v0.24.0...v0.25.0) (2026-11-17) ## Key Changes Version 0.25.0 removes the beta Runloop sandbox provider and changes how Pydantic run contexts are checkpointed. Runloop users should preserve their workspace data before switching providers. Applications that share checkpoints across workers should upgrade readers first. ### Highlights: - Migrate Runloop workloads to another supported sandbox provider, such as Modal, or remain on 0.24.0 while migrating. Provider-specific sessions and snapshots require a separate data migration. - Resume nested agent-tool approvals with output guardrails using RunState schema `1.22`. Pydantic checkpoints now preserve default values and in-place edits. Use a custom serializer for process-local resources. - `OpenAIResponsesCompactionSession` now defaults to `gpt-6-luna`. Set `model=\"gpt-4.1\"` to keep the previous choice. Agent model settings also follow the selected model more closely. Native Chat Completions tool requests for `gpt-6-sol` and `gpt-6-luna` default to non-reasoning mode when no effort is supplied. - Runner handoffs can opt into recovery with `failure_error_function`. Omitting it preserves exception propagation. The demo REPL can now approve or reject individual tool calls. - MCP v2 Streamable HTTP supports concurrent requests. MCP v1 retains serialized requests. Failed and incomplete Responses calls now retain provider-reported token usage. ### Features * expose utilities for third-party session adapters ([#5428](https://github.com/openai/openai-agents-python/issues/5428)) ([16fdb20](https://github.com/openai/openai-agents-python/commit/16fdb2091d0b18cc1200d26ba6a20ee6f1962455)) * **sandbox:** remove Runloop provider ([#5369](https://github.com/openai/openai-agents-python/issues/5369)) ([12ce34d](https://github.com/openai/openai-agents-python/commit/12ce34d8438d6f1f7c964a261b89e069e8a0b3d3)) ### Bug Fixes * avoid loading workspace startup files during internal sandbox operations ([#5406](https://github.com/openai/openai-agents-python/pull/5406)) ([841dfdd](https://github.com/openai/openai-agents-python/commit/841dfdd938bfd4ca052475eb76d6245a356868e0)) * preserve nested ToolContext approval decisions across resume ([#5633](https://github.com/openai/openai-agents-python/pull/5633)) ([c200ae8](https://github.com/openai/openai-agents-python/commit/c200ae8bd5b3f7510f0893f467aa9d118fdc7b12)) * avoid repeatedly fingerprinting completed tool calls ([#5421](https://github.com/openai/openai-agents-python/pull/5421)) ([dda19f9](https://github.com/openai/openai-agents-python/commit/dda19f9b91cd540cedba2a2d76bcea56deabee98)) * add opt-in handoff error recovery ([#5418](https://github.com/openai/openai-agents-python/issues/5418)) ([a6ed84f](https://github.com/openai/openai-agents-python/commit/a6ed84f38ed374585fb3969a8177a76755d58d94)) * align implicit settings with provider-selected models ([#5425](https://github.com/openai/openai-agents-python/issues/5425)) ([a88d291](https://github.com/openai/openai-agents-python/commit/a88d2919631dbd93801a79eb0f97011ef9b451b7)) * align model defaults with TS SDK ([#6064](https://github.com/openai/openai-agents-",
     "title": "v0.25.0",
     "url": "https://github.com/openai/openai-agents-python/releases/tag/v0.25.0"
@@ -153,7 +153,7 @@
     "published": "2026-11-20T02:06:01+00:00",
     "source": "github-changelog",
     "source_url": "https://github.blog/changelog/feed/",
-    "status": "pending",
+    "status": "expired",
     "summary": "GitHub Desktop now lets you sign in with more than one account on the same host, including GitHub.com, GitHub Enterprise Server, and GHE.com. This has been one of the most… The post GitHub Desktop now supports multiple accounts per host appeared first on The GitHub Blog .",
     "title": "GitHub Desktop now supports multiple accounts per host",
     "url": "https://github.blog/changelog/2026-11-19-github-desktop-now-supports-multiple-accounts-per-host"
@@ -189,7 +189,7 @@
     "published": "2026-11-21T12:28:26+00:00",
     "source": "transformers",
     "source_url": "https://api.github.com/repos/huggingface/transformers/releases?per_page=10",
-    "status": "pending",
+    "status": "expired",
     "summary": "# Release v5.24.0 ## New Model additions ### Inkling 2 Mini Inkling 2 Mini is a multimodal model from Thinking Machines Lab that accepts text and image inputs and generates text outputs. It is a smaller sibling of Inkling 2 Small, added in v5.23.0. It has 24 decoder layers instead of 48, and compensates with a looping mechanism in which layers 6 to 17 run three times. A learned message-passing mechanism mixes the residuals of the previous pass into the attention and mixture-of-experts inputs of each loop layer. The decoder has a hidden size of 2304 and routes each token to 8 of 128 experts. The image encoder, tokenizer and processor are the same as Inkling 2 Small's. A research checkpoint ([TML-d24-varloop-research](https://huggingface.co/thinkingmachines/TML-d24-varloop-research)) has the same architecture but supports a variable number of loop passes. Fewer passes are faster, and more ",
     "title": "Release v5.24.0",
     "url": "https://github.com/huggingface/transformers/releases/tag/v5.24.0"
@@ -213,7 +213,7 @@
     "published": "2026-11-20T20:41:26+00:00",
     "source": "github-changelog",
     "source_url": "https://github.blog/changelog/feed/",
-    "status": "pending",
+    "status": "expired",
     "summary": "GitHub Enterprise Server (GHES) 3.23 is now available and introduces new capabilities across the platform. Here are a few highlights in the 3.23 release: When working in GitHub Projects, you… The post GitHub Enterprise Server 3.23 release candidate appeared first on The GitHub Blog .",
     "title": "GitHub Enterprise Server 3.23 release candidate",
     "url": "https://github.blog/changelog/2026-11-20-github-enterprise-server-3-23-release-candidate"
@@ -225,7 +225,7 @@
     "published": "2026-11-18T00:00:00+00:00",
     "source": "hugging-face",
     "source_url": "https://huggingface.co/blog/feed.xml",
-    "status": "pending",
+    "status": "expired",
     "summary": "",
     "title": "Rumble-2-Flash: an open 0.5B speech model for 40+ languages",
     "url": "https://huggingface.co/blog/rumble-2-flash"
@@ -237,7 +237,7 @@
     "published": "2026-11-20T00:02:21+00:00",
     "source": "github-changelog",
     "source_url": "https://github.blog/changelog/feed/",
-    "status": "pending",
+    "status": "expired",
     "summary": "Your feedback has helped improve the new pull request Overview page since its November 5, 2026 public preview. Here’s what’s new! Clearer merge status and next steps Failed optional checks… The post Improvements on the pull request overview in public preview appeared first on The GitHub Blog .",
     "title": "Improvements on the pull request overview in public preview",
     "url": "https://github.blog/changelog/2026-11-19-improvements-on-the-pull-request-overview-in-public-preview"
@@ -249,7 +249,7 @@
     "published": "2026-11-18T22:55:32+00:00",
     "source": "comfyui",
     "source_url": "https://api.github.com/repos/Comfy-Org/ComfyUI/releases?per_page=10",
-    "status": "pending",
+    "status": "expired",
     "summary": "## What's Changed * [Partner Nodes] feat(LTX): add AlphaGen, SDR to HDR, Reframe and Upscale nodes by @bigcat88 in https://github.com/Comfy-Org/ComfyUI/pull/17664 * [Partner Nodes] feat(MiniMax): add MiniMax H3 Image node by @bigcat88 in https://github.com/Comfy-Org/ComfyUI/pull/17661 * Update workflow templates to v0.11.106 by @comfyui-wiki in https://github.com/Comfy-Org/ComfyUI/pull/17668 * Fix for some workflows not working properly. by @comfyanonymous in https://github.com/Comfy-Org/ComfyUI/pull/17675 * Conform Concatenate Video clips to the first clip's frame rate and audio (FRONT-3775) by @jtydhr88 in https://github.com/Comfy-Org/ComfyUI/pull/17621 * [Partner Nodes] feat(Wan): move Wan nodes to Comfy Router by @bigcat88 in https://github.com/Comfy-Org/ComfyUI/pull/17639 * [Partner Nodes] feat(Krea): move Krea nodes to Comfy Router by @bigcat88 in https://github.com/Comfy-Org/Comfy",
     "title": "v0.46.0",
     "url": "https://github.com/Comfy-Org/ComfyUI/releases/tag/v0.46.0"
@@ -273,7 +273,7 @@
     "published": "2026-11-20T00:00:00+00:00",
     "source": "hugging-face",
     "source_url": "https://huggingface.co/blog/feed.xml",
-    "status": "pending",
+    "status": "expired",
     "summary": "",
     "title": "Introducing harness adapters: adapt your favorite model to your harness to improve performance and cost",
     "url": "https://huggingface.co/blog/harness-adapters-at-scale"
@@ -301,7 +301,7 @@
     "published": "2026-11-20T00:00:00+00:00",
     "source": "hugging-face",
     "source_url": "https://huggingface.co/blog/feed.xml",
-    "status": "pending",
+    "status": "expired",
     "summary": "",
     "title": "Welcome Inkling 2 Mini, Cutting-edge Performance for your Local Setup",
     "url": "https://huggingface.co/blog/inkling2mini"
@@ -313,7 +313,7 @@
     "published": "2026-11-17T23:17:45+00:00",
     "source": "claude-code",
     "source_url": "https://api.github.com/repos/anthropics/claude-code/releases?per_page=10",
-    "status": "pending",
+    "status": "expired",
     "summary": "## What's changed - Added a confirmation before `/install-github-app` changes a repository - Added `claude mcp add-json -` to read the server's JSON from stdin, so tokens can stay off the command line; not available inside a Claude Code session - Added a line when a resumed session's earlier messages can't be loaded - Added a list in `/status` of broken agent, skill, command and output style files, keybinding errors, an unavailable sandbox, ignored permission settings and hook matchers that never match - Added a note in `/config` when other settings override a row - Added `x-claude-code-managed-settings-checksum` to the gateway hint headers; sent where managed settings set `CLAUDE_CODE_GATEWAY_HINT_HEADERS=1`, including where they already do - Added support for naming a session's billing group with the `attributionProject` setting, for Claude apps gateways that set `admin.billing_group_t",
     "title": "v2.1.327",
     "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.327"
@@ -353,7 +353,7 @@
     "published": "2026-11-18T15:00:23+00:00",
     "source": "hugging-face",
     "source_url": "https://huggingface.co/blog/feed.xml",
-    "status": "pending",
+    "status": "expired",
     "summary": "",
     "title": "Time-Series Models in the Streamhouse: A New Frontier and Use Cases",
     "url": "https://huggingface.co/blog/ibm-research/time-series-powered-streamhouse"
@@ -365,7 +365,7 @@
     "published": "2026-11-17T11:17:50+00:00",
     "source": "qwen-code",
     "source_url": "https://api.github.com/repos/QwenLM/qwen-code/releases?per_page=10",
-    "status": "pending",
+    "status": "expired",
     "summary": "## Highlights _See the complete change list below._ ## Breaking Changes No known breaking changes. ## Complete Change List ### Features - feat(web-shell): add sidebar workspace filter ([#17244](https://github.com/QwenLM/qwen-code/pull/17244)) by @callmeYe - feat(managed-agent): add the DingTalk adapter on the managed channel path ([#17136](https://github.com/QwenLM/qwen-code/pull/17136)) by @wenshao - feat(acp): route live and read-only Agent Host sessions through the shared tool batch ([#17218](https://github.com/QwenLM/qwen-code/pull/17218)) by @yiliang114 - feat(core): let the loop switches be forced off, not only on ([#17048](https://github.com/QwenLM/qwen-code/pull/17048)) by @2SinceJuly - feat(web-shell): make the local files bridge easier to discover and use ([#17198](https://github.com/QwenLM/qwen-code/pull/17198)) by @wenshao - feat: make each surface's resolved agent-loop path visible ([#17256](https://github.com/QwenLM/qwen-code/pull/17256)) by @wenshao - feat(managed-agent): enable external workspace execution ([#15684](https://github.com/QwenLM/qwen-code/pull/15684)) by @yiliang114 - feat(verify-pr): require a boundary declaration and own the watch state ([#17185](https://github.com/QwenLM/qwen-code/pull/17185)) by @wenshao - feat(channels): digest bound-PR comment backlog after a downtime gap ([#17199](https://github.com/QwenLM/qwen-code/pull/17199)) by @wenshao - feat(core): run headless sessions and the Ink TUI on the shared agent loop by default ([#17362](https://github.com/QwenLM/qwen-code/pull/17362)) by @qqqys - feat(serve): localize the daemon PR-watch prompt and pin the recorded follow-ups ([#17352](https://github.com/QwenLM/qwen-code/pull/17352)) by @wenshao - feat(managed-agent): publish the managed /loop skill variant by profile ([#17272](https://github.com/QwenLM/qwen-code/pull/17272)) by @wenshao - feat(web-shell): Complete the Russian Web Shell UI catalog ([#17414](https://github.com/QwenLM/qwen-code/pull/17414)) by @callmeYe - feat(core): retain the latest complete operation during compaction ([#17141](https://github.com/QwenLM/qwen-code/pull/17141)) by @callmeYe - feat(web-shell): add active highlight styling to selected reasoning e… ([#16622](https://github.com/QwenLM/qwen-code/pull/16622)) by @pranavshankar1221 - feat(core): run subagents on the shared agent loop by default ([#17420](https://github.com/QwenLM/qwen-code/pull/17420)) by @qqqys - feat(web-shell): show per-turn hook statistics ([#17327](https://github.com/QwenLM/qwen-code/pull/17327)) by @callmeYe - feat(acp): let sessions a program drives take accepted cross-session messages ([#17436](https://github.com/QwenLM/qwen-code/pull/17436)) by @qqqys - feat(mods): let Mods rewrite expanded thinking in the terminals ([#17443](https://github.com/QwenLM/qwen-code/pull/17443)) by @qqqys - feat(core): slim edit output and add authorized stale recovery ([#17255](https://github.com/QwenLM/qwen-code/pull/17255)) by @callmeYe - feat(web-shell): surface a session-artifact header entry before the replay on cold open ([#17397](https://github.com/QwenLM/qwen-code/pull/17397)) by @wenshao - feat(generated-ui): store card view state in the session transcript ([#17448](h",
     "title": "Release v0.28.0",
     "url": "https://github.com/QwenLM/qwen-code/releases/tag/v0.28.0"
@@ -377,7 +377,7 @@
     "published": "2026-11-19T21:08:05+00:00",
     "source": "gemini-cli",
     "source_url": "https://api.github.com/repos/google-gemini/gemini-cli/releases?per_page=10",
-    "status": "pending",
+    "status": "expired",
     "summary": "## What's Changed * Changelog for v0.69.0-preview.0 by @gemini-cli-robot in https://github.com/google-gemini/gemini-cli/pull/30222 * Changelog for v0.68.0 by @gemini-cli-robot in https://github.com/google-gemini/gemini-cli/pull/30224 * chore(release): bump version to 0.70.0-nightly.20261110.g1603e9bab by @gemini-cli-robot in https://github.com/google-gemini/gemini-cli/pull/30223 * test(cli): remove redundant lowercase restart test in AdminSettingsChangedDialog by @luisfelipe-alt in https://github.com/google-gemini/gemini-cli/pull/30221 * fix(cli): preserve Unicode prompts and strip ANSI fragments in session previews (#29915) by @urielefrenvirtusa in https://github.com/google-gemini/gemini-cli/pull/30220 * fix(cli): preserve selected worktree across authentication restarts (#30078) by @duvanka-prasad in https://github.com/google-gemini/gemini-cli/pull/30176 * fix(core): preserve interrupt",
     "title": "Release v0.70.0",
     "url": "https://github.com/google-gemini/gemini-cli/releases/tag/v0.70.0"
@@ -413,7 +413,7 @@
     "published": "2026-11-18T04:15:53+00:00",
     "source": "openclaw",
     "source_url": "https://api.github.com/repos/openclaw/openclaw/releases?per_page=10",
-    "status": "pending",
+    "status": "expired",
     "summary": "This is a gateway-only `extended-stable` release, which is our current equivalent to LTS. This release is OpenClaw from the end of October 2026, plus critical security updates, reliability and performance fixes, and features like new model support. The latest version of OpenClaw at the time of this release is [2026.11.5](https://github.com/openclaw/openclaw/releases#release-v2026.11.5) ## 2026.10.33 This extended-stable release brings cumulative Gateway and core-plugin improvements since 2026.9.37, plus the selected maintenance fixes on the approved 2026.11.4 product baseline. Distribution covers the core npm package, matching official npm plugins, and Gateway Docker images; native-app releases are not included. ### Highlights - Long conversations and large session stores use bounded export and recovery work, reducing out-of-memory failures during chat, memory export, Doctor repair, and ",
     "title": "openclaw 2026.10.33",
     "url": "https://github.com/openclaw/openclaw/releases/tag/v2026.10.33"
@@ -425,7 +425,7 @@
     "published": "2026-11-19T17:26:46+00:00",
     "source": "openclaw",
     "source_url": "https://api.github.com/repos/openclaw/openclaw/releases?per_page=10",
-    "status": "pending",
+    "status": "expired",
     "summary": "## OpenClaw v2026.11.6 406 commits · 386 pull requests · 157 contributors ### Changes included in this release The release notes and changelog contain the same content, presented in two formats: - [Release notes](https://docs.openclaw.ai/releases/2026.11.6) — formatted for people. - [Changelog](https://raw.githubusercontent.com/openclaw/openclaw/main/CHANGELOG/2026.11.6.md) — plain Markdown for AI agents and tools. ### Thanks [@609NFT](https://github.com/609NFT) [@abacha](https://github.com/abacha) [@akifodabas](https://github.com/akifodabas) [@akmad](https://github.com/akmad) [@Alix-007](https://github.com/Alix-007) [@amittell](https://github.com/amittell) [@Angelojiang11](https://github.com/Angelojiang11) [@Anurag-5ingh](https://github.com/Anurag-5ingh) [@Aribarambo](https://github.com/Aribarambo) [@ayaangazali](https://github.com/ayaangazali) [@Barry-886](https://github.com/Barry-886)",
     "title": "openclaw 2026.11.6",
     "url": "https://github.com/openclaw/openclaw/releases/tag/v2026.11.6"
@@ -437,7 +437,7 @@
     "published": "2026-11-21T01:45:48+00:00",
     "source": "qwen-code",
     "source_url": "https://api.github.com/repos/QwenLM/qwen-code/releases?per_page=10",
-    "status": "pending",
+    "status": "expired",
     "summary": "## Highlights _See the complete change list below._ ## Breaking Changes No known breaking changes. ## Complete Change List ### Features - feat(web-shell): explain background tasks from the composer chips ([#17398](https://github.com/QwenLM/qwen-code/pull/17398)) by @wenshao - Adds the backend-neutral unified chat surface contract and capability guards for Web Shell, with no user-visible behavior change yet. ([#17520](https://github.com/QwenLM/qwen-code/pull/17520)) by @wenshao - feat(channels): add GitHub as the third managed channel adapter ([#17511](https://github.com/QwenLM/qwen-code/pull/17511)) by @wenshao - Lets Generated UI cards preserve view state across page reloads, reopened conversations, and forks. ([#17522](https://github.com/QwenLM/qwen-code/pull/17522)) by @qqqys - feat(web-shell): send to another session with /send ([#17539](https://github.com/QwenLM/qwen-code/pull/17539)) by @qqqys - Removes daemon dependencies from shared approval and composer components so the managed chat kernel can use them without loading daemon code. ([#17661](https://github.com/QwenLM/qwen-code/pull/17661)) by @wenshao - Adds a send-only Generic Webhook Channel that posts notification, prompt, and scheduled-task results as JSON to a configured HTTPS endpoint, with optional Bearer authentication. ([#17610](https://github.com/QwenLM/qwen-code/pull/17610)) by @jkxiao - Managed agents now notify owners when attachments are retired and classify suspension age-out waits with control-plane wait codes. ([#17681](https://github.com/QwenLM/qwen-code/pull/17681)) by @doudouOUC - Adds Generic Webhook destinations in the Web Shell Channel editor, with endpoint URL, optional Bearer token, and local/private receiver options. ([#17405](https://github.com/QwenLM/qwen-code/pull/17405)) by @jkxiao - Session switching now shows the artifact count immediately from session metadata, before full loading completes. ([#17518](https://github.com/QwenLM/qwen-code/pull/17518)) by @wenshao - Enables Mods in ACP sessions for qwen --acp, Zed, and the VS Code companion when experimental.mods is enabled. ([#17693](https://github.com/QwenLM/qwen-code/pull/17693)) by @qqqys - Applies the --max-sse-connections admission budget to all daemon stream surfaces, with shared occupancy accounting and logged refusal when the limit is exceeded. ([#17662](https://github.com/QwenLM/qwen-code/pull/17662)) by @wenshao - Adds an experimental WeCom managed-channel adapter that routes private-chat messages into bound Managed Agent Sessions and returns replies over the authenticated WebSocket. ([#17441](https://github.com/QwenLM/qwen-code/pull/17441)) by @wenshao - Installs and pins default Workspace Skills from an optional catalog when a Workspace Session is created without caller-provided Skills or an explicit pin list. ([#17703](https://github.com/QwenLM/qwen-code/pull/17703)) by @doudouOUC - Adds a status-tinted Goal marker to Web Shell sidebar session rows so sessions with active Goals are recognizable and can be opened from the marker. ([#17515](https://github.com/QwenLM/qwen-code/pull/17515)) by @wenshao - Adds a Traditional Chinese UI locale to Web Shell and VS Code companion chrome, with zh-TW,",
     "title": "Release v0.28.3",
     "url": "https://github.com/QwenLM/qwen-code/releases/tag/v0.28.3"
@@ -449,7 +449,7 @@
     "published": "2026-11-18T18:53:43+00:00",
     "source": "hugging-face",
     "source_url": "https://huggingface.co/blog/feed.xml",
-    "status": "pending",
+    "status": "expired",
     "summary": "",
     "title": "Why your fine-tuning job takes longer than the FLOPs say",
     "url": "https://huggingface.co/blog/Dharma-AI/predicting-fine-tuning-time"
@@ -461,7 +461,7 @@
     "published": "2026-11-19T13:00:00+00:00",
     "source": "google-ai",
     "source_url": "https://blog.google/innovation-and-ai/rss/",
-    "status": "pending",
+    "status": "expired",
     "summary": "We’re partnering with Blue Origin on the first heavy-lift launch for Project Suncatcher, our long-term moonshot to scale AI infrastructure in space by tapping into the a…",
     "title": "We’re partnering with Blue Origin on our first heavy-lift Project Suncatcher launch.",
     "url": "https://blog.google/innovation-and-ai/models-and-research/google-research/blue-origin-project-suncatcher-partnership"
@@ -485,7 +485,7 @@
     "published": "2026-11-18T00:00:00+00:00",
     "source": "hugging-face",
     "source_url": "https://huggingface.co/blog/feed.xml",
-    "status": "pending",
+    "status": "expired",
     "summary": "",
     "title": "180B Parameters, 32GB of RAM: Pushing MoE Inference to the Limit with Transformers",
     "url": "https://huggingface.co/blog/moe-expert-streaming"
@@ -497,7 +497,7 @@
     "published": "2026-11-18T19:54:56+00:00",
     "source": "hugging-face",
     "source_url": "https://huggingface.co/blog/feed.xml",
-    "status": "pending",
+    "status": "expired",
     "summary": "",
     "title": "DaisyRose-27B: Pushing the Frontier of Post-Training Efficiency",
     "url": "https://huggingface.co/blog/RadixArk/daisyrose-27b-pushing-the-frontier-of-post-trainin"
@@ -509,7 +509,7 @@
     "published": "2026-11-19T22:14:41+00:00",
     "source": "claude-code",
     "source_url": "https://api.github.com/repos/anthropics/claude-code/releases?per_page=10",
-    "status": "pending",
+    "status": "expired",
     "summary": "## What's changed - Added a trust dialog warning that says where a folder's hooks are declared - Added a warning in the conversation, in Claude Desktop and other non-interactive hosts, when hooks in managed settings fail to load - Added this session's scheduled tasks, `/loop` wakeups, the goal and this conversation's forks to `/tasks`; x stops one after asking - Added a \"Server message\" row to a server's page in `/mcp` that shows the JSON-RPC error message of a remote HTTP MCP server that refuses the connection - Added a \"Marketplace auto-update\" row to `/status` that names managed marketplaces that get no automatic updates, and why - Added support for turning on Code Mode while OpenTelemetry events and metrics are enabled; each tool call the code makes sends its events; tracing still keeps it off - Fixed `~/.claude.json` sometimes being reset to defaults when a network stall or file loc",
     "title": "v2.1.329",
     "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.329"
@@ -521,7 +521,7 @@
     "published": "2026-11-17T10:47:56+00:00",
     "source": "openclaw",
     "source_url": "https://api.github.com/repos/openclaw/openclaw/releases?per_page=10",
-    "status": "pending",
+    "status": "expired",
     "summary": "## OpenClaw v2026.11.5 11,811 commits · 9,954 pull requests · 746 contributors ### Changes included in this release The release notes and changelog contain the same content, presented in two formats: - [Release notes](https://docs.openclaw.ai/releases/2026.11.5) — formatted for people. - [Changelog](https://raw.githubusercontent.com/openclaw/openclaw/main/CHANGELOG/2026.11.5.md) — plain Markdown for AI agents and tools. ### Thanks [@0xtc23](https://github.com/0xtc23) [@100yenadmin](https://github.com/100yenadmin) [@1052326311](https://github.com/1052326311) [@3F3Feng](https://github.com/3F3Feng) [@4140leal-cw](https://github.com/4140leal-cw) [@555aaditya](https://github.com/555aaditya) [@5jrfrbd6z9-spec](https://github.com/5jrfrbd6z9-spec) [@609NFT](https://github.com/609NFT) [@615Works](https://github.com/615Works) [@8bitsforge](https://github.com/8bitsforge) [@aaroneden](https://github",
     "title": "openclaw 2026.11.5",
     "url": "https://github.com/openclaw/openclaw/releases/tag/v2026.11.5"
@@ -533,7 +533,7 @@
     "published": "2026-11-17T22:00:00+00:00",
     "source": "google-ai",
     "source_url": "https://blog.google/innovation-and-ai/rss/",
-    "status": "pending",
+    "status": "expired",
     "summary": "A Google DeepMind research scientist explains the potential behind our AlphaGenome and AlphaGenome Atlas tools.",
     "title": "How genome mapping can help researchers better understand disease",
     "url": "https://blog.google/innovation-and-ai/models-and-research/google-deepmind/alphagenome-disease-research"
@@ -545,7 +545,7 @@
     "published": "2026-11-20T22:32:56+00:00",
     "source": "claude-code",
     "source_url": "https://api.github.com/repos/anthropics/claude-code/releases?per_page=10",
-    "status": "pending",
+    "status": "expired",
     "summary": "## What's changed - Added sign-in to organizations managed in Anthropic's Enterprise Admin Console: after `claude auth login`, Claude Code applies the organization's settings and uses its cloud provider or gateway - Added easel, a built-in mod that draws charts when asked and under MCP metrics results, on Pro, Max and, where available, Team and Enterprise on macOS and Linux; turn automatic charts off in `/config` - Added `CLAUDE_CODE_FULL_SIGN_IN_LINK=1` to print the full sign-in link, if the short one shows an error or a script reads values from it - Self-hosted runner: Added `--start-dir` / `SELF_HOSTED_RUNNER_START_DIR` to have Claude start its work in a folder of a repository, while settings and hooks load as without it - Added a notice in cloud and self-hosted runner sessions when a plugin marketplace can't be fetched because its repository isn't one of the session's - Self-hosted r",
     "title": "v2.1.330",
     "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.330"
