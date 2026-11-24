@@ -13,3 +13,5 @@ jobs:
       task: smoke-test
     secrets:
       CODEX_API_KEY: ${{ secrets.CODEX_API_KEY }}
+      CODEX_BASE_URL: ${{ secrets.CODEX_BASE_URL }}
+      CODEX_MODEL: ${{ secrets.CODEX_MODEL }}

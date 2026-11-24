@@ -18,6 +18,8 @@
 | Variable | `VENTURE_MAX_ARTICLES_PER_RUN` | 单批最多文章数，默认 3。每日及每周简报均最多一篇 |
 | Variable | `VENTURE_MAX_MODEL_CALLS_PER_DAY` | 北京时间每日 Codex 会话上限，默认 6。填 0 暂停模型调用 |
 
+`CODEX_BASE_URL` 与 `CODEX_MODEL` 也支持同名 Secret。两处都配置时 Variables 优先。
+
 ## 首次运行
 
 1. 配置 API Secret、基址、模型和推理等级。打开 Actions → **Codex Venture Responses API smoke test** → Run workflow。也可从 **Codex Venture** 选择 `smoke-test`。工作流用真实 `codex exec` 验证流式事件、固定 MCP 工具往返、最终结构化结果和用量，然后运行站点构建。

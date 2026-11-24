@@ -24,6 +24,10 @@ on:
     secrets:
       CODEX_API_KEY:
         required: false
+      CODEX_BASE_URL:
+        required: false
+      CODEX_MODEL:
+        required: false
       VENTURE_PUBLISH_TOKEN:
         required: false
 
@@ -136,9 +140,9 @@ jobs:
           codex --version | grep -Fx "codex-cli $CLI_VERSION"
       - name: Run isolated Responses session
         env:
-          CODEX_BASE_URL: ${{ vars.CODEX_BASE_URL }}
+          CODEX_BASE_URL: ${{ vars.CODEX_BASE_URL || secrets.CODEX_BASE_URL }}
           CODEX_API_KEY: ${{ secrets.CODEX_API_KEY }}
-          CODEX_MODEL: ${{ vars.CODEX_MODEL }}
+          CODEX_MODEL: ${{ vars.CODEX_MODEL || secrets.CODEX_MODEL }}
           CODEX_REASONING_EFFORT: ${{ vars.CODEX_REASONING_EFFORT }}
           CODEX_ADVANCED_MODEL: ${{ vars.CODEX_ADVANCED_MODEL }}
           CODEX_ADVANCED_REASONING_EFFORT: ${{ vars.CODEX_ADVANCED_REASONING_EFFORT }}
