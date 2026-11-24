@@ -1,0 +1,40 @@
+---
+import Base from '../../layouts/Base.astro';
+import BilingualHeading from '../../components/BilingualHeading.astro';
+import BilingualParagraph from '../../components/BilingualParagraph.astro';
+import { allStories, storyUrl } from '../../lib/content';
+import { entities, entityStories, entitySchema, jsonLd, validateEntities } from '../../lib/entities';
+
+export async function getStaticPaths() {
+  const stories = await allStories();
+  validateEntities(stories);
+  return entities.map((entity) => ({ params: { id: entity.id }, props: { entity, stories: entityStories(entity, stories) } }));
+}
+const { entity, stories } = Astro.props;
+const schema = { '@context': 'https://schema.org', '@type': 'WebPage', url: Astro.url.href,
+  name: entity.name, inLanguage: ['zh-CN', 'en'], mainEntity: entitySchema(entity, Astro.site) };
+---
+<Base title={entity.name} description={entity.summary.join(' ')}>
+  <script slot="head" type="application/ld+json" set:html={jsonLd(schema)} />
+  <article class="article">
+    <h1 class="page-heading" lang="en">{entity.name}</h1>
+    <div class="prose">
+      <BilingualParagraph zh={entity.summary[0]} en={entity.summary[1]} />
+      <section>
+        <BilingualHeading zh="使用与核对" en="Usage and checks" />
+        <BilingualParagraph zh={entity.guide[0]} en={entity.guide[1]} />
+      </section>
+      <section>
+        <BilingualHeading zh="官方资源" en="Official resources" />
+        <ul>
+          <li><a href={entity.source}>官方资料 <span lang="en">Official reference</span></a></li>
+          <li><a href={entity.repository} lang="en">GitHub</a></li>
+        </ul>
+      </section>
+      <section>
+        <BilingualHeading zh="本站相关文章" en="Related coverage" />
+        <ul>{stories.map((story) => <li><a href={storyUrl(story)}><span lang="zh-CN">{story.data.titleZh}</span><br /><span lang="en">{story.data.titleEn}</span></a></li>)}</ul>
+      </section>
+    </div>
+  </article>
+</Base>

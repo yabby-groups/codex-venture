@@ -10,6 +10,7 @@ import { articleHeadings } from '../lib/article-headings.mjs';
 import Repository from '../components/Repository.astro';
 import { repositoryFor } from '../lib/repositories';
 import Base from './Base.astro';
+import { storyEntities, entitySchema, jsonLd, organization } from '../lib/entities';
 import { allStories, dateKey, storySection, storyUrl, types, hubs, isWeekly, type Story } from '../lib/content';
 interface Props { story: Story }
 const { story } = Astro.props;
@@ -24,11 +25,13 @@ const sections = [
 const short = story.collection === 'news' && (!data.type || ['news', 'models'].includes(data.type)) &&
   (story.body?.length ?? 0) < 2400 && !blocks.length;
 const showContents = !short && sections.length >= 3;
+const entities = storyEntities(story);
 const related = stories
   .filter((item) => storyUrl(item) !== storyUrl(story) && item.collection === 'news')
   .map((item) => ({
     item,
-    score: (item.data.project && item.data.project === data.project ? 8 : 0)
+    score: (storyEntities(item).some((entity) => entities.includes(entity)) ? 10 : 0)
+      + (item.data.project && item.data.project === data.project ? 8 : 0)
       + (item.data.sources.some((source) => data.sources.some((original) => source.url === original.url)) ? 5 : 0)
       + new Set(item.data.tags.filter((tag) => data.tags.includes(tag))).size,
   }))
@@ -62,17 +65,19 @@ const breadcrumb = JSON.stringify({
     { '@type': 'ListItem', position: crumbs.length + 1, name: data.titleZh, item: canonical },
   ],
 }).replaceAll('<', '\\u003c');
-const jsonLd = JSON.stringify({
-  '@context': 'https://schema.org', '@type': data.type && !['news', 'models'].includes(data.type) ? 'Article' : 'NewsArticle',
+const schema = jsonLd({
+  '@context': 'https://schema.org', '@type': data.type && ['tutorials', 'workflows'].includes(data.type) ? 'TechArticle' :
+    story.collection === 'news' && (!data.type || ['news', 'models'].includes(data.type)) ? 'NewsArticle' : 'Article',
   headline: data.titleZh, alternativeHeadline: data.titleEn, datePublished: data.published.toISOString(),
   dateModified: data.updated ?? data.published.toISOString(),
   description: data.summaryZh, mainEntityOfPage: canonical, inLanguage: ['zh-CN', 'en'],
-  citation: data.sources.map(({ url }) => url), author: { '@type': 'Organization', name: 'Codex Venture' },
-  publisher: { '@type': 'Organization', name: 'Codex Venture', url: Astro.site?.href },
-}).replaceAll('<', '\\u003c');
+  citation: data.sources.map(({ url }) => url),
+  author: organization(Astro.site), publisher: { '@id': organization(Astro.site)['@id'] },
+  ...(entities.length && { about: entities.map((entity) => entitySchema(entity, Astro.site)) }),
+});
 ---
 <Base title={data.titleZh} description={data.summaryZh + ' ' + data.summaryEn} article {articleNav}>
-  <Fragment slot="head"><script type="application/ld+json" set:html={jsonLd} /><script type="application/ld+json" set:html={breadcrumb} /><meta property="article:published_time" content={data.published.toISOString()} /></Fragment>
+  <Fragment slot="head"><script type="application/ld+json" set:html={schema} /><script type="application/ld+json" set:html={breadcrumb} /><meta property="article:published_time" content={data.published.toISOString()} /></Fragment>
   <article class:list={['editorial-article', { 'article-short': short, 'article-with-rail': showContents }]} data-pagefind-body>
     <ArticleHeader {data} {crumbs} {minutes} />
     <meta data-pagefind-meta={`section:${label[0]}`} />
@@ -87,7 +92,7 @@ const jsonLd = JSON.stringify({
         <div class="prose"><Content /></div>
         <ArticleBlocks {blocks} />
         {repo && <Repository {repo} {story} detail />}
-        <ArticleFooter {data} {related} {label} {href} />
+        <ArticleFooter {data} {related} {entities} {label} {href} />
       </div>
     </div>
   </article>

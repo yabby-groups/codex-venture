@@ -1,0 +1,6 @@
+[
+  {"article": "/news/venture-evidence-publication-workflow/", "zh": "怎样验证 GitHub Actions 发布的静态网站已经上线？", "en": "How can I verify that a static site published by GitHub Actions is live?"},
+  {"article": "/news/agents-md-repository-map/", "zh": "怎样用 AGENTS.md 给编程代理说明仓库结构？", "en": "How can AGENTS.md explain a repository layout to a coding agent?"},
+  {"article": "/news/mcp-inspector-tool-schema/", "zh": "怎样用 MCP Inspector 检查工具参数？", "en": "How do I inspect tool parameters in MCP Inspector?"},
+  {"article": "/news/ollama-lm-studio-local-api/", "zh": "Ollama 和 LM Studio 的本地 API 有什么区别？", "en": "How do the local APIs for Ollama and LM Studio differ?"}
+]

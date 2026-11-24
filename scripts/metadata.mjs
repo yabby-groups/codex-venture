@@ -1,3 +1,4 @@
+import { pathToFileURL } from 'node:url';
 import { readdirSync, readFileSync } from 'node:fs';
 import { parse } from 'yaml';
 
@@ -72,7 +73,7 @@ const read = (directory, collection) => readdirSync(directory).filter((name) => 
   return { ...data, collection, slug };
 });
 
-const articles = ['news', 'daily'].flatMap((kind) => read('src/content/' + kind, kind));
+export const articles = ['news', 'daily'].flatMap((kind) => read('src/content/' + kind, kind));
 const used = new Set();
 const titles = new Set();
 const projects = new Set();
@@ -98,4 +99,6 @@ for (const story of articles) {
     }
   }
 }
-console.log(JSON.stringify(articles));
+if (process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href) {
+  console.log(JSON.stringify(articles));
+}

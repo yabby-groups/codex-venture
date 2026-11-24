@@ -1,5 +1,6 @@
 ---
 import '../styles/site.css';
+import { jsonLd, organization } from '../lib/entities';
 import { allStories, categories, hubs, types } from '../lib/content';
 const { title = '全球 AI 资讯', description = '每日追踪全球 AI 模型、工具和产品更新。 Daily coverage of AI models, tools and product updates.', article = false, noindex = false, articleNav } = Astro.props;
 const canonical = new URL(Astro.url.pathname, Astro.site);
@@ -19,7 +20,7 @@ const navigation = [
 ];
 const more = [
   ...categoryLinks.map(([key, [zh, en]]) => [`/category/${key}/`, zh, en]),
-  ['/archive/', '归档', 'Archive'], ['/tags/', '标签', 'Tags'],
+  ['/entities/', '技术主题', 'Technology topics'], ['/archive/', '归档', 'Archive'], ['/tags/', '标签', 'Tags'],
 ];
 const pathname = Astro.url.pathname;
 const topic = pathname.split('/')[1] === 'topics' ? pathname.split('/')[2] : '';
@@ -62,6 +63,11 @@ const moreMenuActive = more.some(([url]) => current(url));
       if (saved === 'dark' || saved === 'light') document.documentElement.dataset.theme = saved;
     } catch {}
   </script>
+  {pathname === '/' && <script type="application/ld+json" set:html={jsonLd({
+    '@context': 'https://schema.org',
+    '@graph': [organization(Astro.site), { '@type': 'WebSite', name: 'Codex Venture',
+      url: canonical.href, inLanguage: ['zh-CN', 'en'], publisher: { '@id': new URL('/#organization', Astro.site).href } }],
+  })} />}
   <slot name="head" />
 </head>
 <body>
@@ -95,7 +101,7 @@ const moreMenuActive = more.some(([url]) => current(url));
       </div>
       <nav aria-label="页脚栏目 / Footer sections">{navigation.slice(1).map(([url, zh, en]) => <a href={url}>{zh}<small lang="en">{en}</small></a>)}</nav>
       <nav aria-label="网站信息 / Site information">
-        {[[ '/archive/', '归档', 'Archive'], ['/about/', '关于', 'About'], ['/stats/', '内容统计', 'Publishing stats'], ['/privacy/', '隐私', 'Privacy'], ['/tags/', '标签', 'Tags']].map(([url, zh, en]) => <a href={url}>{zh}<small lang="en">{en}</small></a>)}
+        {[[ '/archive/', '归档', 'Archive'], ['/about/', '关于', 'About'], ['/editorial/', '编辑政策', 'Editorial policy'], ['/stats/', '内容统计', 'Publishing stats'], ['/privacy/', '隐私', 'Privacy'], ['/tags/', '标签', 'Tags']].map(([url, zh, en]) => <a href={url}>{zh}<small lang="en">{en}</small></a>)}
         <a href="/rss.xml">RSS ↗</a><a href="https://github.com/yabby-groups/codex-venture">GitHub ↗</a>
       </nav>
     </div>

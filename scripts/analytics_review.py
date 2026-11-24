@@ -90,6 +90,9 @@ def main():
             'Distinguish measured facts, hypotheses, and suggestions. Cite dated metrics and coverage. '
             'Explain uncertainty, small samples, top stories and projects, category and search performance, '
             'source yield, long-term stories, production cost and model differences when supported. '
+            'Review GEO evidence when available. Keep referrer page views, search clicks, crawler requests '
+            'and citations separate. Identify evidence-backed content gaps, outdated guides, opportunities for '
+            'first-party testing and technology topics to expand. UNKNOWN is missing evidence. '
             'No changes to budget, providers, permissions, source verification, or files. '
             'Keep every topic eligible and preserve exploration. Write Chinese and matching English lines. '
             'Leave strategy unchanged when evidence is inconclusive.')

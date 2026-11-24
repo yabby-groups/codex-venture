@@ -1,0 +1,16 @@
+---
+import Base from '../../layouts/Base.astro';
+import BilingualParagraph from '../../components/BilingualParagraph.astro';
+import { entities, entityUrl } from '../../lib/entities';
+---
+<Base title="技术主题" description="按技术实体浏览实践、来源与更新。 Browse practical guides, sources and updates by technology.">
+  <div class="article">
+    <h1 class="page-heading">技术主题<span lang="en">Technology topics</span></h1>
+    <div class="prose">
+      {entities.map((entity) => <section>
+        <h2><a href={entityUrl(entity)} lang="en">{entity.name}</a></h2>
+        <BilingualParagraph zh={entity.summary[0]} en={entity.summary[1]} />
+      </section>)}
+    </div>
+  </div>
+</Base>

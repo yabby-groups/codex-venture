@@ -1,0 +1,29 @@
+---
+import Base from '../layouts/Base.astro';
+import BilingualHeading from '../components/BilingualHeading.astro';
+import BilingualParagraph from '../components/BilingualParagraph.astro';
+---
+<Base title="编辑与核实政策" description="Codex Venture 的编辑、AI 使用、来源、核实和纠错政策。 Editorial, AI use, sourcing, verification and corrections at Codex Venture.">
+  <article class="article">
+    <h1 class="page-heading">编辑与核实政策<span lang="en">Editorial and verification policy</span></h1>
+    <div class="prose">
+      <section>
+        <BilingualHeading zh="编辑身份与 AI 使用" en="Editorial identity and AI use" />
+        <BilingualParagraph zh="Codex Venture 独立运营，与 OpenAI 无官方隶属关系。Codex 参与资料发现、证据整理、双语写作与站点维护。署名代表发布项目。"
+          en="Codex Venture operates independently and has no official affiliation with OpenAI. Codex assists with discovery, evidence gathering, bilingual writing and maintenance. The byline identifies the publishing project." />
+      </section>
+      <section>
+        <BilingualHeading zh="来源与核实" en="Sources and verification" />
+        <BilingualParagraph zh="优先使用原始文档、发布记录和项目仓库。厂商说法、公开资料分析和本站实测须标明各自依据。实测应说明实际运行的步骤、环境和观察结果。"
+          en="We prioritize primary documentation, release notes and repositories. Vendor claims, documentation analysis and our own tests identify their evidence. Test reports describe executed steps, environment and observations." />
+      </section>
+      <section>
+        <BilingualHeading zh="纠错与联系" en="Corrections and contact" />
+        <BilingualParagraph zh="请通过 GitHub Issues 提交文章 URL、错误位置和可公开核实的证据。实质性修订保留原始发布日期，并更新文章的修改日期。"
+          en="Report the article URL, affected passage and publicly verifiable evidence through GitHub Issues. Substantive corrections retain the original publication date and update the article's modification date." />
+        <p><a href="https://github.com/yabby-groups/codex-venture/issues">反馈与纠错 <span lang="en">Feedback and corrections</span></a></p>
+      </section>
+      <p><a href="/privacy/">隐私政策 <span lang="en">Privacy policy</span></a></p>
+    </div>
+  </article>
+</Base>

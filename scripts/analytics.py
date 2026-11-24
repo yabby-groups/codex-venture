@@ -12,6 +12,7 @@ from urllib.parse import urlsplit
 from analytics_sources import bing, cloudflare, google, myna_billing
 from collect import canonical, load, save
 from editor import DATE_ZONE, metadata
+from geo import referral_totals
 
 SITE = 'https://codex-venture.com'
 ALIASES = load(Path('config/article-aliases.json'), {})
@@ -100,6 +101,8 @@ def report(root, start, end, stats):
     source_yield = Counter(source for article in paths.values() if article['date'] in dates
                            for source in article['sources'])
     provider_days = Counter()
+    ai_referrals = Counter()
+    referral_days = 0
     totals = defaultdict(dict)
     for day in dates:
         traffic = load(root / 'traffic' / (day + '.json'), {})
@@ -111,6 +114,10 @@ def report(root, start, end, stats):
             rows = enabled_data(traffic, key)
             if rows:
                 totals[day][key] = rows[0].get('count', rows[0].get('sum', {}).get('pageViews')) if key == 'page_views' else rows[0]['sum'].get('visits')
+        referrals = enabled_data(traffic, 'referrers')
+        if referrals is not None:
+            ai_referrals.update(referral_totals(referrals))
+            referral_days += 1
         search_totals = enabled_data(search, 'totals')
         if search_totals and search_totals['rows']:
             totals[day]['google'] = {key: search_totals['rows'][0].get(key)
@@ -167,6 +174,10 @@ def report(root, start, end, stats):
             billed_by_model[model] += Decimal(amount)
     published = sum(run.get('published', 0) for run in runs)
     return dict(start=start.isoformat(), end=end.isoformat(), expected_days=len(dates),
+                geo={'referrer_pageviews': dict(ai_referrals), 'referrer_observed_days': referral_days,
+                     'referrer_scope': 'Cloudflare RUM top 100 reported hosts per day (UTC)',
+                     'verified_crawler_logs': 'UNKNOWN', 'bing_ai_citations': 'UNKNOWN',
+                     'google_ai_performance': 'UNKNOWN'},
                 observed_days=provider_days, daily_metrics=totals,
                 new_articles={d: stats['days'].get(d, 0) for d in dates},
                 top_articles=[{'path': path, 'views': count, **paths[path]}
