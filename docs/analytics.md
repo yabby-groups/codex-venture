@@ -9,13 +9,14 @@
 | Google Search Console | 添加 Domain Property `codex-venture.com`，把 Google 提供的 TXT 记录加到域名根并完成验证。也可用已验证的 URL-prefix Property。通过界面提交 `https://codex-venture.com/sitemap-index.xml`。 |
 | Google 授权 | 在 Google Cloud 启用 Search Console API，创建专用服务账号和 GitHub OIDC Workload Identity Provider。将条件限定为 `yabby-groups/codex-venture` 的 `refs/heads/main`，仅给匹配的主体授予该服务账号的 Workload Identity User。把服务账号加入 Search Console 属性，先使用受限权限核查搜索与 URL Inspection。同步请求使用 `webmasters.readonly`。 |
 | Bing Webmaster Tools | 添加站点并按控制台指引通过 DNS、验证文件或导入已验证的 Search Console 站点完成验证。在 Sitemaps 中提交站点地图。在 Settings → API access 查找 Webmaster API Key。Bing 的 API Key 权限由账号提供，建议使用仅管理本站的身份。 |
-| 私有存储 | 创建并初始化独立 **Private** 仓库。当前可使用 `yabby-groups/codex-venture-analytics`。签发只限该仓库的 fine-grained PAT，权限为 Metadata Read 和 Contents Read/Write，按组织策略批准，将其存入生产工作流 Secret。 |
+| 私有存储 | 创建并初始化独立 **Private** 仓库。当前可使用 `yabby-groups/codex-venture-analytics`。为目标私库配置独立的可写 deploy key，将私钥存入生产工作流 Secret。也支持只限该仓库的 fine-grained PAT，权限为 Metadata Read 和 Contents Read/Write。两者都配置时优先使用 deploy key。 |
 | 首次运行 | 打开 Actions → **Venture Analytics** → Run workflow → `analytics-smoke-test`。检查各服务状态后设 `VENTURE_ANALYTICS_ENABLED=true`。按保留期运行 `analytics-backfill`，之后可手动运行每日、每周、每月报告。 |
 
 | GitHub Actions 配置 | 类型 | 填写 |
 | --- | --- | --- |
 | `VENTURE_ANALYTICS_PRIVATE_REPO` | Variable | 私有仓库 `owner/name` |
-| `VENTURE_ANALYTICS_TOKEN` | Secret | 上表的仓库范围凭据 |
+| `VENTURE_ANALYTICS_DEPLOY_KEY` | Secret | 目标私库可写 deploy key 对应的完整私钥 |
+| `VENTURE_ANALYTICS_TOKEN` | Secret | 使用 PAT 时填入仓库范围凭据 |
 | `VENTURE_ANALYTICS_ENABLED` | Variable | `true` 启用定时同步及报告 |
 | `CLOUDFLARE_ACCOUNT_ID` | Variable | Cloudflare 账号 ID |
 | `CLOUDFLARE_WEB_ANALYTICS_SITE_TAG` | Variable | 官方 RUM 站点标识 |

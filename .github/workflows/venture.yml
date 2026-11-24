@@ -95,6 +95,7 @@ jobs:
         continue-on-error: true
         env:
           VENTURE_ANALYTICS_PRIVATE_REPO: ${{ vars.VENTURE_ANALYTICS_PRIVATE_REPO }}
+          VENTURE_ANALYTICS_DEPLOY_KEY: ${{ secrets.VENTURE_ANALYTICS_DEPLOY_KEY }}
           VENTURE_ANALYTICS_TOKEN: ${{ secrets.VENTURE_ANALYTICS_TOKEN }}
         run: ops/analytics-store open
       - id: prepare
@@ -138,6 +139,7 @@ jobs:
         continue-on-error: true
         env:
           VENTURE_ANALYTICS_PRIVATE_REPO: ${{ vars.VENTURE_ANALYTICS_PRIVATE_REPO }}
+          VENTURE_ANALYTICS_DEPLOY_KEY: ${{ secrets.VENTURE_ANALYTICS_DEPLOY_KEY }}
           VENTURE_ANALYTICS_TOKEN: ${{ secrets.VENTURE_ANALYTICS_TOKEN }}
           VENTURE_MODEL_PRICING_JSON: ${{ secrets.VENTURE_MODEL_PRICING_JSON }}
           PHASE_OUTCOME: ${{ job.status }}
@@ -201,6 +203,7 @@ jobs:
         continue-on-error: true
         env:
           VENTURE_ANALYTICS_PRIVATE_REPO: ${{ vars.VENTURE_ANALYTICS_PRIVATE_REPO }}
+          VENTURE_ANALYTICS_DEPLOY_KEY: ${{ secrets.VENTURE_ANALYTICS_DEPLOY_KEY }}
           VENTURE_ANALYTICS_TOKEN: ${{ secrets.VENTURE_ANALYTICS_TOKEN }}
           VENTURE_MODEL_PRICING_JSON: ${{ secrets.VENTURE_MODEL_PRICING_JSON }}
           PHASE_OUTCOME: ${{ job.status }}
@@ -290,6 +293,7 @@ jobs:
         continue-on-error: true
         env:
           VENTURE_ANALYTICS_PRIVATE_REPO: ${{ vars.VENTURE_ANALYTICS_PRIVATE_REPO }}
+          VENTURE_ANALYTICS_DEPLOY_KEY: ${{ secrets.VENTURE_ANALYTICS_DEPLOY_KEY }}
           VENTURE_ANALYTICS_TOKEN: ${{ secrets.VENTURE_ANALYTICS_TOKEN }}
           VENTURE_MODEL_PRICING_JSON: ${{ secrets.VENTURE_MODEL_PRICING_JSON }}
           PHASE_OUTCOME: ${{ job.status }}

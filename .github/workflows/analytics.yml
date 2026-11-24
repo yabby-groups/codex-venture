@@ -65,6 +65,7 @@ jobs:
         if: steps.task.outputs.task != ''
         env:
           VENTURE_ANALYTICS_PRIVATE_REPO: ${{ vars.VENTURE_ANALYTICS_PRIVATE_REPO }}
+          VENTURE_ANALYTICS_DEPLOY_KEY: ${{ secrets.VENTURE_ANALYTICS_DEPLOY_KEY }}
           VENTURE_ANALYTICS_TOKEN: ${{ secrets.VENTURE_ANALYTICS_TOKEN }}
         run: ops/analytics-store open
       - id: google
@@ -141,6 +142,7 @@ jobs:
         if: always() && steps.task.outputs.task != ''
         env:
           VENTURE_ANALYTICS_PRIVATE_REPO: ${{ vars.VENTURE_ANALYTICS_PRIVATE_REPO }}
+          VENTURE_ANALYTICS_DEPLOY_KEY: ${{ secrets.VENTURE_ANALYTICS_DEPLOY_KEY }}
           VENTURE_ANALYTICS_TOKEN: ${{ secrets.VENTURE_ANALYTICS_TOKEN }}
         run: |
           if [[ -d "$ANALYTICS_STORE/analytics" ]]; then
