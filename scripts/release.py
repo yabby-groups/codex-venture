@@ -62,6 +62,9 @@ def recover():
 
 
 def commit():
+    changes = subprocess.check_output(['git', 'status', '--porcelain', '--', *TRACKED], text=True)
+    if not changes:
+        return
     run('git', 'add', '--', *TRACKED)
     try:
         status = subprocess.run(['git', 'diff', '--cached', '--quiet'], check=False).returncode
