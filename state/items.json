@@ -579,7 +579,7 @@
     "published": "2026-11-24T07:03:35+00:00",
     "source": "hacker-news-ai",
     "source_url": "https://hn.algolia.com/api/v1/search_by_date?query=AI&tags=story&hitsPerPage=20",
-    "status": "pending",
+    "status": "skipped",
     "summary": "Community discussion. Linked source: https://riskrubric.ai/",
     "title": "Evidence-Based AI Risk Ratings from CSAI",
     "url": "https://news.ycombinator.com/item?id=50624685"
@@ -1134,7 +1134,7 @@
     "published": "2026-11-24T07:03:33+00:00",
     "source": "hacker-news-ai",
     "source_url": "https://hn.algolia.com/api/v1/search_by_date?query=AI&tags=story&hitsPerPage=20",
-    "status": "pending",
+    "status": "skipped",
     "summary": "Community discussion. Linked source: https://www.rchive.computer/",
     "title": "Show HN: Rchive – Every drive I've owned since the 90s, searchable in one window",
     "url": "https://news.ycombinator.com/item?id=50624684"
