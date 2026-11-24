@@ -8,7 +8,7 @@ from unittest.mock import patch
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / 'scripts'))
 from analytics import content, period, report, route, sync
-from analytics_sources import RUM_PAGES, bing, cloudflare, cloudflare_settings, google
+from analytics_sources import RUM_PAGES, bing, cloudflare, cloudflare_settings, google, myna_billing
 from analytics_review import valid
 from collect import save
 from editor import metadata
@@ -28,6 +28,19 @@ class AnalyticsTests(unittest.TestCase):
         self.assertEqual(data['source_coverage'], 1)
         self.assertEqual(route('https://codex-venture.com/news/example?a=1#fragment'), '/news/example/')
         self.assertIsNone(route('https://elsewhere.test/news/example/'))
+
+    def test_myna_billing_paginates_and_rejects_duplicate_records(self):
+        day = date(2026, 11, 24)
+        start = int(datetime(2026, 11, 24, tzinfo=timezone.utc).timestamp())
+        first = {'id': 1, 'created_at': start, 'model': 'codex', 'cost': '0.10'}
+        second = {**first, 'id': 2, 'cost': '0.20'}
+        pages = [{'count': 2, 'token_usages': [row]} for row in (first, second)]
+        with patch.dict(os.environ, {'CODEX_API_KEY': 'fixture'}):
+            with patch('analytics_sources.api', side_effect=pages) as request:
+                self.assertEqual(myna_billing(day, timezone.utc)['data']['amount'], '0.30')
+                self.assertIn('offset=1', request.call_args.args[0])
+            with patch('analytics_sources.api', side_effect=[pages[0], pages[0]]):
+                self.assertEqual(myna_billing(day, timezone.utc)['status'], 'unavailable')
 
     def test_cost(self):
         usage = event_usage([{'type': 'turn.completed', 'usage': USAGE}])

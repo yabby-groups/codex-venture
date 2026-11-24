@@ -1,7 +1,8 @@
 """Read-only provider adapters. Store each provider's native date and metric definitions."""
 import json
 import os
-from datetime import date, datetime, timedelta, timezone
+from datetime import date, datetime, time, timedelta, timezone
+from decimal import Decimal, InvalidOperation
 from functools import lru_cache
 from urllib.parse import quote, urlencode
 from urllib.request import Request, urlopen
@@ -9,12 +10,13 @@ from urllib.request import Request, urlopen
 
 def api(url, token=None, data=None, method=None):
     headers = {'Accept': 'application/json', 'User-Agent': 'Codex-Venture-Analytics'}
-    if token:
-        headers['Authorization'] = 'Bearer ' + token
     if data is not None:
         headers['Content-Type'] = 'application/json'
         data = json.dumps(data).encode()
-    with urlopen(Request(url, data, headers, method=method), timeout=25) as response:
+    request = Request(url, data, headers, method=method)
+    if token:
+        request.add_unredirected_header('Authorization', 'Bearer ' + token)
+    with urlopen(request, timeout=25) as response:
         return json.load(response)
 
 
@@ -145,3 +147,42 @@ def bing():
     }.items()}
     return {'status': metrics['totals']['status'], 'metrics': metrics,
             'timezone': 'provider', 'dates': 'provider-native rolling snapshot'}
+
+
+def myna_billing(day, zone):
+    token = os.getenv('CODEX_API_KEY')
+    if not token:
+        return {'status': 'disabled'}
+    start = int(datetime.combine(day, time.min, zone).timestamp())
+    end = int(datetime.combine(day + timedelta(days=1), time.min, zone).timestamp())
+
+    def read():
+        offset = 0
+        seen = set()
+        by_model = {}
+        while True:
+            params = urlencode(dict(start_at=start, end_at=end, offset=offset, size=100))
+            page = api('https://huabot.com/api/token_base/token_usage/key/list/?' + params, token)
+            rows = page['token_usages']
+            count = int(page['count'])
+            for row in rows:
+                record_id = row['id']
+                if record_id in seen or not start <= row['created_at'] < end:
+                    raise ValueError('Inconsistent Myna billing page')
+                seen.add(record_id)
+                model = row['model']
+                try:
+                    cost = Decimal(str(row['cost']))
+                except InvalidOperation as error:
+                    raise ValueError('Invalid Myna cost') from error
+                if not cost.is_finite():
+                    raise ValueError('Invalid Myna cost')
+                by_model[model] = by_model.get(model, Decimal(0)) + cost
+            offset += len(rows)
+            if offset == count:
+                return {'currency': 'USD', 'amount': str(sum(by_model.values(), Decimal(0))),
+                        'records': offset, 'by_model': {name: str(cost) for name, cost in by_model.items()}}
+            if not rows or offset > count:
+                raise ValueError('Incomplete Myna billing page')
+
+    return result(read)

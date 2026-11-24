@@ -95,6 +95,7 @@ jobs:
           GOOGLE_SEARCH_CONSOLE_PROPERTY: ${{ vars.GOOGLE_SEARCH_CONSOLE_PROPERTY }}
           BING_WEBMASTER_API_KEY: ${{ secrets.BING_WEBMASTER_API_KEY }}
           BING_SITE_URL: ${{ vars.BING_SITE_URL }}
+          CODEX_API_KEY: ${{ secrets.CODEX_API_KEY }}
         run: |
           case "$TASK" in
             smoke-test) python3 scripts/analytics.py sync all 1 ;;

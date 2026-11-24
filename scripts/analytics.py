@@ -1,6 +1,6 @@
 """Private daily snapshots and reproducible period reports."""
 from collections import Counter, defaultdict
-from datetime import datetime, timedelta
+from datetime import date, datetime, timedelta
 from zoneinfo import ZoneInfo
 from decimal import Decimal
 import os
@@ -9,7 +9,7 @@ import re
 import sys
 from urllib.parse import urlsplit
 
-from analytics_sources import bing, cloudflare, google
+from analytics_sources import bing, cloudflare, google, myna_billing
 from collect import canonical, load, save
 from editor import DATE_ZONE, metadata
 
@@ -159,6 +159,12 @@ def report(root, start, end, stats):
         else:
             costs[price['currency']] += Decimal(price['amount'])
             models[name]['cost_' + price['currency']] += Decimal(price['amount'])
+    billed = [load(root / 'costs' / 'myna' / (day + '.json'), {}) for day in dates]
+    billed = [snapshot['data'] for snapshot in billed if snapshot.get('status') == 'available']
+    billed_by_model = defaultdict(Decimal)
+    for snapshot in billed:
+        for model, amount in snapshot['by_model'].items():
+            billed_by_model[model] += Decimal(amount)
     published = sum(run.get('published', 0) for run in runs)
     return dict(start=start.isoformat(), end=end.isoformat(), expected_days=len(dates),
                 observed_days=provider_days, daily_metrics=totals,
@@ -177,7 +183,11 @@ def report(root, start, end, stats):
                 sessions_by_model={name: {key: str(value) if isinstance(value, Decimal) else value
                                          for key, value in model.items()} for name, model in models.items()}, observed_tokens=observed, operations=len(runs),
                 operation_tasks=Counter(run.get('task') for run in runs),
-                published=published, sessions_without_estimate=unknown, billed_cost=None,
+                published=published, sessions_without_estimate=unknown,
+                billed_cost={'currency': 'USD', 'amount': str(sum(Decimal(s['amount']) for s in billed)),
+                             'observed_days': len(billed),
+                             'by_model': {name: str(amount) for name, amount in billed_by_model.items()}}
+                if billed else None,
                 known_estimated_cost={key: str(value) for key, value in costs.items()},
                 estimated_cost_per_published_article={key: str(value / published) for key, value in costs.items()}
                 if published and not unknown else None)
@@ -208,6 +218,13 @@ def sync(root, task, today, lookback):
         snapshot = bing()
         save(root / 'search/bing' / (today.isoformat() + '.json'), snapshot)
         providers['Bing Webmaster Tools'] = snapshot['status']
+    if task in ('all', 'search'):
+        for day in days_between(today - timedelta(days=lookback), today - timedelta(days=1)):
+            snapshot = myna_billing(date.fromisoformat(day), DATE_ZONE)
+            path = root / 'costs' / 'myna' / (day + '.json')
+            if snapshot['status'] == 'available' or not path.exists():
+                save(path, snapshot)
+            providers['Myna billing'] = snapshot['status']
     summary = os.getenv('GITHUB_STEP_SUMMARY')
     if summary:
         with open(summary, 'a') as output:
