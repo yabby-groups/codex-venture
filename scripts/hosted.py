@@ -77,7 +77,7 @@ def prepare(task):
                      reservation=reserved, candidates=candidates))
 
 
-def config(smoke):
+def config(smoke, instructions):
     required = ('CODEX_BASE_URL', 'CODEX_MODEL', 'CODEX_API_KEY')
     missing = [name for name in required if not os.environ.get(name)]
     if missing:
@@ -101,6 +101,7 @@ def config(smoke):
     config_file.write_text(f'''model = {json.dumps(model)}
 model_provider = "venture"
 model_reasoning_effort = {json.dumps(effort)}
+model_instructions_file = {json.dumps(str(instructions))}
 approval_policy = "never"
 sandbox_mode = "workspace-write"
 web_search = "disabled"
@@ -132,7 +133,9 @@ stream_max_retries = 0
     if smoke:
         with config_file.open('a') as handle:
             handle.write(f'\n[mcp_servers.venture_smoke]\ncommand = {json.dumps(sys.executable)}\n'
-                         f'args = [{json.dumps(str(REPOSITORY / "scripts/hosted.py"))}, "smoke-tool"]\n')
+                         f'args = [{json.dumps(str(REPOSITORY / "scripts/hosted.py"))}, "smoke-tool"]\n'
+                         'required = true\n\n[mcp_servers.venture_smoke.tools.check]\n'
+                         'approval_mode = "approve"\n')
     config_file.chmod(0o600)
 
 
@@ -151,12 +154,21 @@ def event_usage(events):
 def invoke():
     batch = load(BATCH, {})
     smoke = batch['task'] == 'smoke-test'
-    config(smoke)
     MODEL.mkdir(parents=True, exist_ok=True)
     with tempfile.TemporaryDirectory(prefix='venture-edit-') as directory:
         workspace = Path(directory)
         schema, result = workspace / 'schema.json', workspace / 'result.json'
-        prompt = (REPOSITORY / 'ops/editor.md').read_text() + '\n\n' + json.dumps(batch, ensure_ascii=False)
+        instructions = workspace / 'instructions.txt'
+        instructions.write_text(
+            'Call the fixed venture_smoke check tool and return its marker as JSON.' if smoke else
+            (REPOSITORY / 'ops/editor.md').read_text()
+        )
+        try:
+            config(smoke, instructions)
+        except ValueError:
+            save(MODEL / 'usage.json', {'input_tokens': 0, 'output_tokens': 0})
+            raise
+        prompt = json.dumps(batch, ensure_ascii=False)
         schema_data = output_schema()
         if smoke:
             schema_data = dict(type='object', properties={'marker': {'type': 'string'}},
