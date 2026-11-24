@@ -65,9 +65,11 @@ def prepare(task):
     usage = ledger.setdefault(day, {'tokens': 0, 'calls': 0})
     daily_tokens = number('VENTURE_DAILY_TOKEN_LIMIT', 100000, 0, 10000000)
     daily_calls = number('VENTURE_MAX_MODEL_CALLS_PER_DAY', 6, 0, 1000)
-    reserved = min(RUN_BUDGET, daily_tokens - usage['tokens'])
-    if usage['calls'] >= daily_calls or reserved <= 0:
-        print('Daily model budget exhausted')
+    reserved = 40000 if task == 'smoke-test' else RUN_BUDGET
+    if usage['calls'] >= daily_calls or usage['tokens'] + reserved > daily_tokens:
+        print(f'Insufficient daily model allowance for this batch ({reserved} token reservation)')
+        if task == 'smoke-test':
+            raise RuntimeError('Smoke test requires sufficient daily model allowance')
         return
     usage['calls'] += 1
     usage['tokens'] += reserved
@@ -168,7 +170,8 @@ def invoke():
         except ValueError:
             save(MODEL / 'usage.json', {'input_tokens': 0, 'output_tokens': 0})
             raise
-        prompt = json.dumps(batch, ensure_ascii=False)
+        payload = {key: batch[key] for key in ('date', 'maxArticles', 'candidates')}
+        prompt = json.dumps(dict(mode=batch['task'], **payload), ensure_ascii=False)
         schema_data = output_schema()
         if smoke:
             schema_data = dict(type='object', properties={'marker': {'type': 'string'}},
