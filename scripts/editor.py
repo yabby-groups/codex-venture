@@ -11,6 +11,7 @@ from zoneinfo import ZoneInfo
 from article_schema import BLOCKS, conforms
 from collect import canonical, digest, load, save, timestamp
 from release import RUNTIME
+from resource_editor import PROFILES, UPDATES, resource_context, resource_profile, update_frontmatter
 
 ITEMS = Path('state/items.json')
 DATE_ZONE = ZoneInfo('Asia/Shanghai')
@@ -24,12 +25,12 @@ def output_schema():
     string = {'type': 'string'}
     strings = {'type': 'array', 'items': string}
     fields = {key: string for key in ('slug', 'titleZh', 'titleEn', 'summaryZh', 'summaryEn', 'category', 'body', 'type', 'version')}
-    fields.update(tags=strings, itemIds=strings, blocks=BLOCKS)
+    fields.update(tags=strings, itemIds=strings, blocks=BLOCKS, resource=PROFILES, resourceIds=strings)
 
     def obj(properties):
         return dict(type='object', properties=properties, required=list(properties), additionalProperties=False)
 
-    return obj(dict(articles=dict(type='array', items=obj(fields)), skipped=strings))
+    return obj(dict(articles=dict(type='array', items=obj(fields)), skipped=strings, resourceUpdates=UPDATES))
 
 
 def metadata():
@@ -164,12 +165,20 @@ def choose(mode, items, now, days=2, strategy=None):
 def write_articles(response, mode, candidates, now, limit=3):
     day = now.date().isoformat()
     writes = {}
+    revisions = {}
+    articles = metadata()
+    existing = [story["resource"] for story in articles if story.get("resource")]
+    existing_ids = {row["id"] for row in existing}
     if mode in ('daily', 'weekly'):
         limit = min(limit, 1)
     if len(response['articles']) > limit:
         raise ValueError('too many articles')
     used = set()
     for article in response['articles']:
+        profiles = article.pop('resource', [])
+        related = article.pop('resourceIds', [])
+        if not conforms(profiles, PROFILES) or len(profiles) > 1 or not set(related) <= existing_ids:
+            raise ValueError('Invalid resource metadata or relation')
         blocks = article.pop('blocks', [])
         if not conforms(blocks, BLOCKS) or len(blocks) > 8:
             raise ValueError('invalid editorial blocks')
@@ -205,6 +214,17 @@ def write_articles(response, mode, candidates, now, limit=3):
             article.update(type=content_type, version=version, verified=day, status='current', tested=False)
             if content_type in ('skills', 'plugins', 'mcp', 'open-source', 'tools'):
                 article['project'] = digest(canonical(evidence[0]['url']))
+        if collection == 'daily' and (profiles or related):
+            raise ValueError('Briefings cannot write resource metadata')
+        if profiles:
+            profile = resource_profile(profiles[0], evidence, existing, day)
+            if profile['id'] in existing_ids:
+                raise ValueError('Use resourceUpdates to refresh an existing profile')
+            article['resource'] = profile
+            article['verified'] = day
+            existing_ids.add(profile['id'])
+        if related:
+            article['resourceIds'] = sorted(set(related))
         if path.exists() or path in writes:
             raise ValueError(f'article already exists: {slug}')
         tags = (re.sub(r'[^a-z0-9]+', '-', tag.lower()).strip('-') for tag in article['tags'])
@@ -214,21 +234,47 @@ def write_articles(response, mode, candidates, now, limit=3):
         # JSON scalar values are valid in YAML frontmatter.
         front = '\n'.join(f'{key}: {json.dumps(value, ensure_ascii=False)}' for key, value in article.items())
         writes[path] = f'---\n{front}\n---\n{body.strip()}\n'
+    updates = response.get('resourceUpdates', [])
+    if not conforms(updates, UPDATES) or len(updates) > limit or (updates and mode in ('daily', 'weekly')):
+        raise ValueError('Invalid resource updates')
+    for update in updates:
+        story = next((story for story in articles if story.get('resource', {}).get('id') == update['id']), None)
+        ids = set(update['itemIds'])
+        if not story or not ids or not ids <= candidates.keys():
+            raise ValueError('Unknown resource or update evidence')
+        old = story['resource']
+        row = resource_profile(update['resource'], [candidates[key] for key in ids], existing, day)
+        if row['id'] != old['id']:
+            raise ValueError('Resource update cannot change identity')
+        path = Path('src/content/news') / (story['slug'] + '.md')
+        if path in revisions:
+            raise ValueError('Duplicate resource update')
+        row = {**old, **row}
+        revisions[path] = (path.read_text(), row)
+        used.update(ids)
     skipped = set(response['skipped'])
     if not skipped <= candidates.keys() or skipped & used:
         raise ValueError('invalid skipped candidate IDs')
     created = []
+    changed = []
     try:
         for path, markdown in writes.items():
             with path.open('x') as handle:
                 created.append(path)
                 handle.write(markdown)
+        for path, (original, resource) in revisions.items():
+            revised = update_frontmatter(original, resource)
+            if revised != original:
+                changed.append(path)
+                path.write_text(revised)
         metadata()
     except BaseException:
         for path in created:
             path.unlink(missing_ok=True)
+        for path in changed:
+            path.write_text(revisions[path][0])
         raise
-    return skipped
+    return skipped, {key for update in updates for key in update['itemIds']}
 
 
 def edit(mode):
@@ -248,12 +294,14 @@ def edit(mode):
     if not candidates:
         print('No new candidates for the editorial window')
         return
-    payload = json.dumps(dict(mode=mode, date=day, candidates=candidates), ensure_ascii=False)
+    payload = json.dumps(dict(mode=mode, date=day, candidates=candidates, existingResources=resource_context(articles)), ensure_ascii=False)
     response = invoke(Path('ops/editor.md').read_text() + '\n\n' + payload, day)
     if response is None:
         return
-    skipped = write_articles(response, mode, candidates, now)
+    skipped, refreshed = write_articles(response, mode, candidates, now)
     sync(items, metadata())
+    for key in refreshed:
+        items[key]['status'] = 'published'
     for key in skipped:
         if items[key]['status'] == 'pending':
             items[key]['status'] = 'skipped'

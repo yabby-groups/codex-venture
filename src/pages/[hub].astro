@@ -1,13 +1,16 @@
 ---
+import ResourceHub from '../layouts/ResourceHub.astro';
 import Listing from '../layouts/Listing.astro';
 import { allStories, hubs } from '../lib/content';
 import { listingSections } from '../lib/listing';
 
 export async function getStaticPaths() {
-  const sections = listingSections(await allStories());
+  const stories = await allStories();
+  const sections = listingSections(stories);
   return Object.keys(hubs).map((hub) => ({
-    params: { hub }, props: sections.find(({ base }) => base === `/${hub}/`)!,
+    params: { hub }, props: hub === 'discover' || hub === 'learn'
+      ? { hub, stories } : sections.find(({ base }) => base === `/${hub}/`)!,
   }));
 }
 ---
-<Listing {...Astro.props} />
+{'hub' in Astro.props ? <ResourceHub {...Astro.props} /> : <Listing {...Astro.props} />}

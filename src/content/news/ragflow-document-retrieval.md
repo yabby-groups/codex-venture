@@ -10,6 +10,7 @@ tags: ["ragflow", "rag", "knowledge-base"]
 sources:
   - title: "infiniflow/ragflow repository and documentation"
     url: https://github.com/infiniflow/ragflow
+resource: {"id":"ragflow","type":"open-source","name":"RAGFlow","summary":["RAGFlow 提供文档解析、入库和检索流程，适用于从多份文档搜集问答上下文的团队。","RAGFlow provides document parsing, ingestion and retrieval for teams that need to gather Q&A context from multiple documents."],"site":"https://github.com/infiniflow/ragflow","repository":"https://github.com/infiniflow/ragflow","categories":[["文档检索","Document retrieval"]],"verifiedAt":"2026-11-24"}
 ---
 <p lang="zh-CN">文档进入知识库之前，表格与扫描件都需要先解析。以设备手册为例，如果检索找到型号却漏掉同一行的额定电压，问答模型收到的上下文就已经不完整。评估 RAGFlow 时，可以从这种可核对的问题入手。</p>
 

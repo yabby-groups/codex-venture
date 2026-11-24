@@ -9,6 +9,7 @@ tags: ["handy", "speech-to-text", "offline"]
 sources:
   - title: "cjpais/Handy repository and documentation"
     url: https://github.com/cjpais/Handy
+resource: {"id":"handy","type":"open-source","name":"Handy","summary":["Handy 把录音、离线转写和粘贴连在一个快捷键操作中，可把口述内容送入当前编辑器。","Handy combines recording, offline transcription and pasting into one hotkey flow, putting dictated text into the current editor."],"site":"https://github.com/cjpais/Handy","repository":"https://github.com/cjpais/Handy","categories":[["音频处理","Audio processing"]],"verifiedAt":"2026-11-24"}
 ---
 <h2><span lang="zh-CN">项目用途</span><span lang="en">What it does</span></h2>
 

@@ -1,0 +1,38 @@
+---
+import type { Resource } from '../lib/resources';
+const { resource } = Astro.props as { resource: Resource };
+const { id, name, nameZh, type, detail, categories, platforms, summary, repository, site, verified, tested, notes } = resource;
+const marks = { skills: '✳', plugins: '⊞', mcp: '⤳', tools: '⌘', models: '◈', 'open-source': '⌥', prompts: '❯', workflows: '→', resources: '▤' };
+const repoName = repository && new URL(repository).pathname.slice(1).replace(/\/$/, '');
+const meta = [resource.kind, resource.transport, resource.deployment, resource.install, resource.github?.language, resource.license, resource.version].filter(Boolean);
+---
+<article class="resource-card" data-resource={id}>
+  <header>
+    <span class="resource-mark" aria-hidden="true">{marks[type]}</span>
+    <div>
+      <h3><a href={detail}>{nameZh ? <>{nameZh}<span lang="en">{name}</span></> : <bdi>{name}</bdi>}</a></h3>
+      {repoName && <a class="resource-repo" href={repository} lang="en">{repoName}</a>}
+    </div>
+  </header>
+  <p>{summary[0]}<span lang="en">{summary[1]}</span></p>
+  <ul class="resource-chips" aria-label="资源属性 / Resource attributes">
+    {categories.map(([zh, en]) => <li>{zh} <span lang="en">{en}</span></li>)}
+    {platforms.map((platform) => <li>{platform}</li>)}
+    {!platforms.length && type === 'skills' && <li>兼容性未知 <span lang="en">Compatibility unknown</span></li>}
+    {meta.map((value) => <li>{value}</li>)}
+  </ul>
+  {resource.github && <p class="resource-note">
+    GitHub Stars {resource.github.stargazers_count.toLocaleString('en-US')} · <time datetime={resource.github.collected}>{resource.github.collected.slice(0, 10)} UTC</time>
+  </p>}
+  {notes && <p class="resource-note">{notes[0]}<span lang="en">{notes[1]}</span></p>}
+  <footer>
+    <div class="resource-verified">
+      {tested === true ? '已实测 / Tested' : tested === false ? '资料核实 / Documentation checked' : '核实日期 / Verified'}
+      <time datetime={verified}>{verified}</time>
+    </div>
+    <div class="resource-actions">
+      <a href={detail}>详情 <span lang="en">Details</span></a>
+      <a href={site}>官方入口 <span lang="en">Official ↗</span></a>
+    </div>
+  </footer>
+</article>

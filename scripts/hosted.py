@@ -14,6 +14,7 @@ from urllib.parse import urlsplit
 
 from collect import collect, load, save
 from discover import discovery
+from resource_editor import resource_context
 from editor import ITEMS, DATE_ZONE, RUN_BUDGET, choose, metadata, output_schema, sync, write_articles
 from model_cost import configured_price, event_usage, worst_case
 from release import PROBE_HEADERS, probe
@@ -112,7 +113,8 @@ def prepare(task):
     save(ledger_path, ledger)
     save(BATCH, dict(task=task, date=day, now=now.isoformat(timespec='seconds'),
                      maxArticles=min(rules.get('max_articles', 10), number('VENTURE_MAX_ARTICLES_PER_RUN', 3, 1, 10)),
-                     reservation=reserved, unlimited=unlimited, candidates=candidates))
+                     reservation=reserved, unlimited=unlimited, candidates=candidates,
+                     existingResources=resource_context(articles) if task not in ('daily', 'weekly') else []))
 
 
 def config(smoke, instructions):
@@ -209,7 +211,7 @@ def run_model(batch, smoke, receipt):
         receipt['effort'] = os.getenv('CODEX_ADVANCED_REASONING_EFFORT' if advanced else
                                      'CODEX_REASONING_EFFORT') or 'low'
         receipt['sessions'] = 1
-        payload = {key: batch[key] for key in ('date', 'maxArticles', 'candidates')}
+        payload = {key: batch[key] for key in ('date', 'maxArticles', 'candidates', 'existingResources')}
         prompt = json.dumps(dict(mode=batch['task'], **payload), ensure_ascii=False)
         schema_data = output_schema()
         if smoke:
@@ -301,7 +303,7 @@ def accept():
     if not result.is_file() or result.is_symlink() or result.stat().st_size > 160_000:
         raise ValueError('Missing or invalid model result')
     response = load(result, {})
-    if type(response) is not dict or set(response) != {'articles', 'skipped'}:
+    if type(response) is not dict or set(response) != {'articles', 'skipped', 'resourceUpdates'}:
         raise ValueError('Invalid editorial response')
     if type(response['articles']) is not list or not string_list(response['skipped'], 8, 64):
         raise ValueError('Invalid editorial lists')
@@ -318,24 +320,26 @@ def accept():
                     raise ValueError(f'Invalid field {name}')
                 if name != 'body' and re.search(r'[<>\x00-\x1f]', value):
                     raise ValueError(f'Unsupported metadata characters in {name}')
-            elif name == 'blocks':
+            elif name in ('blocks', 'resource'):
                 continue  # Validated by write_articles in both publishing paths.
             elif not string_list(value, 8, 64):
                 raise ValueError(f'Invalid array {name}')
-    before = {(article['collection'], article['slug']) for article in metadata()}
+    before = {(article['collection'], article['slug']): article for article in metadata()}
     now = datetime.fromisoformat(batch['now'])
     if now.date().isoformat() != batch['date']:
         raise ValueError('Batch date is invalid')
-    skipped = write_articles(response, batch['task'], batch['candidates'], now, batch['maxArticles'])
+    skipped, refreshed = write_articles(response, batch['task'], batch['candidates'], now, batch['maxArticles'])
     articles = metadata()
     items = load(ITEMS, {})
     sync(items, articles)
+    for key in refreshed:
+        items[key]['status'] = 'published'
     for key in skipped:
         if items[key]['status'] in ('pending', 'expired'):
             items[key]['status'] = 'skipped'
     save(ITEMS, items)
     routes = [f"{article['collection']}/{article['slug']}/" for article in articles
-              if (article['collection'], article['slug']) not in before]
+              if article != before.get((article['collection'], article['slug']))]
     save(WORK / 'routes.json', routes)
 
 

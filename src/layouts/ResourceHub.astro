@@ -1,0 +1,49 @@
+---
+import Base from './Base.astro';
+import ResourceCard from '../components/ResourceCard.astro';
+import StoryList from '../components/StoryList.astro';
+import SectionHeading from '../components/SectionHeading.astro';
+import { directoryTitle, resourceBase, resourceDirectories } from '../lib/resources';
+import { hubs, types, type Story } from '../lib/content';
+import '../styles/resources.css';
+
+const { hub, stories } = Astro.props as { hub: 'discover' | 'learn'; stories: Story[] };
+const [zh, en] = hubs[hub];
+const learning = hub === 'learn';
+const intro = learning
+  ? ['按任务查找教程、工作流、提示词与工具对比。', 'Find tutorials, workflows, prompts and comparisons for the task at hand.']
+  : ['探索 AI 技能、插件、模型和工具，快速找到官方资料与实践指南。', 'Explore AI skills, extensions, models and tools with links to official references and practical guides.'];
+const directories = resourceDirectories(stories).filter(({ type }) => learning === (type === 'prompts' || type === 'workflows'));
+const resources = directories.flatMap(({ rows }) => rows);
+const featured = resources.filter((row) => row.featured).slice(0, 3);
+const recent = [...resources].sort((a, b) => b.added.localeCompare(a.added) || a.id.localeCompare(b.id)).slice(0, 3);
+const editorialTopics = Object.entries(types).filter(([key, [, , owner]]) =>
+  owner === hub && !directories.some(({ type }) => type === key) && stories.some(({ data }) => data.type === key));
+---
+<Base title={zh} description={intro.join(' ')}>
+  <div class="resource-directory" data-pagefind-body>
+    <header class="resource-head">
+      <h1>{zh}<span lang="en">{en}</span></h1>
+      <p>{intro[0]}<span lang="en">{intro[1]}</span></p>
+    </header>
+    <nav class="resource-directory-links" aria-label="栏目入口 / Browse sections">
+      {directories.map(({ type, rows }) => {
+        const [zh, en] = directoryTitle(type);
+        return <a href={resourceBase(type)}><strong>{zh}</strong><span lang="en">{en}</span><span>{rows.length} 项 / {rows.length} resources</span></a>;
+      })}
+      {editorialTopics.map(([key, [zh, en]]) => <a href={`/topics/${key}/`}><strong>{zh}</strong><span lang="en">{en}</span></a>)}
+    </nav>
+    {featured.length > 0 && <section class="resource-hub-section">
+      <SectionHeading zh="编辑精选" en="Editor’s picks" />
+      <div class="resource-grid">{featured.map((resource) => <ResourceCard {resource} />)}</div>
+    </section>}
+    <section class="resource-hub-section">
+      <SectionHeading zh={learning ? '可复用的实践' : '最新收录'} en={learning ? 'Ready to reuse' : 'Recently added'} />
+      <div class="resource-grid">{recent.map((resource) => <ResourceCard {resource} />)}</div>
+    </section>
+    {learning && editorialTopics.map(([key, [zh, en]]) => <section class="resource-hub-section">
+      <SectionHeading {zh} {en} href={`/topics/${key}/`} />
+      <StoryList stories={stories.filter(({ data }) => data.type === key).slice(0, 4)} nested />
+    </section>)}
+  </div>
+</Base>

@@ -12,6 +12,7 @@ status: "current"
 tested: false
 tags: ["agents-md","agents"]
 sources: [{"title":"Write AGENTS.md as a maintainable repository guide – primary reference","url":"https://agents.md/"}]
+resource: {"id": "agents-md", "type": "resources", "name": "AGENTS.md", "summary": ["用仓库级说明记录项目结构、测试和协作约定。", "Document project structure, tests and collaboration conventions in repository instructions."], "categories": [["软件开发", "Software development"]], "site": "https://agents.md/"}
 ---
 <p lang="zh-CN">AGENTS.md 项目网站把它描述为面向编程 Agent 的 Markdown 文件。单仓可从根目录的环境准备、测试命令和文件约定开始。多包仓库可给包目录补充自己的运行方式，并按具体 Agent 的查找规则核对实际作用域。</p>
 

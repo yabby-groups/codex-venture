@@ -1,12 +1,16 @@
 ---
+import ResourceDirectory from '../../layouts/ResourceDirectory.astro';
+import { resourceDirectories } from '../../lib/resources';
 import Listing from '../../layouts/Listing.astro';
 import { allStories } from '../../lib/content';
 import { listingSections } from '../../lib/listing';
 
 export async function getStaticPaths() {
-  return listingSections(await allStories()).filter(({ base }) => base.startsWith('/topics/')).map((section) => ({
+  const stories = await allStories();
+  return [...resourceDirectories(stories).map((directory) => ({ params: { key: directory.type }, props: directory })),
+    ...listingSections(stories).filter(({ base }) => base.startsWith('/topics/')).map((section) => ({
     params: { key: section.base.split('/')[2] }, props: section,
-  }));
+  }))];
 }
 ---
-<Listing {...Astro.props} />
+{Astro.props.rows ? <ResourceDirectory {...Astro.props} /> : <Listing {...Astro.props} />}

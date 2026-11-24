@@ -1,3 +1,4 @@
+import type { Resource } from './resources';
 import type { Story } from './content';
 
 interface Entity {
@@ -72,4 +73,15 @@ export const jsonLd = (value: unknown) => JSON.stringify(value).replaceAll('<', 
 export const organization = (site: URL | undefined) => ({
   '@type': 'Organization', '@id': new URL('/#organization', site).href,
   name: 'Codex Venture', url: new URL('/', site).href,
+});
+
+export const resourceEntityId = (id: string, site: URL | undefined) =>
+  new URL('/entities.json#' + id, site).href;
+
+export const resourceEntitySchema = (row: Resource, site: URL | undefined) => ({
+  '@type': ['plugins', 'tools'].includes(row.type) ? 'SoftwareApplication'
+    : ['skills', 'mcp', 'open-source'].includes(row.type) ? 'SoftwareSourceCode' : 'Thing',
+  '@id': resourceEntityId(row.id, site), name: row.name, alternateName: row.nameZh,
+  url: new URL(row.detail, site).href, sameAs: row.site,
+  ...(row.repository && { codeRepository: row.repository }),
 });

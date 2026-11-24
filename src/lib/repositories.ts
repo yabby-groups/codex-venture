@@ -13,6 +13,13 @@ interface Snapshot {
 
 const snapshotsByName: Record<string, Snapshot> = snapshots;
 
+export function repositorySnapshot(repository: string | undefined) {
+  if (!repository) return;
+  const url = new URL(repository);
+  if (url.origin !== 'https://github.com' || !/^\/[\w.-]+\/[\w.-]+\/?$/.test(url.pathname)) return;
+  return snapshotsByName[url.pathname.slice(1).replace(/\/$/, '').toLowerCase()];
+}
+
 export interface RepositoryInfo {
   name: string;
   snapshot?: Snapshot;

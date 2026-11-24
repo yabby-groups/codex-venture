@@ -9,6 +9,7 @@ tags: ["crawl4ai", "browser-automation", "rag"]
 sources:
   - title: "unclecode/crawl4ai repository and documentation"
     url: https://github.com/unclecode/crawl4ai
+resource: {"id":"crawl4ai","type":"open-source","name":"Crawl4AI","summary":["Crawl4AI 提供基于浏览器的网页采集，可保留标题、表格和代码，并按内容条件过滤页面正文。","Crawl4AI collects pages in a browser and can preserve headings, tables and code while filtering page content."],"site":"https://github.com/unclecode/crawl4ai","repository":"https://github.com/unclecode/crawl4ai","categories":[["网页提取","Web extraction"]],"verifiedAt":"2026-11-24"}
 ---
 <h2><span lang="zh-CN">项目用途</span><span lang="en">What it does</span></h2>
 

@@ -10,8 +10,9 @@ import { articleHeadings } from '../lib/article-headings.mjs';
 import Repository from '../components/Repository.astro';
 import { repositoryFor } from '../lib/repositories';
 import Base from './Base.astro';
-import { storyEntities, entitySchema, jsonLd, organization } from '../lib/entities';
+import { storyEntities, entitySchema, resourceEntitySchema, jsonLd, organization } from '../lib/entities';
 import { allStories, dateKey, storySection, storyUrl, types, hubs, isWeekly, type Story } from '../lib/content';
+import { resourceCatalog, resourceBase, directoryTitle } from '../lib/resources';
 interface Props { story: Story }
 const { story } = Astro.props;
 const { Content } = await render(story);
@@ -26,11 +27,12 @@ const short = story.collection === 'news' && (!data.type || ['news', 'models'].i
   (story.body?.length ?? 0) < 2400 && !blocks.length;
 const showContents = !short && sections.length >= 3;
 const entities = storyEntities(story);
+const resources = resourceCatalog(stories).filter((row) => row.articles.includes(storyUrl(story)));
 const related = stories
   .filter((item) => storyUrl(item) !== storyUrl(story) && item.collection === 'news')
   .map((item) => ({
     item,
-    score: (storyEntities(item).some((entity) => entities.includes(entity)) ? 10 : 0)
+    score: (resources.some((row) => row.articles.includes(storyUrl(item))) ? 12 : 0) + (storyEntities(item).some((entity) => entities.includes(entity)) ? 10 : 0)
       + (item.data.project && item.data.project === data.project ? 8 : 0)
       + (item.data.sources.some((source) => data.sources.some((original) => source.url === original.url)) ? 5 : 0)
       + new Set(item.data.tags.filter((tag) => data.tags.includes(tag))).size,
@@ -40,7 +42,7 @@ const related = stories
   .slice(0, short ? 2 : 3)
   .map(({ item }) => item);
 const canonical = new URL(storyUrl(story), Astro.site).href;
-const { label, href } = storySection(story);
+const { label, href } = data.resource ? { label: directoryTitle(data.resource.type), href: resourceBase(data.resource.type) } : storySection(story);
 const parent = story.collection === 'daily'
   ? isWeekly(story) ? 'weekly' : 'daily'
   : data.type ? types[data.type][2] : 'news';
@@ -71,9 +73,12 @@ const schema = jsonLd({
   headline: data.titleZh, alternativeHeadline: data.titleEn, datePublished: data.published.toISOString(),
   dateModified: data.updated ?? data.published.toISOString(),
   description: data.summaryZh, mainEntityOfPage: canonical, inLanguage: ['zh-CN', 'en'],
-  citation: data.sources.map(({ url }) => url),
+  citation: [...new Set([...data.sources.map(({ url }) => url), ...data.resource?.verificationSources ?? []])],
   author: organization(Astro.site), publisher: { '@id': organization(Astro.site)['@id'] },
-  ...(entities.length && { about: entities.map((entity) => entitySchema(entity, Astro.site)) }),
+  ...((entities.length || resources.length) && { about: [
+    ...entities.map((entity) => entitySchema(entity, Astro.site)),
+    ...resources.map((row) => resourceEntitySchema(row, Astro.site)),
+  ] }),
 });
 ---
 <Base title={data.titleZh} description={data.summaryZh + ' ' + data.summaryEn} article {articleNav}>
@@ -90,6 +95,8 @@ const schema = jsonLd({
         {data.tested === false && data.type && ['skills', 'plugins', 'mcp', 'tutorials', 'workflows', 'comparisons'].includes(data.type) &&
           <BilingualParagraph class="article-notice" zh="依据公开资料整理，操作未经本站实测。" en="Based on public documentation. The editorial team did not run the procedure." />}
         <div class="prose"><Content /></div>
+        {data.resource?.install && !data.tested && blocks.some((block) => block.kind === 'code') &&
+          <BilingualParagraph class="article-notice" zh="复制前请查阅官方资料并核对所需权限。示例未经本站安全审计。" en="Review the official reference and required permissions before copying. The editorial team has not audited the example." />}
         <ArticleBlocks {blocks} />
         {repo && <Repository {repo} {story} detail />}
         <ArticleFooter {data} {related} {entities} {label} {href} />

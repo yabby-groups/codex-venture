@@ -1,8 +1,11 @@
+import { resourceDirectories } from './resources';
 import { categories, hubs, isWeekly, types, type Story } from './content';
 
 export const pageSize = 20;
 
-export const listingSections = (stories: Story[]) => [
+export const listingSections = (stories: Story[]) => {
+const directoryKeys = new Set<string>(resourceDirectories(stories).map(({ type }) => type));
+return [
   { base: '/news/', zh: '最新资讯', en: 'Latest News', stories: stories.filter((story) => story.collection === 'news' && (!story.data.type || ['news', 'models'].includes(story.data.type))) },
   { base: '/daily/', zh: '每日 AI 简报', en: 'Daily AI Briefing',
     intro: ['按日期阅读全球 AI 技术动态。', 'Follow global AI developments by date.'],
@@ -15,9 +18,8 @@ export const listingSections = (stories: Story[]) => [
     topics: Object.entries(types).filter(([id, [, , hub]]) => hub === key && stories.some(({ data }) => data.type === id)),
     stories: stories.filter(({ data }) => data.type && types[data.type][2] === key),
   })),
-  ...Object.entries(types).filter(([key]) => key !== 'news').map(([key, [zh, en]]) => ({
+  ...Object.entries(types).filter(([key]) => key !== 'news' && !directoryKeys.has(key)).map(([key, [zh, en]]) => ({
     base: `/topics/${key}/`, zh, en,
-    directory: ['skills', 'plugins', 'mcp'].includes(key),
     stories: stories.filter((story) => story.collection === 'news' &&
       (story.data.type ?? (story.data.category === 'models' ? 'models' : 'news')) === key),
   })).filter(({ stories }) => stories.length),
@@ -26,3 +28,4 @@ export const listingSections = (stories: Story[]) => [
     stories: stories.filter((story) => story.data.category === key),
   })),
 ];
+};

@@ -1,15 +1,23 @@
 ---
+import ResourceDirectory from '../../../layouts/ResourceDirectory.astro';
+import { resourceDirectories, resourcePageSize } from '../../../lib/resources';
 import Listing from '../../../layouts/Listing.astro';
 import { allStories } from '../../../lib/content';
 import { listingSections, pageSize } from '../../../lib/listing';
 
 export async function getStaticPaths() {
-  return listingSections(await allStories()).filter((section) => !('directory' in section && section.directory)).flatMap((section) =>
+  const stories = await allStories();
+  return [...resourceDirectories(stories).flatMap((directory) =>
+    Array.from({ length: Math.ceil(directory.rows.length / resourcePageSize) - 1 }, (_, index) => ({
+      params: { section: 'topics/' + directory.type, number: String(index + 2) },
+      props: { ...directory, page: index + 2 },
+    }))),
+    ...listingSections(stories).filter(({ base }) => base !== '/discover/' && base !== '/learn/').flatMap((section) =>
     Array.from({ length: Math.max(0, Math.ceil(section.stories.length / pageSize) - 1) }, (_, index) => ({
       params: { section: section.base.slice(1, -1), number: String(index + 2) },
       props: { ...section, page: index + 2 },
     })),
-  );
+  )];
 }
 ---
-<Listing {...Astro.props} />
+{Astro.props.rows ? <ResourceDirectory {...Astro.props} /> : <Listing {...Astro.props} />}

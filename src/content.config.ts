@@ -3,6 +3,7 @@ import { z } from 'astro/zod';
 import { glob } from 'astro/loaders';
 
 import { articleBlock } from './lib/article-blocks';
+import { resourceSchema } from './lib/resource-schema';
 import types from '../config/content-types.json';
 
 const schema = z.object({
@@ -19,6 +20,8 @@ const schema = z.object({
   version: z.string().min(1).optional(),
   status: z.enum(['current', 'needs-review', 'archived']).optional(),
   tested: z.boolean().optional(),
+  resource: resourceSchema.optional(),
+  resourceIds: z.array(z.string().regex(/^[a-z0-9]+(?:-[a-z0-9]+)*$/)).optional(),
   project: z.string().regex(/^[a-z0-9]+(?:-[a-z0-9]+)*$/).optional(),
   tags: z.array(z.string().regex(/^[a-z0-9]+(?:-[a-z0-9]+)*$/)).min(1),
   sources: z.array(z.object({

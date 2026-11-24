@@ -272,7 +272,7 @@ jobs:
           VENTURE_GIT_TOKEN: ${{ secrets.VENTURE_PUBLISH_TOKEN || github.token }}
         run: |
           git add -- src/content/news src/content/daily
-          git diff --cached --name-status | python3 -c 'import re,sys; lines=sys.stdin.read().splitlines(); sys.exit(not lines or any(not re.fullmatch(r"A\tsrc/content/(news|daily)/[a-z0-9]+(?:-[a-z0-9]+)*\.md", line) for line in lines))'
+          git diff --cached --name-status | python3 -c 'import re,sys; lines=sys.stdin.read().splitlines(); sys.exit(not lines or any(not re.fullmatch(r"(?:A\tsrc/content/(?:news|daily)|M\tsrc/content/news)/[a-z0-9]+(?:-[a-z0-9]+)*\.md", line) for line in lines))'
           git -c user.name='github-actions[bot]' -c user.email='41898282+github-actions[bot]@users.noreply.github.com' commit -m 'Publish Codex Venture bilingual coverage'
           ops/hosted-git git push origin HEAD:refs/heads/main
           echo "PUBLISH_SHA=$(git rev-parse HEAD)" >> "$GITHUB_ENV"

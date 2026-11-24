@@ -9,6 +9,8 @@ tags: ["rumble", "speech-to-text", "transformers"]
 sources:
   - title: "Rumble-2-Flash release and benchmark"
     url: https://huggingface.co/blog/rumble-2-flash
+verified: "2026-11-24"
+resource: {"id": "rumble-2-flash", "type": "models", "name": "Rumble-2-Flash", "summary": ["用于多语言语音识别的开放权重模型。", "An open-weight model for multilingual speech recognition."], "categories": [["语音识别", "Speech recognition"]], "site": "https://huggingface.co/blog/rumble-2-flash", "kind": "Audio → Text"}
 ---
 <h2><span lang="zh-CN">主要变化</span><span lang="en">What changed</span></h2>
 
