@@ -10,6 +10,7 @@ from collect import load, save
 
 RUNTIME = Path('.venture-runtime')
 JOURNAL = RUNTIME / 'release.json'
+PROBE_HEADERS = {'Cache-Control': 'no-cache', 'User-Agent': 'CodexVentureMonitor/1.0'}
 ROUTES = ('', 'daily/', 'news/', 'search/', 'rss.xml', 'sitemap-index.xml',
           'pagefind/pagefind.js', 'release.txt')
 TRACKED = ('src/content', 'state', 'config/sources.yaml')
@@ -42,12 +43,17 @@ def point(root, target):
 def probe(base, release, routes=ROUTES):
     for route in routes:
         url = base.rstrip('/') + '/' + route
-        request = urllib.request.Request(url, headers={'Cache-Control': 'no-cache'})
-        with urllib.request.urlopen(request, timeout=8) as response:
-            if response.status != 200:
-                raise RuntimeError(f'{url}: unexpected HTTP {response.status}')
-            if route == 'release.txt' and response.read(256).decode().strip() != release:
-                raise RuntimeError(f'{url}: release marker mismatch')
+        if route == 'release.txt':
+            url += '?release=' + release
+        request = urllib.request.Request(url, headers=PROBE_HEADERS)
+        try:
+            with urllib.request.urlopen(request, timeout=8) as response:
+                if response.status != 200:
+                    raise RuntimeError(f'{url}: unexpected HTTP {response.status}')
+                if route == 'release.txt' and response.read(256).decode().strip() != release:
+                    raise RuntimeError(f'{url}: release marker mismatch')
+        except OSError as error:
+            raise RuntimeError(f'{url}: {error}') from error
 
 
 def recover():

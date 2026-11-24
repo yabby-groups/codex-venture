@@ -14,7 +14,7 @@ from urllib.parse import urlsplit
 from collect import collect, load, save
 from discover import discovery
 from editor import ITEMS, DATE_ZONE, RUN_BUDGET, choose, metadata, output_schema, sync, write_articles
-from release import probe
+from release import PROBE_HEADERS, probe
 
 WORK = Path(os.environ.get('RUNNER_TEMP', '.venture-runtime')) / 'venture'
 STATE = Path('.venture-runtime')
@@ -78,13 +78,15 @@ def prepare(task):
 
 
 def config(smoke):
-    url = os.environ.get('CODEX_BASE_URL', '')
+    required = ('CODEX_BASE_URL', 'CODEX_MODEL', 'CODEX_API_KEY')
+    missing = [name for name in required if not os.environ.get(name)]
+    if missing:
+        raise ValueError('Missing GitHub Actions configuration: ' + ', '.join(missing))
+    url = os.environ['CODEX_BASE_URL']
     parts = urlsplit(url)
     if (parts.scheme != 'https' or not parts.hostname or parts.username or parts.password
             or parts.query or parts.fragment or parts.hostname.lower() == 'api.openai.com'):
         raise ValueError('CODEX_BASE_URL must be a third-party HTTPS API base URL')
-    if not os.environ.get('CODEX_API_KEY'):
-        raise ValueError('Missing CODEX_API_KEY')
     advanced = load(BATCH, {})['task'] == 'weekly' and os.environ.get('CODEX_ADVANCED_MODEL')
     model = os.environ.get('CODEX_ADVANCED_MODEL' if advanced else 'CODEX_MODEL', '')
     effort = (os.environ.get('CODEX_ADVANCED_REASONING_EFFORT' if advanced else
@@ -325,7 +327,7 @@ def health(wait=False):
         try:
             probe(base, release)
             for route in routes:
-                request = Request(f'{base}/{route}?release={release}', headers={'Cache-Control': 'no-cache'})
+                request = Request(f'{base}/{route}?release={release}', headers=PROBE_HEADERS)
                 with urlopen(request, timeout=8) as response:
                     page = response.read(2_000_000)
                 expected = (Path('dist') / route / 'index.html').read_bytes()
