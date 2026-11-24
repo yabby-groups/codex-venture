@@ -1,12 +1,14 @@
 ---
 import { render } from 'astro:content';
+import Repository from '../components/Repository.astro';
+import { repositoryFor } from '../lib/repositories';
 import Base from './Base.astro';
-import { allStories, categories, dateKey, storyUrl, type Story } from '../lib/content';
+import { allStories, dateKey, isWeekly, storySection, storyUrl, type Story } from '../lib/content';
 interface Props { story: Story }
 const { story } = Astro.props;
 const { Content } = await render(story);
 const stories = await allStories();
-const sameType = stories.filter((item) => item.collection === story.collection);
+const sameType = stories.filter((item) => item.collection === story.collection && isWeekly(item) === isWeekly(story));
 const index = sameType.findIndex((item) => item.id === story.id);
 const related = stories.filter((item) => storyUrl(item) !== storyUrl(story) && (
   item.data.sources.some((source) => story.data.sources.some((original) => source.url === original.url)) ||
@@ -14,12 +16,17 @@ const related = stories.filter((item) => storyUrl(item) !== storyUrl(story) && (
 )).slice(0, 3);
 const { data } = story;
 const canonical = new URL(storyUrl(story), Astro.site).href;
-const collection = story.collection === 'news' ? '最新资讯' : '每日简报';
+const { label, href } = storySection(story);
+const repo = repositoryFor(story);
+const bodyText = (story.body ?? '').replace(/<[^>]+>/g, '').replace(/https?:\/\/\S+/g, '');
+const chinese = bodyText.match(/\p{Script=Han}/gu)?.length ?? 0;
+const english = bodyText.match(/\b[A-Za-z]+\b/g)?.length ?? 0;
+const minutes = Math.max(1, Math.ceil(chinese / 350 + english / 220));
 const breadcrumb = JSON.stringify({
   '@context': 'https://schema.org', '@type': 'BreadcrumbList',
   itemListElement: [
     { '@type': 'ListItem', position: 1, name: 'Codex Venture', item: Astro.site?.href },
-    { '@type': 'ListItem', position: 2, name: collection, item: new URL(`/${story.collection}/`, Astro.site).href },
+    { '@type': 'ListItem', position: 2, name: label[0], item: new URL(href, Astro.site).href },
     { '@type': 'ListItem', position: 3, name: data.titleZh, item: canonical },
   ],
 }).replaceAll('<', '\\u003c');
@@ -34,9 +41,22 @@ const jsonLd = JSON.stringify({
 <Base title={data.titleZh} description={data.summaryZh + ' ' + data.summaryEn} article>
   <Fragment slot="head"><script type="application/ld+json" set:html={jsonLd} /><script type="application/ld+json" set:html={breadcrumb} /><meta property="article:published_time" content={data.published.toISOString()} /></Fragment>
   <article class="article" data-pagefind-body>
-    <div class="story-meta"><span>{categories[data.category][0]}</span><time datetime={data.published.toISOString()}>{dateKey(data.published)} · 北京时间</time></div>
-    <h1 data-pagefind-meta="title">{data.titleZh}<span lang="en">{data.titleEn}</span></h1>
+    <nav class="breadcrumbs" aria-label="面包屑 / Breadcrumb">
+      <ol><li><a href="/">首页<span lang="en">Home</span></a></li><li aria-hidden="true">/</li><li><a href={href}>{label[0]}<span lang="en">{label[1]}</span></a></li></ol>
+    </nav>
+    <h1 data-pagefind-meta={`title:${data.titleZh}`}>{data.titleZh}<span lang="en" data-pagefind-meta={`titleEn:${data.titleEn}`}>{data.titleEn}</span></h1>
+    <div class="article-byline" data-pagefind-ignore>
+      <div>Codex Venture 编辑部 · <time datetime={data.published.toISOString()}>{dateKey(data.published)} · UTC+8</time> · 约 {minutes} 分钟</div>
+      <span lang="en">Codex Venture editorial · {minutes} min read</span>
+    </div>
+    <meta data-pagefind-meta={`section:${label[0]}`} />
+    <meta data-pagefind-meta={`sectionEn:${label[1]}`} />
+    <meta data-pagefind-meta={`date:${dateKey(data.published)}`} />
     <p class="article-summary">{data.summaryZh}<span lang="en">{data.summaryEn}</span></p>
+    {repo && <Repository {repo} {story} detail />}
+    <nav class="article-toc" aria-label="目录 / Contents" data-pagefind-ignore hidden>
+      <strong>目录 <span lang="en">Contents</span></strong><ol></ol>
+    </nav>
     <div class="prose"><Content /></div>
     <section class="article-links" data-pagefind-ignore>
       <h2>原始来源 <span lang="en">Primary Sources</span></h2>
@@ -46,9 +66,35 @@ const jsonLd = JSON.stringify({
   </article>
   <aside class="article article-links" aria-label="更多资讯">
     {related.length > 0 && <><h2>相关资讯 <span lang="en">Related Stories</span></h2><ul>{related.map((item) => <li><a href={storyUrl(item)}>{item.data.titleZh}<span lang="en">{item.data.titleEn}</span></a></li>)}</ul></>}
+    <a href={href}>返回{label[0]} <span lang="en">Back to {label[1]}</span></a>
     <nav class="adjacent" aria-label="上一篇和下一篇">
       {sameType[index + 1] && <a href={storyUrl(sameType[index + 1])}>← 较早 · Older<span>{sameType[index + 1].data.titleZh}</span></a>}
       {sameType[index - 1] && <a href={storyUrl(sameType[index - 1])}>较新 · Newer →<span>{sameType[index - 1].data.titleZh}</span></a>}
     </nav>
   </aside>
 </Base>
+
+<script>
+  const toc = document.querySelector<HTMLElement>('.article-toc');
+  const headings = [...document.querySelectorAll<HTMLElement>('article .prose h2')];
+  if (toc && headings.length >= 4) {
+    const list = toc.querySelector('ol')!;
+    headings.forEach((heading, index) => {
+      heading.id ||= `section-${index + 1}`;
+      const item = document.createElement('li');
+      const link = document.createElement('a');
+      link.href = '#' + heading.id;
+      const parts = heading.querySelectorAll<HTMLElement>(':scope > [lang]');
+      if (parts.length) parts.forEach((part) => {
+        const span = document.createElement('span');
+        span.lang = part.lang;
+        span.textContent = part.textContent;
+        link.append(span);
+      });
+      else link.textContent = heading.textContent;
+      item.append(link);
+      list.append(item);
+    });
+    toc.hidden = false;
+  }
+</script>

@@ -1,0 +1,155 @@
+{
+  "anomalyco/opencode": {
+    "stargazers_count": 228903,
+    "forks_count": 31131,
+    "language": "TypeScript",
+    "license": "MIT",
+    "pushed_at": "2026-11-24T13:44:27Z",
+    "homepage": "https://opencode.ai",
+    "collected": "2026-11-24T13:45:39+00:00"
+  },
+  "anthropics/claude-code": {
+    "stargazers_count": 156902,
+    "forks_count": 25102,
+    "language": "TypeScript",
+    "pushed_at": "2026-11-24T13:40:25Z",
+    "homepage": "https://code.claude.com/docs/en/overview",
+    "license": null,
+    "collected": "2026-11-24T13:45:39+00:00"
+  },
+  "berriai/litellm": {
+    "stargazers_count": 63817,
+    "forks_count": 13522,
+    "language": "Python",
+    "license": "NOASSERTION",
+    "pushed_at": "2026-11-24T13:44:43Z",
+    "homepage": "https://docs.litellm.ai/docs/",
+    "collected": "2026-11-24T13:45:39+00:00"
+  },
+  "browser-use/browser-use": {
+    "stargazers_count": 121914,
+    "forks_count": 13633,
+    "language": "Python",
+    "license": "MIT",
+    "pushed_at": "2026-11-24T08:32:44Z",
+    "homepage": "https://browser-use.com",
+    "collected": "2026-11-24T13:45:39+00:00"
+  },
+  "cjpais/handy": {
+    "stargazers_count": 39992,
+    "forks_count": 3778,
+    "language": "Rust",
+    "license": "MIT",
+    "pushed_at": "2026-11-24T09:46:39Z",
+    "homepage": "https://handy.computer",
+    "collected": "2026-11-24T13:45:39+00:00"
+  },
+  "cline/cline": {
+    "stargazers_count": 71857,
+    "forks_count": 7952,
+    "language": "TypeScript",
+    "license": "Apache-2.0",
+    "pushed_at": "2026-11-23T23:35:30Z",
+    "homepage": "https://cline.bot",
+    "collected": "2026-11-24T13:45:40+00:00"
+  },
+  "comfy-org/comfyui": {
+    "stargazers_count": 148397,
+    "forks_count": 17681,
+    "language": "Python",
+    "license": "GPL-3.0",
+    "pushed_at": "2026-11-24T11:23:22Z",
+    "homepage": "https://www.comfy.org/",
+    "collected": "2026-11-24T13:45:40+00:00"
+  },
+  "docling-project/docling": {
+    "stargazers_count": 70966,
+    "forks_count": 5409,
+    "language": "Python",
+    "license": "MIT",
+    "pushed_at": "2026-11-24T13:06:27Z",
+    "homepage": "https://docling-project.github.io/docling",
+    "collected": "2026-11-24T13:45:40+00:00"
+  },
+  "ericlbuehler/mistral.rs": {
+    "stargazers_count": 7861,
+    "forks_count": 774,
+    "language": "Rust",
+    "license": "MIT",
+    "pushed_at": "2026-11-20T20:53:29Z",
+    "homepage": "",
+    "collected": "2026-11-24T13:45:40+00:00"
+  },
+  "infiniflow/ragflow": {
+    "stargazers_count": 94639,
+    "forks_count": 11385,
+    "language": "Go",
+    "license": "Apache-2.0",
+    "pushed_at": "2026-11-24T13:09:47Z",
+    "homepage": "https://ragflow.io",
+    "collected": "2026-11-24T13:45:40+00:00"
+  },
+  "n8n-io/n8n": {
+    "stargazers_count": 211951,
+    "forks_count": 61643,
+    "language": "TypeScript",
+    "license": "NOASSERTION",
+    "pushed_at": "2026-11-24T13:45:05Z",
+    "homepage": "https://n8n.io",
+    "collected": "2026-11-24T13:45:41+00:00"
+  },
+  "nvidia/tensorrt-llm": {
+    "stargazers_count": 15127,
+    "forks_count": 2956,
+    "language": "Python",
+    "license": "NOASSERTION",
+    "pushed_at": "2026-11-24T13:37:14Z",
+    "homepage": "https://nvidia.github.io/TensorRT-LLM",
+    "collected": "2026-11-24T13:45:41+00:00"
+  },
+  "openai/codex": {
+    "stargazers_count": 136305,
+    "forks_count": 21625,
+    "language": "Rust",
+    "license": "Apache-2.0",
+    "pushed_at": "2026-11-24T13:30:30Z",
+    "homepage": "",
+    "collected": "2026-11-24T13:45:41+00:00"
+  },
+  "openai/openai-agents-python": {
+    "stargazers_count": 30852,
+    "forks_count": 5106,
+    "language": "Python",
+    "license": "MIT",
+    "pushed_at": "2026-11-24T08:23:22Z",
+    "homepage": "https://openai.github.io/openai-agents-python/",
+    "collected": "2026-11-24T13:45:41+00:00"
+  },
+  "qwenlm/qwen-code": {
+    "stargazers_count": 30918,
+    "forks_count": 3579,
+    "language": "TypeScript",
+    "license": "Apache-2.0",
+    "pushed_at": "2026-11-24T13:30:08Z",
+    "homepage": "https://qwenlm.github.io/qwen-code-docs/en/users/overview",
+    "collected": "2026-11-24T13:45:41+00:00"
+  },
+  "unclecode/crawl4ai": {
+    "stargazers_count": 87747,
+    "forks_count": 9145,
+    "language": "Python",
+    "license": "Apache-2.0",
+    "pushed_at": "2026-11-23T06:00:27Z",
+    "homepage": "https://crawl4ai.com/signin/?ref=github-about",
+    "collected": "2026-11-24T13:45:41+00:00"
+  },
+  "w01fb0ss/pibot": {
+    "stargazers_count": 541,
+    "forks_count": 76,
+    "language": "TypeScript",
+    "license": "Apache-2.0",
+    "pushed_at": "2026-11-24T12:27:30Z",
+    "homepage": "https://pibot.space",
+    "collected": "2026-11-24T13:45:42+00:00"
+  }
+}

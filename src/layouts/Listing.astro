@@ -1,11 +1,35 @@
 ---
 import Base from './Base.astro';
 import StoryList from '../components/StoryList.astro';
-import type { Story } from '../lib/content';
-interface Props { zh: string; en: string; stories: Story[] }
-const { zh, en, stories } = Astro.props;
+import SectionHeading from '../components/SectionHeading.astro';
+import { pageSize } from '../lib/listing';
+import { dateKey, type Story } from '../lib/content';
+interface Props { zh: string; en: string; stories: Story[]; intro?: string[]; page?: number; base?: string }
+const { zh, en, stories, intro, page = 1, base, } = Astro.props;
+const lastPage = base ? Math.ceil(stories.length / pageSize) : 1;
+const visible = base ? stories.slice((page - 1) * pageSize, page * pageSize) : stories;
+const dates = [...new Set(visible.map(({ data }) => dateKey(data.published)))];
+const url = (index: number) => index === 1 ? base : `${base}page/${index}/`;
 ---
-<Base title={zh} description={zh + ' · ' + en}>
-  <h1 class="page-heading">{zh}<span lang="en">{en}</span></h1>
-  <StoryList stories={stories} />
+<Base title={page > 1 ? `${zh} · ${page}` : zh} description={intro?.join(' ') ?? zh + ' · ' + en}>
+  <header class="section-intro">
+    <h1 class="page-heading">{zh}<span lang="en">{en}</span></h1>
+    <div class="count">{stories.length} 篇<span lang="en">{stories.length} articles</span></div>
+    {intro && <p>{intro[0]}<span lang="en">{intro[1]}</span></p>}
+  </header>
+  <div class="reading-grid">
+    <section>
+      <SectionHeading zh="文章" en="Articles" />
+      <StoryList stories={visible} nested />
+      {lastPage > 1 && <nav class="pagination" aria-label="分页 / Pagination">
+        {page > 1 && <a href={url(page - 1)}>← 上一页 <span lang="en">Previous</span></a>}
+        <span>{page} / {lastPage}</span>
+        {page < lastPage && <a href={url(page + 1)}>下一页 → <span lang="en">Next</span></a>}
+      </nav>}
+    </section>
+    {dates.length > 0 && <aside class="rail">
+      <SectionHeading zh="日期归档" en="By date" href="/archive/" />
+      <ul class="archive-list">{dates.map((date) => <li><a href={`/archive/${date}/`}><time datetime={date}>{date}</time><span aria-hidden="true">↗</span></a></li>)}</ul>
+    </aside>}
+  </div>
 </Base>

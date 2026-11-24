@@ -1,0 +1,29 @@
+---
+import { dateKey, storyUrl, type Story } from '../lib/content';
+import type { RepositoryInfo } from '../lib/repositories';
+interface Props { repo: RepositoryInfo; story: Story; detail?: boolean }
+const { repo, story, detail = false } = Astro.props;
+const Heading = detail ? 'h2' : 'h3';
+const data = repo.snapshot;
+const website = data?.homepage && URL.canParse(data.homepage) && new URL(data.homepage).protocol === 'https:' ? data.homepage : undefined;
+const numbers = new Intl.NumberFormat('en-US');
+const facts = data ? [
+  ['星标', 'Stars', numbers.format(data.stargazers_count)],
+  ...(detail ? [['派生', 'Forks', numbers.format(data.forks_count)]] : []),
+  ['语言', 'Language', data.language],
+  ['许可证', 'License', data.license === 'NOASSERTION' ? undefined : data.license],
+  ['最近推送', 'Last push', data.pushed_at && dateKey(new Date(data.pushed_at))],
+].filter(([, , value]) => value) : [];
+---
+<section class="repository">
+  <Heading><a href={repo.url} lang="en">{repo.name} <span aria-hidden="true">↗</span></a></Heading>
+  {detail ? <div>
+    <span>GitHub 仓库</span><span lang="en">GitHub repository</span>
+    {website && <a href={website}>项目网站<span lang="en">Project website ↗</span></a>}
+    {repo.release && <a href={repo.release.url}>报道版本 <span lang="en">Covered release · {repo.release.label} ↗</span></a>}
+  </div> : <p><a href={storyUrl(story)}>{story.data.titleZh}<span lang="en">{story.data.titleEn}</span></a></p>}
+  {data && <>
+    <dl class="repo-facts">{facts.map(([zh, en, value]) => <div><dt>{zh}<span lang="en">{en}</span></dt><dd>{value}</dd></div>)}</dl>
+    <p class="repo-timestamp">采集于 <time datetime={data.collected}>{dateKey(new Date(data.collected))} · UTC+8</time><span lang="en">GitHub snapshot</span></p>
+  </>}
+</section>

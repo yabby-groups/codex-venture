@@ -38,7 +38,7 @@ const monday = last - (new Date(last).getUTCDay() + 6) % 7 * dayMs;
 <Base title="内容统计" description="Codex Venture 的公开内容统计和发布趋势。Public editorial totals and publishing trends.">
   <div class="article">
     <h1 class="page-heading">内容统计<span lang="en">Publishing statistics</span></h1>
-    <dl>
+    <dl class="stats-grid">
       {[
         ['已发布文章', 'Published articles', stories.length],
         ['已报道开源项目', 'Open-source projects covered', projects.size],

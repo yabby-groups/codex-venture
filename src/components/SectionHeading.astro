@@ -1,0 +1,8 @@
+---
+interface Props { zh: string; en: string; href?: string }
+const { zh, en, href } = Astro.props;
+---
+<div class="section-heading">
+  <h2>{zh}<span lang="en">{en}</span></h2>
+  {href && <a href={href} aria-label={zh + ' / ' + en}>查看全部 <span lang="en">View all ↗</span></a>}
+</div>

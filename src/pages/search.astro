@@ -2,39 +2,87 @@
 import Base from '../layouts/Base.astro';
 ---
 <Base title="全文搜索" noindex>
-  <h1 class="page-heading">全文搜索<span lang="en">Search</span></h1>
-  <form id="search" role="search"><label for="q">关键词 / Keyword</label>
-    <div class="search-controls"><input type="search" name="q" id="q" required /><button type="submit">搜索 / Search</button></div>
-  </form>
-  <p id="status" role="status"></p><ul id="results" class="story-list"></ul>
-  <noscript>搜索需要 JavaScript。 Search requires JavaScript.</noscript>
+  <div class="search-page">
+    <h1 class="page-heading">全文搜索<span lang="en">Search</span></h1>
+    <form id="search" role="search" action="/search/">
+      <label for="q">标题、项目或技术关键词<span lang="en">Title, project or keyword</span></label>
+      <div class="search-controls">
+        <input type="search" name="q" id="q" required />
+        <button type="submit">搜索<span lang="en">Search</span></button>
+      </div>
+    </form>
+    <p id="status" role="status"></p>
+    <ul id="results" class="story-list"></ul>
+    <noscript>搜索需要 JavaScript。 Search requires JavaScript.</noscript>
+  </div>
   <script>
+    interface Match {
+      url: string;
+      excerpt: string;
+      meta: { title: string; titleEn?: string; section?: string; sectionEn?: string; date?: string };
+    }
     const form = document.querySelector<HTMLFormElement>('#search')!;
     const input = document.querySelector<HTMLInputElement>('#q')!;
     const results = document.querySelector<HTMLUListElement>('#results')!;
     const status = document.querySelector<HTMLParagraphElement>('#status')!;
     const indexUrl = '/pagefind/pagefind.js';
     let sequence = 0;
+
+    function addMatch(match: Match) {
+      const row = document.createElement('li');
+      const heading = document.createElement('h2');
+      const link = document.createElement('a');
+      link.href = match.url;
+      link.textContent = match.meta.title;
+      if (match.meta.titleEn) {
+        const english = document.createElement('span');
+        english.lang = 'en';
+        english.textContent = match.meta.titleEn;
+        link.append(english);
+      }
+      heading.append(link);
+      const meta = document.createElement('div');
+      meta.className = 'story-meta';
+      const section = document.createElement('span');
+      section.textContent = match.meta.section ?? '';
+      const translation = document.createElement('span');
+      translation.lang = 'en';
+      translation.textContent = match.meta.sectionEn ?? '';
+      const date = document.createElement('time');
+      date.dateTime = match.meta.date ?? '';
+      date.textContent = match.meta.date ?? '';
+      section.append(translation);
+      meta.append(section, date);
+      const excerpt = document.createElement('p');
+      // Pagefind supplies highlighted text. Retain only text and mark elements.
+      const parsed = new DOMParser().parseFromString(match.excerpt, 'text/html');
+      for (const node of parsed.body.childNodes) {
+        if (node instanceof HTMLElement && node.tagName === 'MARK') {
+          const mark = document.createElement('mark');
+          mark.textContent = node.textContent;
+          excerpt.append(mark);
+        } else excerpt.append(node.textContent ?? '');
+      }
+      row.append(meta, heading, excerpt);
+      results.append(row);
+    }
+
     async function search(query: string) {
       const current = ++sequence;
       results.replaceChildren();
+      results.setAttribute('aria-busy', 'true');
       status.textContent = '搜索中 / Searching…';
       try {
         const index = await import(/* @vite-ignore */ indexUrl);
         const response = await index.search(query);
-        const matches = await Promise.all(response.results.slice(0, 30).map((match: { data: () => Promise<{ url: string; meta: { title: string } }> }) => match.data()));
+        const matches: Match[] = await Promise.all(response.results.slice(0, 30).map((match: { data: () => Promise<Match> }) => match.data()));
         if (current !== sequence) return;
-        for (const match of matches) {
-          const link = document.createElement('a');
-          link.href = match.url;
-          link.textContent = match.meta.title;
-          const row = document.createElement('li');
-          row.append(link);
-          results.append(row);
-        }
+        matches.forEach(addMatch);
         status.textContent = matches.length ? `显示 ${matches.length} / ${response.results.length} 条结果 · Showing ${matches.length} of ${response.results.length} results` : '无匹配结果 / No results';
       } catch {
         if (current === sequence) status.textContent = '搜索暂不可用 / Search unavailable';
+      } finally {
+        if (current === sequence) results.removeAttribute('aria-busy');
       }
     }
     form.addEventListener('submit', (event) => {

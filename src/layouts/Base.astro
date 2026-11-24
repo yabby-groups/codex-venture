@@ -1,6 +1,6 @@
 ---
 import '../styles/site.css';
-import { categories } from '../lib/content';
+import { allStories, categories } from '../lib/content';
 const { title = '全球 AI 资讯', description = '每日追踪全球 AI 模型、工具和产品更新。 Daily coverage of AI models, tools and product updates.', article = false, noindex = false } = Astro.props;
 const canonical = new URL(Astro.url.pathname, Astro.site);
 const mode = import.meta.env.VENTURE_WEB_ANALYTICS_MODE || 'automatic';
@@ -10,7 +10,21 @@ if (!['automatic', 'manual', 'disabled'].includes(mode) ||
   throw new Error('Invalid Cloudflare Web Analytics build configuration');
 }
 const pageTitle = title + ' · Codex Venture';
-const navigation = [['/daily/', '每日简报'], ['/news/', '最新资讯'], ['/archive/', '归档']];
+const available = new Set((await allStories()).map((story) => story.data.category));
+const categoryLinks = Object.entries(categories).filter(([key]) => key !== 'briefing' && available.has(key as keyof typeof categories));
+const mainKeys = ['open-source', 'coding', 'agents', 'models'];
+const navigation = [
+  ['/', '首页', 'Home'], ['/news/', '最新资讯', 'Latest'],
+  ...mainKeys.flatMap((key) => categoryLinks.filter(([id]) => key === id).map(([id, [zh, en]]) => [`/category/${id}/`, zh, en])),
+  ['/daily/', '每日简报', 'Daily'], ['/weekly/', '每周精选', 'Weekly'],
+];
+const more = [
+  ...categoryLinks.filter(([key]) => !mainKeys.includes(key)).map(([key, [zh, en]]) => [`/category/${key}/`, zh, en]),
+  ['/archive/', '归档', 'Archive'], ['/tags/', '标签', 'Tags'],
+];
+const current = (url: string) => (url === '/' ? Astro.url.pathname === url :
+  url === '/weekly/' ? Astro.url.pathname.startsWith(url) || Astro.url.pathname.startsWith('/daily/weekly-') :
+  Astro.url.pathname.startsWith(url) && !Astro.url.pathname.startsWith('/daily/weekly-')) ? 'page' : undefined;
 ---
 <!doctype html>
 <html lang="zh-CN">
@@ -47,25 +61,54 @@ const navigation = [['/daily/', '每日简报'], ['/news/', '最新资讯'], ['/
   <a class="skip" href="#main">跳至正文 / Skip to content</a>
   <header class="masthead">
     <div class="wrap masthead-inner">
-      <a class="brand" href="/" aria-label="Codex Venture 首页"><span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i></span><span>Codex<span class="brand-accent"> Venture</span></span></a>
-      <nav class="primary" aria-label="主导航">
-        {navigation.map(([url, label]) => <a href={url} aria-current={Astro.url.pathname.startsWith(url) ? 'page' : undefined}>{label}</a>)}
-        <a href="/search/">搜索<small lang="en"> / Search</small></a>
-      </nav>
-      <button id="theme" type="button" aria-label="切换亮暗模式 / Toggle theme" title="切换亮暗模式 / Toggle theme" hidden>◐</button>
+      <a class="brand" href="/" aria-label="Codex Venture 首页"><img src="/favicon.svg" width="38" height="38" alt="" /><span lang="en">Codex Venture</span></a>
+      <div class="utilities">
+        <a href="/search/" aria-current={current('/search/')} class="utility" aria-label="搜索 / Search"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="5.5"/><path d="m15 15 4 4"/></svg><span>搜索 <small lang="en">Search</small></span></a>
+        <button id="theme" class="utility" type="button" aria-label="深色主题 / Dark theme" hidden><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 15a8 8 0 0 1-11-11 8 8 0 1 0 11 11Z"/></svg></button>
+        <a class="utility rss" href="/rss.xml" aria-label="RSS">RSS</a>
+      </div>
     </div>
-    <nav class="wrap topics" aria-label="资讯分类">
-      {Object.entries(categories).filter(([key]) => key !== 'briefing').map(([key, [zh, en]]) => (
-        <a href={`/category/${key}/`} aria-current={Astro.url.pathname === `/category/${key}/` ? 'page' : undefined}>{zh}<small lang="en">{en}</small></a>
-      ))}
+    <nav class="wrap primary" aria-label="主导航 / Main navigation">
+      <div class="nav-links">{navigation.map(([url, zh, en]) => <a href={url} aria-current={current(url)}>{zh}<small lang="en">{en}</small></a>)}</div>
+      <details class="nav-menu">
+        <summary>栏目 <small lang="en">Sections</small></summary>
+        <div class="nav-panel">
+          {navigation.map(([url, zh, en]) => <a class="mobile-link" href={url} aria-current={current(url)}>{zh}<small lang="en">{en}</small></a>)}
+          {more.map(([url, zh, en]) => <a href={url} aria-current={current(url)}>{zh}<small lang="en">{en}</small></a>)}
+        </div>
+      </details>
     </nav>
   </header>
   <main id="main" class="wrap"><slot /></main>
-  <footer class="wrap footer">
-    <span lang="en">Codex Venture</span>
-    <nav aria-label="页脚"><a href="/about/">关于 / About</a><a href="/stats/">统计 / Stats</a><a href="/privacy/">隐私 / Privacy</a><a href="/tags/">标签 / Tags</a><a href="/rss.xml">RSS ↗</a></nav>
+  <footer class="footer">
+    <div class="wrap footer-inner">
+      <div><a class="brand" href="/"><img src="/favicon.svg" width="32" height="32" alt="" /><span lang="en">Codex Venture</span></a>
+        <p>独立运营的全球 AI 技术资讯媒体。<span lang="en">Independent coverage of global AI technology.</span></p>
+        <p>与 OpenAI 无官方隶属关系。<span lang="en">No official affiliation with OpenAI.</span></p>
+      </div>
+      <nav aria-label="页脚栏目 / Footer sections">{navigation.slice(1).map(([url, zh, en]) => <a href={url}>{zh}<small lang="en">{en}</small></a>)}</nav>
+      <nav aria-label="网站信息 / Site information">
+        {[[ '/archive/', '归档', 'Archive'], ['/about/', '关于', 'About'], ['/stats/', '内容统计', 'Publishing stats'], ['/privacy/', '隐私', 'Privacy'], ['/tags/', '标签', 'Tags']].map(([url, zh, en]) => <a href={url}>{zh}<small lang="en">{en}</small></a>)}
+        <a href="/rss.xml">RSS ↗</a><a href="https://github.com/yabby-groups/codex-venture">GitHub ↗</a>
+      </nav>
+    </div>
   </footer>
   <script>
+    document.addEventListener('keydown', (event) => {
+      if ((event.metaKey || event.ctrlKey) && event.key.toLowerCase() === 'k') {
+        event.preventDefault();
+        const input = document.querySelector<HTMLInputElement>('#q');
+        if (input) input.focus();
+        else location.assign('/search/');
+      }
+      if (event.key === 'Escape') {
+        const menu = document.querySelector<HTMLDetailsElement>('.nav-menu[open]');
+        if (menu) {
+          menu.open = false;
+          menu.querySelector('summary')?.focus();
+        }
+      }
+    });
     const button = document.querySelector<HTMLButtonElement>('#theme')!;
     const scheme = matchMedia('(prefers-color-scheme: dark)');
     const dark = () => (document.documentElement.dataset.theme ?? (scheme.matches ? 'dark' : 'light')) === 'dark';

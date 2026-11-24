@@ -17,3 +17,10 @@ export const allStories = async () => (await Promise.all([getCollection('news'),
 export const dateKey = (date: Date) => new Intl.DateTimeFormat('sv-SE', {
   timeZone: 'Asia/Shanghai', year: 'numeric', month: '2-digit', day: '2-digit',
 }).format(date);
+
+export const isWeekly = (story: Story) => story.collection === 'daily' && story.id.startsWith('weekly-');
+export const storySection = (story: Story) => story.collection === 'news'
+  ? { href: `/category/${story.data.category}/`, label: categories[story.data.category] }
+  : isWeekly(story)
+    ? { href: '/weekly/', label: ['每周精选', 'Weekly Review'] }
+    : { href: '/daily/', label: ['每日简报', 'Daily Briefing'] };
