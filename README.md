@@ -1,6 +1,6 @@
 # Codex Venture
 
-面向全球 AI 工具、模型、产品与技术的中英双语资讯站。Markdown 经 Astro 生成静态 HTML，Pagefind 在浏览器中搜索，Nginx 提供访问。首期内容收录 2026 年 11 月 24 日简报与两条有官方发布说明的独立资讯。
+面向全球 AI 工具、模型、产品与技术的中英双语资讯站。Markdown 经 Astro 生成静态 HTML，Pagefind 在浏览器中搜索，生产站由 Cloudflare Workers Static Assets 提供访问。首期内容收录 2026 年 11 月 24 日简报与两条有官方发布说明的独立资讯。
 
 ## 本地开发与验收
 
@@ -16,7 +16,23 @@ npm run preview
 
 在构建后的预览中验证全文搜索。每次构建检查双语格式、独立文章重复来源、元数据、站内链接、RSS、Sitemap 和 Pagefind 文件。
 
-## 正式上线
+## 生产发布
+
+生产域名 `codex-venture.com` 绑定 Cloudflare Workers 项目 `codex-venture`。GitHub 仓库 `yabby-groups/codex-venture` 的 `main` 分支推送触发自动发布。构建命令为 `npm run build`，部署命令为 `npx wrangler deploy`。`wrangler.jsonc` 将仓库根目录下的 `dist/` 声明为静态资源目录。
+
+1. 本地运行 `npm run build`，检查构建和站内校验。
+2. 提交变更并推送到 `origin/main`。在 Cloudflare Workers 控制台核对本次构建对应的提交及部署结果。
+3. 检查公网首页、`/daily/`、`/search/`、`/rss.xml` 和 `/sitemap-index.xml` 的状态码与实际内容。首页应包含 Codex Venture 标题，RSS 和站点地图应返回各自的 XML。占位 Worker 也可能返回 HTTP 200 和 `Hello world`。
+4. 发布回退通过 Cloudflare Workers 的 Deployments 页面选择上一条已验证的部署。
+
+### 2026-11-24 部署记录
+
+- 初始静态产物部署到 `jl01:/data/codex-venture/public`。Nginx 源站校验通过，当时公网域名返回 Cloudflare 521。
+- 迁移期间曾建立直接上传的 Pages 项目 `codex-venture.pages.dev`。生产域名随后绑定到已连接 GitHub 的 Workers 项目。
+- 首次 GitHub 构建通过。部署阶段 Wrangler 自动为 Astro 加装 Cloudflare 适配器并再次构建，首页改为输出到 `dist/client/index.html`，原校验报 `ValueError: missing index.html`。同时公网域名仍由占位 Worker 响应。
+- 提交 `9479959` 增加显式静态资源配置。Wrangler 本地试运行通过，推送到 `main` 后，公网首页、每日简报、搜索页、RSS 和站点地图均返回实际站点内容。
+
+## Nginx 部署与运营环境
 
 1. 确认已有 Linux 服务器的公网 IP、SSH 用户及授权，以及现有反向代理和 TLS 配置。安装 Node.js 24、Python 3.9+、Git、Docker Compose v2、GNU coreutils 和支持 `CRON_TZ` 的 Cron。
 2. 在服务器部署仓库，运行 `npm ci`。复制 `.env.example` 为 `.env`，设定专用运行用户、绝对部署路径及 Codex CLI 路径。在该用户下完成现有 Codex 账号登录并检查 `codex login status`。运行用户需要写入仓库的内容、Git 元数据和部署目录。
@@ -34,6 +50,6 @@ npm run preview
 - 每轮只有一个任务持锁。模型命令设置 4 分钟超时，调度外层设置总超时。用量从 CLI JSONL 读取，按北京时间累计，调用前预留额度并限制候选量。单次超额结果会丢弃，额度无法在供应商生成途中截断。
 - `touch .venture-runtime/PAUSE` 暂停后续任务，移除文件恢复。日志在 `.venture-runtime/logs`，按大小切分并清理 14 天前的文件。
 - 构建通过后，先复制完整静态目录，再原子替换版本指针。HTTP 探测失败或提交失败会恢复前一版本。中断后的下一轮会从发布日志恢复。保留最近五个版本及回滚目标。使用 `./ops/run rollback RELEASE_ID` 回到已保留的版本。正式发布随后会继续以仓库的当前内容为准。
-- 运营任务记录本地 Git 提交。当前仓库的 Git 远端由部署方提供。凭据和运行文件保存在 Git 之外。
+- 运营任务记录本地 Git 提交。当前自动运营脚本使用本地提交与 Nginx 发布流程。自动推送到 GitHub 及 Cloudflare 发布验收尚未接入该脚本。凭据和运行文件保存在 Git 之外。
 
-上线还需提供服务器及部署账号、域名 DNS 管理方式、现有 TLS 入口、运营用户的 Codex 登录，以及可选的 Git 远端。初始域名解析与目标服务器须匹配后才能验收公网发布。
+启用定时运营时，需要提供运行主机、运营用户的 Codex 登录和相应的 GitHub 发布权限。

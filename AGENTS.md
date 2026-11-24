@@ -1,6 +1,6 @@
 # Codex Venture
 
-运营全球 AI 资讯站。网站使用 Astro、Markdown、Pagefind、RSS、Sitemap 和 Nginx。每轮任务从 `state/items.json`、文章目录和来源配置恢复。Git 保存内容与长期状态。
+运营全球 AI 资讯站。网站使用 Astro、Markdown、Pagefind、RSS 和 Sitemap。生产站由 Cloudflare Workers Static Assets 托管，`origin/main` 的更新触发部署。每轮任务从 `state/items.json`、文章目录和来源配置恢复。Git 保存内容与长期状态。
 
 ## 编辑与发布
 
@@ -11,4 +11,4 @@
 - 构建后检查元数据、文章关系、站内链接、搜索、RSS 和 Sitemap。部署后检查实际访问及版本指纹，再记录 Git 变更。
 - 可自主维护来源、分类、排版、SEO、采集频率和内容。付费服务、扩大权限、商业承诺须由人类授权。
 
-运营入口、部署、暂停、回滚及上线所需信息见 README。编辑器任务约定见 `ops/editor.md`。
+生产发布、故障记录和公网验收见 README 的「生产发布」。`ops/run deploy` 和 `ops/run rollback` 操作 Nginx 部署目录。编辑器任务约定见 `ops/editor.md`。
