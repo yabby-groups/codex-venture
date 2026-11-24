@@ -76,6 +76,6 @@ def discovery(days=7):
              url='https://hn.algolia.com/api/v1/search_by_date?query=AI&tags=story&hitsPerPage=20'),
         dict(id='product-hunt', kind='feed', category='open-source', url='https://www.producthunt.com/feed'),
         dict(id='arxiv-ai', kind='discovery', category='models', parse=arxiv_rows,
-             url='https://export.arxiv.org/api/query?search_query=cat%3Acs.AI&sortBy=submittedDate&sortOrder=descending&max_results=20'),
+             url='https://rss.arxiv.org/rss/cs.AI'),
     ])
     return collect(days, sources, only_extra=True, refresh=days > 7)
