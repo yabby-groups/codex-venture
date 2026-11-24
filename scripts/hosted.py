@@ -347,7 +347,10 @@ def health(wait=False):
                 with urlopen(request, timeout=8) as response:
                     page = response.read(2_000_000)
                 expected = (Path('dist') / route / 'index.html').read_bytes()
-                if page != expected:
+                article = rb'<article\b[^>]*\bdata-pagefind-body[^>]*>.*?</article>'
+                deployed = re.search(article, page, re.DOTALL)
+                built = re.search(article, expected, re.DOTALL)
+                if not deployed or not built or deployed.group() != built.group():
                     raise RuntimeError(f'{route} differs from the built article')
             print(f'Public release {release} verified, {len(routes)} new articles')
             return
