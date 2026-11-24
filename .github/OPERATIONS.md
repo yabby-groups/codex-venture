@@ -14,7 +14,7 @@
 | Variable | `CODEX_ADVANCED_MODEL` | 可选，周报使用。空值沿用默认模型 |
 | Variable | `CODEX_ADVANCED_REASONING_EFFORT` | 可选，高级模型默认 `low` |
 | Variable | `VENTURE_ENABLED` | 设为 `true` 启用定时和手动采编。清空或设为 `false` 暂停新采编。手动 health 和 smoke-test 仍可运行 |
-| Variable | `VENTURE_DAILY_TOKEN_LIMIT` | 北京时间每日 Token 预算，默认 100000。填 0 暂停模型调用 |
+| Variable | `VENTURE_DAILY_TOKEN_LIMIT` | 北京时间每日 Token 预算，默认 100000。填 `unlimited` 只记录用量，填 0 暂停模型调用 |
 | Variable | `VENTURE_MAX_ARTICLES_PER_RUN` | 单批最多文章数，默认 3。每日及每周简报均最多一篇 |
 | Variable | `VENTURE_MAX_MODEL_CALLS_PER_DAY` | 北京时间每日 Codex 会话上限，默认 6。填 0 暂停模型调用 |
 
@@ -38,6 +38,6 @@
 
 Actions 排程允许延迟。GitHub 同一并发组只有一个运行和一个待运行，新的待运行可能替换前一个待运行。手动任务还包括 `health`，用于查看来源健康并验证当前版本。失败后重新 dispatch 新运行，避免单独重跑 Job 时缺少本次尝试的产物。
 
-`venture-state` 分支保存候选、内容指纹、来源缓存验证器、退避信息和近 31 天模型预算。每次模型调用前持久化额度预留，收到 JSONL 用量后按实际结算。固定工具 smoke test 预留 40000，普通编辑预留 25000。超时或缺失用量保留预留。预算按会话计数，单会话包含供应商完成工具往返所需的多次 HTTP 请求。供应商生成期间的 Token 超额由结算记录，超额草稿停止发布。每次任务最多一轮编辑，采集与空批无需调用模型。日志与结构化结果保留 3 天。
+`venture-state` 分支保存候选、内容指纹、来源缓存验证器、退避信息和近 31 天模型预算。每次模型调用前持久化额度预留，收到 JSONL 用量后按实际结算。固定工具 smoke test 预留 40000，普通编辑预留 25000。超时或缺失用量保留预留。预算按会话计数，单会话包含供应商完成工具往返所需的多次 HTTP 请求。设定数值预算时，供应商生成期间的 Token 超额由结算记录，超额草稿停止发布。每次任务最多一轮编辑，采集与空批无需调用模型。日志与结构化结果保留 3 天。
 
 编辑 Job 仅获得只读仓库权限和第三方 API 密钥。文章模式关闭 shell 和查网，发布 Job 从工作流提交加载脚本，用可信候选与结构化响应重新生成 Markdown。只有新增文章通过验证和构建才推送 `main`。Git 推送坚持快进，人工并发提交时可在新 HEAD 重新运行。Cloudflare 保持现有 Workers Git 部署方式。

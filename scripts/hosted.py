@@ -63,10 +63,11 @@ def prepare(task):
     ledger = {key: value for key, value in ledger.items()
               if datetime.fromisoformat(key).date().toordinal() >= cutoff}
     usage = ledger.setdefault(day, {'tokens': 0, 'calls': 0})
-    daily_tokens = number('VENTURE_DAILY_TOKEN_LIMIT', 100000, 0, 10000000)
+    unlimited = os.environ.get('VENTURE_DAILY_TOKEN_LIMIT') == 'unlimited'
+    daily_tokens = None if unlimited else number('VENTURE_DAILY_TOKEN_LIMIT', 100000, 0, 10000000)
     daily_calls = number('VENTURE_MAX_MODEL_CALLS_PER_DAY', 6, 0, 1000)
     reserved = 40000 if task == 'smoke-test' else RUN_BUDGET
-    if usage['calls'] >= daily_calls or usage['tokens'] + reserved > daily_tokens:
+    if usage['calls'] >= daily_calls or (daily_tokens is not None and usage['tokens'] + reserved > daily_tokens):
         print(f'Insufficient daily model allowance for this batch ({reserved} token reservation)')
         if task == 'smoke-test':
             raise RuntimeError('Smoke test requires sufficient daily model allowance')
@@ -76,7 +77,7 @@ def prepare(task):
     save(ledger_path, ledger)
     save(BATCH, dict(task=task, date=day, now=now.isoformat(timespec='seconds'),
                      maxArticles=number('VENTURE_MAX_ARTICLES_PER_RUN', 3, 1, 10),
-                     reservation=reserved, candidates=candidates))
+                     reservation=reserved, unlimited=unlimited, candidates=candidates))
 
 
 def config(smoke, instructions):
@@ -214,7 +215,7 @@ def invoke():
             if errors:
                 print(as_log(errors.replace(key, '[REDACTED]')[-6000:]))
             raise RuntimeError(f'Codex failed (exit={process.returncode}, timeout={timed_out})')
-        if usage['input_tokens'] + usage['output_tokens'] > batch['reservation']:
+        if not batch['unlimited'] and usage['input_tokens'] + usage['output_tokens'] > batch['reservation']:
             raise RuntimeError('Codex exceeded the reserved token budget')
         if result.stat().st_size > 160_000:
             raise ValueError('Model result exceeds file size limit')
