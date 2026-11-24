@@ -21,16 +21,21 @@ DAILY_BUDGET = int(os.environ.get('VENTURE_DAILY_TOKENS', '100000'))
 RUN_BUDGET = int(os.environ.get('VENTURE_RUN_TOKENS', '25000'))
 
 
-def output_schema():
+def output_schema(candidates=None):
     string = {'type': 'string'}
     strings = {'type': 'array', 'items': string}
+    candidate_ids = strings
+    if candidates:
+        candidate_ids = {**strings, 'items': {**string, 'enum': list(candidates)}}
     fields = {key: string for key in ('slug', 'titleZh', 'titleEn', 'summaryZh', 'summaryEn', 'category', 'body', 'type', 'version')}
-    fields.update(tags=strings, itemIds=strings, blocks=BLOCKS, resource=PROFILES, resourceIds=strings)
+    fields.update(tags=strings, itemIds=candidate_ids, blocks=BLOCKS, resource=PROFILES, resourceIds=strings)
 
     def obj(properties):
         return dict(type='object', properties=properties, required=list(properties), additionalProperties=False)
 
-    return obj(dict(articles=dict(type='array', items=obj(fields)), skipped=strings, resourceUpdates=UPDATES))
+    update_fields = {**UPDATES['items']['properties'], 'itemIds': candidate_ids}
+    updates = {**UPDATES, 'items': obj(update_fields)}
+    return obj(dict(articles=dict(type='array', items=obj(fields)), skipped=candidate_ids, resourceUpdates=updates))
 
 
 def metadata():
@@ -62,7 +67,7 @@ def event_usage(text):
     return None
 
 
-def invoke(prompt, day):
+def invoke(prompt, day, candidates):
     budget_file = budget_path(day)
     spent = load(budget_file, {'tokens': 0})['tokens']
     if spent + RUN_BUDGET > DAILY_BUDGET:
@@ -70,7 +75,7 @@ def invoke(prompt, day):
         return None
     save(budget_file, {'tokens': spent + RUN_BUDGET})
     schema, result = RUNTIME / 'editor-schema.json', RUNTIME / 'editor-result.json'
-    save(schema, output_schema())
+    save(schema, output_schema(candidates))
     result.unlink(missing_ok=True)
     command = [
         os.environ.get('VENTURE_CODEX', 'codex'), 'exec', '--ignore-user-config',
@@ -193,6 +198,8 @@ def write_articles(response, mode, candidates, now, limit=3):
             raise ValueError('invalid briefing date')
         if not ids or len(set(ids)) != len(ids) or used.intersection(ids):
             raise ValueError('missing or duplicated evidence')
+        if not set(ids) <= candidates.keys():
+            raise ValueError(f'Unknown candidate IDs in article {slug}')
         used.update(ids)
         evidence = [candidates[key] for key in ids]
         links = set(map(unescape, re.findall(r'href="([^"]+)"', body)))
@@ -295,7 +302,7 @@ def edit(mode):
         print('No new candidates for the editorial window')
         return
     payload = json.dumps(dict(mode=mode, date=day, candidates=candidates, existingResources=resource_context(articles)), ensure_ascii=False)
-    response = invoke(Path('ops/editor.md').read_text() + '\n\n' + payload, day)
+    response = invoke(Path('ops/editor.md').read_text() + '\n\n' + payload, day, candidates)
     if response is None:
         return
     skipped, refreshed = write_articles(response, mode, candidates, now)

@@ -213,7 +213,7 @@ def run_model(batch, smoke, receipt):
         receipt['sessions'] = 1
         payload = {key: batch[key] for key in ('date', 'maxArticles', 'candidates', 'existingResources')}
         prompt = json.dumps(dict(mode=batch['task'], **payload), ensure_ascii=False)
-        schema_data = output_schema()
+        schema_data = output_schema(batch['candidates'])
         if smoke:
             schema_data = dict(type='object', properties={'marker': {'type': 'string'}},
                                required=['marker'], additionalProperties=False)
