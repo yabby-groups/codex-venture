@@ -96,7 +96,10 @@ def invoke(prompt, day):
     return load(result, {})
 
 
-def choose(mode, items, now, days=2):
+def choose(mode, items, now, days=2, strategy=None):
+    strategy = strategy or {}
+    limit = strategy.get('candidate_limit', CANDIDATE_LIMIT)
+    weights = strategy.get('category_weights', {})
     candidates = {}
     selected_sources = set()
     deferred = []
@@ -109,7 +112,7 @@ def choose(mode, items, now, days=2):
         discovery_lead = item.get('source', '').startswith(
             ('github-search-', 'trending-', 'hacker-news-', 'product-hunt')
         )
-        return previously_reported, not discovery_lead, timestamp(item['published'])
+        return previously_reported, weights.get(item['category'], 0), not discovery_lead, timestamp(item['published'])
 
     for key, item in sorted(items.items(), key=priority, reverse=True):
         if timestamp(item['published']) < now - timedelta(days=days):
@@ -127,9 +130,18 @@ def choose(mode, items, now, days=2):
             else:
                 selected_sources.add(source)
                 candidates[key] = evidence
-        if len(candidates) == CANDIDATE_LIMIT:
+        if len(candidates) == limit:
             break
-    candidates.update(deferred[:CANDIDATE_LIMIT - len(candidates)])
+    if weights:
+        # Reserve one slot for an otherwise eligible item outside the promoted categories.
+        exploration = next(((key, item) for key, item in deferred if weights.get(item['category'], 0) <= 0), None)
+        if exploration:
+            if len(candidates) == limit and all(weights.get(item['category'], 0) > 0 for item in candidates.values()):
+                candidates.pop(next(reversed(candidates)))
+            if len(candidates) < limit:
+                candidates.update([exploration])
+    candidates.update((key, item) for key, item in deferred[:limit - len(candidates)]
+                      if key not in candidates)
     return candidates
 
 

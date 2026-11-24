@@ -14,6 +14,15 @@ const related = stories.filter((item) => storyUrl(item) !== storyUrl(story) && (
 )).slice(0, 3);
 const { data } = story;
 const canonical = new URL(storyUrl(story), Astro.site).href;
+const collection = story.collection === 'news' ? '最新资讯' : '每日简报';
+const breadcrumb = JSON.stringify({
+  '@context': 'https://schema.org', '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Codex Venture', item: Astro.site?.href },
+    { '@type': 'ListItem', position: 2, name: collection, item: new URL(`/${story.collection}/`, Astro.site).href },
+    { '@type': 'ListItem', position: 3, name: data.titleZh, item: canonical },
+  ],
+}).replaceAll('<', '\\u003c');
 const jsonLd = JSON.stringify({
   '@context': 'https://schema.org', '@type': 'NewsArticle',
   headline: data.titleZh, alternativeHeadline: data.titleEn, datePublished: data.published.toISOString(),
@@ -23,7 +32,7 @@ const jsonLd = JSON.stringify({
 }).replaceAll('<', '\\u003c');
 ---
 <Base title={data.titleZh} description={data.summaryZh + ' ' + data.summaryEn} article>
-  <Fragment slot="head"><script type="application/ld+json" set:html={jsonLd} /><meta property="article:published_time" content={data.published.toISOString()} /></Fragment>
+  <Fragment slot="head"><script type="application/ld+json" set:html={jsonLd} /><script type="application/ld+json" set:html={breadcrumb} /><meta property="article:published_time" content={data.published.toISOString()} /></Fragment>
   <article class="article" data-pagefind-body>
     <div class="story-meta"><span>{categories[data.category][0]}</span><time datetime={data.published.toISOString()}>{dateKey(data.published)} · 北京时间</time></div>
     <h1 data-pagefind-meta="title">{data.titleZh}<span lang="en">{data.titleEn}</span></h1>

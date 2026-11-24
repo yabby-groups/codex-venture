@@ -50,7 +50,14 @@ jobs:
     outputs:
       task: ${{ steps.task.outputs.task }}
       edit: ${{ steps.prepare.outputs.edit }}
+      day: ${{ steps.task.outputs.day }}
+    env:
+      ANALYTICS_STORE: ${{ runner.temp }}/venture-operations
     steps:
+      - name: Start operation timer
+        run: |
+          echo "PHASE_START=$(date -Iseconds)" >> "$GITHUB_ENV"
+          echo "VENTURE_RUN_DAY=$(TZ=Asia/Shanghai date +%F)" >> "$GITHUB_ENV"
       - uses: actions/checkout@v6
         with:
           persist-credentials: false
@@ -74,6 +81,7 @@ jobs:
             collect|discover|news|daily|weekly|backfill|health|smoke-test) ;;
             *) exit 1 ;;
           esac
+          echo "day=$VENTURE_RUN_DAY" >> "$GITHUB_OUTPUT"
           echo "task=$task" >> "$GITHUB_OUTPUT"
       - uses: actions/setup-node@v6
         with:
@@ -83,10 +91,23 @@ jobs:
         env:
           VENTURE_GIT_TOKEN: ${{ github.token }}
         run: ops/hosted-git ops/hosted-state restore
+      - name: Load private operational configuration
+        if: steps.task.outputs.task != 'health'
+        continue-on-error: true
+        env:
+          VENTURE_ANALYTICS_PRIVATE_REPO: ${{ vars.VENTURE_ANALYTICS_PRIVATE_REPO }}
+          VENTURE_ANALYTICS_TOKEN: ${{ secrets.VENTURE_ANALYTICS_TOKEN }}
+        run: ops/analytics-store open
       - id: prepare
         if: steps.task.outputs.task != 'health'
         env:
           TASK: ${{ steps.task.outputs.task }}
+          CODEX_MODEL: ${{ vars.CODEX_MODEL || secrets.CODEX_MODEL }}
+          CODEX_ADVANCED_MODEL: ${{ vars.CODEX_ADVANCED_MODEL }}
+          VENTURE_MODEL_PRICING_JSON: ${{ secrets.VENTURE_MODEL_PRICING_JSON }}
+          VENTURE_DAILY_COST_LIMIT: ${{ secrets.VENTURE_DAILY_COST_LIMIT }}
+          VENTURE_COST_CURRENCY: ${{ vars.VENTURE_COST_CURRENCY }}
+          VENTURE_STRATEGY_AUTO_UPDATE: ${{ vars.VENTURE_STRATEGY_AUTO_UPDATE }}
           BACKFILL_DAYS: ${{ inputs.days }}
           VENTURE_DAILY_TOKEN_LIMIT: ${{ vars.VENTURE_DAILY_TOKEN_LIMIT }}
           VENTURE_MAX_ARTICLES_PER_RUN: ${{ vars.VENTURE_MAX_ARTICLES_PER_RUN }}
@@ -113,6 +134,23 @@ jobs:
         run: |
           python3 -c 'import json; from pathlib import Path; p=Path(".venture-runtime/health.json"); print(json.dumps({k:{f:v.get(f) for f in ("failures","last_success","retry_after")} for k,v in json.loads(p.read_text()).items()}, indent=2) if p.exists() else "State branch has no source health yet")'
 
+      - name: Record prepare statistics
+        if: always()
+        continue-on-error: true
+        env:
+          VENTURE_ANALYTICS_PRIVATE_REPO: ${{ vars.VENTURE_ANALYTICS_PRIVATE_REPO }}
+          VENTURE_ANALYTICS_TOKEN: ${{ secrets.VENTURE_ANALYTICS_TOKEN }}
+          VENTURE_MODEL_PRICING_JSON: ${{ secrets.VENTURE_MODEL_PRICING_JSON }}
+          PHASE_OUTCOME: ${{ job.status }}
+          PUSH_OUTCOME: ${{ steps.push.outcome }}
+          HEALTH_OUTCOME: ${{ steps.production.outcome }}
+        run: |
+          if [[ ! -d "$ANALYTICS_STORE/.git" ]]; then ops/analytics-store open; fi
+          python3 scripts/analytics_run.py prepare "${{ steps.task.outputs.task }}"
+          if [[ -d "$ANALYTICS_STORE/analytics" ]]; then
+            ops/analytics-store save
+          fi
+
   edit:
     if: needs.prepare.outputs.edit == 'true'
     needs: prepare
@@ -120,7 +158,13 @@ jobs:
     timeout-minutes: 8
     permissions:
       contents: read
+    env:
+      ANALYTICS_STORE: ${{ runner.temp }}/venture-operations
     steps:
+      - name: Start operation timer
+        run: |
+          echo "PHASE_START=$(date -Iseconds)" >> "$GITHUB_ENV"
+          echo "VENTURE_RUN_DAY=${{ needs.prepare.outputs.day }}" >> "$GITHUB_ENV"
       - uses: actions/checkout@v6
         with:
           persist-credentials: false
@@ -148,21 +192,28 @@ jobs:
           CODEX_ADVANCED_REASONING_EFFORT: ${{ vars.CODEX_ADVANCED_REASONING_EFFORT }}
         run: python3 scripts/hosted.py invoke
       - uses: actions/upload-artifact@v4
-        if: always()
+        if: success() && needs.prepare.outputs.task != 'smoke-test'
         with:
           name: venture-result-${{ github.run_attempt }}
-          path: |
-            ${{ runner.temp }}/venture/model/response.json
-            ${{ runner.temp }}/venture/model/usage.json
+          path: ${{ runner.temp }}/venture/model/response.json
           retention-days: 3
-          if-no-files-found: ignore
-      - uses: actions/upload-artifact@v4
+          if-no-files-found: error
+      - name: Record edit statistics
         if: always()
-        with:
-          name: venture-events-${{ github.run_attempt }}
-          path: ${{ runner.temp }}/venture/model/events.jsonl
-          retention-days: 3
-          if-no-files-found: ignore
+        continue-on-error: true
+        env:
+          VENTURE_ANALYTICS_PRIVATE_REPO: ${{ vars.VENTURE_ANALYTICS_PRIVATE_REPO }}
+          VENTURE_ANALYTICS_TOKEN: ${{ secrets.VENTURE_ANALYTICS_TOKEN }}
+          VENTURE_MODEL_PRICING_JSON: ${{ secrets.VENTURE_MODEL_PRICING_JSON }}
+          PHASE_OUTCOME: ${{ job.status }}
+          PUSH_OUTCOME: ${{ steps.push.outcome }}
+          HEALTH_OUTCOME: ${{ steps.production.outcome }}
+        run: |
+          ops/analytics-store open
+          python3 scripts/analytics_run.py edit "${{ needs.prepare.outputs.task }}"
+          if [[ -d "$ANALYTICS_STORE/analytics" ]]; then
+            ops/analytics-store save
+          fi
 
   publish:
     needs: [prepare, edit]
@@ -173,7 +224,13 @@ jobs:
     timeout-minutes: 16
     permissions:
       contents: write
+    env:
+      ANALYTICS_STORE: ${{ runner.temp }}/venture-operations
     steps:
+      - name: Start operation timer
+        run: |
+          echo "PHASE_START=$(date -Iseconds)" >> "$GITHUB_ENV"
+          echo "VENTURE_RUN_DAY=${{ needs.prepare.outputs.day }}" >> "$GITHUB_ENV"
       - uses: actions/checkout@v6
         with:
           persist-credentials: false
@@ -191,18 +248,10 @@ jobs:
           name: venture-batch-${{ github.run_attempt }}
           path: ${{ runner.temp }}/venture
       - uses: actions/download-artifact@v4
-        if: needs.prepare.outputs.edit == 'true'
-        continue-on-error: ${{ needs.edit.result != 'success' }}
+        if: needs.edit.result == 'success' && needs.prepare.outputs.task != 'smoke-test'
         with:
           name: venture-result-${{ github.run_attempt }}
           path: ${{ runner.temp }}/venture/result
-      - name: Record model usage
-        if: needs.prepare.outputs.edit == 'true'
-        env:
-          VENTURE_GIT_TOKEN: ${{ github.token }}
-        run: |
-          python3 scripts/hosted.py settle
-          ops/hosted-git ops/hosted-state save
       - name: Validate editorial output
         if: needs.edit.result == 'success' && needs.prepare.outputs.task != 'smoke-test'
         run: python3 scripts/hosted.py accept
@@ -212,7 +261,8 @@ jobs:
       - name: Build and verify static site
         if: steps.changes.outputs.content == 'true' || needs.prepare.outputs.task == 'health' || needs.edit.result == 'success' && needs.prepare.outputs.task == 'smoke-test'
         run: npm run build
-      - name: Push validated content to production branch
+      - id: push
+        name: Push validated content to production branch
         if: steps.changes.outputs.content == 'true'
         env:
           VENTURE_GIT_TOKEN: ${{ secrets.VENTURE_PUBLISH_TOKEN || github.token }}
@@ -221,12 +271,14 @@ jobs:
           git diff --cached --name-status | python3 -c 'import re,sys; lines=sys.stdin.read().splitlines(); sys.exit(not lines or any(not re.fullmatch(r"A\tsrc/content/(news|daily)/[a-z0-9]+(?:-[a-z0-9]+)*\.md", line) for line in lines))'
           git -c user.name='github-actions[bot]' -c user.email='41898282+github-actions[bot]@users.noreply.github.com' commit -m 'Publish Codex Venture bilingual coverage'
           ops/hosted-git git push origin HEAD:refs/heads/main
+          echo "PUBLISH_SHA=$(git rev-parse HEAD)" >> "$GITHUB_ENV"
       - name: Save editorial decisions
         if: needs.edit.result == 'success' && needs.prepare.outputs.task != 'smoke-test'
         env:
           VENTURE_GIT_TOKEN: ${{ github.token }}
         run: ops/hosted-git ops/hosted-state save
-      - name: Verify Cloudflare production
+      - id: production
+        name: Verify Cloudflare production
         if: steps.changes.outputs.content == 'true' || needs.prepare.outputs.task == 'health'
         env:
           CONTENT_CHANGED: ${{ steps.changes.outputs.content }}
@@ -235,4 +287,20 @@ jobs:
             python3 scripts/hosted.py health wait
           else
             python3 scripts/hosted.py health
+          fi
+      - name: Record publish statistics
+        if: always()
+        continue-on-error: true
+        env:
+          VENTURE_ANALYTICS_PRIVATE_REPO: ${{ vars.VENTURE_ANALYTICS_PRIVATE_REPO }}
+          VENTURE_ANALYTICS_TOKEN: ${{ secrets.VENTURE_ANALYTICS_TOKEN }}
+          VENTURE_MODEL_PRICING_JSON: ${{ secrets.VENTURE_MODEL_PRICING_JSON }}
+          PHASE_OUTCOME: ${{ job.status }}
+          PUSH_OUTCOME: ${{ steps.push.outcome }}
+          HEALTH_OUTCOME: ${{ steps.production.outcome }}
+        run: |
+          ops/analytics-store open
+          python3 scripts/analytics_run.py publish "${{ needs.prepare.outputs.task }}"
+          if [[ -d "$ANALYTICS_STORE/analytics" ]]; then
+            ops/analytics-store save
           fi

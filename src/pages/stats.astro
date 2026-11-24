@@ -1,0 +1,66 @@
+---
+import Base from '../layouts/Base.astro';
+import { allStories, dateKey } from '../lib/content';
+
+const stories = await allStories();
+const categories = new Set(stories.map(({ data }) => data.category));
+const sources = new Set(stories.flatMap(({ data }) => data.sources.map(({ url }) => new URL(url).hostname)));
+const projects = new Set(stories.flatMap(({ data }) => data.sources.flatMap(({ url }) => {
+  const parsed = new URL(url);
+  const [owner, project] = parsed.pathname.split('/').filter(Boolean);
+  const reserved = ['topics', 'orgs', 'users', 'search', 'trending', 'marketplace', 'collections', 'sponsors'];
+  return parsed.hostname === 'github.com' && owner && project && !reserved.includes(owner)
+    ? [`${owner}/${project}`.toLowerCase()] : [];
+})));
+const dayMs = 86_400_000;
+const days = new Map<string, number>();
+const weeks = new Map<string, number>();
+for (const story of stories) {
+  const day = dateKey(story.data.published);
+  const timestamp = Date.parse(day);
+  const weekday = new Date(timestamp).getUTCDay();
+  const week = new Date(timestamp - ((weekday + 6) % 7) * dayMs).toISOString().slice(0, 10);
+  days.set(day, (days.get(day) ?? 0) + 1);
+  weeks.set(week, (weeks.get(week) ?? 0) + 1);
+}
+const latest = stories[0]?.data.published;
+const first = stories.at(-1)?.data.published;
+const today = dateKey(new Date());
+const operatingDays = first ? Math.round((Date.parse(today) - Date.parse(dateKey(first))) / dayMs) + 1 : 0;
+const recent = (count: number, stride: number, last: number, values: Map<string, number>) =>
+  Array.from({ length: count }, (_, index) => {
+    const key = new Date(last - index * stride * dayMs).toISOString().slice(0, 10);
+    return [key, values.get(key) ?? 0];
+  });
+const last = Date.parse(today);
+const monday = last - (new Date(last).getUTCDay() + 6) % 7 * dayMs;
+---
+<Base title="内容统计" description="Codex Venture 的公开内容统计和发布趋势。Public editorial totals and publishing trends.">
+  <div class="article">
+    <h1 class="page-heading">内容统计<span lang="en">Publishing statistics</span></h1>
+    <dl>
+      {[
+        ['已发布文章', 'Published articles', stories.length],
+        ['已报道开源项目', 'Open-source projects covered', projects.size],
+        ['已覆盖分类', 'Categories covered', categories.size],
+        ['信息来源域名', 'Source domains', sources.size],
+        ['创刊至今天数', 'Days since first publication', operatingDays],
+        ['最近发布', 'Latest publication', latest ? dateKey(latest) : '—'],
+      ].map(([zh, en, value]) => <div><dt>{zh}<br /><span lang="en">{en}</span></dt><dd>{value}</dd></div>)}
+    </dl>
+    <div class="prose">
+      {[
+        ['最近七天', 'Last seven days', recent(7, 1, last, days)],
+        ['最近四周（周一开始）', 'Last four weeks starting Monday', recent(4, 7, monday, weeks)],
+      ].map(([zh, en, rows]) => <section>
+        <h2>{zh}<br /><span lang="en">{en}</span></h2>
+        <table>
+          <thead><tr><th scope="col">日期（北京时间）<br /><span lang="en">Date (Beijing time)</span></th>
+          <th scope="col">文章数<br /><span lang="en">Articles</span></th></tr></thead>
+          <tbody>{(rows as (string | number)[][]).map(([day, count]) => <tr>
+            <td><time datetime={String(day)}>{day}</time></td><td>{count}</td></tr>)}</tbody>
+        </table>
+      </section>)}
+    </div>
+  </div>
+</Base>

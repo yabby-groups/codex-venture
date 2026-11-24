@@ -3,6 +3,12 @@ import '../styles/site.css';
 import { categories } from '../lib/content';
 const { title = '全球 AI 资讯', description = '每日追踪全球 AI 模型、工具和产品更新。 Daily coverage of AI models, tools and product updates.', article = false, noindex = false } = Astro.props;
 const canonical = new URL(Astro.url.pathname, Astro.site);
+const mode = import.meta.env.VENTURE_WEB_ANALYTICS_MODE || 'automatic';
+const beaconToken = import.meta.env.CLOUDFLARE_WEB_ANALYTICS_SITE_TAG;
+if (!['automatic', 'manual', 'disabled'].includes(mode) ||
+    (mode === 'manual' && !/^[a-zA-Z0-9_-]{16,64}$/.test(beaconToken || ''))) {
+  throw new Error('Invalid Cloudflare Web Analytics build configuration');
+}
 const pageTitle = title + ' · Codex Venture';
 const navigation = [['/daily/', '每日简报'], ['/news/', '最新资讯'], ['/archive/', '归档']];
 ---
@@ -23,7 +29,11 @@ const navigation = [['/daily/', '每日简报'], ['/news/', '最新资讯'], ['/
   <meta property="og:url" content={canonical} />
   <meta property="og:type" content={article ? 'article' : 'website'} />
   <meta property="og:locale" content="zh_CN" />
-  <meta property="og:locale:alternate" content="en_US" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content={pageTitle} />
+  <meta name="twitter:description" content={description} />
+  {mode === 'manual' && <script is:inline defer src="https://static.cloudflareinsights.com/beacon.min.js"
+    data-cf-beacon={JSON.stringify({ token: beaconToken })}></script>}
   {noindex && <meta name="robots" content="noindex,follow" />}
   <script is:inline>
     try {
@@ -53,7 +63,7 @@ const navigation = [['/daily/', '每日简报'], ['/news/', '最新资讯'], ['/
   <main id="main" class="wrap"><slot /></main>
   <footer class="wrap footer">
     <span lang="en">Codex Venture</span>
-    <nav aria-label="页脚"><a href="/about/">关于 / About</a><a href="/tags/">标签 / Tags</a><a href="/rss.xml">RSS ↗</a></nav>
+    <nav aria-label="页脚"><a href="/about/">关于 / About</a><a href="/stats/">统计 / Stats</a><a href="/privacy/">隐私 / Privacy</a><a href="/tags/">标签 / Tags</a><a href="/rss.xml">RSS ↗</a></nav>
   </footer>
   <script>
     const button = document.querySelector<HTMLButtonElement>('#theme')!;

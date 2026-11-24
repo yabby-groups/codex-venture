@@ -1,0 +1,33 @@
+#!/usr/bin/env bash
+set -euo pipefail
+if [[ -z "${VENTURE_ANALYTICS_PRIVATE_REPO:-}" || -z "${VENTURE_ANALYTICS_TOKEN:-}" ]]; then
+    echo 'Private analytics storage is disabled.'
+    exit 0
+fi
+repo="$VENTURE_ANALYTICS_PRIVATE_REPO"
+[[ "$repo" =~ ^[A-Za-z0-9_.-]+/[A-Za-z0-9_.-]+$ ]]
+[[ "$(GH_TOKEN="$VENTURE_ANALYTICS_TOKEN" gh api "repos/$repo" --jq .visibility)" == private ]]
+export VENTURE_GIT_TOKEN="$VENTURE_ANALYTICS_TOKEN"
+unset VENTURE_ANALYTICS_TOKEN
+case "$1" in
+    open)
+        ops/hosted-git git clone --quiet --depth=1 "https://github.com/$repo.git" "$ANALYTICS_STORE"
+        ;;
+    save)
+        git -C "$ANALYTICS_STORE" add -- analytics
+        if ! git -C "$ANALYTICS_STORE" diff --cached --quiet; then
+            git -C "$ANALYTICS_STORE" -c user.name='github-actions[bot]' \
+                -c user.email='41898282+github-actions[bot]@users.noreply.github.com' \
+                commit --quiet -m 'Update Venture analytics'
+            for attempt in 1 2 3; do
+                if ops/hosted-git git -C "$ANALYTICS_STORE" push --quiet origin HEAD >/dev/null 2>&1; then
+                    exit 0
+                fi
+                ops/hosted-git git -C "$ANALYTICS_STORE" pull --quiet --rebase origin >/dev/null 2>&1
+            done
+            echo 'Private analytics commit could not be saved.'
+            exit 1
+        fi
+        ;;
+    *) exit 2 ;;
+esac

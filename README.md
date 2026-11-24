@@ -47,3 +47,7 @@ npm run preview
 生产运营使用 GitHub Hosted Runner 定时采集、批量编辑、验证和发布。第三方 Responses API 通过 Codex CLI 自定义 provider 配置。候选、采集缓存索引、来源健康和用量写入独立的 `venture-state` 分支。只有新增且通过验证的文章才由运营工作流推送至 `main`。
 
 配置 Secret 和 Variables、首次 smoke test、回顾任务及日常调度见 [GitHub Actions 运营说明](.github/OPERATIONS.md)。公网 `/release.txt` 提供文章内容 SHA-256 指纹，发布后同时比较新增文章 HTML。上面的 Nginx 流程适用于独立部署。
+
+## 网站统计
+
+公开内容产出见 `/stats/`，访问统计及本地偏好说明见 `/privacy/`。网站统计、搜索接入、模型计价、私有数据保存和策略回滚见 [人工配置清单](docs/analytics.md)。

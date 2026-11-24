@@ -8,12 +8,14 @@ import sys
 import tempfile
 import time
 from datetime import datetime
+from decimal import Decimal
 from pathlib import Path
 from urllib.parse import urlsplit
 
 from collect import collect, load, save
 from discover import discovery
 from editor import ITEMS, DATE_ZONE, RUN_BUDGET, choose, metadata, output_schema, sync, write_articles
+from model_cost import configured_price, event_usage, worst_case
 from release import PROBE_HEADERS, probe
 
 WORK = Path(os.environ.get('RUNNER_TEMP', '.venture-runtime')) / 'venture'
@@ -31,7 +33,30 @@ def number(name, default, minimum, maximum):
     return value
 
 
+def cost_allows(root, day, tokens, price):
+    limit = os.getenv('VENTURE_DAILY_COST_LIMIT')
+    if not limit:
+        return True
+    currency = os.getenv('VENTURE_COST_CURRENCY')
+    if root is None or price is None or price['currency'] != currency or not (
+        price['cache_in_input'] and price['reasoning_in_output']
+    ):
+        return False
+    spent = Decimal(0)
+    for file in (root / 'operations' / day).glob('*.json'):
+        receipt = load(file, {}).get('model')
+        if not receipt or not receipt.get('sessions'):
+            continue
+        cost = receipt.get('estimated_cost')
+        if not cost or cost['currency'] != currency:
+            return False
+        spent += Decimal(cost['amount'])
+    return spent + worst_case(price, tokens) <= Decimal(limit)
+
+
 def prepare(task):
+    from analytics import store
+    from analytics_review import strategy
     now = datetime.now(DATE_ZONE)
     day = now.date().isoformat()
     days = number('BACKFILL_DAYS', 7, 1, 30) if task == 'backfill' else 7
@@ -48,7 +73,8 @@ def prepare(task):
     if task in ('collect', 'discover'):
         return
     slug = 'weekly-' + day if task == 'weekly' else day
-    candidates = choose(task, items, now, days if task in ('weekly', 'backfill') else 2)
+    rules = strategy() if os.getenv('VENTURE_STRATEGY_AUTO_UPDATE') == 'true' else {}
+    candidates = choose(task, items, now, days if task in ('weekly', 'backfill') else 2, rules)
     if task != 'smoke-test' and (not candidates or (
         task in ('daily', 'weekly') and any(
             article['collection'] == 'daily' and article['slug'] == slug for article in articles
@@ -59,6 +85,8 @@ def prepare(task):
 
     ledger_path = STATE / 'usage.json'
     ledger = load(ledger_path, {})
+    for value in ledger.values():
+        value.pop('usage', None)
     cutoff = now.date().toordinal() - 31
     ledger = {key: value for key, value in ledger.items()
               if datetime.fromisoformat(key).date().toordinal() >= cutoff}
@@ -72,11 +100,17 @@ def prepare(task):
         if task == 'smoke-test':
             raise RuntimeError('Smoke test requires sufficient daily model allowance')
         return
+    model = (os.getenv('CODEX_ADVANCED_MODEL') if task == 'weekly' else None) or os.getenv('CODEX_MODEL')
+    price = configured_price('venture', model, day)
+    root = store()
+    if not cost_allows(root, day, reserved, price):
+        print('Configured cost allowance cannot reserve this session')
+        return
     usage['calls'] += 1
     usage['tokens'] += reserved
     save(ledger_path, ledger)
     save(BATCH, dict(task=task, date=day, now=now.isoformat(timespec='seconds'),
-                     maxArticles=number('VENTURE_MAX_ARTICLES_PER_RUN', 3, 1, 10),
+                     maxArticles=min(rules.get('max_articles', 10), number('VENTURE_MAX_ARTICLES_PER_RUN', 3, 1, 10)),
                      reservation=reserved, unlimited=unlimited, candidates=candidates))
 
 
@@ -142,22 +176,23 @@ stream_max_retries = 0
     config_file.chmod(0o600)
 
 
-def event_usage(events):
-    completed = [event['usage'] for event in events if event.get('type') == 'turn.completed']
-    if len(completed) != 1:
-        return None
-    usage = completed[0]
-    for field in ('input_tokens', 'output_tokens'):
-        if type(usage.get(field)) is not int or usage[field] < 0:
-            return None
-    return {field: usage[field] for field in ('input_tokens', 'cached_input_tokens', 'output_tokens')
-            if type(usage.get(field)) is int and usage[field] >= 0}
-
-
 def invoke():
     batch = load(BATCH, {})
     smoke = batch['task'] == 'smoke-test'
     MODEL.mkdir(parents=True, exist_ok=True)
+    started = time.monotonic()
+    receipt = {'provider': 'venture', 'status': 'failed', 'usage': None, 'billed_cost': None,
+               'estimated_cost': None, 'sessions': 1}
+    save(MODEL / 'receipt.json', receipt)
+    try:
+        run_model(batch, smoke, receipt)
+        receipt['status'] = 'success'
+    finally:
+        receipt['duration_seconds'] = round(time.monotonic() - started, 3)
+        save(MODEL / 'receipt.json', receipt)
+
+
+def run_model(batch, smoke, receipt):
     with tempfile.TemporaryDirectory(prefix='venture-edit-') as directory:
         workspace = Path(directory)
         schema, result = workspace / 'schema.json', workspace / 'result.json'
@@ -166,11 +201,13 @@ def invoke():
             'Call the fixed venture_smoke check tool and return its marker as JSON.' if smoke else
             (REPOSITORY / 'ops/editor.md').read_text()
         )
-        try:
-            config(smoke, instructions)
-        except ValueError:
-            save(MODEL / 'usage.json', {'input_tokens': 0, 'output_tokens': 0})
-            raise
+        receipt['sessions'] = 0
+        config(smoke, instructions)
+        advanced = batch['task'] == 'weekly' and os.getenv('CODEX_ADVANCED_MODEL')
+        receipt['model'] = os.environ['CODEX_ADVANCED_MODEL' if advanced else 'CODEX_MODEL']
+        receipt['effort'] = os.getenv('CODEX_ADVANCED_REASONING_EFFORT' if advanced else
+                                     'CODEX_REASONING_EFFORT') or 'low'
+        receipt['sessions'] = 1
         payload = {key: batch[key] for key in ('date', 'maxArticles', 'candidates')}
         prompt = json.dumps(dict(mode=batch['task'], **payload), ensure_ascii=False)
         schema_data = output_schema()
@@ -197,7 +234,6 @@ def invoke():
                 os.killpg(process.pid, signal.SIGKILL)
                 events_text, errors = process.communicate()
         redacted_events = events_text.replace(key, '[REDACTED]')
-        (MODEL / 'events.jsonl').write_text(redacted_events)
         events = []
         for line in redacted_events.splitlines():
             try:
@@ -205,15 +241,8 @@ def invoke():
             except ValueError:
                 continue
         usage = event_usage(events)
-        if usage is not None:
-            save(MODEL / 'usage.json', usage)
-            print(f'Codex usage {usage}')
+        receipt['usage'] = usage
         if timed_out or process.returncode or not result.is_file() or usage is None:
-            for event in events:
-                if event.get('type') in ('error', 'turn.failed'):
-                    print(json.dumps(event, ensure_ascii=True))
-            if errors:
-                print(as_log(errors.replace(key, '[REDACTED]')[-6000:]))
             raise RuntimeError(f'Codex failed (exit={process.returncode}, timeout={timed_out})')
         if not batch['unlimited'] and usage['input_tokens'] + usage['output_tokens'] > batch['reservation']:
             raise RuntimeError('Codex exceeded the reserved token budget')
@@ -313,26 +342,6 @@ def string_list(value, count, length):
     )
 
 
-def settle():
-    path = WORK / 'result' / 'usage.json'
-    if not path.is_file() or path.is_symlink() or path.stat().st_size > 1024:
-        return
-    usage = load(path, {})
-    if type(usage) is not dict or any(type(usage.get(key)) is not int or usage[key] < 0
-                                      for key in ('input_tokens', 'output_tokens')):
-        raise ValueError('Invalid usage receipt')
-    batch = load(BATCH, {})
-    ledger_path = STATE / 'usage.json'
-    ledger = load(ledger_path, {})
-    day = ledger[batch['date']]
-    receipt = f"{os.environ['GITHUB_RUN_ID']}-{os.environ['GITHUB_RUN_ATTEMPT']}"
-    receipts = day.setdefault('usage', {})
-    if receipt not in receipts:
-        day['tokens'] += usage['input_tokens'] + usage['output_tokens'] - batch['reservation']
-        receipts[receipt] = usage
-        save(ledger_path, ledger)
-
-
 def health(wait=False):
     from urllib.request import Request, urlopen
 
@@ -363,6 +372,6 @@ def health(wait=False):
 
 if __name__ == '__main__':
     actions = {'prepare': prepare, 'invoke': invoke, 'accept': accept,
-               'settle': settle, 'health': health, 'smoke-tool': smoke_tool}
+               'health': health, 'smoke-tool': smoke_tool}
     command, *arguments = sys.argv[1:]
     actions[command](*arguments)

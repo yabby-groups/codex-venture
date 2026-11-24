@@ -1,5 +1,6 @@
 import hashlib
 import json
+import os
 import re
 import subprocess
 import time
@@ -143,6 +144,7 @@ def collect(days=7, extra=(), only_extra=False, refresh=False):
     now = datetime.now(timezone.utc)
     known = {item['fingerprint']: key for key, item in items.items()}
     healthy = 0
+    attempted = failed = duplicate = discovered = 0
     for source in config:
         key, kind = source['id'], source['kind']
         if source['category'] not in CATEGORIES or kind not in ('github', 'feed', 'discovery'):
@@ -157,6 +159,7 @@ def collect(days=7, extra=(), only_extra=False, refresh=False):
             print(f'{key}: backoff', flush=True)
             continue
         validators = status.get('validators', {}) if status.get('url') == url and not refresh else {}
+        attempted += 1
         try:
             body, headers = fetch(url, validators)
             if body is not None:
@@ -179,6 +182,7 @@ def collect(days=7, extra=(), only_extra=False, refresh=False):
                     fingerprint = digest((title + '\n' + summary).casefold())
                     item_id = digest(link)
                     if item_id in items:
+                        duplicate += 1
                         entry = items[item_id]
                         if entry['fingerprint'] != fingerprint:
                             entry.update(title=title, summary=summary[:3200], fingerprint=fingerprint,
@@ -186,11 +190,13 @@ def collect(days=7, extra=(), only_extra=False, refresh=False):
                             known[fingerprint] = item_id
                         continue
                     if fingerprint in known:
+                        duplicate += 1
                         continue
                     items[item_id] = dict(url=link, published=date.isoformat(), discovered=now.isoformat(),
                                           source=key, source_url=url, category=source['category'], title=title,
                                           summary=summary[:3200], fingerprint=fingerprint, status='pending')
                     known[fingerprint] = item_id
+                    discovered += 1
                 validators = {request_header: headers[response_header] for request_header, response_header in
                               [('If-None-Match', 'ETag'), ('If-Modified-Since', 'Last-Modified')] if response_header in headers}
             status.pop('first_failure', None)
@@ -212,9 +218,17 @@ def collect(days=7, extra=(), only_extra=False, refresh=False):
                     except (TypeError, ValueError):
                         pass
             status.update(error=str(error), failures=failures, retry_after=(now + delay).isoformat())
-            print(f'{key}: {error}', flush=True)
+            failed += 1
+            print(f'{key}: {type(error).__name__}', flush=True)
     save(items_path, items)
     save(health_path, health)
+    if 'RUNNER_TEMP' in os.environ:
+        path = Path(os.environ['RUNNER_TEMP']) / 'venture' / 'collection.json'
+        counts = load(path, {})
+        for key, count in dict(attempted=attempted, succeeded=healthy, failed=failed,
+                               duplicates=duplicate, discovered=discovered).items():
+            counts[key] = counts.get(key, 0) + count
+        save(path, counts)
     if not healthy:
         raise RuntimeError('no sources completed successfully')
     return items

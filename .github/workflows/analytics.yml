@@ -1,0 +1,149 @@
+name: Venture Analytics
+on:
+  schedule:
+    - cron: '35 19 * * *'
+    - cron: '35 22 * * *'
+    - cron: '35 15 * * *'
+    - cron: '15 23 * * 0'
+    - cron: '45 23 28-31 * *'
+  workflow_dispatch:
+    inputs:
+      task:
+        type: choice
+        default: analytics-smoke-test
+        options: [analytics-sync, analytics-daily, analytics-weekly, analytics-monthly, analytics-backfill, analytics-smoke-test]
+      days:
+        type: number
+        default: 7
+permissions: {}
+concurrency:
+  group: ${{ (inputs.task == 'analytics-weekly' || github.event.schedule == '15 23 * * 0') && 'codex-venture-production' || 'venture-analytics' }}
+  cancel-in-progress: false
+jobs:
+  analytics:
+    if: github.ref == 'refs/heads/main' && (inputs.task == 'analytics-smoke-test' || vars.VENTURE_ANALYTICS_ENABLED == 'true')
+    runs-on: ubuntu-24.04
+    timeout-minutes: 24
+    permissions:
+      contents: write
+      id-token: write
+    env:
+      ANALYTICS_STORE: ${{ runner.temp }}/venture-analytics
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v6
+        with:
+          node-version: '24'
+      - run: npm ci --ignore-scripts
+      - id: task
+        env:
+          TASK: ${{ inputs.task }}
+          SCHEDULE: ${{ github.event.schedule }}
+        run: |
+          domain=all
+          if [[ -n "$TASK" ]]; then
+            task="${TASK#analytics-}"
+          else
+            case "$SCHEDULE" in
+              '35 19 * * *') task=sync; domain=traffic ;;
+              '35 22 * * *') task=sync; domain=search ;;
+              '35 15 * * *') task=daily ;;
+              '15 23 * * 0') task=weekly ;;
+              '45 23 28-31 * *')
+                [[ "$(TZ=Asia/Shanghai date +%d)" == 01 ]] || exit 0
+                task=monthly ;;
+              *) exit 2 ;;
+            esac
+          fi
+          echo "task=$task" >> "$GITHUB_OUTPUT"
+          echo "domain=$domain" >> "$GITHUB_OUTPUT"
+      - name: Validate analytics with fixtures
+        if: steps.task.outputs.task == 'smoke-test'
+        run: python3 -m unittest discover -s tests
+      - name: Open private store
+        if: steps.task.outputs.task != ''
+        env:
+          VENTURE_ANALYTICS_PRIVATE_REPO: ${{ vars.VENTURE_ANALYTICS_PRIVATE_REPO }}
+          VENTURE_ANALYTICS_TOKEN: ${{ secrets.VENTURE_ANALYTICS_TOKEN }}
+        run: ops/analytics-store open
+      - id: google
+        if: >-
+          (steps.task.outputs.task == 'sync' || steps.task.outputs.task == 'backfill' ||
+          steps.task.outputs.task == 'smoke-test') && steps.task.outputs.domain != 'traffic' &&
+          vars.GOOGLE_WORKLOAD_IDENTITY_PROVIDER != '' && vars.GOOGLE_SERVICE_ACCOUNT != ''
+        uses: google-github-actions/auth@v3
+        continue-on-error: true
+        with:
+          workload_identity_provider: ${{ vars.GOOGLE_WORKLOAD_IDENTITY_PROVIDER }}
+          service_account: ${{ vars.GOOGLE_SERVICE_ACCOUNT }}
+          token_format: access_token
+          access_token_scopes: https://www.googleapis.com/auth/webmasters.readonly
+          create_credentials_file: false
+          export_environment_variables: false
+      - name: Sync or generate requested report
+        if: steps.task.outputs.task != ''
+        env:
+          TASK: ${{ steps.task.outputs.task }}
+          DOMAIN: ${{ steps.task.outputs.domain }}
+          DAYS: ${{ inputs.days }}
+          CLOUDFLARE_ANALYTICS_TOKEN: ${{ secrets.CLOUDFLARE_ANALYTICS_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ vars.CLOUDFLARE_ACCOUNT_ID }}
+          CLOUDFLARE_WEB_ANALYTICS_SITE_TAG: ${{ vars.CLOUDFLARE_WEB_ANALYTICS_SITE_TAG }}
+          GOOGLE_ACCESS_TOKEN: ${{ steps.google.outputs.access_token }}
+          GOOGLE_SEARCH_CONSOLE_PROPERTY: ${{ vars.GOOGLE_SEARCH_CONSOLE_PROPERTY }}
+          BING_WEBMASTER_API_KEY: ${{ secrets.BING_WEBMASTER_API_KEY }}
+          BING_SITE_URL: ${{ vars.BING_SITE_URL }}
+        run: |
+          case "$TASK" in
+            smoke-test) python3 scripts/analytics.py sync all 1 ;;
+            backfill) python3 scripts/analytics.py sync all "${DAYS:-30}" ;;
+            sync) python3 scripts/analytics.py sync "$DOMAIN" "${DAYS:-7}" ;;
+            daily|weekly|monthly) python3 scripts/analytics.py "$TASK" ;;
+            *) exit 2 ;;
+          esac
+      - id: reserve
+        name: Reserve shared weekly analysis budget
+        if: steps.task.outputs.task == 'weekly'
+        env:
+          VENTURE_GIT_TOKEN: ${{ github.token }}
+          VENTURE_MODEL_PRICING_JSON: ${{ secrets.VENTURE_MODEL_PRICING_JSON }}
+          VENTURE_DAILY_COST_LIMIT: ${{ secrets.VENTURE_DAILY_COST_LIMIT }}
+          VENTURE_COST_CURRENCY: ${{ vars.VENTURE_COST_CURRENCY }}
+          VENTURE_DAILY_TOKEN_LIMIT: ${{ vars.VENTURE_DAILY_TOKEN_LIMIT }}
+          VENTURE_MAX_MODEL_CALLS_PER_DAY: ${{ vars.VENTURE_MAX_MODEL_CALLS_PER_DAY }}
+          CODEX_MODEL: ${{ vars.CODEX_MODEL || secrets.CODEX_MODEL }}
+        run: |
+          ops/hosted-git ops/hosted-state restore
+          python3 scripts/analytics_review.py reserve
+          if [[ -f "$RUNNER_TEMP/venture/analytics-reservation.json" ]]; then
+            ops/hosted-git ops/hosted-state save
+            echo 'ready=true' >> "$GITHUB_OUTPUT"
+          fi
+      - name: Install Codex for weekly analysis
+        if: steps.reserve.outputs.ready == 'true'
+        env:
+          CLI_VERSION: ${{ vars.CODEX_CLI_VERSION || '0.171.0' }}
+        run: |
+          [[ "$CLI_VERSION" =~ ^[0-9]+\.[0-9]+\.[0-9]+$ ]]
+          npm install --global --ignore-scripts "@openai/codex@$CLI_VERSION"
+      - name: Analyze evidence and validate strategy
+        if: steps.reserve.outputs.ready == 'true'
+        env:
+          CODEX_BASE_URL: ${{ vars.CODEX_BASE_URL || secrets.CODEX_BASE_URL }}
+          CODEX_API_KEY: ${{ secrets.CODEX_API_KEY }}
+          CODEX_MODEL: ${{ vars.CODEX_MODEL || secrets.CODEX_MODEL }}
+          CODEX_REASONING_EFFORT: ${{ vars.CODEX_REASONING_EFFORT }}
+          VENTURE_MODEL_PRICING_JSON: ${{ secrets.VENTURE_MODEL_PRICING_JSON }}
+          VENTURE_STRATEGY_AUTO_UPDATE: ${{ vars.VENTURE_STRATEGY_AUTO_UPDATE }}
+        run: python3 scripts/analytics_review.py
+      - name: Save private data
+        if: always() && steps.task.outputs.task != ''
+        env:
+          VENTURE_ANALYTICS_PRIVATE_REPO: ${{ vars.VENTURE_ANALYTICS_PRIVATE_REPO }}
+          VENTURE_ANALYTICS_TOKEN: ${{ secrets.VENTURE_ANALYTICS_TOKEN }}
+        run: |
+          if [[ -d "$ANALYTICS_STORE/analytics" ]]; then
+            ops/analytics-store save
+          fi
