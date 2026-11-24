@@ -97,9 +97,10 @@ p > span[lang="en"] { margin-top: var(--space-1); }
 .primary { border-top: 1px solid var(--line); justify-content: space-between; gap: var(--space-3); }
 .nav-links { flex-wrap: wrap; gap: clamp(14px, 2.6vw, 38px); }
 .primary a, .primary summary { align-content: center; min-height: 52px; color: inherit; font-weight: 700; font-size: .875rem; text-decoration: none; line-height: 1.35; }
-.primary a:hover, .primary summary:hover, .primary [aria-current="page"] { color: var(--accent); }
-.primary a[aria-current="page"] { box-shadow: inset 0 -2px var(--accent); }
+.primary a:hover, .primary summary:hover, .primary [aria-current]:not([aria-current="false"]) { color: var(--accent); }
+.primary a[aria-current]:not([aria-current="false"]) { box-shadow: inset 0 -2px var(--accent); }
 .nav-menu { position: relative; flex: none; margin-left: auto; }
+.nav-menu-current > summary { color: var(--accent); }
 .nav-menu summary { list-style: none; padding-inline-end: 22px; }
 .nav-menu summary::-webkit-details-marker { display: none; }
 .nav-menu summary::after { content: "⌄"; position: absolute; right: 2px; top: 11px; font-size: 1.1rem; }
@@ -185,6 +186,7 @@ mark { color: var(--ink); background: var(--surface); text-decoration: underline
 @media (max-width: 850px) {
   .nav-links a:nth-child(n+3):nth-child(-n+6) { display: none; }
   .nav-panel .mobile-link { display: block; }
+  .nav-menu-mobile-current > summary { color: var(--accent); }
   .lead-grid, .reading-grid { grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr); }
 }
 @media (max-width: 640px) {

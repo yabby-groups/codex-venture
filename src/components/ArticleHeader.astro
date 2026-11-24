@@ -2,13 +2,15 @@
 import BilingualHeading from './BilingualHeading.astro';
 import BilingualParagraph from './BilingualParagraph.astro';
 import { dateKey, type Story } from '../lib/content';
-interface Props { data: Story['data']; label: string[]; href: string; minutes: number }
-const { data, label, href, minutes } = Astro.props;
+interface Props { data: Story['data']; crumbs: { href: string; label: string[] }[]; minutes: number }
+const { data, crumbs, minutes } = Astro.props;
 ---
 <header class="article-header">
   <nav class="breadcrumbs" aria-label="面包屑 / Breadcrumb">
-    <a href="/">首页 <span lang="en">Home</span></a><span aria-hidden="true">/</span>
-    <a href={href} class="article-section">{label[0]} <span lang="en">{label[1]}</span></a>
+    {crumbs.map(({ href, label }, index) => <>
+      {index > 0 && <span aria-hidden="true">/</span>}
+      <a href={href} class:list={{ 'article-section': index === crumbs.length - 1 }}>{label[0]} <span lang="en">{label[1]}</span></a>
+    </>)}
   </nav>
   <BilingualHeading level={1} zh={data.titleZh} en={data.titleEn} search />
   <div class="article-byline" data-pagefind-ignore>

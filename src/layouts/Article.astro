@@ -10,7 +10,7 @@ import { articleHeadings } from '../lib/article-headings.mjs';
 import Repository from '../components/Repository.astro';
 import { repositoryFor } from '../lib/repositories';
 import Base from './Base.astro';
-import { allStories, dateKey, storySection, storyUrl, type Story } from '../lib/content';
+import { allStories, dateKey, storySection, storyUrl, types, hubs, isWeekly, type Story } from '../lib/content';
 interface Props { story: Story }
 const { story } = Astro.props;
 const { Content } = await render(story);
@@ -38,6 +38,16 @@ const related = stories
   .map(({ item }) => item);
 const canonical = new URL(storyUrl(story), Astro.site).href;
 const { label, href } = storySection(story);
+const parent = story.collection === 'daily'
+  ? isWeekly(story) ? 'weekly' : 'daily'
+  : data.type ? types[data.type][2] : 'news';
+const articleNav = `/${parent}/`;
+const parentLabel = parent in hubs ? hubs[parent as keyof typeof hubs] : ['最新资讯', 'Latest'];
+const crumbs = [
+  { href: '/', label: ['首页', 'Home'] },
+  ...(story.collection === 'news' ? [{ href: articleNav, label: parentLabel }] : []),
+  { href, label },
+];
 const repo = repositoryFor(story);
 const bodyText = ((story.body ?? '') + ' ' + JSON.stringify(blocks)).replace(/<[^>]+>/g, '').replace(/https?:\/\/\S+/g, '');
 const chinese = bodyText.match(/\p{Script=Han}/gu)?.length ?? 0;
@@ -46,9 +56,10 @@ const minutes = Math.max(1, Math.ceil(chinese / 350 + english / 220));
 const breadcrumb = JSON.stringify({
   '@context': 'https://schema.org', '@type': 'BreadcrumbList',
   itemListElement: [
-    { '@type': 'ListItem', position: 1, name: 'Codex Venture', item: Astro.site?.href },
-    { '@type': 'ListItem', position: 2, name: label[0], item: new URL(href, Astro.site).href },
-    { '@type': 'ListItem', position: 3, name: data.titleZh, item: canonical },
+    ...crumbs.map((crumb, index) => ({
+      '@type': 'ListItem', position: index + 1, name: crumb.label[0], item: new URL(crumb.href, Astro.site).href,
+    })),
+    { '@type': 'ListItem', position: crumbs.length + 1, name: data.titleZh, item: canonical },
   ],
 }).replaceAll('<', '\\u003c');
 const jsonLd = JSON.stringify({
@@ -60,10 +71,10 @@ const jsonLd = JSON.stringify({
   publisher: { '@type': 'Organization', name: 'Codex Venture', url: Astro.site?.href },
 }).replaceAll('<', '\\u003c');
 ---
-<Base title={data.titleZh} description={data.summaryZh + ' ' + data.summaryEn} article>
+<Base title={data.titleZh} description={data.summaryZh + ' ' + data.summaryEn} article {articleNav}>
   <Fragment slot="head"><script type="application/ld+json" set:html={jsonLd} /><script type="application/ld+json" set:html={breadcrumb} /><meta property="article:published_time" content={data.published.toISOString()} /></Fragment>
   <article class:list={['editorial-article', { 'article-short': short, 'article-with-rail': showContents }]} data-pagefind-body>
-    <ArticleHeader {data} {label} {href} {minutes} />
+    <ArticleHeader {data} {crumbs} {minutes} />
     <meta data-pagefind-meta={`section:${label[0]}`} />
     <meta data-pagefind-meta={`sectionEn:${label[1]}`} />
     <meta data-pagefind-meta={`date:${dateKey(data.published)}`} />

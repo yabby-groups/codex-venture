@@ -1,7 +1,7 @@
 ---
 import '../styles/site.css';
-import { allStories, categories, hubs } from '../lib/content';
-const { title = '全球 AI 资讯', description = '每日追踪全球 AI 模型、工具和产品更新。 Daily coverage of AI models, tools and product updates.', article = false, noindex = false } = Astro.props;
+import { allStories, categories, hubs, types } from '../lib/content';
+const { title = '全球 AI 资讯', description = '每日追踪全球 AI 模型、工具和产品更新。 Daily coverage of AI models, tools and product updates.', article = false, noindex = false, articleNav } = Astro.props;
 const canonical = new URL(Astro.url.pathname, Astro.site);
 const mode = import.meta.env.VENTURE_WEB_ANALYTICS_MODE || 'automatic';
 const beaconToken = import.meta.env.CLOUDFLARE_WEB_ANALYTICS_SITE_TAG;
@@ -21,9 +21,17 @@ const more = [
   ...categoryLinks.map(([key, [zh, en]]) => [`/category/${key}/`, zh, en]),
   ['/archive/', '归档', 'Archive'], ['/tags/', '标签', 'Tags'],
 ];
-const current = (url: string) => (url === '/' ? Astro.url.pathname === url :
-  url === '/weekly/' ? Astro.url.pathname.startsWith(url) || Astro.url.pathname.startsWith('/daily/weekly-') :
-  Astro.url.pathname.startsWith(url) && !Astro.url.pathname.startsWith('/daily/weekly-')) ? 'page' : undefined;
+const pathname = Astro.url.pathname;
+const topic = pathname.split('/')[1] === 'topics' ? pathname.split('/')[2] : '';
+const topicHub = Object.hasOwn(types, topic) ? types[topic as keyof typeof types][2] : undefined;
+const activeNav = articleNav ?? (topicHub ? `/${topicHub}/` : pathname);
+const current = (url: string) => {
+  if (pathname === url) return 'page';
+  if (url !== '/' && activeNav.startsWith(url)) return 'location';
+};
+const mobileMenuActive = navigation.slice(2, 6).some(([url]) => current(url));
+const moreMenuActive = more.some(([url]) => current(url));
+
 ---
 <!doctype html>
 <html lang="zh-CN">
@@ -69,7 +77,7 @@ const current = (url: string) => (url === '/' ? Astro.url.pathname === url :
     </div>
     <nav class="wrap primary" aria-label="主导航 / Main navigation">
       <div class="nav-links">{navigation.map(([url, zh, en]) => <a href={url} aria-current={current(url)}>{zh}<small lang="en">{en}</small></a>)}</div>
-      <details class="nav-menu">
+      <details class:list={['nav-menu', { 'nav-menu-current': moreMenuActive, 'nav-menu-mobile-current': mobileMenuActive }]}>
         <summary>栏目 <small lang="en">Sections</small></summary>
         <div class="nav-panel">
           {navigation.map(([url, zh, en]) => <a class="mobile-link" href={url} aria-current={current(url)}>{zh}<small lang="en">{en}</small></a>)}
