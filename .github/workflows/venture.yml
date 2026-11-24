@@ -111,7 +111,6 @@ jobs:
           BACKFILL_DAYS: ${{ inputs.days }}
           VENTURE_DAILY_TOKEN_LIMIT: ${{ vars.VENTURE_DAILY_TOKEN_LIMIT }}
           VENTURE_MAX_ARTICLES_PER_RUN: ${{ vars.VENTURE_MAX_ARTICLES_PER_RUN }}
-          VENTURE_MAX_MODEL_CALLS_PER_DAY: ${{ vars.VENTURE_MAX_MODEL_CALLS_PER_DAY }}
         run: |
           timeout --kill-after=10s 8m python3 scripts/hosted.py prepare "$TASK"
           if [[ -f "$RUNNER_TEMP/venture/batch.json" ]]; then

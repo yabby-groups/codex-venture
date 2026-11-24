@@ -55,9 +55,8 @@ def reserve():
     allowance = ledger.setdefault(day, {'calls': 0, 'tokens': 0})
     unlimited = os.getenv('VENTURE_DAILY_TOKEN_LIMIT') == 'unlimited'
     tokens = None if unlimited else hosted.number('VENTURE_DAILY_TOKEN_LIMIT', 100000, 0, 10000000)
-    calls = hosted.number('VENTURE_MAX_MODEL_CALLS_PER_DAY', 6, 0, 1000)
     price = configured_price('venture', os.getenv('CODEX_MODEL'), day)
-    if (allowance['calls'] >= calls or (tokens is not None and allowance['tokens'] + 25000 > tokens)
+    if ((tokens is not None and allowance['tokens'] + 25000 > tokens)
             or not hosted.cost_allows(root, day, 25000, price, allowance['calls'])):
         return
     allowance['calls'] += 1

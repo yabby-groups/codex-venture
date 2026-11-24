@@ -95,9 +95,8 @@ def prepare(task):
     usage = ledger.setdefault(day, {'tokens': 0, 'calls': 0})
     unlimited = os.environ.get('VENTURE_DAILY_TOKEN_LIMIT') == 'unlimited'
     daily_tokens = None if unlimited else number('VENTURE_DAILY_TOKEN_LIMIT', 100000, 0, 10000000)
-    daily_calls = number('VENTURE_MAX_MODEL_CALLS_PER_DAY', 6, 0, 1000)
     reserved = 40000 if task == 'smoke-test' else RUN_BUDGET
-    if usage['calls'] >= daily_calls or (daily_tokens is not None and usage['tokens'] + reserved > daily_tokens):
+    if daily_tokens is not None and usage['tokens'] + reserved > daily_tokens:
         print(f'Insufficient daily model allowance for this batch ({reserved} token reservation)')
         if task == 'smoke-test':
             raise RuntimeError('Smoke test requires sufficient daily model allowance')

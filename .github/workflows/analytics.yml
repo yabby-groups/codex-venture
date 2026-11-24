@@ -113,7 +113,6 @@ jobs:
           VENTURE_DAILY_COST_LIMIT: ${{ secrets.VENTURE_DAILY_COST_LIMIT }}
           VENTURE_COST_CURRENCY: ${{ vars.VENTURE_COST_CURRENCY }}
           VENTURE_DAILY_TOKEN_LIMIT: ${{ vars.VENTURE_DAILY_TOKEN_LIMIT }}
-          VENTURE_MAX_MODEL_CALLS_PER_DAY: ${{ vars.VENTURE_MAX_MODEL_CALLS_PER_DAY }}
           CODEX_MODEL: ${{ vars.CODEX_MODEL || secrets.CODEX_MODEL }}
         run: |
           ops/hosted-git ops/hosted-state restore
