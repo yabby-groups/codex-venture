@@ -45,6 +45,7 @@
 .article-table-scroll table { width: 100%; min-width: 32rem; border-collapse: collapse; }
 .article-table-scroll :is(th,td) { vertical-align: top; text-align: start; padding: .6rem; border-bottom: 1px solid var(--line); }
 .article-table-scroll th { background: var(--surface); }
+.article-table-scroll th:first-child { min-width: 7rem; }
 .article-table-scroll tbody tr:last-child > * { border-bottom: 0; }
 .article-figure { margin: 0; }
 .article-figure img { display: block; max-width: 100%; height: auto; border: 1px solid var(--line); border-radius: var(--radius); }
@@ -57,11 +58,11 @@
 .editorial-article pre { margin: 0; padding: .8rem; overflow-x: auto; overflow-wrap: normal; font: .875rem/1.65 var(--mono); }
 .editorial-article pre:has(code) { max-height: 26rem; }
 .prose :not(pre) > code { background: var(--surface); padding: .08em .25em; font: .85em var(--mono); }
-:root[data-theme="dark"] .editorial-article .astro-code,
-:root[data-theme="dark"] .editorial-article .astro-code span { color: var(--shiki-dark); background-color: var(--shiki-dark-bg); }
+:root[data-theme="dark"] .editorial-article .astro-code { background-color: var(--shiki-dark-bg) !important; }
+:root[data-theme="dark"] .editorial-article .astro-code span[style] { color: var(--shiki-dark) !important; }
 @media (prefers-color-scheme: dark) {
-  :root:not([data-theme]) .editorial-article .astro-code,
-  :root:not([data-theme]) .editorial-article .astro-code span { color: var(--shiki-dark); background-color: var(--shiki-dark-bg); }
+  :root:not([data-theme]) .editorial-article .astro-code { background-color: var(--shiki-dark-bg) !important; }
+  :root:not([data-theme]) .editorial-article .astro-code span[style] { color: var(--shiki-dark) !important; }
 }
 .article-footer { margin-top: 2rem; padding-top: .5rem; border-top: 1px solid var(--line); }
 .article-footer h2 { margin-top: .8rem; }

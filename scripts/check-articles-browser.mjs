@@ -5,12 +5,12 @@ import { chromium } from 'playwright';
 
 const routes = process.argv[2]
   ? JSON.parse(await readFile(process.argv[2], 'utf8'))
-  : ['news/venture-evidence-publication-workflow/', 'news/ollama-macos-local-check/', 'news/ollama-lm-studio-local-api/', 'news/ragflow-document-retrieval/', 'daily/2026-11-24/'];
+  : ['news/venture-evidence-publication-workflow/', 'news/ollama-macos-local-check/', 'news/ollama-lm-studio-local-api/', 'news/ragflow-document-retrieval/', 'news/mcp-filesystem-read-only/', 'news/claude-pdf-skill/', 'daily/2026-11-24/'];
 if (!routes.length) process.exit(0);
 if (routes.some((route) => !/^(news|daily)\/[a-z0-9-]+\/$/.test(route))) throw new Error('Invalid article route');
 
-const origin = 'http://127.0.0.1:4381';
-const server = spawn('python3', ['-m', 'http.server', '4381', '--bind', '127.0.0.1', '--directory', 'dist'], { stdio: 'ignore' });
+const origin = 'http://127.0.0.1:4382';
+const server = spawn('python3', ['-m', 'http.server', '4382', '--bind', '127.0.0.1', '--directory', 'dist'], { stdio: 'ignore' });
 let browser;
 try {
   for (let attempt = 0; attempt < 40; attempt++) {
@@ -38,11 +38,20 @@ try {
           if (!document.getElementById(link.hash.slice(1))) issues.push(`missing anchor ${link.hash}`);
         }
         for (const image of article.querySelectorAll('figure img')) {
+          image.loading = "eager";
           await image.decode().catch(() => issues.push(`cannot decode ${image.src}`));
           if (image.naturalWidth !== Number(image.getAttribute('width')) || image.naturalHeight !== Number(image.getAttribute('height'))) issues.push(`dimension mismatch ${image.src}`);
         }
         for (const block of article.querySelectorAll('.article-code')) {
-          if (!block.querySelector('pre code')?.textContent.trim() || block.querySelector('[data-copy]').hidden) issues.push('code or copy control missing');
+          const pre = block.querySelector('pre');
+          if (!pre?.querySelector('code')?.textContent.trim() || block.querySelector('[data-copy]').hidden) {
+            issues.push('code or copy control missing');
+            continue;
+          }
+          const colors = getComputedStyle(pre);
+          const expectedDark = colors.getPropertyValue('--shiki-dark-bg').trim();
+          if (matchMedia('(prefers-color-scheme: dark)').matches && expectedDark &&
+            colors.backgroundColor === 'rgb(255, 255, 255)') issues.push('code uses a light background in dark mode');
         }
         return issues;
       });
