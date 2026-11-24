@@ -10,8 +10,8 @@ if [[ -n "${VENTURE_ANALYTICS_DEPLOY_KEY:-}" ]]; then
     # GitHub returns 404 for private repositories to anonymous callers.
     # SSH authentication with the repository-scoped key confirms existence.
     status=$(curl --silent --show-error --max-time 15 --output /dev/null \
-        --write-out '%{http_code}' "https://api.github.com/repos/$repo")
-    [[ "$status" == 404 ]] || { echo 'Private analytics repository visibility check failed.'; exit 1; }
+        --write-out '%{http_code}' "https://github.com/$repo")
+    [[ "$status" == 404 ]] || { echo "Private analytics repository visibility check failed (HTTP $status)."; exit 1; }
     key_dir=$(mktemp -d)
     trap 'rm -rf "$key_dir"' EXIT
     umask 077
