@@ -163,7 +163,7 @@ jobs:
     if: needs.prepare.outputs.edit == 'true'
     needs: prepare
     runs-on: ubuntu-24.04
-    timeout-minutes: 8
+    timeout-minutes: 16
     permissions:
       contents: read
     steps:

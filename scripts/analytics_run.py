@@ -7,6 +7,7 @@ import sys
 from analytics import store
 from collect import load, save
 from editor import DATE_ZONE
+from resource_ingest import statistics
 from model_cost import configured_price, estimate
 
 WORK = Path(os.getenv('RUNNER_TEMP', '.venture-runtime')) / 'venture'
@@ -18,6 +19,7 @@ def record(phase, task):
     status = os.environ.get('PHASE_OUTCOME') or 'unknown'
     routes = load(WORK / 'routes.json', [])
     published = len(routes) if os.getenv('PUSH_OUTCOME') == 'success' else 0
+    resource_changes = (load(WORK / 'resources-published.json', {}) if os.getenv('PUSH_OUTCOME') == 'success' else {})
     summary = os.getenv('GITHUB_STEP_SUMMARY')
     if summary:
         with open(summary, 'a') as handle:
@@ -25,6 +27,9 @@ def record(phase, task):
                          f'| {phase} | {status} | {(end-start).total_seconds():.0f} |\n')
             if phase == 'publish':
                 handle.write(f'\nPublished articles / 已发布文章 **{published}**\n')
+                if task.startswith('resource-'):
+                    handle.write(f"\nResources added / 新增资源 **{resource_changes.get('added', 0)}**\n"
+                                 f"\nResources updated / 更新资源 **{resource_changes.get('updated', 0)}**\n")
     root = store()
     if root is None:
         return
@@ -39,11 +44,18 @@ def record(phase, task):
     if phase == 'prepare':
         batch = load(WORK / 'batch.json', {})
         details.update(load(WORK / 'collection.json', {}))
-        details['candidates'] = len(batch['candidates']) if batch else None
+        details['candidates'] = sum(len(part['candidates']) for part in batch.get('batches', [])) if batch else None
+        details['resource_catalog'] = statistics(end.date().isoformat())
+        details['collection_requests'] = {name: row.get('daily', 0) for name, row in
+                                          load(Path('.venture-runtime/requests.json'), {}).get('providers', {}).items()}
     elif phase == 'edit':
         receipt = load(WORK / 'model' / 'receipt.json', None)
         response = load(WORK / 'model' / 'response.json', {})
-        details['generated'] = len(response.get('articles', []))
+        if isinstance(response, list):
+            details['generated'] = sum(len(part.get('articles', [])) for part in response)
+            details['resources_generated'] = sum(len(part.get('resources', [])) for part in response)
+        else:
+            details['generated'] = len(response.get('articles', []))
         if receipt:
             try:
                 price = configured_price(receipt['provider'], receipt.get('model'), day)
@@ -53,11 +65,12 @@ def record(phase, task):
             run['model'] = receipt
     elif phase == 'publish':
         run['published'] = published
+        run['resources'] = resource_changes
         run['reviewed'] = len(routes)
         run['production'] = os.getenv('HEALTH_OUTCOME') or 'unknown'
         run['sha'] = os.getenv('PUBLISH_SHA') or os.environ['GITHUB_SHA']
         run['cloudflare_deployment'] = 'verified_by_release_probe' if (
-            run['production'] == 'success' and published) else 'unavailable'
+            run['production'] == 'success' and (published or resource_changes)) else 'unavailable'
     save(path, run)
 
 

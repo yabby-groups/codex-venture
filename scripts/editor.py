@@ -47,7 +47,9 @@ def sync(items, articles):
             entry = by_url.get(canonical(source['url']))
             if entry:
                 article = f"/{story['collection']}/{story['slug']}/"
-                entry.update(status='published', articles=sorted(set(entry.get('articles', [])) | {article}))
+                entry['articles'] = sorted(set(entry.get('articles', [])) | {article})
+                if story['collection'] == 'news':
+                    entry['status'] = 'published'
 
 
 def budget_path(day):

@@ -27,6 +27,9 @@ BATCH = WORK / 'batch.json'
 MODEL = WORK / 'model'
 REPOSITORY = Path.cwd()
 SMOKE_MARKER = 'venture-tool-ok'
+MODEL_TIMEOUT = 240
+EDIT_WINDOW = 750
+BATCH_SLOTS = EDIT_WINDOW // MODEL_TIMEOUT
 
 
 def number(name, default, minimum, maximum):
@@ -88,7 +91,7 @@ def prepare(task):
         return
     slug = 'weekly-' + day if task == 'weekly' else day
     rules = strategy() if os.getenv('VENTURE_STRATEGY_AUTO_UPDATE') == 'true' else load(Path('config/editorial-strategy.json'), {})
-    candidates = (resource_ingest.prepare(task, os.getenv('RESOURCE_TYPE') or 'all', day)
+    candidates = (resource_ingest.prepare(task, os.getenv('RESOURCE_TYPE') or 'all', day, capacity=12 * BATCH_SLOTS)
                   if resource_task else choose(task, items, now, days if task in ('weekly', 'backfill') else 2, rules))
     if task == 'backfill':
         enrich(items, candidates, now)
@@ -113,28 +116,48 @@ def prepare(task):
     unlimited = os.environ.get('VENTURE_DAILY_TOKEN_LIMIT') == 'unlimited'
     daily_tokens = None if unlimited else number('VENTURE_DAILY_TOKEN_LIMIT', 100000, 0, 10000000)
     reserved = 40000 if task == 'smoke-test' else RUN_BUDGET
-    if daily_tokens is not None and usage['tokens'] + reserved > daily_tokens:
-        print(f'Insufficient daily model allowance for this batch ({reserved} token reservation)')
-        if task == 'smoke-test':
-            raise RuntimeError('Smoke test requires sufficient daily model allowance')
-        return
     model = (os.getenv('CODEX_ADVANCED_MODEL') if task == 'weekly' else None) or os.getenv('CODEX_MODEL')
     price = configured_price('venture', model, day)
     root = store()
-    if not cost_allows(root, day, reserved, price, usage['calls']):
-        print('Configured cost allowance cannot reserve this session')
+    slots = BATCH_SLOTS if resource_task or task in ('news', 'backfill') else 1
+    remaining = dict(items)
+    batches = []
+    profiles = resource_context() if not resource_task and task in ('news', 'backfill') else []
+    for index in range(slots):
+        if resource_task:
+            selected = dict(list(candidates.items())[index * 12:(index + 1) * 12])
+        elif index:
+            selected = choose(task, remaining, now, days, rules)
+        else:
+            selected = candidates
+        if not selected and task != 'smoke-test':
+            break
+        if daily_tokens is not None and usage['tokens'] + (index + 1) * reserved > daily_tokens:
+            print('Insufficient daily model allowance for another batch')
+            if task == 'smoke-test':
+                raise RuntimeError('Smoke test requires sufficient daily model allowance')
+            break
+        if not cost_allows(root, day, (index + 1) * reserved, price, usage['calls']):
+            print('Configured cost allowance cannot reserve another batch')
+            break
+        context = [{field: row[field] for field in ('id', 'name', 'site')}
+                   for row in profiles if any(
+                       row['site'] == item['url'] or
+                       (row.get('repository') and row['repository'] ==
+                        item.get('discovery', {}).get('upstream')) for item in selected.values())]
+        batches.append(dict(candidates=selected, existingResources=context))
+        for key in selected:
+            remaining.pop(key, None)
+
+    if not batches:
         return
-    usage['calls'] += 1
-    usage['tokens'] += reserved
+    usage['calls'] += len(batches)
+    usage['tokens'] += reserved * len(batches)
     save(ledger_path, ledger)
     save(BATCH, dict(task=task, date=day, now=now.isoformat(timespec='seconds'),
-                     reservation=reserved, unlimited=unlimited, candidates=candidates,
-                     existingResources=[{field: row[field] for field in ('id', 'name', 'site')}
-                                        for row in resource_context()
-                                        if any(row['site'] == item['url'] or
-                                               (row.get('repository') and row['repository'] == item.get('discovery', {}).get('upstream'))
-                                               for item in candidates.values())]
-                     if not resource_task and task not in ('daily', 'weekly') else []))
+                     reservation=reserved, unlimited=unlimited,
+                     enforce_cost_limit=bool(os.getenv('VENTURE_DAILY_COST_LIMIT')), batches=batches,
+                     candidates=batches[0]['candidates']))
 
 
 def config(smoke, instructions):
@@ -204,15 +227,36 @@ def invoke():
     smoke = batch['task'] == 'smoke-test'
     MODEL.mkdir(parents=True, exist_ok=True)
     started = time.monotonic()
-    receipt = {'provider': 'venture', 'status': 'failed', 'usage': None, 'billed_cost': None,
-               'estimated_cost': None, 'sessions': 1}
-    save(MODEL / 'receipt.json', receipt)
-    try:
-        run_model(batch, smoke, receipt)
-        receipt['status'] = 'success'
-    finally:
-        receipt['duration_seconds'] = round(time.monotonic() - started, 3)
-        save(MODEL / 'receipt.json', receipt)
+    receipts = []
+    responses = []
+    failure = None
+    for part in batch['batches']:
+        receipt = {'provider': 'venture', 'status': 'failed', 'usage': None, 'billed_cost': None,
+                   'estimated_cost': None, 'sessions': 0}
+        receipts.append(receipt)
+        try:
+            response = run_model({**batch, **part}, smoke, receipt)
+            responses.append(response)
+            receipt['status'] = 'success'
+        except (RuntimeError, OSError, ValueError) as error:
+            failure = error
+            print(f'Model batch {len(receipts)} failed: {error}', flush=True)
+            break
+        if time.monotonic() - started > EDIT_WINDOW - MODEL_TIMEOUT:
+            break
+    usage = None
+    charged = [row for row in receipts if row['sessions']]
+    if charged and all(row['usage'] is not None for row in charged):
+        fields = set.intersection(*(set(row['usage']) for row in charged))
+        usage = {field: sum(row['usage'][field] for row in charged) for field in fields}
+        print(f"Observed model tokens: {usage['input_tokens']} input, {usage['output_tokens']} output")
+    save(MODEL / 'receipt.json', {**receipts[0], 'usage': usage, 'sessions': len(charged),
+                                'status': 'partial' if failure and responses else receipts[-1]['status'],
+                                'duration_seconds': round(time.monotonic() - started, 3)})
+    if failure and not responses:
+        raise failure
+    if not smoke:
+        save(MODEL / 'response.json', responses)
 
 
 def run_model(batch, smoke, receipt):
@@ -251,7 +295,7 @@ def run_model(batch, smoke, receipt):
                               text=True, cwd=workspace, env=environment, start_new_session=True) as process:
             timed_out = False
             try:
-                events_text, errors = process.communicate(prompt, timeout=240)
+                events_text, errors = process.communicate(prompt, timeout=MODEL_TIMEOUT)
             except subprocess.TimeoutExpired:
                 timed_out = True
                 os.killpg(process.pid, signal.SIGKILL)
@@ -267,7 +311,7 @@ def run_model(batch, smoke, receipt):
         receipt['usage'] = usage
         if timed_out or process.returncode or not result.is_file() or usage is None:
             raise RuntimeError(f'Codex failed (exit={process.returncode}, timeout={timed_out})')
-        if not batch['unlimited'] and usage['input_tokens'] + usage['output_tokens'] > batch['reservation']:
+        if (not batch['unlimited'] or batch['enforce_cost_limit']) and usage['input_tokens'] + usage['output_tokens'] > batch['reservation']:
             raise RuntimeError('Codex exceeded the reserved token budget')
         if result.stat().st_size > 160_000:
             raise ValueError('Model result exceeds file size limit')
@@ -283,8 +327,7 @@ def run_model(batch, smoke, receipt):
                           for item in [event.get('item', {})])
             if not tool_ok or response != {'marker': SMOKE_MARKER}:
                 raise RuntimeError('Responses API smoke test did not complete the tool round trip')
-        else:
-            save(MODEL / 'response.json', response)
+        return response
 
 
 def smoke_tool():
@@ -320,14 +363,24 @@ def accept():
     batch = load(BATCH, {})
     model = WORK / 'result'
     result = model / 'response.json'
-    if not result.is_file() or result.is_symlink() or result.stat().st_size > 160_000:
+    if not result.is_file() or result.is_symlink() or result.stat().st_size > 200_000 * len(batch['batches']):
         raise ValueError('Missing or invalid model result')
-    response = load(result, {})
-    if batch['task'].startswith('resource-'):
-        count = resource_ingest.publish(response, batch['candidates'], batch['date'])
-        save(WORK / 'routes.json', [])
-        print(f'Resource batch wrote {count} entries')
-        return
+    results = load(result, [])
+    if type(results) is not list or not 0 < len(results) <= len(batch['batches']):
+        raise ValueError('Invalid batch results')
+    routes, counts = [], {'added': 0, 'updated': 0}
+    for part, response in zip(batch['batches'], results):
+        if batch['task'].startswith('resource-'):
+            stats = resource_ingest.publish(response, part['candidates'], batch['date'])
+            for key in counts:
+                counts[key] += stats[key]
+        else:
+            routes.extend(accept_articles({**batch, **part}, response))
+    save(WORK / 'routes.json', routes)
+    save(WORK / 'resources-published.json', counts)
+
+
+def accept_articles(batch, response):
     if type(response) is not dict or set(response) != {'articles', 'skipped'}:
         raise ValueError('Invalid editorial response')
     if type(response['articles']) is not list or not string_list(response['skipped'], len(batch['candidates']), 64):
@@ -363,7 +416,7 @@ def accept():
     save(ITEMS, items)
     routes = [f"{article['collection']}/{article['slug']}/" for article in articles
               if article != before.get((article['collection'], article['slug']))]
-    save(WORK / 'routes.json', routes)
+    return routes
 
 
 def string_list(value, count, length):

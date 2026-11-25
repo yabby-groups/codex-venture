@@ -1,4 +1,7 @@
 """Discover and edit independent resources using the existing hosted trust boundary."""
+from collections import Counter
+from datetime import date, timedelta
+from itertools import zip_longest
 import http.client
 import json
 import re
@@ -113,9 +116,42 @@ FEEDS = {
 }
 
 
+OFFICIAL_DOCUMENTS = {
+    'tools': {
+        'Google AI Studio': 'https://ai.google.dev/gemini-api/docs/ai-studio-quickstart',
+        'Perplexity': 'https://www.perplexity.ai/help-center/en/',
+        'ElevenLabs': 'https://elevenlabs.io/docs/overview/intro',
+        'NotebookLM': 'https://support.google.com/notebooklm/',
+    },
+    'resources': {
+        'Hugging Face LLM Course': 'https://huggingface.co/learn/llm-course/chapter1/1',
+        'Agent Skills Specification': 'https://agentskills.io/specification',
+        'OpenAI Cookbook': 'https://cookbook.openai.com/',
+        'MCP Architecture': 'https://modelcontextprotocol.io/docs/learn/architecture',
+    },
+    'prompts': {
+        'Gemini Prompt Design Strategies': 'https://ai.google.dev/gemini-api/docs/prompting-strategies',
+    },
+    'workflows': {
+        'GitHub Actions Workflow Syntax': 'https://docs.github.com/en/actions/writing-workflows/workflow-syntax-for-github-actions',
+    },
+}
+
+
+def official_rows(kind):
+    for name, url in OFFICIAL_DOCUMENTS.get(kind, {}).items():
+        row = candidate(kind, 'url:' + canonical(url), name, url, name, url)
+        row['metadataUrl'] = url
+        yield row
+
+
 def discover(queue, kind, day, refresh=False):
     tasks = [(name, feed) for name in TYPES if kind in ('all', name)
              for feed in (SKILL_REPOS if name == 'skills' else FEEDS[name])]
+    for name in TYPES if kind == 'all' else (kind,):
+        for row in official_rows(name):
+            enqueue(queue, row, day)
+    save(STATE, queue)
     deadline = time.monotonic() + 85
     feeds = queue.setdefault('feeds', {})
     for name, feed in sorted(tasks, key=lambda task: feeds.get(':'.join(task), {}).get('attempt', 0)):
@@ -146,7 +182,6 @@ def discover(queue, kind, day, refresh=False):
                     enqueue(queue, row, day)
             state['cursor'] = next_cursor
             if next_cursor is None:
-                from datetime import date, timedelta
                 state['complete'] = (date.fromisoformat(day) + timedelta(days=7)).isoformat()
         except (OSError, ValueError, KeyError, http.client.HTTPException) as error:
             print(f'{name}/{feed}: {type(error).__name__}: {error}', flush=True)
@@ -164,6 +199,8 @@ def enqueue(queue, row, day):
     if old.get('signature') == signature:
         return
     row['signature'] = signature
+    row['verificationSources'] = sorted(set(row['verificationSources']) |
+                                        set(old.get('verificationSources', [])))
     row['firstDiscoveredAt'] = old.get('firstDiscoveredAt', day)
     rows[key] = row
 
@@ -179,7 +216,7 @@ def find_existing(row, existing):
     return None
 
 
-def prepare(task, kind, day):
+def prepare(task, kind, day, capacity=12):
     if kind not in ('all', *TYPES):
         raise ValueError('Unknown resource type')
     queue = load(STATE, {})
@@ -190,12 +227,15 @@ def prepare(task, kind, day):
     deadline = time.monotonic() + 65
     existing = resource_context()
     candidates = {}
+    pending = {name: [] for name in TYPES}
     for key, row in sorted(queue.get('rows', {}).items(), key=lambda pair: (
             pair[1].get('attempt', 0), pair[1]['firstDiscoveredAt'], pair[0])):
-        if len(candidates) >= 12 or time.monotonic() >= deadline:
+        if not row.get('done') and kind in ('all', row['type']):
+            pending[row['type']].append((key, row))
+    for entry in (entry for group in zip_longest(*pending.values()) for entry in group if entry):
+        key, row = entry
+        if len(candidates) >= capacity or time.monotonic() >= deadline:
             break
-        if row.get('done') or kind not in ('all', row['type']):
-            continue
         old = find_existing(row, existing)
         if old and not old.get('identity') and row['type'] == 'skills':
             row['done'] = 'already-published'
@@ -209,7 +249,7 @@ def prepare(task, kind, day):
                 elif row.get('repository'):
                     url = row['metadataUrl'] + '/readme'
                 if url:
-                    evidence = document(url, plain=True, accept='application/vnd.github.raw+json'
+                    evidence = document(url, plain=row['type'] in ('models', 'plugins') or bool(row.get('repository')), accept='application/vnd.github.raw+json'
                                         if row.get('repository') else None)
                     if row['type'] == 'plugins':
                         details = json.loads(evidence)
@@ -217,7 +257,7 @@ def prepare(task, kind, day):
                         if isinstance(license_id, str):
                             row['license'] = license_id
                     row['evidence'] = record(url, 'Publisher documentation', evidence)['excerpt']
-                    row['verificationSources'] = [url]
+                    row['verificationSources'] = [canonical(url)]
                 else:
                     details = json.loads(document(row['site']))
                     row['evidence'] = json.dumps(details, ensure_ascii=False)[:1900]
@@ -238,6 +278,7 @@ def publish(response, candidates, day):
     queue = load(STATE, {})
     existing = resource_context()
     writes = {}
+    counts = {'added': 0, 'updated': 0}
     for edit in response['resources']:
         key = edit['key']
         source = candidates[key]
@@ -259,6 +300,7 @@ def publish(response, candidates, day):
         if old:
             row['updatedAt'] = day
         path = DIRECTORY / f'{resource_id}.json'
+        counts['updated' if old else 'added'] += 1
         writes[path] = row
         existing.append(row)
     for path, row in writes.items():
@@ -266,4 +308,20 @@ def publish(response, candidates, day):
     for key in selected:
         queue['rows'][key]['done'] = 'published' if key not in response['skipped'] else 'declined'
     save(STATE, queue)
-    return len(writes)
+    return counts
+
+
+def statistics(day):
+    rows = resource_context()
+    queue = load(STATE, {}).get('rows', {})
+    pending = [row for row in queue.values() if not row.get('done')]
+    return dict(
+        total=len(rows),
+        by_type=dict(Counter(row['type'] for row in rows)),
+        added_today=sum(row['addedAt'] == day for row in rows),
+        updated_today=sum(row.get('updatedAt') == day for row in rows),
+        queued=len(pending),
+        awaiting_evidence=sum(not row.get('evidence') for row in pending),
+        awaiting_editor=sum(bool(row.get('evidence')) for row in pending),
+        duplicate_matches=sum(row.get('done') == 'already-published' for row in queue.values()),
+    )
