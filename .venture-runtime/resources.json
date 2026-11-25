@@ -318,6 +318,7 @@
     "000090208c04e5c385a50e5cd1b0070f74abd6c274863d5bc42be4245f3e7009": {
       "attempt": 1795607807.608512,
       "description": "Domain WHOIS/RDAP/DNS/SSL, Shodan ports/CVEs, OpenAlex/arXiv papers & ClinicalTrials.gov MCP.",
+      "done": "published",
       "evidence": "Domain WHOIS/RDAP/DNS/SSL, Shodan ports/CVEs, OpenAlex/arXiv papers & ClinicalTrials.gov MCP.",
       "firstDiscoveredAt": "2026-11-25",
       "identity": "mcp:ai.agentapihub/sec-edgar-crypto-real-estate-pinterest-mcp",
@@ -354,6 +355,7 @@
     "009d049d94c8b891efdc4af97c59e0fd771b3efa5e7ee447fb0463532d00d7b4": {
       "attempt": 1795607807.6089473,
       "description": "Hugging Face model listing for unsloth/Qwen3-4B-GGUF. Pipeline: text-generation.",
+      "done": "published",
       "evidence": "---\nbase_model: Qwen/Qwen3-4B\nlanguage:\n- en\nlibrary_name: transformers\nlicense_link: https://huggingface.co/Qwen/Qwen3-4B/blob/main/LICENSE\nlicense: apache-2.0\ntags:\n- qwen3\n- qwen\n### Advanced Usage: Switching Between Thinking and Non-Thinking Modes via User Input\nWe provide a soft switch mechanism that allows users to dynamically control the model's behavior when `enable_thinking=True`. Specifically, you can add `/think` and `/no_think` to user prompts or system messages to switch the model's thinking mode from turn to turn. The model will follow the most recent instruction in multi-turn conversations.\nHere is an example of a multi-turn conversation:\n```python\n# Example Usage\nif __name__ == \"__main__\":\nchatbot = QwenChatbot()\n# First input (without /think or /no_think tags, thinking mode is enabled by default)\n# Use a custom endpoint compatible with OpenAI API:\n'model_server': 'http://localhost:8000/v1',  # api_base\n'api_key': 'EMPTY',\n# Other parameters:",
       "firstDiscoveredAt": "2026-11-25",
       "identity": "hf:unsloth/qwen3-4b-gguf",
@@ -373,6 +375,7 @@
     "00a1735f66707331dd8593905db2107baf92df2c0f29bf97d7125322c7641bbc": {
       "attempt": 1795607809.597652,
       "description": "Hugging Face model listing for nvidia/nemotron-speech-streaming-en-0.6b. Pipeline: automatic-speech-recognition.",
+      "done": "published",
       "evidence": "---\nlicense: other\nlicense_name: nvidia-open-model-license\nlicense_link: >-\nhttps://www.nvidia.com/en-us/agreements/enterprise-software/nvidia-open-model-license/\nlibrary_name: nemo\ndatasets:\n- nvidia/Granary\n- YTC\n- Yodas2\n## License/Terms of Use:\nGoverning Terms: Use of the model is governed by the [NVIDIA Open Model License Agreement](https://www.nvidia.com/en-us/agreements/enterprise-software/nvidia-open-model-license/).\n## Deployment Geography:\nGlobal <br>\n## Access Model Inference and Examples:\n* [NVIDIA NIM](https://build.nvidia.com/nvidia/nemotron-asr-streaming)\n* Deploy the Nemotron Speech ASR endpoint on [Modal](https://github.com/modal-projects/modal-nvidia-asr)\n* Build local voice agent using [Daily’s framework](https://github.com/pipecat-ai/nemotron-january-2026)\n# Path to the cache aware config file downloaded from above link\ncfg_path = 'cache_aware_rnnt.yaml'\ncfg = OmegaConf.load(cfg_path)\n# Pass the paths of all the audio files for inferencing\n#### Setting up Streaming Configuration\nLatency is defined by the `att_context_size` param, where  att_context_size = `{num_frames_left_context, num_frame_right_context}`, all measured in **80ms frames**:\n* [70, 0]: Chunk size = 1 (1 × 80ms = 0.08s)\n* [70, 1]: Chunk size = 2 (2 × 80ms = 0.16s)\n### 🤗 Transformers usage\nThis checkpoint also runs with [🤗 Transformers](https://github.com/huggingface/transformers).\nNemotron ASR Streaming is available in 🤗 Transformers starting from v5.13.0.\n```bash\n## Try via API — No Setup Required\nTranscribe audio using the hosted NVIDIA NIM API on [build.nvidia.com](https://build.nvidia.com/nvidia/nemotron-asr-streaming) — no local GPU, Docker, or model download required.\n**1. Get a free API key:** Open [Nemotron ASR Streaming](https://build.nvidia.com/nvidia/nemotron-asr-streaming) and choose **Get API Key**.\n**2. Install the Riva client:**",
       "firstDiscoveredAt": "2026-11-25",
       "identity": "hf:nvidia/nemotron-speech-streaming-en-0.6b",
@@ -573,6 +576,7 @@
     "031f92347c00ddce46d603668880261e8c2b0b294864a858e665d5dd16626235": {
       "attempt": 1795607809.5971525,
       "description": "Global customs bill of lading shipments, HS code, importer/exporter & supplier trade data MCP API.",
+      "done": "published",
       "evidence": "Global customs bill of lading shipments, HS code, importer/exporter & supplier trade data MCP API.",
       "firstDiscoveredAt": "2026-11-25",
       "identity": "mcp:ai.agentapihub/customs-bill-of-lading-import-export-trade-mcp",
@@ -631,6 +635,7 @@
     "035ef02a79f2a0d4a36e5565272564e76d371a3967309b4a74123c0416aa4c95": {
       "attempt": 1795607809.9728742,
       "description": "Hugging Face model listing for DavidAU/Qwen3.8-27B-Cold-Fusion-GAIN-V1.1-NM-DAU-NEO-MAX-MTP-GGUF. Pipeline: image-text-to-text.",
+      "done": "published",
       "evidence": "---\nlanguage:\n- ar\n- zh\n- en\n- fr\n- de\n- hi\n- id\n- it\n## Benchmark Results\n### Text Performance\n<style>\n.vl-table th{font-size:15px!important;line-height:1.2}\n### API Usage\n> [!Important]\n> Qwen3.8 models operate in thinking mode by default, generating thinking content signified by `<think>\\n...</think>\\n\\n` before producing the final response.\n> To disable thinking content and obtain a direct response, refer to the examples [here](#instruct-or-non-thinking-mode).\n# Configured by environment variables\nclient = OpenAI()\nmessages = [{\"role\": \"user\", \"content\": \"Write a Python function to merge two sorted linked lists.\"}]\ncompletion = client.chat.completions.create(\nmessages = [\n{\n# video frame sampling can be configured via `extra_body` (e.g., by setting `fps`).\n# This feature is currently supported only in vLLM.\n#\n# By default, `fps=2` and `do_sample_frames=True`.\nmessages = [...]\nchat_response = client.chat.completions.create(",
       "firstDiscoveredAt": "2026-11-25",
       "identity": "hf:davidau/qwen3.8-27b-cold-fusion-gain-v1.1-nm-dau-neo-max-mtp-gguf",
@@ -688,6 +693,7 @@
     "037e20953104f15f0c3a0b5eed30dd97ee7fe93a8520dac1c24fcb3b977aa1f1": {
       "attempt": 1795607810.3647158,
       "description": "Hugging Face model listing for cstr/qwen3-tts-1.7b-customvoice-GGUF. Pipeline: text-to-speech.",
+      "done": "published",
       "evidence": "---\nlicense: apache-2.0\nlanguage:\n- en\n- zh\n- de\n- fr\n- it\n- es\n- pt\n## License\nApache 2.0 — both the upstream talker and codec, and the GGUF conversion.\n## Provenance and EU AI Act Art. 53 note\n- **Upstream model:** [Qwen/Qwen3-TTS-12Hz-1.7B-CustomVoice](https://huggingface.co/Qwen/Qwen3-TTS-12Hz-1.7B-CustomVoice) — published by `Qwen`.",
       "firstDiscoveredAt": "2026-11-25",
       "identity": "hf:cstr/qwen3-tts-1.7b-customvoice-gguf",
@@ -725,6 +731,7 @@
     "03dbe98b421f34e0efe72966751fd6c0d3830deae83af3c9e6ec6a2fabed61b4": {
       "attempt": 1795607810.7436483,
       "description": "Hugging Face model listing for zjwfufu/SMD-TRELLIS.2. Pipeline: image-to-3d.",
+      "done": "published",
       "evidence": "---\nlanguage:\n- en\ntags:\n- smd\n- diffusion-distillation\n- few-step\n- lora\n- 3d-generation\n- mesh-generation\n## Example\n### Red panda explorer\nThe shape and texture students each use four steps. Geometry previews are rendered from the exported GLB with a neutral material and soft studio lighting. The textured turntable uses the GLB base-color texture under three diffuse lights on a pale background.\n| Input image | Geometry only | Textured turntable |\n## License and attribution\nBase components retain the terms described in the [microsoft/TRELLIS.2-4B model card](https://huggingface.co/microsoft/TRELLIS.2-4B). Original code notices and bundled licenses are retained. Adapter use remains subject to the applicable base-model terms.\nThe example input was generated with [SMD-FLUX.2-Klein-4B](https://huggingface.co/zjwfufu/SMD-FLUX.2-Klein-4B) and given an alpha mask before reconstruction.",
       "firstDiscoveredAt": "2026-11-25",
       "identity": "hf:zjwfufu/smd-trellis.2",
@@ -785,6 +792,7 @@
     "04752fa3e0915c02b49ff11e2b94ef5911c1d60f41ef2531c8e05061a0a688e3": {
       "attempt": 1795607807.6080835,
       "description": "DMP starter",
+      "done": "declined",
       "evidence": "DMP starter",
       "firstDiscoveredAt": "2026-11-25",
       "identity": "openvsx:qwer5230.sunmi-fe-assistant",
@@ -882,6 +890,7 @@
     "050ee268ea248852bb2fb6cca24452378b995a61c4d4b38628a66971411e6c70": {
       "attempt": 1795607811.122356,
       "description": "Hugging Face model listing for Comfy-Org/Chroma1-HD. Pipeline: text-to-image.",
+      "done": "published",
       "evidence": "---\nlicense: apache-2.0\ntags:\n- comfyui\n- diffusion-single-file\nbase_model:\n- lodestones/Chroma1-HD\n- silveroxides/Chroma1-HD-fp8-scaled\npipeline_tag: text-to-image",
       "firstDiscoveredAt": "2026-11-25",
       "identity": "hf:comfy-org/chroma1-hd",
@@ -991,6 +1000,7 @@
     "05858d8a939db2c1919c37b641eccd7f15d5958df8433a448c0927da65bf070c": {
       "attempt": 1795607809.5967395,
       "description": "Ricochet is the first hybrid coding agent that lives in your IDE and your pocket. Code autonomously with a powerful VS Code assistant, then switch to Ether Mode to control your development environment remotely via messenger. Build, debug, and deploy from anywhere.",
+      "done": "published",
       "evidence": "Ricochet is the first hybrid coding agent that lives in your IDE and your pocket. Code autonomously with a powerful VS Code assistant, then switch to Ether Mode to control your development environment remotely via messenger. Build, debug, and deploy from anywhere.",
       "firstDiscoveredAt": "2026-11-25",
       "identity": "openvsx:grik.ricochet",
@@ -1154,6 +1164,7 @@
     "075b437e0282630f76fc55d57e63151ba933bfe09dff8f7ef19e2dcca06e012c": {
       "attempt": 1795607809.972435,
       "description": "Telegram channel messages, Discord server stats, Twitch, Kick, Medium & Pinterest scraper MCP API.",
+      "done": "published",
       "evidence": "Telegram channel messages, Discord server stats, Twitch, Kick, Medium & Pinterest scraper MCP API.",
       "firstDiscoveredAt": "2026-11-25",
       "identity": "mcp:ai.agentapihub/telegram-discord-twitch-kick-medium-pinterest-mcp",
@@ -1252,6 +1263,7 @@
     "07c994d46e1ea1fb9256f11d67f0d46ec67c190a7c9176cbf8e9b80aba610971": {
       "attempt": 1795607809.9719985,
       "description": "Sign in with Grok (Beta) Use an eligible Grok subscription (plans that include Grok CLI / API access) for chat and full Agentic mode in the editor, without buying...",
+      "done": "published",
       "evidence": "Sign in with Grok (Beta) Use an eligible Grok subscription (plans that include Grok CLI / API access) for chat and full Agentic mode in the editor, without buying...",
       "firstDiscoveredAt": "2026-11-25",
       "identity": "jetbrains:29268",
@@ -1270,6 +1282,7 @@
     "07cc3b213c6c206b09d07fdeff1fcc6072ecc2cc02396e12a891ca001027c406": {
       "attempt": 1795607810.363838,
       "description": "CodeGeeX is an AI-based coding assistant. It is powered by a large-scale multilingual code generation model, lots of features including generates and completes code...",
+      "done": "published",
       "evidence": "CodeGeeX is an AI-based coding assistant. It is powered by a large-scale multilingual code generation model, lots of features including generates and completes code...",
       "firstDiscoveredAt": "2026-11-25",
       "identity": "jetbrains:20587",
@@ -1962,6 +1975,7 @@
     "0d7279862ab9cdadd7c4ac98283a805a13f509a0a0f0c789bb07d55e7581ee1c": {
       "attempt": 1795607810.7427819,
       "description": "A dual-engine browser for VS Code sidebar, with built-in MCP server for external AI agents (Cursor, Claude Desktop, Windsurf).",
+      "done": "published",
       "evidence": "A dual-engine browser for VS Code sidebar, with built-in MCP server for external AI agents (Cursor, Claude Desktop, Windsurf).",
       "firstDiscoveredAt": "2026-11-25",
       "identity": "openvsx:cmr5hp4pp7-hub.ide-play-browser",
@@ -2143,6 +2157,7 @@
     "0e6213df13fdf6dad3fae1723ec4cec75f5d070ed745102c990eae3f54d1f230": {
       "attempt": 1795607811.1214676,
       "description": "Auto-Yes cho Claude Code + hiện Live Usage (5h/7d/context%) trên status bar. Cục bộ, không cần backend.",
+      "done": "declined",
       "evidence": "Auto-Yes cho Claude Code + hiện Live Usage (5h/7d/context%) trên status bar. Cục bộ, không cần backend.",
       "firstDiscoveredAt": "2026-11-25",
       "identity": "openvsx:shiroenguyen.claude-auto-yes",
@@ -2722,6 +2737,7 @@
     "129f162c2163b68b40abb21df16b360aba4e2706c22e31d0beb7bcdc23445203": {
       "attempt": 1795607810.3642573,
       "description": "Scheduled, HMAC-signed, retried webhook triggers for AI agents. No account: self-register via tools.",
+      "done": "published",
       "evidence": "Scheduled, HMAC-signed, retried webhook triggers for AI agents. No account: self-register via tools.",
       "firstDiscoveredAt": "2026-11-25",
       "identity": "mcp:ai.agentasy/cronjob",
@@ -2979,6 +2995,7 @@
     "14bf7f71083305d79bf4cf02ed1dccd0a7301bae2e03e398b8a91bf20281b910": {
       "attempt": 1795607810.743196,
       "description": "Zero-signup x402 Base USDC & API-key MCP hub for Search, X, Video, Commerce, Jobs & SEC EDGAR.",
+      "done": "published",
       "evidence": "Zero-signup x402 Base USDC & API-key MCP hub for Search, X, Video, Commerce, Jobs & SEC EDGAR.",
       "firstDiscoveredAt": "2026-11-25",
       "identity": "mcp:ai.agentapihub/youtube-transcript-video-subtitles-search-mcp",
@@ -4053,6 +4070,7 @@
     "1deff62e329303815747cdf3833d67a9be362b4b204beba43c86f11e1a2f88e6": {
       "attempt": 1795607811.1218936,
       "description": "Threads, Instagram reels & profiles, Truth Social posts & LinkedIn company/profile scraper MCP API.",
+      "done": "published",
       "evidence": "Threads, Instagram reels & profiles, Truth Social posts & LinkedIn company/profile scraper MCP API.",
       "firstDiscoveredAt": "2026-11-25",
       "identity": "mcp:ai.agentapihub/threads-instagram-truthsocial-linkedin-posts-mcp",
@@ -17812,6 +17830,7 @@
     "92ccd067e9965f627cf63b7ac79efe76cceaaa615e24f85550d5c7ef76778dbd": {
       "attempt": 1795607807.6086745,
       "description": "《深入理解 AI Agent：设计原理与工程实践》（李博杰 著）开源主仓库：全书正文、编译版 PDF 与按章配套代码",
+      "done": "published",
       "evidence": "《深入理解 AI Agent：设计原理与工程实践》（李博杰 著）开源主仓库：全书正文、编译版 PDF 与按章配套代码",
       "firstDiscoveredAt": "2026-11-25",
       "identity": "github:1053118194",
@@ -18079,6 +18098,7 @@
     "94159ff7c5c5b06d7448bf47a9a82bb6560be64ac7e133cf2db560e5289beea1": {
       "attempt": 1795607809.5973542,
       "description": "Codex plugin for OpenPencil — an interactive Rust/WASM canvas for AI-assisted UI design. Create editable .op files from prompts, refine selected elements, generate image assets, and install with one prompt on macOS, Windows, and Linux.",
+      "done": "published",
       "evidence": "Codex plugin for OpenPencil — an interactive Rust/WASM canvas for AI-assisted UI design. Create editable .op files from prompts, refine selected elements, generate image assets, and install with one prompt on macOS, Windows, and Linux.",
       "firstDiscoveredAt": "2026-11-25",
       "identity": "github:1418521605",
@@ -18209,6 +18229,7 @@
     "951151b066f9ae36dba0ab9cff743364654372fede707fb3280c137aa59f15ab": {
       "attempt": 1795607809.9725964,
       "description": "MCP server for reusable prompt templates, multi-step workflow chains, and quality gates. Compose agentic workflows with an operator syntax; export as native skills to Claude Code, Cursor, OpenCode, and Gemini CLI.",
+      "done": "published",
       "evidence": "MCP server for reusable prompt templates, multi-step workflow chains, and quality gates. Compose agentic workflows with an operator syntax; export as native skills to Claude Code, Cursor, OpenCode, and Gemini CLI.",
       "firstDiscoveredAt": "2026-11-25",
       "identity": "github:941652610",
@@ -18355,6 +18376,7 @@
     "95e9f0a04b2f7bbc3e349b4b1912263dcbbe3dae1ffb3b1670dfce9b9e7f0116": {
       "attempt": 1795607810.3644218,
       "description": "3,000+ reusable AI agent skills for Claude Code, Codex, Cursor and Gemini CLI. AAS Core adds local catalog discovery, agent-owned selection and plan preview. CLI, MCP and plugins.",
+      "done": "published",
       "evidence": "3,000+ reusable AI agent skills for Claude Code, Codex, Cursor and Gemini CLI. AAS Core adds local catalog discovery, agent-owned selection and plan preview. CLI, MCP and plugins.",
       "firstDiscoveredAt": "2026-11-25",
       "identity": "github:1134426800",
@@ -18454,6 +18476,7 @@
     "96ae17289c78ad8e42f44c878793b0ce4db9326b0f2b87b934e6633915894fa2": {
       "attempt": 1795607810.7433724,
       "description": "No-code web scraper built with n8n and ScrapingBee for AI-powered data extraction and automated web scraping workflows without writing code.",
+      "done": "published",
       "evidence": "No-code web scraper built with n8n and ScrapingBee for AI-powered data extraction and automated web scraping workflows without writing code.",
       "firstDiscoveredAt": "2026-11-25",
       "identity": "github:1179882825",
@@ -18699,6 +18722,7 @@
     "99a33bcd5fadd80f26a2d84c74b6c19fc4cd3e8f8055dc142bc8d7fd4c0e56b5": {
       "attempt": 1795607811.1220584,
       "description": "Build your own network of agents from Claude Code, Codex and Pi: persistent teams with roles, shared context and owned work.",
+      "done": "published",
       "evidence": "Build your own network of agents from Claude Code, Codex and Pi: persistent teams with roles, shared context and owned work.",
       "firstDiscoveredAt": "2026-11-25",
       "identity": "github:1198124295",
@@ -24043,6 +24067,7 @@
     "c56a5ea07ef9b5182fea74a1783485e7134abe5c62736102f1712e85b93f66ae": {
       "attempt": 1795607807.6079125,
       "description": "Create beautiful visual art in .png and .pdf documents using design philosophy. You should use this skill when the user asks to create a poster, piece of art, design, or other static piece. Create original visual designs, never copying existing artists' work to avoid copyright violations.",
+      "done": "published",
       "evidence": "---\nname: canvas-design\ndescription: Create beautiful visual art in .png and .pdf documents using design philosophy. You should use this skill when the user asks to create a poster, piece of art, design, or other static piece. Create original visual designs, never copying existing artists' work to avoid copyright violations.\nlicense: Complete terms in LICENSE.txt\nThese are instructions for creating design philosophies - aesthetic movements that are then EXPRESSED VISUALLY. Output only .md files, .pdf files, and .png files.\nComplete this in two steps:\n1. Design Philosophy Creation (.md file)\n2. Express by creating it on a canvas (.pdf file or .png file)\nFirst, undertake this task:\n### PHILOSOPHY EXAMPLES\n**\"Concrete Poetry\"**\nPhilosophy: Communication through monumental form and bold geometry.\nVisual expression: Massive color blocks, sculptural typography (huge single words, tiny labels), Brutalist spatial divisions, Polish poster energy meets Le Corbusier. Ideas expressed through visual weight and spatial tension, not explanation. Text as rare, powerful gesture - never paragraphs, only essential words integrated into the visual architecture. Every element placed with the precision of a master craftsman.",
       "firstDiscoveredAt": "2026-11-25",
       "identity": "github-skill:1061953414:skills/canvas-design/SKILL.md",
@@ -24278,6 +24303,7 @@
     "c74bbe3443c52bf75e70ffeea1d0df8d06408dc2e3a689c77a2b62c28114f014": {
       "attempt": 1795607809.5965655,
       "description": "Use this skill for Hugging Face Dataset Viewer API workflows that fetch subset/split metadata, paginate rows, search text, apply filters, download parquet URLs, and read size or statistics.",
+      "done": "published",
       "evidence": "---\nname: huggingface-datasets\ndescription: Use this skill for Hugging Face Dataset Viewer API workflows that fetch subset/split metadata, paginate rows, search text, apply filters, download parquet URLs, and read size or statistics.\n# Hugging Face Dataset Viewer\nUse this skill to execute read-only Dataset Viewer API calls for dataset exploration and extraction.\n## Core workflow\n1. Optionally validate dataset availability with `/is-valid`.\n2. Resolve `config` + `split` with `/splits`.\n3. Preview with `/first-rows`.",
       "firstDiscoveredAt": "2026-11-25",
       "identity": "github-skill:1102903896:skills/huggingface-datasets/SKILL.md",
@@ -24552,6 +24578,7 @@
     "c8d6cdeb15345ae9fbe36a5fe19bfec5ecb3b696a0cc59cfc37e37991f9cb850": {
       "attempt": 1795607809.9718292,
       "description": "Use to select models to run locally with llama.cpp and GGUF on CPU, Mac Metal, CUDA, or ROCm. Covers finding GGUFs, quant selection, running servers, exact GGUF file lookup, conversion, and OpenAI-compatible local serving.",
+      "done": "published",
       "evidence": "---\nname: huggingface-local-models\ndescription: \"Use to select models to run locally with llama.cpp and GGUF on CPU, Mac Metal, CUDA, or ROCm. Covers finding GGUFs, quant selection, running servers, exact GGUF file lookup, conversion, and OpenAI-compatible local serving.\"\n# Hugging Face Local Models\nSearch the Hugging Face Hub for llama.cpp-compatible GGUF repos, choose the right quant, and launch the model with `llama-cli` or `llama-server`.\n## Default Workflow\n1. Search the Hub with `apps=llama.cpp`.\n2. Open `https://huggingface.co/<repo>?local-app=llama.cpp`.\n3. Prefer the exact HF local-app snippet and quant recommendation when it is visible.\n### Install llama.cpp\n```bash\nbrew install llama.cpp\nwinget install llama.cpp",
       "firstDiscoveredAt": "2026-11-25",
       "identity": "github-skill:1102903896:skills/huggingface-local-models/SKILL.md",
@@ -25077,6 +25104,7 @@
     "cd9a17b22f88a291f8e6c059ad9ad1a165c5d62cae9fd7c80c4ed1b402eadf61": {
       "attempt": 1795607810.363674,
       "description": "Use when the user asks how to build with OpenAI products or APIs, asks about Codex itself or choosing Codex surfaces, needs up-to-date official documentation with citations, help choosing the latest model for a use case, or model upgrade and prompt-upgrade guidance; use OpenAI docs MCP tools for non-Codex docs questions, use the Codex manual helper first for broad Codex self-knowledge, and restrict fallback browsing to official OpenAI domains.",
+      "done": "published",
       "evidence": "---\nname: \"openai-docs\"\ndescription: \"Use when the user asks how to build with OpenAI products or APIs, asks about Codex itself or choosing Codex surfaces, needs up-to-date official documentation with citations, help choosing the latest model for a use case, or model upgrade and prompt-upgrade guidance; use OpenAI docs MCP tools for non-Codex docs questions, use the Codex manual helper first for broad Codex self-knowledge, and restrict fallback browsing to official OpenAI domains.\"\n# OpenAI Docs\nProvide authoritative, current guidance from OpenAI developer docs using the developers.openai.com MCP server. \"Docs MCP\" means `mcp__openaiDeveloperDocs__search_openai_docs` and `mcp__openaiDeveloperDocs__fetch_openai_doc`; for API reference, schema, parameter, or required-field questions, also use `mcp__openaiDeveloperDocs__get_openapi_spec` when available. Official-domain web search is fallback after those tools are unavailable or unhelpful. Broad Codex questions use the manual helper before Docs MCP. This skill also owns model selection, API model migration, and prompt-upgrade guidance.\n## API Key Setup\nFor requests to build, run, configure, debug, or implement an API-backed app, script, CLI, generator, or tool, use `openai-platform-api-key` first when available. After that credential gate is resolved, return here for current docs as needed.\nUse this skill directly for docs-only questions, citations, model/API guidance, conceptual explanations, and examples that do not require building or running an API-backed artifact.\n## Workflow Configuration\n### Source Priority\n- For Codex self-knowledge, use the Codex source route below; it owns when to use the manual helper, Docs MCP, or bounded uncertainty.\n- For non-Codex OpenAI docs questions, use `mcp__openaiDeveloperDocs__search_openai_docs` to find the most relevant doc pages.",
       "firstDiscoveredAt": "2026-11-25",
       "identity": "github-skill:1103643573:skills/.system/openai-docs/SKILL.md",
@@ -25116,6 +25144,7 @@
     "cdca1479ce92a53aa7d725fc5d8eba8718a47203d709a3eb91eef9714d2fe62e": {
       "attempt": 1795607810.7426183,
       "description": "Train or fine-tune language and vision models using TRL (Transformer Reinforcement Learning) or Unsloth with Hugging Face Jobs infrastructure. Covers SFT, DPO, GRPO and reward modeling training methods, plus GGUF conversion for local deployment. Includes guidance on the TRL Jobs package, UV scripts with PEP 723 format, dataset preparation and validation, hardware selection, cost estimation, Trackio monitoring, Hub authentication, model selection/leaderboards and model persistence. Use for tasks involving cloud GPU training, GGUF conversion, or when users mention training on Hugging Face Jobs without local GPU setup.",
+      "done": "published",
       "evidence": "---\nname: huggingface-llm-trainer\ndescription: Train or fine-tune language and vision models using TRL (Transformer Reinforcement Learning) or Unsloth with Hugging Face Jobs infrastructure. Covers SFT, DPO, GRPO and reward modeling training methods, plus GGUF conversion for local deployment. Includes guidance on the TRL Jobs package, UV scripts with PEP 723 format, dataset preparation and validation, hardware selection, cost estimation, Trackio monitoring, Hub authentication, model selection/leaderboards and model persistence. Use for tasks involving cloud GPU training, GGUF conversion, or when users mention training on Hugging Face Jobs without local GPU setup.\nlicense: Complete terms in LICENSE.txt\n# TRL Training on Hugging Face Jobs\n## Overview\nTrain language models using TRL (Transformer Reinforcement Learning) on fully managed Hugging Face infrastructure. No local GPU setup required—models train on cloud GPUs and results are automatically saved to the Hugging Face Hub.\n**TRL provides multiple training methods:**\n- **SFT** (Supervised Fine-Tuning) - Standard instruction tuning\n### ✅ **Dataset Requirements**\n- Dataset must exist on Hub or be loadable via `datasets.load_dataset()`\n- Format must match training method (SFT: \"messages\"/text/prompt-completion; DPO: chosen/rejected; GRPO: prompt-only)\n- **ALWAYS validate unknown datasets** before GPU training to prevent format failures (see Dataset Validation section below)\n### Action Required\n**When user requests training:**\n1. **Create the training script** with Trackio included (use `scripts/train_sft_example.py` as template)\n2. **Submit immediately** using `hf_jobs()` MCP tool with script content inline - don't save to file unless user requests\n### Sequence Length Configuration\n**TRL config classes use `max_length` (not `max_seq_length`)** to control tokenized sequence length:\n```python\n# ✅ CORRECT - If you need to s",
       "firstDiscoveredAt": "2026-11-25",
       "identity": "github-skill:1102903896:skills/huggingface-llm-trainer/SKILL.md",
@@ -25299,6 +25328,7 @@
     "cf6141eea4d9b70cf4b77ec73bddfcbb9991798a23368cd3f1349f8c77e1e1bf": {
       "attempt": 1795607811.1212862,
       "description": "Create, repair, validate, visually QA, and package Codex-compatible animated pets and pet spritesheets from character art, generated images, company or prospect brand cues, or visual references. Use when a user wants a lightweight-worker Codex pet workflow, a non-pixel custom pet style, a prospect or company mascot pet, or a full 8x9 animated pet atlas with transparent unused cells, QA contact sheets, and pet.json packaging. This skill composes the installed $imagegen system skill for visual generation and uses bundled scripts for deterministic spritesheet assembly.",
+      "done": "published",
       "evidence": "---\nname: hatch-pet\ndescription: Create, repair, validate, visually QA, and package Codex-compatible animated pets and pet spritesheets from character art, generated images, company or prospect brand cues, or visual references. Use when a user wants a lightweight-worker Codex pet workflow, a non-pixel custom pet style, a prospect or company mascot pet, or a full 8x9 animated pet atlas with transparent unused cells, QA contact sheets, and pet.json packaging. This skill composes the installed $imagegen system skill for visual generation and uses bundled scripts for deterministic spritesheet assembly.\n# Hatch Pet\n## Overview\nCreate a Codex-compatible animated pet from a concept, brand cue, company/prospect name, one or more reference images, or any combination of those inputs. This workflow keeps the deterministic hatch-pet pipeline for atlas geometry, validation, visual QA, and packaging, while using concise state-specific prompts and allowing any pet-safe visual style.\nUser-facing inputs are optional. If the user omits a pet name, infer one from the concept, brand, company, or reference filenames; if that is not possible, choose a short friendly name. If the user omits a description, infer one from the concept or references. If the user omits reference images, generate the base pet from text first, then use that base as the canonical reference for every animation row.\n## Generation Delegation\nUse `$imagegen` for all normal visual generation.",
       "firstDiscoveredAt": "2026-11-25",
       "identity": "github-skill:1103643573:skills/.curated/hatch-pet/SKILL.md",
@@ -28180,6 +28210,7 @@
     "e5d8e359be12342c76763de9d44d0d02d1310aeb769d0cb1f1533c784c9535e5": {
       "attempt": 1795607807.978457,
       "description": "This repository contains a hand-curated resources for Prompt Engineering with a focus on Generative Pre-trained Transformer (GPT), ChatGPT, PaLM etc",
+      "done": "published",
       "evidence": "This repository contains a hand-curated resources for Prompt Engineering with a focus on Generative Pre-trained Transformer (GPT), ChatGPT, PaLM etc",
       "firstDiscoveredAt": "2026-11-25",
       "identity": "github:599716050",
@@ -28279,6 +28310,7 @@
     "e6aa200625aedcf5a88247bac51f26fdd0a4b193843e3f5affc5389a29946b15": {
       "attempt": 1795607809.9713597,
       "description": "Optimizing inference proxy for LLMs",
+      "done": "declined",
       "evidence": "Optimizing inference proxy for LLMs",
       "firstDiscoveredAt": "2026-11-25",
       "identity": "github:846237240",
@@ -28297,6 +28329,7 @@
     "e6ddc072491f8e5218aadbadafeb5016436fc052d6591b13239ac0791eade204": {
       "attempt": 1795607810.3631935,
       "description": "🐸💬 - a deep learning toolkit for Text-to-Speech, battle-tested in research and production",
+      "done": "declined",
       "evidence": "🐸💬 - a deep learning toolkit for Text-to-Speech, battle-tested in research and production",
       "firstDiscoveredAt": "2026-11-25",
       "identity": "github:265612440",
@@ -28315,6 +28348,7 @@
     "e6dddb9f52ffd04d6c8dd59b5cb6d40f4eda9bd8d9deada388208bc10ac53634": {
       "attempt": 1795607810.7421243,
       "description": "《深入理解 AI Infra：量化分析与系统设计》（李博杰 著）开源书稿：从硬件约束和模型架构出发，量化推导 LLM 推理与训练系统设计。含全书正文、PDF、配套计算工具与实验",
+      "done": "published",
       "evidence": "《深入理解 AI Infra：量化分析与系统设计》（李博杰 著）开源书稿：从硬件约束和模型架构出发，量化推导 LLM 推理与训练系统设计。含全书正文、PDF、配套计算工具与实验",
       "firstDiscoveredAt": "2026-11-25",
       "identity": "github:1342935078",
@@ -28463,6 +28497,7 @@
     "e84699268a1516ff9e07b2e3c61bc450b9069bae23e7be0be67fac6d16737d84": {
       "attempt": 1795607811.1207888,
       "description": "Superduper: End-to-end framework for building custom AI applications and agents.",
+      "done": "declined",
       "evidence": "Superduper: End-to-end framework for building custom AI applications and agents.",
       "firstDiscoveredAt": "2026-11-25",
       "identity": "github:530655405",
@@ -28545,6 +28580,7 @@
     "e8b8bd44920bd3a6a756e85ba09bdc147dcdf4ec9aece18af6d2b8bf89a24537": {
       "attempt": 1795607811.4913454,
       "description": "VoxCPM2: Tokenizer-Free TTS for Multilingual Speech Generation, Creative Voice Design, and True-to-Life Cloning",
+      "done": "published",
       "evidence": "VoxCPM2: Tokenizer-Free TTS for Multilingual Speech Generation, Creative Voice Design, and True-to-Life Cloning",
       "firstDiscoveredAt": "2026-11-25",
       "identity": "github:1057664813",
