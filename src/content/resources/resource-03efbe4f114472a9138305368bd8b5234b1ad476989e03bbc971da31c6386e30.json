@@ -1,0 +1,27 @@
+{
+  "addedAt": "2026-11-25",
+  "categories": [
+    [
+      "本地模型服务",
+      "Local Model Serving"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-25",
+  "id": "resource-03efbe4f114472a9138305368bd8b5234b1ad476989e03bbc971da31c6386e30",
+  "identity": "github:984341155",
+  "license": "Apache-2.0",
+  "name": "lemonade-sdk/lemonade",
+  "repository": "https://github.com/lemonade-sdk/lemonade",
+  "repositoryId": "984341155",
+  "site": "https://github.com/lemonade-sdk/lemonade",
+  "summary": [
+    "据维护者介绍，Lemonade 可在本地运行模型，提供面向大语言模型、语音、文本转语音和图像生成的推理引擎，各引擎的硬件要求不同。",
+    "Lemonade’s maintainers describe a server for running models locally. Its inference engines cover language models, speech, text-to-speech, and image generation, with hardware requirements that vary by engine."
+  ],
+  "tested": false,
+  "type": "open-source",
+  "verificationSources": [
+    "https://api.github.com/repos/lemonade-sdk/lemonade/readme"
+  ],
+  "verifiedAt": "2026-11-25"
+}

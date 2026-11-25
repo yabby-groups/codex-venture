@@ -1,0 +1,30 @@
+{
+  "addedAt": "2026-11-25",
+  "categories": [
+    [
+      "音频转写",
+      "Audio Transcription"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-25",
+  "id": "resource-00e39e06a172b436ec58f197bac1839a50fd9a5bf50d950cfc464589a2122a1c",
+  "identity": "github-skill:1103643573:skills/.curated/transcribe/SKILL.md",
+  "name": "transcribe",
+  "platforms": [
+    "Codex"
+  ],
+  "repository": "https://github.com/openai/skills",
+  "repositoryId": "1103643573",
+  "site": "https://github.com/openai/skills/blob/main/skills/.curated/transcribe/SKILL.md",
+  "sourcePath": "skills/.curated/transcribe/SKILL.md",
+  "summary": [
+    "据 OpenAI 的技能文档，可将访谈或会议等录音转成文字，并可按需区分说话人，或提供已知说话人的参考音频辅助标注。",
+    "OpenAI’s skill documentation describes how to transcribe recordings to text and optionally label speakers using known-speaker references, such as for interviews or meetings."
+  ],
+  "tested": false,
+  "type": "skills",
+  "verificationSources": [
+    "https://github.com/openai/skills/blob/main/skills/.curated/transcribe/SKILL.md"
+  ],
+  "verifiedAt": "2026-11-25"
+}

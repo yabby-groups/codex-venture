@@ -1,0 +1,27 @@
+{
+  "addedAt": "2026-11-25",
+  "categories": [
+    [
+      "设计与原型制作",
+      "Design and Prototyping"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-25",
+  "id": "resource-07b84202ea9fa8772582b4ce10a4d35782e4427a75320fed3a108c0a0aa24cf1",
+  "identity": "github:1377707120",
+  "license": "MIT",
+  "name": "feimacode/open-design-agent-kit",
+  "repository": "https://github.com/feimacode/open-design-agent-kit",
+  "repositoryId": "1377707120",
+  "site": "https://github.com/feimacode/open-design-agent-kit",
+  "summary": [
+    "据 Open Design Agent Kit 的维护者介绍，可在编程智能体的对话中借助设计系统、模板和可改编的示例制作路演幻灯片、落地页、仪表板和移动端原型。",
+    "The Open Design Agent Kit maintainers describe how to create pitch decks, landing pages, dashboards, and mobile prototypes from a coding agent’s chat using design systems, templates, and remixable examples."
+  ],
+  "tested": false,
+  "type": "tools",
+  "verificationSources": [
+    "https://api.github.com/repos/feimacode/open-design-agent-kit/readme"
+  ],
+  "verifiedAt": "2026-11-25"
+}

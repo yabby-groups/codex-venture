@@ -1,0 +1,30 @@
+{
+  "addedAt": "2026-11-25",
+  "categories": [
+    [
+      "编程辅助",
+      "Coding Assistance"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-25",
+  "id": "resource-08b05e45b068ee376f80b7e9a9889661253482321d1027b16502c22bf102d528",
+  "identity": "openvsx:saoudrizwan.claude-dev",
+  "install": "https://open-vsx.org/extension/saoudrizwan/claude-dev",
+  "license": "Apache-2.0",
+  "name": "Cline",
+  "platforms": [
+    "Open VSX"
+  ],
+  "site": "https://open-vsx.org/extension/saoudrizwan/claude-dev",
+  "summary": [
+    "据发布方介绍，Cline 是一款 IDE 编程智能体，可在开发过程中创建或编辑项目文件、运行命令并使用浏览器。",
+    "Cline’s publisher describes an IDE coding agent that can create or edit project files, run commands, and use a browser during development."
+  ],
+  "tested": false,
+  "type": "plugins",
+  "verificationSources": [
+    "https://open-vsx.org/api/saoudrizwan/claude-dev/4.1.27"
+  ],
+  "verifiedAt": "2026-11-25",
+  "version": "4.1.27"
+}

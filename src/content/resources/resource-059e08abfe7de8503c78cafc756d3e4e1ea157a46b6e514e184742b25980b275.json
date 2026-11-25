@@ -1,0 +1,27 @@
+{
+  "addedAt": "2026-11-25",
+  "categories": [
+    [
+      "开发文档查询",
+      "Developer Documentation Lookup"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-25",
+  "id": "resource-059e08abfe7de8503c78cafc756d3e4e1ea157a46b6e514e184742b25980b275",
+  "identity": "mcp:ac.tandem/docs-mcp",
+  "name": "ac.tandem/docs-mcp",
+  "registryId": "ac.tandem/docs-mcp",
+  "site": "https://registry.modelcontextprotocol.io/v0.1/servers/ac.tandem%2Fdocs-mcp/versions/0.3.2",
+  "summary": [
+    "Tandem 的远程 MCP 服务条目提供安装指南、SDK 文档、工作流说明和智能体配置帮助。",
+    "Tandem lists a remote MCP server for looking up its installation guides, SDK documentation, workflow guidance, and agent setup instructions."
+  ],
+  "tested": false,
+  "transport": "streamable-http",
+  "type": "mcp",
+  "verificationSources": [
+    "https://registry.modelcontextprotocol.io/v0.1/servers/ac.tandem%2Fdocs-mcp/versions/0.3.2"
+  ],
+  "verifiedAt": "2026-11-25",
+  "version": "0.3.2"
+}

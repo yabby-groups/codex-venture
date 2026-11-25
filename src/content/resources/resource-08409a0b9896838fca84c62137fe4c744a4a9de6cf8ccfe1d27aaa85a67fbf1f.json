@@ -1,0 +1,27 @@
+{
+  "addedAt": "2026-11-25",
+  "categories": [
+    [
+      "演示文稿与视频编辑",
+      "Presentation and Video Editing"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-25",
+  "id": "resource-08409a0b9896838fca84c62137fe4c744a4a9de6cf8ccfe1d27aaa85a67fbf1f",
+  "identity": "github:1335095892",
+  "license": "NOASSERTION",
+  "name": "Devin-AXIS/deepseek-design",
+  "repository": "https://github.com/Devin-AXIS/deepseek-design",
+  "repositoryId": "1335095892",
+  "site": "https://github.com/Devin-AXIS/deepseek-design",
+  "summary": [
+    "仓库介绍了 DeepSeek Harness 的 Design 和 Video 插件。可用 Design 制作演示文稿、编辑工作区已有的 HTML 并导出设计，也可用 Video 在 HyperFrames 工作台中使用视频模板。",
+    "The repository documents two DeepSeek Harness plugins for design and video work. Use Design to create presentations, edit existing workspace HTML, and export designs, or use Video to work with templates in HyperFrames."
+  ],
+  "tested": false,
+  "type": "tools",
+  "verificationSources": [
+    "https://api.github.com/repos/Devin-AXIS/deepseek-design/readme"
+  ],
+  "verifiedAt": "2026-11-25"
+}

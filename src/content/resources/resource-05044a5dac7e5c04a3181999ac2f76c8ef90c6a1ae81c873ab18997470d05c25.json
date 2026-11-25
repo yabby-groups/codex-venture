@@ -1,0 +1,30 @@
+{
+  "addedAt": "2026-11-25",
+  "categories": [
+    [
+      "视觉主题设计",
+      "Visual Theming"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-25",
+  "id": "resource-05044a5dac7e5c04a3181999ac2f76c8ef90c6a1ae81c873ab18997470d05c25",
+  "identity": "github-skill:1061953414:skills/theme-factory/SKILL.md",
+  "name": "theme-factory",
+  "platforms": [
+    "Claude"
+  ],
+  "repository": "https://github.com/anthropics/skills",
+  "repositoryId": "1061953414",
+  "site": "https://github.com/anthropics/skills/blob/main/skills/theme-factory/SKILL.md",
+  "sourcePath": "skills/theme-factory/SKILL.md",
+  "summary": [
+    "据 Anthropic 的技能文档，可为幻灯片、文档、报告和 HTML 落地页应用十套预设配色与字体主题之一，也可生成新主题。",
+    "Anthropic’s skill documentation describes how to apply one of ten preset color and font themes, or generate a new theme, for slides, documents, reports, and HTML landing pages."
+  ],
+  "tested": false,
+  "type": "skills",
+  "verificationSources": [
+    "https://github.com/anthropics/skills/blob/main/skills/theme-factory/SKILL.md"
+  ],
+  "verifiedAt": "2026-11-25"
+}

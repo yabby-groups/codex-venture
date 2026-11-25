@@ -1,0 +1,27 @@
+{
+  "addedAt": "2026-11-25",
+  "categories": [
+    [
+      "AI 编程教育",
+      "AI Coding Education"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-25",
+  "id": "resource-053afeaf3d2593ac72139741026d469109aad94b805780c780f8fee0eda593a7",
+  "identity": "mcp:academy.jasonlau/classes",
+  "name": "Jason Lau Academy",
+  "registryId": "academy.jasonlau/classes",
+  "site": "https://registry.modelcontextprotocol.io/v0.1/servers/academy.jasonlau%2Fclasses/versions/1.0.0",
+  "summary": [
+    "据 Jason Lau Academy 的 MCP 条目，可查询香港青少年的 AI 辅助编程课程、相关指南和 AI 工具年龄限制，也可咨询课程。",
+    "Jason Lau Academy’s MCP listing offers information about AI-assisted coding classes for teens in Hong Kong, including guides, AI tool age limits, and course enquiries."
+  ],
+  "tested": false,
+  "transport": "streamable-http",
+  "type": "mcp",
+  "verificationSources": [
+    "https://registry.modelcontextprotocol.io/v0.1/servers/academy.jasonlau%2Fclasses/versions/1.0.0"
+  ],
+  "verifiedAt": "2026-11-25",
+  "version": "1.0.0"
+}

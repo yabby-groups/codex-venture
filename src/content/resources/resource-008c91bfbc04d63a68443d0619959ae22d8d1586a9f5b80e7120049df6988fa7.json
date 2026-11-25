@@ -1,0 +1,27 @@
+{
+  "addedAt": "2026-11-25",
+  "categories": [
+    [
+      "智能体工作流教程",
+      "Agent Workflow Tutorials"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-25",
+  "id": "resource-008c91bfbc04d63a68443d0619959ae22d8d1586a9f5b80e7120049df6988fa7",
+  "identity": "github:1164376059",
+  "license": "MIT",
+  "name": "AlexAnys/awesome-openclaw-usecases-zh",
+  "repository": "https://github.com/AlexAnys/awesome-openclaw-usecases-zh",
+  "repositoryId": "1164376059",
+  "site": "https://github.com/AlexAnys/awesome-openclaw-usecases-zh",
+  "summary": [
+    "维护者称，这份简体中文合集收录了 50 个 OpenClaw 用例，涵盖办公自动化、内容创作和知识管理，也包括针对中国用户改编的海外案例。",
+    "Browse what the maintainers describe as 50 Simplified Chinese OpenClaw examples for office automation, content creation, and knowledge management, including overseas examples adapted for users in China."
+  ],
+  "tested": false,
+  "type": "tools",
+  "verificationSources": [
+    "https://api.github.com/repos/AlexAnys/awesome-openclaw-usecases-zh/readme"
+  ],
+  "verifiedAt": "2026-11-25"
+}

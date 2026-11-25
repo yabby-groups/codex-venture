@@ -1,0 +1,27 @@
+{
+  "addedAt": "2026-11-25",
+  "categories": [
+    [
+      "语音识别模型",
+      "Speech Recognition Models"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-25",
+  "id": "resource-01f4f9e35a7a3811dbc68a90b770ca465782ea768358794a7e0721c3e3017f27",
+  "identity": "hf:systran/faster-whisper-base",
+  "name": "Systran/faster-whisper-base",
+  "site": "https://huggingface.co/Systran/faster-whisper-base",
+  "summary": [
+    "使用 faster-whisper 的 base 模型将语音转成文字。Systran 的模型卡列出了中文、英语等八种语言，并演示了如何用 faster-whisper 加载模型。",
+    "Use the faster-whisper base model to turn speech into text. Systran’s model card lists eight languages, including Chinese and English, and shows how to load the model with faster-whisper."
+  ],
+  "tags": [
+    "automatic-speech-recognition"
+  ],
+  "tested": false,
+  "type": "models",
+  "verificationSources": [
+    "https://huggingface.co/Systran/faster-whisper-base/raw/main/README.md"
+  ],
+  "verifiedAt": "2026-11-25"
+}
