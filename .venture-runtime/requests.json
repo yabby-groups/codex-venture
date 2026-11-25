@@ -23,28 +23,28 @@
       "successes": 2
     },
     "api.github.com": {
-      "daily": 161,
-      "hour": "2026-11-25T01",
-      "hourly": 161,
+      "daily": 229,
+      "hour": "2026-11-25T03",
+      "hourly": 68,
       "limited": 3,
-      "remaining": 0,
-      "responses": 161,
+      "remaining": 4935,
+      "responses": 229,
       "resume": 1795573559.0,
-      "successes": 156
+      "successes": 219
     },
     "blog.cloudflare.com": {
-      "daily": 2,
-      "hour": "2026-11-25T01",
+      "daily": 4,
+      "hour": "2026-11-25T03",
       "hourly": 2,
-      "responses": 2,
-      "successes": 2
+      "responses": 4,
+      "successes": 4
     },
     "blog.google": {
-      "daily": 2,
-      "hour": "2026-11-25T01",
+      "daily": 4,
+      "hour": "2026-11-25T03",
       "hourly": 2,
-      "responses": 2,
-      "successes": 2
+      "responses": 4,
+      "successes": 4
     },
     "cookbook.openai.com": {
       "daily": 2,
@@ -53,11 +53,11 @@
       "responses": 2
     },
     "cursor.com": {
-      "daily": 2,
-      "hour": "2026-11-25T01",
+      "daily": 4,
+      "hour": "2026-11-25T03",
       "hourly": 2,
-      "responses": 2,
-      "successes": 2
+      "responses": 4,
+      "successes": 4
     },
     "dev.to": {
       "daily": 7,
@@ -102,11 +102,11 @@
       "successes": 2
     },
     "github.blog": {
-      "daily": 6,
-      "hour": "2026-11-25T01",
-      "hourly": 6,
-      "responses": 6,
-      "successes": 5
+      "daily": 9,
+      "hour": "2026-11-25T03",
+      "hourly": 3,
+      "responses": 9,
+      "successes": 8
     },
     "github.com": {
       "daily": 5,
@@ -130,11 +130,11 @@
       "successes": 5
     },
     "huggingface.co": {
-      "daily": 75,
-      "hour": "2026-11-25T01",
-      "hourly": 75,
-      "responses": 75,
-      "successes": 73
+      "daily": 77,
+      "hour": "2026-11-25T03",
+      "hourly": 2,
+      "responses": 77,
+      "successes": 75
     },
     "machinelearning.apple.com": {
       "daily": 2,
@@ -159,11 +159,11 @@
       "successes": 23
     },
     "openai.com": {
-      "daily": 2,
-      "hour": "2026-11-25T01",
+      "daily": 4,
+      "hour": "2026-11-25T03",
       "hourly": 2,
-      "responses": 2,
-      "successes": 2
+      "responses": 4,
+      "successes": 4
     },
     "openvsx.eclipsecontent.org": {
       "daily": 2,
