@@ -57,6 +57,18 @@ def page(kind, feed, cursor):
                                   transport=', '.join(transport)))
         return rows, data.get('metadata', {}).get('nextCursor')
     if kind == 'plugins':
+        if feed.startswith('jetbrains:'):
+            url = 'https://plugins.jetbrains.com/api/searchPlugins?' + urlencode(
+                dict(search=feed.removeprefix('jetbrains:'), max=15))
+            data = json.loads(document(url))
+            rows = []
+            for plugin in data['plugins']:
+                if not plugin.get('vendor', {}).get('isVerified') or not plugin['link'].startswith('/plugin/'):
+                    continue
+                site = 'https://plugins.jetbrains.com' + plugin['link']
+                rows.append(candidate(kind, f"jetbrains:{plugin['id']}", plugin['name'], site,
+                                      plugin.get('preview'), site, platforms=['JetBrains Marketplace'], install=site))
+            return rows, None
         offset = int(cursor or 0)
         url = 'https://open-vsx.org/api/-/search?' + urlencode(dict(query=feed, size=25, offset=offset))
         data = json.loads(document(url))
@@ -108,7 +120,7 @@ def page(kind, feed, cursor):
 
 
 FEEDS = {
-    'plugins': ('AI assistant', 'coding assistant', 'language model', 'Claude', 'Copilot'),
+    'plugins': ('AI assistant', 'coding assistant', 'language model', 'Claude', 'Copilot', 'jetbrains:AI Assistant', 'jetbrains:Code Completion'),
     'mcp': ('registry',),
     'models': ('text-generation', 'image-text-to-text', 'text-to-image', 'text-to-video',
                'automatic-speech-recognition', 'text-to-speech', 'image-to-3d'),
@@ -224,7 +236,7 @@ def structured_evidence(row):
     """Use publisher records already captured by discovery."""
     if row.get('evidence', '').strip():
         return row['evidence']
-    if row['identity'].startswith(('github:', 'openvsx:', 'mcp:', 'hf:')):
+    if row['identity'].startswith(('github:', 'openvsx:', 'jetbrains:', 'mcp:', 'hf:')):
         description = row['description']
         if not description.startswith('Hugging Face model listing for '):
             return description
@@ -288,7 +300,7 @@ def prepare(task, kind, day, capacity=12):
                 if row.get('metadataUrl'):
                     evidence = document(url, plain=row['type'] in ('models', 'plugins') or bool(row.get('repository')), accept='application/vnd.github.raw+json'
                                         if row.get('repository') else None)
-                    if row['type'] == 'plugins':
+                    if row['type'] == 'plugins' and row['identity'].startswith('openvsx:'):
                         details = json.loads(evidence)
                         license_id = details.get('license')
                         if isinstance(license_id, str):

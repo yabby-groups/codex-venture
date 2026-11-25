@@ -19,7 +19,9 @@ def record(phase, task):
     status = os.environ.get('PHASE_OUTCOME') or 'unknown'
     routes = load(WORK / 'routes.json', [])
     published = len(routes) if os.getenv('PUSH_OUTCOME') == 'success' else 0
-    resource_changes = (load(WORK / 'resources-published.json', {}) if os.getenv('PUSH_OUTCOME') == 'success' else {})
+    resource_decisions = load(WORK / 'resources-published.json', {})
+    resource_changes = ({key: resource_decisions.get(key, 0) for key in ('added', 'updated')}
+                        if os.getenv('PUSH_OUTCOME') == 'success' and task.startswith('resource-') else {})
     summary = os.getenv('GITHUB_STEP_SUMMARY')
     if summary:
         with open(summary, 'a') as handle:
@@ -66,6 +68,7 @@ def record(phase, task):
     elif phase == 'publish':
         run['published'] = published
         run['resources'] = resource_changes
+        details['resource_validation_failures'] = resource_decisions.get('invalid', 0)
         run['reviewed'] = len(routes)
         run['production'] = os.getenv('HEALTH_OUTCOME') or 'unknown'
         run['sha'] = os.getenv('PUBLISH_SHA') or os.environ['GITHUB_SHA']

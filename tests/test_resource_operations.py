@@ -57,6 +57,38 @@ class ResourceOperations(unittest.TestCase):
             self.assertEqual(len(set(first) | {key for key, _ in second}), 11)
             self.assertEqual(index.call_count, 1)
 
+    def test_github_document_reuses_validators_after_cache_expiry(self):
+        with tempfile.TemporaryDirectory() as directory, patch.object(
+                evidence, 'GITHUB_DOCS', Path(directory) / 'docs.json'), patch.object(
+                evidence, 'fetch', side_effect=[
+                    (b'description', {'Content-Type': 'text/plain', 'ETag': '"revision"'}),
+                    (None, {}),
+                ]) as fetch, patch.object(evidence.time, 'time', side_effect=[100, 110, 22_000]):
+            url = 'https://api.github.com/repos/example/skills/readme'
+            self.assertEqual(evidence.document(url, plain=True), 'description')
+            self.assertEqual(evidence.document(url, plain=True), 'description')
+            self.assertEqual(evidence.document(url, plain=True), 'description')
+            self.assertEqual(fetch.call_count, 2)
+            fetch.assert_called_with(url, {'If-None-Match': '"revision"'})
+
+    def test_backlog_uses_publisher_description_without_another_request(self):
+        site = 'https://github.com/example/tool'
+        row = ingest.candidate('tools', 'github:123', 'Example', site,
+                               'Simplifies local model configuration.', site)
+        with tempfile.TemporaryDirectory() as directory, patch.multiple(
+                ingest, STATE=Path(directory) / 'queue.json', resource_context=lambda: []), patch.object(
+                ingest, 'discover') as discover, patch.object(ingest, 'document') as document:
+            queue = {}
+            for number in range(2):
+                ingest.enqueue(queue, {**row, 'identity': f'github:{number}'}, '2026-11-25')
+            ingest.save(ingest.STATE, queue)
+            selected = ingest.prepare('resource-sync', 'all', '2026-11-25', capacity=1)
+            self.assertEqual(len(selected), 1)
+            self.assertEqual(next(iter(ingest.editorial_input(selected).values())),
+                             dict(name='Example', type='tools', description=row['description']))
+            discover.assert_not_called()
+            document.assert_not_called()
+
     def test_news_batch_can_write_twelve_articles(self):
         now = datetime(2026, 11, 25, tzinfo=editor.DATE_ZONE)
         items, articles = {}, []
@@ -82,7 +114,7 @@ class ResourceOperations(unittest.TestCase):
             queue = root / 'queue.json'
             with patch.multiple(ingest, DIRECTORY=catalogue, STATE=queue,
                                 resource_context=lambda: [json.loads(path.read_text()) for path in catalogue.glob('*.json')]):
-                for version, expected in [('1', {'added': 1, 'updated': 0}), ('2', {'added': 0, 'updated': 1})]:
+                for version, expected in [('1', {'added': 1, 'updated': 0, 'invalid': 0}), ('2', {'added': 0, 'updated': 1, 'invalid': 0})]:
                     site = 'https://example.org/versions/' + version
                     row = ingest.candidate('mcp', 'mcp:org/example', 'Example', site, 'Source summary', site, version=version)
                     state = ingest.load(queue, {})
@@ -127,7 +159,7 @@ class ResourceOperations(unittest.TestCase):
                               categoryZh='示例', categoryEn='Example')
                          for name, zh in [('valid', '示例资源'), ('invalid', 'English only')]]
                 self.assertEqual(ingest.publish(dict(resources=edits, skipped=[]), state['rows'], day),
-                                 {'added': 1, 'updated': 0})
+                                 {'added': 1, 'updated': 0, 'invalid': 1})
                 rows = ingest.load(ingest.STATE, {})['rows']
                 self.assertEqual(rows[entries['valid']]['done'], 'published')
                 self.assertNotIn('done', rows[entries['invalid']])

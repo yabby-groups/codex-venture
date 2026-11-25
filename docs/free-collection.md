@@ -34,3 +34,11 @@
 - 固定来源采集任务成功。该次运行记录 12 个来源成功或无变化，Hugging Face Papers Feed、PyTorch Blog Feed 和 MLX Release 请求失败并进入退避。其余入口受刷新间隔及已有健康状态调度。[固定采集运行](https://github.com/yabby-groups/codex-venture/actions/runs/45525049988)
 - 使用现有 Codex CLI 和 Responses API 完成一轮编辑，自动发布一篇双语资讯。Chromium 检查和 Cloudflare 验收通过。公网文章返回 HTTP 200，线上 release.txt 与本地构建一致。[编辑发布运行](https://github.com/yabby-groups/codex-venture/actions/runs/45524659016) · [公开文章](https://codex-venture.com/news/github-notification-subscription-rules/)
 - Python 编译、公开 HTTPS 地址限制、429 后暂停、六种内容类型轮转和安装证据截取检查通过。发布后本地构建通过 169 个 HTML 页面及站内链接、元数据、RSS、Sitemap 和 Pagefind 校验。
+
+### 资源积压与取证
+
+资源同步在待处理量达到两轮编辑容量时暂停常规资源发现，继续补证和编辑。专题发现可以单独运行。资讯采集、主动发现和文章编辑有独立的运行任务。
+
+GitHub、MCP Registry、Open VSX、JetBrains Marketplace 和 Hugging Face 的发布者描述可以支持基础目录简介。只有平台索引占位语句的 Hugging Face 候选继续读取模型卡。JetBrains 接口为公开搜索，采集限于已验证发布者，并使用默认免费请求预算。GitHub 仓库级资料缓存 6 小时，过期时优先用 ETag 或 Last-Modified 重新验证。技能扫描以文件 SHA 判断变化。
+
+资源运行日志记录送审候选、补证成功、文档缺失、模型实际用量与无效编辑条数。按两次独立日期检查到 404 或 410 标记不可用，仅适用于目录入口本身。队列快照记录最早待处理日期和等待七天以上的条数。

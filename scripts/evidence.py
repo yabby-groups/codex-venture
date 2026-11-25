@@ -7,9 +7,10 @@ import subprocess
 import time
 from datetime import datetime, timedelta, timezone
 from html.parser import HTMLParser
+from pathlib import Path
 from urllib.parse import quote, urlsplit
 
-from collect import canonical, clean, digest, fetch, timestamp
+from collect import canonical, clean, digest, fetch, load, save, timestamp
 
 
 class ArticleText(HTMLParser):
@@ -36,8 +37,28 @@ class ArticleText(HTMLParser):
             self.parts.append(data.strip())
 
 
+GITHUB_DOCS = Path('.venture-runtime/github-documents.json')
+
+
 def document(url, plain=False, accept=None):
-    body, headers = fetch(canonical(url), {'Accept': accept} if accept else {})
+    url = canonical(url)
+    request_headers = {'Accept': accept} if accept else {}
+    parts = urlsplit(url)
+    cacheable = (parts.netloc == 'api.github.com' and parts.path.startswith('/repos/')
+                 and '/git/blobs/' not in parts.path and '/git/trees/' not in parts.path)
+    cache = load(GITHUB_DOCS, {}) if cacheable else {}
+    key = digest(json.dumps([url, plain, accept]))
+    cached = cache.get(key, {})
+    checked = time.time()
+    if cached:
+        if checked - cached['checked'] < 21600:
+            return cached['text']
+        request_headers.update(cached['validators'])
+    body, headers = fetch(url, request_headers)
+    if body is None and cached:
+        cached['checked'] = checked
+        save(GITHUB_DOCS, cache)
+        return cached['text']
     content_type = headers.get('Content-Type', '')
     if not any(kind in content_type for kind in ('text/', 'json', 'github.raw', 'octet-stream')):
         raise ValueError('unsupported evidence media type')
@@ -46,6 +67,12 @@ def document(url, plain=False, accept=None):
         parser = ArticleText()
         parser.feed(text)
         text = ' '.join(parser.parts)
+    if cacheable and len(text.encode()) <= 64000:
+        validators = {request: headers[response] for request, response in
+                      [('If-None-Match', 'ETag'), ('If-Modified-Since', 'Last-Modified')]
+                      if response in headers}
+        cache[key] = dict(text=text, validators=validators, checked=checked)
+        save(GITHUB_DOCS, dict(sorted(cache.items(), key=lambda item: item[1]['checked'])[-64:]))
     return text
 
 

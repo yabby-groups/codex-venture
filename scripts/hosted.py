@@ -252,9 +252,10 @@ def invoke():
         fields = set.intersection(*(set(row['usage']) for row in charged))
         usage = {field: sum(row['usage'][field] for row in charged) for field in fields}
         print(f"Observed model tokens: {usage['input_tokens']} input, {usage['output_tokens']} output")
+    print(f'Model sessions: {len(charged)} attempted, {len(responses)} completed')
     save(MODEL / 'receipt.json', {**receipts[0], 'usage': usage, 'sessions': len(charged),
                                 'status': 'partial' if failure and responses else receipts[-1]['status'],
-                                'duration_seconds': round(time.monotonic() - started, 3)})
+                                'batches': receipts, 'duration_seconds': round(time.monotonic() - started, 3)})
     if failure and not responses:
         raise failure
     if not smoke:
