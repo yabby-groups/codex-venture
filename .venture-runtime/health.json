@@ -1,29 +1,32 @@
 {
   "aider-ai-aider": {
-    "error": null,
-    "failures": 0,
+    "error": "collection request budget paused",
+    "failures": 1,
+    "first_failure": "2026-11-25T11:42:29.978257+00:00",
     "last_success": "2026-11-25T03:19:53.460134+00:00",
-    "retry_after": null,
+    "retry_after": "2026-11-25T12:42:29.978257+00:00",
     "url": "https://api.github.com/repos/Aider-AI/aider/releases?per_page=10",
     "validators": {
       "If-None-Match": "\"9e188b41dc30cbab0836daab28dcbdf4865fdaac549f23e9b891b2a8c630a627\""
     }
   },
   "all-hands-ai-openhands": {
-    "error": null,
-    "failures": 0,
+    "error": "collection request budget paused",
+    "failures": 1,
+    "first_failure": "2026-11-25T11:42:29.978257+00:00",
     "last_success": "2026-11-25T03:19:53.460134+00:00",
-    "retry_after": null,
+    "retry_after": "2026-11-25T12:42:29.978257+00:00",
     "url": "https://api.github.com/repos/All-Hands-AI/OpenHands/releases?per_page=10",
     "validators": {
       "If-None-Match": "W/\"b450b3c1ba63051281580fe1d0508a40b0089733fde0cbb3fe3d710963f9bd20\""
     }
   },
   "apache-tvm": {
-    "error": null,
-    "failures": 0,
+    "error": "collection request budget paused",
+    "failures": 1,
+    "first_failure": "2026-11-25T11:42:29.978257+00:00",
     "last_success": "2026-11-25T03:19:53.460134+00:00",
-    "retry_after": null,
+    "retry_after": "2026-11-25T12:42:29.978257+00:00",
     "url": "https://api.github.com/repos/apache/tvm/releases?per_page=10",
     "validators": {
       "If-None-Match": "\"824569f494b9c18fff8cd00516ecc77a1547eddc5ed3ff4bb2c3c6e1c0d938c6\""
@@ -51,157 +54,172 @@
     }
   },
   "axolotl-ai-cloud-axolotl": {
-    "error": null,
-    "failures": 0,
+    "error": "collection request budget paused",
+    "failures": 1,
+    "first_failure": "2026-11-25T11:42:29.978257+00:00",
     "last_success": "2026-11-25T03:19:53.460134+00:00",
-    "retry_after": null,
+    "retry_after": "2026-11-25T12:42:29.978257+00:00",
     "url": "https://api.github.com/repos/axolotl-ai-cloud/axolotl/releases?per_page=10",
     "validators": {
       "If-None-Match": "\"5dce1d8fe6f8565481a13557d3f5112e880560aace3ac85e893c788db535ce57\""
     }
   },
   "bentoml-bentoml": {
-    "error": null,
-    "failures": 0,
+    "error": "collection request budget paused",
+    "failures": 1,
+    "first_failure": "2026-11-25T11:42:29.978257+00:00",
     "last_success": "2026-11-25T03:19:53.460134+00:00",
-    "retry_after": null,
+    "retry_after": "2026-11-25T12:42:29.978257+00:00",
     "url": "https://api.github.com/repos/bentoml/BentoML/releases?per_page=10",
     "validators": {
       "If-None-Match": "\"2319526f1ac890a5ef2f83e988f9470f8e3e09c0cf039ac7885df80d8baf81ca\""
     }
   },
   "browser-use": {
-    "error": null,
-    "failures": 0,
+    "error": "collection request budget paused",
+    "failures": 1,
+    "first_failure": "2026-11-25T11:42:29.978257+00:00",
     "last_success": "2026-11-25T03:19:53.460134+00:00",
-    "retry_after": null,
+    "retry_after": "2026-11-25T12:42:29.978257+00:00",
     "url": "https://api.github.com/repos/browser-use/browser-use/releases?per_page=10",
     "validators": {
       "If-None-Match": "\"f417af377fa699173a7c3d2680383443c4386f41efc7b85bfd89c33d44d158d5\""
     }
   },
   "chroma-core-chroma": {
-    "error": null,
-    "failures": 0,
+    "error": "collection request budget paused",
+    "failures": 1,
+    "first_failure": "2026-11-25T11:42:29.978257+00:00",
     "last_success": "2026-11-25T03:19:53.460134+00:00",
-    "retry_after": null,
+    "retry_after": "2026-11-25T12:42:29.978257+00:00",
     "url": "https://api.github.com/repos/chroma-core/chroma/releases?per_page=10",
     "validators": {
       "If-None-Match": "\"02a69ef15218ed13b971d96daee270d4d961eeec6ed1fa72628871c34f517795\""
     }
   },
   "claude-code": {
-    "error": null,
-    "failures": 0,
+    "error": "collection request budget paused",
+    "failures": 1,
+    "first_failure": "2026-11-25T11:42:29.978257+00:00",
     "last_success": "2026-11-25T03:19:53.460134+00:00",
-    "retry_after": null,
+    "retry_after": "2026-11-25T12:42:29.978257+00:00",
     "url": "https://api.github.com/repos/anthropics/claude-code/releases?per_page=10",
     "validators": {
       "If-None-Match": "\"6e2c5d8c1e18fc6f2e654e9183a64e7f6c400cb29f76449e1e704f0e0d271e88\""
     }
   },
   "cline": {
-    "error": null,
-    "failures": 0,
+    "error": "collection request budget paused",
+    "failures": 1,
+    "first_failure": "2026-11-25T11:42:29.978257+00:00",
     "last_success": "2026-11-25T03:19:53.460134+00:00",
-    "retry_after": null,
+    "retry_after": "2026-11-25T12:42:29.978257+00:00",
     "url": "https://api.github.com/repos/cline/cline/releases?per_page=10",
     "validators": {
       "If-None-Match": "\"92b003ed417cf21df46432cf2a92b53e6016523a71a93501b80ca9066b949e5d\""
     }
   },
   "cloudflare-ai": {
+    "candidates": 0,
     "error": null,
     "failures": 0,
-    "last_success": "2026-11-25T03:19:53.460134+00:00",
+    "last_success": "2026-11-25T11:42:29.978257+00:00",
     "retry_after": null,
     "url": "https://blog.cloudflare.com/tag/ai/rss/",
     "validators": {}
   },
   "codex": {
-    "error": null,
-    "failures": 0,
+    "error": "collection request budget paused",
+    "failures": 1,
+    "first_failure": "2026-11-25T11:42:29.978257+00:00",
     "last_success": "2026-11-25T03:19:53.460134+00:00",
-    "retry_after": null,
+    "retry_after": "2026-11-25T12:42:29.978257+00:00",
     "url": "https://api.github.com/repos/openai/codex/releases?per_page=10",
     "validators": {
       "If-None-Match": "\"66fb5ad0924d014831f41254845bb7701b2beb7a407d8d6f742c6cfc47c53f19\""
     }
   },
   "comfy-org-comfyui_frontend": {
-    "error": null,
-    "failures": 0,
+    "error": "collection request budget paused",
+    "failures": 1,
+    "first_failure": "2026-11-25T11:42:29.978257+00:00",
     "last_success": "2026-11-25T03:19:53.460134+00:00",
-    "retry_after": null,
+    "retry_after": "2026-11-25T12:42:29.978257+00:00",
     "url": "https://api.github.com/repos/Comfy-Org/ComfyUI_frontend/releases?per_page=10",
     "validators": {
       "If-None-Match": "\"cf65c46e3af27be6deebfc204406bd62bda9d66b369d448781eecefae7971d50\""
     }
   },
   "comfyui": {
-    "error": null,
-    "failures": 0,
+    "error": "collection request budget paused",
+    "failures": 1,
+    "first_failure": "2026-11-25T11:42:29.978257+00:00",
     "last_success": "2026-11-25T03:19:53.460134+00:00",
-    "retry_after": null,
+    "retry_after": "2026-11-25T12:42:29.978257+00:00",
     "url": "https://api.github.com/repos/Comfy-Org/ComfyUI/releases?per_page=10",
     "validators": {
       "If-None-Match": "\"daa857dd5e5b8755051ee5ff202eb430033e57cfded75168c079f8c354c5ee41\""
     }
   },
   "continuedev-continue": {
-    "error": null,
-    "failures": 0,
+    "error": "collection request budget paused",
+    "failures": 1,
+    "first_failure": "2026-11-25T11:42:29.978257+00:00",
     "last_success": "2026-11-25T03:19:53.460134+00:00",
-    "retry_after": null,
+    "retry_after": "2026-11-25T12:42:29.978257+00:00",
     "url": "https://api.github.com/repos/continuedev/continue/releases?per_page=10",
     "validators": {
       "If-None-Match": "\"9690b25b3bc8dc013220511a6c03ccde9db9b4dad6bd4553727d47891c421b31\""
     }
   },
   "crawl4ai": {
-    "error": "collection request budget paused",
-    "failures": 2,
+    "error": "HTTP Error 403: rate limit exceeded",
+    "failures": 3,
     "first_failure": "2026-11-24T19:53:54.561219+00:00",
     "last_success": "2026-11-24T07:39:38.717042+00:00",
-    "retry_after": "2026-11-25T03:21:21.428756+00:00",
+    "retry_after": "2026-11-25T15:42:29.978257+00:00",
     "url": "https://api.github.com/repos/unclecode/crawl4ai/releases?per_page=10",
     "validators": {
       "If-None-Match": "W/\"ac6a364b6c5e051fc05ca57c96345ef39db4dce37a9c67a64352735f05cd6896\""
     }
   },
   "crewaiinc-crewai": {
-    "error": null,
-    "failures": 0,
+    "error": "collection request budget paused",
+    "failures": 1,
+    "first_failure": "2026-11-25T11:42:29.978257+00:00",
     "last_success": "2026-11-25T03:19:53.460134+00:00",
-    "retry_after": null,
+    "retry_after": "2026-11-25T12:42:29.978257+00:00",
     "url": "https://api.github.com/repos/crewAIInc/crewAI/releases?per_page=10",
     "validators": {
       "If-None-Match": "\"f5abd728290e80fe2651574b8c30a6a09e8e817fb5630eae966bafd029ffe439\""
     }
   },
   "cursor": {
+    "candidates": 0,
     "error": null,
     "failures": 0,
-    "last_success": "2026-11-25T03:19:53.460134+00:00",
+    "last_success": "2026-11-25T11:42:29.978257+00:00",
     "retry_after": null,
     "url": "https://cursor.com/changelog/rss.xml",
     "validators": {}
   },
   "deepseek-ai-deepseek-r1": {
-    "error": null,
-    "failures": 0,
+    "error": "collection request budget paused",
+    "failures": 1,
+    "first_failure": "2026-11-25T11:42:29.978257+00:00",
     "last_success": "2026-11-25T03:19:53.460134+00:00",
-    "retry_after": null,
+    "retry_after": "2026-11-25T12:42:29.978257+00:00",
     "url": "https://api.github.com/repos/deepseek-ai/DeepSeek-R1/releases?per_page=10",
     "validators": {
       "If-None-Match": "\"94cdec37157f7fb7c5caaa9548a3d4d0fd8eb9feb1ba87532c8d9824f74a7b4e\""
     }
   },
   "deepseek-v3": {
-    "error": null,
-    "failures": 0,
+    "error": "collection request budget paused",
+    "failures": 1,
+    "first_failure": "2026-11-25T11:42:29.978257+00:00",
     "last_success": "2026-11-25T03:19:53.460134+00:00",
-    "retry_after": null,
+    "retry_after": "2026-11-25T12:42:29.978257+00:00",
     "url": "https://api.github.com/repos/deepseek-ai/DeepSeek-V3/releases?per_page=10",
     "validators": {
       "If-None-Match": "\"4f43da52826cd90b2a43b7d55eb39142e9ff9e78b3c505e190d2aedeaaa413c4\""
@@ -258,20 +276,22 @@
     }
   },
   "docling": {
-    "error": null,
-    "failures": 0,
+    "error": "collection request budget paused",
+    "failures": 1,
+    "first_failure": "2026-11-25T11:42:29.978257+00:00",
     "last_success": "2026-11-25T03:19:53.460134+00:00",
-    "retry_after": null,
+    "retry_after": "2026-11-25T12:42:29.978257+00:00",
     "url": "https://api.github.com/repos/docling-project/docling/releases?per_page=10",
     "validators": {
       "If-None-Match": "\"74e8f3a32c28443a5f2c46f6298e844a99417c142f26ad6b739deaa6da77936d\""
     }
   },
   "dottxt-ai-outlines": {
-    "error": null,
-    "failures": 0,
+    "error": "collection request budget paused",
+    "failures": 1,
+    "first_failure": "2026-11-25T11:42:29.978257+00:00",
     "last_success": "2026-11-25T03:19:53.460134+00:00",
-    "retry_after": null,
+    "retry_after": "2026-11-25T12:42:29.978257+00:00",
     "url": "https://api.github.com/repos/dottxt-ai/outlines/releases?per_page=10",
     "validators": {
       "If-None-Match": "\"0adac839c911a1968ea23614571b3e6eca89c75097da1948e71e6ac4e5855dec\""
@@ -312,59 +332,65 @@
     "validators": {}
   },
   "elevenlabs-python": {
-    "error": null,
-    "failures": 0,
+    "error": "collection request budget paused",
+    "failures": 1,
+    "first_failure": "2026-11-25T11:42:29.978257+00:00",
     "last_success": "2026-11-25T03:19:53.460134+00:00",
-    "retry_after": null,
+    "retry_after": "2026-11-25T12:42:29.978257+00:00",
     "url": "https://api.github.com/repos/ElevenLabs/elevenlabs-python/releases?per_page=10",
     "validators": {
       "If-None-Match": "\"2f0a0e97f7069b291e8ac77eaef953a48d0ddffbbb80183a15f5ba83bca24023\""
     }
   },
   "f5-tts": {
-    "error": null,
-    "failures": 0,
+    "error": "collection request budget paused",
+    "failures": 1,
+    "first_failure": "2026-11-25T11:42:29.978257+00:00",
     "last_success": "2026-11-25T03:19:53.460134+00:00",
-    "retry_after": null,
+    "retry_after": "2026-11-25T12:42:29.978257+00:00",
     "url": "https://api.github.com/repos/SWivid/F5-TTS/releases?per_page=10",
     "validators": {
       "If-None-Match": "\"096ad496f374ee29503659c7d9bebc91f7233bc362c9c8dd0a3e7061802d842d\""
     }
   },
   "gemini-cli": {
-    "error": null,
-    "failures": 0,
+    "error": "collection request budget paused",
+    "failures": 1,
+    "first_failure": "2026-11-25T11:42:29.978257+00:00",
     "last_success": "2026-11-25T03:19:53.460134+00:00",
-    "retry_after": null,
+    "retry_after": "2026-11-25T12:42:29.978257+00:00",
     "url": "https://api.github.com/repos/google-gemini/gemini-cli/releases?per_page=10",
     "validators": {
       "If-None-Match": "\"5f01d9c5aa7583e52faf22797b293190345f47b5d36adae0a2991968929ec1c7\""
     }
   },
   "getzep-graphiti": {
-    "error": null,
-    "failures": 0,
+    "error": "collection request budget paused",
+    "failures": 1,
+    "first_failure": "2026-11-25T11:42:29.978257+00:00",
     "last_success": "2026-11-25T03:19:53.460134+00:00",
-    "retry_after": null,
+    "retry_after": "2026-11-25T12:42:29.978257+00:00",
     "url": "https://api.github.com/repos/getzep/graphiti/releases?per_page=10",
     "validators": {
       "If-None-Match": "\"fa84e9ac1800b469e2411961e2297c081dc16f5db3d991537b588aa5ea4495af\""
     }
   },
   "ggml-org-whisper.cpp": {
-    "error": null,
-    "failures": 0,
+    "error": "collection request budget paused",
+    "failures": 1,
+    "first_failure": "2026-11-25T11:42:29.978257+00:00",
     "last_success": "2026-11-25T03:19:53.460134+00:00",
-    "retry_after": null,
+    "retry_after": "2026-11-25T12:42:29.978257+00:00",
     "url": "https://api.github.com/repos/ggml-org/whisper.cpp/releases?per_page=10",
     "validators": {
       "If-None-Match": "\"1f33ab78d4055e24c1cccb90c8170bc84d72301bbf100119d3c1e70a31409f22\""
     }
   },
   "github-changelog": {
+    "candidates": 0,
     "error": null,
     "failures": 0,
-    "last_success": "2026-11-25T03:19:53.460134+00:00",
+    "last_success": "2026-11-25T11:42:29.978257+00:00",
     "retry_after": null,
     "url": "https://github.blog/changelog/feed/",
     "validators": {
@@ -373,9 +399,10 @@
     }
   },
   "github-open-source": {
+    "candidates": 0,
     "error": null,
     "failures": 0,
-    "last_success": "2026-11-25T03:19:53.460134+00:00",
+    "last_success": "2026-11-25T11:42:29.978257+00:00",
     "retry_after": null,
     "url": "https://github.blog/open-source/feed/",
     "validators": {
@@ -416,19 +443,21 @@
     "validators": {}
   },
   "google-adk-python": {
-    "error": null,
-    "failures": 0,
+    "error": "collection request budget paused",
+    "failures": 1,
+    "first_failure": "2026-11-25T11:42:29.978257+00:00",
     "last_success": "2026-11-25T03:19:53.460134+00:00",
-    "retry_after": null,
+    "retry_after": "2026-11-25T12:42:29.978257+00:00",
     "url": "https://api.github.com/repos/google/adk-python/releases?per_page=10",
     "validators": {
       "If-None-Match": "\"6322cd6c35f9543468b5a4129725462b725bb00fec5ff8d4709330bad60b475e\""
     }
   },
   "google-ai": {
+    "candidates": 0,
     "error": null,
     "failures": 0,
-    "last_success": "2026-11-25T03:19:53.460134+00:00",
+    "last_success": "2026-11-25T11:42:29.978257+00:00",
     "retry_after": null,
     "url": "https://blog.google/innovation-and-ai/rss/",
     "validators": {}
@@ -477,10 +506,11 @@
     }
   },
   "handy": {
-    "error": null,
-    "failures": 0,
+    "error": "collection request budget paused",
+    "failures": 1,
+    "first_failure": "2026-11-25T11:42:29.978257+00:00",
     "last_success": "2026-11-25T03:19:53.460134+00:00",
-    "retry_after": null,
+    "retry_after": "2026-11-25T12:42:29.978257+00:00",
     "url": "https://api.github.com/repos/cjpais/Handy/releases?per_page=10",
     "validators": {
       "If-None-Match": "\"55341f8744ced3bf78bf8f19722bd14dbc2d06f4a78b58958623144eb1badec9\""
@@ -517,126 +547,138 @@
     }
   },
   "hugging-face": {
+    "candidates": 0,
     "error": null,
     "failures": 0,
-    "last_success": "2026-11-25T03:19:53.460134+00:00",
+    "last_success": "2026-11-25T11:42:29.978257+00:00",
     "retry_after": null,
     "url": "https://huggingface.co/blog/feed.xml",
     "validators": {
-      "If-None-Match": "W/\"42297-gdOLeX4aOiXgJqDSfT5VUj3SY3k\""
+      "If-None-Match": "W/\"42270-nBN9iWdlDnwd4w3GFi9PEhpuLOE\""
     }
   },
   "hugging-face-papers": {
     "error": "HTTP Error 401: Unauthorized",
-    "failures": 3,
+    "failures": 4,
     "first_failure": "2026-11-24T07:39:38.717042+00:00",
-    "retry_after": "2026-11-25T05:21:21.428756+00:00"
+    "retry_after": "2026-11-25T19:42:29.978257+00:00"
   },
   "huggingface-accelerate": {
-    "error": null,
-    "failures": 0,
+    "error": "collection request budget paused",
+    "failures": 1,
+    "first_failure": "2026-11-25T11:42:29.978257+00:00",
     "last_success": "2026-11-25T03:19:53.460134+00:00",
-    "retry_after": null,
+    "retry_after": "2026-11-25T12:42:29.978257+00:00",
     "url": "https://api.github.com/repos/huggingface/accelerate/releases?per_page=10",
     "validators": {
       "If-None-Match": "\"a86a8cf6b8218a2d1cc0f3306407a2930594e06432b49c5e86a20bfb356f3a2b\""
     }
   },
   "huggingface-diffusers": {
-    "error": null,
-    "failures": 0,
+    "error": "collection request budget paused",
+    "failures": 1,
+    "first_failure": "2026-11-25T11:42:29.978257+00:00",
     "last_success": "2026-11-25T03:19:53.460134+00:00",
-    "retry_after": null,
+    "retry_after": "2026-11-25T12:42:29.978257+00:00",
     "url": "https://api.github.com/repos/huggingface/diffusers/releases?per_page=10",
     "validators": {
       "If-None-Match": "\"3133d2df2d8cb5ff43f9a34a17bd3d9f6010673dc910de8d94b3958e9fc7e917\""
     }
   },
   "huggingface-peft": {
-    "error": null,
-    "failures": 0,
+    "error": "collection request budget paused",
+    "failures": 1,
+    "first_failure": "2026-11-25T11:42:29.978257+00:00",
     "last_success": "2026-11-25T03:19:53.460134+00:00",
-    "retry_after": null,
+    "retry_after": "2026-11-25T12:42:29.978257+00:00",
     "url": "https://api.github.com/repos/huggingface/peft/releases?per_page=10",
     "validators": {
       "If-None-Match": "\"23de15d633d24ea316c2172585785ad037b99a147341e6cb3dd696b2a83eaf3f\""
     }
   },
   "huggingface-smolagents": {
-    "error": null,
-    "failures": 0,
+    "error": "collection request budget paused",
+    "failures": 1,
+    "first_failure": "2026-11-25T11:42:29.978257+00:00",
     "last_success": "2026-11-25T03:19:53.460134+00:00",
-    "retry_after": null,
+    "retry_after": "2026-11-25T12:42:29.978257+00:00",
     "url": "https://api.github.com/repos/huggingface/smolagents/releases?per_page=10",
     "validators": {
       "If-None-Match": "\"8c89237f9f124257fcc4c7d6c51145eeffee85cb1d42d4029b49193972d4ec3f\""
     }
   },
   "huggingface-trl": {
-    "error": null,
-    "failures": 0,
+    "error": "collection request budget paused",
+    "failures": 1,
+    "first_failure": "2026-11-25T11:42:29.978257+00:00",
     "last_success": "2026-11-25T03:19:53.460134+00:00",
-    "retry_after": null,
+    "retry_after": "2026-11-25T12:42:29.978257+00:00",
     "url": "https://api.github.com/repos/huggingface/trl/releases?per_page=10",
     "validators": {
       "If-None-Match": "\"3c04ddfc6e2bf99983c1980446b6559c23ec121135050739e7cb2857decc8085\""
     }
   },
   "langchain-ai-langchain": {
-    "error": null,
-    "failures": 0,
+    "error": "collection request budget paused",
+    "failures": 1,
+    "first_failure": "2026-11-25T11:42:29.978257+00:00",
     "last_success": "2026-11-25T03:19:53.460134+00:00",
-    "retry_after": null,
+    "retry_after": "2026-11-25T12:42:29.978257+00:00",
     "url": "https://api.github.com/repos/langchain-ai/langchain/releases?per_page=10",
     "validators": {
       "If-None-Match": "\"e4466dd0130aa160d1eddc3b88f80d45d7177acd7af06f52138caf64ddd1fcc7\""
     }
   },
   "langgenius-dify": {
-    "error": null,
-    "failures": 0,
+    "error": "collection request budget paused",
+    "failures": 1,
+    "first_failure": "2026-11-25T11:42:29.978257+00:00",
     "last_success": "2026-11-25T03:19:53.460134+00:00",
-    "retry_after": null,
+    "retry_after": "2026-11-25T12:42:29.978257+00:00",
     "url": "https://api.github.com/repos/langgenius/dify/releases?per_page=10",
     "validators": {
       "If-None-Match": "\"212ff02535c53f25735463c2c0e6152903a2c3396c1a8c4913d3d919ae99c24b\""
     }
   },
   "litellm": {
-    "error": null,
-    "failures": 0,
+    "error": "collection request budget paused",
+    "failures": 1,
+    "first_failure": "2026-11-25T11:42:29.978257+00:00",
     "last_success": "2026-11-25T03:19:53.460134+00:00",
-    "retry_after": null,
+    "retry_after": "2026-11-25T12:42:29.978257+00:00",
     "url": "https://api.github.com/repos/BerriAI/litellm/releases?per_page=10",
     "validators": {
       "If-None-Match": "\"7d6445c7eefd14c253b727d9373fdbb89bd087d7f2c911988099343ea80abf5a\""
     }
   },
   "llama-cpp": {
-    "error": null,
-    "failures": 0,
+    "error": "collection request budget paused",
+    "failures": 1,
+    "first_failure": "2026-11-25T11:42:29.978257+00:00",
     "last_success": "2026-11-25T03:19:53.460134+00:00",
-    "retry_after": null,
+    "retry_after": "2026-11-25T12:42:29.978257+00:00",
     "url": "https://api.github.com/repos/ggml-org/llama.cpp/releases?per_page=10",
     "validators": {
       "If-None-Match": "\"93fc579173be1a1f0139a63ef1faf099847056b9f954fb9ddfbb3983653b1d44\""
     }
   },
   "llama-models": {
-    "error": null,
-    "failures": 0,
+    "error": "collection request budget paused",
+    "failures": 1,
+    "first_failure": "2026-11-25T11:42:29.978257+00:00",
     "last_success": "2026-11-25T03:19:53.460134+00:00",
-    "retry_after": null,
+    "retry_after": "2026-11-25T12:42:29.978257+00:00",
     "url": "https://api.github.com/repos/meta-llama/llama-models/releases?per_page=10",
     "validators": {
       "If-None-Match": "\"0b6a5cc661bd2cf128bfed2cbfa5ac72fcb608ca294a079369418e3c1d38df1c\""
     }
   },
   "mcp": {
-    "error": null,
-    "failures": 0,
+    "error": "collection request budget paused",
+    "failures": 1,
+    "first_failure": "2026-11-25T11:42:29.978257+00:00",
     "last_success": "2026-11-25T03:19:53.460134+00:00",
-    "retry_after": null,
+    "retry_after": "2026-11-25T12:42:29.978257+00:00",
     "url": "https://api.github.com/repos/modelcontextprotocol/modelcontextprotocol/releases?per_page=10",
     "validators": {
       "If-None-Match": "\"e5d1f8e03ac9332508c270b9e8e80b0782476af658a383202e3b4421b4908774\""
@@ -654,10 +696,11 @@
     }
   },
   "microsoft-autogen": {
-    "error": null,
-    "failures": 0,
+    "error": "collection request budget paused",
+    "failures": 1,
+    "first_failure": "2026-11-25T11:42:29.978257+00:00",
     "last_success": "2026-11-25T03:19:53.460134+00:00",
-    "retry_after": null,
+    "retry_after": "2026-11-25T12:42:29.978257+00:00",
     "url": "https://api.github.com/repos/microsoft/autogen/releases?per_page=10",
     "validators": {
       "If-None-Match": "\"163e6aec727b64841623d5da7063e7595f5d41b1734a40b1c40d703d3a28ab4b\""
@@ -675,159 +718,174 @@
     }
   },
   "microsoft-semantic-kernel": {
-    "error": null,
-    "failures": 0,
+    "error": "collection request budget paused",
+    "failures": 1,
+    "first_failure": "2026-11-25T11:42:29.978257+00:00",
     "last_success": "2026-11-25T03:19:53.460134+00:00",
-    "retry_after": null,
+    "retry_after": "2026-11-25T12:42:29.978257+00:00",
     "url": "https://api.github.com/repos/microsoft/semantic-kernel/releases?per_page=10",
     "validators": {
       "If-None-Match": "\"f02b0a5de38b4df0dac66433ea5d23c2aa72c70eec5f9cdc09c481795ce7d53b\""
     }
   },
   "mistral-common": {
-    "error": "HTTP Error 403: Forbidden",
-    "failures": 2,
+    "error": "collection request budget paused",
+    "failures": 3,
     "first_failure": "2026-11-25T01:21:21.428756+00:00",
     "last_success": "2026-11-24T19:53:54.561219+00:00",
-    "retry_after": "2026-11-25T05:19:53.460134+00:00",
+    "retry_after": "2026-11-25T15:42:29.978257+00:00",
     "url": "https://api.github.com/repos/mistralai/mistral-common/releases?per_page=10",
     "validators": {
       "If-None-Match": "W/\"14791a058924ffeabc2f8f4d8540839b95834f55e5b17fcda0e6595b94cbabd4\""
     }
   },
   "mistral-rs": {
-    "error": null,
-    "failures": 0,
+    "error": "collection request budget paused",
+    "failures": 1,
+    "first_failure": "2026-11-25T11:42:29.978257+00:00",
     "last_success": "2026-11-25T03:19:53.460134+00:00",
-    "retry_after": null,
+    "retry_after": "2026-11-25T12:42:29.978257+00:00",
     "url": "https://api.github.com/repos/EricLBuehler/mistral.rs/releases?per_page=10",
     "validators": {
       "If-None-Match": "\"dabcc525fa41dbf706b13a9f4a22f3f07ed5c0f74f1d2385f961b80b9d5bab83\""
     }
   },
   "ml-explore-mlx": {
-    "error": null,
-    "failures": 0,
+    "error": "collection request budget paused",
+    "failures": 1,
+    "first_failure": "2026-11-25T11:42:29.978257+00:00",
     "last_success": "2026-11-25T03:19:53.460134+00:00",
-    "retry_after": null,
+    "retry_after": "2026-11-25T12:42:29.978257+00:00",
     "url": "https://api.github.com/repos/ml-explore/mlx/releases?per_page=10",
     "validators": {
       "If-None-Match": "\"a6dbd6647acbfefe2fb1f514c4c41fac1ec6ff26898f761c6e3d4b4c4cd3e7c7\""
     }
   },
   "ml-explore-mlx-lm": {
-    "error": null,
-    "failures": 0,
+    "error": "collection request budget paused",
+    "failures": 1,
+    "first_failure": "2026-11-25T11:42:29.978257+00:00",
     "last_success": "2026-11-25T03:19:53.460134+00:00",
-    "retry_after": null,
+    "retry_after": "2026-11-25T12:42:29.978257+00:00",
     "url": "https://api.github.com/repos/ml-explore/mlx-lm/releases?per_page=10",
     "validators": {
       "If-None-Match": "\"f52924990ac34aebc76121e364ba42c38a13485245f3cc3ab7f2afd3f2705508\""
     }
   },
   "moonshotai-kimi-cli": {
-    "error": null,
-    "failures": 0,
+    "error": "collection request budget paused",
+    "failures": 1,
+    "first_failure": "2026-11-25T11:42:29.978257+00:00",
     "last_success": "2026-11-25T03:19:53.460134+00:00",
-    "retry_after": null,
+    "retry_after": "2026-11-25T12:42:29.978257+00:00",
     "url": "https://api.github.com/repos/MoonshotAI/kimi-cli/releases?per_page=10",
     "validators": {
       "If-None-Match": "\"e1526e9597c784e87fab178d1ea3f194862cf996c00a2df60eacb11893f2d91b\""
     }
   },
   "n8n": {
-    "error": null,
-    "failures": 0,
+    "error": "collection request budget paused",
+    "failures": 1,
+    "first_failure": "2026-11-25T11:42:29.978257+00:00",
     "last_success": "2026-11-25T03:19:53.460134+00:00",
-    "retry_after": null,
+    "retry_after": "2026-11-25T12:42:29.978257+00:00",
     "url": "https://api.github.com/repos/n8n-io/n8n/releases?per_page=10",
     "validators": {
       "If-None-Match": "\"ac8025c45b6aa441c7b28b4d2dfb7dd5d1a7954940848436d900fa49b3d55a6b\""
     }
   },
   "nvidia-nemo": {
-    "error": null,
-    "failures": 0,
+    "error": "collection request budget paused",
+    "failures": 1,
+    "first_failure": "2026-11-25T11:42:29.978257+00:00",
     "last_success": "2026-11-25T03:19:53.460134+00:00",
-    "retry_after": null,
+    "retry_after": "2026-11-25T12:42:29.978257+00:00",
     "url": "https://api.github.com/repos/NVIDIA/NeMo/releases?per_page=10",
     "validators": {
       "If-None-Match": "W/\"fe91d0b4ae22f7471083586de98e823aeb1843cc61926d2980ac49490706d054\""
     }
   },
   "ollama": {
-    "error": null,
-    "failures": 0,
+    "error": "collection request budget paused",
+    "failures": 1,
+    "first_failure": "2026-11-25T11:42:29.978257+00:00",
     "last_success": "2026-11-25T03:19:53.460134+00:00",
-    "retry_after": null,
+    "retry_after": "2026-11-25T12:42:29.978257+00:00",
     "url": "https://api.github.com/repos/ollama/ollama/releases?per_page=10",
     "validators": {
       "If-None-Match": "\"3f46c185d578a8ed11eed3f815703b24c470ea958d4885a683ad75a300fa52a0\""
     }
   },
   "open-webui-open-webui": {
-    "error": null,
-    "failures": 0,
+    "error": "collection request budget paused",
+    "failures": 1,
+    "first_failure": "2026-11-25T11:42:29.978257+00:00",
     "last_success": "2026-11-25T03:19:53.460134+00:00",
-    "retry_after": null,
+    "retry_after": "2026-11-25T12:42:29.978257+00:00",
     "url": "https://api.github.com/repos/open-webui/open-webui/releases?per_page=10",
     "validators": {
       "If-None-Match": "\"f022f97fc32cc7d61efd5858171bc7277809ebeb7a1ed34529273051b4647648\""
     }
   },
   "openai-agents": {
-    "error": null,
-    "failures": 0,
+    "error": "collection request budget paused",
+    "failures": 1,
+    "first_failure": "2026-11-25T11:42:29.978257+00:00",
     "last_success": "2026-11-25T03:19:53.460134+00:00",
-    "retry_after": null,
+    "retry_after": "2026-11-25T12:42:29.978257+00:00",
     "url": "https://api.github.com/repos/openai/openai-agents-python/releases?per_page=10",
     "validators": {
       "If-None-Match": "\"aec010ce8cf55516ac8c98c8c64cf8166997b4e216246936f3b52a0d9a275890\""
     }
   },
   "openai-news": {
+    "candidates": 0,
     "error": null,
     "failures": 0,
-    "last_success": "2026-11-25T03:19:53.460134+00:00",
+    "last_success": "2026-11-25T11:42:29.978257+00:00",
     "retry_after": null,
     "url": "https://openai.com/news/rss.xml",
     "validators": {}
   },
   "openclaw": {
-    "error": null,
-    "failures": 0,
+    "error": "collection request budget paused",
+    "failures": 1,
+    "first_failure": "2026-11-25T11:42:29.978257+00:00",
     "last_success": "2026-11-25T03:19:53.460134+00:00",
-    "retry_after": null,
+    "retry_after": "2026-11-25T12:42:29.978257+00:00",
     "url": "https://api.github.com/repos/openclaw/openclaw/releases?per_page=10",
     "validators": {
       "If-None-Match": "\"42fa80c0dd4932cad5d70974fbc4b21460a16360931c76ad54695248c410b934\""
     }
   },
   "opencode": {
-    "error": null,
-    "failures": 0,
+    "error": "collection request budget paused",
+    "failures": 1,
+    "first_failure": "2026-11-25T11:42:29.978257+00:00",
     "last_success": "2026-11-25T03:19:53.460134+00:00",
-    "retry_after": null,
+    "retry_after": "2026-11-25T12:42:29.978257+00:00",
     "url": "https://api.github.com/repos/anomalyco/opencode/releases?per_page=10",
     "validators": {
       "If-None-Match": "\"75ffff1cde159b40277330cf91d69bd5349a1ceb4f20fe67e02ef326626a13f8\""
     }
   },
   "openrouterteam-ai-sdk-provider": {
-    "error": null,
-    "failures": 0,
+    "error": "collection request budget paused",
+    "failures": 1,
+    "first_failure": "2026-11-25T11:42:29.978257+00:00",
     "last_success": "2026-11-25T03:19:53.460134+00:00",
-    "retry_after": null,
+    "retry_after": "2026-11-25T12:42:29.978257+00:00",
     "url": "https://api.github.com/repos/OpenRouterTeam/ai-sdk-provider/releases?per_page=10",
     "validators": {
       "If-None-Match": "\"417a51a02063619b7655eb6a04dc81196fb8b942252830187b2204d1ca442022\""
     }
   },
   "pibot": {
-    "error": null,
-    "failures": 0,
+    "error": "collection request budget paused",
+    "failures": 1,
+    "first_failure": "2026-11-25T11:42:29.978257+00:00",
     "last_success": "2026-11-25T03:19:53.460134+00:00",
-    "retry_after": null,
+    "retry_after": "2026-11-25T12:42:29.978257+00:00",
     "url": "https://api.github.com/repos/w01fb0ss/PiBot/releases?per_page=10",
     "validators": {
       "If-None-Match": "\"7bf6c26b4a4415933fc451b7236b79dd1f3d623ac056fabb185a13d4e80a58f1\""
@@ -846,85 +904,93 @@
   },
   "pytorch-blog": {
     "error": "HTTP Error 404: Not Found",
-    "failures": 3,
+    "failures": 4,
     "first_failure": "2026-11-24T07:39:38.717042+00:00",
-    "retry_after": "2026-11-25T05:21:21.428756+00:00"
+    "retry_after": "2026-11-25T19:42:29.978257+00:00"
   },
   "pytorch-pytorch": {
-    "error": null,
-    "failures": 0,
+    "error": "collection request budget paused",
+    "failures": 1,
+    "first_failure": "2026-11-25T11:42:29.978257+00:00",
     "last_success": "2026-11-25T03:19:53.460134+00:00",
-    "retry_after": null,
+    "retry_after": "2026-11-25T12:42:29.978257+00:00",
     "url": "https://api.github.com/repos/pytorch/pytorch/releases?per_page=10",
     "validators": {
       "If-None-Match": "\"4a4108de12bd31dfa338994d1503bb83ca393663153e5aaadb1d85b7f2e48ea6\""
     }
   },
   "qdrant-qdrant": {
-    "error": null,
-    "failures": 0,
+    "error": "collection request budget paused",
+    "failures": 1,
+    "first_failure": "2026-11-25T11:42:29.978257+00:00",
     "last_success": "2026-11-25T03:19:53.460134+00:00",
-    "retry_after": null,
+    "retry_after": "2026-11-25T12:42:29.978257+00:00",
     "url": "https://api.github.com/repos/qdrant/qdrant/releases?per_page=10",
     "validators": {
       "If-None-Match": "\"429ed50727453e5ee959898071cf55e8854edc9c4a25ec999799a8e4f4e6211c\""
     }
   },
   "qwen-code": {
-    "error": null,
-    "failures": 0,
+    "error": "collection request budget paused",
+    "failures": 1,
+    "first_failure": "2026-11-25T11:42:29.978257+00:00",
     "last_success": "2026-11-25T03:19:53.460134+00:00",
-    "retry_after": null,
+    "retry_after": "2026-11-25T12:42:29.978257+00:00",
     "url": "https://api.github.com/repos/QwenLM/qwen-code/releases?per_page=10",
     "validators": {
       "If-None-Match": "\"77c2f25117b1e1fab96418292032949ef6d8ab595e0c2c0fc5f1682e48493890\""
     }
   },
   "ragflow": {
-    "error": null,
-    "failures": 0,
+    "error": "collection request budget paused",
+    "failures": 1,
+    "first_failure": "2026-11-25T11:42:29.978257+00:00",
     "last_success": "2026-11-25T03:19:53.460134+00:00",
-    "retry_after": null,
+    "retry_after": "2026-11-25T12:42:29.978257+00:00",
     "url": "https://api.github.com/repos/infiniflow/ragflow/releases?per_page=10",
     "validators": {
       "If-None-Match": "\"47cf16427cb726d3ed4a201f3f3f619046cbe4f777f3fabe482a1e3d3a377085\""
     }
   },
   "ray-project-ray": {
-    "error": null,
-    "failures": 0,
+    "error": "collection request budget paused",
+    "failures": 1,
+    "first_failure": "2026-11-25T11:42:29.978257+00:00",
     "last_success": "2026-11-25T03:19:53.460134+00:00",
-    "retry_after": null,
+    "retry_after": "2026-11-25T12:42:29.978257+00:00",
     "url": "https://api.github.com/repos/ray-project/ray/releases?per_page=10",
     "validators": {
       "If-None-Match": "\"2f3eab829fd189d89eefff562a3510deb3f69292de893e6bf8b84befcb563b21\""
     }
   },
   "rocm-rocm-libraries": {
-    "error": null,
-    "failures": 0,
+    "error": "collection request budget paused",
+    "failures": 1,
+    "first_failure": "2026-11-25T11:42:29.978257+00:00",
     "last_success": "2026-11-25T03:19:53.460134+00:00",
-    "retry_after": null,
+    "retry_after": "2026-11-25T12:42:29.978257+00:00",
     "url": "https://api.github.com/repos/ROCm/rocm-libraries/releases?per_page=10",
     "validators": {
       "If-None-Match": "\"287db181e032115565ff623330c577f0035d619ee9253d0f3a9c82d13f1c7383\""
     }
   },
   "run-llama-llama_index": {
-    "error": null,
-    "failures": 0,
+    "error": "collection request budget paused",
+    "failures": 1,
+    "first_failure": "2026-11-25T11:42:29.978257+00:00",
     "last_success": "2026-11-25T03:19:53.460134+00:00",
-    "retry_after": null,
+    "retry_after": "2026-11-25T12:42:29.978257+00:00",
     "url": "https://api.github.com/repos/run-llama/llama_index/releases?per_page=10",
     "validators": {
       "If-None-Match": "\"e2d480807385688533efad36dc14bda0026c8c751dbd3f115851f36723849696\""
     }
   },
   "sgl-project-sglang": {
-    "error": null,
-    "failures": 0,
+    "error": "collection request budget paused",
+    "failures": 1,
+    "first_failure": "2026-11-25T11:42:29.978257+00:00",
     "last_success": "2026-11-25T03:19:53.460134+00:00",
-    "retry_after": null,
+    "retry_after": "2026-11-25T12:42:29.978257+00:00",
     "url": "https://api.github.com/repos/sgl-project/sglang/releases?per_page=10",
     "validators": {
       "If-None-Match": "\"cacd277d4fa4fe6f9cfc183dddce3e4f83bb10d2739d7fa22738af84e5709b4a\""
@@ -963,20 +1029,22 @@
     }
   },
   "tensorrt-llm": {
-    "error": null,
-    "failures": 0,
+    "error": "collection request budget paused",
+    "failures": 1,
+    "first_failure": "2026-11-25T11:42:29.978257+00:00",
     "last_success": "2026-11-25T03:19:53.460134+00:00",
-    "retry_after": null,
+    "retry_after": "2026-11-25T12:42:29.978257+00:00",
     "url": "https://api.github.com/repos/NVIDIA/TensorRT-LLM/releases?per_page=10",
     "validators": {
       "If-None-Match": "\"9d3d834af9fb705816158196cdecb613e5ca82ccd79a0f7c52e256ebe01c6468\""
     }
   },
   "transformers": {
-    "error": null,
-    "failures": 0,
+    "error": "collection request budget paused",
+    "failures": 1,
+    "first_failure": "2026-11-25T11:42:29.978257+00:00",
     "last_success": "2026-11-25T03:19:53.460134+00:00",
-    "retry_after": null,
+    "retry_after": "2026-11-25T12:42:29.978257+00:00",
     "url": "https://api.github.com/repos/huggingface/transformers/releases?per_page=10",
     "validators": {
       "If-None-Match": "\"a62d63814ddd59c33a8cfd0ed029c7cc3ebda0e430c9f4a7f102b2ed03778644\""
@@ -1225,31 +1293,33 @@
     }
   },
   "unslothai-unsloth": {
-    "error": null,
-    "failures": 0,
+    "error": "collection request budget paused",
+    "failures": 1,
+    "first_failure": "2026-11-25T11:42:29.978257+00:00",
     "last_success": "2026-11-25T03:19:53.460134+00:00",
-    "retry_after": null,
+    "retry_after": "2026-11-25T12:42:29.978257+00:00",
     "url": "https://api.github.com/repos/unslothai/unsloth/releases?per_page=10",
     "validators": {
       "If-None-Match": "\"32c5a794e1f64a70e3a37fe6e3bf10bf80d056e98d4f42862f447b254d67042f\""
     }
   },
   "vllm-project-vllm": {
-    "error": null,
-    "failures": 0,
+    "error": "collection request budget paused",
+    "failures": 1,
+    "first_failure": "2026-11-25T11:42:29.978257+00:00",
     "last_success": "2026-11-25T03:19:53.460134+00:00",
-    "retry_after": null,
+    "retry_after": "2026-11-25T12:42:29.978257+00:00",
     "url": "https://api.github.com/repos/vllm-project/vllm/releases?per_page=10",
     "validators": {
       "If-None-Match": "\"2d6b20a0486577a4f1cb16340d278669144497826891219135f2b238f50e8160\""
     }
   },
   "xai-sdk": {
-    "error": "HTTP Error 403: Forbidden",
-    "failures": 2,
+    "error": "collection request budget paused",
+    "failures": 3,
     "first_failure": "2026-11-25T01:21:21.428756+00:00",
     "last_success": "2026-11-24T19:53:54.561219+00:00",
-    "retry_after": "2026-11-25T05:19:53.460134+00:00",
+    "retry_after": "2026-11-25T15:42:29.978257+00:00",
     "url": "https://api.github.com/repos/xai-org/xai-sdk-python/releases?per_page=10",
     "validators": {
       "If-None-Match": "W/\"b20f26e5e146ae9ad1d160e05c91346f1333c361029a505f5c82e90b86f1c042\""
