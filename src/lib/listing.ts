@@ -8,10 +8,9 @@ const directoryKeys = new Set<string>(resourceDirectories(stories).map(({ type }
 return [
   { base: '/news/', zh: '最新资讯', en: 'Latest News', stories: stories.filter((story) => story.collection === 'news' && (!story.data.type || ['news', 'models'].includes(story.data.type))) },
   { base: '/daily/', zh: '每日 AI 简报', en: 'Daily AI Briefing',
-    intro: ['按日期阅读全球 AI 技术动态。', 'Follow global AI developments by date.'],
+    byDate: true,
     stories: stories.filter((story) => story.collection === 'daily' && !isWeekly(story)) },
   { base: '/weekly/', zh: '每周精选', en: 'Weekly Review',
-    intro: ['回顾值得持续关注的 AI 技术进展。', 'Revisit the AI developments worth following.'],
     stories: stories.filter(isWeekly) },
   ...Object.entries(hubs).map(([key, [zh, en]]) => ({
     base: `/${key}/`, zh, en,

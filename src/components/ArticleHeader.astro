@@ -16,8 +16,8 @@ const { data, crumbs, minutes } = Astro.props;
   <div class="article-byline" data-pagefind-ignore>
     <span>Codex Venture 编辑部 <small lang="en">Editorial</small></span>
     <time datetime={data.published.toISOString()}>{dateKey(data.published)}</time>
-    <span>约 {minutes} 分钟 <small lang="en">{minutes} min read</small></span>
-    {data.updated && <span>更新 <small lang="en">Updated</small> <time datetime={data.updated}>{data.updated}</time></span>}
+    <span>约 {minutes} 分钟 <small lang="en">min read</small></span>
+    {data.updated && data.updated !== dateKey(data.published) && <span>更新 <small lang="en">Updated</small> <time datetime={data.updated}>{data.updated}</time></span>}
   </div>
   <BilingualParagraph class="article-lead" zh={data.summaryZh} en={data.summaryEn} />
 </header>

@@ -26,7 +26,8 @@ export async function enhanceDirectory(root: HTMLElement) {
   const grid = root.querySelector<HTMLElement>('[data-cards]')!;
   const empty = root.querySelector<HTMLElement>('[data-empty]')!;
   const sort = root.querySelector<HTMLSelectElement>('[data-sort]')!;
-  const result = root.querySelector<HTMLElement>('[data-result]')!;
+  const resultCount = root.querySelector<HTMLElement>('[data-result-count]')!;
+  const resultError = root.querySelector<HTMLElement>('[data-result-error]')!;
   const filters = root.querySelector<HTMLDetailsElement>('.resource-filters')!;
   const clientPages = root.querySelector<HTMLElement>('[data-client-pages]')!;
   const staticPages = root.querySelector<HTMLElement>('[data-static-pages]');
@@ -93,7 +94,8 @@ export async function enhanceDirectory(root: HTMLElement) {
       const cards = visible.map((row) => cache.get(row.id));
       if (cards.some((card) => !card)) throw new Error('Incomplete resource page');
       grid.replaceChildren(...cards as HTMLElement[]);
-      result.textContent = matching.length + ' 项 / ' + matching.length + ' results';
+      resultCount.textContent = String(matching.length);
+      resultError.textContent = '';
       empty.hidden = matching.length > 0;
       if (staticPages) staticPages.hidden = true;
       clientPages.hidden = last === 1;
@@ -102,7 +104,7 @@ export async function enhanceDirectory(root: HTMLElement) {
       next.disabled = page === last;
     } catch {
       if (current !== revision) return;
-      result.textContent = '无法加载结果 / Could not load results';
+      resultError.textContent = '无法加载结果 / Could not load results';
       if (staticPages) staticPages.hidden = false;
     }
   }

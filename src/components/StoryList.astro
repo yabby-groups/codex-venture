@@ -1,7 +1,7 @@
 ---
 import { dateKey, storySection, storyUrl, type Story } from '../lib/content';
-interface Props { stories: Story[]; nested?: boolean; compact?: boolean }
-const { stories, nested = false, compact = false } = Astro.props;
+interface Props { stories: Story[]; nested?: boolean; compact?: boolean; showDate?: boolean }
+const { stories, nested = false, compact = false, showDate = true } = Astro.props;
 const Heading = nested ? 'h3' : 'h2';
 ---
 {stories.length ? <ul class:list={['story-list', { compact }]}>
@@ -9,8 +9,8 @@ const Heading = nested ? 'h3' : 'h2';
     const section = storySection(story);
     return <li data-tags={story.data.tags.join(" ")}>
       <div class="story-meta">
-        <a href={section.href}>{section.label[0]}<span lang="en">{section.label[1]}</span></a>
-        <time datetime={story.data.published.toISOString()}>{dateKey(story.data.published)}</time>
+        <a href={section.href}>{section.label[0]} <span lang="en">{section.label[1]}</span></a>
+        {showDate && <time datetime={story.data.published.toISOString()}>{dateKey(story.data.published)}</time>}
       </div>
       <Heading><a href={storyUrl(story)}>{story.data.titleZh}<span lang="en">{story.data.titleEn}</span></a></Heading>
       {!compact && <><p>{story.data.summaryZh}<span lang="en">{story.data.summaryEn}</span></p>

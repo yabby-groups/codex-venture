@@ -1,5 +1,6 @@
 ---
 import Base from './Base.astro';
+import ListingHeader from '../components/ListingHeader.astro';
 import ResourceCard from '../components/ResourceCard.astro';
 import '../styles/resources.css';
 import { directoryCopy, directoryTitle, resourceBase, resourcePage, resourcePageSize, type Resource } from '../lib/resources';
@@ -34,59 +35,56 @@ const schema = { '@context': 'https://schema.org', '@type': 'CollectionPage', ur
 <Base title={page === 1 ? zh : zh + ' · ' + page} description={intro.join(' ')}>
   <script slot="head" type="application/ld+json" set:html={jsonLd(schema)} />
   <section class="resource-directory" data-directory={base} data-size={resourcePageSize} data-static-page={page} data-pagefind-body>
-    <nav class="resource-breadcrumb" aria-label="面包屑 / Breadcrumb">
-      <a href={hub[0]}>{hub[1]} <span lang="en">{hub[2]}</span></a> <span aria-hidden="true">/</span> <span aria-current="page">{zh}</span>
-    </nav>
-    <header class="resource-head">
-      <h1>{zh}<span lang="en">{en}</span></h1>
-      <p>{intro[0]}<span lang="en">{intro[1]}</span></p>
-      <div class="resource-count">
-        <span>{rows.length} 项资源 / <span lang="en">{rows.length} resources</span></span>
-        {verified && <span>最近核实 / <span lang="en">Last verified</span> <time datetime={verified}>{verified}</time></span>}
-      </div>
-    </header>
+    <a class="resource-parent" href={hub[0]}><span aria-hidden="true">←</span> {hub[1]} <span lang="en">{hub[2]}</span></a>
+    <ListingHeader {zh} {en}>
+      <span class="listing-count" role="status" data-pagefind-ignore><span data-result-count>{rows.length}</span> 项 / <span lang="en">resources</span></span>
+    </ListingHeader>
     <div data-enhanced hidden data-pagefind-ignore>
-      <label class="resource-search" for="q"><span>搜索{type === 'skills' ? '技能' : '资源'} / <span lang="en">Search {type === 'skills' ? 'skills' : 'resources'}</span></span>
-        <input id="q" type="search" placeholder="名称、用途、平台 / Name, task, platform" autocomplete="off" />
-      </label>
-      {platforms.length > 0 && <div class="resource-platforms" role="group" aria-label="平台 / Platforms">
-        <button type="button" data-platform="" aria-pressed="true">全部 / All</button>
-        {platforms.map((platform) => <button type="button" data-platform={platform} aria-pressed="false">{platform}</button>)}
-      </div>}
-    </div>
-    <div class="resource-body">
-      <details class="resource-filters" data-enhanced hidden data-pagefind-ignore>
-        <summary>筛选 / Filters</summary>
-        {facets.filter(({ key, options }) => key === 'category' || options.length > 1).map(({ key, label, options }) =>
-          <label>{label}<select data-facet={key}><option value="">全部 / All</option>
-            {options.map(([value, label]) => <option value={value}>{label}</option>)}
-          </select></label>
-        )}
-        <button type="button" data-clear data-page-action>清除筛选 / Clear filters</button>
-      </details>
-      <section aria-label="资源结果 / Resource results">
-        <div class="resource-toolbar" data-enhanced hidden data-pagefind-ignore>
-          <span data-result class="resource-count" role="status">{rows.length} 项 / {rows.length} results</span>
-          <label>排序 / Sort<select data-sort>
+      <div class="resource-controls">
+        <label class="resource-search" for="q">
+          <span>搜索{type === 'skills' ? '技能' : '资源'} / <span lang="en">Search {type === 'skills' ? 'skills' : 'resources'}</span></span>
+          <input id="q" type="search" placeholder="名称、用途、平台 / Name, task, platform" autocomplete="off" />
+        </label>
+        <label class="resource-sort">
+          <span>排序 / <span lang="en">Sort</span></span>
+          <select data-sort>
             <option value="">最近收录 / Recently added</option>
             <option value="verified">最近核实 / Recently verified</option>
             <option value="name">名称 / Name</option>
             {rows.filter((row) => row.github).length > 1 && <option value="stars">GitHub Stars</option>}
             {rows.some((row) => row.featured) && <option value="featured">编辑精选 / Editor’s picks</option>}
             {rows.filter((row) => row.releasedAt).length > 1 && <option value="release">版本日期 / Release date</option>}
+          </select>
+        </label>
+      </div>
+      {platforms.length > 0 && <div class="resource-platforms" role="group" aria-label="平台 / Platforms">
+        <button type="button" data-platform="" aria-pressed="true">全部 / <span lang="en">All</span></button>
+        {platforms.map((platform) => <button type="button" data-platform={platform} aria-pressed="false">{platform}</button>)}
+      </div>}
+    </div>
+    <div class="resource-body">
+      <details class="resource-filters" data-enhanced hidden data-pagefind-ignore>
+        <summary>筛选 / <span lang="en">Filters</span></summary>
+        {facets.filter(({ key, options }) => key === 'category' || options.length > 1).map(({ key, label, options }) =>
+          <label>{label}<select data-facet={key}><option value="">全部 / All</option>
+            {options.map(([value, label]) => <option value={value}>{label}</option>)}
           </select></label>
-        </div>
+        )}
+        <button type="button" data-clear data-page-action>清除筛选 / <span lang="en">Clear</span></button>
+      </details>
+      <section aria-label="资源结果 / Resource results">
+        <p class="resource-error" data-result-error role="status" data-pagefind-ignore></p>
         <div class="resource-grid" data-cards>{visible.map((resource) => <ResourceCard {resource} />)}</div>
         <p class="resource-empty" data-empty hidden>没有匹配资源。请调整关键词或清除筛选。<span lang="en">No matching resources. Try another search or clear your filters.</span></p>
         <nav class="pagination" data-client-pages hidden aria-label="分页 / Pagination" data-pagefind-ignore>
-          <button type="button" data-page-action="-1">← 上一页 / Previous</button>
+          <button type="button" data-page-action="-1">← 上一页 / <span lang="en">Previous</span></button>
           <span data-page-count></span>
-          <button type="button" data-page-action="1">下一页 / Next →</button>
+          <button type="button" data-page-action="1">下一页 / <span lang="en">Next</span> →</button>
         </nav>
         {lastPage > 1 && <nav class="pagination" data-static-pages aria-label="分页 / Pagination">
-          {page > 1 && <a href={resourcePage(type, page - 1)}>← 上一页 / Previous</a>}
+          {page > 1 && <a href={resourcePage(type, page - 1)}>← 上一页 / <span lang="en">Previous</span></a>}
           <span>{page} / {lastPage}</span>
-          {page < lastPage && <a href={resourcePage(type, page + 1)}>下一页 / Next →</a>}
+          {page < lastPage && <a href={resourcePage(type, page + 1)}>下一页 / <span lang="en">Next</span> →</a>}
         </nav>}
       </section>
     </div>

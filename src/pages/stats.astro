@@ -46,7 +46,7 @@ const monday = last - (new Date(last).getUTCDay() + 6) % 7 * dayMs;
         ['信息来源域名', 'Source domains', sources.size],
         ['创刊至今天数', 'Days since first publication', operatingDays],
         ['最近发布', 'Latest publication', latest ? dateKey(latest) : '—'],
-      ].map(([zh, en, value]) => <div><dt>{zh}<br /><span lang="en">{en}</span></dt><dd>{value}</dd></div>)}
+      ].map(([zh, en, value]) => <div><dt>{zh} / <span lang="en">{en}</span></dt><dd>{value}</dd></div>)}
     </dl>
     <div class="prose">
       {[

@@ -1,0 +1,15 @@
+---
+interface Props {
+  zh: string;
+  en: string;
+  intro?: string[];
+}
+const { zh, en, intro } = Astro.props;
+---
+<header class="listing-header">
+  <div class="listing-title">
+    <h1 class="page-heading">{zh}<span lang="en">{en}</span></h1>
+    <slot />
+  </div>
+  {intro && <p>{intro[0]}<span lang="en">{intro[1]}</span></p>}
+</header>

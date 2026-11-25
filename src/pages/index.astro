@@ -42,7 +42,7 @@ const editions = [briefing, weekly].filter((story): story is Story => Boolean(st
   </section>}
   <div class="reading-grid home-feed">
     <section>
-      <SectionHeading zh="最新资讯" en="Latest news" href="/news/" />
+      <SectionHeading zh="最新资讯" en="Latest news" variant="major" href="/news/" />
       <StoryList stories={news.slice(0, 7)} nested />
     </section>
     <aside class="rail">

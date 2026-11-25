@@ -1,8 +1,15 @@
 ---
-interface Props { zh: string; en: string; href?: string }
-const { zh, en, href } = Astro.props;
+interface Props {
+  zh: string;
+  en: string;
+  href?: string;
+  level?: 2 | 3 | 4;
+  variant?: 'major' | 'compact' | 'subtle';
+}
+const { zh, en, href, level = 2, variant = 'compact' } = Astro.props;
+const Heading = `h${level}` as const;
 ---
-<div class="section-heading">
-  <h2>{zh}<span lang="en">{en}</span></h2>
-  {href && <a href={href} aria-label={zh + ' / ' + en}>查看全部 <span lang="en">View all ↗</span></a>}
+<div class:list={['section-heading', `section-heading--${variant}`]}>
+  <Heading>{zh}<span lang="en">{en}</span></Heading>
+  {href && <a href={href}>查看全部 <span lang="en">View all</span><span aria-hidden="true"> ↗</span><span class="sr-only"> {zh} <span lang="en">{en}</span></span></a>}
 </div>

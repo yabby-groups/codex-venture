@@ -1,5 +1,6 @@
 ---
 import Base from './Base.astro';
+import ListingHeader from '../components/ListingHeader.astro';
 import ResourceCard from '../components/ResourceCard.astro';
 import StoryList from '../components/StoryList.astro';
 import SectionHeading from '../components/SectionHeading.astro';
@@ -22,14 +23,11 @@ const editorialTopics = Object.entries(types).filter(([key, [, , owner]]) =>
 ---
 <Base title={zh} description={intro.join(' ')}>
   <div class="resource-directory" data-pagefind-body>
-    <header class="resource-head">
-      <h1>{zh}<span lang="en">{en}</span></h1>
-      <p>{intro[0]}<span lang="en">{intro[1]}</span></p>
-    </header>
+    <ListingHeader {zh} {en} {intro} />
     <nav class="resource-directory-links" aria-label="栏目入口 / Browse sections">
       {directories.map(({ type, rows }) => {
         const [zh, en] = directoryTitle(type);
-        return <a href={resourceBase(type)}><strong>{zh}</strong><span lang="en">{en}</span><span>{rows.length} 项 / {rows.length} resources</span></a>;
+        return <a href={resourceBase(type)}><strong>{zh}</strong><span lang="en">{en}</span><span>{rows.length} 项 / <span lang="en">{rows.length === 1 ? 'resource' : 'resources'}</span></span></a>;
       })}
       {editorialTopics.map(([key, [zh, en]]) => <a href={`/topics/${key}/`}><strong>{zh}</strong><span lang="en">{en}</span></a>)}
     </nav>
@@ -37,10 +35,10 @@ const editorialTopics = Object.entries(types).filter(([key, [, , owner]]) =>
       <SectionHeading zh="编辑精选" en="Editor’s picks" />
       <div class="resource-grid">{featured.map((resource) => <ResourceCard {resource} />)}</div>
     </section>}
-    <section class="resource-hub-section">
+    {recent.length > 0 && <section class="resource-hub-section">
       <SectionHeading zh={learning ? '可复用的实践' : '最新收录'} en={learning ? 'Ready to reuse' : 'Recently added'} />
       <div class="resource-grid">{recent.map((resource) => <ResourceCard {resource} />)}</div>
-    </section>
+    </section>}
     {learning && editorialTopics.map(([key, [zh, en]]) => <section class="resource-hub-section">
       <SectionHeading {zh} {en} href={`/topics/${key}/`} />
       <StoryList stories={stories.filter(({ data }) => data.type === key).slice(0, 4)} nested />

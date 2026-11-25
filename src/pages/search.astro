@@ -5,10 +5,10 @@ import Base from '../layouts/Base.astro';
   <div class="search-page">
     <h1 class="page-heading">全文搜索<span lang="en">Search</span></h1>
     <form id="search" role="search" action="/search/">
-      <label for="q">标题、项目或技术关键词<span lang="en">Title, project or keyword</span></label>
+      <label for="q">标题、项目或技术关键词 / <span lang="en">Title, project or keyword</span></label>
       <div class="search-controls">
         <input type="search" name="q" id="q" required />
-        <button type="submit">搜索<span lang="en">Search</span></button>
+        <button type="submit">搜索 / <span lang="en">Search</span></button>
       </div>
     </form>
     <p id="status" role="status"></p>
@@ -51,7 +51,7 @@ import Base from '../layouts/Base.astro';
       const date = document.createElement('time');
       date.dateTime = match.meta.date ?? '';
       date.textContent = match.meta.date ?? '';
-      section.append(translation);
+      section.append(' ', translation);
       meta.append(section, date);
       const excerpt = document.createElement('p');
       // Pagefind supplies highlighted text. Retain only text and mark elements.
@@ -78,7 +78,11 @@ import Base from '../layouts/Base.astro';
         const matches: Match[] = await Promise.all(response.results.slice(0, 30).map((match: { data: () => Promise<Match> }) => match.data()));
         if (current !== sequence) return;
         matches.forEach(addMatch);
-        status.textContent = matches.length ? `显示 ${matches.length} / ${response.results.length} 条结果 · Showing ${matches.length} of ${response.results.length} results` : '无匹配结果 / No results';
+        const english = document.createElement('span');
+        english.lang = 'en';
+        english.textContent = matches.length ? 'results' : 'No results';
+        const shown = matches.length < response.results.length ? `${matches.length} / ${response.results.length}` : matches.length;
+        status.replaceChildren(matches.length ? `${shown} 条结果 / ` : '无匹配结果 / ', english);
       } catch {
         if (current === sequence) status.textContent = '搜索暂不可用 / Search unavailable';
       } finally {
