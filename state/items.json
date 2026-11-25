@@ -1528,7 +1528,7 @@
     "published": "2026-11-25T01:01:43+00:00",
     "source": "google-adk-python",
     "source_url": "https://api.github.com/repos/google/adk-python/releases?per_page=10",
-    "status": "pending",
+    "status": "skipped",
     "summary": "## [2.15.1](https://github.com/google/adk-python/compare/v2.15.0...v2.15.1) (2026-11-24) ### Highlights This release focuses on stability and integration bug fixes across model sampling, agent-to-agent streaming, tool call validation, and instruction routing. * **Models**: Maintain compatibility across Anthropic SDK versions 1.x and 2.x when configuring Claude sampling settings. ([debf43d](https://github.com/google/adk-python/commit/debf43da4571dd8ba52a663d96e5ae2601030212)) * **A2A**: Fix streamed output persistence behavior for RemoteA2aAgent calls to prevent incomplete output states. ([c4bdc84](https://github.com/google/adk-python/commit/c4bdc846f2646549425f5ac5d98ea0eb7faebd96)) * **Tools**: Improve error reporting when Apigee tool calls receive arguments that are not JSON objects. ([6a4ba6a](https://github.com/google/adk-python/commit/6a4ba6adfd01d1c727729b4d6b05e93e23c454c7)) * **Routing**: Ensure reliable dynamic instruction gating by tracking transient instructions correctly. ([347dca6](https://github.com/google/adk-python/commit/347dca6b282dc401ac6203c4581be7ab9e292b82)) ### Bug Fixes * **a2a:** revert persisting streamed RemoteA2aAgent output without last_chunk ([c4bdc84](https://github.com/google/adk-python/commit/c4bdc846f2646549425f5ac5d98ea0eb7faebd96)), closes [#7255](https://github.com/google/adk-python/issues/7255) * **models:** handle Claude sampling settings on anthropic 1.x and 2.x ([debf43d](https://github.com/google/adk-python/commit/debf43da4571dd8ba52a663d96e5ae2601030212)) * report Apigee tool calls whose arguments are not a JSON object ([6a4ba6a](https://github.com/google/adk-python/commit/6a4ba6adfd01d1c727729b4d6b05e93e23c454c7)), closes [#7740](https://github.com/google/adk-python/issues/7740) * track transient instructions and gate dynamic instruction routing ([347dca6](https://github.com/google/adk-python/commit/347dca6b282dc401ac6203c4581be7ab9e292b82)), closes [#8217](https://github.com/google/adk-python/issues/8217)",
     "title": "v2.15.1",
     "url": "https://github.com/google/adk-python/releases/tag/v2.15.1"
@@ -3960,7 +3960,7 @@
     "published": "2026-11-25T00:59:30+00:00",
     "source": "litellm",
     "source_url": "https://api.github.com/repos/BerriAI/litellm/releases?per_page=10",
-    "status": "pending",
+    "status": "skipped",
     "summary": "## Verify this release ```bash cosign verify \\ --certificate-identity https://github.com/BerriAI/project-releaser/.github/workflows/release.yml@refs/heads/main \\ --certificate-oidc-issuer https://token.actions.githubusercontent.com \\ ghcr.io/berriai/litellm:v1.109.5 ``` Same command for `litellm-database`, `litellm-non_root` and the `docker.io/litellm/*` images ## What's new in 1.109.5 4 PRs. 1 fixed, 1 improved. No action needed to upgrade ### Changes - **Deployment:** Fixed the standalone UI image shipping outdated nginx and zlib, now nginx 1.31.10 and zlib 1.4 (#54149) - **Performance:** Improved end-user restriction refreshes to read only restricted customers instead of the whole end-user table (#51772) Also in [1.108.17](https://github.com/BerriAI/litellm/releases/tag/v1.108.17), [1.110.4](https://github.com/BerriAI/litellm/releases/tag/v1.110.4), [1.111.0](https://github.com/BerriAI/litellm/releases/tag/v1.111.0) --- Backport #54292 · [Full changelog](https://github.com/BerriAI/litellm/compare/v1.109.4...v1.109.5)",
     "title": "v1.109.5",
     "url": "https://github.com/BerriAI/litellm/releases/tag/v1.109.5"
@@ -4435,7 +4435,7 @@
     "published": "2026-11-25T01:16:32+00:00",
     "source": "hf-models",
     "source_url": "https://huggingface.co/api/models?sort=lastModified&direction=-1&limit=16&full=true",
-    "status": "pending",
+    "status": "skipped",
     "summary": "models listing. Tags: region:us",
     "title": "ood-lab/cl-relay-dtn-ex34",
     "url": "https://huggingface.co/ood-lab/cl-relay-dtn-ex34"
@@ -5866,7 +5866,7 @@
     "published": "2026-11-25T01:13:14+00:00",
     "source": "github-search-inference",
     "source_url": "https://api.github.com/search/repositories?q=topic%3Ainference+pushed%3A%3E%3D2026-11-18+archived%3Afalse+stars%3A%3E%3D10&sort=stars&per_page=14",
-    "status": "pending",
+    "status": "skipped",
     "summary": "DeepSpeed is a deep learning optimization library that makes distributed training and inference easy, efficient, and effective. License: Apache-2.0.",
     "title": "deepspeedai/DeepSpeed",
     "url": "https://github.com/deepspeedai/DeepSpeed"
@@ -5951,7 +5951,7 @@
     "published": "2026-11-24T14:00:36+00:00",
     "source": "hacker-news-ai",
     "source_url": "https://hn.algolia.com/api/v1/search_by_date?query=AI&tags=story&hitsPerPage=20",
-    "status": "pending",
+    "status": "skipped",
     "summary": "Community discussion. Linked source: https://status.me/",
     "title": "Show HN: status: an emoji and your status, built with SvelteKit and Claude",
     "url": "https://news.ycombinator.com/item?id=50628286"
@@ -9712,7 +9712,7 @@
     "published": "2026-11-20T17:45:26.227586+00:00",
     "source": "ecosystem-open-vsx",
     "source_url": "https://open-vsx.org/api/-/search?query=AI+testing&size=10",
-    "status": "pending",
+    "status": "skipped",
     "summary": "Open VSX version 1.4.1. Publisher description: IBM i Testing extension for VS Code",
     "title": "IBM i Testing",
     "url": "https://open-vsx.org/extension/IBM/vscode-ibmi-testing"
@@ -10214,7 +10214,7 @@
     "published": "2026-11-25T01:16:27+00:00",
     "source": "hf-spaces",
     "source_url": "https://huggingface.co/api/spaces?sort=lastModified&direction=-1&limit=16&full=true",
-    "status": "pending",
+    "status": "skipped",
     "summary": "spaces listing. Tags: static, region:us",
     "title": "marshalavi/TradingGuru-Terminal",
     "url": "https://huggingface.co/spaces/marshalavi/TradingGuru-Terminal"
@@ -10670,6 +10670,9 @@
     "url": "https://open-vsx.org/extension/stryker-mutator/stryker-mutator"
   },
   "8cb397296bc5c93bf444f49c745351214383d8355c0a1e22262e3dd554c445d5": {
+    "articles": [
+      "/news/makeaivideo-mcp-registry-1-7-0/"
+    ],
     "category": "agents",
     "content_type": "mcp",
     "discovered": "2026-11-25T01:16:29.416465+00:00",
@@ -10699,7 +10702,7 @@
     "published": "2026-11-23T17:05:32.316004+00:00",
     "source": "ecosystem-mcp-registry",
     "source_url": "https://registry.modelcontextprotocol.io/v0.1/servers?version=latest&limit=12&search=video",
-    "status": "pending",
+    "status": "published",
     "summary": "Registry listing 1.7.0. Publisher description: AI video generator: make TikTok, Reels and Shorts videos with voiceover and captions, and post them.",
     "title": "ai.makeaivideo/video-generator",
     "url": "https://registry.modelcontextprotocol.io/v0.1/servers/ai.makeaivideo%2Fvideo-generator/versions/1.7.0",
@@ -13064,7 +13067,7 @@
     "published": "2026-11-25T00:34:00+00:00",
     "source": "dev-tutorial",
     "source_url": "https://dev.to/api/articles?tag=tutorial&per_page=12",
-    "status": "pending",
+    "status": "skipped",
     "summary": "A memecoin trader's profile says +$6,206 on $4,902 invested. Another view of the same fills says...",
     "title": "Why realized plus unrealized PnL misleads on a memecoin wallet, in TypeScript",
     "url": "https://dev.to/copytop/why-realized-plus-unrealized-pnl-misleads-on-a-memecoin-wallet-in-typescript-8ne"
@@ -15350,6 +15353,9 @@
     "url": "https://arxiv.org/abs/2606.10173"
   },
   "d1a8a8c302ae6a4a1fbc978496d32a46f2cbaf6babb552dba5f4b9de436fa2fa": {
+    "articles": [
+      "/news/claude-code-2-1-332-mcp-skills/"
+    ],
     "category": "coding",
     "discovered": "2026-11-25T03:19:53.460134+00:00",
     "discovery": {},
@@ -15357,7 +15363,7 @@
     "published": "2026-11-25T01:32:14+00:00",
     "source": "claude-code",
     "source_url": "https://api.github.com/repos/anthropics/claude-code/releases?per_page=10",
-    "status": "pending",
+    "status": "published",
     "summary": "## What's changed - Added skills from MCP servers (beta). They show as `server:skill` in the `/` menu; other skills keep their names - Added a `PreSkillShellCommand` hook event that can refuse a skill or command's inline shell commands as it loads; on 2.1.331 and older, a settings file naming it opens a dialog at start - Added \"Always deliver\" to the prompt for held messages from other sessions - Added a footer line that stays while a flagged message has your session on a different model, until you pick one with `/model` - Added an OpenTelemetry `assistant_response` event for text Claude sends through SendUserMessage or Cowork's message tool, when response logging is on - Added a warning in VS Code and Desktop's Code tab when part of a session couldn't be saved, saying how to save it with `/compact` - Added a notice in VS Code and Desktop's Code tab when a resumed session's earlier messages weren't loaded, as the terminal already shows - Added your Cyber Verification Program access tier to the startup header, beside the model name when your tier applies to that model and you're signed in with a claude.ai account - Fixed `claude auth login` reporting `Login successful.` when a claude.ai login could not be saved: it now exits 1 and says what to check, such as a leftover lock file or a full disk - Fixed Read, @-mentions and compaction hanging on a named pipe that nothing writes to, such as a `.env` mounted by a locked secrets manager; the read now fails after 20 seconds - Fixed turns ending in \"Prompt is too long\" after repeated auto-compaction failures when one more compaction at the context limit could have kept them going - Fixed compaction failing when a summary kept running past the output limit: after three cut-off replies, the last try now asks for a shorter summary - Fixed a freeze when a permission rule or hook condition with several wildcards was checked against a long command - Fixed freezes and runaway memory use in most cases while a hook prints output without end - Fixed a freeze and context overflow when a hook blocks or fails during a turn, or after `/compact`, with a very large log; text over about 50,000 characters is now shortened - Fixed the terminal freezing, and ignoring Ctrl+C, while a local MCP server floods its standard output - Fixed a freeze when a prompt or piped input holds an `@` followed by a very long unbroken string, such as minified CSS with an embedded font - Fixed a long freeze when opening a rewind point after a large tracked file was rewritten - Fixed SSE MCP servers hanging or refusing every tool call after their event stream was cut and came back on a new endpoint or not at all, until reconnected by hand - Fixed Remote Control showing a session in the desktop app, VS Code or the Agent SDK as running while it waited there on a dialog or an MCP server's question - Fixed a usage limit being reported as reached to Remote Control, IDE and SDK clients after it had already reset - Fixed CLAUDE.md and rules files being sent to the model a second time, in most cases, after a session moves into a worktree under `.claude/worktrees` with EnterWorktree or is resumed there - Fixed tool calls that never ran being counted",
     "title": "v2.1.332",
     "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.332"
@@ -17115,7 +17121,7 @@
     "published": "2026-11-18T20:10:06.492941+00:00",
     "source": "ecosystem-open-vsx",
     "source_url": "https://open-vsx.org/api/-/search?query=AI+testing&size=10",
-    "status": "pending",
+    "status": "skipped",
     "summary": "Open VSX version 68.13.8. Publisher description: Provides Apex test execution and management features",
     "title": "Apex Testing",
     "url": "https://open-vsx.org/extension/salesforce/salesforcedx-vscode-apex-testing"
