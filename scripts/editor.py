@@ -11,6 +11,7 @@ from zoneinfo import ZoneInfo
 from article_schema import BLOCKS, conforms
 from collect import canonical, digest, load, save, timestamp
 from release import RUNTIME
+from original import TYPES as ORIGINAL_TYPES, ready
 from resource_editor import resource_context
 
 ITEMS = Path('state/items.json')
@@ -113,6 +114,12 @@ def choose(mode, items, now, days=2, strategy=None):
     groups = {}
     briefing = mode in ('daily', 'weekly')
     for key, item in items.items():
+        original = any(item.get('content_type') in types for types in ORIGINAL_TYPES.values())
+        if mode in ORIGINAL_TYPES:
+            if not ready(mode, item):
+                continue
+        elif original and not briefing:
+            continue
         content_type = item.get('content_type')
         source = item.get('source', '')
         details = item.get('discovery', {})
@@ -148,6 +155,10 @@ def choose(mode, items, now, days=2, strategy=None):
             evidence['summary'] = evidence['summary'][:1400]
             if item.get('content_type'):
                 evidence['suggestedType'] = item['content_type']
+            if mode in ORIGINAL_TYPES:
+                evidence['basis'] = item.get('basis', 'external-account' if mode == 'stories' else 'documentation')
+                if 'experiment' in item:
+                    evidence['experiment'] = item['experiment']
             evidence['documents'] = item.get('evidence', [])[:3]
             evidence['lastVerified'] = item.get('verified_at')
             evidence['discovery'] = item.get('discovery', {})
@@ -204,10 +215,20 @@ def write_articles(response, mode, candidates, now):
         if collection == 'daily':
             if content_type != mode:
                 raise ValueError('Invalid briefing type')
+        elif mode in ORIGINAL_TYPES and (
+            content_type not in ORIGINAL_TYPES[mode] or not ready(mode, {
+                'status': 'pending', 'content_type': evidence[0].get('suggestedType'),
+                'evidence': evidence[0].get('documents'),
+            }) or (content_type == 'building-in-public' and evidence[0].get('basis') != 'public-operations')
+        ):
+            raise ValueError('Original article requires primary evidence from its own section')
         elif content_type not in CONTENT_TYPES:
             raise ValueError('Invalid content type')
         elif content_type != 'news':
             article.update(type=content_type, version=version, verified=day, status='current', tested=False)
+            experiment = evidence[0].get('experiment')
+            if mode == 'practices' and experiment and experiment['status'] == 'passed' and content_type == 'tutorials':
+                article['tested'] = True
             if content_type in ('skills', 'plugins', 'mcp', 'open-source', 'tools'):
                 article['project'] = digest(canonical(evidence[0]['url']))
         if collection == 'daily' and related:

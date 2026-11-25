@@ -139,6 +139,15 @@ def evidence_for(item):
         link = item['url']
         yield record(link, 'Original publication', document(link))
 
+    if details.get('github_issue'):
+        link = details['github_issue']
+        if re.fullmatch(r'https://api.github.com/repos/openai/codex/issues/[0-9]+', link):
+            issue = json.loads(document(link))
+            author = issue.get('user', {}).get('login', '')
+            yield record(item['url'], 'Public issue report and resolution status',
+                         f"Author: {author}. State: {issue.get('state')}. "
+                         f"State reason: {issue.get('state_reason')}. " + (issue.get('body') or ''))
+
     if details.get('hn_id', '').isdigit():
         link = 'https://hn.algolia.com/api/v1/items/' + details['hn_id']
         thread = json.loads(document(link))

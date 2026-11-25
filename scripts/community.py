@@ -10,7 +10,7 @@ def hn_rows(body):
             discussion = 'https://news.ycombinator.com/item?id=' + row['objectID']
             yield (row['title'], row.get('url') or discussion, row['created_at'],
                    row.get('story_text') or row['title'],
-                   {'discussion': discussion, 'hn_id': row['objectID']})
+                   {'discussion': discussion, 'hn_id': row['objectID'], 'author': row.get('author', '')})
 
 
 def bluesky_rows(body):

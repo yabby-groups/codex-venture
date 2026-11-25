@@ -18,6 +18,7 @@ from evidence import enrich
 from resource_editor import resource_context
 import resource_ingest
 import operations_queue
+import original
 from editor import ITEMS, DATE_ZONE, RUN_BUDGET, choose, metadata, output_schema, sync, write_articles
 from model_cost import configured_price, event_usage, worst_case
 from release import PROBE_HEADERS, probe
@@ -89,9 +90,15 @@ def prepare(task):
     if task == 'news' and not any(item['status'] == 'pending' for item in load(ITEMS, {}).values()):
         collect()
         discovery()
+    if task in original.TYPES:
+        original.discover(task, now)
     items, articles = ({}, []) if resource_task else (load(ITEMS, {}), metadata())
     if not resource_task:
         sync(items, articles)
+        if task in original.TYPES:
+            original.prepare(task, items, now)
+            sync(items, articles)
+            original.report(task, items, articles)
         save(ITEMS, items)
     if task in ('collect', 'discover'):
         if task == 'discover':
@@ -149,7 +156,7 @@ def prepare(task):
     model = (os.getenv('CODEX_ADVANCED_MODEL') if task == 'weekly' else None) or os.getenv('CODEX_MODEL')
     price = configured_price('venture', model, day)
     root = store()
-    slots = BATCH_SLOTS if resource_task or task in ('news', 'backfill') else 1
+    slots = BATCH_SLOTS if resource_task or task in ('news', 'backfill') or task in original.TYPES else 1
     remaining = dict(items)
     batches = []
     profiles = resource_context() if not resource_task and task in ('news', 'backfill') else []
@@ -484,6 +491,8 @@ def finish():
             day.setdefault('settled', []).append(identity)
             save(path, ledger)
     task = os.environ['TASK']
+    if task in original.TYPES:
+        original.report(task, load(ITEMS, {}), metadata(), receipt)
     if os.getenv('CONTENT_CHANGED') == 'true':
         result = 'PUBLISHED' if os.getenv('PRODUCTION_RESULT') == 'success' else 'DEPLOY_FAILED'
     elif task == 'smoke-test':

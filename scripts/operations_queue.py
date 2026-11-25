@@ -13,6 +13,7 @@ PATH = Path('.venture-runtime/operations.json')
 INTERVALS = {
     'collect': 2, 'discover': 6, 'news': 2, 'resource-sync': 2,
     'daily': 24, 'weekly': 168, 'backfill': 24, 'resource-refresh': 168,
+    'practices': 8, 'stories': 8,
 }
 
 
@@ -52,6 +53,8 @@ def record(task, result):
     now = datetime.now(DATE_ZONE)
     row = queue.setdefault(task, {})
     interval = INTERVALS.get(task, 24)
+    if task in ('practices', 'stories'):
+        interval = max(2, min(168, int(os.getenv('VENTURE_' + task.upper() + '_HOURS') or interval)))
     if result in ('BUDGET_BLOCKED', 'SOURCE_BLOCKED', 'DEPLOY_FAILED', 'BACKLOG', 'SKIPPED'):
         interval = 1
     due = now + timedelta(hours=interval)

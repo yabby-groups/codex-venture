@@ -7,7 +7,7 @@ on:
       task:
         type: choice
         default: health
-        options: [cycle, collect, discover, news, daily, weekly, backfill, health, smoke-test, resource-bootstrap, resource-discover, resource-enrich, resource-sync, resource-refresh, resource-backfill]
+        options: [cycle, collect, discover, news, practices, stories, daily, weekly, backfill, health, smoke-test, resource-bootstrap, resource-discover, resource-enrich, resource-sync, resource-refresh, resource-backfill]
       resource_type:
         type: choice
         default: all
@@ -40,6 +40,8 @@ concurrency:
 env:
   ASTRO_TELEMETRY_DISABLED: '1'
   PYTHONUNBUFFERED: '1'
+  VENTURE_PRACTICES_HOURS: ${{ vars.VENTURE_PRACTICES_HOURS }}
+  VENTURE_STORIES_HOURS: ${{ vars.VENTURE_STORIES_HOURS }}
 
 jobs:
   prepare:
@@ -69,7 +71,7 @@ jobs:
         run: |
           task="${INPUT_TASK:-cycle}"
           case "$task" in
-            cycle|collect|discover|news|daily|weekly|backfill|health|smoke-test|resource-bootstrap|resource-discover|resource-enrich|resource-sync|resource-refresh|resource-backfill) ;;
+            cycle|collect|discover|news|practices|stories|daily|weekly|backfill|health|smoke-test|resource-bootstrap|resource-discover|resource-enrich|resource-sync|resource-refresh|resource-backfill) ;;
             *) exit 1 ;;
           esac
           echo "revision=$(git rev-parse HEAD)" >> "$GITHUB_OUTPUT"
@@ -103,6 +105,7 @@ jobs:
           VENTURE_COST_CURRENCY: ${{ vars.VENTURE_COST_CURRENCY }}
           VENTURE_STRATEGY_AUTO_UPDATE: ${{ vars.VENTURE_STRATEGY_AUTO_UPDATE }}
           RESOURCE_TYPE: ${{ inputs.resource_type }}
+          VENTURE_PUBLIC_PROJECT: ${{ github.repository == 'yabby-groups/codex-venture' && !github.event.repository.private }}
           VENTURE_RUN_TOKENS: ${{ vars.VENTURE_RUN_TOKENS || '25000' }}
           BACKFILL_DAYS: ${{ inputs.days }}
           VENTURE_DAILY_TOKEN_LIMIT: ${{ vars.VENTURE_DAILY_TOKEN_LIMIT }}
