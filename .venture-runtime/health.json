@@ -36,7 +36,7 @@
     "candidates": 9,
     "error": null,
     "failures": 0,
-    "last_success": "2026-11-25T12:02:48.904663+00:00",
+    "last_success": "2026-11-25T12:08:46.883246+00:00",
     "retry_after": null,
     "url": "https://machinelearning.apple.com/rss.xml",
     "validators": {
@@ -48,7 +48,7 @@
     "candidates": 429,
     "error": null,
     "failures": 0,
-    "last_success": "2026-11-25T12:03:00.383493+00:00",
+    "last_success": "2026-11-25T12:08:58.657490+00:00",
     "retry_after": null,
     "url": "https://rss.arxiv.org/rss/cs.AI",
     "validators": {
@@ -122,10 +122,10 @@
     }
   },
   "cloudflare-ai": {
-    "candidates": 3,
+    "candidates": 19,
     "error": null,
     "failures": 0,
-    "last_success": "2026-11-25T12:02:48.904663+00:00",
+    "last_success": "2026-11-25T12:08:46.883246+00:00",
     "retry_after": null,
     "url": "https://blog.cloudflare.com/tag/ai/rss/",
     "validators": {}
@@ -197,10 +197,10 @@
     }
   },
   "cursor": {
-    "candidates": 2,
+    "candidates": 9,
     "error": null,
     "failures": 0,
-    "last_success": "2026-11-25T12:02:48.904663+00:00",
+    "last_success": "2026-11-25T12:08:46.883246+00:00",
     "retry_after": null,
     "url": "https://cursor.com/changelog/rss.xml",
     "validators": {}
@@ -231,18 +231,18 @@
     "candidates": 9,
     "error": null,
     "failures": 0,
-    "last_success": "2026-11-25T12:03:00.383493+00:00",
+    "last_success": "2026-11-25T12:08:58.657490+00:00",
     "retry_after": null,
     "url": "https://dev.to/api/articles?tag=ai&per_page=12",
     "validators": {
-      "If-None-Match": "W/\"ad756bd6a5403d35d3e72c8cc17d922d\""
+      "If-None-Match": "W/\"a3edb6e8068376a8e423a6a185775926\""
     }
   },
   "dev-automation": {
     "candidates": 11,
     "error": null,
     "failures": 0,
-    "last_success": "2026-11-25T12:03:00.383493+00:00",
+    "last_success": "2026-11-25T12:08:58.657490+00:00",
     "retry_after": null,
     "url": "https://dev.to/api/articles?tag=automation&per_page=12",
     "validators": {
@@ -253,7 +253,7 @@
     "candidates": 12,
     "error": null,
     "failures": 0,
-    "last_success": "2026-11-25T12:03:00.383493+00:00",
+    "last_success": "2026-11-25T12:08:58.657490+00:00",
     "retry_after": null,
     "url": "https://dev.to/api/articles?tag=machinelearning&per_page=12",
     "validators": {
@@ -264,18 +264,18 @@
     "candidates": 10,
     "error": null,
     "failures": 0,
-    "last_success": "2026-11-25T12:03:00.383493+00:00",
+    "last_success": "2026-11-25T12:08:58.657490+00:00",
     "retry_after": null,
     "url": "https://dev.to/api/articles?tag=opensource&per_page=12",
     "validators": {
-      "If-None-Match": "W/\"c5028ffd880cb0503df1c3523a236219\""
+      "If-None-Match": "W/\"d05a4744ee5cd46a6854a3b5ff70b7b5\""
     }
   },
   "dev-tutorial": {
     "candidates": 0,
     "error": null,
     "failures": 0,
-    "last_success": "2026-11-25T12:03:00.383493+00:00",
+    "last_success": "2026-11-25T12:08:58.657490+00:00",
     "retry_after": null,
     "url": "https://dev.to/api/articles?tag=tutorial&per_page=12",
     "validators": {
@@ -308,7 +308,7 @@
     "candidates": 0,
     "error": null,
     "failures": 0,
-    "last_success": "2026-11-25T12:03:00.383493+00:00",
+    "last_success": "2026-11-25T12:08:58.657490+00:00",
     "retry_after": null,
     "url": "https://registry.modelcontextprotocol.io/v0.1/servers?version=latest&limit=12&search=video",
     "validators": {}
@@ -317,7 +317,7 @@
     "candidates": 1,
     "error": null,
     "failures": 0,
-    "last_success": "2026-11-25T12:03:00.383493+00:00",
+    "last_success": "2026-11-25T12:08:58.657490+00:00",
     "retry_after": null,
     "url": "https://open-vsx.org/api/-/search?query=AI+video&size=10",
     "validators": {
@@ -328,7 +328,7 @@
     "candidates": 0,
     "error": null,
     "failures": 0,
-    "last_success": "2026-11-25T12:03:00.383493+00:00",
+    "last_success": "2026-11-25T12:08:58.657490+00:00",
     "retry_after": null,
     "url": "https://hn.algolia.com/api/v1/search?query=AI&tags=show_hn&hitsPerPage=15",
     "validators": {}
@@ -401,7 +401,7 @@
     "candidates": 0,
     "error": null,
     "failures": 0,
-    "last_success": "2026-11-25T12:02:48.904663+00:00",
+    "last_success": "2026-11-25T12:08:46.883246+00:00",
     "retry_after": null,
     "url": "https://github.blog/changelog/feed/",
     "validators": {
@@ -410,10 +410,10 @@
     }
   },
   "github-open-source": {
-    "candidates": 4,
+    "candidates": 6,
     "error": null,
     "failures": 0,
-    "last_success": "2026-11-25T12:02:48.904663+00:00",
+    "last_success": "2026-11-25T12:08:46.883246+00:00",
     "retry_after": null,
     "url": "https://github.blog/open-source/feed/",
     "validators": {
@@ -468,10 +468,10 @@
     }
   },
   "google-ai": {
-    "candidates": 7,
+    "candidates": 17,
     "error": null,
     "failures": 0,
-    "last_success": "2026-11-25T12:02:48.904663+00:00",
+    "last_success": "2026-11-25T12:08:46.883246+00:00",
     "retry_after": null,
     "url": "https://blog.google/innovation-and-ai/rss/",
     "validators": {}
@@ -531,7 +531,7 @@
     "candidates": 10,
     "error": null,
     "failures": 0,
-    "last_success": "2026-11-25T12:03:00.383493+00:00",
+    "last_success": "2026-11-25T12:08:58.657490+00:00",
     "retry_after": null,
     "url": "https://hn.algolia.com/api/v1/search_by_date?query=Local+LLM&tags=story&hitsPerPage=12",
     "validators": {}
@@ -540,7 +540,7 @@
     "candidates": 11,
     "error": null,
     "failures": 0,
-    "last_success": "2026-11-25T12:03:00.383493+00:00",
+    "last_success": "2026-11-25T12:08:58.657490+00:00",
     "retry_after": null,
     "url": "https://hn.algolia.com/api/v1/search_by_date?query=AI+inference&tags=story&hitsPerPage=12",
     "validators": {}
@@ -549,7 +549,7 @@
     "candidates": 0,
     "error": null,
     "failures": 0,
-    "last_success": "2026-11-25T12:03:00.383493+00:00",
+    "last_success": "2026-11-25T12:08:58.657490+00:00",
     "retry_after": null,
     "url": "https://hn.algolia.com/api/v1/search_by_date?query=AI+%E5%8B%95%E7%94%BB&tags=story&hitsPerPage=12",
     "validators": {}
@@ -566,7 +566,7 @@
     "candidates": 0,
     "error": null,
     "failures": 0,
-    "last_success": "2026-11-25T12:02:48.904663+00:00",
+    "last_success": "2026-11-25T12:08:46.883246+00:00",
     "retry_after": null,
     "url": "https://hamel.dev/index.xml",
     "validators": {
@@ -586,43 +586,43 @@
     }
   },
   "hf-datasets": {
-    "candidates": 27,
+    "candidates": 39,
     "error": null,
     "failures": 0,
-    "last_success": "2026-11-25T12:03:00.383493+00:00",
+    "last_success": "2026-11-25T12:08:58.657490+00:00",
     "retry_after": null,
     "url": "https://huggingface.co/api/datasets?sort=lastModified&direction=-1&limit=16&full=true",
     "validators": {
-      "If-None-Match": "W/\"1b61-2VUXovNyoNl9aMuPrd4Vlds8bTU\""
+      "If-None-Match": "W/\"19eb-NETX/g/l/qUl/DPfUBUVyOc1UDk\""
     }
   },
   "hf-models": {
-    "candidates": 31,
+    "candidates": 45,
     "error": null,
     "failures": 0,
-    "last_success": "2026-11-25T12:03:00.383493+00:00",
+    "last_success": "2026-11-25T12:08:58.657490+00:00",
     "retry_after": null,
     "url": "https://huggingface.co/api/models?sort=lastModified&direction=-1&limit=16&full=true",
     "validators": {
-      "If-None-Match": "W/\"f9921-DH33ByW2zZ9TucJdYZIr/1zXZ/o\""
+      "If-None-Match": "W/\"7844a-llVgLjqNJs4YMc1eRT6Xq87Nmhw\""
     }
   },
   "hf-spaces": {
-    "candidates": 26,
+    "candidates": 36,
     "error": null,
     "failures": 0,
-    "last_success": "2026-11-25T12:03:00.383493+00:00",
+    "last_success": "2026-11-25T12:08:58.657490+00:00",
     "retry_after": null,
     "url": "https://huggingface.co/api/spaces?sort=lastModified&direction=-1&limit=16&full=true",
     "validators": {
-      "If-None-Match": "W/\"d46f-GvVZrky8hsAW7jpanCqcmIdp7qY\""
+      "If-None-Match": "W/\"d12f-R4EebIe6Qt+P1yuP3JOL3U0bLus\""
     }
   },
   "hugging-face": {
     "candidates": 0,
     "error": null,
     "failures": 0,
-    "last_success": "2026-11-25T12:02:48.904663+00:00",
+    "last_success": "2026-11-25T12:08:46.883246+00:00",
     "retry_after": null,
     "url": "https://huggingface.co/blog/feed.xml",
     "validators": {
@@ -760,7 +760,7 @@
     "candidates": 7,
     "error": null,
     "failures": 0,
-    "last_success": "2026-11-25T12:02:48.904663+00:00",
+    "last_success": "2026-11-25T12:08:46.883246+00:00",
     "retry_after": null,
     "url": "https://engineering.fb.com/feed/",
     "validators": {
@@ -783,12 +783,12 @@
     "candidates": 1,
     "error": null,
     "failures": 0,
-    "last_success": "2026-11-25T12:02:48.904663+00:00",
+    "last_success": "2026-11-25T12:08:46.883246+00:00",
     "retry_after": null,
     "url": "https://devblogs.microsoft.com/foundry/feed/",
     "validators": {
-      "If-Modified-Since": "Tue, 24 Nov 2026 21:57:23 GMT",
-      "If-None-Match": "W/\"d8b682d27f0ec155399896b65a5256ba\""
+      "If-Modified-Since": "Tue, 24 Nov 2026 21:59:15 GMT",
+      "If-None-Match": "W/\"3c132dd3152ad328843f1e27908dc111\""
     }
   },
   "microsoft-semantic-kernel": {
@@ -913,10 +913,10 @@
     }
   },
   "openai-news": {
-    "candidates": 78,
+    "candidates": 214,
     "error": null,
     "failures": 0,
-    "last_success": "2026-11-25T12:02:48.904663+00:00",
+    "last_success": "2026-11-25T12:08:46.883246+00:00",
     "retry_after": null,
     "url": "https://openai.com/news/rss.xml",
     "validators": {}
@@ -1074,7 +1074,7 @@
     "candidates": 0,
     "error": null,
     "failures": 0,
-    "last_success": "2026-11-25T12:02:48.904663+00:00",
+    "last_success": "2026-11-25T12:08:46.883246+00:00",
     "retry_after": null,
     "url": "https://simonwillison.net/atom/everything/",
     "validators": {
