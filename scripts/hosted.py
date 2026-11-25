@@ -104,7 +104,7 @@ def prepare(task):
             path = BATCH.parent / 'collection.json'
             save(path, {**load(path, {}), **counts})
         counts = load(BATCH.parent / 'collection.json', {})
-        operations_queue.record(task, 'COLLECTED' if counts.get('discovered') or counts.get('evidence_ready')
+        operations_queue.record(task, 'COLLECTED' if counts.get('discovered') or counts.get('evidence_succeeded')
                                 else 'SOURCE_BLOCKED' if counts.get('failed') and not counts.get('succeeded')
                                 else 'NO_NEW_CONTENT')
         return
