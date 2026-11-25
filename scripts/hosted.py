@@ -16,6 +16,7 @@ from collect import collect, load, save
 from discover import discovery
 from evidence import enrich
 from resource_editor import resource_context
+import resource_ingest
 from editor import ITEMS, DATE_ZONE, RUN_BUDGET, choose, metadata, output_schema, sync, write_articles
 from model_cost import configured_price, event_usage, worst_case
 from release import PROBE_HEADERS, probe
@@ -64,6 +65,7 @@ def prepare(task):
     now = datetime.now(DATE_ZONE)
     day = now.date().isoformat()
     days = number('BACKFILL_DAYS', 7, 1, 30) if task == 'backfill' else 7
+    resource_task = task.startswith('resource-')
     if task == 'collect':
         collect()
     elif task == 'discover':
@@ -76,17 +78,18 @@ def prepare(task):
     save(ITEMS, items)
     if task in ('collect', 'discover'):
         if task == 'discover':
-            queued = {key: item for key, item in items.items() if not item.get('evidence_checked')
-                      or now - datetime.fromisoformat(item['evidence_checked']) > timedelta(
-                          days=3 if item.get('evidence') else 1)}
-            counts = enrich(items, choose('news', queued, now, strategy={'candidate_limit': 40}), now, limit=10)
+            queued = sorted((key for key, item in items.items()
+                             if item['status'] == 'pending' or item.get('skill_scan', {}).get('pending')),
+                            key=lambda key: items[key].get('evidence_checked', ''))
+            counts = enrich(items, queued, now, limit=10)
             save(ITEMS, items)
             path = BATCH.parent / 'collection.json'
             save(path, {**load(path, {}), **counts})
         return
     slug = 'weekly-' + day if task == 'weekly' else day
     rules = strategy() if os.getenv('VENTURE_STRATEGY_AUTO_UPDATE') == 'true' else load(Path('config/editorial-strategy.json'), {})
-    candidates = choose(task, items, now, days if task in ('weekly', 'backfill') else 2, rules)
+    candidates = (resource_ingest.prepare(task, os.getenv('RESOURCE_TYPE') or 'all', day)
+                  if resource_task else choose(task, items, now, days if task in ('weekly', 'backfill') else 2, rules))
     if task == 'backfill':
         enrich(items, candidates, now)
         save(ITEMS, items)
@@ -125,9 +128,13 @@ def prepare(task):
     usage['tokens'] += reserved
     save(ledger_path, ledger)
     save(BATCH, dict(task=task, date=day, now=now.isoformat(timespec='seconds'),
-                     maxArticles=min(rules.get('max_articles', 10), number('VENTURE_MAX_ARTICLES_PER_RUN', 3, 1, 10)),
                      reservation=reserved, unlimited=unlimited, candidates=candidates,
-                     existingResources=resource_context(articles) if task not in ('daily', 'weekly') else []))
+                     existingResources=[{field: row[field] for field in ('id', 'name', 'site')}
+                                        for row in resource_context()
+                                        if any(row['site'] == item['url'] or
+                                               (row.get('repository') and row['repository'] == item.get('discovery', {}).get('upstream'))
+                                               for item in candidates.values())]
+                     if not resource_task and task not in ('daily', 'weekly') else []))
 
 
 def config(smoke, instructions):
@@ -215,7 +222,7 @@ def run_model(batch, smoke, receipt):
         instructions = workspace / 'instructions.txt'
         instructions.write_text(
             'Call the fixed venture_smoke check tool and return its marker as JSON.' if smoke else
-            (REPOSITORY / 'ops/editor.md').read_text()
+            (REPOSITORY / ('ops/resource-editor.md' if batch['task'].startswith('resource-') else 'ops/editor.md')).read_text()
         )
         receipt['sessions'] = 0
         config(smoke, instructions)
@@ -224,9 +231,9 @@ def run_model(batch, smoke, receipt):
         receipt['effort'] = os.getenv('CODEX_ADVANCED_REASONING_EFFORT' if advanced else
                                      'CODEX_REASONING_EFFORT') or 'low'
         receipt['sessions'] = 1
-        payload = {key: batch[key] for key in ('date', 'maxArticles', 'candidates', 'existingResources')}
+        payload = {key: batch[key] for key in ('date', 'candidates', 'existingResources')}
         prompt = json.dumps(dict(mode=batch['task'], **payload), ensure_ascii=False)
-        schema_data = output_schema(batch['candidates'])
+        schema_data = resource_ingest.SCHEMA if batch['task'].startswith('resource-') else output_schema(batch['candidates'])
         if smoke:
             schema_data = dict(type='object', properties={'marker': {'type': 'string'}},
                                required=['marker'], additionalProperties=False)
@@ -316,9 +323,14 @@ def accept():
     if not result.is_file() or result.is_symlink() or result.stat().st_size > 160_000:
         raise ValueError('Missing or invalid model result')
     response = load(result, {})
-    if type(response) is not dict or set(response) != {'articles', 'skipped', 'resourceUpdates'}:
+    if batch['task'].startswith('resource-'):
+        count = resource_ingest.publish(response, batch['candidates'], batch['date'])
+        save(WORK / 'routes.json', [])
+        print(f'Resource batch wrote {count} entries')
+        return
+    if type(response) is not dict or set(response) != {'articles', 'skipped'}:
         raise ValueError('Invalid editorial response')
-    if type(response['articles']) is not list or not string_list(response['skipped'], 8, 64):
+    if type(response['articles']) is not list or not string_list(response['skipped'], len(batch['candidates']), 64):
         raise ValueError('Invalid editorial lists')
     for article in response['articles']:
         fields = output_schema()['properties']['articles']['items']['properties']
@@ -333,7 +345,7 @@ def accept():
                     raise ValueError(f'Invalid field {name}')
                 if name != 'body' and re.search(r'[<>\x00-\x1f]', value):
                     raise ValueError(f'Unsupported metadata characters in {name}')
-            elif name in ('blocks', 'resource'):
+            elif name == 'blocks':
                 continue  # Validated by write_articles in both publishing paths.
             elif not string_list(value, 8, 64):
                 raise ValueError(f'Invalid array {name}')
@@ -341,12 +353,10 @@ def accept():
     now = datetime.fromisoformat(batch['now'])
     if now.date().isoformat() != batch['date']:
         raise ValueError('Batch date is invalid')
-    skipped, refreshed = write_articles(response, batch['task'], batch['candidates'], now, batch['maxArticles'])
+    skipped = write_articles(response, batch['task'], batch['candidates'], now)
     articles = metadata()
     items = load(ITEMS, {})
     sync(items, articles)
-    for key in refreshed:
-        items[key]['status'] = 'published'
     for key in skipped:
         if items[key]['status'] in ('pending', 'expired'):
             items[key]['status'] = 'skipped'

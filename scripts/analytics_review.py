@@ -17,9 +17,8 @@ DEFAULT = Path('config/editorial-strategy.json')
 
 
 def valid(strategy):
-    return (type(strategy) is dict and set(strategy) == {'category_weights', 'candidate_limit', 'max_articles'}
+    return (type(strategy) is dict and set(strategy) == {'category_weights', 'candidate_limit'}
             and type(strategy['candidate_limit']) is int and 4 <= strategy['candidate_limit'] <= 24
-            and type(strategy['max_articles']) is int and 1 <= strategy['max_articles'] <= 3
             and type(strategy['category_weights']) is dict
             and all(key in CATEGORIES and type(value) is int and -1 <= value <= 1
                     for key, value in strategy['category_weights'].items()))
@@ -28,6 +27,8 @@ def valid(strategy):
 def strategy():
     root = store()
     value = load(root / 'strategy/current.json', {}) if root else {}
+    if isinstance(value, dict):
+        value.pop('max_articles', None)
     return value if valid(value) else load(DEFAULT, {})
 
 
@@ -105,8 +106,7 @@ def main():
             return {'type': 'object', 'properties': properties, 'required': list(properties),
                     'additionalProperties': False}
         save(schema, obj({**strings, 'strategy': obj({
-            'category_weights': obj(weights), 'candidate_limit': {'type': 'integer'},
-            'max_articles': {'type': 'integer'}})}))
+            'category_weights': obj(weights), 'candidate_limit': {'type': 'integer'}})}))
         response = workspace / 'result.json'
         env = {key: os.environ[key] for key in ('PATH', 'HOME', 'LANG', 'CODEX_API_KEY') if key in os.environ}
         # Use publisher-owned route IDs and numerical aggregates. Do not send raw query strings or referrals.

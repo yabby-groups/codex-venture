@@ -13,7 +13,7 @@ tested: false
 project: "mcp-inspector"
 tags: ["mcp","developer-tools"]
 sources: [{"title":"Inspect tool inputs with MCP Inspector","url":"https://github.com/modelcontextprotocol/inspector"}]
-resource: {"id": "mcp-inspector", "type": "tools", "name": "MCP Inspector", "summary": ["检查 MCP 连接、工具参数和返回值。", "Inspect MCP connections, tool inputs and responses."], "categories": [["软件开发", "Software development"]], "site": "https://github.com/modelcontextprotocol/inspector", "repository": "https://github.com/modelcontextprotocol/inspector"}
+resourceIds: ["mcp-inspector"]
 ---
 <p lang="zh-CN">MCP Inspector 为调试服务器提供网页界面与 CLI。调试自建服务时，先连接隔离环境中的测试实例，列出工具与参数，再用一条公开样本检查响应结构。这样能把协议问题和宿主的调用行为分别定位。</p>
 

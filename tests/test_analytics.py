@@ -72,7 +72,7 @@ class AnalyticsTests(unittest.TestCase):
                              (date(2025, 12, 1), date(2025, 12, 31)))
 
     def test_strategy_constraints(self):
-        baseline = {'category_weights': {'models': 1}, 'candidate_limit': 8, 'max_articles': 2}
+        baseline = {'category_weights': {'models': 1}, 'candidate_limit': 8}
         self.assertTrue(valid(baseline))
         self.assertFalse(valid({**baseline, 'budget': 999}))
         self.assertFalse(valid({**baseline, 'category_weights': {'models': -20}}))

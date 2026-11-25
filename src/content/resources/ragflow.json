@@ -1,0 +1,29 @@
+{
+  "id": "ragflow",
+  "type": "open-source",
+  "name": "RAGFlow",
+  "summary": [
+    "RAGFlow 提供文档解析、入库和检索流程，适用于从多份文档搜集问答上下文的团队。",
+    "RAGFlow provides document parsing, ingestion and retrieval for teams that need to gather Q&A context from multiple documents."
+  ],
+  "site": "https://github.com/infiniflow/ragflow",
+  "repository": "https://github.com/infiniflow/ragflow",
+  "categories": [
+    [
+      "文档检索",
+      "Document retrieval"
+    ]
+  ],
+  "verifiedAt": "2026-11-24",
+  "addedAt": "2026-11-24",
+  "detail": "/news/ragflow-document-retrieval/",
+  "tested": false,
+  "tags": [
+    "ragflow",
+    "rag",
+    "knowledge-base"
+  ],
+  "verificationSources": [
+    "https://github.com/infiniflow/ragflow"
+  ]
+}

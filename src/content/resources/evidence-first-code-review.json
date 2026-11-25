@@ -1,0 +1,28 @@
+{
+  "id": "evidence-first-code-review",
+  "type": "prompts",
+  "name": "Evidence-based code review",
+  "summary": [
+    "结合代码定位和可验证证据输出审查意见。",
+    "Produce code review findings with locations and verifiable evidence."
+  ],
+  "categories": [
+    [
+      "代码审查",
+      "Code review"
+    ]
+  ],
+  "site": "https://github.com/yabby-groups/codex-venture/blob/68ba256/AGENTS.md",
+  "nameZh": "循证代码审查提示词",
+  "verifiedAt": "2026-11-24",
+  "addedAt": "2026-11-24",
+  "detail": "/news/evidence-first-code-review-prompt/",
+  "tested": false,
+  "tags": [
+    "code-review",
+    "evidence"
+  ],
+  "verificationSources": [
+    "https://github.com/yabby-groups/codex-venture/blob/68ba256/AGENTS.md"
+  ]
+}

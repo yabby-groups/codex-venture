@@ -10,7 +10,7 @@ sources:
   - title: "EricLBuehler/mistral.rs repository and documentation"
     url: https://github.com/EricLBuehler/mistral.rs
 verified: "2026-11-24"
-resource: {"id": "mistralrs", "type": "open-source", "name": "mistral.rs", "summary": ["在本地运行模型，提供命令行、服务端和 SDK。", "Run models locally through a CLI, server and SDK."], "categories": [["本地推理", "Local inference"]], "site": "https://github.com/EricLBuehler/mistral.rs", "repository": "https://github.com/EricLBuehler/mistral.rs", "deployment": "Local"}
+resourceIds: ["mistralrs"]
 ---
 <h2><span lang="zh-CN">项目用途</span><span lang="en">What it does</span></h2>
 

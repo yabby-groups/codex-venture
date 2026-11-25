@@ -15,7 +15,6 @@
 | Variable | `CODEX_ADVANCED_REASONING_EFFORT` | 可选，高级模型默认 `low` |
 | Variable | `VENTURE_ENABLED` | 设为 `true` 启用定时和手动采编。清空或设为 `false` 暂停新采编。手动 health 和 smoke-test 仍可运行 |
 | Variable | `VENTURE_DAILY_TOKEN_LIMIT` | 北京时间每日 Token 预算，默认 100000。填 `unlimited` 只记录用量，填 0 暂停模型调用 |
-| Variable | `VENTURE_MAX_ARTICLES_PER_RUN` | 单批最多文章数，默认 3。每日及每周简报均最多一篇 |
 
 `CODEX_BASE_URL` 与 `CODEX_MODEL` 也支持同名 Secret。两处都配置时 Variables 优先。
 

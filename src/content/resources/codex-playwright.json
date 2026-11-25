@@ -1,0 +1,37 @@
+{
+  "id": "codex-playwright",
+  "type": "skills",
+  "name": "OpenAI Playwright Skill",
+  "summary": [
+    "用浏览器测试表单、记录页面行为并截图。",
+    "Test forms in a browser, observe page behavior and capture screenshots."
+  ],
+  "categories": [
+    [
+      "浏览器自动化",
+      "Browser automation"
+    ]
+  ],
+  "site": "https://github.com/openai/skills/blob/main/skills/.curated/playwright/SKILL.md",
+  "repository": "https://github.com/openai/skills",
+  "platforms": [
+    "Codex"
+  ],
+  "license": "Apache-2.0",
+  "notes": [
+    "官方仓库已弃用，文章记录历史用法。",
+    "The upstream repository is deprecated. The guide covers legacy usage."
+  ],
+  "verifiedAt": "2026-11-24",
+  "addedAt": "2026-11-24",
+  "detail": "/news/codex-playwright-skill/",
+  "tested": false,
+  "tags": [
+    "agent-skills",
+    "codex"
+  ],
+  "verificationSources": [
+    "https://github.com/openai/skills/blob/main/skills/.curated/playwright/SKILL.md",
+    "https://github.com/openai/skills"
+  ]
+}

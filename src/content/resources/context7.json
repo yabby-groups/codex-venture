@@ -1,0 +1,34 @@
+{
+  "id": "context7",
+  "type": "mcp",
+  "name": "Context7",
+  "summary": [
+    "按库名与版本向 Agent 提供文档和用法。",
+    "Give agents library documentation and examples by name and version."
+  ],
+  "categories": [
+    [
+      "软件开发",
+      "Software development"
+    ]
+  ],
+  "site": "https://github.com/upstash/context7",
+  "repository": "https://github.com/upstash/context7",
+  "deployment": "Remote",
+  "notes": [
+    "按文档配置 API 密钥。避免查询携带私有代码。",
+    "Configure an API key as documented. Keep private code out of queries."
+  ],
+  "featured": true,
+  "verifiedAt": "2026-11-24",
+  "addedAt": "2026-11-24",
+  "detail": "/news/context7-versioned-docs/",
+  "tested": false,
+  "tags": [
+    "mcp",
+    "context7"
+  ],
+  "verificationSources": [
+    "https://github.com/upstash/context7"
+  ]
+}

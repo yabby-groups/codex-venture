@@ -1,0 +1,36 @@
+{
+  "id": "claude-pdf",
+  "type": "skills",
+  "name": "Anthropic PDF Skill",
+  "summary": [
+    "提取 PDF 表格、读取文本和处理页面。",
+    "Extract PDF tables and text and manipulate pages."
+  ],
+  "categories": [
+    [
+      "文档处理",
+      "Document processing"
+    ]
+  ],
+  "site": "https://github.com/anthropics/skills/blob/main/skills/pdf/SKILL.md",
+  "repository": "https://github.com/anthropics/skills",
+  "platforms": [
+    "Claude Code"
+  ],
+  "license": "Apache-2.0",
+  "install": "Claude Code Marketplace",
+  "featured": true,
+  "verifiedAt": "2026-11-24",
+  "addedAt": "2026-11-24",
+  "detail": "/news/claude-pdf-skill/",
+  "tested": false,
+  "tags": [
+    "agent-skills",
+    "claude"
+  ],
+  "verificationSources": [
+    "https://github.com/anthropics/skills/blob/main/skills/pdf/SKILL.md",
+    "https://github.com/anthropics/skills",
+    "https://github.com/anthropics/skills/blob/main/skills/pdf/LICENSE.txt"
+  ]
+}

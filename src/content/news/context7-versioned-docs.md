@@ -13,7 +13,7 @@ tested: false
 project: "context7"
 tags: ["mcp","context7"]
 sources: [{"title":"How Context7 supplies library documentation to agents – primary reference","url":"https://github.com/upstash/context7"}]
-resource: {"id": "context7", "type": "mcp", "name": "Context7", "summary": ["按库名与版本向 Agent 提供文档和用法。", "Give agents library documentation and examples by name and version."], "categories": [["软件开发", "Software development"]], "site": "https://github.com/upstash/context7", "repository": "https://github.com/upstash/context7", "deployment": "Remote", "notes": ["按文档配置 API 密钥。避免查询携带私有代码。", "Configure an API key as documented. Keep private code out of queries."], "featured": true}
+resourceIds: ["context7"]
 ---
 <p lang="zh-CN">Upstash 的 Context7 是社区维护的文档检索服务。遇到依赖库改版时，可以给 Agent 明确的库名和版本，要求它核对当前接口，再把结果与本地锁文件和项目文档对照。</p>
 

@@ -1,0 +1,29 @@
+{
+  "id": "rumble-2-flash",
+  "type": "models",
+  "name": "Rumble-2-Flash",
+  "summary": [
+    "用于多语言语音识别的开放权重模型。",
+    "An open-weight model for multilingual speech recognition."
+  ],
+  "categories": [
+    [
+      "语音识别",
+      "Speech recognition"
+    ]
+  ],
+  "site": "https://huggingface.co/blog/rumble-2-flash",
+  "kind": "Audio → Text",
+  "verifiedAt": "2026-11-24",
+  "addedAt": "2026-11-24",
+  "detail": "/news/rumble-2-flash-open-asr/",
+  "tested": false,
+  "tags": [
+    "rumble",
+    "speech-to-text",
+    "transformers"
+  ],
+  "verificationSources": [
+    "https://huggingface.co/blog/rumble-2-flash"
+  ]
+}

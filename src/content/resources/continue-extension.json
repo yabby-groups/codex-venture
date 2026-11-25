@@ -1,0 +1,43 @@
+{
+  "id": "continue-extension",
+  "type": "plugins",
+  "name": "Continue",
+  "summary": [
+    "在编辑器中用模型解释代码、提供修改建议。",
+    "Use models inside your editor to explain code and suggest changes."
+  ],
+  "categories": [
+    [
+      "软件开发",
+      "Software development"
+    ]
+  ],
+  "site": "https://open-vsx.org/extension/Continue/continue",
+  "repository": "https://github.com/continuedev/continue",
+  "platforms": [
+    "VS Code"
+  ],
+  "kind": "Extension",
+  "install": "Open VSX",
+  "license": "Apache-2.0",
+  "version": "2.1.0",
+  "notes": [
+    "检查模型提供方的代码传输和编辑器遥测。",
+    "Check code sharing with the model provider and editor telemetry."
+  ],
+  "featured": true,
+  "verifiedAt": "2026-11-24",
+  "addedAt": "2026-11-24",
+  "detail": "/news/continue-open-vsx/",
+  "tested": false,
+  "tags": [
+    "ide",
+    "open-vsx",
+    "continue"
+  ],
+  "verificationSources": [
+    "https://open-vsx.org/extension/Continue/continue",
+    "https://open-vsx.org/api/Continue/continue/latest",
+    "https://docs.continue.dev/telemetry"
+  ]
+}

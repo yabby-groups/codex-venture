@@ -13,7 +13,7 @@ tested: false
 project: "codex-playwright"
 tags: ["agent-skills","codex"]
 sources: [{"title":"Check a form with the Codex Playwright Skill – primary reference","url":"https://github.com/openai/skills/blob/main/skills/.curated/playwright/SKILL.md"},{"title":"OpenAI skills repository","url":"https://github.com/openai/skills"}]
-resource: {"id": "codex-playwright", "type": "skills", "name": "OpenAI Playwright Skill", "summary": ["用浏览器测试表单、记录页面行为并截图。", "Test forms in a browser, observe page behavior and capture screenshots."], "categories": [["浏览器自动化", "Browser automation"]], "site": "https://github.com/openai/skills/blob/main/skills/.curated/playwright/SKILL.md", "repository": "https://github.com/openai/skills", "platforms": ["Codex"], "license": "Apache-2.0", "notes": ["官方仓库已弃用，文章记录历史用法。", "The upstream repository is deprecated. The guide covers legacy usage."]}
+resourceIds: ["codex-playwright"]
 ---
 <p lang="zh-CN">OpenAI 技能仓库的 Playwright 技能通过终端控制浏览器。它用页面快照记录控件引用，并建议导航或明显的界面变化后重新获取快照。适合检查测试环境中的表单反馈。</p>
 

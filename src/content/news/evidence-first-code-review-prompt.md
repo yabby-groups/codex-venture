@@ -14,7 +14,7 @@ tags: ["code-review","evidence"]
 sources: [{"title":"A copyable prompt for reviewing a code change – primary reference","url":"https://github.com/yabby-groups/codex-venture/blob/68ba256/AGENTS.md"}]
 updated: "2026-11-24"
 blocks: [{"kind": "code", "title": {"zh": "复制审查提示词", "en": "Copy the review prompt"}, "language": "text", "file": "", "code": "以只读方式审查给定差异。每条发现提供文件和行号、触发条件、受影响的调用者以及最小验证方法。\n按实际影响排序。分开列出已经运行的检查和仍缺的证据。\n未发现具体问题时，报告检查范围和剩余不确定性。\n\nReview the supplied diff in read-only mode. For each finding, give the file and line, trigger, affected caller, and smallest verification step.\nOrder findings by impact. List checks that actually ran and evidence that is still missing.\nIf you find no concrete issue, report the scope and remaining uncertainty."}]
-resource: {"id": "evidence-first-code-review", "type": "prompts", "name": "Evidence-based code review", "summary": ["结合代码定位和可验证证据输出审查意见。", "Produce code review findings with locations and verifiable evidence."], "categories": [["代码审查", "Code review"]], "site": "https://github.com/yabby-groups/codex-venture/blob/68ba256/AGENTS.md", "nameZh": "循证代码审查提示词"}
+resourceIds: ["evidence-first-code-review"]
 ---
 
 <p lang="zh-CN">把改动目的、基础提交、差异和已有测试结果附在提示词后。它适用于能读取代码差异和相关调用点的编程 Agent，输出可以直接用来核对每条发现及其影响。</p>

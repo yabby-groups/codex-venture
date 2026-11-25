@@ -1,0 +1,28 @@
+{
+  "id": "venture-publication",
+  "type": "workflows",
+  "name": "Codex Venture publication workflow",
+  "summary": [
+    "将源材料送入 Codex 编辑，经静态构建校验后发布。",
+    "Turn source material into edited coverage with Codex and validate the static build before publishing."
+  ],
+  "categories": [
+    [
+      "内容创作",
+      "Content creation"
+    ]
+  ],
+  "site": "https://github.com/yabby-groups/codex-venture",
+  "verifiedAt": "2026-11-24",
+  "addedAt": "2026-11-24",
+  "detail": "/news/venture-evidence-publication-workflow/",
+  "tested": false,
+  "tags": [
+    "github-actions",
+    "automation",
+    "venture"
+  ],
+  "verificationSources": [
+    "https://github.com/yabby-groups/codex-venture/blob/68ba256/.github/workflows/venture.yml"
+  ]
+}

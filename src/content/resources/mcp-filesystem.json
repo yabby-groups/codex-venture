@@ -1,0 +1,35 @@
+{
+  "id": "mcp-filesystem",
+  "type": "mcp",
+  "name": "MCP Filesystem",
+  "summary": [
+    "在限定目录内提供文件读取、搜索与管理工具。",
+    "Provide file reading, search and management within scoped directories."
+  ],
+  "categories": [
+    [
+      "文档处理",
+      "Document processing"
+    ]
+  ],
+  "site": "https://github.com/modelcontextprotocol/servers/tree/main/src/filesystem",
+  "repository": "https://github.com/modelcontextprotocol/servers",
+  "transport": "stdio",
+  "deployment": "Local",
+  "install": "npx",
+  "license": "MIT",
+  "notes": [
+    "按需限制目录和写权限，并核对宿主如何处理文件内容。",
+    "Scope directories and write access, and check how the host handles file contents."
+  ],
+  "verifiedAt": "2026-11-24",
+  "addedAt": "2026-11-24",
+  "detail": "/news/mcp-filesystem-read-only/",
+  "tested": false,
+  "tags": [
+    "mcp"
+  ],
+  "verificationSources": [
+    "https://github.com/modelcontextprotocol/servers/tree/main/src/filesystem"
+  ]
+}

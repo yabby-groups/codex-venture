@@ -1,4 +1,5 @@
-import { dateKey, storyUrl, types, type Story } from './content';
+import { getCollection } from 'astro:content';
+import { storyUrl, types, type Story } from './content';
 import { repositorySnapshot } from './repositories';
 import { resourceTypes, type ResourceType } from './resource-schema';
 
@@ -21,34 +22,31 @@ export const directoryCopy: Record<ResourceType, [string, string]> = {
 
 export const directoryTitle = (type: ResourceType) => type === 'skills' ? ['AI 技能库', 'Agent Skills'] : types[type];
 
+const profiles = (await getCollection('resources')).map(({ id, data }) => {
+  if (id !== data.id) throw new Error(`Resource filename differs from ID: ${id}`);
+  return data;
+});
+
 export function resourceCatalog(stories: Story[]) {
-  const profiles = stories.filter((story) => story.collection === 'news' && story.data.resource);
-  const verificationDate = (story: Story) => story.data.resource?.verifiedAt ?? story.data.verified ?? '';
-  const grouped = Map.groupBy(profiles, (story) => story.data.resource!.id);
-  const resources = [...grouped].map(([id, versions]) => {
-    const [latest] = [...versions].sort((a, b) => verificationDate(b).localeCompare(verificationDate(a)) ||
-      b.data.published.getTime() - a.data.published.getTime());
-    const resource = latest.data.resource!;
-    for (const story of versions) {
-      if (story.data.resource?.type !== resource.type || !verificationDate(story)) {
-        throw new Error(`Inconsistent resource profile: ${id}`);
-      }
-    }
-    const related = stories.filter((story) => story.collection === 'news' &&
-      (story.data.resource?.id === id || story.data.resourceIds?.includes(id)));
+  const related = Map.groupBy(stories.flatMap((story) =>
+    (story.data.resourceIds ?? []).map((id) => ({ id, story }))), ({ id }) => id);
+  const ids = new Set(profiles.map(({ id }) => id));
+  const routes = new Set(stories.map(storyUrl));
+  for (const id of related.keys()) {
+    if (!ids.has(id)) throw new Error(`Unknown resource relation: ${id}`);
+  }
+  const resources = profiles.map((resource) => {
+    const matches = (related.get(resource.id) ?? []).map(({ story }) => story);
     const github = resource.type === 'open-source' ? repositorySnapshot(resource.repository) : undefined;
+    if (resource.detail && !routes.has(resource.detail)) throw new Error(`Unknown resource detail: ${resource.id}`);
     return {
-      ...resource, github, license: resource.license ?? (github?.license === 'NOASSERTION' ? undefined : github?.license ?? undefined), detail: storyUrl(versions.at(-1)!), verified: verificationDate(latest),
-      added: dateKey(versions.at(-1)!.data.published), tested: latest.data.tested,
-      tags: [...new Set(related.flatMap((story) => story.data.tags))],
-      articles: related.map(storyUrl),
+      ...resource, github,
+      license: resource.license ?? (github?.license === 'NOASSERTION' ? undefined : github?.license ?? undefined),
+      detail: resource.detail ?? resource.site, verified: resource.verifiedAt, added: resource.addedAt,
+      tags: [...new Set([...resource.tags, ...matches.flatMap((story) => story.data.tags)])],
+      articles: [...new Set(matches.map(storyUrl))],
     };
   });
-  for (const story of stories) {
-    for (const id of story.data.resourceIds ?? []) {
-      if (!grouped.has(id)) throw new Error(`Unknown resource relation: ${id} in ${story.id}`);
-    }
-  }
   const identities = new Set<string>();
   for (const row of resources) {
     const url = new URL(row.site);

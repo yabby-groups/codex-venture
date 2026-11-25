@@ -9,7 +9,7 @@ tags: ["handy", "speech-to-text", "offline"]
 sources:
   - title: "cjpais/Handy repository and documentation"
     url: https://github.com/cjpais/Handy
-resource: {"id": "handy", "type": "open-source", "name": "Handy", "summary": ["Handy v0.10.2 新增泰语和匈牙利语翻译，并取消在发出 macOS 权限请求前重置权限的操作，以尝试解决首次设置卡住的问题。", "Handy v0.10.2 adds Thai and Hungarian translations. It also stops resetting macOS permissions before asking for them, a change the release notes describe as an attempted fix for stalled onboarding."], "site": "https://github.com/cjpais/Handy", "repository": "https://github.com/cjpais/Handy", "categories": [["音频", "Audio"]], "verifiedAt": "2026-11-25", "nameZh": "Handy", "version": "v0.10.2", "releasedAt": "2026-11-24", "verificationSources": ["https://github.com/cjpais/Handy/releases/tag/v0.10.2"], "platforms": ["macOS"]}
+resourceIds: ["handy"]
 ---
 <h2><span lang="zh-CN">项目用途</span><span lang="en">What it does</span></h2>
 

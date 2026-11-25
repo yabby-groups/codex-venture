@@ -3,7 +3,8 @@ on:
   schedule:
     - cron: '0 * * * *'
     - cron: '37 2,8,14,20 * * *'
-    - cron: '20 0,4,10 * * *'
+    - cron: '20 0-13,15-23 * * *'
+    - cron: '47 0-12,15-23 * * *'
     - cron: '20 14 * * *'
     - cron: '30 13 * * 0'
   workflow_dispatch:
@@ -11,7 +12,11 @@ on:
       task:
         type: choice
         default: health
-        options: [collect, discover, news, daily, weekly, backfill, health, smoke-test]
+        options: [collect, discover, news, daily, weekly, backfill, health, smoke-test, resource-bootstrap, resource-discover, resource-enrich, resource-sync, resource-refresh, resource-backfill]
+      resource_type:
+        type: choice
+        default: all
+        options: [all, skills, plugins, mcp, tools, models, open-source, resources, prompts, workflows]
       days:
         description: Backfill lookback in days
         type: number
@@ -70,14 +75,15 @@ jobs:
             case "$SCHEDULE" in
               '0 * * * *') task=collect ;;
               '37 2,8,14,20 * * *') task=discover ;;
-              '20 0,4,10 * * *') task=news ;;
+              '20 0-13,15-23 * * *') task=news ;;
+              '47 0-12,15-23 * * *') task=resource-sync ;;
               '20 14 * * *') task=daily ;;
               '30 13 * * 0') task=weekly ;;
               *) exit 1 ;;
             esac
           fi
           case "$task" in
-            collect|discover|news|daily|weekly|backfill|health|smoke-test) ;;
+            collect|discover|news|daily|weekly|backfill|health|smoke-test|resource-bootstrap|resource-discover|resource-enrich|resource-sync|resource-refresh|resource-backfill) ;;
             *) exit 1 ;;
           esac
           echo "day=$VENTURE_RUN_DAY" >> "$GITHUB_OUTPUT"
@@ -109,9 +115,10 @@ jobs:
           VENTURE_DAILY_COST_LIMIT: ${{ secrets.VENTURE_DAILY_COST_LIMIT }}
           VENTURE_COST_CURRENCY: ${{ vars.VENTURE_COST_CURRENCY }}
           VENTURE_STRATEGY_AUTO_UPDATE: ${{ vars.VENTURE_STRATEGY_AUTO_UPDATE }}
+          RESOURCE_TYPE: ${{ inputs.resource_type }}
+          VENTURE_RUN_TOKENS: ${{ vars.VENTURE_RUN_TOKENS || '25000' }}
           BACKFILL_DAYS: ${{ inputs.days }}
           VENTURE_DAILY_TOKEN_LIMIT: ${{ vars.VENTURE_DAILY_TOKEN_LIMIT }}
-          VENTURE_MAX_ARTICLES_PER_RUN: ${{ vars.VENTURE_MAX_ARTICLES_PER_RUN }}
         run: |
           timeout --kill-after=10s 8m python3 scripts/hosted.py prepare "$TASK"
           if [[ -f "$RUNNER_TEMP/venture/batch.json" ]]; then
@@ -257,12 +264,16 @@ jobs:
         run: python3 scripts/hosted.py accept
       - id: changes
         run: |
-          python3 -c 'import json,os; from pathlib import Path; p=Path(os.environ["RUNNER_TEMP"])/"venture/routes.json"; print("content=true" if p.exists() and json.loads(p.read_text()) else "content=false")' >> "$GITHUB_OUTPUT"
+          if [[ -n "$(git status --porcelain -- src/content)" ]]; then
+            echo 'content=true' >> "$GITHUB_OUTPUT"
+          else
+            echo 'content=false' >> "$GITHUB_OUTPUT"
+          fi
       - name: Build and verify static site
         if: steps.changes.outputs.content == 'true' || needs.prepare.outputs.task == 'health' || needs.edit.result == 'success' && needs.prepare.outputs.task == 'smoke-test'
         run: npm run build
       - name: Verify changed articles in Chromium
-        if: steps.changes.outputs.content == 'true'
+        if: steps.changes.outputs.content == 'true' && !startsWith(needs.prepare.outputs.task, 'resource-')
         run: |
           npx playwright install --with-deps chromium
           node scripts/check-articles-browser.mjs "$RUNNER_TEMP/venture/routes.json"
@@ -272,8 +283,8 @@ jobs:
         env:
           VENTURE_GIT_TOKEN: ${{ secrets.VENTURE_PUBLISH_TOKEN || github.token }}
         run: |
-          git add -- src/content/news src/content/daily
-          git diff --cached --name-status | python3 -c 'import re,sys; lines=sys.stdin.read().splitlines(); sys.exit(not lines or any(not re.fullmatch(r"(?:A\tsrc/content/(?:news|daily)|M\tsrc/content/news)/[a-z0-9]+(?:-[a-z0-9]+)*\.md", line) for line in lines))'
+          git add -- src/content/news src/content/daily src/content/resources
+          git diff --cached --name-status | python3 -c 'import re,sys; lines=sys.stdin.read().splitlines(); sys.exit(not lines or any(not re.fullmatch(r"(?:A\tsrc/content/(?:news|daily)|M\tsrc/content/news)/[a-z0-9]+(?:-[a-z0-9]+)*\.md|[AM]\tsrc/content/resources/[a-z0-9]+(?:-[a-z0-9]+)*\.json", line) for line in lines))'
           git -c user.name='github-actions[bot]' -c user.email='41898282+github-actions[bot]@users.noreply.github.com' commit -m 'Publish Codex Venture bilingual coverage'
           ops/hosted-git git push origin HEAD:refs/heads/main
           echo "PUBLISH_SHA=$(git rev-parse HEAD)" >> "$GITHUB_ENV"

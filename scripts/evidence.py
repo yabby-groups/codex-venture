@@ -3,6 +3,7 @@
 import json
 import http.client
 import re
+import subprocess
 import time
 from datetime import datetime, timedelta, timezone
 from html.parser import HTMLParser
@@ -118,34 +119,60 @@ def evidence_for(item):
         yield record(link, 'Community discussion, unverified author claims', '\n'.join(filter(None, comments)))
 
 
-def skill_files(item, repo):
-    base = 'https://api.github.com/repos/' + repo
-    data = json.loads(document(base))
-    branch = quote(data['default_branch'], safe='')
+def skill_index(base, branch):
     tree = json.loads(document(base + '/git/trees/' + branch + '?recursive=1'))
-    paths = sorted(row['path'] for row in tree.get('tree', [])
-                   if row['type'] == 'blob' and row['path'].split('/')[-1] == 'SKILL.md')
-    for path in paths[:6]:
+    if not tree.get('truncated'):
+        return {row['path']: row['sha'] for row in tree['tree']
+                if row['type'] == 'blob' and row['path'].split('/')[-1] == 'SKILL.md'}
+    root = json.loads(document(base + '/git/trees/' + branch))
+    remaining, paths = [('', root)], {}
+    while remaining:
+        prefix, node = remaining.pop()
+        if node.get('truncated'):
+            raise ValueError('GitHub truncated a nonrecursive tree')
+        for row in node['tree']:
+            path = prefix + row['path']
+            if row['type'] == 'tree':
+                remaining.append((path + '/', json.loads(document(base + '/git/trees/' + row['sha']))))
+            elif row['type'] == 'blob' and row['path'] == 'SKILL.md':
+                paths[path] = row['sha']
+    return paths
+
+
+def skill_metadata(text):
+    return json.loads(subprocess.check_output(
+        ['node', 'scripts/skill-frontmatter.mjs'], input=text, text=True, timeout=10))
+
+
+def skill_files(item, repo, deadline):
+    state = item.setdefault('skill_scan', {})
+    if not state.get('pending'):
+        data = json.loads(document('https://api.github.com/repos/' + repo))
+        base = 'https://api.github.com/repos/' + data['full_name']
+        branch = quote(data['default_branch'], safe='')
+        paths = skill_index(base, branch)
+        state.update(repo=data['full_name'], branch=branch, repository_id=data['id'],
+                     pending={path: sha for path, sha in sorted(paths.items())
+                              if state.get('seen', {}).get(path) != sha})
+    base = 'https://api.github.com/repos/' + state['repo']
+    for path, sha in list(state['pending'].items()):
+        if time.monotonic() >= deadline:
+            break
         escaped = quote(path, safe='/')
-        link = base + '/contents/' + escaped
-        try:
-            text = document(link, plain=True, accept='application/vnd.github.raw+json')
-        except (OSError, ValueError, http.client.HTTPException):
-            continue
-        frontmatter = re.match(r'\A---\s*\n(.*?)\n---', text, flags=re.S)
-        if not frontmatter:
-            continue
-        fields = dict(re.findall(r'(?m)^(name|description):[ \t]*(.*)$', frontmatter[1]))
-        title = fields.get('name', '').strip(' \'"')
-        description = fields.get('description', '').strip(' \'"')
-        if not title or not description or description in ('|', '>'):
-            continue
-        public_url = f'https://github.com/{repo}/blob/{branch}/{escaped}'
-        key = digest(f"github-skill:{data['id']}:{path}")
-        discovery = {**item['discovery'], 'skill_path': path, 'repository_id': data['id']}
-        yield key, {**item, 'url': public_url, 'title': title[:300], 'summary': description[:1200],
-                    'fingerprint': key, 'discovery': discovery,
-                    'evidence': [record(public_url, 'Skill manifest', text)], 'status': 'pending'}
+        public_url = f"https://github.com/{state['repo']}/blob/{state['branch']}/{escaped}"
+        text = document(base + '/git/blobs/' + sha, plain=True, accept='application/vnd.github.raw+json')
+        fields = skill_metadata(text)
+        if fields.get('name') and fields.get('description'):
+            key = digest(f"github-skill:{state['repository_id']}:{path}")
+            discovery = {**item['discovery'], 'skill_path': path, 'repository_id': state['repository_id'],
+                         'repository': state['repo'], 'blob': sha}
+            skill = dict(url=public_url, title=fields['name'][:300], summary=fields['description'][:1200],
+                         fingerprint=key, discovery=discovery, source=item['source'],
+                         category=item['category'], published=item['published'], content_type='skills',
+                         evidence=[record(public_url, 'Skill manifest', text)], status='pending')
+            yield key, skill
+        state.setdefault('seen', {})[path] = sha
+        del state['pending'][path]
 
 
 def enrich(items, candidates, now, limit=5):
@@ -157,14 +184,14 @@ def enrich(items, candidates, now, limit=5):
             break
         item = items[key]
         last = item.get('evidence_checked')
-        if last and now - timestamp(last) < timedelta(days=3 if item.get('evidence') else 1):
+        if last and not item.get('skill_scan', {}).get('pending') and now - timestamp(last) < timedelta(days=3 if item.get('evidence') else 1):
             continue
         attempted += 1
         documents = []
         try:
             if item.get('content_type') == 'skills' and not item.get('discovery', {}).get('skill_path'):
                 repo = github_root(item)
-                for skill_id, skill in skill_files(item, repo) if repo else ():
+                for skill_id, skill in skill_files(item, repo, deadline) if repo else ():
                     if skill_id in items:
                         skill['status'] = items[skill_id]['status']
                         if 'articles' in items[skill_id]:
@@ -173,7 +200,7 @@ def enrich(items, candidates, now, limit=5):
                     skill['verified_at'] = checked
                     items[skill_id] = skill
                     documents.extend(skill['evidence'])
-                if documents:
+                if item.get('skill_scan', {}).get('seen'):
                     item['status'] = 'superseded'
             else:
                 for source in evidence_for(item):
