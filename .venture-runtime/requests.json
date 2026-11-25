@@ -2,14 +2,14 @@
   "day": "2026-11-25",
   "providers": {
     "api.github.com": {
-      "daily": 39,
+      "daily": 159,
       "hour": "2026-11-25T01",
-      "hourly": 39,
+      "hourly": 159,
       "limited": 1,
-      "remaining": 0,
-      "responses": 39,
+      "remaining": 4855,
+      "responses": 159,
       "resume": 1795569959.0,
-      "successes": 37
+      "successes": 156
     },
     "blog.cloudflare.com": {
       "daily": 2,
@@ -82,11 +82,11 @@
       "successes": 5
     },
     "huggingface.co": {
-      "daily": 8,
+      "daily": 17,
       "hour": "2026-11-25T01",
-      "hourly": 8,
-      "responses": 8,
-      "successes": 6
+      "hourly": 17,
+      "responses": 17,
+      "successes": 15
     },
     "machinelearning.apple.com": {
       "daily": 2,
@@ -96,12 +96,12 @@
       "successes": 2
     },
     "open-vsx.org": {
-      "daily": 4,
+      "daily": 12,
       "hour": "2026-11-25T01",
-      "hourly": 4,
+      "hourly": 12,
       "remaining": 10799,
-      "responses": 4,
-      "successes": 3
+      "responses": 12,
+      "successes": 11
     },
     "openai.com": {
       "daily": 2,
@@ -125,11 +125,11 @@
       "successes": 1
     },
     "registry.modelcontextprotocol.io": {
-      "daily": 3,
+      "daily": 7,
       "hour": "2026-11-25T01",
-      "hourly": 3,
-      "responses": 3,
-      "successes": 2
+      "hourly": 7,
+      "responses": 7,
+      "successes": 5
     },
     "simonwillison.net": {
       "daily": 2,
