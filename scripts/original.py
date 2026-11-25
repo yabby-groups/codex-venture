@@ -48,6 +48,8 @@ def discover(section, now):
                  urlencode(dict(query=query, tags='show_hn', hitsPerPage=16))),
             dict(id='simon-willison', kind='feed', category='coding', content_type='stories', interval_hours=12,
                  url='https://simonwillison.net/atom/everything/'),
+            dict(id='original-hamel', kind='feed', category='coding', content_type='stories', interval_hours=24,
+                 url='https://hamel.dev/index.xml'),
             dict(id='original-github-issues', kind='discovery', category='agents', content_type='stories',
                  parse=issues, interval_hours=24, url='https://api.github.com/search/issues?' + urlencode(
                      dict(q='repo:openai/codex is:issue is:closed comments:>4', sort='updated', per_page=10))),
@@ -135,7 +137,9 @@ def prepare(section, items, now):
                         json.dumps(receipt, ensure_ascii=False))], experiment=receipt)
     pending = sorted((key for key, row in items.items() if row['status'] == 'pending'
                       and row.get('content_type') in TYPES[section] and not row.get('basis')),
-                     key=lambda key: (items[key].get('evidence_checked', ''), items[key]['published']))
+                     key=lambda key: items[key]['published'], reverse=True)
+    # Check new and recently published accounts first, then retry older sources.
+    pending.sort(key=lambda key: items[key].get('evidence_checked', ''))
     enrich(items, pending, now, limit=8)
 
 

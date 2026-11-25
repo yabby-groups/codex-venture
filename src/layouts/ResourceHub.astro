@@ -18,8 +18,9 @@ const directories = resourceDirectories(stories).filter(({ type }) => learning =
 const resources = directories.flatMap(({ rows }) => rows);
 const featured = resources.filter((row) => row.featured).slice(0, 3);
 const recent = [...resources].sort((a, b) => b.added.localeCompare(a.added) || a.id.localeCompare(b.id)).slice(0, 3);
-const editorialTopics = Object.entries(types).filter(([key, [, , owner]]) =>
-  owner === hub && !directories.some(({ type }) => type === key) && stories.some(({ data }) => data.type === key));
+const articleTopics = Object.entries(types).filter(([key, [, , owner]]) =>
+  owner === hub && stories.some(({ data }) => data.type === key));
+const editorialTopics = articleTopics.filter(([key]) => !directories.some(({ type }) => type === key));
 ---
 <Base title={zh} description={intro.join(' ')}>
   <div class="resource-directory" data-pagefind-body>
@@ -39,7 +40,7 @@ const editorialTopics = Object.entries(types).filter(([key, [, , owner]]) =>
       <SectionHeading zh={learning ? '可复用的实践' : '最新收录'} en={learning ? 'Ready to reuse' : 'Recently added'} />
       <div class="resource-grid">{recent.map((resource) => <ResourceCard {resource} />)}</div>
     </section>}
-    {learning && editorialTopics.map(([key, [zh, en]]) => <section class="resource-hub-section">
+    {learning && articleTopics.map(([key, [zh, en]]) => <section class="resource-hub-section">
       <SectionHeading {zh} {en} href={`/topics/${key}/`} />
       <StoryList stories={stories.filter(({ data }) => data.type === key).slice(0, 4)} nested />
     </section>)}
