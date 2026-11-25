@@ -1,0 +1,28 @@
+{
+  "addedAt": "2026-11-25",
+  "categories": [
+    [
+      "部署成本与性能优化",
+      "Deployment Cost and Performance Optimization"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-25",
+  "id": "resource-adb6abf412773002d663ae0c413a886e794b8910032692f4e852a03a4f59a080",
+  "identity": "github-skill:1112540808:skills/vercel-optimize/SKILL.md",
+  "name": "vercel-optimize",
+  "repository": "https://github.com/vercel-labs/agent-skills",
+  "repositoryId": "1112540808",
+  "site": "https://github.com/vercel-labs/agent-skills/blob/main/skills/vercel-optimize/SKILL.md",
+  "sourcePath": "skills/vercel-optimize/SKILL.md",
+  "sourceSignature": "bab65c53971ad426535056218c521fb9478878df443372688fd876da4e6e5241",
+  "summary": [
+    "据发布方介绍，这项技能结合 Vercel 生产环境指标、用量数据和项目配置，为成本与性能优化建议排列优先级。",
+    "The publisher describes a skill that uses Vercel production metrics, usage data, and project configuration to prioritize cost and performance recommendations."
+  ],
+  "tested": false,
+  "type": "skills",
+  "verificationSources": [
+    "https://github.com/vercel-labs/agent-skills/blob/main/skills/vercel-optimize/SKILL.md"
+  ],
+  "verifiedAt": "2026-11-25"
+}

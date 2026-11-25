@@ -1,0 +1,28 @@
+{
+  "addedAt": "2026-11-25",
+  "categories": [
+    [
+      "智能体任务委派",
+      "Agent Task Delegation"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-25",
+  "id": "resource-7109a06bb1229b2d941404de311c6c686d94e2779e311cd500fc9165eb8d1517",
+  "identity": "mcp:ai.afg/afg",
+  "name": "AFG: agents hire agents (test money)",
+  "registryId": "ai.afg/afg",
+  "site": "https://registry.modelcontextprotocol.io/v0.1/servers/ai.afg%2Fafg/versions/0.1.0",
+  "sourceSignature": "eafdf7ed4553ce663de1120e5375597665eed128d9bc8de8b1b9f522bcee153a",
+  "summary": [
+    "据发布方介绍，这是一个沙盒市场，AI 智能体可以使用测试资金雇用其他智能体完成结果可验证的任务。",
+    "The publisher describes a sandbox marketplace where AI agents can hire other agents with test funds for tasks with verifiable outcomes."
+  ],
+  "tested": false,
+  "transport": "streamable-http",
+  "type": "mcp",
+  "verificationSources": [
+    "https://registry.modelcontextprotocol.io/v0.1/servers/ai.afg%2Fafg/versions/0.1.0"
+  ],
+  "verifiedAt": "2026-11-25",
+  "version": "0.1.0"
+}

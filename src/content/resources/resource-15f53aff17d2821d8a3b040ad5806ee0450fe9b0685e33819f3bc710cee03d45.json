@@ -1,0 +1,29 @@
+{
+  "addedAt": "2026-11-25",
+  "categories": [
+    [
+      "语音识别",
+      "Speech Recognition"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-25",
+  "id": "resource-15f53aff17d2821d8a3b040ad5806ee0450fe9b0685e33819f3bc710cee03d45",
+  "identity": "hf:facebook/wav2vec2-lv-60-espeak-cv-ft",
+  "name": "facebook/wav2vec2-lv-60-espeak-cv-ft",
+  "site": "https://huggingface.co/facebook/wav2vec2-lv-60-espeak-cv-ft",
+  "sourceSignature": "13a65336acf870cdd4abac5c51850750883246021f1983b56d196d431a16213b",
+  "summary": [
+    "模型卡介绍了一款可识别音频文件中音素的多语言声学模型。",
+    "The model card describes a multilingual acoustic model that recognizes phonemes in audio files."
+  ],
+  "tags": [
+    "automatic-speech-recognition"
+  ],
+  "tested": false,
+  "type": "models",
+  "verificationSources": [
+    "https://huggingface.co/api/models?cursor=eyIkb3IiOlt7ImRvd25sb2FkcyI6MTA2ODU4MywiX2lkIjp7IiRndCI6IjY5ZWVjN2Y2NjA1Y2Q4MTdkY2MwMmMxMCJ9fSx7ImRvd25sb2FkcyI6eyIkbHQiOjEwNjg1ODN9fSx7ImRvd25sb2FkcyI6bnVsbH1dLCJzZWFyY2hTZXF1ZW5jZVRva2VuIjoiQ0ozQ3VnSWFDU0VBQUFBQUowNHdRUm9PV2d4cDdzZjJZRnpZRjl6QUxCQWlEbG9NYWU3SDltQmMyQmZjd0N3USJ9&direction=-1&full=true&limit=30&pipeline_tag=automatic-speech-recognition&sort=downloads",
+    "https://huggingface.co/facebook/wav2vec2-lv-60-espeak-cv-ft/raw/main/README.md"
+  ],
+  "verifiedAt": "2026-11-25"
+}

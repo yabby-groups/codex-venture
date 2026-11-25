@@ -1,0 +1,28 @@
+{
+  "addedAt": "2026-11-25",
+  "categories": [
+    [
+      "云开发环境配置",
+      "Cloud development environment setup"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-25",
+  "id": "resource-c3cbbfc69ca4efac5e9b2b37bff83183b2475a2932591c3af03338970751f87b",
+  "identity": "github-skill:1102903896:skills/hf-cloud-python-env-setup/SKILL.md",
+  "name": "hf-cloud-python-env-setup",
+  "repository": "https://github.com/huggingface/skills",
+  "repositoryId": "1102903896",
+  "site": "https://github.com/huggingface/skills/blob/main/skills/hf-cloud-python-env-setup/SKILL.md",
+  "sourcePath": "skills/hf-cloud-python-env-setup/SKILL.md",
+  "sourceSignature": "544e972ba9b3106318381b12e3dd815e2db67303e01d5330f176e48acc6980eb",
+  "summary": [
+    "这份指南介绍如何为 SageMaker 部署、训练任务和 AWS 自动化配置隔离的 Python 环境，包括选择 Python 版本和管理 boto3 等依赖。",
+    "The guide covers setting up an isolated Python environment for SageMaker deployment, training jobs, and AWS automation, with guidance on choosing a Python version and managing dependencies such as boto3."
+  ],
+  "tested": false,
+  "type": "skills",
+  "verificationSources": [
+    "https://github.com/huggingface/skills/blob/main/skills/hf-cloud-python-env-setup/SKILL.md"
+  ],
+  "verifiedAt": "2026-11-25"
+}

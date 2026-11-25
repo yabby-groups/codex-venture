@@ -1,0 +1,29 @@
+{
+  "addedAt": "2026-11-25",
+  "categories": [
+    [
+      "多模态文本生成",
+      "Multimodal Text Generation"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-25",
+  "id": "resource-163dca9cf358c68be1a4d6ece35b13cce89bcfd617d23c9a643c999c63071b6d",
+  "identity": "hf:qwen/qwen3.6-27b-fp8",
+  "name": "Qwen/Qwen3.6-27B-FP8",
+  "site": "https://huggingface.co/Qwen/Qwen3.6-27B-FP8",
+  "sourceSignature": "81f7110538c6aa3b40cefaeb64639ce834556938285a9f218febcc1b1aa5b760",
+  "summary": [
+    "Qwen 的模型卡将 Qwen3.6-27B-FP8 介绍为可根据图像和文本输入生成文本的 FP8 版本，并提供聊天补全示例，介绍如何在智能体应用中使用工具调用。",
+    "Qwen’s model card presents Qwen3.6-27B-FP8 as an FP8 variant that generates text from image and text inputs. It also shows a chat completions example and describes tool calling for agent applications."
+  ],
+  "tags": [
+    "image-text-to-text"
+  ],
+  "tested": false,
+  "type": "models",
+  "verificationSources": [
+    "https://huggingface.co/Qwen/Qwen3.6-27B-FP8/raw/main/README.md",
+    "https://huggingface.co/api/models?cursor=eyIkb3IiOlt7ImRvd25sb2FkcyI6MTE5MzkzMCwiX2lkIjp7IiRndCI6IjZhY2JkZDRiMGZkZDM1NzVhNjFjYzcxNyJ9fSx7ImRvd25sb2FkcyI6eyIkbHQiOjExOTM5MzB9fSx7ImRvd25sb2FkcyI6bnVsbH1dLCJzZWFyY2hTZXF1ZW5jZVRva2VuIjoiQ0w3MXlRSWFDU0VBQUFBQXlqY3lRUm9PV2d4cXk5MUxEOTAxZGFZY3h4Y2lEbG9NYXN2ZFN3L2ROWFdtSE1jWCJ9&direction=-1&full=true&limit=30&pipeline_tag=image-text-to-text&sort=downloads"
+  ],
+  "verifiedAt": "2026-11-25"
+}

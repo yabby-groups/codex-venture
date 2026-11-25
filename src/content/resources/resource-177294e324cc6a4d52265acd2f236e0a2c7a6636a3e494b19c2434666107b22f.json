@@ -1,0 +1,29 @@
+{
+  "addedAt": "2026-11-25",
+  "categories": [
+    [
+      "三维生成",
+      "3D generation"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-25",
+  "id": "resource-177294e324cc6a4d52265acd2f236e0a2c7a6636a3e494b19c2434666107b22f",
+  "identity": "hf:tencent/hunyuanworld-mirror",
+  "name": "tencent/HunyuanWorld-Mirror",
+  "site": "https://huggingface.co/tencent/HunyuanWorld-Mirror",
+  "sourceSignature": "f13761246387890e2c1b383ae176f18d9ccaa093a029ad442caca35dfa704eb6",
+  "summary": [
+    "腾讯将 HunyuanWorld-Mirror 列为可从图像生成三维内容的模型。",
+    "Tencent lists HunyuanWorld-Mirror as a model for generating 3D content from images."
+  ],
+  "tags": [
+    "image-to-3d"
+  ],
+  "tested": false,
+  "type": "models",
+  "verificationSources": [
+    "https://huggingface.co/api/models?cursor=eyIkb3IiOlt7ImRvd25sb2FkcyI6MTkxNjUsIl9pZCI6eyIkZ3QiOiI2ODVlOTFhZDFjZTFmOTg0ZGU0YzE5MDcifX0seyJkb3dubG9hZHMiOnsiJGx0IjoxOTE2NX19LHsiZG93bmxvYWRzIjpudWxsfV0sInNlYXJjaFNlcXVlbmNlVG9rZW4iOiJDTFhBdHdJYUNTRUFBQUFBUUxmU1FCb09XZ3hvWHBHdEhPSDVoTjVNR1FjaURsb01hRjZSclJ6aCtZVGVUQmtIIn0%3D&direction=-1&full=true&limit=30&pipeline_tag=image-to-3d&sort=downloads",
+    "https://huggingface.co/tencent/HunyuanWorld-Mirror/raw/main/README.md"
+  ],
+  "verifiedAt": "2026-11-25"
+}

@@ -1,0 +1,28 @@
+{
+  "addedAt": "2026-11-25",
+  "categories": [
+    [
+      "AI 工作流自动化",
+      "AI Workflow Automation"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-25",
+  "id": "resource-8eac30cb1d65e6f27994009485418c7175d682cea05254cf7654da255ee0dc35",
+  "identity": "github:854776745",
+  "license": "NOASSERTION",
+  "name": "hexabot-ai/Hexabot",
+  "repository": "https://github.com/hexabot-ai/Hexabot",
+  "repositoryId": "854776745",
+  "site": "https://github.com/hexabot-ai/Hexabot",
+  "sourceSignature": "4e0808556b671e04d9c907a7276e54bd1a727ada623300ef0d58d85cf3914b63",
+  "summary": [
+    "据发布者介绍，Hexabot v3 可用于构建 AI 工作流，在同一运行环境中将操作、智能体和对话渠道连接起来。",
+    "The publisher describes Hexabot v3 as a platform for building AI workflows that combine actions, agents, and conversational channels in a single runtime."
+  ],
+  "tested": false,
+  "type": "tools",
+  "verificationSources": [
+    "https://api.github.com/search/repositories?page=1&per_page=30&q=topic%3Aai-automation+archived%3Afalse+fork%3Afalse&sort=stars"
+  ],
+  "verifiedAt": "2026-11-25"
+}

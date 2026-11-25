@@ -1,0 +1,31 @@
+{
+  "addedAt": "2026-11-25",
+  "categories": [
+    [
+      "AI 输出审查",
+      "AI Output Review"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-25",
+  "id": "resource-a4797b7ddb835d6e0c68d686acfd560b7d6caabe47ca86ac47561c637144562a",
+  "identity": "github-skill:1061953414:skills/discernment-nudge/SKILL.md",
+  "name": "discernment-nudge",
+  "platforms": [
+    "Claude"
+  ],
+  "repository": "https://github.com/anthropics/skills",
+  "repositoryId": "1061953414",
+  "site": "https://github.com/anthropics/skills/blob/main/skills/discernment-nudge/SKILL.md",
+  "sourcePath": "skills/discernment-nudge/SKILL.md",
+  "sourceSignature": "239a72e141133638bc7b1496b97294cdecc3aa253f6dda4a3ac1d8b69e58cc92",
+  "summary": [
+    "据发布方介绍，这项技能会为有实质内容的 AI 回答或草稿补充针对性问题，帮助读者核查事实和假设，并发现缺失的背景信息。",
+    "The publisher describes a skill that adds targeted follow-up questions to substantive AI answers or drafts so readers can check facts, assumptions, and missing context."
+  ],
+  "tested": false,
+  "type": "skills",
+  "verificationSources": [
+    "https://github.com/anthropics/skills/blob/main/skills/discernment-nudge/SKILL.md"
+  ],
+  "verifiedAt": "2026-11-25"
+}

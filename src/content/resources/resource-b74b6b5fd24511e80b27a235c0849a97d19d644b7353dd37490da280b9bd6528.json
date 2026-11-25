@@ -1,0 +1,28 @@
+{
+  "addedAt": "2026-11-25",
+  "categories": [
+    [
+      "GPU 演示部署",
+      "GPU Demo Deployment"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-25",
+  "id": "resource-b74b6b5fd24511e80b27a235c0849a97d19d644b7353dd37490da280b9bd6528",
+  "identity": "github-skill:1102903896:skills/huggingface-zerogpu/SKILL.md",
+  "name": "huggingface-zerogpu",
+  "repository": "https://github.com/huggingface/skills",
+  "repositoryId": "1102903896",
+  "site": "https://github.com/huggingface/skills/blob/main/skills/huggingface-zerogpu/SKILL.md",
+  "sourcePath": "skills/huggingface-zerogpu/SKILL.md",
+  "sourceSignature": "6508ef1b591417054bcfc53044bc7ded9a58412bbbf199b911b9634144118992",
+  "summary": [
+    "这项技能指导读者在 Hugging Face ZeroGPU Spaces 上配置 Gradio 演示并排查故障，涵盖 `@spaces.GPU`、GPU 执行时长、工作进程隔离和 CUDA 构建限制。",
+    "This skill guides readers through configuring and troubleshooting Gradio demos on Hugging Face ZeroGPU Spaces, covering `@spaces.GPU`, GPU execution duration, worker process isolation, and CUDA build constraints."
+  ],
+  "tested": false,
+  "type": "skills",
+  "verificationSources": [
+    "https://github.com/huggingface/skills/blob/main/skills/huggingface-zerogpu/SKILL.md"
+  ],
+  "verifiedAt": "2026-11-25"
+}

@@ -1,0 +1,28 @@
+{
+  "addedAt": "2026-11-25",
+  "categories": [
+    [
+      "智能体记忆",
+      "Agent Memory"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-25",
+  "id": "resource-8bd24290e2337621a314cb80ab616f5f60fdcc74c455d8c39d4efe2b275ff0d2",
+  "identity": "github:656099147",
+  "license": "Apache-2.0",
+  "name": "mem0ai/mem0",
+  "repository": "https://github.com/mem0ai/mem0",
+  "repositoryId": "656099147",
+  "site": "https://github.com/mem0ai/mem0",
+  "sourceSignature": "b84d676d9079c092e0abfb4950123667606c77639461d6d615e73a138da92e35",
+  "summary": [
+    "据发布方介绍，mem0 为 AI 智能体和应用提供记忆层，使其能够保留上下文供后续使用。",
+    "The publisher describes mem0 as a memory layer that lets AI agents and applications retain context for later use."
+  ],
+  "tested": false,
+  "type": "tools",
+  "verificationSources": [
+    "https://api.github.com/search/repositories?page=1&per_page=30&q=topic%3Arag+archived%3Afalse+fork%3Afalse&sort=stars"
+  ],
+  "verifiedAt": "2026-11-25"
+}

@@ -1,0 +1,28 @@
+{
+  "addedAt": "2026-11-25",
+  "categories": [
+    [
+      "大语言模型推理服务",
+      "LLM Inference Serving"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-25",
+  "id": "resource-d92153bfda4c328d99ea4f25d092e183516c8a86d90f62b05052d123a69a7095",
+  "identity": "github:1166182351",
+  "license": "Apache-2.0",
+  "name": "raullenchai/Rapid-MLX",
+  "repository": "https://github.com/raullenchai/Rapid-MLX",
+  "repositoryId": "1166182351",
+  "site": "https://github.com/raullenchai/Rapid-MLX",
+  "sourceSignature": "90cadf88719b2f8ae7edfae07be6d76713f0ec52291c000e98cd01cd6612226a",
+  "summary": [
+    "据发布者介绍，Rapid-MLX 是面向 Apple Silicon、基于 MLX 的大语言模型推理服务器，提供兼容 OpenAI 和 Anthropic 的 API，重点支持编程智能体的工具调用。",
+    "The publisher describes Rapid-MLX as an MLX-based LLM inference server for Apple Silicon with OpenAI- and Anthropic-compatible APIs and a focus on tool calling for coding agents."
+  ],
+  "tested": false,
+  "type": "open-source",
+  "verificationSources": [
+    "https://api.github.com/search/repositories?page=1&per_page=30&q=topic%3Allm-inference+archived%3Afalse+fork%3Afalse&sort=stars"
+  ],
+  "verifiedAt": "2026-11-25"
+}

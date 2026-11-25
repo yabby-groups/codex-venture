@@ -1,0 +1,30 @@
+{
+  "addedAt": "2026-11-25",
+  "categories": [
+    [
+      "编程智能体监控",
+      "Coding Agent Monitoring"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-25",
+  "id": "resource-5239428286f74239ea6fc1bc77af77c474c922a25d956be06cdbe0d0488164cd",
+  "identity": "openvsx:carlosjunior1992.claude-todos",
+  "install": "https://open-vsx.org/extension/CarlosJunior1992/claude-todos",
+  "name": "Claude Todos",
+  "platforms": [
+    "Open VSX"
+  ],
+  "site": "https://open-vsx.org/extension/CarlosJunior1992/claude-todos",
+  "sourceSignature": "22e4631edf2f88564ff388b4109919b608c5d1ac37e33f2657b8e2ad78d59800",
+  "summary": [
+    "据发布者介绍，Claude Todos 可在当前工作区跟踪 Claude Code 智能体的任务，查看实时任务列表、智能体树，以及令牌和缓存指标。",
+    "The publisher describes Claude Todos as an extension for tracking Claude Code agent tasks in the current workspace, with a live task list, an agent tree, and token and cache metrics."
+  ],
+  "tested": false,
+  "type": "plugins",
+  "verificationSources": [
+    "https://open-vsx.org/api/-/search?offset=0&query=Claude&size=25"
+  ],
+  "verifiedAt": "2026-11-25",
+  "version": "0.24.0"
+}

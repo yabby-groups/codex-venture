@@ -1,0 +1,28 @@
+{
+  "addedAt": "2026-11-25",
+  "categories": [
+    [
+      "法院信息查询",
+      "Court information lookup"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-25",
+  "id": "resource-80c0b1ce16a133fa5c9fe50140d8387d0f7a0427f428e7934f4e0fff837ee682",
+  "identity": "mcp:ai.1court.state/court-directory",
+  "name": "1Court Directory",
+  "registryId": "ai.1court.state/court-directory",
+  "site": "https://registry.modelcontextprotocol.io/v0.1/servers/ai.1court.state%2Fcourt-directory/versions/1.0.1",
+  "sourceSignature": "b7b0626ac8d8a8676747253ae3662d2eaa930b891e81e12ebb18085e4a1401fa",
+  "summary": [
+    "据发布方介绍，可通过这个 MCP 目录查询美国县级法院的书记员信息、法院地址、电子提交方式、立案费用和案件查询入口。",
+    "The publisher's MCP listing describes a directory for looking up U.S. county court clerks, courthouse addresses, e-filing information, filing fees, and case lookup options."
+  ],
+  "tested": false,
+  "transport": "streamable-http",
+  "type": "mcp",
+  "verificationSources": [
+    "https://registry.modelcontextprotocol.io/v0.1/servers/ai.1court.state%2Fcourt-directory/versions/1.0.1"
+  ],
+  "verifiedAt": "2026-11-25",
+  "version": "1.0.1"
+}

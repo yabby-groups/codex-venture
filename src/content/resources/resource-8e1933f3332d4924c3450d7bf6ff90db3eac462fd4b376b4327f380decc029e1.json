@@ -1,0 +1,28 @@
+{
+  "addedAt": "2026-11-25",
+  "categories": [
+    [
+      "代码库探索",
+      "Codebase Exploration"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-25",
+  "id": "resource-8e1933f3332d4924c3450d7bf6ff90db3eac462fd4b376b4327f380decc029e1",
+  "identity": "github:1200597263",
+  "license": "Apache-2.0",
+  "name": "Graphify-Labs/graphify",
+  "repository": "https://github.com/Graphify-Labs/graphify",
+  "repositoryId": "1200597263",
+  "site": "https://github.com/Graphify-Labs/graphify",
+  "sourceSignature": "63688bc4625da0a75125682df3256bc3d913cd69020130912d2fae21def8d275",
+  "summary": [
+    "据发布者介绍，Graphify 可将代码、文档、SQL 模式、配置文件和 PDF 转为可查询的知识图谱，并解释图谱中识别出的关系。",
+    "Graphify’s publisher says it turns code, documentation, SQL schemas, configuration files, and PDFs into a queryable knowledge graph with explanations for the relationships it identifies."
+  ],
+  "tested": false,
+  "type": "tools",
+  "verificationSources": [
+    "https://api.github.com/search/repositories?page=1&per_page=30&q=topic%3Arag+archived%3Afalse+fork%3Afalse&sort=stars"
+  ],
+  "verifiedAt": "2026-11-25"
+}

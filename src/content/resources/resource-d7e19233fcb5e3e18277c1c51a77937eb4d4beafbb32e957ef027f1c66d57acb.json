@@ -1,0 +1,28 @@
+{
+  "addedAt": "2026-11-25",
+  "categories": [
+    [
+      "向量数据库与智能体记忆",
+      "Vector Databases and Agent Memory"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-25",
+  "id": "resource-d7e19233fcb5e3e18277c1c51a77937eb4d4beafbb32e957ef027f1c66d57acb",
+  "identity": "github:1099547803",
+  "license": "MIT",
+  "name": "ruvnet/RuVector",
+  "repository": "https://github.com/ruvnet/RuVector",
+  "repositoryId": "1099547803",
+  "site": "https://github.com/ruvnet/RuVector",
+  "sourceSignature": "81c6d37ba9ce314598e97d9377c3e21ea1afb20624d6a38f50da6373ba57042f",
+  "summary": [
+    "据发布者介绍，RuVector 是一个用 Rust 编写的数据库，将向量数据与图神经网络相结合，可用于为智能体提供记忆。",
+    "The publisher describes RuVector as a Rust database combining vector data and graph neural networks, with agent memory as one of its intended uses."
+  ],
+  "tested": false,
+  "type": "open-source",
+  "verificationSources": [
+    "https://api.github.com/search/repositories?page=1&per_page=30&q=topic%3Allm-inference+archived%3Afalse+fork%3Afalse&sort=stars"
+  ],
+  "verifiedAt": "2026-11-25"
+}

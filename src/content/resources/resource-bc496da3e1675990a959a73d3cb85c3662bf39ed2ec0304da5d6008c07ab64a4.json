@@ -1,0 +1,28 @@
+{
+  "addedAt": "2026-11-25",
+  "categories": [
+    [
+      "前端性能优化",
+      "Frontend performance optimization"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-25",
+  "id": "resource-bc496da3e1675990a959a73d3cb85c3662bf39ed2ec0304da5d6008c07ab64a4",
+  "identity": "github-skill:1112540808:skills/react-best-practices/SKILL.md",
+  "name": "vercel-react-best-practices",
+  "repository": "https://github.com/vercel-labs/agent-skills",
+  "repositoryId": "1112540808",
+  "site": "https://github.com/vercel-labs/agent-skills/blob/main/skills/react-best-practices/SKILL.md",
+  "sourcePath": "skills/react-best-practices/SKILL.md",
+  "sourceSignature": "5cff8374ffba816e41a2f894e286bf26f5356ab15e7b70fae62b05af89e5498d",
+  "summary": [
+    "在编写、审查或重构 React 和 Next.js 代码时，可参考 Vercel 工程团队的性能指南。据 Vercel 介绍，规则按影响程度排序，涵盖数据获取和打包产物优化等主题。",
+    "Apply Vercel Engineering's performance guidelines when writing, reviewing, or refactoring React and Next.js code. Vercel says the rules are ranked by impact and cover areas such as data fetching and bundle optimization."
+  ],
+  "tested": false,
+  "type": "skills",
+  "verificationSources": [
+    "https://github.com/vercel-labs/agent-skills/blob/main/skills/react-best-practices/SKILL.md"
+  ],
+  "verifiedAt": "2026-11-25"
+}

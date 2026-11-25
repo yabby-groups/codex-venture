@@ -1,0 +1,29 @@
+{
+  "addedAt": "2026-11-25",
+  "categories": [
+    [
+      "三维生成",
+      "3D Generation"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-25",
+  "id": "resource-1615c5cffb358b1449a7b99cd16a71c98bca662af0278a9a5770b8d0a138ed9f",
+  "identity": "hf:tencent/hunyuanworld-1",
+  "name": "tencent/HunyuanWorld-1",
+  "site": "https://huggingface.co/tencent/HunyuanWorld-1",
+  "sourceSignature": "f940b57feb2d643bda4ea01867228a3a64985d59c94583e0c5ce43b429200068",
+  "summary": [
+    "据模型页面介绍，腾讯的 HunyuanWorld-1 可根据图像生成三维内容。",
+    "The listing describes Tencent’s HunyuanWorld-1 as a model for generating 3D content from images."
+  ],
+  "tags": [
+    "image-to-3d"
+  ],
+  "tested": false,
+  "type": "models",
+  "verificationSources": [
+    "https://huggingface.co/api/models?cursor=eyIkb3IiOlt7ImRvd25sb2FkcyI6MTkxNjUsIl9pZCI6eyIkZ3QiOiI2ODVlOTFhZDFjZTFmOTg0ZGU0YzE5MDcifX0seyJkb3dubG9hZHMiOnsiJGx0IjoxOTE2NX19LHsiZG93bmxvYWRzIjpudWxsfV0sInNlYXJjaFNlcXVlbmNlVG9rZW4iOiJDTFhBdHdJYUNTRUFBQUFBUUxmU1FCb09XZ3hvWHBHdEhPSDVoTjVNR1FjaURsb01hRjZSclJ6aCtZVGVUQmtIIn0%3D&direction=-1&full=true&limit=30&pipeline_tag=image-to-3d&sort=downloads",
+    "https://huggingface.co/tencent/HunyuanWorld-1/raw/main/README.md"
+  ],
+  "verifiedAt": "2026-11-25"
+}

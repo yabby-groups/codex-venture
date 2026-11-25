@@ -1,0 +1,28 @@
+{
+  "addedAt": "2026-11-25",
+  "categories": [
+    [
+      "网页任务自动化",
+      "Web task automation"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-25",
+  "id": "resource-91718fa9b49058c5eaa4c8a85f97b64320e29ae0fe898c0db4282702937540fb",
+  "identity": "github:1369386589",
+  "license": "Apache-2.0",
+  "name": "WeWorker/WeWorker",
+  "repository": "https://github.com/WeWorker/WeWorker",
+  "repositoryId": "1369386589",
+  "site": "https://github.com/WeWorker/WeWorker",
+  "sourceSignature": "e9a53721befc4009d2f37209d15a34886b3cd64a60aa228ace7fed8cddf3a166",
+  "summary": [
+    "据发布方介绍，WeWorker 是一款可在网站上执行操作的桌面 AI 智能体，提供面向邮件、购物和社交平台的适配器。",
+    "The publisher describes WeWorker as a desktop AI agent that can perform actions on websites, with adapters for email, shopping, and social platforms."
+  ],
+  "tested": false,
+  "type": "tools",
+  "verificationSources": [
+    "https://api.github.com/search/repositories?page=1&per_page=30&q=topic%3Aai-automation+archived%3Afalse+fork%3Afalse&sort=stars"
+  ],
+  "verifiedAt": "2026-11-25"
+}

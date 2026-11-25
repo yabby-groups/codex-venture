@@ -1,0 +1,28 @@
+{
+  "addedAt": "2026-11-25",
+  "categories": [
+    [
+      "文档文字识别",
+      "Document OCR"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-25",
+  "id": "resource-88419ed0911092ad275f1bbb5b874ee15e6ea2bb58734f7146a2d04532e307df",
+  "identity": "github:262296122",
+  "license": "Apache-2.0",
+  "name": "PaddlePaddle/PaddleOCR",
+  "repository": "https://github.com/PaddlePaddle/PaddleOCR",
+  "repositoryId": "262296122",
+  "site": "https://github.com/PaddlePaddle/PaddleOCR",
+  "sourceSignature": "a768ecd4f59f8a337535142343649672e907289ad68fc89e1ad46d2a8e2b8a29",
+  "summary": [
+    "据发布方介绍，PaddleOCR 可从 PDF 和文档图像中提取结构化数据，并支持 100 多种语言。",
+    "The publisher says PaddleOCR extracts structured data from PDFs and document images and supports more than 100 languages."
+  ],
+  "tested": false,
+  "type": "tools",
+  "verificationSources": [
+    "https://api.github.com/search/repositories?page=1&per_page=30&q=topic%3Arag+archived%3Afalse+fork%3Afalse&sort=stars"
+  ],
+  "verifiedAt": "2026-11-25"
+}

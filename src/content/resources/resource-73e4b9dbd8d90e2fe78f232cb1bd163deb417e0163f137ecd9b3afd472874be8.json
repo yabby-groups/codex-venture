@@ -1,0 +1,28 @@
+{
+  "addedAt": "2026-11-25",
+  "categories": [
+    [
+      "文档审阅",
+      "Document Review"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-25",
+  "id": "resource-73e4b9dbd8d90e2fe78f232cb1bd163deb417e0163f137ecd9b3afd472874be8",
+  "identity": "mcp:ai.adeu/adeu",
+  "name": "ai.adeu/adeu",
+  "registryId": "ai.adeu/adeu",
+  "site": "https://registry.modelcontextprotocol.io/v0.1/servers/ai.adeu%2Fadeu/versions/1.7.1",
+  "sourceSignature": "b580b9fb75a0d31117cd1652fc13ce14d95a92844bc750d99295315e9080e223",
+  "summary": [
+    "据条目介绍，这是一个自动标注 DOCX 文档修订内容的 MCP 服务，便于审阅。",
+    "The listing describes an MCP server that automatically marks revisions in DOCX documents for review."
+  ],
+  "tested": false,
+  "transport": "stdio",
+  "type": "mcp",
+  "verificationSources": [
+    "https://registry.modelcontextprotocol.io/v0.1/servers/ai.adeu%2Fadeu/versions/1.7.1"
+  ],
+  "verifiedAt": "2026-11-25",
+  "version": "1.7.1"
+}

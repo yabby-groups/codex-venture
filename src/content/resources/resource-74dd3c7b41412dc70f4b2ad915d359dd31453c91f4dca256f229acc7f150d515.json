@@ -1,0 +1,28 @@
+{
+  "addedAt": "2026-11-25",
+  "categories": [
+    [
+      "对话式购物",
+      "Chat-Based Shopping"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-25",
+  "id": "resource-74dd3c7b41412dc70f4b2ad915d359dd31453c91f4dca256f229acc7f150d515",
+  "identity": "mcp:ae.genosys/genosys",
+  "name": "GENOSYS UAE",
+  "registryId": "ae.genosys/genosys",
+  "site": "https://registry.modelcontextprotocol.io/v0.1/servers/ae.genosys%2Fgenosys/versions/1.2.0",
+  "sourceSignature": "0b682cae47ab367fc1e2b9f59b1f0a33993dd7b1da695b7ce11a2f618120111f",
+  "summary": [
+    "据发布者介绍，GENOSYS UAE 的 MCP 服务可让用户通过对话查找在阿联酋销售的 GENOSYS 护肤品、查看以阿联酋迪拉姆计价的商品价格，并下单付款。",
+    "The publisher says the GENOSYS UAE MCP service lets shoppers find GENOSYS skincare products in the UAE, check prices in AED, and place and pay for orders through chat."
+  ],
+  "tested": false,
+  "transport": "streamable-http",
+  "type": "mcp",
+  "verificationSources": [
+    "https://registry.modelcontextprotocol.io/v0.1/servers/ae.genosys%2Fgenosys/versions/1.2.0"
+  ],
+  "verifiedAt": "2026-11-25",
+  "version": "1.2.0"
+}

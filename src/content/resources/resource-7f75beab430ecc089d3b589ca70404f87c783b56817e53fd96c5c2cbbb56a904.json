@@ -1,0 +1,28 @@
+{
+  "addedAt": "2026-11-25",
+  "categories": [
+    [
+      "房产信息查询",
+      "Real Estate Research"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-25",
+  "id": "resource-7f75beab430ecc089d3b589ca70404f87c783b56817e53fd96c5c2cbbb56a904",
+  "identity": "mcp:ae.mrk/dubai-property",
+  "name": "MRK Dubai Property",
+  "registryId": "ae.mrk/dubai-property",
+  "site": "https://registry.modelcontextprotocol.io/v0.1/servers/ae.mrk%2Fdubai-property/versions/1.0.0",
+  "sourceSignature": "5ad783bde57e2077449741624741f6fd73241838d1d30d1ac5602333369a2d04",
+  "summary": [
+    "据发布者介绍，MRK Dubai Property 的 MCP 服务可用于查询迪拜房产项目、开发商、社区、购房成本和黄金签证信息。",
+    "The publisher says the MRK Dubai Property MCP service lets readers look up Dubai property projects, developers, communities, purchase costs, and Golden Visa information."
+  ],
+  "tested": false,
+  "transport": "streamable-http",
+  "type": "mcp",
+  "verificationSources": [
+    "https://registry.modelcontextprotocol.io/v0.1/servers/ae.mrk%2Fdubai-property/versions/1.0.0"
+  ],
+  "verifiedAt": "2026-11-25",
+  "version": "1.0.0"
+}

@@ -1,0 +1,30 @@
+{
+  "addedAt": "2026-11-25",
+  "categories": [
+    [
+      "模型选型",
+      "Model Selection"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-25",
+  "id": "resource-50cf2797830f7d2f778b4786fe0616649ef7bb397c99a4f2845143d295e31657",
+  "identity": "openvsx:jft63.task-model-advisor",
+  "install": "https://open-vsx.org/extension/jft63/task-model-advisor",
+  "name": "Task Model Advisor",
+  "platforms": [
+    "Open VSX"
+  ],
+  "site": "https://open-vsx.org/extension/jft63/task-model-advisor",
+  "sourceSignature": "c0a57180552e0479d364e45e984e39b6336e001e1de26419f8aae0b8b988a209",
+  "summary": [
+    "据发布方介绍，这款插件依据实时基准测试，为具体任务推荐模型、上下文设置和推理设置。",
+    "The publisher says the plugin uses live benchmarks to recommend a model, context settings, and reasoning settings for a given task."
+  ],
+  "tested": false,
+  "type": "plugins",
+  "verificationSources": [
+    "https://open-vsx.org/api/-/search?offset=0&query=language+model&size=25"
+  ],
+  "verifiedAt": "2026-11-25",
+  "version": "0.3.1"
+}

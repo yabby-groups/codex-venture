@@ -1,0 +1,29 @@
+{
+  "addedAt": "2026-11-25",
+  "categories": [
+    [
+      "语音识别",
+      "Speech recognition"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-25",
+  "id": "resource-173e476dca22bf4ae315f30a83d90eeeddb0c8071786d38366c6fd9fb7defc82",
+  "identity": "hf:tristayqc/my_zh_cn_asr_cv13_model",
+  "name": "tristayqc/my_zh_CN_asr_cv13_model",
+  "site": "https://huggingface.co/tristayqc/my_zh_CN_asr_cv13_model",
+  "sourceSignature": "b65680bdc9ea5fbc79dc58d1cbfb9bb12c6ee534eafac2eb878ce9bc71245349",
+  "summary": [
+    "使用 wav2vec 2.0 模型转写普通话音频。模型卡列出了 Common Voice 13.0，并报告验证集上的字符错误率为 6.38%，词错误率为 37.5%。",
+    "Transcribe Mandarin audio with a wav2vec 2.0 model. The model card lists Common Voice 13.0 and reports validation error rates of 6.38% by character and 37.5% by word."
+  ],
+  "tags": [
+    "automatic-speech-recognition"
+  ],
+  "tested": false,
+  "type": "models",
+  "verificationSources": [
+    "https://huggingface.co/api/models?cursor=eyIkb3IiOlt7ImRvd25sb2FkcyI6MzgxNTU4LCJfaWQiOnsiJGd0IjoiNjkxZTJhYWZmMDdlZGY1ZmZmNTcwYWEyIn19LHsiZG93bmxvYWRzIjp7IiRsdCI6MzgxNTU4fX0seyJkb3dubG9hZHMiOm51bGx9XSwic2VhcmNoU2VxdWVuY2VUb2tlbiI6IkNLUEF0Z0lhQ1NFQUFBQUEyRWtYUVJvT1dneHBIaXF2OEg3ZlgvOVhDcUlpRGxvTWFSNHFyL0IrMzEvL1Z3cWkifQ%3D%3D&direction=-1&full=true&limit=30&pipeline_tag=automatic-speech-recognition&sort=downloads",
+    "https://huggingface.co/tristayqc/my_zh_CN_asr_cv13_model/raw/main/README.md"
+  ],
+  "verifiedAt": "2026-11-25"
+}

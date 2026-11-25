@@ -1,0 +1,30 @@
+{
+  "addedAt": "2026-11-25",
+  "categories": [
+    [
+      "代码贡献追踪",
+      "Code Contribution Tracking"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-25",
+  "id": "resource-4f5eff43540895df88a2c98891a7f73379254d59e9909c9bd3ac941b3207447a",
+  "identity": "openvsx:human-gr8rthan-ai.coding-metrics",
+  "install": "https://open-vsx.org/extension/human-gr8rthan-ai/coding-metrics",
+  "name": "Human > AI",
+  "platforms": [
+    "Open VSX"
+  ],
+  "site": "https://open-vsx.org/extension/human-gr8rthan-ai/coding-metrics",
+  "sourceSignature": "2e931299410d66a59d5f1a66e9a52047fb4f50815688cc4e45d9df7ac55f038c",
+  "summary": [
+    "据发布方介绍，这款插件可分别追踪开发者和 AI 编程助手的代码贡献。",
+    "The publisher describes a plugin for tracking code contributions from developers and AI coding assistants."
+  ],
+  "tested": false,
+  "type": "plugins",
+  "verificationSources": [
+    "https://open-vsx.org/api/-/search?offset=0&query=coding+assistant&size=25"
+  ],
+  "verifiedAt": "2026-11-25",
+  "version": "0.5.3"
+}

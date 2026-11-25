@@ -1,0 +1,28 @@
+{
+  "addedAt": "2026-11-25",
+  "categories": [
+    [
+      "音频生成",
+      "Audio Generation"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-25",
+  "id": "resource-d6fc4f3c8e82891d28fb316f79b56f4baf1c7bcd7a6c6d72a31e127aa5827008",
+  "identity": "github:719017363",
+  "license": "MIT",
+  "name": "open-mmlab/Amphion",
+  "repository": "https://github.com/open-mmlab/Amphion",
+  "repositoryId": "719017363",
+  "site": "https://github.com/open-mmlab/Amphion",
+  "sourceSignature": "df9c10e0136d5bb8aa1cfc7111e104b19016e066920145b342ad12dd40ac4140",
+  "summary": [
+    "据发布方介绍，Amphion 是一套帮助读者入门音频、音乐和语音生成并开展可复现研究的工具。",
+    "The publisher describes Amphion as a toolkit for getting started with audio, music, and speech generation and conducting reproducible research in those areas."
+  ],
+  "tested": false,
+  "type": "open-source",
+  "verificationSources": [
+    "https://api.github.com/search/repositories?page=1&per_page=30&q=topic%3Atext-to-speech+archived%3Afalse+fork%3Afalse&sort=stars"
+  ],
+  "verifiedAt": "2026-11-25"
+}

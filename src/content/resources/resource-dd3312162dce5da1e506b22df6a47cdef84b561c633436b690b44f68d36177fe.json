@@ -1,0 +1,28 @@
+{
+  "addedAt": "2026-11-25",
+  "categories": [
+    [
+      "大模型工程学习",
+      "LLM engineering education"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-25",
+  "id": "resource-dd3312162dce5da1e506b22df6a47cdef84b561c633436b690b44f68d36177fe",
+  "identity": "github:644235905",
+  "license": "Apache-2.0",
+  "name": "liguodongiot/llm-action",
+  "repository": "https://github.com/liguodongiot/llm-action",
+  "repositoryId": "644235905",
+  "site": "https://github.com/liguodongiot/llm-action",
+  "sourceSignature": "32ebc3b14931e141f5ddc0b77b167ea24b1fe8d0069e0743f2365140f1936397",
+  "summary": [
+    "据项目介绍，llm-action 分享大模型的技术原理，以及大模型工程化和应用落地的实践经验。",
+    "The project description presents llm-action as a resource for learning LLM fundamentals and exploring practical experience in LLM engineering and application deployment."
+  ],
+  "tested": false,
+  "type": "open-source",
+  "verificationSources": [
+    "https://api.github.com/search/repositories?page=1&per_page=30&q=topic%3Allm-inference+archived%3Afalse+fork%3Afalse&sort=stars"
+  ],
+  "verifiedAt": "2026-11-25"
+}

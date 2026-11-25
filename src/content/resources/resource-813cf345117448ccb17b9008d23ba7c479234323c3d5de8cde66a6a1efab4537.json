@@ -1,0 +1,28 @@
+{
+  "addedAt": "2026-11-25",
+  "categories": [
+    [
+      "搜索可见度分析",
+      "Search visibility analysis"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-25",
+  "id": "resource-813cf345117448ccb17b9008d23ba7c479234323c3d5de8cde66a6a1efab4537",
+  "identity": "mcp:agency.justidea/justidea-agency",
+  "name": "JustIdea Agency",
+  "registryId": "agency.justidea/justidea-agency",
+  "site": "https://registry.modelcontextprotocol.io/v0.1/servers/agency.justidea%2Fjustidea-agency/versions/1.2.0",
+  "sourceSignature": "20c163f07664fc96250b5eba638b1e8208f987660555fe93d2fcc2b12ebfd2a4",
+  "summary": [
+    "据 JustIdea 介绍，可通过其 MCP 服务检查在 AI 和 Google 中的可见度，也可咨询该机构的服务。",
+    "JustIdea lists an MCP service for running visibility scans across AI and Google and making inquiries about its agency services."
+  ],
+  "tested": false,
+  "transport": "streamable-http",
+  "type": "mcp",
+  "verificationSources": [
+    "https://registry.modelcontextprotocol.io/v0.1/servers/agency.justidea%2Fjustidea-agency/versions/1.2.0"
+  ],
+  "verifiedAt": "2026-11-25",
+  "version": "1.2.0"
+}

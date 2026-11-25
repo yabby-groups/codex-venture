@@ -1,0 +1,28 @@
+{
+  "addedAt": "2026-11-25",
+  "categories": [
+    [
+      "自托管 AI",
+      "Self-hosted AI"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-25",
+  "id": "resource-e044551d4572b914da8ea268f075ca5feef26e9f3a3ad46c282351c968c6d64b",
+  "identity": "github:1153579168",
+  "license": "Apache-2.0",
+  "name": "Osmantic/ODS",
+  "repository": "https://github.com/Osmantic/ODS",
+  "repositoryId": "1153579168",
+  "site": "https://github.com/Osmantic/ODS",
+  "sourceSignature": "f0207272f2edb593635b666de8e64f240b057af43cedadd0aefdbc18cf5d2644",
+  "summary": [
+    "据 Osmantic 介绍，ODS V3 目前处于公开预发布阶段，可用于试用在自己的电脑上托管的私有 AI 服务器。",
+    "Osmantic describes ODS V3 as a public prerelease for trying out a private AI server hosted on your own computer."
+  ],
+  "tested": false,
+  "type": "open-source",
+  "verificationSources": [
+    "https://api.github.com/search/repositories?page=1&per_page=30&q=topic%3Atext-to-speech+archived%3Afalse+fork%3Afalse&sort=stars"
+  ],
+  "verifiedAt": "2026-11-25"
+}

@@ -1,0 +1,28 @@
+{
+  "addedAt": "2026-11-25",
+  "categories": [
+    [
+      "LoRA 演示发布",
+      "LoRA Demo Publishing"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-25",
+  "id": "resource-b91e389c7ac0d156018bcacac74e978eb8f4a747e5a9a691fb42bed1c211dcf7",
+  "identity": "github-skill:1102903896:skills/huggingface-lora-space-builder/SKILL.md",
+  "name": "huggingface-lora-space-builder",
+  "repository": "https://github.com/huggingface/skills",
+  "repositoryId": "1102903896",
+  "site": "https://github.com/huggingface/skills/blob/main/skills/huggingface-lora-space-builder/SKILL.md",
+  "sourcePath": "skills/huggingface-lora-space-builder/SKILL.md",
+  "sourceSignature": "5486a564fe14e5811072a504bdc49652a0727e15c71619a700cd95f79b74b93a",
+  "summary": [
+    "这项技能指导读者为给定的 LoRA 构建 Gradio 演示并发布到 Hugging Face Spaces，涵盖基础模型和推理管线的选择，以及针对 LoRA 任务设计界面控件。",
+    "This skill guides readers through building and publishing a Gradio demo for a supplied LoRA on Hugging Face Spaces, from choosing the base model and inference pipeline to designing controls for the LoRA’s task."
+  ],
+  "tested": false,
+  "type": "skills",
+  "verificationSources": [
+    "https://github.com/huggingface/skills/blob/main/skills/huggingface-lora-space-builder/SKILL.md"
+  ],
+  "verifiedAt": "2026-11-25"
+}
