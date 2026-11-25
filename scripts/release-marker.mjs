@@ -3,8 +3,8 @@ import { readFileSync, readdirSync, writeFileSync } from 'node:fs';
 
 // Stable across the hosted validation and Cloudflare's independent build.
 const hash = createHash('sha256');
-for (const directory of ['src/content/news', 'src/content/daily']) {
-  for (const file of readdirSync(directory).filter((name) => name.endsWith('.md')).sort()) {
+for (const directory of ['src/content/news', 'src/content/daily', 'src/content/resources']) {
+  for (const file of readdirSync(directory).filter((name) => /\.(md|json)$/.test(name)).sort()) {
     const path = directory + '/' + file;
     hash.update(path + '\0');
     hash.update(createHash('sha256').update(readFileSync(path)).digest());

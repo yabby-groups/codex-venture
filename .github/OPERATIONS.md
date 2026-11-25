@@ -45,3 +45,21 @@ Actions 排程允许延迟。GitHub 同一并发组只有一个运行和一个�
 Venture Analytics 使用独立调度同步平台并生成日周月报告。配置、统计口径和私有仓库权限见 [网站统计与运营分析](../docs/analytics.md)。
 
 主动发现每六小时运行一次，独立于编辑调度。删除或推迟某次采集不会追加模型会话。来源访问、状态文件及当前验收见 [免费采集运营说明](../docs/free-collection.md)。
+
+## 独立资源运营
+
+资源事实存放在 `src/content/resources/*.json`，文章通过 `resourceIds`
+关联，目录卡片可直接使用官方入口。发布指纹包含资源集合，生产检查
+比较改动目录的 JSON 索引。采集、编辑和发布使用现有三个 Job。
+
+在手动运行中通过 `resource_type` 选择目录。`resource-discover` 只建立候选，
+`resource-enrich` 处理已经发现的队列，`resource-sync` 定时发现并处理。
+`resource-bootstrap` 与 `resource-backfill` 使用同一分页队列扫描历史资料。
+`resource-refresh` 可提前重查来源。游标、已读取的技能文件哈希、待处理候选、
+免费请求用量和退避时间保存在 `venture-state`。
+
+新闻与资源按独立时段运行。每次编辑任务按上下文容量切批，在模型运行窗口内
+顺序处理。超过本轮容量的候选留在队列。日刊和周刊各保留一个正式版本。
+新闻和资源批次共用 `VENTURE_DAILY_TOKEN_LIMIT`、`VENTURE_DAILY_COST_LIMIT`
+及 `VENTURE_RUN_TOKENS`。GitHub 变量里的 `unlimited` 保留为每日 Token
+额度的可选值。

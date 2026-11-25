@@ -369,15 +369,18 @@ def accept():
     if type(results) is not list or not 0 < len(results) <= len(batch['batches']):
         raise ValueError('Invalid batch results')
     routes, counts = [], {'added': 0, 'updated': 0}
+    directories = set()
     for part, response in zip(batch['batches'], results):
         if batch['task'].startswith('resource-'):
             stats = resource_ingest.publish(response, part['candidates'], batch['date'])
             for key in counts:
                 counts[key] += stats[key]
+            directories.update(part['candidates'][edit['key']]['type'] for edit in response['resources'])
         else:
             routes.extend(accept_articles({**batch, **part}, response))
     save(WORK / 'routes.json', routes)
     save(WORK / 'resources-published.json', counts)
+    save(WORK / 'resource-routes.json', [f'topics/{kind}/index.json' for kind in sorted(directories)])
 
 
 def accept_articles(batch, response):
@@ -431,6 +434,7 @@ def health(wait=False):
     base = 'https://codex-venture.com'
     release = Path('dist/release.txt').read_text().strip()
     routes = load(WORK / 'routes.json', [])
+    resource_routes = load(WORK / 'resource-routes.json', [])
     for attempt in range(24 if wait else 1):
         try:
             probe(base, release)
@@ -444,7 +448,14 @@ def health(wait=False):
                 built = re.search(article, expected, re.DOTALL)
                 if not deployed or not built or deployed.group() != built.group():
                     raise RuntimeError(f'{route} differs from the built article')
-            print(f'Public release {release} verified, {len(routes)} new articles')
+            for route in resource_routes:
+                request = Request(f'{base}/{route}?release={release}', headers=PROBE_HEADERS)
+                with urlopen(request, timeout=8) as response:
+                    deployed = json.load(response)
+                if deployed != load(Path('dist') / route, []):
+                    raise RuntimeError(f'{route} differs from the built resource index')
+            print(f'Public release {release} verified, {len(routes)} new articles, '
+                  f'{len(resource_routes)} changed resource directories')
             return
         except (OSError, RuntimeError) as error:
             if not wait or attempt == 23:

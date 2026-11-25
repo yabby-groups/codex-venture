@@ -237,7 +237,8 @@ def prepare(task, kind, day, capacity=12):
         if len(candidates) >= capacity or time.monotonic() >= deadline:
             break
         old = find_existing(row, existing)
-        if old and not old.get('identity') and row['type'] == 'skills':
+        if old and (old.get('sourceSignature') == row.get('signature') or
+                    (not old.get('identity') and row['type'] == 'skills')):
             row['done'] = 'already-published'
             continue
         row['attempt'] = time.time()
@@ -262,7 +263,7 @@ def prepare(task, kind, day, capacity=12):
                     details = json.loads(document(row['site']))
                     row['evidence'] = json.dumps(details, ensure_ascii=False)[:1900]
             if row['evidence'].strip():
-                candidates[key] = {field: value for field, value in row.items() if field not in ('attempt', 'signature')}
+                candidates[key] = {field: value for field, value in row.items() if field != 'attempt'}
         except (OSError, ValueError, KeyError, http.client.HTTPException) as error:
             print(f'{row["type"]}/{key[:10]}: {type(error).__name__}: {error}', flush=True)
     save(STATE, queue)
@@ -290,13 +291,15 @@ def publish(response, candidates, day):
         old = find_existing(source, existing)
         resource_id = old['id'] if old else 'resource-' + digest(source['type'] + ':' + source['identity'])
         row = {field: value for field, value in source.items()
-               if field not in ('description', 'evidence', 'metadataUrl')}
+               if field not in ('description', 'evidence', 'metadataUrl', 'signature')}
         row = {**(old or {}), **row, 'id': resource_id, 'tested': False, 'verifiedAt': day,
                'summary': [edit['zh'].strip(), edit['en'].strip()],
                'categories': [[edit['categoryZh'].strip(), edit['categoryEn'].strip()]],
                'addedAt': old['addedAt'] if old else day}
         row['verificationSources'] = sorted(set(row['verificationSources']) |
                                             set((old or {}).get('verificationSources', [])))
+        if source.get('signature'):
+            row['sourceSignature'] = source['signature']
         if old:
             row['updatedAt'] = day
         path = DIRECTORY / f'{resource_id}.json'
