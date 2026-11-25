@@ -62,7 +62,6 @@ jobs:
       - uses: actions/checkout@v6
         with:
           ref: refs/heads/main
-          ref: ${{ needs.prepare.outputs.revision }}
           persist-credentials: false
       - id: task
         env:
