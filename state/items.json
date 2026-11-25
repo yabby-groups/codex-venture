@@ -15,6 +15,9 @@
     "url": "https://arxiv.org/abs/2611.29099"
   },
   "00384cf9f9d183aaaf615d89e5b7f866e84f867eb4e79b82742cfd366685c1c9": {
+    "articles": [
+      "/news/teamflowrl-online-fine-tuning/"
+    ],
     "category": "models",
     "discovered": "2026-11-25T11:43:09.397480+00:00",
     "discovery": {},
@@ -30,7 +33,7 @@
     "published": "2026-11-25T05:00:00+00:00",
     "source": "arxiv-ai",
     "source_url": "https://rss.arxiv.org/rss/cs.AI",
-    "status": "pending",
+    "status": "published",
     "summary": "arXiv:2611.32645v1 Announce Type: cross Abstract: Complex cooperative tasks require coordinated multi-agent behavior. Offline generative policies learn expressive cooperative behaviors from trajectories but remain limited by fixed datasets. Online reinforcement learning can improve them through environment interaction. However, fine-tuning flow policies is difficult because action likelihoods are hard to compute. We propose TeamFlowRL, a two-stage framework that pretrains multi-agent flow policies offline and fine-tunes them online. We formulate team policy optimization over the complete denoising trajectories of decentralized flow policies, avoiding intractable action likelihoods. The resulting objective weights each agent's trajectory ratio with a shared team advantage and clips each ratio separately, aligning local policy updates with the common team return. Across 51 paired configurations in seven simulation groups, TeamFlowRL improves every offline initialization, with a 47.3% average gain in normalized score. It also achieves 33.1% higher average success under exploration noise than Gaussian-policy fine-tuning across 6 bimanual tasks.",
     "title": "TeamFlowRL: Online Policy Optimization of Decentralized Flow Policies for Multi-Agent Coordination",
     "url": "https://arxiv.org/abs/2611.32645",
@@ -52,6 +55,9 @@
     "url": "https://github.com/felipebasurto/undecree"
   },
   "006cecf4042982e9cf7bb3bee32cf8dc343d572a26001077aa923c37a3a3f39a": {
+    "articles": [
+      "/news/stride-surgical-triplet-recognition/"
+    ],
     "category": "models",
     "discovered": "2026-11-24T14:07:11.513641+00:00",
     "evidence": [
@@ -66,13 +72,16 @@
     "published": "2026-11-24T05:00:00+00:00",
     "source": "arxiv-ai",
     "source_url": "https://rss.arxiv.org/rss/cs.AI",
-    "status": "pending",
+    "status": "published",
     "summary": "arXiv:2611.28240v1 Announce Type: cross Abstract: Surgical triplet recognition requires identifying which instrument performs which action on which anatomical target, and following these interactions as they unfold over time. The task is challenging because several triplets can occur at once, their components span very different durations, and the evidence for an interaction is rarely complete in a single frame. We introduce STRIDE, a post-hoc temporal readout that adds temporal context to any trained recogniser. It averages the recogniser's features and logits over a few fixed temporal windows and combines them with the current frame through ridge regression, solved in closed form on a CPU. Applied as a plug-and-play readout to nine existing methods, STRIDE improves $AP_{IVT}$ in 24 of 27 method-dataset pairs, by up to 7.4 points. Moreover, we propose a simple pipeline consisting of an adapted foundation vision encoder with a linear classifier and STRIDE. Across thirteen encoders, STRIDE improves 37 of 39 encoder-dataset pairs by up to 7.2 points. STRIDE reduces false alarms by 41%, at the cost of a slower response at interaction boundaries. Code will be made publicly available upon acceptance.",
     "title": "A Closed-Form Temporal Readout for Surgical Triplet Recognition",
     "url": "https://arxiv.org/abs/2611.28240",
     "verified_at": "2026-11-25T11:48:17.165834+00:00"
   },
   "0074a296eaba3b589c896dca4bb8a91b4cf7eb73490f76b8e9e985d75897f2e0": {
+    "articles": [
+      "/news/winter-wheat-ai-nitrogen-planning/"
+    ],
     "category": "models",
     "discovered": "2026-11-24T14:07:11.513641+00:00",
     "evidence": [
@@ -87,13 +96,16 @@
     "published": "2026-11-24T05:00:00+00:00",
     "source": "arxiv-ai",
     "source_url": "https://rss.arxiv.org/rss/cs.AI",
-    "status": "pending",
+    "status": "published",
     "summary": "arXiv:2611.31044v1 Announce Type: new Abstract: In agriculture, typically over half of the applied nitrogen fertiliser is lost to water and to air. Precision fertilisation aims to reduce these losses while maintaining yield and quality, yet existing tools struggle to capture farm-specific challenges in determining optimal nitrogen rates. Static recommendations are common and overlook on-farm constraints, such as delays due to weather or machinery availability, or change in budgets. Each constraint governs when and how growers apply fertiliser in practice. Here we present a grower-in-the-loop framework for winter wheat in England, combining baseline fertilisation planning from a machine learning-derived nitrogen-response curve with in-season adaptation via a large language model. We evaluated the framework using data from long-term experiments (LTEs), replicated field trials, and farm deployments. Retrospective model validation using LTEs confirmed low economic decision-loss across multiple seasons. Using field and farm trials, baseline schedules were shown to match standard-practice yields with less nitrogen, whereas in-season adjusted schedules additionally retained grain quality standards. Given this enhanced performance, in-season adaptation absorbed weather, machinery and budget constraints to keep recommendations executable. The framework therefore shows promise for translating static recommendations into adaptable, grower-informed decisions for sustainable fertiliser management.",
     "title": "Grower-in-the-loop AI for Deployable Precision Fertilisation in Sustainable Agriculture",
     "url": "https://arxiv.org/abs/2611.31044",
     "verified_at": "2026-11-25T11:48:17.165834+00:00"
   },
   "009da46bb2c7c030301f53e83f5600b62bfccbfce661e96a54e421579756d8ed": {
+    "articles": [
+      "/news/koopman-robot-control-stability/"
+    ],
     "category": "models",
     "discovered": "2026-11-24T14:07:11.513641+00:00",
     "evidence": [
@@ -108,13 +120,16 @@
     "published": "2026-11-24T05:00:00+00:00",
     "source": "arxiv-ai",
     "source_url": "https://rss.arxiv.org/rss/cs.AI",
-    "status": "pending",
+    "status": "published",
     "summary": "arXiv:2611.20402v2 Announce Type: replace-cross Abstract: Koopman operator theory lets linear controllers handle nonlinear robots: an encoder lifts the state into a latent space with approximately linear dynamics, on which LQR or MPC is designed. A controller that stabilizes the latent model, however, may fail to stabilize the real nonlinear system. Stability is analyzed on latent rollouts, where the linear model propagates its own predictions, but on the robot the nonlinear dynamics produce each next state, which the controller re-encodes at every step. We prove that latent stability transfers to the robot when the latent model reproduces the true closed-loop dynamics to first order on the embedding's tangent space at the target. We also derive a margin for approximate matching and show that an open-loop stable latent model cannot match the plant's linearization at an unstable equilibrium. We propose Tangent-Invariant Koopman (TIK), which estimates a local plant linearization from offline transitions and builds first-order matching to it into the Koopman matrices. At the target, TIK's feedback gain equals the LQR gain of this linearization, and a bilinear input term models state-dependent actuation during large maneuvers. On four simulated open-loop unstable benchmarks, all 40 Standard Koopman controllers stabilize their latent models but are locally unstable on the real system, whereas all 40 TIK controllers stabilize it. An offline stability test with empirical curvature estimates identifies the stable TIK controllers on two cart-pole systems but is inconclusive under high noise. Given explicit model-error and curvature bounds, an invariant terminal set guarantees constraint satisfaction under local feedback after entry. TIK reaches 88% success in constrained cart-pole swing-up with a 0.25 ms planning budget and controls simulated seven-joint arms within 1~5 ms per step.",
     "title": "Making Koopman Control Guarantees Hold on Robots",
     "url": "https://arxiv.org/abs/2611.20402",
     "verified_at": "2026-11-25T11:48:17.165834+00:00"
   },
   "00ac9aabaa8e0bf97ad888c8e6a56bba03ce780838b6c046d9a31c2950bfb0cc": {
+    "articles": [
+      "/news/mxfp4-nvfp4-quantization-recipes/"
+    ],
     "category": "models",
     "discovered": "2026-11-25T11:43:09.397480+00:00",
     "discovery": {},
@@ -130,7 +145,7 @@
     "published": "2026-11-25T05:00:00+00:00",
     "source": "arxiv-ai",
     "source_url": "https://rss.arxiv.org/rss/cs.AI",
-    "status": "pending",
+    "status": "published",
     "summary": "arXiv:2611.32873v1 Announce Type: cross Abstract: Recent advances in low-precision representation have introduced several microscaling numerical formats for LLM quantization. By sharing a scale factor across groups of 16 or 32 elements, these formats enable aggressive low-precision quantization with minimal accuracy degradation, particularly when combined with modern PTQ algorithms. Their accuracy depends on how the numerical format interacts with rotation, PTQ, and scale selection. We study the composability of PTQ configurations across six LLMs and three microscaling formats: MXFP6, MXFP4, and NVFP4, systematically varying Hadamard rotation granularity, PTQ algorithm, and scale-selection strategy. Our central finding is that effective quantization recipes are format dependent: both MXFP4 and NVFP4 support accurate 4-bit inference, but techniques that benefit one do not necessarily transfer to the other. MXFP4 benefits substantially from rotation and error-correcting PTQ, whereas NVFP4 gains less from rotation, consistent with its finer-grained scales capturing more within-block variation. Building on these findings, we introduce Midmax, a calibration-free scale-selection strategy that mitigates clipping error in power-of-two block scales and improves accuracy across a majority of the evaluated MXFP4 configurations. We show that pairing MXFP6 activations with MXFP4 weights recovers most of the accuracy lost at 4-bit and, on Llama-3.1-8B, matches or exceeds our in-house BF16 baseline. An additional study finds that augmenting MXFP4 with a per-tensor macroscale, a mechanism intrinsic to NVFP4, does not improve average accuracy, suggesting that global rescaling alone does not address the limitations of E8M0 block scales for MXFP4 quantization. Together, these results provide practical guidance for combining numerical formats, rotation, PTQ, and scale selection for accurate low-precision LLM inference.",
     "title": "MXFP4 for LLM Inference: Complementary Post-Training Quantization Techniques and Their Interactions",
     "url": "https://arxiv.org/abs/2611.32873",
@@ -19873,7 +19888,7 @@
     "published": "2026-11-24T09:00:53+00:00",
     "source": "comfy-org-comfyui_frontend",
     "source_url": "https://api.github.com/repos/Comfy-Org/ComfyUI_frontend/releases?per_page=10",
-    "status": "pending",
+    "status": "skipped",
     "summary": "## What's Changed * [backport core/1.59] fix(agent): honor a switch to Auto for the rest of a running turn by @christian-byrne in https://github.com/Comfy-Org/ComfyUI_frontend/pull/24060 * [backport core/1.59] fix(litegraph): disconnect every link when a subgraph slot is removed (#18211) by @christian-byrne in https://github.com/Comfy-Org/ComfyUI_frontend/pull/24063 * [backport core/1.59] fix: tag load-time subgraph link prunes as load, not local edits by @comfy-pr-bot in https://github.com/Comfy-Org/ComfyUI_frontend/pull/24071 * [backport core/1.59] fix: a preload error event with no error no longer throws in the listener by @comfy-pr-bot in https://github.com/Comfy-Org/ComfyUI_frontend/pull/24065 * [backport core/1.59] feat(agent): ask Comfy Desktop to flash its window while the agent waits on the user by @comfy-pr-bot in https://github.com/Comfy-Org/ComfyUI_frontend/pull/24088 * [backport core/1.59] fix(husky): audit a backport branch against its release branch, not main (#22361) by @christian-byrne in https://github.com/Comfy-Org/ComfyUI_frontend/pull/24107 * [backport core/1.59] fix: node library typeahead no longer throws reading 'label' by @comfy-pr-bot in https://github.com/Comfy-Org/ComfyUI_frontend/pull/24102 * [backport core/1.59] fix: fit the view on the nodes after an API JSON or A1111 import by @vqt123 in https://github.com/Comfy-Org/ComfyUI_frontend/pull/24111 * [backport core/1.59] fix(openOnCloud): explain empty workflows by @huang47 in https://github.com/Comfy-Org/ComfyUI_frontend/pull/24146 * [backport core/1.59] fix(openOnCloud): check workflows whose inputs come in through links by @huang47 in https://github.com/Comfy-Org/ComfyUI_frontend/pull/24169 * 1.59.14 by @comfy-pr-bot in https://github.com/Comfy-Org/ComfyUI_frontend/pull/24096 **Full Changelog**: https://github.com/Comfy-Org/ComfyUI_frontend/compare/v1.59.13...v1.59.14",
     "title": "v1.59.14",
     "url": "https://github.com/Comfy-Org/ComfyUI_frontend/releases/tag/v1.59.14"
