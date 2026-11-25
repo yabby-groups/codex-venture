@@ -954,6 +954,26 @@
       "If-None-Match": "\"417a51a02063619b7655eb6a04dc81196fb8b942252830187b2204d1ca442022\""
     }
   },
+  "original-cloudflare-developers": {
+    "candidates": 11,
+    "error": null,
+    "failures": 0,
+    "last_success": "2026-11-25T12:56:31.858713+00:00",
+    "retry_after": null,
+    "url": "https://blog.cloudflare.com/tag/developers/rss/",
+    "validators": {}
+  },
+  "original-huggingface-guides": {
+    "candidates": 0,
+    "error": null,
+    "failures": 0,
+    "last_success": "2026-11-25T12:56:31.858713+00:00",
+    "retry_after": null,
+    "url": "https://huggingface.co/blog/feed.xml",
+    "validators": {
+      "If-None-Match": "W/\"42270-nBN9iWdlDnwd4w3GFi9PEhpuLOE\""
+    }
+  },
   "pibot": {
     "error": "collection request budget paused",
     "failures": 1,

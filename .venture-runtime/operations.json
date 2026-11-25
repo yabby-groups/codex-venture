@@ -20,6 +20,11 @@
     "result": "PUBLISHED",
     "started": "2026-11-25T19:50:11.071693+08:00"
   },
+  "practices": {
+    "due": "2026-11-25T21:26:31.759190+08:00",
+    "result": "SKIPPED",
+    "started": "2026-11-25T20:56:31.759190+08:00"
+  },
   "resource-refresh": {
     "due": "2026-12-02T20:01:00.875790+08:00",
     "result": "PUBLISHED",

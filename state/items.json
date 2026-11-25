@@ -248,6 +248,7 @@
   },
   "014ceec41d32275ca8877d98e108d3c83bad263d7c5c7ed45ed79d5f0da3dbb6": {
     "category": "open-source",
+    "content_type": "tutorials",
     "discovered": "2026-11-25T12:08:46.883246+00:00",
     "discovery": {},
     "fingerprint": "808e162db70d516977729dd5727e4d68f92c53c22da5f43b22fc5074bf167064",
@@ -703,6 +704,20 @@
     "title": "A Unified Evaluation Framework for Trustworthy Large Language Models, Agentic AI, and Multimodal Systems",
     "url": "https://arxiv.org/abs/2609.19524"
   },
+  "0567fdbbc0eed0f542b132232bec6ffc8c428751e7c2873535166c1ac4c4c8a8": {
+    "category": "coding",
+    "content_type": "tutorials",
+    "discovered": "2026-11-25T12:56:31.858713+00:00",
+    "discovery": {},
+    "fingerprint": "ebe2a68e54787b0224d6ec743e13c7dd944cab4779ed156a033dadb9ab66e08e",
+    "published": "2026-10-07T16:30:36+00:00",
+    "source": "original-cloudflare-developers",
+    "source_url": "https://blog.cloudflare.com/tag/developers/rss/",
+    "status": "pending",
+    "summary": "Cloudflare Managed Defense uses a team of specialized AI agents built on Workers and global network telemetry to analyze security alerts. By separating deterministic evidence collection from model inference, the system delivers grounded recommendations to Managed Defense Analysts.",
+    "title": "Building an evidence-grounded agentic security operations harness on Cloudflare",
+    "url": "https://blog.cloudflare.com/agentic-security-operations"
+  },
   "0575d231f8df51305aba6b59fe3cabc998cbc67099c533cc6784c7c2a02ba681": {
     "category": "coding",
     "content_type": "stories",
@@ -745,6 +760,20 @@
     "summary": "arXiv:2611.32325v1 Announce Type: cross Abstract: Resolving local atomic structures such as defects and interfaces from electron microscopy contrast relies heavily on researcher judgement, leading to low efficiency and subjective standards. Here we present PhyEvo-Mic-RSI, a physics-guided and expert-informed recursive self-improvement framework that turns one-off human corrections into reusable, verifiable capabilities by updating executable operators, parameters and routing rules with versioned inheritance. Given researcher-defined tasks, the system selects analysis paths from image features without expert labels, while testing and inheriting code updates under fixed budgets. Combining physical priors with expert feedback improves atomic point-defect detection over larger models and raises cross-material interface coverage from 5.13% to 72.11% within a 10% area budget. Adapting the framework to micrographs from unseen studies further separates touching nanoparticles by aligning optimization with particle-level measurements. This work moves computational microscopy beyond standalone models and static scripts towards self-evolving platforms that accumulate human scientific expertise",
     "title": "A recursive self-improvement framework for electron microscopy analysis",
     "url": "https://arxiv.org/abs/2611.32325"
+  },
+  "0627c5bc0a0a85b0be0d61c0c58edc2b3e3a0764c2e4053b123d618e7139e182": {
+    "category": "coding",
+    "content_type": "tutorials",
+    "discovered": "2026-11-25T12:56:31.858713+00:00",
+    "discovery": {},
+    "fingerprint": "57891e38873cd80b9c04b14c753803f86a8864d5e9c112e1263fa7066880b201",
+    "published": "2026-10-02T13:00:00+00:00",
+    "source": "original-cloudflare-developers",
+    "source_url": "https://blog.cloudflare.com/tag/developers/rss/",
+    "status": "pending",
+    "summary": "A year after pledging to eliminate two-tier product access, Cloudflare has expanded Logpush, multi-account governance, and higher platform limits to all accounts. Here is an update on our progress, how we dogfood these tools internally, and what is coming next.",
+    "title": "Updates on our pledge to make Cloudflare features accessible to everyone",
+    "url": "https://blog.cloudflare.com/enterprise-for-all-update"
   },
   "065360e69b838833ab438fc5e47890b266465a64d67067aac47ba687ec611c0d": {
     "category": "models",
@@ -1304,6 +1333,14 @@
     "content_type": "tutorials",
     "discovered": "2026-11-25T01:21:21.428756+00:00",
     "discovery": {},
+    "evidence": [
+      {
+        "excerpt": "Using LLM-as-a-Judge For Evaluation: A Complete Guide LLMs evals A step-by-step guide to building an LLM judge and validating it against human labels. Author Hamel Husain Published October 29, 2024 Modified September 1, 2026 Earlier this year, I wrote Your AI product needs evals . Many of you asked, “How do I get started with LLM-as-a-judge?” This guide shares what I’ve learned after helping over 30 companies set up their evaluation systems. The Problem: AI Teams Are Drowning in Data Ever spend weeks building an AI system, only to realize you have no idea if it’s actually working? You’re not alone. I’ve noticed teams repeat the same mistakes when using LLMs to evaluate AI outputs: Too Many Metrics : Creating numerous measurements that become unmanageable. Arbitrary Scoring Systems : Using uncalibrated scales (like 1-5) across multiple dimensions, where the difference between scores is unclear and subjective. What makes something a 3 versus a 4? Nobody knows, and different evaluators often interpret these scales differently. Ignoring Domain Experts : Not involving the people who understand the subject matter deeply. Unvalidated Metrics : Using measurements that don’t truly reflect what matters to the users or the business. The result? Teams end up buried under mountains of metrics or data they don’t trust and can’t use. Progress grinds to a halt. Everyone gets frustrated. For example, it’s not uncommon for me to see dashboards that look like this: An illustrative example of a bad eval dashboard Tracking a bunch of scores on a 1-5 scale is often a sign of a bad eval process (I’ll discuss why later). In this post, I’ll show you how to avoid these pitfalls. The solution is to use a technique that I call “Critique Shadowing” . Here’s how to do it, step by step. Step 1: Find The Principal Domain Expert In most organizations there is usually one (maybe two) key individuals w",
+        "label": "Original publication",
+        "url": "https://hamel.dev/blog/posts/llm-judge"
+      }
+    ],
+    "evidence_checked": "2026-11-25T12:56:31.772548+00:00",
     "fingerprint": "61d63bbc57ade1773a9dd23c01211ec192dce5fcfcfdaeb7ec857dd7ddb52a90",
     "published": "2024-10-29T07:00:00+00:00",
     "source": "hamel-husain",
@@ -1311,7 +1348,8 @@
     "status": "pending",
     "summary": "Earlier this year, I wrote Your AI product needs evals . Many of you asked, “How do I get started with LLM-as-a-judge?” This guide shares what I’ve learned after helping over 30 companies set up their evaluation systems. The Problem: AI Teams Are Drowning in Data Ever spend weeks building an AI system, only to realize you have no idea if it’s actually working? You’re not alone. I’ve noticed teams repeat the same mistakes when using LLMs to evaluate AI outputs: Too Many Metrics : Creating numerous measurements that become unmanageable. Arbitrary Scoring Systems : Using uncalibrated scales (like 1-5) across multiple dimensions, where the difference between scores is unclear and subjective. What makes something a 3 versus a 4? Nobody knows, and different evaluators often interpret these scales differently. Ignoring Domain Experts : Not involving the people who understand the subject matter deeply. Unvalidated Metrics : Using measurements that don’t truly reflect what matters to the users or the business. The result? Teams end up buried under mountains of metrics or data they don’t trust and can’t use. Progress grinds to a halt. Everyone gets frustrated. For example, it’s not uncommon for me to see dashboards that look like this: An illustrative example of a bad eval dashboard Tracking a bunch of scores on a 1-5 scale is often a sign of a bad eval process (I’ll discuss why later). In this post, I’ll show you how to avoid these pitfalls. The solution is to use a technique that I call “Critique Shadowing” . Here’s how to do it, step by step. Step 1: Find The Principal Domain Expert In most organizations there is usually one (maybe two) key individuals whose judgment is crucial for the success of your AI product. These are the people with deep domain expertise or represent your target users. Identifying and involving this Principal Domain Expert early in the process is critical. Why is finding the right domain expert so important? They Set the Standard : This person not only defines what is acceptable technically, but also helps you understand if you’re building something users actually want. Capture Unspoken Expectations : By involving them, you uncover their preferences and expectations, which they might not be able to fully articulate upfront. Through the evaluation process, you help them clarify what a “passable” AI interaction looks like. Consistency in Judgment : People in your organization may have different opinions about the AI’s performance. Focusing on the principal expert ensures that evaluations are consistent and aligned with the most critical standards. Sense of Ownership : Involving the expert gives them a stake in the AI’s development. They feel invested because they’ve had a hand in shaping it. In the end, they are more likely to approve of the AI. Examples of Principal Domain Experts: A psychologist for a mental health AI assistant. A lawyer for an AI that analyzes legal documents. A customer service director for a support chatbot. A lead teacher or curriculum developer for an educational AI tool. Note Exceptions In a smaller company, this might be the CEO or founder. If you are an independent developer, you should be the domain e",
     "title": "Using LLM-as-a-Judge For Evaluation: A Complete Guide",
-    "url": "https://hamel.dev/blog/posts/llm-judge"
+    "url": "https://hamel.dev/blog/posts/llm-judge",
+    "verified_at": "2026-11-25T12:56:31.772548+00:00"
   },
   "0c6b54e0e42959a815e4c293011ec189b6f4c14f1f75711e13c6738c376053a6": {
     "category": "models",
@@ -1802,6 +1840,45 @@
     "summary": "AG-UI: the Agent-User Interaction Protocol. Bring Agents into Frontend Applications. License: MIT.",
     "title": "ag-ui-protocol/ag-ui",
     "url": "https://github.com/ag-ui-protocol/ag-ui"
+  },
+  "10d15e520ac25dce63b169423e77726817fa91a433c55481a7b911f34c434d47": {
+    "articles": [
+      "/news/pagefind-bilingual-index-fixture/"
+    ],
+    "basis": "experiment",
+    "category": "coding",
+    "content_type": "tutorials",
+    "discovered": "2026-11-25T20:56:31.772548+08:00",
+    "evidence": [
+      {
+        "excerpt": "{\"tool\": \"Pagefind\", \"version\": \"1.6.0\", \"environment\": \"Linux x86_64\", \"command\": \"pagefind --site .\", \"status\": \"passed\", \"service_cost_usd\": 0, \"exit_code\": 0, \"output\": \"Running Pagefind v1.6.0 (Extended)\\nDiscovered 2 languages: zh-cn, en\\nIndexed 2 languages\\nIndexed 2 pages\\nIndexed 9 words\\nIndexed 0 filters\\nIndexed 0 sorts\\nFinished in 0.007 seconds\", \"languages\": [\"en\", \"zh-cn\"]}",
+        "label": "Observed Pagefind probe and upstream version",
+        "url": "https://github.com/cloudcannon/pagefind/releases/tag/v1.6.0"
+      }
+    ],
+    "experiment": {
+      "command": "pagefind --site .",
+      "environment": "Linux x86_64",
+      "exit_code": 0,
+      "languages": [
+        "en",
+        "zh-cn"
+      ],
+      "output": "Running Pagefind v1.6.0 (Extended)\nDiscovered 2 languages: zh-cn, en\nIndexed 2 languages\nIndexed 2 pages\nIndexed 9 words\nIndexed 0 filters\nIndexed 0 sorts\nFinished in 0.007 seconds",
+      "service_cost_usd": 0,
+      "status": "passed",
+      "tool": "Pagefind",
+      "version": "1.6.0"
+    },
+    "fingerprint": "94c4e7434020457f6d3f4f9e40db6c1813c902385a7b9a58ecf39a23211e7baa",
+    "published": "2026-11-25T20:56:31.772548+08:00",
+    "source": "original",
+    "source_url": "https://github.com/cloudcannon/pagefind/releases/tag/v1.6.0",
+    "status": "published",
+    "summary": "{\"tool\": \"Pagefind\", \"version\": \"1.6.0\", \"environment\": \"Linux x86_64\", \"command\": \"pagefind --site .\", \"status\": \"passed\", \"service_cost_usd\": 0, \"exit_code\": 0, \"output\": \"Running Pagefind v1.6.0 (Extended)\\nDiscovered 2 languages: zh-cn, en\\nIndexed 2 languages\\nIndexed 2 pages\\nIndexed 9 words\\nIndexed 0 filters\\nIndexed 0 sorts\\nFinished in 0.007 seconds\", \"languages\": [\"en\", \"zh-cn\"]}",
+    "title": "Pagefind language detection on a bilingual fixture",
+    "url": "https://github.com/cloudcannon/pagefind/releases/tag/v1.6.0",
+    "verified_at": "2026-11-25T20:56:31.772548+08:00"
   },
   "10d4c11a0dc045337bdf2cef67632fd34300fe583c59052b816119c136284f0a": {
     "category": "models",
@@ -3774,6 +3851,7 @@
   },
   "2000113926ba1efcb1f8e8c70ba67e256769701c8270729ad3a76f4adf73c347": {
     "category": "open-source",
+    "content_type": "tutorials",
     "discovered": "2026-11-25T12:08:46.883246+00:00",
     "discovery": {},
     "fingerprint": "cabad6340347ad6673854d655c83741fd91f9700f9f6b5b9ca8960788cc01f08",
@@ -4068,6 +4146,7 @@
   },
   "223b84f72a3aa8221e6e8a8d8cf06eef2dfd78134ba25ab9cd34d6bfcbd4e5f6": {
     "category": "open-source",
+    "content_type": "tutorials",
     "discovered": "2026-11-25T12:08:46.883246+00:00",
     "discovery": {},
     "fingerprint": "ae06f5fd0290a80c7f60e75c15a7b08de98f34c51711900e317aa980603376d4",
@@ -4546,6 +4625,14 @@
     "content_type": "tutorials",
     "discovered": "2026-11-25T01:21:21.428756+00:00",
     "discovery": {},
+    "evidence": [
+      {
+        "excerpt": "Why I Stopped Using nbdev AI nbdev Tools What I learned about choosing tools in the age of AI. Author Hamel Husain Published January 18, 2026 Programmers love to proclaim they’ve found the best tool. Paul Graham called Lisp his “ secret weapon .” DHH described Ruby as “ a magical glove that just fit my brain perfectly .” Pieter Levels ships million-dollar products with vanilla PHP and jQuery . These declarations aren’t about the languages themselves. They’re about developers finding tools that fit how they think. When the environment clicks, you move fast. I had that experience with nbdev , a development environment for literate programming that I helped build and maintain 1 . I created hundreds of projects with it and was one of its biggest proponents . Today, I no longer use it. AI coding tools changed the trade-offs. Fighting the AI The beauty of nbdev is its workflow. You write code, documentation and tests in one source of truth: Jupyter notebooks. Afterwards, these notebooks are transpiled into a Python library and documentation website. This workflow is idiosyncratic. AI coding tools, trained on vast amounts of conventional source code, get confused. They struggle to differentiate between editing the notebook and editing the final source code. It feels like fighting the AI instead of working with it. I write software to solve problems, not to write code. I want to work in an environment where AI has the highest chance of success. With nbdev, I was swimming upstream. Some argue that AI tools encourage lazy thinking: that without guardrails, developers skip the hard work of breaking problems into steps. But thinking step-by-step is a human skill. Notebooks don’t force you to write clean code. AI tools don’t force you to think carefully. Discipline comes from the developer, not the environment. Tools Don’t Matter As Much As I Thought A central promise of literate ",
+        "label": "Original publication",
+        "url": "https://hamel.dev/blog/posts/ai-stack"
+      }
+    ],
+    "evidence_checked": "2026-11-25T12:56:31.772548+00:00",
     "fingerprint": "83836045c09789439fa438d73554a69dba931ecdc3f3f2d65da3b50fd9acf0a8",
     "published": "2026-01-18T08:00:00+00:00",
     "source": "hamel-husain",
@@ -4553,7 +4640,8 @@
     "status": "pending",
     "summary": "Programmers love to proclaim they’ve found the best tool. Paul Graham called Lisp his “ secret weapon .” DHH described Ruby as “ a magical glove that just fit my brain perfectly .” Pieter Levels ships million-dollar products with vanilla PHP and jQuery . These declarations aren’t about the languages themselves. They’re about developers finding tools that fit how they think. When the environment clicks, you move fast. I had that experience with nbdev , a development environment for literate programming that I helped build and maintain 1 . I created hundreds of projects with it and was one of its biggest proponents . Today, I no longer use it. AI coding tools changed the trade-offs. Fighting the AI The beauty of nbdev is its workflow. You write code, documentation and tests in one source of truth: Jupyter notebooks. Afterwards, these notebooks are transpiled into a Python library and documentation website. This workflow is idiosyncratic. AI coding tools, trained on vast amounts of conventional source code, get confused. They struggle to differentiate between editing the notebook and editing the final source code. It feels like fighting the AI instead of working with it. I write software to solve problems, not to write code. I want to work in an environment where AI has the highest chance of success. With nbdev, I was swimming upstream. Some argue that AI tools encourage lazy thinking: that without guardrails, developers skip the hard work of breaking problems into steps. But thinking step-by-step is a human skill. Notebooks don’t force you to write clean code. AI tools don’t force you to think carefully. Discipline comes from the developer, not the environment. Tools Don’t Matter As Much As I Thought A central promise of literate programming is better documentation. By keeping code and docs in one place, you reduce the chance they become stale. Strangely, many nbdev projects lacked sufficient documentation for my taste. Sometimes, this helped me learn a codebase by contributing to the docs. Other times, it was frustrating. This reinforced my belief that good documentation comes from effort, not tooling. This workflow is also less compelling now. AI can read a codebase without documentation and give you an overview on the fly. It can help maintain documentation that is separate from the code, handling the tedious parts. Keeping code and docs together isn’t the selling point it used to be. Collaboration and Adoption nbdev asks developers to adopt a different system. It does not meet them where they are. Cursor won because it felt familiar and let developers change their habits slowly, rather than demanding a new workflow on day one. I didn’t worry about collaboration as much before. But collaborating with AI is table stakes. The same impediments that get in the way of collaborating with humans tend to get in the way of collaborating with AI. Today, developers increasingly span greater scope. Backend people do frontend. PMs create prototypes. Everyone is more polyglot. Idiosyncratic frameworks isolate you from your team to a greater extent than ever before. Idiosyncratic tooling once had a hidden upside: it filtered for a certain kind of contribut",
     "title": "Why I Stopped Using nbdev",
-    "url": "https://hamel.dev/blog/posts/ai-stack"
+    "url": "https://hamel.dev/blog/posts/ai-stack",
+    "verified_at": "2026-11-25T12:56:31.772548+00:00"
   },
   "269cc415ef19b46339d3c77885a559fb5d44fb8b329495b19d64807669dc8383": {
     "category": "models",
@@ -6382,6 +6470,20 @@
     "title": "bunnyhop1/i58-replay-aab62ddc",
     "url": "https://huggingface.co/datasets/bunnyhop1/i58-replay-aab62ddc"
   },
+  "340ad731dd1a173c0b07c1bb174aed32084bf717703032f515a9b701745ce2ad": {
+    "category": "coding",
+    "content_type": "tutorials",
+    "discovered": "2026-11-25T12:56:31.858713+00:00",
+    "discovery": {},
+    "fingerprint": "fb7490ad3312bf3bcc5881de6086b7e89a2f72b478f3963fb87a563841648ba6",
+    "published": "2026-10-01T13:00:00+00:00",
+    "source": "original-cloudflare-developers",
+    "source_url": "https://blog.cloudflare.com/tag/developers/rss/",
+    "status": "pending",
+    "summary": "Cloudflare is hosting a competition to see who will build the next Git platform for an era of AI agents. Artifacts is in open beta, with Workers bindings, data jurisdiction controls, and event subscriptions for repository changes.",
+    "title": "We want you to build the next Git platform on Cloudflare",
+    "url": "https://blog.cloudflare.com/next-git-platform-on-cloudflare"
+  },
   "3413883cf0de9604a558901d0beba7215ee02215a5e29173de8f1761c7e0310b": {
     "category": "models",
     "discovered": "2026-11-24T14:07:11.513641+00:00",
@@ -7328,6 +7430,7 @@
   },
   "3aa2d325928190f86f6e6b3181c02de24a957a2b25b87d5784baf88954896a9c": {
     "category": "open-source",
+    "content_type": "tutorials",
     "discovered": "2026-11-25T12:08:46.883246+00:00",
     "discovery": {},
     "fingerprint": "39a1d525c6af490b0f1eb22c78f8617d4ea2b69de3c8d0ebfeb17c20a5600c0d",
@@ -8061,6 +8164,7 @@
   },
   "409db756fba3a1111c52502921c8fb95d943a8670263c7456c5ad8fdcb5a74d5": {
     "category": "open-source",
+    "content_type": "tutorials",
     "discovered": "2026-11-25T12:08:46.883246+00:00",
     "discovery": {},
     "fingerprint": "c21a369d4b738b6be82842ee8bf7b2eb8e254568d4ba2a3b4ed5c0ec34b9160e",
@@ -8559,6 +8663,20 @@
     "summary": "arXiv:2511.18841v2 Announce Type: replace-cross Abstract: Personalized Federated Learning (PFL) faces persistent challenges, including domain heterogeneity from diverse client data, data imbalance due to skewed participation, and strict communication constraints. Traditional federated learning often lacks personalization, as a single global model cannot capture client-specific characteristics, leading to biased predictions and poor generalization, especially for clients with highly divergent data distributions. To address these issues, we propose FedSTAR, a style-aware federated learning framework that disentangles client-specific style factors from shared content representations. FedSTAR aggregates class-wise prototypes using a Transformer-based attention mechanism, allowing the server to adaptively weight client contributions while preserving personalization. Furthermore, by exchanging compact prototypes and style vectors instead of full model parameters, FedSTAR significantly reduces communication overhead. Experimental results demonstrate that combining content-style disentanglement with attention-driven prototype aggregation improves personalization and robustness in heterogeneous environments without increasing communication cost.",
     "title": "Federated style aware transformer aggregation of representations",
     "url": "https://arxiv.org/abs/2511.18841"
+  },
+  "4523d51f58f782908ecfad3e075e84cac6816c8587e93075b0121afb087cde4e": {
+    "category": "coding",
+    "content_type": "tutorials",
+    "discovered": "2026-11-25T12:56:31.858713+00:00",
+    "discovery": {},
+    "fingerprint": "cf8702bbc87ca047bbe4afbd4e5f55e155091c2e5c19b5304fffb3fc1129248c",
+    "published": "2026-11-09T13:00:00+00:00",
+    "source": "original-cloudflare-developers",
+    "source_url": "https://blog.cloudflare.com/tag/developers/rss/",
+    "status": "pending",
+    "summary": "Cloudflare is distributing the first $301,300 of the Vite Ecosystem Fund to open source projects and maintainers. The recipients were chosen by a panel of Vite stack core team members, including maintainers not employed by Cloudflare.",
+    "title": "Launching the Vite Ecosystem Fund",
+    "url": "https://blog.cloudflare.com/launching-vite-ecosystem-fund"
   },
   "452a3f3e1d663f19e297000d626e0f86d40e300c7bcee7ba5b297890f52716de": {
     "category": "models",
@@ -11095,6 +11213,14 @@
     "content_type": "tutorials",
     "discovered": "2026-11-25T01:21:21.428756+00:00",
     "discovery": {},
+    "evidence": [
+      {
+        "excerpt": "The Revenge of the Data Scientist LLMs evals AI eval mistakes and the data science practices that fix them. Author Hamel Husain Published March 26, 2026 Is the heyday of the data scientist over? The Harvard Business Review once called it “The Sexiest Job of the 21st Century.” 1 In tech, data scientist roles were often among the best paid. 2 The job also demanded an unusual mix of skills: Data Scientist (n.): Person who is better at statistics than any software engineer and better at software engineering than any statistician. — JosH100 ( @josh_wills ) May 3, 2012 In addition to creating a high-barrier to entry, these skills enabled data scientists to build predicitive models, measure casuality and find patterns in data. Of these, predicitive modeling paid best. Companies later peeled that work off into a new title: Machine Learning Engineer (“MLE”). 3 For years, shipping AI meant keeping data scientists and MLEs on the critical path. With LLMs, this stopped being the default. Foundation-model APIs now allow teams to integrate AI independently. Getting cut out of the loop rattled data scientists and MLEs I know. If the company no longer needs you to ship AI, it is fair to wonder whether the job still has the same upside. The harsher story people tell themselves: unless you are pretraining at a foundation-model lab, you are not where the action is. In my opinion, training models was never most of the job. The bulk of the work is setting up experiments to test how well the AI generalizes to unseen data, debugging stochastic systems, and designing good metrics. Calling an LLM over an API does not make this work go away. I recently gave a talk titled “The Revenge of the Data Scientist” at PyAI Conf to make that case with examples rather than assertion alone. Below is an annotated version of that presentation. The Harness Is Data Science OpenAI published a blog post on harn",
+        "label": "Original publication",
+        "url": "https://hamel.dev/blog/posts/revenge"
+      }
+    ],
+    "evidence_checked": "2026-11-25T12:56:31.772548+00:00",
     "fingerprint": "65f2e7e7e3cf63452b9e508dbe317935a29d8e4fbbe1839730875012f158a4e8",
     "published": "2026-03-26T07:00:00+00:00",
     "source": "hamel-husain",
@@ -11102,7 +11228,8 @@
     "status": "pending",
     "summary": "img.img-fluid { border: 1px solid rgba(255, 255, 255, 0.25); border-radius: 4px; } Is the heyday of the data scientist over? The Harvard Business Review once called it “The Sexiest Job of the 21st Century.” 1 In tech, data scientist roles were often among the best paid. 2 The job also demanded an unusual mix of skills: Data Scientist (n.): Person who is better at statistics than any software engineer and better at software engineering than any statistician. — JosH100 ( @josh_wills ) May 3, 2012 In addition to creating a high-barrier to entry, these skills enabled data scientists to build predicitive models, measure casuality and find patterns in data. Of these, predicitive modeling paid best. Companies later peeled that work off into a new title: Machine Learning Engineer (“MLE”). 3 For years, shipping AI meant keeping data scientists and MLEs on the critical path. With LLMs, this stopped being the default. Foundation-model APIs now allow teams to integrate AI independently. Getting cut out of the loop rattled data scientists and MLEs I know. If the company no longer needs you to ship AI, it is fair to wonder whether the job still has the same upside. The harsher story people tell themselves: unless you are pretraining at a foundation-model lab, you are not where the action is. In my opinion, training models was never most of the job. The bulk of the work is setting up experiments to test how well the AI generalizes to unseen data, debugging stochastic systems, and designing good metrics. Calling an LLM over an API does not make this work go away. I recently gave a talk titled “The Revenge of the Data Scientist” at PyAI Conf to make that case with examples rather than assertion alone. Below is an annotated version of that presentation. The Harness Is Data Science OpenAI published a blog post on harness engineering that I recommend reading. They describe how Codex worked on a software project for months, autonomously, with agents developing code bounded by a harness of tests and specifications. One detail in that blog post’s description of the harness is easy to miss. It includes an observability stack: logs, metrics, and traces exposed to the agent so it can tell when it is going off track. In addition to tests and specifications, there are metrics. That is a key component of the system. Andrej Karpathy’s auto-research project shows the same pattern: models iteratively optimize against a validation loss metric. Same idea, different harness. What I want to convince you of is that a large portion of the harness is data science. Let’s take a step back and take stock of where we are. Years ago, practitioners spent hours examining data, checking label alignment, and designing metrics. Today, we build on “vibes,” ask the model if it did a good job, and grab off-the-shelf metric libraries without looking at the data. This shows up most around retrieval and evals. Without a data background, engineers fear what they don’t understand. They claim “RAG is dead” or “evals are dead,” yet build systems that depend on those concepts. The rest of this post walks through five eval pitfalls I see repeatedly, and what a data scientist would do differently in eac",
     "title": "The Revenge of the Data Scientist",
-    "url": "https://hamel.dev/blog/posts/revenge"
+    "url": "https://hamel.dev/blog/posts/revenge",
+    "verified_at": "2026-11-25T12:56:31.772548+00:00"
   },
   "581134e28e6c2ad0714fd6868ce297ae8ff315899da80e91612233027834268c": {
     "category": "models",
@@ -13568,6 +13695,14 @@
     "content_type": "tutorials",
     "discovered": "2026-11-25T01:21:21.428756+00:00",
     "discovery": {},
+    "evidence": [
+      {
+        "excerpt": "An Open Course on LLMs, Led by Practitioners llms courses A free survey course on LLMs, taught by practitioners. Author Hamel Husain Published July 29, 2024 Today, we are releasing Mastering LLMs , a set of workshops and talks from practitioners on topics like evals, retrieval-augmented-generation (RAG), fine-tuning and more. This course is unique because it is: Taught by 25+ industry veterans who are experts in information retrieval, machine learning, recommendation systems, MLOps and data science. We discuss how this prior art can be applied to LLMs to give you a meaningful advantage. Focused on applied topics that are relevant to people building AI products. Free and open to everyone . We have organized and annotated the talks from our popular paid course. 1 This is a survey course for technical ICs (including engineers and data scientists) who have some experience with LLMs and need guidance on how to improve AI products. Speakers include Jeremy Howard, Sophia Yang, Simon Willison, JJ Allaire, Wing Lian, Mark Saroufim, Jane Xu, Jason Liu, Emmanuel Ameisen, Hailey Schoelkopf, Johno Whitaker, Zach Mueller, John Berryman, Ben Clavié, Abhishek Thakur, Kyle Corbitt, Ankur Goyal, Freddy Boulton, Jo Bergum, Eugene Yan, Shreya Shankar, Charles Frye, Hamel Husain, Dan Becker and more Getting The Most Value From The Course Prerequisites The course assumes basic familiarity with LLMs. If you do not have any experience, we recommend watching A Hacker’s Guide to LLMs . We also recommend the tutorial Instruction Tuning llama2 if you are interested in fine-tuning 2 . Navigating The Material The course has over 40 hours of content. To help you navigate this, we provide: Organization by subject area : evals, RAG, fine-tuning, building applications and prompt engineering. Chapter summaries: quickly peruse topics in each talk and skip ahead Notes, slides, and resources : these are r",
+        "label": "Original publication",
+        "url": "https://hamel.dev/blog/posts/course"
+      }
+    ],
+    "evidence_checked": "2026-11-25T12:56:31.772548+00:00",
     "fingerprint": "2e0aa2e5f161a8fda625c156ca745d78227205e7245b504420aa0bc0c85f67c6",
     "published": "2024-07-29T07:00:00+00:00",
     "source": "hamel-husain",
@@ -13575,7 +13710,8 @@
     "status": "pending",
     "summary": "Today, we are releasing Mastering LLMs , a set of workshops and talks from practitioners on topics like evals, retrieval-augmented-generation (RAG), fine-tuning and more. This course is unique because it is: Taught by 25+ industry veterans who are experts in information retrieval, machine learning, recommendation systems, MLOps and data science. We discuss how this prior art can be applied to LLMs to give you a meaningful advantage. Focused on applied topics that are relevant to people building AI products. Free and open to everyone . We have organized and annotated the talks from our popular paid course. 1 This is a survey course for technical ICs (including engineers and data scientists) who have some experience with LLMs and need guidance on how to improve AI products. Speakers include Jeremy Howard, Sophia Yang, Simon Willison, JJ Allaire, Wing Lian, Mark Saroufim, Jane Xu, Jason Liu, Emmanuel Ameisen, Hailey Schoelkopf, Johno Whitaker, Zach Mueller, John Berryman, Ben Clavié, Abhishek Thakur, Kyle Corbitt, Ankur Goyal, Freddy Boulton, Jo Bergum, Eugene Yan, Shreya Shankar, Charles Frye, Hamel Husain, Dan Becker and more Getting The Most Value From The Course Prerequisites The course assumes basic familiarity with LLMs. If you do not have any experience, we recommend watching A Hacker’s Guide to LLMs . We also recommend the tutorial Instruction Tuning llama2 if you are interested in fine-tuning 2 . Navigating The Material The course has over 40 hours of content. To help you navigate this, we provide: Organization by subject area : evals, RAG, fine-tuning, building applications and prompt engineering. Chapter summaries: quickly peruse topics in each talk and skip ahead Notes, slides, and resources : these are resources used in the talk, as well as resources to learn more. Many times we have detailed notes as well! To get started, navigate to this page and explore topics that interest you. Feel free to skip sections that aren’t relevant to you. We’ve organized the talks within each subject to enhance your learning experience. Be sure to review the chapter summaries, notes, and resources, which are designed to help you focus on the most relevant content and dive deeper when needed. This is a survey course, which means we focus on introducing topics rather than diving deeply into code. To solidify your understanding, we recommend applying what you learn to a personal project. What Students Are Saying Here are some testimonials from students who have taken the course 3 : Sanyam Bhutani, Partner Engineer @ Meta There was a magical time in 2017 when fastai changed the deep learning world. This course does the same by extending very applied knowledge to LLMs Best in class teachers teach you their knowledge with no fluff Laurian, Full Stack Computational Linguist This course was legendary, still is, and the community on Discord is amazing. I’ve been through these lessons twice and I have to do it again as there are so many nuances you will get once you actually have those problems on your own deployment.! Andre, CTO Amazing! An opinionated view of LLMs, from tools to fine-tuning. Excellent speakers, giving some of the best lectures and advice out ",
     "title": "An Open Course on LLMs, Led by Practitioners",
-    "url": "https://hamel.dev/blog/posts/course"
+    "url": "https://hamel.dev/blog/posts/course",
+    "verified_at": "2026-11-25T12:56:31.772548+00:00"
   },
   "6bfeab4f10016d61db8de985beb39622b39497c7c89c0c0409a5213570c389c1": {
     "category": "models",
@@ -14225,6 +14361,7 @@
   },
   "70949d72fd156a220e441afcf09512250054e357b42e7470f4b83f83dfebd2ef": {
     "category": "open-source",
+    "content_type": "tutorials",
     "discovered": "2026-11-25T12:08:46.883246+00:00",
     "discovery": {},
     "fingerprint": "f89a025098c1907fa1fb76698f80c5e95083b19477997b9fc31f793893f8b174",
@@ -14323,6 +14460,20 @@
     "title": "OpenRFM: Democratizing Frontier Predictive Intelligence on Relational Data",
     "url": "https://arxiv.org/abs/2606.04320"
   },
+  "713dc1089bb69aefce6c0fd8abd9a69c8efbefbbf6db91b02b92252aa834f531": {
+    "category": "coding",
+    "content_type": "tutorials",
+    "discovered": "2026-11-25T12:56:31.858713+00:00",
+    "discovery": {},
+    "fingerprint": "8b12031dd6d7a2413d4349046cbac27c4c5e5740280596bfb222910d4f4c8f10",
+    "published": "2026-10-12T14:44:59+00:00",
+    "source": "original-cloudflare-developers",
+    "source_url": "https://blog.cloudflare.com/tag/developers/rss/",
+    "status": "pending",
+    "summary": "Logpush now supports Transformers, allowing teams to filter, redact, and reshape log streams using SQL before export. Powered by Apache DataFusion and Apache Arrow, Transformers apply those changes directly to log data before it reaches the destination.",
+    "title": "Filter, reshape, and redact logs before export with Transformers",
+    "url": "https://blog.cloudflare.com/transformers-on-logpush"
+  },
   "716a06ccb7f0ccfab2686bf421f527b1ddc2157fba9120766cf05b497d476d18": {
     "category": "coding",
     "discovered": "2026-11-24T07:40:13.461356+00:00",
@@ -14395,6 +14546,14 @@
     "content_type": "tutorials",
     "discovered": "2026-11-25T01:21:21.428756+00:00",
     "discovery": {},
+    "evidence": [
+      {
+        "excerpt": "A Field Guide to Rapidly Improving AI Products LLMs AI Evaluation methods, data-driven improvement, and experimentation techniques from 30+ production implementations. Author Hamel Husain Published March 24, 2025 Most AI teams focus on the wrong things. Here’s a common scene from my consulting work: AI TEAM Here’s our agent architecture – we’ve got RAG here, a router there, and we’re using this new framework for… ME [Holding up my hand to pause the enthusiastic tech lead.] “Can you show me how you’re measuring if any of this actually works?” … Room goes quiet This scene has played out dozens of times over the last two years. Teams invest weeks building complex AI systems, but can’t tell me if their changes are helping or hurting. This isn’t surprising. With new tools and frameworks emerging weekly, it’s natural to focus on tangible things we can control – which vector database to use, which LLM provider to choose, which agent framework to adopt. But after helping 30+ companies build AI products, I’ve discovered the teams who succeed barely talk about tools at all. Instead, they obsess over measurement and iteration. In this post, I’ll show you exactly how these successful teams operate. You’ll learn: How error analysis consistently reveals the highest-ROI improvements Why a simple data viewer is your most important AI investment How to empower domain experts (not just engineers) to improve your AI Why synthetic data is more effective than you think How to maintain trust in your evaluation system Why your AI roadmap should count experiments, not features I’ll explain each of these topics with real examples. While every situation is unique, you’ll see patterns that apply regardless of your domain or team size. Let’s start by examining the most common mistake I see teams make – one that derails AI projects before they even begin. 1. The Most Common Mistake: Skipping Erro",
+        "label": "Original publication",
+        "url": "https://hamel.dev/blog/posts/field-guide"
+      }
+    ],
+    "evidence_checked": "2026-11-25T12:56:31.772548+00:00",
     "fingerprint": "e7c76fbed783233489db45aae233d4a0a0e4a160f6134a3ddc1d388acd9d3885",
     "published": "2025-03-24T07:00:00+00:00",
     "source": "hamel-husain",
@@ -14402,7 +14561,8 @@
     "status": "pending",
     "summary": "Most AI teams focus on the wrong things. Here’s a common scene from my consulting work: AI TEAM Here’s our agent architecture – we’ve got RAG here, a router there, and we’re using this new framework for… ME [Holding up my hand to pause the enthusiastic tech lead.] “Can you show me how you’re measuring if any of this actually works?” … Room goes quiet This scene has played out dozens of times over the last two years. Teams invest weeks building complex AI systems, but can’t tell me if their changes are helping or hurting. This isn’t surprising. With new tools and frameworks emerging weekly, it’s natural to focus on tangible things we can control – which vector database to use, which LLM provider to choose, which agent framework to adopt. But after helping 30+ companies build AI products, I’ve discovered the teams who succeed barely talk about tools at all. Instead, they obsess over measurement and iteration. In this post, I’ll show you exactly how these successful teams operate. You’ll learn: How error analysis consistently reveals the highest-ROI improvements Why a simple data viewer is your most important AI investment How to empower domain experts (not just engineers) to improve your AI Why synthetic data is more effective than you think How to maintain trust in your evaluation system Why your AI roadmap should count experiments, not features I’ll explain each of these topics with real examples. While every situation is unique, you’ll see patterns that apply regardless of your domain or team size. Let’s start by examining the most common mistake I see teams make – one that derails AI projects before they even begin. 1. The Most Common Mistake: Skipping Error Analysis The “tools first” mindset is the most common mistake in AI development. Teams get caught up in architecture diagrams, frameworks, and dashboards while neglecting the process of actually understanding what’s working and what isn’t. One client proudly showed me this evaluation dashboard: The kind of dashboard that foreshadows failure. This is the “tools trap” – the belief that adopting the right tools or frameworks (in this case, generic metrics) will solve your AI problems. Generic metrics are worse than useless – they actively impede progress in two ways: First, they create a false sense of measurement and progress . Teams think they’re data-driven because they have dashboards, but they’re tracking vanity metrics that don’t correlate with real user problems. I’ve seen teams celebrate improving their “helpfulness score” by 10% while their actual users were still struggling with basic tasks. It’s like optimizing your website’s load time while your checkout process is broken – you’re getting better at the wrong thing. Second, too many metrics fragment your attention. Instead of focusing on the few metrics that matter for your specific use case, you’re trying to optimize multiple dimensions simultaneously. When everything is important, nothing is. The alternative? Error analysis - the single most valuable activity in AI development and consistently the highest-ROI activity. Let me show you what effective error analysis looks like in practice. The Error Analysis Process When Jacob, ",
     "title": "A Field Guide to Rapidly Improving AI Products",
-    "url": "https://hamel.dev/blog/posts/field-guide"
+    "url": "https://hamel.dev/blog/posts/field-guide",
+    "verified_at": "2026-11-25T12:56:31.772548+00:00"
   },
   "71f9e53c07a65a9d31bb705b56ef8bf7177499b23e6568ba18a733fe28a94c1d": {
     "category": "models",
@@ -14658,6 +14818,20 @@
     "summary": "Open-source Grok Bot alternative with a virtual machine that bots can use License: Apache-2.0.",
     "title": "milind-soni/OpenMausBot",
     "url": "https://github.com/milind-soni/OpenMausBot"
+  },
+  "73dfdf5e63504fc91ff8a01863347935b9b3fb88b9667acf651307bcc002bf50": {
+    "category": "coding",
+    "content_type": "tutorials",
+    "discovered": "2026-11-25T12:56:31.858713+00:00",
+    "discovery": {},
+    "fingerprint": "26c9554f962d5958f42e7c01c810bde0fc300c8f66925dfbbe9c99f0e7552f20",
+    "published": "2026-10-02T13:00:00+00:00",
+    "source": "original-cloudflare-developers",
+    "source_url": "https://blog.cloudflare.com/tag/developers/rss/",
+    "status": "pending",
+    "summary": "Quick Tunnels now support email authentication. Add --allowed-mail to one cloudflared command, and only the addresses or domains you list can reach your local app. No Cloudflare account required on either side.",
+    "title": "Protected Quick Tunnels: simple accountless authentication for your next dev project",
+    "url": "https://blog.cloudflare.com/protected-quick-tunnels"
   },
   "73f49e995c657c32bddc08579b20f06dd8da3490c79950c0e21468fda1699230": {
     "category": "models",
@@ -18697,6 +18871,7 @@
   },
   "94a7808d7ab73a9ea7b0490e46813cd7942b6f7f1c8098e23072e5f553ed2f7a": {
     "category": "open-source",
+    "content_type": "tutorials",
     "discovered": "2026-11-25T12:08:46.883246+00:00",
     "discovery": {},
     "fingerprint": "e957645f850b2c9c88190c797ab713db0f7b7c38049a28a73814936dc94521f1",
@@ -20937,6 +21112,14 @@
     "content_type": "tutorials",
     "discovered": "2026-11-25T01:21:21.428756+00:00",
     "discovery": {},
+    "evidence": [
+      {
+        "excerpt": "Evals Skills for Coding Agents AI Evals Teach your coding agent how to run product evals. Authors Hamel Husain Shreya Shankar Published March 2, 2026 Modified August 31, 2026 Today, Shreya Shankar and I are publishing evals skills , a set of skills for AI product evals 1 . Eval tools often get in the way. They nudge you toward generic off-the-shelf metrics and fully automated evals before you’ve looked at your data. These skills help you avoid common mistakes we’ve seen helping 50+ companies and teaching students in our AI Evals course . Why skills for evals There are many easily avoidable footguns in evals. These skills help you avoid them. evals-start is the entry point. It looks at your situation and routes you to the right skill. Most of the time it will send you to one of these two: eval-audit , if you already have an eval pipeline. It inspects your setup and recommends next steps. 2 error-discovery , if you have traces but haven’t analyzed them yet. It builds a customized annotation interface and helps you sample traces intelligently. Shreya does a live walkthrough of using this skill here . The skills Install the skills: npx skills add https://github.com/ai-evals-course/evals-skills Then give your agent this prompt: Run the evals-start skill from the evals plugin and follow the skill it picks. If it picks eval-audit, investigate each diagnostic area using a separate subagent in parallel, then synthesize the findings into a single report. If you’re experienced with evals, skip the router and pick the skill you need: Skill What it does evals-start Entry point. Routes to the skill that matches your situation eval-audit Audit an eval pipeline and surface problems with prioritized severity error-discovery Build a review app, select diverse samples, and organize your notes into failure modes generate-synthetic-data Create diverse synthetic test inputs using dimension",
+        "label": "Original publication",
+        "url": "https://hamel.dev/blog/posts/evals-skills"
+      }
+    ],
+    "evidence_checked": "2026-11-25T12:56:31.772548+00:00",
     "fingerprint": "c607df9127a8f62fb0961d44ecc7006618847ca054fbc4081b7e0cd02d0b3151",
     "published": "2026-03-02T08:00:00+00:00",
     "source": "hamel-husain",
@@ -20944,7 +21127,8 @@
     "status": "pending",
     "summary": "Today, Shreya Shankar and I are publishing evals skills , a set of skills for AI product evals 1 . Eval tools often get in the way. They nudge you toward generic off-the-shelf metrics and fully automated evals before you’ve looked at your data. These skills help you avoid common mistakes we’ve seen helping 50+ companies and teaching students in our AI Evals course . Why skills for evals There are many easily avoidable footguns in evals. These skills help you avoid them. evals-start is the entry point. It looks at your situation and routes you to the right skill. Most of the time it will send you to one of these two: eval-audit , if you already have an eval pipeline. It inspects your setup and recommends next steps. 2 error-discovery , if you have traces but haven’t analyzed them yet. It builds a customized annotation interface and helps you sample traces intelligently. Shreya does a live walkthrough of using this skill here . The skills Install the skills: npx skills add https://github.com/ai-evals-course/evals-skills Then give your agent this prompt: Run the evals-start skill from the evals plugin and follow the skill it picks. If it picks eval-audit, investigate each diagnostic area using a separate subagent in parallel, then synthesize the findings into a single report. If you’re experienced with evals, skip the router and pick the skill you need: Skill What it does evals-start Entry point. Routes to the skill that matches your situation eval-audit Audit an eval pipeline and surface problems with prioritized severity error-discovery Build a review app, select diverse samples, and organize your notes into failure modes generate-synthetic-data Create diverse synthetic test inputs using dimension-based tuple generation write-judge-prompt Design LLM-as-Judge evaluators for subjective quality criteria validate-evaluator Calibrate LLM judges against human labels using data splits, TPR/TNR, and bias correction evaluate-rag Evaluate retrieval and generation quality in RAG pipelines build-review-interface Build custom annotation interfaces for human trace review These skills are only a starting point. To make them better, tune them to be more specific to your data and domain. The repo is ai-evals-course/evals-skills . You can find me on X or email me through my newsletter . Footnotes Not foundation model benchmarks like MMLU or HELM that measure general LLM capabilities. Product evals measure whether your pipeline works on your task with your data. If you aren’t familiar with product-specific AI evals, check out my AI Evals FAQ .↩︎ The audit isn’t a complete solution, but it will catch common problems.↩︎",
     "title": "Evals Skills for Coding Agents",
-    "url": "https://hamel.dev/blog/posts/evals-skills"
+    "url": "https://hamel.dev/blog/posts/evals-skills",
+    "verified_at": "2026-11-25T12:56:31.772548+00:00"
   },
   "a6eb1f606852f372dceea6b3aee2818669a8284b32a78bd30b137469fe6b5825": {
     "category": "agents",
@@ -22722,6 +22906,20 @@
     "title": "Targeted In-Context Poisoning of Tabular Foundation Models: An Empirical Study",
     "url": "https://arxiv.org/abs/2611.28396"
   },
+  "b7eabbe823d95a9d2a0f245c204e7c0ff30099eec8aaa176071ddedc82d012d3": {
+    "category": "coding",
+    "content_type": "tutorials",
+    "discovered": "2026-11-25T12:56:31.858713+00:00",
+    "discovery": {},
+    "fingerprint": "36ca27d44070bf10a266c7602e0addcaa7a5ec91d05ce0c30cf1b94905091f42",
+    "published": "2026-11-13T14:00:00+00:00",
+    "source": "original-cloudflare-developers",
+    "source_url": "https://blog.cloudflare.com/tag/developers/rss/",
+    "status": "pending",
+    "summary": "Spend Management adds opt-in spending caps for Cloudflare Workers and Durable Objects, and more products soon. Here is how we built the metering pipeline that turns usage into runtime decisions.",
+    "title": "Introducing Spend Management: Spending limits and alerts for Cloudflare",
+    "url": "https://blog.cloudflare.com/spend-management"
+  },
   "b7fe5b006ced7c0cf00ce24edf55deea35bb94b5533b1ef87b7ddf4917496b43": {
     "category": "models",
     "discovered": "2026-11-24T14:07:11.513641+00:00",
@@ -24290,6 +24488,20 @@
     "title": "langchain-huggingface==1.3.0",
     "url": "https://github.com/langchain-ai/langchain/releases/tag/langchain-huggingface%3D%3D1.3.0"
   },
+  "c373b1bc79bf532fbf0a23dec25dd29317163bff1cdd3a19a650bacab25444d8": {
+    "category": "coding",
+    "content_type": "tutorials",
+    "discovered": "2026-11-25T12:56:31.858713+00:00",
+    "discovery": {},
+    "fingerprint": "f0f512f4a6326a2781d61d28f3337d12310afe87824b55e4dbe1d94a1c39b502",
+    "published": "2026-10-09T13:00:00+00:00",
+    "source": "original-cloudflare-developers",
+    "source_url": "https://blog.cloudflare.com/tag/developers/rss/",
+    "status": "pending",
+    "summary": "On-demand CPU and memory profiling for Cloudflare Workers and Durable Objects is now available. Now you can generate interactive flamegraphs directly in production to quickly track down memory leaks and performance bottlenecks.",
+    "title": "Introducing on-demand CPU and memory profiling with flamegraphs for Workers and Durable Objects",
+    "url": "https://blog.cloudflare.com/workers-on-demand-profiling"
+  },
   "c38af6e5cae43e23a64c1d509c6a587da67c166f4c093fc7e47ef57f26c07a7c": {
     "category": "models",
     "discovered": "2026-11-25T12:08:46.883246+00:00",
@@ -25421,6 +25633,14 @@
     "content_type": "tutorials",
     "discovered": "2026-11-25T01:21:21.428756+00:00",
     "discovery": {},
+    "evidence": [
+      {
+        "excerpt": "Selecting The Right AI Evals Tool AI Evals An example of how to assess AI eval tools like Langsmith, Braintrust, and Arize Phoenix. Author Hamel Husain Published October 1, 2025 Over the past year, I’ve focused heavily on AI Evals , both in my consulting work and teaching. A question I get constantly is, “What’s the best tool for evals?”. I’ve always resisted answering directly for two reasons. First, people focus too much on tools instead of the process, thinking the tool will be an off-the-shelf solution when it rarely is. Second, the tools change so quickly that comparisons become outdated immediately. Having used many of the popular eval tools, I can genuinely say that no single one is superior in every dimension. The “best” tool depends on your team’s skillset, technical stack, and maturity. Instead of a feature-by-feature comparison, I think it’s more valuable to show you how a panel of data scientists skilled in evals assesses these tools. As part of my AI Evals course , we had three of the most dominant vendors—Langsmith, Braintrust, and Arize Phoenix complete the same homework assignment . This gave us a unique opportunity to see how they tackle the exact same challenge. We recorded the entire process and live commentary, which is available below. We think this might be helpful in learning about the kinds of things you should consider when selecting a tool for your team. Thanks to Shreya Shankar and Bryan Bischof for serving as the panelists (alongside me). Langsmith With Harrison Chase , CEO of LangChain. Braintrust With Wayde Gilliam , former developer relations at Braintrust. Arize Phoenix With SallyAnn DeLucia , Technical AI Product Leader at Arize. Criteria for Assessing AI Evals Tools Here are themes that consistently surfaced during our review. 1. Workflow and Developer Experience Reducing friction is more important than any single feature. Concretely,",
+        "label": "Original publication",
+        "url": "https://hamel.dev/blog/posts/eval-tools"
+      }
+    ],
+    "evidence_checked": "2026-11-25T12:56:31.772548+00:00",
     "fingerprint": "52a9ca09a9e9a3ff9fb2907a527fe050e842247026a7e66986108bf17338e332",
     "published": "2025-10-01T07:00:00+00:00",
     "source": "hamel-husain",
@@ -25428,7 +25648,8 @@
     "status": "pending",
     "summary": "Over the past year, I’ve focused heavily on AI Evals , both in my consulting work and teaching. A question I get constantly is, “What’s the best tool for evals?”. I’ve always resisted answering directly for two reasons. First, people focus too much on tools instead of the process, thinking the tool will be an off-the-shelf solution when it rarely is. Second, the tools change so quickly that comparisons become outdated immediately. Having used many of the popular eval tools, I can genuinely say that no single one is superior in every dimension. The “best” tool depends on your team’s skillset, technical stack, and maturity. Instead of a feature-by-feature comparison, I think it’s more valuable to show you how a panel of data scientists skilled in evals assesses these tools. As part of my AI Evals course , we had three of the most dominant vendors—Langsmith, Braintrust, and Arize Phoenix complete the same homework assignment . This gave us a unique opportunity to see how they tackle the exact same challenge. We recorded the entire process and live commentary, which is available below. We think this might be helpful in learning about the kinds of things you should consider when selecting a tool for your team. Thanks to Shreya Shankar and Bryan Bischof for serving as the panelists (alongside me). Langsmith With Harrison Chase , CEO of LangChain. Braintrust With Wayde Gilliam , former developer relations at Braintrust. Arize Phoenix With SallyAnn DeLucia , Technical AI Product Leader at Arize. Criteria for Assessing AI Evals Tools Here are themes that consistently surfaced during our review. 1. Workflow and Developer Experience Reducing friction is more important than any single feature. Concretely, you should be mindful of the time it takes to go from observing a failure to iterating on a solution. For example, we appreciated the ability to go from viewing a single trace to experimenting with that same trace in a playground. For some teams with data-science backgrounds, a notebook-centric workflow is ideal as it provides transparency and control. This happens to be my preferred workflow as well. When considering a notebook-centric workflow, its important to pay attention to the ergonmics of the sdk. This often boils down to the quality of the documentation and integration with existing data tools. 2. Human-in-the-Loop Support The best tools don’t try to automate away the human; they empower them. Since error analysis is the highest ROI activity in AI engineering, a tool’s ability to support efficient human review is paramount. Prioritize tools with first-class support for manual annotation and error analysis. As of this writing, one thing that is missing from many tools is axial coding . 3. Transparency and Control vs. “Magic” Be deeply skeptical of features that promise full automation without human validation, as these can create a powerful and dangerous illusion of confidence. For example, be wary of features where an AI agent both creates an evaluation rubric and then immediately scores the outputs. This “stacking of abstractions” often hides flaws behind a high score. Favor tools that give you control and visibility. 4. Ecosystem Integration ",
     "title": "Selecting The Right AI Evals Tool",
-    "url": "https://hamel.dev/blog/posts/eval-tools"
+    "url": "https://hamel.dev/blog/posts/eval-tools",
+    "verified_at": "2026-11-25T12:56:31.772548+00:00"
   },
   "cdaa4956e1a0d23e514c76a92657b8256046d7349d240e4e654cb5cfcae8e236": {
     "category": "models",
@@ -26650,6 +26871,34 @@
     "title": "Adaptive Conformal Prediction for Improving Factuality of Generations by Large Language Models",
     "url": "https://arxiv.org/abs/2604.13991"
   },
+  "d7f07ccfa723e359f49e9ae13763dd850d34b706d4a85e772cafe8cac1427711": {
+    "category": "coding",
+    "content_type": "tutorials",
+    "discovered": "2026-11-25T12:56:31.858713+00:00",
+    "discovery": {},
+    "fingerprint": "7a1da25f60067d40814da142df8adb57a761c46701f2e7edf21f064b9decf019",
+    "published": "2026-09-30T13:00:00+00:00",
+    "source": "original-cloudflare-developers",
+    "source_url": "https://blog.cloudflare.com/tag/developers/rss/",
+    "status": "pending",
+    "summary": "AI Gateway User Insights now adds task, model, turn, and user categories to help teams understand AI adoption and make better model decisions. This is available free to AI Gateway users.",
+    "title": "Identify AI model overuse with User Insights",
+    "url": "https://blog.cloudflare.com/ai-model-overuse-user-insights"
+  },
+  "d8139ee5b66b8461667b31cc147a0d3aea4238e9a04ce46539c7dd4ef022eb5c": {
+    "category": "coding",
+    "content_type": "tutorials",
+    "discovered": "2026-11-25T12:56:31.858713+00:00",
+    "discovery": {},
+    "fingerprint": "a764c428620499a35fa0c52f8e04be3af8e670a963b2cfa6ca8d0c08a9fd7e4c",
+    "published": "2026-09-28T15:50:00+00:00",
+    "source": "original-cloudflare-developers",
+    "source_url": "https://blog.cloudflare.com/tag/developers/rss/",
+    "status": "pending",
+    "summary": "We are releasing cf, our new command-line tool that mirrors the entire Cloudflare API and supports programmatic TypeScript configuration. We are also open-sourcing Forge, our internal SDK generator.",
+    "title": "Introducing cf: the agentic CLI for the entire Cloudflare API",
+    "url": "https://blog.cloudflare.com/cloudflare-cf-cli-launch"
+  },
   "d824f13e247c85dc462e2ef5915a426dead921fee9bf50a7839d57cc8be92da1": {
     "category": "models",
     "discovered": "2026-11-25T11:43:09.397480+00:00",
@@ -27055,6 +27304,7 @@
   },
   "daf2b3e0d41882f4998104818fe6ff4171c7cb4cfddfd46dc1562bc460e34d5a": {
     "category": "open-source",
+    "content_type": "tutorials",
     "discovered": "2026-11-24T07:39:38.717042+00:00",
     "discovery": {},
     "fingerprint": "569bed3fb711e3249700a98641d5a3193a32d5f4ce466147ff54a195fc7e08b3",
@@ -27317,6 +27567,20 @@
     "summary": "spaces listing. Tags: static, region:us",
     "title": "shuyina/arasaka-dashboard",
     "url": "https://huggingface.co/spaces/shuyina/arasaka-dashboard"
+  },
+  "dc3e517494209dd7ca39973f1688a775542633bb2a980c3c17f0ac72865e2e0e": {
+    "category": "coding",
+    "content_type": "tutorials",
+    "discovered": "2026-11-25T12:56:31.858713+00:00",
+    "discovery": {},
+    "fingerprint": "e4a68847ab2b3b324209c5eb00f48aab53bf73ac0e11e0fd96fe779850e00f65",
+    "published": "2026-10-01T12:58:00+00:00",
+    "source": "original-cloudflare-developers",
+    "source_url": "https://blog.cloudflare.com/tag/developers/rss/",
+    "status": "pending",
+    "summary": "Cloudflare Basin is built on Apache Iceberg and R2 Object Storage. With general availability, developers can ingest, manage, and query large datasets at scale without paying data egress fees.",
+    "title": "Introducing Cloudflare Basin: an open, serverless data platform, now generally available",
+    "url": "https://blog.cloudflare.com/cloudflare-basin"
   },
   "dc4b3f786946cabc32261a55c2a7d0c1afaa5d07c8939d3462fe941ddf46421e": {
     "category": "models",
@@ -31056,6 +31320,7 @@
   },
   "fbfb44fc7414bc524d8b4e92864577e8d11f8cc76b15f163c4177670536c92bc": {
     "category": "open-source",
+    "content_type": "tutorials",
     "discovered": "2026-11-25T12:08:46.883246+00:00",
     "discovery": {},
     "fingerprint": "796117efef6ea05a5aeae184155955988ff1dbf47bdf66fb3a684bc9dd5f2eb3",
@@ -31424,6 +31689,14 @@
     "content_type": "tutorials",
     "discovered": "2026-11-25T01:21:21.428756+00:00",
     "discovery": {},
+    "evidence": [
+      {
+        "excerpt": "Building an Audience Through Technical Writing: Strategies and Mistakes Writing What I’ve seen work and what doesn’t. Author Hamel Husain Published November 30, 2024 People often find me through my writing on AI and tech. This creates an interesting pattern. Nearly every week, vendors reach out asking me to write about their products. While I appreciate their interest and love learning about new tools, I reserve my writing for topics that I have personal experience with. One conversation last week really stuck with me. A founder confided, “We can write the best content in the world, but we don’t have any distribution.” This hit home because I used to think the same way. Let me share what works for reaching developers. Companies and individuals alike often skip the basics when trying to grow their audience. These are proven approaches I’ve seen succeed, both in my work and in others’ efforts to grow their audience in the AI space. 1. Build on Great Work Here’s something surprising: few people take the time to thoughtfully engage with others’ work in our field. But when you do, amazing things happen naturally. For example, here are some recent posts I’ve enjoyed that present opportunities to engage with others: Shreya Shankar’s DocETL Eugene Yan’s work on AlignEval Ben Claive’s work on rerankers Jeremy Howard’s work on llms.txt In the above examples, you could share how their ideas connect with what you’ve built. You could add additional case studies and real-world insights. If you deeply engage with someone’s work and add your insights, they often share your content with their audience. Not because you asked, but because you’ve added something meaningful to their work. Swyx has written a great post on how to do this effectively. The key is authenticity. Don’t do this just for marketing—do it because you’re genuinely interested in learning from others and building on th",
+        "label": "Original publication",
+        "url": "https://hamel.dev/blog/posts/audience"
+      }
+    ],
+    "evidence_checked": "2026-11-25T12:56:31.772548+00:00",
     "fingerprint": "bde63adba2c4e7627ee7caaeaa13c01307e9d754860652d3908f4e5696426be0",
     "published": "2024-11-30T08:00:00+00:00",
     "source": "hamel-husain",
@@ -31431,7 +31704,8 @@
     "status": "pending",
     "summary": "People often find me through my writing on AI and tech. This creates an interesting pattern. Nearly every week, vendors reach out asking me to write about their products. While I appreciate their interest and love learning about new tools, I reserve my writing for topics that I have personal experience with. One conversation last week really stuck with me. A founder confided, “We can write the best content in the world, but we don’t have any distribution.” This hit home because I used to think the same way. Let me share what works for reaching developers. Companies and individuals alike often skip the basics when trying to grow their audience. These are proven approaches I’ve seen succeed, both in my work and in others’ efforts to grow their audience in the AI space. 1. Build on Great Work Here’s something surprising: few people take the time to thoughtfully engage with others’ work in our field. But when you do, amazing things happen naturally. For example, here are some recent posts I’ve enjoyed that present opportunities to engage with others: Shreya Shankar’s DocETL Eugene Yan’s work on AlignEval Ben Claive’s work on rerankers Jeremy Howard’s work on llms.txt In the above examples, you could share how their ideas connect with what you’ve built. You could add additional case studies and real-world insights. If you deeply engage with someone’s work and add your insights, they often share your content with their audience. Not because you asked, but because you’ve added something meaningful to their work. Swyx has written a great post on how to do this effectively. The key is authenticity. Don’t do this just for marketing—do it because you’re genuinely interested in learning from others and building on their ideas. It’s not hard to find things to be excited about. I’m amazed by how few people take this approach. It’s both effective and fun. 2. Show Up Consistently I see too many folks blogging or posting once every few months and wondering why they’re not getting traction. Want to know what actually works? Look at Jason Liu . He grew his following from 500 to 30,000 followers by posting ~ 30 times every day for a year. You don’t have to post that often (I certainly don’t!), but consistency matters more than perfection. Finally, don’t just post into the void. Engage with others. When someone comments on your post, reply thoughtfully. When you see conversations where you can add value, provide helpful information. Finally, don’t be discouraged if you don’t see results immediately. Here’s some advice from my friend (and prolific writer), Eugene Yan : In the beginning, when most people start writing, the output’s gonna suck. Harsh, but true—my first 100 posts or so were crap. But with practice, people can get better. But they have to be deliberate in wanting to practice and get better with each piece, and not just write for the sake of publishing something and tweeting about it. The Sam Parr course (see below) is a great example of deliberate practice on copywriting. 3. Get Better at Copywriting This changed everything for me. I took Sam Parr’s copywriting course just 30 minutes a day for a week. Now I keep my favorite writing samples in a Claude",
     "title": "Building an Audience Through Technical Writing: Strategies and Mistakes",
-    "url": "https://hamel.dev/blog/posts/audience"
+    "url": "https://hamel.dev/blog/posts/audience",
+    "verified_at": "2026-11-25T12:56:31.772548+00:00"
   },
   "fe9e962bb6e1e00f7c537344126eb88b303d5f1fff6ecc8be9d0c3766f28cdad": {
     "category": "models",

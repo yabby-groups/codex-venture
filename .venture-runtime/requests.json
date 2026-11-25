@@ -23,13 +23,13 @@
       "successes": 10
     },
     "api.github.com": {
-      "daily": 230,
-      "hour": "2026-11-25T11",
+      "daily": 231,
+      "hour": "2026-11-25T12",
       "hourly": 1,
-      "limited": 4,
+      "limited": 5,
       "remaining": 0,
-      "responses": 230,
-      "resume": 1795608610.0,
+      "responses": 231,
+      "resume": 1795611790.0,
       "successes": 219
     },
     "arxiv.org": {
@@ -40,11 +40,11 @@
       "successes": 6
     },
     "blog.cloudflare.com": {
-      "daily": 12,
+      "daily": 14,
       "hour": "2026-11-25T12",
-      "hourly": 4,
-      "responses": 12,
-      "successes": 12
+      "hourly": 6,
+      "responses": 14,
+      "successes": 14
     },
     "blog.google": {
       "daily": 12,
@@ -123,11 +123,11 @@
       "successes": 23
     },
     "hamel.dev": {
-      "daily": 8,
+      "daily": 25,
       "hour": "2026-11-25T12",
-      "hourly": 4,
-      "responses": 8,
-      "successes": 8
+      "hourly": 21,
+      "responses": 25,
+      "successes": 17
     },
     "hn.algolia.com": {
       "daily": 29,
@@ -137,11 +137,11 @@
       "successes": 24
     },
     "huggingface.co": {
-      "daily": 134,
+      "daily": 136,
       "hour": "2026-11-25T12",
-      "hourly": 13,
-      "responses": 134,
-      "successes": 128
+      "hourly": 15,
+      "responses": 136,
+      "successes": 130
     },
     "kakatu.app": {
       "daily": 2,
