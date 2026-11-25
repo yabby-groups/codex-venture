@@ -33,9 +33,10 @@
     }
   },
   "apple-ml": {
+    "candidates": 0,
     "error": null,
     "failures": 0,
-    "last_success": "2026-11-25T01:21:21.428756+00:00",
+    "last_success": "2026-11-25T11:42:56.648797+00:00",
     "retry_after": null,
     "url": "https://machinelearning.apple.com/rss.xml",
     "validators": {
@@ -44,13 +45,14 @@
     }
   },
   "arxiv-ai": {
+    "candidates": 429,
     "error": null,
     "failures": 0,
-    "last_success": "2026-11-24T14:07:11.513641+00:00",
+    "last_success": "2026-11-25T11:43:09.397480+00:00",
     "retry_after": null,
     "url": "https://rss.arxiv.org/rss/cs.AI",
     "validators": {
-      "If-None-Match": "d78fbd20dd3837364f03966655342927921d5363414d0d9105c103dcaf47af2d"
+      "If-None-Match": "f8ccc1768abb1b2dd19d61e2ca2a728dcde2ca9dca9e060682d9538cec404d8c"
     }
   },
   "axolotl-ai-cloud-axolotl": {
@@ -123,7 +125,7 @@
     "candidates": 0,
     "error": null,
     "failures": 0,
-    "last_success": "2026-11-25T11:42:29.978257+00:00",
+    "last_success": "2026-11-25T11:42:56.648797+00:00",
     "retry_after": null,
     "url": "https://blog.cloudflare.com/tag/ai/rss/",
     "validators": {}
@@ -198,7 +200,7 @@
     "candidates": 0,
     "error": null,
     "failures": 0,
-    "last_success": "2026-11-25T11:42:29.978257+00:00",
+    "last_success": "2026-11-25T11:42:56.648797+00:00",
     "retry_after": null,
     "url": "https://cursor.com/changelog/rss.xml",
     "validators": {}
@@ -298,36 +300,40 @@
     }
   },
   "ecosystem-mcp-registry": {
+    "candidates": 0,
     "error": null,
     "failures": 0,
-    "last_success": "2026-11-25T01:16:29.416465+00:00",
+    "last_success": "2026-11-25T11:43:09.397480+00:00",
     "retry_after": null,
     "url": "https://registry.modelcontextprotocol.io/v0.1/servers?version=latest&limit=12&search=video",
     "validators": {}
   },
   "ecosystem-open-vsx": {
+    "candidates": 0,
     "error": null,
     "failures": 0,
-    "last_success": "2026-11-25T01:16:29.416465+00:00",
+    "last_success": "2026-11-25T11:43:09.397480+00:00",
     "retry_after": null,
     "url": "https://open-vsx.org/api/-/search?query=AI+video&size=10",
     "validators": {
-      "If-None-Match": "\"0346b38a9da117b80dac60fc7c1c93007\""
+      "If-None-Match": "\"014b00fd7c6dac591ee3f2729b9ff04d3\""
     }
   },
   "ecosystem-show-hn": {
+    "candidates": 0,
     "error": null,
     "failures": 0,
-    "last_success": "2026-11-25T01:16:29.416465+00:00",
+    "last_success": "2026-11-25T11:43:09.397480+00:00",
     "retry_after": null,
     "url": "https://hn.algolia.com/api/v1/search?query=AI&tags=show_hn&hitsPerPage=15",
     "validators": {}
   },
   "ecosystem-skill-search": {
-    "error": null,
-    "failures": 0,
+    "error": "collection request budget paused",
+    "failures": 1,
+    "first_failure": "2026-11-25T11:43:09.397480+00:00",
     "last_success": "2026-11-25T01:16:29.416465+00:00",
-    "retry_after": null,
+    "retry_after": "2026-11-25T12:43:09.397480+00:00",
     "url": "https://api.github.com/search/repositories?q=agent-skills+video+in%3Aname%2Cdescription%2Creadme+archived%3Afalse&sort=updated&per_page=10",
     "validators": {}
   },
@@ -390,7 +396,7 @@
     "candidates": 0,
     "error": null,
     "failures": 0,
-    "last_success": "2026-11-25T11:42:29.978257+00:00",
+    "last_success": "2026-11-25T11:42:56.648797+00:00",
     "retry_after": null,
     "url": "https://github.blog/changelog/feed/",
     "validators": {
@@ -402,7 +408,7 @@
     "candidates": 0,
     "error": null,
     "failures": 0,
-    "last_success": "2026-11-25T11:42:29.978257+00:00",
+    "last_success": "2026-11-25T11:42:56.648797+00:00",
     "retry_after": null,
     "url": "https://github.blog/open-source/feed/",
     "validators": {
@@ -411,10 +417,11 @@
     }
   },
   "github-search-3d": {
-    "error": null,
-    "failures": 0,
+    "error": "collection request budget paused",
+    "failures": 1,
+    "first_failure": "2026-11-25T11:43:09.397480+00:00",
     "last_success": "2026-11-25T01:16:29.416465+00:00",
-    "retry_after": null,
+    "retry_after": "2026-11-25T12:43:09.397480+00:00",
     "url": "https://api.github.com/search/repositories?q=topic%3A3d+pushed%3A%3E%3D2026-11-18+archived%3Afalse+stars%3A%3E%3D10&sort=stars&per_page=14",
     "validators": {}
   },
@@ -427,18 +434,20 @@
     "validators": {}
   },
   "github-search-inference": {
-    "error": null,
-    "failures": 0,
+    "error": "collection request budget paused",
+    "failures": 1,
+    "first_failure": "2026-11-25T11:43:09.397480+00:00",
     "last_success": "2026-11-25T01:16:29.416465+00:00",
-    "retry_after": null,
+    "retry_after": "2026-11-25T12:43:09.397480+00:00",
     "url": "https://api.github.com/search/repositories?q=topic%3Ainference+pushed%3A%3E%3D2026-11-18+archived%3Afalse+stars%3A%3E%3D10&sort=stars&per_page=14",
     "validators": {}
   },
   "github-search-video-generation": {
-    "error": null,
-    "failures": 0,
+    "error": "collection request budget paused",
+    "failures": 1,
+    "first_failure": "2026-11-25T11:43:09.397480+00:00",
     "last_success": "2026-11-25T01:16:29.416465+00:00",
-    "retry_after": null,
+    "retry_after": "2026-11-25T12:43:09.397480+00:00",
     "url": "https://api.github.com/search/repositories?q=topic%3Avideo-generation+created%3A%3E%3D2026-11-18+archived%3Afalse+stars%3A1..50&sort=updated&per_page=14",
     "validators": {}
   },
@@ -457,7 +466,7 @@
     "candidates": 0,
     "error": null,
     "failures": 0,
-    "last_success": "2026-11-25T11:42:29.978257+00:00",
+    "last_success": "2026-11-25T11:42:56.648797+00:00",
     "retry_after": null,
     "url": "https://blog.google/innovation-and-ai/rss/",
     "validators": {}
@@ -486,6 +495,33 @@
     "url": "https://hn.algolia.com/api/v1/search_by_date?query=AI+%E8%87%AA%E5%8B%95%E5%8C%96&tags=story&hitsPerPage=12",
     "validators": {}
   },
+  "hacker-news-1-0": {
+    "candidates": 12,
+    "error": null,
+    "failures": 0,
+    "last_success": "2026-11-25T11:43:09.397480+00:00",
+    "retry_after": null,
+    "url": "https://hn.algolia.com/api/v1/search_by_date?query=Claude+Code&tags=story&hitsPerPage=12",
+    "validators": {}
+  },
+  "hacker-news-1-1": {
+    "candidates": 12,
+    "error": null,
+    "failures": 0,
+    "last_success": "2026-11-25T11:43:09.397480+00:00",
+    "retry_after": null,
+    "url": "https://hn.algolia.com/api/v1/search_by_date?query=AI+coding&tags=story&hitsPerPage=12",
+    "validators": {}
+  },
+  "hacker-news-1-2": {
+    "candidates": 0,
+    "error": null,
+    "failures": 0,
+    "last_success": "2026-11-25T11:43:09.397480+00:00",
+    "retry_after": null,
+    "url": "https://hn.algolia.com/api/v1/search_by_date?query=%E6%9C%AC%E5%9C%B0%E6%A8%A1%E5%9E%8B&tags=story&hitsPerPage=12",
+    "validators": {}
+  },
   "hacker-news-ai": {
     "error": null,
     "failures": 0,
@@ -495,9 +531,10 @@
     "validators": {}
   },
   "hamel-husain": {
+    "candidates": 0,
     "error": null,
     "failures": 0,
-    "last_success": "2026-11-25T01:21:21.428756+00:00",
+    "last_success": "2026-11-25T11:42:56.648797+00:00",
     "retry_after": null,
     "url": "https://hamel.dev/index.xml",
     "validators": {
@@ -517,40 +554,43 @@
     }
   },
   "hf-datasets": {
+    "candidates": 13,
     "error": null,
     "failures": 0,
-    "last_success": "2026-11-25T01:16:29.416465+00:00",
+    "last_success": "2026-11-25T11:43:09.397480+00:00",
     "retry_after": null,
     "url": "https://huggingface.co/api/datasets?sort=lastModified&direction=-1&limit=16&full=true",
     "validators": {
-      "If-None-Match": "W/\"33ab-IT02KhuZDvljDsAs9n6ojKR+YXk\""
+      "If-None-Match": "W/\"26d2-wm/B84Qbw1a5qo+QIWBiGrXg8ko\""
     }
   },
   "hf-models": {
+    "candidates": 16,
     "error": null,
     "failures": 0,
-    "last_success": "2026-11-25T01:16:29.416465+00:00",
+    "last_success": "2026-11-25T11:43:09.397480+00:00",
     "retry_after": null,
     "url": "https://huggingface.co/api/models?sort=lastModified&direction=-1&limit=16&full=true",
     "validators": {
-      "If-None-Match": "W/\"27be2c-rF8hAWojJXoBfhdcxs86y0PSQOs\""
+      "If-None-Match": "W/\"11fae5-0M2HqHI5/temBRvkgIWizIozV4Q\""
     }
   },
   "hf-spaces": {
+    "candidates": 14,
     "error": null,
     "failures": 0,
-    "last_success": "2026-11-25T01:16:29.416465+00:00",
+    "last_success": "2026-11-25T11:43:09.397480+00:00",
     "retry_after": null,
     "url": "https://huggingface.co/api/spaces?sort=lastModified&direction=-1&limit=16&full=true",
     "validators": {
-      "If-None-Match": "W/\"65c97-2PgHKOipN70VLFzCjMUm1YiG7No\""
+      "If-None-Match": "W/\"f0a5-HQpsnKw03w4SJLlIl5NKT20sQmA\""
     }
   },
   "hugging-face": {
     "candidates": 0,
     "error": null,
     "failures": 0,
-    "last_success": "2026-11-25T11:42:29.978257+00:00",
+    "last_success": "2026-11-25T11:42:56.648797+00:00",
     "retry_after": null,
     "url": "https://huggingface.co/blog/feed.xml",
     "validators": {
@@ -685,9 +725,10 @@
     }
   },
   "meta-engineering": {
+    "candidates": 0,
     "error": null,
     "failures": 0,
-    "last_success": "2026-11-25T01:21:21.428756+00:00",
+    "last_success": "2026-11-25T11:42:56.648797+00:00",
     "retry_after": null,
     "url": "https://engineering.fb.com/feed/",
     "validators": {
@@ -707,9 +748,10 @@
     }
   },
   "microsoft-foundry": {
+    "candidates": 0,
     "error": null,
     "failures": 0,
-    "last_success": "2026-11-25T01:21:21.428756+00:00",
+    "last_success": "2026-11-25T11:42:56.648797+00:00",
     "retry_after": null,
     "url": "https://devblogs.microsoft.com/foundry/feed/",
     "validators": {
@@ -842,7 +884,7 @@
     "candidates": 0,
     "error": null,
     "failures": 0,
-    "last_success": "2026-11-25T11:42:29.978257+00:00",
+    "last_success": "2026-11-25T11:42:56.648797+00:00",
     "retry_after": null,
     "url": "https://openai.com/news/rss.xml",
     "validators": {}
@@ -997,9 +1039,10 @@
     }
   },
   "simon-willison": {
+    "candidates": 0,
     "error": null,
     "failures": 0,
-    "last_success": "2026-11-25T01:21:21.428756+00:00",
+    "last_success": "2026-11-25T11:42:56.648797+00:00",
     "retry_after": null,
     "url": "https://simonwillison.net/atom/everything/",
     "validators": {
@@ -1062,10 +1105,11 @@
     }
   },
   "trending-alibaba-open-code-review": {
-    "error": null,
-    "failures": 0,
+    "error": "collection request budget paused",
+    "failures": 1,
+    "first_failure": "2026-11-25T11:43:09.397480+00:00",
     "last_success": "2026-11-25T01:16:29.416465+00:00",
-    "retry_after": null,
+    "retry_after": "2026-11-25T12:43:09.397480+00:00",
     "url": "https://api.github.com/repos/alibaba/open-code-review",
     "validators": {
       "If-Modified-Since": "Wed, 25 Nov 2026 01:15:13 GMT",
@@ -1073,10 +1117,11 @@
     }
   },
   "trending-anthropics-skills": {
-    "error": null,
-    "failures": 0,
+    "error": "collection request budget paused",
+    "failures": 1,
+    "first_failure": "2026-11-25T11:43:09.397480+00:00",
     "last_success": "2026-11-25T01:16:29.416465+00:00",
-    "retry_after": null,
+    "retry_after": "2026-11-25T12:43:09.397480+00:00",
     "url": "https://api.github.com/repos/anthropics/skills",
     "validators": {
       "If-Modified-Since": "Wed, 25 Nov 2026 01:15:18 GMT",
@@ -1084,10 +1129,11 @@
     }
   },
   "trending-backnotprop-plannotator": {
-    "error": null,
-    "failures": 0,
+    "error": "collection request budget paused",
+    "failures": 1,
+    "first_failure": "2026-11-25T11:43:09.397480+00:00",
     "last_success": "2026-11-25T01:16:29.416465+00:00",
-    "retry_after": null,
+    "retry_after": "2026-11-25T12:43:09.397480+00:00",
     "url": "https://api.github.com/repos/backnotprop/plannotator",
     "validators": {
       "If-Modified-Since": "Wed, 25 Nov 2026 01:16:24 GMT",
@@ -1106,10 +1152,11 @@
     }
   },
   "trending-chromedevtools-chrome-devtools-mcp": {
-    "error": null,
-    "failures": 0,
+    "error": "collection request budget paused",
+    "failures": 1,
+    "first_failure": "2026-11-25T11:43:09.397480+00:00",
     "last_success": "2026-11-25T01:16:29.416465+00:00",
-    "retry_after": null,
+    "retry_after": "2026-11-25T12:43:09.397480+00:00",
     "url": "https://api.github.com/repos/ChromeDevTools/chrome-devtools-mcp",
     "validators": {
       "If-Modified-Since": "Wed, 25 Nov 2026 01:14:39 GMT",
@@ -1117,10 +1164,11 @@
     }
   },
   "trending-cloudflare-security-audit-skill": {
-    "error": null,
-    "failures": 0,
+    "error": "collection request budget paused",
+    "failures": 1,
+    "first_failure": "2026-11-25T11:43:09.397480+00:00",
     "last_success": "2026-11-25T01:16:29.416465+00:00",
-    "retry_after": null,
+    "retry_after": "2026-11-25T12:43:09.397480+00:00",
     "url": "https://api.github.com/repos/cloudflare/security-audit-skill",
     "validators": {
       "If-Modified-Since": "Wed, 25 Nov 2026 01:15:06 GMT",
@@ -1128,10 +1176,11 @@
     }
   },
   "trending-cursor-plugins": {
-    "error": null,
-    "failures": 0,
+    "error": "collection request budget paused",
+    "failures": 1,
+    "first_failure": "2026-11-25T11:43:09.397480+00:00",
     "last_success": "2026-11-25T01:16:29.416465+00:00",
-    "retry_after": null,
+    "retry_after": "2026-11-25T12:43:09.397480+00:00",
     "url": "https://api.github.com/repos/cursor/plugins",
     "validators": {
       "If-Modified-Since": "Wed, 25 Nov 2026 01:12:19 GMT",
@@ -1139,10 +1188,11 @@
     }
   },
   "trending-elementalsouls-claude-bughunter": {
-    "error": null,
-    "failures": 0,
+    "error": "collection request budget paused",
+    "failures": 1,
+    "first_failure": "2026-11-25T11:43:09.397480+00:00",
     "last_success": "2026-11-25T01:16:29.416465+00:00",
-    "retry_after": null,
+    "retry_after": "2026-11-25T12:43:09.397480+00:00",
     "url": "https://api.github.com/repos/elementalsouls/Claude-BugHunter",
     "validators": {
       "If-Modified-Since": "Wed, 25 Nov 2026 01:16:29 GMT",
@@ -1150,10 +1200,11 @@
     }
   },
   "trending-firecrawl-firecrawl": {
-    "error": null,
-    "failures": 0,
+    "error": "collection request budget paused",
+    "failures": 1,
+    "first_failure": "2026-11-25T11:43:09.397480+00:00",
     "last_success": "2026-11-25T01:16:29.416465+00:00",
-    "retry_after": null,
+    "retry_after": "2026-11-25T12:43:09.397480+00:00",
     "url": "https://api.github.com/repos/firecrawl/firecrawl",
     "validators": {
       "If-Modified-Since": "Wed, 25 Nov 2026 01:13:44 GMT",
@@ -1161,10 +1212,11 @@
     }
   },
   "trending-google-labs-code-stitch-skills": {
-    "error": null,
-    "failures": 0,
+    "error": "collection request budget paused",
+    "failures": 1,
+    "first_failure": "2026-11-25T11:43:09.397480+00:00",
     "last_success": "2026-11-25T01:16:29.416465+00:00",
-    "retry_after": null,
+    "retry_after": "2026-11-25T12:43:09.397480+00:00",
     "url": "https://api.github.com/repos/google-labs-code/stitch-skills",
     "validators": {
       "If-Modified-Since": "Wed, 25 Nov 2026 01:16:16 GMT",
@@ -1172,10 +1224,11 @@
     }
   },
   "trending-googlechrome-modern-web-guidance-src": {
-    "error": null,
-    "failures": 0,
+    "error": "collection request budget paused",
+    "failures": 1,
+    "first_failure": "2026-11-25T11:43:09.397480+00:00",
     "last_success": "2026-11-25T01:16:29.416465+00:00",
-    "retry_after": null,
+    "retry_after": "2026-11-25T12:43:09.397480+00:00",
     "url": "https://api.github.com/repos/GoogleChrome/modern-web-guidance-src",
     "validators": {
       "If-Modified-Since": "Wed, 25 Nov 2026 01:13:14 GMT",
@@ -1183,10 +1236,11 @@
     }
   },
   "trending-hkuds-cli-anything": {
-    "error": null,
-    "failures": 0,
+    "error": "collection request budget paused",
+    "failures": 1,
+    "first_failure": "2026-11-25T11:43:09.397480+00:00",
     "last_success": "2026-11-25T01:16:29.416465+00:00",
-    "retry_after": null,
+    "retry_after": "2026-11-25T12:43:09.397480+00:00",
     "url": "https://api.github.com/repos/HKUDS/CLI-Anything",
     "validators": {
       "If-Modified-Since": "Wed, 25 Nov 2026 01:14:44 GMT",
@@ -1216,10 +1270,11 @@
     }
   },
   "trending-jingyaogong-minimind": {
-    "error": null,
-    "failures": 0,
+    "error": "collection request budget paused",
+    "failures": 1,
+    "first_failure": "2026-11-25T11:43:09.397480+00:00",
     "last_success": "2026-11-25T01:16:29.416465+00:00",
-    "retry_after": null,
+    "retry_after": "2026-11-25T12:43:09.397480+00:00",
     "url": "https://api.github.com/repos/jingyaogong/minimind",
     "validators": {
       "If-Modified-Since": "Wed, 25 Nov 2026 01:16:28 GMT",
@@ -1227,10 +1282,11 @@
     }
   },
   "trending-milind-soni-openmausbot": {
-    "error": null,
-    "failures": 0,
+    "error": "collection request budget paused",
+    "failures": 1,
+    "first_failure": "2026-11-25T11:43:09.397480+00:00",
     "last_success": "2026-11-25T01:16:29.416465+00:00",
-    "retry_after": null,
+    "retry_after": "2026-11-25T12:43:09.397480+00:00",
     "url": "https://api.github.com/repos/milind-soni/OpenMausBot",
     "validators": {
       "If-Modified-Since": "Wed, 25 Nov 2026 01:09:33 GMT",
@@ -1238,10 +1294,11 @@
     }
   },
   "trending-mvanhorn-last30days-skill": {
-    "error": null,
-    "failures": 0,
+    "error": "collection request budget paused",
+    "failures": 1,
+    "first_failure": "2026-11-25T11:43:09.397480+00:00",
     "last_success": "2026-11-25T01:16:29.416465+00:00",
-    "retry_after": null,
+    "retry_after": "2026-11-25T12:43:09.397480+00:00",
     "url": "https://api.github.com/repos/mvanhorn/last30days-skill",
     "validators": {
       "If-Modified-Since": "Wed, 25 Nov 2026 01:15:40 GMT",
@@ -1249,10 +1306,11 @@
     }
   },
   "trending-nutlope-hallmark": {
-    "error": null,
-    "failures": 0,
+    "error": "collection request budget paused",
+    "failures": 1,
+    "first_failure": "2026-11-25T11:43:09.397480+00:00",
     "last_success": "2026-11-25T01:16:29.416465+00:00",
-    "retry_after": null,
+    "retry_after": "2026-11-25T12:43:09.397480+00:00",
     "url": "https://api.github.com/repos/Nutlope/hallmark",
     "validators": {
       "If-Modified-Since": "Wed, 25 Nov 2026 01:16:08 GMT",
@@ -1260,10 +1318,11 @@
     }
   },
   "trending-obra-superpowers": {
-    "error": null,
-    "failures": 0,
+    "error": "collection request budget paused",
+    "failures": 1,
+    "first_failure": "2026-11-25T11:43:09.397480+00:00",
     "last_success": "2026-11-25T01:16:29.416465+00:00",
-    "retry_after": null,
+    "retry_after": "2026-11-25T12:43:09.397480+00:00",
     "url": "https://api.github.com/repos/obra/superpowers",
     "validators": {
       "If-Modified-Since": "Wed, 25 Nov 2026 01:14:46 GMT",
@@ -1271,10 +1330,11 @@
     }
   },
   "trending-pingdotgg-t3code": {
-    "error": null,
-    "failures": 0,
+    "error": "collection request budget paused",
+    "failures": 1,
+    "first_failure": "2026-11-25T11:43:09.397480+00:00",
     "last_success": "2026-11-25T01:16:29.416465+00:00",
-    "retry_after": null,
+    "retry_after": "2026-11-25T12:43:09.397480+00:00",
     "url": "https://api.github.com/repos/pingdotgg/t3code",
     "validators": {
       "If-Modified-Since": "Wed, 25 Nov 2026 01:16:35 GMT",
@@ -1282,10 +1342,11 @@
     }
   },
   "trending-thedotmack-claude-mem": {
-    "error": null,
-    "failures": 0,
+    "error": "collection request budget paused",
+    "failures": 1,
+    "first_failure": "2026-11-25T11:43:09.397480+00:00",
     "last_success": "2026-11-25T01:16:29.416465+00:00",
-    "retry_after": null,
+    "retry_after": "2026-11-25T12:43:09.397480+00:00",
     "url": "https://api.github.com/repos/thedotmack/claude-mem",
     "validators": {
       "If-Modified-Since": "Wed, 25 Nov 2026 01:11:53 GMT",
