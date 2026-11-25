@@ -17,6 +17,7 @@ from discover import discovery
 from evidence import enrich
 from resource_editor import resource_context
 import resource_ingest
+import operations_queue
 from editor import ITEMS, DATE_ZONE, RUN_BUDGET, choose, metadata, output_schema, sync, write_articles
 from model_cost import configured_price, event_usage, worst_case
 from release import PROBE_HEADERS, probe
@@ -63,11 +64,18 @@ def cost_allows(root, day, tokens, price, reserved_calls):
 
 
 def prepare(task):
+    task, days = operations_queue.select(task)
+    if output := os.getenv('GITHUB_OUTPUT'):
+        with open(output, 'a') as stream:
+            stream.write(f'task={task}\n')
+    if task == 'idle':
+        operations_queue.record(task, 'SKIPPED')
+        return
     from analytics import store
     from analytics_review import strategy
     now = datetime.now(DATE_ZONE)
     day = now.date().isoformat()
-    days = number('BACKFILL_DAYS', 7, 1, 30) if task == 'backfill' else 7
+    days = number('BACKFILL_DAYS', days, 1, 90) if task == 'backfill' else 7
     resource_task = task.startswith('resource-')
     if task == 'collect':
         collect()
@@ -76,6 +84,9 @@ def prepare(task):
     elif task == 'backfill':
         collect(days, refresh=True)
         discovery(days)
+    if task == 'news' and not any(item['status'] == 'pending' for item in load(ITEMS, {}).values()):
+        collect()
+        discovery()
     items, articles = ({}, []) if resource_task else (load(ITEMS, {}), metadata())
     if not resource_task:
         sync(items, articles)
@@ -90,6 +101,10 @@ def prepare(task):
             save(ITEMS, items)
             path = BATCH.parent / 'collection.json'
             save(path, {**load(path, {}), **counts})
+        counts = load(BATCH.parent / 'collection.json', {})
+        operations_queue.record(task, 'COLLECTED' if counts.get('discovered') or counts.get('evidence_ready')
+                                else 'SOURCE_BLOCKED' if counts.get('failed') and not counts.get('succeeded')
+                                else 'NO_NEW_CONTENT')
         return
     slug = 'weekly-' + day if task == 'weekly' else day
     rules = strategy() if os.getenv('VENTURE_STRATEGY_AUTO_UPDATE') == 'true' else load(Path('config/editorial-strategy.json'), {})
@@ -104,6 +119,15 @@ def prepare(task):
             article['collection'] == 'daily' and article['slug'] == slug for article in articles
         )
     )):
+        if resource_task:
+            stats = resource_ingest.statistics(day)
+            print('Resource queue:', json.dumps(stats), flush=True)
+            result = ('COLLECTED' if task == 'resource-discover' and stats['queued']
+                      else 'BACKLOG' if stats['queued'] else 'NO_NEW_CONTENT')
+        else:
+            result = 'BACKLOG' if task in ('news', 'backfill') and any(
+                item['status'] == 'pending' for item in items.values()) else 'NO_NEW_CONTENT'
+        operations_queue.record(task, result)
         print('No eligible editorial batch')
         return
 
@@ -152,6 +176,7 @@ def prepare(task):
             remaining.pop(key, None)
 
     if not batches:
+        operations_queue.record(task, 'BUDGET_BLOCKED')
         return
     usage['calls'] += len(batches)
     usage['tokens'] += reserved * len(batches)
@@ -424,12 +449,41 @@ def accept_articles(batch, response):
     items = load(ITEMS, {})
     sync(items, articles)
     for key in skipped:
-        if items[key]['status'] in ('pending', 'expired'):
+        if key in items and items[key]['status'] in ('pending', 'expired'):
             items[key]['status'] = 'skipped'
     save(ITEMS, items)
     routes = [f"{article['collection']}/{article['slug']}/" for article in articles
               if article != before.get((article['collection'], article['slug']))]
     return routes
+
+
+def finish():
+    batch = load(BATCH, {})
+    receipt = load(WORK / 'receipt' / 'receipt.json', {})
+    if receipt.get('batches') and batch:
+        path = STATE / 'usage.json'
+        ledger = load(path, {})
+        day = ledger.get(batch['date'])
+        identity = f"{os.getenv('GITHUB_RUN_ID')}:{os.getenv('GITHUB_RUN_ATTEMPT')}"
+        if day is not None and identity not in day.get('settled', []):
+            rows = receipt['batches']
+            usage = sum(
+                (row['usage']['input_tokens'] + row['usage']['output_tokens']
+                 if row.get('usage') is not None else batch['reservation'])
+                for row in rows if row['sessions']
+            )
+            day['tokens'] += usage - batch['reservation'] * len(batch['batches'])
+            day['calls'] += receipt['sessions'] - len(batch['batches'])
+            day.setdefault('settled', []).append(identity)
+            save(path, ledger)
+    task = os.environ['TASK']
+    if os.getenv('CONTENT_CHANGED') == 'true':
+        result = 'PUBLISHED' if os.getenv('PRODUCTION_RESULT') == 'success' else 'DEPLOY_FAILED'
+    elif task == 'smoke-test':
+        result = 'SKIPPED'
+    else:
+        result = 'BACKLOG'
+    operations_queue.record(task, result)
 
 
 def string_list(value, count, length):
@@ -476,6 +530,6 @@ def health(wait=False):
 
 if __name__ == '__main__':
     actions = {'prepare': prepare, 'invoke': invoke, 'accept': accept,
-               'health': health, 'smoke-tool': smoke_tool}
+               'health': health, 'smoke-tool': smoke_tool, 'finish': finish}
     command, *arguments = sys.argv[1:]
     actions[command](*arguments)

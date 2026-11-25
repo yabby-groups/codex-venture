@@ -1,18 +1,13 @@
 name: Codex Venture
 on:
   schedule:
-    - cron: '0 * * * *'
-    - cron: '37 2,8,14,20 * * *'
-    - cron: '20 0-13,15-23 * * *'
-    - cron: '47 0-12,15-23 * * *'
-    - cron: '20 14 * * *'
-    - cron: '30 13 * * 0'
+    - cron: '13,43 * * * *'
   workflow_dispatch:
     inputs:
       task:
         type: choice
         default: health
-        options: [collect, discover, news, daily, weekly, backfill, health, smoke-test, resource-bootstrap, resource-discover, resource-enrich, resource-sync, resource-refresh, resource-backfill]
+        options: [cycle, collect, discover, news, daily, weekly, backfill, health, smoke-test, resource-bootstrap, resource-discover, resource-enrich, resource-sync, resource-refresh, resource-backfill]
       resource_type:
         type: choice
         default: all
@@ -39,6 +34,7 @@ on:
 permissions: {}
 concurrency:
   group: codex-venture-production
+  queue: max
   cancel-in-progress: false
 
 env:
@@ -53,9 +49,10 @@ jobs:
     permissions:
       contents: write
     outputs:
-      task: ${{ steps.task.outputs.task }}
+      task: ${{ steps.prepare.outputs.task || steps.task.outputs.task }}
       edit: ${{ steps.prepare.outputs.edit }}
       day: ${{ steps.task.outputs.day }}
+      revision: ${{ steps.task.outputs.revision }}
     steps:
       - name: Start operation timer
         run: |
@@ -64,28 +61,19 @@ jobs:
           echo "VENTURE_RUN_DAY=$(TZ=Asia/Shanghai date +%F)" >> "$GITHUB_ENV"
       - uses: actions/checkout@v6
         with:
+          ref: refs/heads/main
+          ref: ${{ needs.prepare.outputs.revision }}
           persist-credentials: false
       - id: task
         env:
           INPUT_TASK: ${{ inputs.task }}
-          SCHEDULE: ${{ github.event.schedule }}
         run: |
-          task="$INPUT_TASK"
-          if [[ -z "$task" ]]; then
-            case "$SCHEDULE" in
-              '0 * * * *') task=collect ;;
-              '37 2,8,14,20 * * *') task=discover ;;
-              '20 0-13,15-23 * * *') task=news ;;
-              '47 0-12,15-23 * * *') task=resource-sync ;;
-              '20 14 * * *') task=daily ;;
-              '30 13 * * 0') task=weekly ;;
-              *) exit 1 ;;
-            esac
-          fi
+          task="${INPUT_TASK:-cycle}"
           case "$task" in
-            collect|discover|news|daily|weekly|backfill|health|smoke-test|resource-bootstrap|resource-discover|resource-enrich|resource-sync|resource-refresh|resource-backfill) ;;
+            cycle|collect|discover|news|daily|weekly|backfill|health|smoke-test|resource-bootstrap|resource-discover|resource-enrich|resource-sync|resource-refresh|resource-backfill) ;;
             *) exit 1 ;;
           esac
+          echo "revision=$(git rev-parse HEAD)" >> "$GITHUB_OUTPUT"
           echo "day=$VENTURE_RUN_DAY" >> "$GITHUB_OUTPUT"
           echo "task=$task" >> "$GITHUB_OUTPUT"
       - uses: actions/setup-node@v6
@@ -174,6 +162,7 @@ jobs:
           echo "VENTURE_RUN_DAY=${{ needs.prepare.outputs.day }}" >> "$GITHUB_ENV"
       - uses: actions/checkout@v6
         with:
+          ref: ${{ needs.prepare.outputs.revision }}
           persist-credentials: false
       - uses: actions/setup-node@v6
         with:
@@ -198,6 +187,13 @@ jobs:
           CODEX_ADVANCED_MODEL: ${{ vars.CODEX_ADVANCED_MODEL }}
           CODEX_ADVANCED_REASONING_EFFORT: ${{ vars.CODEX_ADVANCED_REASONING_EFFORT }}
         run: python3 scripts/hosted.py invoke
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: venture-receipt-${{ github.run_attempt }}
+          path: ${{ runner.temp }}/venture/model/receipt.json
+          retention-days: 3
+          if-no-files-found: warn
       - uses: actions/upload-artifact@v4
         if: success() && needs.prepare.outputs.task != 'smoke-test'
         with:
@@ -240,6 +236,7 @@ jobs:
           echo "VENTURE_RUN_DAY=${{ needs.prepare.outputs.day }}" >> "$GITHUB_ENV"
       - uses: actions/checkout@v6
         with:
+          ref: ${{ needs.prepare.outputs.revision }}
           persist-credentials: false
       - uses: actions/setup-node@v6
         with:
@@ -259,7 +256,14 @@ jobs:
         with:
           name: venture-result-${{ github.run_attempt }}
           path: ${{ runner.temp }}/venture/result
-      - name: Validate editorial output
+      - uses: actions/download-artifact@v4
+        if: needs.prepare.outputs.edit == 'true'
+        continue-on-error: true
+        with:
+          name: venture-receipt-${{ github.run_attempt }}
+          path: ${{ runner.temp }}/venture/receipt
+      - id: accept
+        name: Validate editorial output
         if: needs.edit.result == 'success' && needs.prepare.outputs.task != 'smoke-test'
         run: python3 scripts/hosted.py accept
       - id: changes
@@ -288,11 +292,6 @@ jobs:
           git -c user.name='github-actions[bot]' -c user.email='41898282+github-actions[bot]@users.noreply.github.com' commit -m 'Publish Codex Venture bilingual coverage'
           ops/hosted-git git push origin HEAD:refs/heads/main
           echo "PUBLISH_SHA=$(git rev-parse HEAD)" >> "$GITHUB_ENV"
-      - name: Save editorial decisions
-        if: needs.edit.result == 'success' && needs.prepare.outputs.task != 'smoke-test'
-        env:
-          VENTURE_GIT_TOKEN: ${{ github.token }}
-        run: ops/hosted-git ops/hosted-state save
       - id: production
         name: Verify Cloudflare production
         if: steps.changes.outputs.content == 'true' || needs.prepare.outputs.task == 'health'
@@ -304,6 +303,22 @@ jobs:
           else
             python3 scripts/hosted.py health
           fi
+      - name: Settle usage and save operating result
+        if: always() && needs.prepare.outputs.edit == 'true'
+        env:
+          TASK: ${{ needs.prepare.outputs.task }}
+          EDIT_RESULT: ${{ needs.edit.result }}
+          CONTENT_CHANGED: ${{ steps.changes.outputs.content }}
+          PRODUCTION_RESULT: ${{ steps.production.outcome }}
+          PUSH_RESULT: ${{ steps.push.outcome }}
+          ACCEPT_RESULT: ${{ steps.accept.outcome }}
+          VENTURE_GIT_TOKEN: ${{ github.token }}
+        run: |
+          if [[ "$ACCEPT_RESULT" == failure || ( "$CONTENT_CHANGED" == true && "$PUSH_RESULT" != success ) ]]; then
+            ops/hosted-git ops/hosted-state restore
+          fi
+          python3 scripts/hosted.py finish
+          ops/hosted-git ops/hosted-state save
       - name: Record publish statistics
         if: always()
         continue-on-error: true

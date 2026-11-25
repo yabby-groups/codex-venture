@@ -161,6 +161,7 @@ def collect(days=7, extra=(), only_extra=False, refresh=False):
             print(f'{key}: backoff', flush=True)
             continue
         validators = status.get('validators', {}) if status.get('url') == url and not refresh and not source.get('check_without_validators') else {}
+        before_source = discovered
         attempted += 1
         try:
             body, headers = fetch(url, validators)
@@ -210,6 +211,7 @@ def collect(days=7, extra=(), only_extra=False, refresh=False):
                     discovered += 1
                 validators = {request_header: headers[response_header] for request_header, response_header in
                               [('If-None-Match', 'ETag'), ('If-Modified-Since', 'Last-Modified')] if response_header in headers}
+            status['candidates'] = status.get('candidates', 0) + discovered - before_source
             status.pop('first_failure', None)
             status.update(url=url, validators=validators, last_success=now.isoformat(), failures=0,
                           error=None, retry_after=None)

@@ -4,6 +4,7 @@ import StoryList from '../components/StoryList.astro';
 import SectionHeading from '../components/SectionHeading.astro';
 import Repository from '../components/Repository.astro';
 import { allStories, categories, dateKey, isWeekly, storyUrl, storySection, type Story } from '../lib/content';
+import { directoryTitle, resourceBase, resourceCatalog } from '../lib/resources';
 import { repositoryFor } from '../lib/repositories';
 const stories = await allStories();
 const news = stories.filter((story) => story.collection === 'news' && (!story.data.type || ['news', 'models'].includes(story.data.type)));
@@ -11,7 +12,15 @@ const ecosystem = stories.filter(({ data }) => data.type && !['news', 'models'].
 const briefing = stories.find((story) => story.collection === 'daily' && !isWeekly(story));
 const weekly = stories.find(isWeekly);
 const lead = news[0] ?? briefing ?? weekly;
-const latest = stories[0]?.data.published;
+const resources = resourceCatalog(stories);
+const recentResources = [...resources].sort((a, b) =>
+  (b.updatedAt ?? b.addedAt).localeCompare(a.updatedAt ?? a.addedAt) || a.id.localeCompare(b.id));
+const latestStory = stories[0]?.data.published;
+const latestResource = recentResources[0]?.updatedAt ?? recentResources[0]?.addedAt;
+const latest = [latestStory && dateKey(latestStory), latestResource].filter(Boolean).sort().at(-1);
+const resourceDesks = (['skills', 'mcp', 'tools', 'models'] as const).map((key) => ({
+  key, rows: recentResources.filter(({ type }) => type === key).slice(0, 3),
+})).filter(({ rows }) => rows.length);
 const desks = (['coding', 'agents', 'models'] as const).map((key) => ({
   key, label: categories[key], stories: news.filter(({ data }) => data.category === key).slice(0, 3),
 })).filter((desk) => desk.stories.length);
@@ -26,7 +35,7 @@ const editions = [briefing, weekly].filter((story): story is Story => Boolean(st
 <Base>
   <header class="edition">
     <h1>全球 AI 资讯与实践<span lang="en">Global AI News & Practice</span></h1>
-    {latest && <div>最近发布 <span lang="en">Latest update</span> <time datetime={latest.toISOString()}>{dateKey(latest)} · UTC+8</time></div>}
+    {latest && <div>最近发布 <span lang="en">Latest update</span> <time datetime={latest}>{latest} · UTC+8</time></div>}
   </header>
   {lead && <section class="lead-grid" aria-label="头条 / Top stories">
     <article class="lead">
@@ -71,6 +80,17 @@ const editions = [briefing, weekly].filter((story): story is Story => Boolean(st
       </section>}
     </aside>
   </div>
+  {resourceDesks.length > 0 && <section>
+    <SectionHeading zh="最新资源" en="Latest resources" href="/discover/" />
+    <div class="desk-grid">{resourceDesks.map(({ key, rows }) => <section>
+      <SectionHeading zh={directoryTitle(key)[0]} en={directoryTitle(key)[1]} href={resourceBase(key)} />
+      <ul>{rows.map((row) => <li>
+        <a href={row.detail}>{row.nameZh ?? row.name}</a>
+        {row.nameZh && row.nameZh !== row.name && <span lang="en"> {row.name}</span>}
+        {' · '}<time datetime={row.updatedAt ?? row.addedAt}>{row.updatedAt ?? row.addedAt}</time>
+      </li>)}</ul>
+    </section>)}</div>
+  </section>}
   {desks.length > 0 && <div class="desk-grid">{desks.map(({ key, label, stories }) => <section>
     <SectionHeading zh={label[0]} en={key === 'agents' ? 'Agents · Skills · MCP' : label[1]} href={`/category/${key}/`} />
     <StoryList {stories} nested compact />

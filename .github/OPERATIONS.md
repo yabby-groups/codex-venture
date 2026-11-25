@@ -63,3 +63,11 @@ Venture Analytics 使用独立调度同步平台并生成日周月报告。配�
 新闻和资源批次共用 `VENTURE_DAILY_TOKEN_LIMIT`、`VENTURE_DAILY_COST_LIMIT`
 及 `VENTURE_RUN_TOKENS`。GitHub 变量里的 `unlimited` 保留为每日 Token
 额度的可选值。
+
+### 持续运营
+
+每半小时尝试领取一个到期任务。到期时间、结果和历史回填窗口保存在
+`venture-state` 的 `.venture-runtime/operations.json`。定时事件延迟时，
+后续触发可继续领取积压工作。手动任务继续使用原入口，也可以选择 `cycle`。
+GitHub 并发组允许等待中的运行排队。当前状态文件和模型预算由单一运行更新。
+已收到完整用量回执的批次按实际用量结算。未得到回执的尝试保留预留。
