@@ -6,6 +6,7 @@ import http.client
 import json
 import re
 import time
+from urllib.error import HTTPError
 from pathlib import Path
 from urllib.parse import quote, urlencode
 
@@ -219,11 +220,37 @@ def find_existing(row, existing):
     return None
 
 
+def structured_evidence(row):
+    """Use publisher records already captured by discovery."""
+    if row.get('evidence', '').strip():
+        return row['evidence']
+    if row['identity'].startswith(('github:', 'openvsx:', 'mcp:', 'hf:')):
+        description = row['description']
+        if not description.startswith('Hugging Face model listing for '):
+            return description
+    return ''
+
+
+def editorial_input(candidates):
+    compact = {}
+    for key, row in candidates.items():
+        entry = dict(name=row['name'], type=row['type'], description=row['description'])
+        if row['evidence'] != row['description']:
+            entry['excerpt'] = row['evidence'][:1900]
+        for field in ('platforms', 'transport'):
+            if row.get(field):
+                entry[field] = row[field]
+        compact[key] = entry
+    return compact
+
+
 def prepare(task, kind, day, capacity=12):
     if kind not in ('all', *TYPES):
         raise ValueError('Unknown resource type')
     queue = load(STATE, {})
-    if task != 'resource-enrich':
+    pending_count = sum(not row.get('done') and kind in ('all', row['type'])
+                        for row in queue.get('rows', {}).values())
+    if task != 'resource-enrich' and (task != 'resource-sync' or pending_count < capacity * 2):
         discover(queue, kind, day, refresh=task == 'resource-refresh')
     if task == 'resource-discover':
         return {}
@@ -231,6 +258,7 @@ def prepare(task, kind, day, capacity=12):
     existing = resource_context()
     candidates = {}
     pending = {name: [] for name in TYPES}
+    counts = Counter()
     for key, row in sorted(queue.get('rows', {}).items(), key=lambda pair: (
             pair[1].get('attempt', 0), pair[1]['firstDiscoveredAt'], pair[0])):
         if not row.get('done') and kind in ('all', row['type']):
@@ -245,14 +273,19 @@ def prepare(task, kind, day, capacity=12):
             row['done'] = 'already-published'
             continue
         row['attempt'] = time.time()
+        needs_evidence = not row.get('evidence')
+        counts['evidence_attempted'] += needs_evidence
         try:
-            if 'evidence' not in row:
-                url = row.get('metadataUrl')
+            evidence = structured_evidence(row)
+            if evidence:
+                row['evidence'] = evidence
+            else:
+                url = row.get('metadataUrl') or row['site']
                 if row['type'] == 'models':
                     url = row['site'] + '/raw/main/README.md'
                 elif row.get('repository'):
                     url = row['metadataUrl'] + '/readme'
-                if url:
+                if row.get('metadataUrl'):
                     evidence = document(url, plain=row['type'] in ('models', 'plugins') or bool(row.get('repository')), accept='application/vnd.github.raw+json'
                                         if row.get('repository') else None)
                     if row['type'] == 'plugins':
@@ -266,31 +299,52 @@ def prepare(task, kind, day, capacity=12):
                     details = json.loads(document(row['site']))
                     row['evidence'] = json.dumps(details, ensure_ascii=False)[:1900]
             if row['evidence'].strip():
-                candidates[key] = {field: value for field, value in row.items() if field != 'attempt'}
+                counts['evidence_ready'] += needs_evidence
+                candidates[key] = {field: value for field, value in row.items()
+                                   if field not in ('attempt', 'missingChecks', 'editFailure')}
+        except HTTPError as error:
+            if error.code in (404, 410):
+                row['missingChecks'] = sorted(set(row.get('missingChecks', [])) | {day})[-2:]
+                if len(row['missingChecks']) == 2 and canonical(url) == canonical(row['site']):
+                    row['done'] = 'unavailable'
+                counts['missing_document'] += 1
+            print(f'{row["type"]}/{key[:10]}: HTTP {error.code}', flush=True)
         except (OSError, ValueError, KeyError, http.client.HTTPException) as error:
             print(f'{row["type"]}/{key[:10]}: {type(error).__name__}: {error}', flush=True)
     save(STATE, queue)
+    print('Resource preparation:', json.dumps(counts), flush=True)
     return candidates
 
 
 def publish(response, candidates, day):
-    if not conforms(response, SCHEMA):
+    if (type(response) is not dict or set(response) != {'resources', 'skipped'}
+            or type(response['resources']) is not list or type(response['skipped']) is not list):
         raise ValueError('Invalid resource edit response')
-    selected = [row['key'] for row in response['resources']] + response['skipped']
-    if len(set(selected)) != len(selected) or not set(selected) <= candidates.keys():
-        raise ValueError('Invalid resource candidate keys')
     queue = load(STATE, {})
     existing = resource_context()
     writes = {}
-    counts = {'added': 0, 'updated': 0}
-    accepted = set(response['skipped'])
+    counts = {'added': 0, 'updated': 0, 'invalid': 0}
+    keys = Counter(edit.get('key') for edit in response['resources']
+                   if isinstance(edit, dict) and isinstance(edit.get('key'), str))
+    keys.update(key for key in response['skipped'] if isinstance(key, str))
+    accepted = {key for key in response['skipped']
+                if isinstance(key, str) and key in candidates and keys[key] == 1}
     for edit in response['resources']:
-        key = edit['key']
+        key = edit.get('key') if isinstance(edit, dict) else None
+        valid_key = isinstance(key, str) and key in candidates
+        if (not valid_key or keys[key] != 1
+                or not conforms(edit, SCHEMA['properties']['resources']['items'])):
+            counts['invalid'] += 1
+            if valid_key:
+                queue['rows'][key]['editFailure'] = 'invalid response fields or duplicate key'
+            continue
         source = candidates[key]
         for field in ('zh', 'en', 'categoryZh', 'categoryEn'):
             value = edit[field].strip()
             pattern = r'[\u3400-\u9fff]' if field.lower().endswith('zh') else r'[A-Za-z]{2}'
             if not re.search(pattern, value) or len(value) > (650 if len(field) == 2 else 70) or re.search(r'[<>\x00-\x1f]', value):
+                counts['invalid'] += 1
+                queue['rows'][key]['editFailure'] = f'invalid {field}'
                 print(f'Resource {key[:12]} needs revised {field}; kept in queue', flush=True)
                 break
         else:
@@ -322,6 +376,7 @@ def publish(response, candidates, day):
     for path, row in writes.items():
         save(path, row)
     for key in accepted:
+        queue['rows'][key].pop('editFailure', None)
         queue['rows'][key]['done'] = 'published' if key not in response['skipped'] else 'declined'
     save(STATE, queue)
     return counts
@@ -339,5 +394,10 @@ def statistics(day):
         queued=len(pending),
         awaiting_evidence=sum(not row.get('evidence') for row in pending),
         awaiting_editor=sum(bool(row.get('evidence')) for row in pending),
+        unavailable=sum(row.get('done') == 'unavailable' for row in queue.values()),
+        edit_failures=sum(bool(row.get('editFailure')) for row in pending),
+        oldest_pending=min((row['firstDiscoveredAt'] for row in pending), default=None),
+        older_than_week=sum((date.fromisoformat(day) - date.fromisoformat(row['firstDiscoveredAt'])).days >= 7
+                            for row in pending),
         duplicate_matches=sum(row.get('done') == 'already-published' for row in queue.values()),
     )

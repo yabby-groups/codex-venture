@@ -76,9 +76,10 @@ def prepare(task):
     elif task == 'backfill':
         collect(days, refresh=True)
         discovery(days)
-    items, articles = load(ITEMS, {}), metadata()
-    sync(items, articles)
-    save(ITEMS, items)
+    items, articles = ({}, []) if resource_task else (load(ITEMS, {}), metadata())
+    if not resource_task:
+        sync(items, articles)
+        save(ITEMS, items)
     if task in ('collect', 'discover'):
         if task == 'discover':
             queued = sorted((key for key, item in items.items()
@@ -277,7 +278,10 @@ def run_model(batch, smoke, receipt):
                                      'CODEX_REASONING_EFFORT') or 'low'
         receipt['sessions'] = 1
         payload = {key: batch[key] for key in ('date', 'candidates', 'existingResources')}
-        prompt = json.dumps(dict(mode=batch['task'], **payload), ensure_ascii=False)
+        if batch['task'].startswith('resource-'):
+            payload = dict(candidates=resource_ingest.editorial_input(batch['candidates']))
+        prompt = json.dumps(dict(mode=batch['task'], **payload), ensure_ascii=False, separators=(',', ':'))
+        print(f'Editorial stdin: {len(prompt.encode())} bytes for {len(batch["candidates"])} candidates')
         schema_data = resource_ingest.SCHEMA if batch['task'].startswith('resource-') else output_schema(batch['candidates'])
         if smoke:
             schema_data = dict(type='object', properties={'marker': {'type': 'string'}},
@@ -369,18 +373,19 @@ def accept():
     results = load(result, [])
     if type(results) is not list or not 0 < len(results) <= len(batch['batches']):
         raise ValueError('Invalid batch results')
-    routes, counts = [], {'added': 0, 'updated': 0}
+    routes, counts = [], {'added': 0, 'updated': 0, 'invalid': 0}
     directories = set()
     for part, response in zip(batch['batches'], results):
         if batch['task'].startswith('resource-'):
             stats = resource_ingest.publish(response, part['candidates'], batch['date'])
             for key in counts:
                 counts[key] += stats[key]
-            directories.update(part['candidates'][edit['key']]['type'] for edit in response['resources'])
+            directories.update(row['type'] for row in part['candidates'].values())
         else:
             routes.extend(accept_articles({**batch, **part}, response))
     save(WORK / 'routes.json', routes)
     save(WORK / 'resources-published.json', counts)
+    print('Resource decisions:', json.dumps(counts), flush=True)
     save(WORK / 'resource-routes.json', [f'topics/{kind}/index.json' for kind in sorted(directories)])
 
 
@@ -410,6 +415,9 @@ def accept_articles(batch, response):
     now = datetime.fromisoformat(batch['now'])
     if now.date().isoformat() != batch['date']:
         raise ValueError('Batch date is invalid')
+    if batch['task'] in ('daily', 'weekly'):
+        for article in response['articles']:
+            article['slug'] = ('weekly-' if batch['task'] == 'weekly' else '') + batch['date']
     skipped = write_articles(response, batch['task'], batch['candidates'], now)
     articles = metadata()
     items = load(ITEMS, {})
