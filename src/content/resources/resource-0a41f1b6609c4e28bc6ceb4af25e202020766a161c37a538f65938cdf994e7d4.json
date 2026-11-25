@@ -1,0 +1,29 @@
+{
+  "addedAt": "2026-11-25",
+  "categories": [
+    [
+      "图像生成",
+      "Image generation"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-25",
+  "id": "resource-0a41f1b6609c4e28bc6ceb4af25e202020766a161c37a538f65938cdf994e7d4",
+  "identity": "hf:gazingstars123/anima-2.9b",
+  "name": "Gazingstars123/Anima-2.9B",
+  "site": "https://huggingface.co/Gazingstars123/Anima-2.9B",
+  "sourceSignature": "73e78108eaf710ef2c740b4e86c12b84047011cfed07aa6d6afef3641e43769c",
+  "summary": [
+    "模型页面将 Anima-2.9B 介绍为 Anima 的衍生模型，可根据文本提示生成图像。",
+    "The model listing identifies Anima-2.9B as an Anima derivative for generating images from text prompts."
+  ],
+  "tags": [
+    "text-to-image"
+  ],
+  "tested": false,
+  "type": "models",
+  "verificationSources": [
+    "https://huggingface.co/Gazingstars123/Anima-2.9B/raw/main/README.md",
+    "https://huggingface.co/api/models?cursor=eyIkb3IiOlt7ImRvd25sb2FkcyI6MTA3ODQzLCJfaWQiOnsiJGd0IjoiNjllYzg3NmRiMjE4ZWU3MDJkMDE5NzM4In19LHsiZG93bmxvYWRzIjp7IiRsdCI6MTA3ODQzfX0seyJkb3dubG9hZHMiOm51bGx9XSwic2VhcmNoU2VxdWVuY2VUb2tlbiI6IkNJejV3UUlhQ1NFQUFBQUFNRlQ2UUJvT1dneHA3SWR0c2hqdWNDMEJsemdpRGxvTWFleUhiYklZN25BdEFaYzQifQ%3D%3D&direction=-1&full=true&limit=30&pipeline_tag=text-to-image&sort=downloads"
+  ],
+  "verifiedAt": "2026-11-25"
+}

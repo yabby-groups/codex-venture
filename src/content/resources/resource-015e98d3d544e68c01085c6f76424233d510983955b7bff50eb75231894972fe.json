@@ -1,0 +1,29 @@
+{
+  "addedAt": "2026-11-25",
+  "categories": [
+    [
+      "文本生成视频",
+      "Text-to-video generation"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-25",
+  "id": "resource-015e98d3d544e68c01085c6f76424233d510983955b7bff50eb75231894972fe",
+  "identity": "hf:wan-ai/wan2.2-t2v-a14b",
+  "name": "Wan-AI/Wan2.2-T2V-A14B",
+  "site": "https://huggingface.co/Wan-AI/Wan2.2-T2V-A14B",
+  "sourceSignature": "7185edaf590e3c638fe91f997cd5d1ef885869229c69d310d7a28ca93c1e8ba1",
+  "summary": [
+    "Wan-AI 将 Wan2.2-T2V-A14B 列为可根据文本提示生成视频的模型。",
+    "Wan-AI lists Wan2.2-T2V-A14B as a model for generating video from text prompts."
+  ],
+  "tags": [
+    "text-to-video"
+  ],
+  "tested": false,
+  "type": "models",
+  "verificationSources": [
+    "https://huggingface.co/Wan-AI/Wan2.2-T2V-A14B/raw/main/README.md",
+    "https://huggingface.co/api/models?cursor=eyIkb3IiOlt7ImRvd25sb2FkcyI6ODk1OCwiX2lkIjp7IiRndCI6IjY4MDliNDEzOWZiZTAxNGEwMzRmODcwMiJ9fSx7ImRvd25sb2FkcyI6eyIkbHQiOjg5NTh9fSx7ImRvd25sb2FkcyI6bnVsbH1dLCJzZWFyY2hTZXF1ZW5jZVRva2VuIjoiQ0lqbHVBSWFDU0VBQUFBQUFIL0JRQm9PV2d4b0NiUVRuNzRCU2dOUGh3SWlEbG9NYUFtMEU1KytBVW9EVDRjQyJ9&direction=-1&full=true&limit=30&pipeline_tag=text-to-video&sort=downloads"
+  ],
+  "verifiedAt": "2026-11-25"
+}

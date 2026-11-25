@@ -1,0 +1,31 @@
+{
+  "addedAt": "2026-11-25",
+  "categories": [
+    [
+      "界面设计",
+      "Interface Design"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-25",
+  "id": "resource-63046e1b4aaa748e07d53f6eaf580751d0ec118a5b066c87ef58bb21de5a5792",
+  "identity": "github-skill:1103643573:skills/.curated/figma-generate-design/SKILL.md",
+  "name": "figma-generate-design",
+  "platforms": [
+    "Codex"
+  ],
+  "repository": "https://github.com/openai/skills",
+  "repositoryId": "1103643573",
+  "site": "https://github.com/openai/skills/blob/main/skills/.curated/figma-generate-design/SKILL.md",
+  "sourcePath": "skills/.curated/figma-generate-design/SKILL.md",
+  "sourceSignature": "b2655c3757f05522ef41f43f9ee2a1d9325f77ffbab33f99d95cd870eaec1355",
+  "summary": [
+    "OpenAI 的这项技能介绍如何根据代码或文字说明，复用已发布的设计系统组件、变量和样式，分区块创建或更新 Figma 界面。",
+    "OpenAI’s skill describes how to turn code or a written brief into a Figma screen, or update an existing one, by assembling sections from published design-system components, variables, and styles."
+  ],
+  "tested": false,
+  "type": "skills",
+  "verificationSources": [
+    "https://github.com/openai/skills/blob/main/skills/.curated/figma-generate-design/SKILL.md"
+  ],
+  "verifiedAt": "2026-11-25"
+}

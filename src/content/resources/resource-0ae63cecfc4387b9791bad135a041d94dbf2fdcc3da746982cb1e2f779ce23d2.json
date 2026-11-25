@@ -1,0 +1,29 @@
+{
+  "addedAt": "2026-11-25",
+  "categories": [
+    [
+      "文档解析与文字识别",
+      "Document parsing and OCR"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-25",
+  "id": "resource-0ae63cecfc4387b9791bad135a041d94dbf2fdcc3da746982cb1e2f779ce23d2",
+  "identity": "hf:nvidia/nvidia-nemotron-parse-2.0",
+  "name": "nvidia/NVIDIA-Nemotron-Parse-2.0",
+  "site": "https://huggingface.co/nvidia/NVIDIA-Nemotron-Parse-2.0",
+  "sourceSignature": "1177b3bf095a1dcb4c4c0177febff4a0ac8a85c0d2415405b3a803fa0f86fbf4",
+  "summary": [
+    "NVIDIA 提供了从文档图像中提取文字和解析文档的推理示例。模型卡介绍的评测涵盖文字保真度、格式、表格、图表和页面布局。",
+    "NVIDIA provides inference examples for extracting text and parsing document images. Its model card describes evaluations covering text fidelity, formatting, tables, charts, and page layout."
+  ],
+  "tags": [
+    "image-text-to-text"
+  ],
+  "tested": false,
+  "type": "models",
+  "verificationSources": [
+    "https://huggingface.co/api/models?cursor=eyIkb3IiOlt7ImRvd25sb2FkcyI6ODUyNTI5LCJfaWQiOnsiJGd0IjoiNjdhZGJhMWUzYmRkNzEzMjVlYjc0ZDI3In19LHsiZG93bmxvYWRzIjp7IiRsdCI6ODUyNTI5fX0seyJkb3dubG9hZHMiOm51bGx9XSwic2VhcmNoU2VxdWVuY2VUb2tlbiI6IkNOR0M2d0VhQ1NFQUFBQUFZZ1FxUVJvT1dneG5yYm9lTzkxeE1sNjNUU2NpRGxvTVo2MjZIanZkY1RKZXQwMG4ifQ%3D%3D&direction=-1&full=true&limit=30&pipeline_tag=image-text-to-text&sort=downloads",
+    "https://huggingface.co/nvidia/NVIDIA-Nemotron-Parse-2.0/raw/main/README.md"
+  ],
+  "verifiedAt": "2026-11-25"
+}

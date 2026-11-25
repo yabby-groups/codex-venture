@@ -1,0 +1,28 @@
+{
+  "addedAt": "2026-11-25",
+  "categories": [
+    [
+      "界面审查",
+      "UI Review"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-25",
+  "id": "resource-634cfe6ea1508224a19c0b31a0b7a8f07489ba2b60243e6e1201608dfb411432",
+  "identity": "github-skill:1112540808:skills/web-design-guidelines/SKILL.md",
+  "name": "web-design-guidelines",
+  "repository": "https://github.com/vercel-labs/agent-skills",
+  "repositoryId": "1112540808",
+  "site": "https://github.com/vercel-labs/agent-skills/blob/main/skills/web-design-guidelines/SKILL.md",
+  "sourcePath": "skills/web-design-guidelines/SKILL.md",
+  "sourceSignature": "9d34d97382461506f0819f402b74c13ec80228c4689adf809eed5a442bd7665b",
+  "summary": [
+    "Vercel 的这项技能指导你依据《Web 界面指南》审查指定的界面代码，包括检查无障碍性和易用性。",
+    "Vercel’s skill guides you through reviewing selected UI files against the Web Interface Guidelines, including accessibility and usability checks."
+  ],
+  "tested": false,
+  "type": "skills",
+  "verificationSources": [
+    "https://github.com/vercel-labs/agent-skills/blob/main/skills/web-design-guidelines/SKILL.md"
+  ],
+  "verifiedAt": "2026-11-25"
+}

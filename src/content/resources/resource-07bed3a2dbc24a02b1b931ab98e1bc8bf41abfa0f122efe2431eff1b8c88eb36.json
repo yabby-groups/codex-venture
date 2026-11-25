@@ -1,0 +1,29 @@
+{
+  "addedAt": "2026-11-25",
+  "categories": [
+    [
+      "代码生成",
+      "Code generation"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-25",
+  "id": "resource-07bed3a2dbc24a02b1b931ab98e1bc8bf41abfa0f122efe2431eff1b8c88eb36",
+  "identity": "hf:qwen/qwen2.5-coder-32b-instruct-awq",
+  "name": "Qwen/Qwen2.5-Coder-32B-Instruct-AWQ",
+  "site": "https://huggingface.co/Qwen/Qwen2.5-Coder-32B-Instruct-AWQ",
+  "sourceSignature": "ea06d9232c05af1b17fde2b6f55c1de000be691f7e8a331b46422b1d8b914c8b",
+  "summary": [
+    "Qwen 提供 Qwen2.5-Coder-32B-Instruct 的 AWQ 版本，用于根据自然语言指令生成代码。",
+    "Qwen lists this AWQ variant of Qwen2.5-Coder-32B-Instruct for generating code from written instructions."
+  ],
+  "tags": [
+    "text-generation"
+  ],
+  "tested": false,
+  "type": "models",
+  "verificationSources": [
+    "https://huggingface.co/Qwen/Qwen2.5-Coder-32B-Instruct-AWQ/raw/main/README.md",
+    "https://huggingface.co/api/models?cursor=eyIkb3IiOlt7ImRvd25sb2FkcyI6Nzk2MjExLCJfaWQiOnsiJGd0IjoiNjcyMzg4ZjZlMTEzM2NmZjc5NzY2MzE4In19LHsiZG93bmxvYWRzIjp7IiRsdCI6Nzk2MjExfX0seyJkb3dubG9hZHMiOm51bGx9XSwic2VhcmNoU2VxdWVuY2VUb2tlbiI6IkNMdnA0UUVhQ1NFQUFBQUFaa3dvUVJvT1dneG5JNGoyNFJNOC8zbDJZeGdpRGxvTVp5T0k5dUVUUFA5NWRtTVkifQ%3D%3D&direction=-1&full=true&limit=30&pipeline_tag=text-generation&sort=downloads"
+  ],
+  "verifiedAt": "2026-11-25"
+}

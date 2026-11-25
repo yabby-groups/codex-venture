@@ -1,0 +1,28 @@
+{
+  "addedAt": "2026-11-25",
+  "categories": [
+    [
+      "模型选型与比较",
+      "Model selection and comparison"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-25",
+  "id": "resource-4afa71acc0b53b343ef065eae8baa316e190c18cd231d3548b200e99713ea7f1",
+  "identity": "github-skill:1102903896:skills/huggingface-best/SKILL.md",
+  "name": "huggingface-best",
+  "repository": "https://github.com/huggingface/skills",
+  "repositoryId": "1102903896",
+  "site": "https://github.com/huggingface/skills/blob/main/skills/huggingface-best/SKILL.md",
+  "sourcePath": "skills/huggingface-best/SKILL.md",
+  "sourceSignature": "243380e36b2c960e23bf6cb5c6d8a82849ff71b08d4c031c19d30d2f0f0f9e68",
+  "summary": [
+    "Hugging Face 将此技能定位为模型选型参考，用于按任务筛选候选模型，并根据基准测试分数进行比较。",
+    "Hugging Face describes this skill as a way to shortlist models for a specific task and compare them by benchmark scores."
+  ],
+  "tested": false,
+  "type": "skills",
+  "verificationSources": [
+    "https://github.com/huggingface/skills/blob/main/skills/huggingface-best/SKILL.md"
+  ],
+  "verifiedAt": "2026-11-25"
+}

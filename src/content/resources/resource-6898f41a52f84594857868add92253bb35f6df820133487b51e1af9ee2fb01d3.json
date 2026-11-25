@@ -1,0 +1,31 @@
+{
+  "addedAt": "2026-11-25",
+  "categories": [
+    [
+      "代码维护责任风险分析",
+      "Code Ownership Risk Analysis"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-25",
+  "id": "resource-6898f41a52f84594857868add92253bb35f6df820133487b51e1af9ee2fb01d3",
+  "identity": "github-skill:1103643573:skills/.curated/security-ownership-map/SKILL.md",
+  "name": "security-ownership-map",
+  "platforms": [
+    "Codex"
+  ],
+  "repository": "https://github.com/openai/skills",
+  "repositoryId": "1103643573",
+  "site": "https://github.com/openai/skills/blob/main/skills/.curated/security-ownership-map/SKILL.md",
+  "sourcePath": "skills/.curated/security-ownership-map/SKILL.md",
+  "sourceSignature": "78ad00cc47ff0ba9d970079f52362c8d4441a0d0e92a8194a4b6038ae37f7cb2",
+  "summary": [
+    "OpenAI 的这项技能介绍如何利用 Git 历史梳理贡献者与敏感文件的关系，估算代码对少数维护者的依赖程度，并导出 CSV 或 JSON 数据供可视化使用。",
+    "OpenAI’s skill describes how to use Git history to map contributors to sensitive files, estimate bus factor, and export ownership data as CSV or JSON for visualization."
+  ],
+  "tested": false,
+  "type": "skills",
+  "verificationSources": [
+    "https://github.com/openai/skills/blob/main/skills/.curated/security-ownership-map/SKILL.md"
+  ],
+  "verifiedAt": "2026-11-25"
+}

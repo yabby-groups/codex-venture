@@ -1,0 +1,31 @@
+{
+  "addedAt": "2026-11-25",
+  "categories": [
+    [
+      "应用威胁建模",
+      "Application Threat Modeling"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-25",
+  "id": "resource-7c4a6c59e1e73a6d132f9b5cb3d7157d35e567ef259fecf9d781e2b200a59c63",
+  "identity": "github-skill:1103643573:skills/.curated/security-threat-model/SKILL.md",
+  "name": "security-threat-model",
+  "platforms": [
+    "Codex"
+  ],
+  "repository": "https://github.com/openai/skills",
+  "repositoryId": "1103643573",
+  "site": "https://github.com/openai/skills/blob/main/skills/.curated/security-threat-model/SKILL.md",
+  "sourcePath": "skills/.curated/security-threat-model/SKILL.md",
+  "sourceSignature": "a6a5721b1dd4c66a087fdf02916e45d91a1d90819e6cc3aee27756340bbb45c2",
+  "summary": [
+    "OpenAI 的这项技能指导你依据代码仓库中的证据识别资产、信任边界、潜在滥用场景和缓解措施，并将结果整理成简明的 Markdown 威胁模型。",
+    "OpenAI’s skill guides you through using repository evidence to identify assets, trust boundaries, potential abuse, and mitigations, then documenting them in a concise Markdown threat model."
+  ],
+  "tested": false,
+  "type": "skills",
+  "verificationSources": [
+    "https://github.com/openai/skills/blob/main/skills/.curated/security-threat-model/SKILL.md"
+  ],
+  "verifiedAt": "2026-11-25"
+}

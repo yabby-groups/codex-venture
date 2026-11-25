@@ -1,0 +1,31 @@
+{
+  "addedAt": "2026-11-25",
+  "categories": [
+    [
+      "目标设定",
+      "Goal setting"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-25",
+  "id": "resource-5ba90ff6f24c3517a052c4259af775b07d1de83ff1ddaa3648ff5dcc219ab2bb",
+  "identity": "github-skill:1103643573:skills/.curated/define-goal/SKILL.md",
+  "name": "define-goal",
+  "platforms": [
+    "Codex"
+  ],
+  "repository": "https://github.com/openai/skills",
+  "repositoryId": "1103643573",
+  "site": "https://github.com/openai/skills/blob/main/skills/.curated/define-goal/SKILL.md",
+  "sourcePath": "skills/.curated/define-goal/SKILL.md",
+  "sourceSignature": "1267dda442127d91cd392d5d37034b09f7ef02fb844d2dfa1ee3dfbb141ffa5a",
+  "summary": [
+    "OpenAI 的 Define Goal 技能帮助将笼统的意图转化为智能体可执行的目标，明确任务范围、可衡量的成功标准和完成所需的证据。",
+    "OpenAI's Define Goal skill helps turn a broad intent into an agent objective with a defined scope, measurable success criteria, and evidence of completion."
+  ],
+  "tested": false,
+  "type": "skills",
+  "verificationSources": [
+    "https://github.com/openai/skills/blob/main/skills/.curated/define-goal/SKILL.md"
+  ],
+  "verifiedAt": "2026-11-25"
+}

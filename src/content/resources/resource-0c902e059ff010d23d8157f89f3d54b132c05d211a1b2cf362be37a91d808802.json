@@ -1,0 +1,29 @@
+{
+  "addedAt": "2026-11-25",
+  "categories": [
+    [
+      "视频生成",
+      "Video generation"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-25",
+  "id": "resource-0c902e059ff010d23d8157f89f3d54b132c05d211a1b2cf362be37a91d808802",
+  "identity": "hf:city96/hunyuanvideo-gguf",
+  "name": "city96/HunyuanVideo-gguf",
+  "site": "https://huggingface.co/city96/HunyuanVideo-gguf",
+  "sourceSignature": "93f685d19d7a11a30a290f61909368aa7517596d36e5bd8d940fb532cd343412",
+  "summary": [
+    "City96 提供腾讯 HunyuanVideo 模型的 GGUF 格式量化权重，用于根据文本提示生成视频。",
+    "City96 lists GGUF-format quantized weights for Tencent's HunyuanVideo model, which generates video from text prompts."
+  ],
+  "tags": [
+    "text-to-video"
+  ],
+  "tested": false,
+  "type": "models",
+  "verificationSources": [
+    "https://huggingface.co/api/models?cursor=eyIkb3IiOlt7ImRvd25sb2FkcyI6MTY2NTAsIl9pZCI6eyIkZ3QiOiI2ODA5ZjkxZjE0OWIyYTBiYTA4ZDI5MDAifX0seyJkb3dubG9hZHMiOnsiJGx0IjoxNjY1MH19LHsiZG93bmxvYWRzIjpudWxsfV0sInNlYXJjaFNlcXVlbmNlVG9rZW4iOiJDTkNDbEFJYUNTRUFBQUFBZ0VMUVFCb09XZ3hvQ2ZrZkZKc3FDNkNOS1FBaURsb01hQW41SHhTYktndWdqU2tBIn0%3D&direction=-1&full=true&limit=30&pipeline_tag=text-to-video&sort=downloads",
+    "https://huggingface.co/city96/HunyuanVideo-gguf/raw/main/README.md"
+  ],
+  "verifiedAt": "2026-11-25"
+}

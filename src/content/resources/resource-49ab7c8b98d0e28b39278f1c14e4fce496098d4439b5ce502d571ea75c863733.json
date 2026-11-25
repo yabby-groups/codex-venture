@@ -1,0 +1,31 @@
+{
+  "addedAt": "2026-11-25",
+  "categories": [
+    [
+      "设计转代码",
+      "Design-to-code"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-25",
+  "id": "resource-49ab7c8b98d0e28b39278f1c14e4fce496098d4439b5ce502d571ea75c863733",
+  "identity": "github-skill:1103643573:skills/.curated/figma/SKILL.md",
+  "name": "figma",
+  "platforms": [
+    "Codex"
+  ],
+  "repository": "https://github.com/openai/skills",
+  "repositoryId": "1103643573",
+  "site": "https://github.com/openai/skills/blob/main/skills/.curated/figma/SKILL.md",
+  "sourcePath": "skills/.curated/figma/SKILL.md",
+  "sourceSignature": "735aaa448d14403633c49b443b22ea1c566ef0e4946f8264f086aa9999a98c4d",
+  "summary": [
+    "OpenAI 的 Figma 技能介绍如何通过 Figma MCP 获取节点详情、截图、变量和素材，并据此将设计转化为代码。",
+    "OpenAI's Figma skill documents how to retrieve node details, screenshots, variables, and assets through Figma MCP and use them to turn designs into code."
+  ],
+  "tested": false,
+  "type": "skills",
+  "verificationSources": [
+    "https://github.com/openai/skills/blob/main/skills/.curated/figma/SKILL.md"
+  ],
+  "verifiedAt": "2026-11-25"
+}

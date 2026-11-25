@@ -1,0 +1,29 @@
+{
+  "addedAt": "2026-11-25",
+  "categories": [
+    [
+      "语音合成",
+      "Speech synthesis"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-25",
+  "id": "resource-0cb5bc340eaf70faf7d658a7524f1e0a496d3441d274fe74144cf9ae599bb6f8",
+  "identity": "hf:misha24-10/f5-tts_russian",
+  "name": "Misha24-10/F5-TTS_RUSSIAN",
+  "site": "https://huggingface.co/Misha24-10/F5-TTS_RUSSIAN",
+  "sourceSignature": "106706e3fbb966ecd0e731478a431dcfcdad1a509cb714325d9b8c5e1da3c036",
+  "summary": [
+    "发布者提供了一个经过微调的 F5-TTS 模型，用于将俄语文本转换为语音。",
+    "The publisher lists a fine-tuned F5-TTS model for turning Russian text into spoken audio."
+  ],
+  "tags": [
+    "text-to-speech"
+  ],
+  "tested": false,
+  "type": "models",
+  "verificationSources": [
+    "https://huggingface.co/Misha24-10/F5-TTS_RUSSIAN/raw/main/README.md",
+    "https://huggingface.co/api/models?cursor=eyIkb3IiOlt7ImRvd25sb2FkcyI6MTkyNDIzLCJfaWQiOnsiJGd0IjoiNjdkZDg2NDA0N2JiNmM4YWIzNjg2MjUxIn19LHsiZG93bmxvYWRzIjp7IiRsdCI6MTkyNDIzfX0seyJkb3dubG9hZHMiOm51bGx9XSwic2VhcmNoU2VxdWVuY2VUb2tlbiI6IkNNQ0pxQUlhQ1NFQUFBQUFPSDBIUVJvT1dneG4zWVpBUjd0c2lyTm9ZbEVpRGxvTVo5MkdRRWU3YklxemFHSlIifQ%3D%3D&direction=-1&full=true&limit=30&pipeline_tag=text-to-speech&sort=downloads"
+  ],
+  "verifiedAt": "2026-11-25"
+}

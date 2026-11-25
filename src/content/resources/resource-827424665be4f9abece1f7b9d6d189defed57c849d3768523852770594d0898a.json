@@ -1,0 +1,31 @@
+{
+  "addedAt": "2026-11-25",
+  "categories": [
+    [
+      "云端部署",
+      "Cloud Deployment"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-25",
+  "id": "resource-827424665be4f9abece1f7b9d6d189defed57c849d3768523852770594d0898a",
+  "identity": "github-skill:1103643573:skills/.curated/cloudflare-deploy/SKILL.md",
+  "name": "cloudflare-deploy",
+  "platforms": [
+    "Codex"
+  ],
+  "repository": "https://github.com/openai/skills",
+  "repositoryId": "1103643573",
+  "site": "https://github.com/openai/skills/blob/main/skills/.curated/cloudflare-deploy/SKILL.md",
+  "sourcePath": "skills/.curated/cloudflare-deploy/SKILL.md",
+  "sourceSignature": "d0883e27209f800ac1de8d21129cae40a04aa863ee200dc9094f0aabd4ce7eef",
+  "summary": [
+    "OpenAI 的这项技能介绍如何在 Workers、Pages 等 Cloudflare 服务中选择适合项目的产品，并按相应流程部署应用或基础设施。",
+    "OpenAI’s skill describes how to choose between Cloudflare services such as Workers and Pages and follow the appropriate workflow to deploy an application or infrastructure."
+  ],
+  "tested": false,
+  "type": "skills",
+  "verificationSources": [
+    "https://github.com/openai/skills/blob/main/skills/.curated/cloudflare-deploy/SKILL.md"
+  ],
+  "verifiedAt": "2026-11-25"
+}

@@ -1,0 +1,28 @@
+{
+  "addedAt": "2026-11-25",
+  "categories": [
+    [
+      "模型与数据集管理",
+      "Model and dataset management"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-25",
+  "id": "resource-4dd159e74887fdc2c768bfbec4b507191178cc0b73fc0a77655c53a6bfe12329",
+  "identity": "github-skill:1102903896:skills/hf-cli/SKILL.md",
+  "name": "hf-cli",
+  "repository": "https://github.com/huggingface/skills",
+  "repositoryId": "1102903896",
+  "site": "https://github.com/huggingface/skills/blob/main/skills/hf-cli/SKILL.md",
+  "sourcePath": "skills/hf-cli/SKILL.md",
+  "sourceSignature": "ce8859f7b3d4ba9221f8b8e4e4b3163834fec46982c962d3a95f1534f912130f",
+  "summary": [
+    "Hugging Face 的 CLI 技能介绍如何使用 `hf` 上传和下载模型与数据集、在仓库和存储桶之间复制文件，以及管理身份验证和本地缓存。",
+    "Hugging Face's CLI skill documents how to use `hf` to upload and download models and datasets, copy files between repositories and storage buckets, and manage authentication and the local cache."
+  ],
+  "tested": false,
+  "type": "skills",
+  "verificationSources": [
+    "https://github.com/huggingface/skills/blob/main/skills/hf-cli/SKILL.md"
+  ],
+  "verifiedAt": "2026-11-25"
+}

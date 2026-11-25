@@ -1,0 +1,29 @@
+{
+  "addedAt": "2026-11-25",
+  "categories": [
+    [
+      "文本生成",
+      "Text generation"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-25",
+  "id": "resource-027cb3d55571dc2843bedb01f12a39e7e3ec34ea076778cbc0aa7e687ce64e9b",
+  "identity": "hf:nvidia/nvidia-nemotron-3-nano-30b-a3b-nvfp4",
+  "name": "nvidia/NVIDIA-Nemotron-3-Nano-30B-A3B-NVFP4",
+  "site": "https://huggingface.co/nvidia/NVIDIA-Nemotron-3-Nano-30B-A3B-NVFP4",
+  "sourceSignature": "5dc2993b1e619a00ffdc3e7a98348e6fb1c441c123ae6d72a6a6215c7d95c236",
+  "summary": [
+    "NVIDIA 将 Nemotron 3 Nano NVFP4 列为文本生成模型，并提供 TensorRT-LLM 和 SGLang 的推理服务示例。",
+    "NVIDIA lists Nemotron 3 Nano NVFP4 as a text generation model and provides serving examples for TensorRT-LLM and SGLang."
+  ],
+  "tags": [
+    "text-generation"
+  ],
+  "tested": false,
+  "type": "models",
+  "verificationSources": [
+    "https://huggingface.co/api/models?cursor=eyIkb3IiOlt7ImRvd25sb2FkcyI6Nzk2MjExLCJfaWQiOnsiJGd0IjoiNjcyMzg4ZjZlMTEzM2NmZjc5NzY2MzE4In19LHsiZG93bmxvYWRzIjp7IiRsdCI6Nzk2MjExfX0seyJkb3dubG9hZHMiOm51bGx9XSwic2VhcmNoU2VxdWVuY2VUb2tlbiI6IkNMdnA0UUVhQ1NFQUFBQUFaa3dvUVJvT1dneG5JNGoyNFJNOC8zbDJZeGdpRGxvTVp5T0k5dUVUUFA5NWRtTVkifQ%3D%3D&direction=-1&full=true&limit=30&pipeline_tag=text-generation&sort=downloads",
+    "https://huggingface.co/nvidia/NVIDIA-Nemotron-3-Nano-30B-A3B-NVFP4/raw/main/README.md"
+  ],
+  "verifiedAt": "2026-11-25"
+}

@@ -1,0 +1,31 @@
+{
+  "addedAt": "2026-11-25",
+  "categories": [
+    [
+      "大语言模型 API 集成",
+      "LLM API integration"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-25",
+  "id": "resource-4a6e075ceb13c5ff1f11439c7db40bd4407f0e329d079f396007f90a67e7290b",
+  "identity": "github-skill:1061953414:skills/claude-api/SKILL.md",
+  "name": "claude-api",
+  "platforms": [
+    "Claude"
+  ],
+  "repository": "https://github.com/anthropics/skills",
+  "repositoryId": "1061953414",
+  "site": "https://github.com/anthropics/skills/blob/main/skills/claude-api/SKILL.md",
+  "sourcePath": "skills/claude-api/SKILL.md",
+  "sourceSignature": "15af9e27efb5aea45064b6e930104d55785d8364a37c27c8636fdb8463945cd9",
+  "summary": [
+    "Anthropic 的 Claude API 技能提供 SDK 和 HTTP 接入指南，涵盖流式响应、工具调用、缓存、令牌计数和模型迁移。",
+    "Anthropic's Claude API skill provides SDK and HTTP integration guidance and covers streaming, tool use, caching, token counting, and model migration."
+  ],
+  "tested": false,
+  "type": "skills",
+  "verificationSources": [
+    "https://github.com/anthropics/skills/blob/main/skills/claude-api/SKILL.md"
+  ],
+  "verifiedAt": "2026-11-25"
+}

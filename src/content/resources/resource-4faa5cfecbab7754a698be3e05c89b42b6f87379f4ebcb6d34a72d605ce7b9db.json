@@ -1,0 +1,31 @@
+{
+  "addedAt": "2026-11-25",
+  "categories": [
+    [
+      "PDF 处理",
+      "PDF processing"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-25",
+  "id": "resource-4faa5cfecbab7754a698be3e05c89b42b6f87379f4ebcb6d34a72d605ce7b9db",
+  "identity": "github-skill:1103643573:skills/.curated/pdf/SKILL.md",
+  "name": "pdf",
+  "platforms": [
+    "Codex"
+  ],
+  "repository": "https://github.com/openai/skills",
+  "repositoryId": "1103643573",
+  "site": "https://github.com/openai/skills/blob/main/skills/.curated/pdf/SKILL.md",
+  "sourcePath": "skills/.curated/pdf/SKILL.md",
+  "sourceSignature": "84da2cf8ec39edd2548e30444b27b40e34b979dfff2e54b75bc3a836a521f4ec",
+  "summary": [
+    "OpenAI 的 PDF 技能介绍如何创建 PDF、提取内容，以及渲染页面以目视检查版式。",
+    "OpenAI's PDF skill describes how to create PDFs, extract content, and render pages to check the layout visually."
+  ],
+  "tested": false,
+  "type": "skills",
+  "verificationSources": [
+    "https://github.com/openai/skills/blob/main/skills/.curated/pdf/SKILL.md"
+  ],
+  "verifiedAt": "2026-11-25"
+}

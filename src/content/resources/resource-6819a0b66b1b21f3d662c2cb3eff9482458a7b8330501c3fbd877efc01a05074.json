@@ -1,0 +1,31 @@
+{
+  "addedAt": "2026-11-25",
+  "categories": [
+    [
+      "文本转语音",
+      "Text-to-Speech"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-25",
+  "id": "resource-6819a0b66b1b21f3d662c2cb3eff9482458a7b8330501c3fbd877efc01a05074",
+  "identity": "github-skill:1103643573:skills/.curated/speech/SKILL.md",
+  "name": "speech",
+  "platforms": [
+    "Codex"
+  ],
+  "repository": "https://github.com/openai/skills",
+  "repositoryId": "1103643573",
+  "site": "https://github.com/openai/skills/blob/main/skills/.curated/speech/SKILL.md",
+  "sourcePath": "skills/.curated/speech/SKILL.md",
+  "sourceSignature": "5258420bc861be4d7837dc3fa6b1c7b46cb68b19f5adf7424f8cf7656fb23d6b",
+  "summary": [
+    "OpenAI 的这项技能介绍如何通过附带的命令行工具调用 Audio API 的内置音色，单条或批量生成旁白、无障碍朗读和电话语音提示。",
+    "OpenAI’s skill describes how to use its bundled CLI and built-in Audio API voices to generate individual or batch speech clips for narration, accessibility readouts, and phone prompts."
+  ],
+  "tested": false,
+  "type": "skills",
+  "verificationSources": [
+    "https://github.com/openai/skills/blob/main/skills/.curated/speech/SKILL.md"
+  ],
+  "verifiedAt": "2026-11-25"
+}

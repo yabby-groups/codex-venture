@@ -1,0 +1,31 @@
+{
+  "addedAt": "2026-11-25",
+  "categories": [
+    [
+      "生产环境错误监控",
+      "Production error monitoring"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-25",
+  "id": "resource-5fdaa5b1e3283d970cdf7ff1477fdc35791b9e3249598751707f7079ed3fb70d",
+  "identity": "github-skill:1103643573:skills/.curated/sentry/SKILL.md",
+  "name": "sentry",
+  "platforms": [
+    "Codex"
+  ],
+  "repository": "https://github.com/openai/skills",
+  "repositoryId": "1103643573",
+  "site": "https://github.com/openai/skills/blob/main/skills/.curated/sentry/SKILL.md",
+  "sourcePath": "skills/.curated/sentry/SKILL.md",
+  "sourceSignature": "a5fd8323afc93192aaf8000943fbc3919e9932d46f5acce74efd773d37286403",
+  "summary": [
+    "OpenAI 的 Sentry 技能介绍如何通过命令行执行只读查询，查看问题和事件、汇总近期生产环境错误，并获取基本的运行状态数据。",
+    "OpenAI's Sentry skill describes how to use read-only CLI queries to inspect issues and events, summarize recent production errors, and retrieve basic health data."
+  ],
+  "tested": false,
+  "type": "skills",
+  "verificationSources": [
+    "https://github.com/openai/skills/blob/main/skills/.curated/sentry/SKILL.md"
+  ],
+  "verifiedAt": "2026-11-25"
+}

@@ -1,0 +1,31 @@
+{
+  "addedAt": "2026-11-25",
+  "categories": [
+    [
+      "电子表格处理",
+      "Spreadsheet processing"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-25",
+  "id": "resource-60d9a9896bf3e15619d3e9194698ddc00759b5f1d794df95067708f3a59f19bc",
+  "identity": "github-skill:1061953414:skills/xlsx/SKILL.md",
+  "name": "xlsx",
+  "platforms": [
+    "Claude"
+  ],
+  "repository": "https://github.com/anthropics/skills",
+  "repositoryId": "1061953414",
+  "site": "https://github.com/anthropics/skills/blob/main/skills/xlsx/SKILL.md",
+  "sourcePath": "skills/xlsx/SKILL.md",
+  "sourceSignature": "75fd4f4185f75563502330cf48a4af018354bff9455da6c0850fbd2b6986127f",
+  "summary": [
+    "Anthropic 的 xlsx 技能介绍如何创建和编辑电子表格、清理和转换表格文件，以及检查公式错误。",
+    "Anthropic's xlsx skill describes how to create and edit spreadsheets, clean and convert tabular files, and check formulas for errors."
+  ],
+  "tested": false,
+  "type": "skills",
+  "verificationSources": [
+    "https://github.com/anthropics/skills/blob/main/skills/xlsx/SKILL.md"
+  ],
+  "verifiedAt": "2026-11-25"
+}

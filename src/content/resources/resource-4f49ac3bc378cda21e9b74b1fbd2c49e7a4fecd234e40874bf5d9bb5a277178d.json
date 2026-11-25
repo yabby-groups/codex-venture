@@ -1,0 +1,31 @@
+{
+  "addedAt": "2026-11-25",
+  "categories": [
+    [
+      "Windows 桌面应用开发",
+      "Windows desktop app development"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-25",
+  "id": "resource-4f49ac3bc378cda21e9b74b1fbd2c49e7a4fecd234e40874bf5d9bb5a277178d",
+  "identity": "github-skill:1103643573:skills/.curated/winui-app/SKILL.md",
+  "name": "winui-app",
+  "platforms": [
+    "Codex"
+  ],
+  "repository": "https://github.com/openai/skills",
+  "repositoryId": "1103643573",
+  "site": "https://github.com/openai/skills/blob/main/skills/.curated/winui-app/SKILL.md",
+  "sourcePath": "skills/.curated/winui-app/SKILL.md",
+  "sourceSignature": "7e5d524f385994f03bac6c68756942612a4ea5b0946ec187fc698108f3266e1d",
+  "summary": [
+    "OpenAI 的 WinUI App 技能介绍如何使用 WinUI 3 和 Windows App SDK 搭建 C# 桌面应用，并提供 XAML、导航、窗口管理和无障碍设计方面的指导。",
+    "OpenAI's WinUI App skill outlines setup and scaffolding for C# desktop apps using WinUI 3 and the Windows App SDK, with guidance on XAML, navigation, windowing, and accessibility."
+  ],
+  "tested": false,
+  "type": "skills",
+  "verificationSources": [
+    "https://github.com/openai/skills/blob/main/skills/.curated/winui-app/SKILL.md"
+  ],
+  "verifiedAt": "2026-11-25"
+}

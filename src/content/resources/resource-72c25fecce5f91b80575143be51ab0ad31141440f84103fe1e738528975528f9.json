@@ -1,0 +1,31 @@
+{
+  "addedAt": "2026-11-25",
+  "categories": [
+    [
+      "命令行工具开发",
+      "Command-Line Tool Development"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-25",
+  "id": "resource-72c25fecce5f91b80575143be51ab0ad31141440f84103fe1e738528975528f9",
+  "identity": "github-skill:1103643573:skills/.curated/cli-creator/SKILL.md",
+  "name": "cli-creator",
+  "platforms": [
+    "Codex"
+  ],
+  "repository": "https://github.com/openai/skills",
+  "repositoryId": "1103643573",
+  "site": "https://github.com/openai/skills/blob/main/skills/.curated/cli-creator/SKILL.md",
+  "sourcePath": "skills/.curated/cli-creator/SKILL.md",
+  "sourceSignature": "e59252b22ed80312e053e7d1da19597f41ee2a6eb90899375f4cf65f051f1fc7",
+  "summary": [
+    "OpenAI 的这项技能指导你基于 API 文档、SDK 或现有脚本开发可复用的命令行工具，提供可组合的读写命令、稳定的 JSON 输出和身份验证配置。",
+    "OpenAI’s skill guides you through turning API documentation, an SDK, or an existing script into a reusable CLI with composable read and write commands, stable JSON output, and authentication configuration."
+  ],
+  "tested": false,
+  "type": "skills",
+  "verificationSources": [
+    "https://github.com/openai/skills/blob/main/skills/.curated/cli-creator/SKILL.md"
+  ],
+  "verifiedAt": "2026-11-25"
+}

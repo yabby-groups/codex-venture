@@ -1,0 +1,31 @@
+{
+  "addedAt": "2026-11-25",
+  "categories": [
+    [
+      "调研与文档撰写",
+      "Research and documentation"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-25",
+  "id": "resource-4a78295734131d9875de4b443caf7a10c435447b754c09988852aab07ee86eff",
+  "identity": "github-skill:1103643573:skills/.curated/notion-research-documentation/SKILL.md",
+  "name": "notion-research-documentation",
+  "platforms": [
+    "Codex"
+  ],
+  "repository": "https://github.com/openai/skills",
+  "repositoryId": "1103643573",
+  "site": "https://github.com/openai/skills/blob/main/skills/.curated/notion-research-documentation/SKILL.md",
+  "sourcePath": "skills/.curated/notion-research-documentation/SKILL.md",
+  "sourceSignature": "fbed1621bf3c4bfc8f412d3727d7992469b6929649c076a9c6e2ab10860b2883",
+  "summary": [
+    "OpenAI 的 Notion 调研技能介绍如何查找相关页面，并将多处资料整理成注明来源的简报、对比文档或报告。",
+    "OpenAI's Notion research skill shows how to find relevant pages and synthesize them into briefs, comparisons, or reports with source citations."
+  ],
+  "tested": false,
+  "type": "skills",
+  "verificationSources": [
+    "https://github.com/openai/skills/blob/main/skills/.curated/notion-research-documentation/SKILL.md"
+  ],
+  "verifiedAt": "2026-11-25"
+}

@@ -1,0 +1,31 @@
+{
+  "addedAt": "2026-11-25",
+  "categories": [
+    [
+      "持续集成故障排查",
+      "CI troubleshooting"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-25",
+  "id": "resource-629ff1d81bfb5436700da0df5776af55afb507450c903dba403b256bd9f92c98",
+  "identity": "github-skill:1103643573:skills/.curated/gh-fix-ci/SKILL.md",
+  "name": "gh-fix-ci",
+  "platforms": [
+    "Codex"
+  ],
+  "repository": "https://github.com/openai/skills",
+  "repositoryId": "1103643573",
+  "site": "https://github.com/openai/skills/blob/main/skills/.curated/gh-fix-ci/SKILL.md",
+  "sourcePath": "skills/.curated/gh-fix-ci/SKILL.md",
+  "sourceSignature": "7069b6586e21cc0be945246419ed8211897aa8da5ee1fa8ec549f96bcea23a2e",
+  "summary": [
+    "OpenAI 的 gh-fix-ci 技能介绍如何使用 GitHub CLI 排查拉取请求中失败的检查、汇总相关的 GitHub Actions 日志，并提出修复方案供审核。",
+    "OpenAI's gh-fix-ci skill shows how to inspect failed pull request checks with the GitHub CLI, summarize relevant GitHub Actions logs, and propose fixes for review."
+  ],
+  "tested": false,
+  "type": "skills",
+  "verificationSources": [
+    "https://github.com/openai/skills/blob/main/skills/.curated/gh-fix-ci/SKILL.md"
+  ],
+  "verifiedAt": "2026-11-25"
+}

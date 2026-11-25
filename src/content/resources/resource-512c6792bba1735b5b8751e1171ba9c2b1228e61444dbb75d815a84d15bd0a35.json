@@ -1,0 +1,28 @@
+{
+  "addedAt": "2026-11-25",
+  "categories": [
+    [
+      "模型推理",
+      "Model inference"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-25",
+  "id": "resource-512c6792bba1735b5b8751e1171ba9c2b1228e61444dbb75d815a84d15bd0a35",
+  "identity": "github-skill:1102903896:skills/transformers-js/SKILL.md",
+  "name": "transformers-js",
+  "repository": "https://github.com/huggingface/skills",
+  "repositoryId": "1102903896",
+  "site": "https://github.com/huggingface/skills/blob/main/skills/transformers-js/SKILL.md",
+  "sourcePath": "skills/transformers-js/SKILL.md",
+  "sourceSignature": "39bf2539a328b9697530f85def036fce535fe74a5cb8302a5803cafd8c3639d0",
+  "summary": [
+    "Hugging Face 的 Transformers.js 技能介绍如何从 Hub 选择预训练模型，并用 JavaScript 或 TypeScript 执行翻译、图像分类和语音识别等推理任务。",
+    "Hugging Face's Transformers.js skill shows how to select pretrained models from the Hub and run inference in JavaScript or TypeScript for tasks such as translation, image classification, and speech recognition."
+  ],
+  "tested": false,
+  "type": "skills",
+  "verificationSources": [
+    "https://github.com/huggingface/skills/blob/main/skills/transformers-js/SKILL.md"
+  ],
+  "verifiedAt": "2026-11-25"
+}

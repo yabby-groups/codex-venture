@@ -1,0 +1,25 @@
+{
+  "addedAt": "2026-11-25",
+  "categories": [
+    [
+      "AI 语音与音频",
+      "AI voice and audio"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-25",
+  "id": "resource-6415ace72afd82083c9bf6dea96128f6295f3fb822f22d562209a42bbc4d8e12",
+  "identity": "url:https://elevenlabs.io/docs/overview/intro",
+  "name": "ElevenLabs",
+  "site": "https://elevenlabs.io/docs/overview/intro",
+  "sourceSignature": "95cf877ffe305159e093ffd2a545d915efe10388cd0e56a01180686a39e70b8e",
+  "summary": [
+    "ElevenLabs 的文档介绍如何制作旁白和配音、构建语音智能体，以及通过其 API 集成语音合成或转写功能。",
+    "ElevenLabs' documentation explains how to create voiceovers and dubs, build voice agents, and integrate speech synthesis or transcription through its API."
+  ],
+  "tested": false,
+  "type": "tools",
+  "verificationSources": [
+    "https://elevenlabs.io/docs/overview/intro"
+  ],
+  "verifiedAt": "2026-11-25"
+}

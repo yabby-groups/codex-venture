@@ -1,0 +1,29 @@
+{
+  "addedAt": "2026-11-25",
+  "categories": [
+    [
+      "图像三维重建",
+      "3D reconstruction from images"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-25",
+  "id": "resource-0240d4a415cd86c595bae29670351c599fd0945404ba0910d4a72bae40b84017",
+  "identity": "hf:zxhezexin/openlrm-large-obj-1.0",
+  "name": "zxhezexin/openlrm-large-obj-1.0",
+  "site": "https://huggingface.co/zxhezexin/openlrm-large-obj-1.0",
+  "sourceSignature": "631955d8f05578f03d275816e3186f2bd8192cf4564eb967ae9f55c6e4167a6f",
+  "summary": [
+    "OpenLRM 模型卡提供用于从图像重建三维物体的模型权重，并附有项目实现和研究论文的链接。",
+    "The OpenLRM model card lists weights for reconstructing 3D objects from images and links to the implementation and research paper."
+  ],
+  "tags": [
+    "image-to-3d"
+  ],
+  "tested": false,
+  "type": "models",
+  "verificationSources": [
+    "https://huggingface.co/api/models?cursor=eyIkb3IiOlt7ImRvd25sb2FkcyI6NTk2LCJfaWQiOnsiJGd0IjoiNmFmNmUyYTMzZWY4MjFkODc4YmY4MTA2In19LHsiZG93bmxvYWRzIjp7IiRsdCI6NTk2fX0seyJkb3dubG9hZHMiOm51bGx9XSwic2VhcmNoU2VxdWVuY2VUb2tlbiI6IkNMYnNyZ0lhQ1NFQUFBQUFBS0NDUUJvT1dneHE5dUtqUHZnaDJIaS9nUVlpRGxvTWF2Ymlvejc0SWRoNHY0RUcifQ%3D%3D&direction=-1&full=true&limit=30&pipeline_tag=image-to-3d&sort=downloads",
+    "https://huggingface.co/zxhezexin/openlrm-large-obj-1.0/raw/main/README.md"
+  ],
+  "verifiedAt": "2026-11-25"
+}

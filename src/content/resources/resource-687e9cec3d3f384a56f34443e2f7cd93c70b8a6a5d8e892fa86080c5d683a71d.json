@@ -1,0 +1,31 @@
+{
+  "addedAt": "2026-11-25",
+  "categories": [
+    [
+      "Web 应用测试",
+      "Web Application Testing"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-25",
+  "id": "resource-687e9cec3d3f384a56f34443e2f7cd93c70b8a6a5d8e892fa86080c5d683a71d",
+  "identity": "github-skill:1061953414:skills/webapp-testing/SKILL.md",
+  "name": "webapp-testing",
+  "platforms": [
+    "Claude"
+  ],
+  "repository": "https://github.com/anthropics/skills",
+  "repositoryId": "1061953414",
+  "site": "https://github.com/anthropics/skills/blob/main/skills/webapp-testing/SKILL.md",
+  "sourcePath": "skills/webapp-testing/SKILL.md",
+  "sourceSignature": "a9a406cacf5fe3ca5644d351dbb6f9bd650fe170d08d33d958df7cc40225d2d5",
+  "summary": [
+    "Anthropic 的这项技能介绍如何用 Python 和 Playwright 测试本地 Web 应用、调试前端行为、截取页面截图并查看浏览器日志。",
+    "Anthropic’s skill describes how to test local web apps with Python Playwright, debug frontend behavior, capture screenshots, and inspect browser logs."
+  ],
+  "tested": false,
+  "type": "skills",
+  "verificationSources": [
+    "https://github.com/anthropics/skills/blob/main/skills/webapp-testing/SKILL.md"
+  ],
+  "verifiedAt": "2026-11-25"
+}

@@ -1,0 +1,28 @@
+{
+  "addedAt": "2026-11-25",
+  "categories": [
+    [
+      "React 组件设计",
+      "React Component Design"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-25",
+  "id": "resource-6fbb0a389ce9519c510ecb7bef6ed9d7dabbe150944d1dd414f2c08c548664da",
+  "identity": "github-skill:1112540808:skills/composition-patterns/SKILL.md",
+  "name": "vercel-composition-patterns",
+  "repository": "https://github.com/vercel-labs/agent-skills",
+  "repositoryId": "1112540808",
+  "site": "https://github.com/vercel-labs/agent-skills/blob/main/skills/composition-patterns/SKILL.md",
+  "sourcePath": "skills/composition-patterns/SKILL.md",
+  "sourceSignature": "09266859389ad07392fe6976dd495f53f1a011948dec2f62cca97701e0f4cb53",
+  "summary": [
+    "Vercel 的这项技能介绍如何重构布尔属性过多的 React 组件，以及如何通过复合组件、渲染属性和上下文提供器设计可复用的组件接口。",
+    "Vercel’s skill presents React composition patterns for refactoring components with too many boolean props and designing reusable component APIs with compound components, render props, and context providers."
+  ],
+  "tested": false,
+  "type": "skills",
+  "verificationSources": [
+    "https://github.com/vercel-labs/agent-skills/blob/main/skills/composition-patterns/SKILL.md"
+  ],
+  "verifiedAt": "2026-11-25"
+}

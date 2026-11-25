@@ -1,0 +1,28 @@
+{
+  "addedAt": "2026-11-25",
+  "categories": [
+    [
+      "云端部署",
+      "Cloud Deployment"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-25",
+  "id": "resource-684ddec07238357c0e9c4d1f5e2ddf1b9055efec5f9f28407e20b3b0c8baa0ee",
+  "identity": "github-skill:1112540808:skills/vercel-cli-with-tokens/SKILL.md",
+  "name": "vercel-cli-with-tokens",
+  "repository": "https://github.com/vercel-labs/agent-skills",
+  "repositoryId": "1112540808",
+  "site": "https://github.com/vercel-labs/agent-skills/blob/main/skills/vercel-cli-with-tokens/SKILL.md",
+  "sourcePath": "skills/vercel-cli-with-tokens/SKILL.md",
+  "sourceSignature": "b1ab5b57e23161c7682fac86f0e97716680033dd1ac21d308843d69930ada744",
+  "summary": [
+    "Vercel 的这项技能介绍如何使用访问令牌在命令行部署和管理项目，包括查看构建与运行日志，以及添加域名。",
+    "Vercel’s skill documents token-based CLI workflows for deploying and managing projects, including inspecting build and runtime logs and adding domains."
+  ],
+  "tested": false,
+  "type": "skills",
+  "verificationSources": [
+    "https://github.com/vercel-labs/agent-skills/blob/main/skills/vercel-cli-with-tokens/SKILL.md"
+  ],
+  "verifiedAt": "2026-11-25"
+}

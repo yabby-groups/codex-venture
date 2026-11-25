@@ -1,0 +1,28 @@
+{
+  "addedAt": "2026-11-25",
+  "categories": [
+    [
+      "研究论文检索",
+      "Research Paper Discovery"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-25",
+  "id": "resource-803d30203271f53e707de57a0e1e3ac9c0e428ca84891ee15919514350cbde7f",
+  "identity": "github-skill:1102903896:skills/huggingface-papers/SKILL.md",
+  "name": "huggingface-papers",
+  "repository": "https://github.com/huggingface/skills",
+  "repositoryId": "1102903896",
+  "site": "https://github.com/huggingface/skills/blob/main/skills/huggingface-papers/SKILL.md",
+  "sourcePath": "skills/huggingface-papers/SKILL.md",
+  "sourceSignature": "3ee375ae24a9073949740d0e162449d12dc7bd87d281c7a0dec6f9b03d7cb042",
+  "summary": [
+    "Hugging Face 的这项技能介绍如何以 Markdown 格式阅读 Hugging Face 论文页面，并通过论文 API 获取作者信息以及关联模型、数据集和项目页面的链接。",
+    "Hugging Face’s skill describes how to read Hugging Face paper pages in Markdown and use the papers API to retrieve author metadata and links to associated models, datasets, and project pages."
+  ],
+  "tested": false,
+  "type": "skills",
+  "verificationSources": [
+    "https://github.com/huggingface/skills/blob/main/skills/huggingface-papers/SKILL.md"
+  ],
+  "verifiedAt": "2026-11-25"
+}

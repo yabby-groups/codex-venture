@@ -1,0 +1,29 @@
+{
+  "addedAt": "2026-11-25",
+  "categories": [
+    [
+      "图文理解",
+      "Image and text understanding"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-25",
+  "id": "resource-037cfc12211780aba10c6c79370b2d3aa47fd62948c63a0f2a3c21ebbe16211f",
+  "identity": "hf:ggml-org/inkling-2-mini-gguf",
+  "name": "ggml-org/Inkling-2-Mini-GGUF",
+  "site": "https://huggingface.co/ggml-org/Inkling-2-Mini-GGUF",
+  "sourceSignature": "c7b20f259d5781111828216fd6b664ed6125dc598fdf6a5436e4f2b161b68903",
+  "summary": [
+    "ggml-org 提供 Inkling 2 Mini 的 GGUF 量化权重。该模型接收图像和文本，并输出文本。",
+    "ggml-org lists quantized GGUF weights for Inkling 2 Mini, a model that takes images and text as input and returns text."
+  ],
+  "tags": [
+    "image-text-to-text"
+  ],
+  "tested": false,
+  "type": "models",
+  "verificationSources": [
+    "https://huggingface.co/api/models?cursor=eyIkb3IiOlt7ImRvd25sb2FkcyI6ODUyNTI5LCJfaWQiOnsiJGd0IjoiNjdhZGJhMWUzYmRkNzEzMjVlYjc0ZDI3In19LHsiZG93bmxvYWRzIjp7IiRsdCI6ODUyNTI5fX0seyJkb3dubG9hZHMiOm51bGx9XSwic2VhcmNoU2VxdWVuY2VUb2tlbiI6IkNOR0M2d0VhQ1NFQUFBQUFZZ1FxUVJvT1dneG5yYm9lTzkxeE1sNjNUU2NpRGxvTVo2MjZIanZkY1RKZXQwMG4ifQ%3D%3D&direction=-1&full=true&limit=30&pipeline_tag=image-text-to-text&sort=downloads",
+    "https://huggingface.co/ggml-org/Inkling-2-Mini-GGUF/raw/main/README.md"
+  ],
+  "verifiedAt": "2026-11-25"
+}

@@ -1,0 +1,28 @@
+{
+  "addedAt": "2026-11-25",
+  "categories": [
+    [
+      "模型部署",
+      "Model deployment"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-25",
+  "id": "resource-5c7e0d5d049ff9a5d6d52d98355d1f2306c27fe63f7d834cf1cd2638b5af4049",
+  "identity": "github-skill:1102903896:skills/hf-cloud-sagemaker-production-defaults/SKILL.md",
+  "name": "hf-cloud-sagemaker-production-defaults",
+  "repository": "https://github.com/huggingface/skills",
+  "repositoryId": "1102903896",
+  "site": "https://github.com/huggingface/skills/blob/main/skills/hf-cloud-sagemaker-production-defaults/SKILL.md",
+  "sourcePath": "skills/hf-cloud-sagemaker-production-defaults/SKILL.md",
+  "sourceSignature": "04454de0864511800e7350b20b556882b57afed571f6e9b9a27be0acc1a118a1",
+  "summary": [
+    "Hugging Face 的 SageMaker 技能介绍用于部署实时和异步推理端点的脚本，涵盖缩容至零实例的选项，以及自动伸缩、CloudWatch 告警和资源标签的默认配置。",
+    "Hugging Face's SageMaker skill describes deployment scripts for real-time and asynchronous inference endpoints, including scale-to-zero options and defaults for autoscaling, CloudWatch alarms, and tagging."
+  ],
+  "tested": false,
+  "type": "skills",
+  "verificationSources": [
+    "https://github.com/huggingface/skills/blob/main/skills/hf-cloud-sagemaker-production-defaults/SKILL.md"
+  ],
+  "verifiedAt": "2026-11-25"
+}

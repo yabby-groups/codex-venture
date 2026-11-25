@@ -1,0 +1,31 @@
+{
+  "addedAt": "2026-11-25",
+  "categories": [
+    [
+      "设计文件管理",
+      "Design File Management"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-25",
+  "id": "resource-633ec5c9c44f9e2362523a37a8465566134a9ec29d5ba027e00ef0cd758107e1",
+  "identity": "github-skill:1103643573:skills/.curated/figma-create-new-file/SKILL.md",
+  "name": "figma-create-new-file",
+  "platforms": [
+    "Codex"
+  ],
+  "repository": "https://github.com/openai/skills",
+  "repositoryId": "1103643573",
+  "site": "https://github.com/openai/skills/blob/main/skills/.curated/figma-create-new-file/SKILL.md",
+  "sourcePath": "skills/.curated/figma-create-new-file/SKILL.md",
+  "sourceSignature": "3a12589898b9afe94961a47ba4f47f7f69ad9f2773017ebcf865395152409205",
+  "summary": [
+    "OpenAI 的这项技能介绍如何在草稿中创建空白的 Figma Design 或 FigJam 文件，并获取文件标识和直达链接。",
+    "OpenAI’s skill describes how to create a blank Figma Design or FigJam file in your drafts and retrieve its file key and direct link."
+  ],
+  "tested": false,
+  "type": "skills",
+  "verificationSources": [
+    "https://github.com/openai/skills/blob/main/skills/.curated/figma-create-new-file/SKILL.md"
+  ],
+  "verifiedAt": "2026-11-25"
+}
