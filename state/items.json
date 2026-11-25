@@ -419,6 +419,20 @@
     "title": "SoSolaris/xvla-b1124-1706-xv6_rel",
     "url": "https://huggingface.co/SoSolaris/xvla-b1124-1706-xv6_rel"
   },
+  "07fffdf07c77b17b4c63712a7a0738120e30970439cca6234d8b4b909c855881": {
+    "category": "coding",
+    "content_type": "stories",
+    "discovered": "2026-11-25T01:21:21.428756+00:00",
+    "discovery": {},
+    "fingerprint": "d303cafa6237e0013b6c3eb577b6bb0c6d566b7cc99556359bc9a5a882d604cd",
+    "published": "2026-11-24T04:24:29+00:00",
+    "source": "simon-willison",
+    "source_url": "https://simonwillison.net/atom/everything/",
+    "status": "pending",
+    "summary": "Release: datasette-charts 0.2a0 I introduced this new charting plugin for Datasette yesterday . Today it's gained integration with Datasette Agent , so now you can ask chat for a chart and it will create one for you using the same underlying chart suggestion and generation tools. Here's a demo video, recorded on agent.datasette.io where you can sign in with GitHub to try the plugin yourself: Download the video (MP4) I prompt Datasette Agent to \"Use #stats to show sqlite-utils downloads over time as a chart\" - where typing \"#stats\" opens a table search box. It shows me a chart inline in the chat, and when I click \"Open in the chart builder\" it opens the chart in a panel along with the table page. I use the table page to switch to a chart of \"datasette\", then when I ask the agent \"what does the chart show?\" it notices that I changed the content in the panel and describes the new Datasette chart to me. Here's a Markdown export of the chat from the video. Tags: datasette-agent , datasette , visualization",
+    "title": "datasette-charts 0.2a0",
+    "url": "https://simonwillison.net/2026/Nov/24/datasette-charts"
+  },
   "088f7c322a49586bbe2a0ae7c39015027f8143200286a5e68f1926038cf8a5a9": {
     "category": "open-source",
     "discovered": "2026-11-24T14:07:11.513641+00:00",
@@ -478,6 +492,19 @@
     "summary": "arXiv:2611.30909v1 Announce Type: cross Abstract: Solving multimodal tasks requires Vision-Language Models (VLMs) to form a unified understanding of the image and the question text. However, under causal attention in current VLMs, a token can attend only to what precedes it. Whichever modality comes first is therefore encoded under partial observation of the input, uninformed by the rest of the multimodal context. We introduce Second-Look Prompting (SLP), a training-free method that repeats the image-question pair in the input. In the repeated copy, every visual and textual token can attend to the complete input, yielding a unified multimodal encoding of the pair. Moreover, the added visual tokens contribute computation beyond re-exposing the image: even a blank image in their place can improve reasoning. Across 12 benchmarks, SLP improves the overall average score of every evaluated model, spanning nine open-source models (3B-72B) and three proprietary frontier models, with gains reaching 5.6 points for Gemini 3 Flash on MATH-Vision. Our analysis reveals two complementary mechanisms: the question guides where the second image attends, and the added visual tokens act as a prefill scratchpad whose hidden states retain answer-relevant information from the image and question. These findings highlight input presentation as a simple yet effective way to improve VLM performance.",
     "title": "Replay Before You Reply: Second-Look Prompting for Unified Multimodal Encoding",
     "url": "https://arxiv.org/abs/2611.30909"
+  },
+  "09500fe5aeac2654779066b8a23d6b3034700e98d46d6815fbcbffacdeb884ca": {
+    "category": "models",
+    "discovered": "2026-11-25T01:21:21.428756+00:00",
+    "discovery": {},
+    "fingerprint": "c3bcd561a320085800312f1045a15479fb9691433433e85421666011d1720110",
+    "published": "2026-11-21T18:12:21+00:00",
+    "source": "microsoft-foundry",
+    "source_url": "https://devblogs.microsoft.com/foundry/feed/",
+    "status": "pending",
+    "summary": "The five questions teams ask most when they run hosted agents in their own virtual network: which subnet is the agent subnet, why listing agents times out, why a TLS-inspecting firewall still breaks after you add your CA, how peered VNets and DNS fit, and why a subnet stays in use after you delete an account. The post Hosted agents in your own virtual network: five checks when the Agents page times out appeared first on Microsoft Foundry Blog .",
+    "title": "Hosted agents in your own virtual network: five checks when the Agents page times out",
+    "url": "https://devblogs.microsoft.com/foundry/hosted-agents-private-network-setup"
   },
   "09ec1d245456c0dedb0c130b50b3eac4089b57d71331d9c27668dec86a4608a1": {
     "category": "models",
@@ -625,6 +652,20 @@
     "title": "ultralytics/yolov5",
     "url": "https://github.com/ultralytics/yolov5"
   },
+  "0c4bb49f75fd76ea5f546bf74ddfd8f8313edbbd762cef3111191deb003916dc": {
+    "category": "coding",
+    "content_type": "tutorials",
+    "discovered": "2026-11-25T01:21:21.428756+00:00",
+    "discovery": {},
+    "fingerprint": "61d63bbc57ade1773a9dd23c01211ec192dce5fcfcfdaeb7ec857dd7ddb52a90",
+    "published": "2024-10-29T07:00:00+00:00",
+    "source": "hamel-husain",
+    "source_url": "https://hamel.dev/index.xml",
+    "status": "pending",
+    "summary": "Earlier this year, I wrote Your AI product needs evals . Many of you asked, “How do I get started with LLM-as-a-judge?” This guide shares what I’ve learned after helping over 30 companies set up their evaluation systems. The Problem: AI Teams Are Drowning in Data Ever spend weeks building an AI system, only to realize you have no idea if it’s actually working? You’re not alone. I’ve noticed teams repeat the same mistakes when using LLMs to evaluate AI outputs: Too Many Metrics : Creating numerous measurements that become unmanageable. Arbitrary Scoring Systems : Using uncalibrated scales (like 1-5) across multiple dimensions, where the difference between scores is unclear and subjective. What makes something a 3 versus a 4? Nobody knows, and different evaluators often interpret these scales differently. Ignoring Domain Experts : Not involving the people who understand the subject matter deeply. Unvalidated Metrics : Using measurements that don’t truly reflect what matters to the users or the business. The result? Teams end up buried under mountains of metrics or data they don’t trust and can’t use. Progress grinds to a halt. Everyone gets frustrated. For example, it’s not uncommon for me to see dashboards that look like this: An illustrative example of a bad eval dashboard Tracking a bunch of scores on a 1-5 scale is often a sign of a bad eval process (I’ll discuss why later). In this post, I’ll show you how to avoid these pitfalls. The solution is to use a technique that I call “Critique Shadowing” . Here’s how to do it, step by step. Step 1: Find The Principal Domain Expert In most organizations there is usually one (maybe two) key individuals whose judgment is crucial for the success of your AI product. These are the people with deep domain expertise or represent your target users. Identifying and involving this Principal Domain Expert early in the process is critical. Why is finding the right domain expert so important? They Set the Standard : This person not only defines what is acceptable technically, but also helps you understand if you’re building something users actually want. Capture Unspoken Expectations : By involving them, you uncover their preferences and expectations, which they might not be able to fully articulate upfront. Through the evaluation process, you help them clarify what a “passable” AI interaction looks like. Consistency in Judgment : People in your organization may have different opinions about the AI’s performance. Focusing on the principal expert ensures that evaluations are consistent and aligned with the most critical standards. Sense of Ownership : Involving the expert gives them a stake in the AI’s development. They feel invested because they’ve had a hand in shaping it. In the end, they are more likely to approve of the AI. Examples of Principal Domain Experts: A psychologist for a mental health AI assistant. A lawyer for an AI that analyzes legal documents. A customer service director for a support chatbot. A lead teacher or curriculum developer for an educational AI tool. Note Exceptions In a smaller company, this might be the CEO or founder. If you are an independent developer, you should be the domain e",
+    "title": "Using LLM-as-a-Judge For Evaluation: A Complete Guide",
+    "url": "https://hamel.dev/blog/posts/llm-judge"
+  },
   "0c6b54e0e42959a815e4c293011ec189b6f4c14f1f75711e13c6738c376053a6": {
     "category": "models",
     "discovered": "2026-11-24T14:07:11.513641+00:00",
@@ -697,6 +738,20 @@
     "title": "stable",
     "updated": "2026-11-24T19:53:54.561219+00:00",
     "url": "https://github.com/n8n-io/n8n/releases/tag/stable"
+  },
+  "0d8e213cc0d8372dce87a215fd23412427369685da1892efafdde9948a5803bb": {
+    "category": "coding",
+    "content_type": "stories",
+    "discovered": "2026-11-25T01:21:21.428756+00:00",
+    "discovery": {},
+    "fingerprint": "69a84ed1e46dfefbb8bba03049d4982a0bd014ef74f6f626acd4fcc1dd14c478",
+    "published": "2026-11-20T19:21:49+00:00",
+    "source": "simon-willison",
+    "source_url": "https://simonwillison.net/atom/everything/",
+    "status": "pending",
+    "summary": "Alessandro Masullo has a proposed proof of [Generalized Riemann Hypothesis], and Brian Conrad has been looking closely at it for months and gave extensive feedback which is being incorporated, and it is so far looking good. It is all human, with no AI. The hope was to bring Alessandro to Stanford for a year to polish the writing and then announce it after running it by enough people. Now it seems best to put out the current draft. — Ravi Vakil , Hurried Announcement: Alessandro Masullo GRH Tags: mathematics",
+    "title": "Quoting Ravi Vakil",
+    "url": "https://simonwillison.net/2026/Nov/20/ravi-vakil"
   },
   "0db9f73f2e521775c972e2ce4e386e3c9fe6c0c917d794d4b293ded1e93d54c2": {
     "category": "models",
@@ -870,9 +925,24 @@
     "title": "SnakeTranslate: Weakly Supervised Policy Learning from Offline Parallel Text for Simultaneous Translation",
     "url": "https://arxiv.org/abs/2611.28055"
   },
+  "105d2dd6f5d647be40a42af6f7b2258c0b866f02cc018acac8e3318ab419ba75": {
+    "category": "coding",
+    "content_type": "stories",
+    "discovered": "2026-11-25T01:21:21.428756+00:00",
+    "discovery": {},
+    "fingerprint": "733c59ca4c1a43e09fc73a53c53ed5ea973428309ddca057cfce417a41293400",
+    "published": "2026-11-23T23:40:49+00:00",
+    "source": "simon-willison",
+    "source_url": "https://simonwillison.net/atom/everything/",
+    "status": "pending",
+    "summary": "GLM-5.4: Toward Generalized Coding with Our First Loop Transformer GLM 5.4 is now available from Chinese AI lab Z.ai. It's their first model to use a looped transformer architecture, which they describe like this: In a standard Transformer, each layer runs once per forward pass. In a Loop Transformer, a group of weight-shared layers runs for multiple iterations, refining the hidden states from the previous pass. This gives us a deeper network without increasing the parameter count. This is the second mention of looped transformers I've seen in the past week - the first was Inkling 2 Mini from Thinking Machines Lab on November 20th, who said: Inkling 2 Mini is a looped transformer, running the middle layers of the model three times for every token. This allows the model to apply more reasoning and reach the right answer with fewer tokens, especially on tasks such as agentic coding that depend on reasoning quality. GLM 5.4 is not yet available as open weights: We plan to open-source the model weights responsibly after completing necessary safety hardening. I tried it out using the Z.ai API, for which I had to sign up for their Coding Plan subscription because 5.4 cannot currently be accessed through the regular API. It turns out both coding plan and regular API share the same OpenAI-compatible Responses API (at https://api.z.ai/api/v1 ), and the API key for the coding plan worked with that and gave me access to the new model. I built a llm-glm plugin , then realized that llm-zai by Tommy Hughes already exists! I've shipped mine purely because llm-zai doesn't yet support the new model, but I'll likely retire mine once that plugin catches up. Here are pelicans for GLM-5.4 on low, high, and max. This is the max one: I realized I never ran pelicans for GLM-5.3, so here those are for the same effort levels. They look similar in quality to 5.4. It's interesting how GLM 5.1 and GLM 5.2 produced radically different pelicans from other models. The pelicans for 5.3 and 5.4 are much more comparable to those I get from OpenAI or Anthropic models - the previous generations had their own distinctive look. I made a comparison grid showing the four generations of GLM pelicans all in one place. The style transition between 5.2 and 5.3 is pretty stark. Tags: ai , generative-ai , llms , llm , pelican-riding-a-bicycle , llm-release , ai-in-china , glm",
+    "title": "GLM-5.4: Toward Generalized Coding with Our First Loop Transformer",
+    "url": "https://simonwillison.net/2026/Nov/23/glm-54"
+  },
   "10878202550bbbf922d1872ab8ac87272ec1fb51ba1f61195752ed3c5f3ba59c": {
     "category": "models",
     "discovered": "2026-11-24T07:39:38.717042+00:00",
+    "discovery": {},
     "fingerprint": "ce204070d647b641febfdb1c2f7e9a07d0cf995616cc0edc3a49bc9c1232ad29",
     "published": "2026-11-23T08:00:00+00:00",
     "source": "openai-news",
@@ -985,6 +1055,19 @@
     "title": "A New Perspective on ANN-to-SNN Conversion: Hardware-Aligned Multi-Threshold Neuron Dynamics for Neuromorphic Inference",
     "url": "https://arxiv.org/abs/2611.30277"
   },
+  "11cf55f62ec06541e5c39c773fdde35a2ab750b258c9e37747a2e36bb4b14f2a": {
+    "category": "models",
+    "discovered": "2026-11-25T01:21:21.428756+00:00",
+    "discovery": {},
+    "fingerprint": "b5225c753626fd69e8158165f1ae0d265d19b9b7b59662c606d9121dbc832a98",
+    "published": "2026-11-19T19:53:30+00:00",
+    "source": "microsoft-foundry",
+    "source_url": "https://devblogs.microsoft.com/foundry/feed/",
+    "status": "pending",
+    "summary": "Enterprises are all-in on AI agents, but the ROI hasn’t followed. What’s holding those agents back isn’t capability. Today’s agents can do remarkable work on their own. They can solve math problems that stumped mathematicians for decades, build functional operating systems from scratch, and teach themselves a new skill by watching you do a task […] The post Build trusted autonomous agents for your team with Microsoft Foundry appeared first on Microsoft Foundry Blog .",
+    "title": "Build trusted autonomous agents for your team with Microsoft Foundry",
+    "url": "https://devblogs.microsoft.com/foundry/build-trusted-autonomous-agents-for-your-team-with-microsoft-foundry"
+  },
   "11ddda927f448baab76dd5df649071cb2e78313a3e0e1b0e9ec3c641a27aec83": {
     "category": "agents",
     "content_type": "skills",
@@ -1021,6 +1104,7 @@
   "1259b534687dd8b3171199ff6c1e4d274ef5d072ac6513620703d8171072ee72": {
     "category": "models",
     "discovered": "2026-11-24T07:39:38.717042+00:00",
+    "discovery": {},
     "fingerprint": "132538b03b9ed1c4d7a5421c9fa6c7b689d770b6c3e4e885af25ff6b74ccecca",
     "published": "2026-11-23T08:00:00+00:00",
     "source": "openai-news",
@@ -1392,6 +1476,7 @@
   "17b7a2b39f098895a2208f48f1507c3092e017b4481f6732b70b65df4c04b2b0": {
     "category": "models",
     "discovered": "2026-11-24T07:39:38.717042+00:00",
+    "discovery": {},
     "fingerprint": "226118f7b2080c44eaa3a64d03b8c64224f622176527b5570b6450fb446356c3",
     "published": "2026-11-19T00:00:00+00:00",
     "source": "openai-news",
@@ -1452,6 +1537,7 @@
   "184d931227f2504de1a33bebb5615518a5072d45e1bfb93a37850e8332740e3a": {
     "category": "models",
     "discovered": "2026-11-24T07:39:38.717042+00:00",
+    "discovery": {},
     "fingerprint": "f400c002a01b3d11f4448ddca722dee7d439ae828457b31430e027b41c9a2a20",
     "published": "2026-11-18T10:00:00+00:00",
     "source": "openai-news",
@@ -1486,6 +1572,20 @@
     "summary": "Linux's Traffic Control (tc) subsystem has been present in the kernel for many years. Similar to the...",
     "title": "eBPF Tutorial by Example 20: tc Traffic Control",
     "url": "https://dev.to/yunwei37/ebpf-tutorial-by-example-20-tc-traffic-control-224e"
+  },
+  "18856eb4cfb8af6b155241f53ca9c0a92a33d864e3d0a2a0112ced0a0b7d838f": {
+    "category": "coding",
+    "content_type": "tutorials",
+    "discovered": "2026-11-25T01:21:21.428756+00:00",
+    "discovery": {},
+    "fingerprint": "d21e4d462e64220f3f43516b8b9b5637abf9422d3cf8b04554442a87ec5edc35",
+    "published": "2026-09-18T07:00:00+00:00",
+    "source": "hamel-husain",
+    "source_url": "https://hamel.dev/index.xml",
+    "status": "pending",
+    "summary": "This document curates the most common questions Shreya and I received while teaching 5,000+ engineers and PMs AI Evals. Warning: These are sharp opinions about what works in most cases. They are not universal truths. Use your judgment. How to use this FAQ Browse the questions that interest you, or choose a guide below for a curated reading path through the FAQs and related articles. Where are you? This sounds like me I’m new to evals I’ve heard the term, but I’m not sure what evals involve or whether I need them. I don’t know what to test I’m building an AI product, but I haven’t figured out which failures to measure or what good performance looks like. I don’t trust my eval scores We have evals, but the scores don’t match our judgment of the outputs, or tests pass while users still encounter problems. My product feels too hard to evaluate Our outputs are subjective, long, or involve many steps. Even a knowledgeable person has trouble deciding whether they’re right. Evals take too much time or money We’re spending too much effort reviewing outputs, maintaining tests, or running evaluators. All questions Browse all questions by section. Getting Started & Fundamentals Q: What are AI Evals? Q: What is a trace? Q: What’s a minimum viable evaluation setup? Q: How much of my development budget should I allocate to evals? Q: Will today’s evaluation methods still be relevant in 5-10 years given how fast AI is changing? Q: How do I make the case for investing in evaluations to my team? Error Analysis & Data Collection Q: Why is \"error analysis\" so important in AI evals, and how is it performed? Q: Do I need a reference answer or rubric before annotating data? Q: Should I record problems that aren’t the model’s fault? Q: How many examples do I need for an eval? Q: How do I surface problematic traces for review beyond user feedback? Q: How often should I re-run error analysis on my production system? Q: What should I do when my \"gold\" eval dataset becomes stale? Q: What is the best approach for generating synthetic data? Q: Are there scenarios where synthetic data may not be reliable? Q: How can I do evals when traces contain sensitive data? Q: How do I approach evaluation when my system handles diverse user queries? Q: How can I efficiently sample production traces for review? Evaluation Design & Methodology Q: Why do you recommend binary (pass/fail) evaluations instead of 1-5 ratings (Likert scales)? Q: How do I combine my evals into a single metric? Q: What does a good eval dashboard look like for sharing with stakeholders? Q: Should I practice eval-driven development? Q: Should I build automated evaluators for every failure mode I find? Q: What model or LLM should I use to build automated evals? Q: Can I use Jev for evals? Q: How do I know if I can trust my automated eval? Q: What should I do when I can’t get my LLM judge to agree with human reviewers? Q: Should I use \"ready-to-use\" evaluation metrics? Q: Are similarity metrics (BERTScore, ROUGE, etc.) useful for evaluating LLM outputs? Q: Can I use the same model for both the main task and evaluation? Q: How much context should I give a LLM judge? Q: How do we evaluate a model’s ability to express ",
+    "title": "AI Evals: Everything You Need to Know",
+    "url": "https://hamel.dev/blog/posts/evals-faq"
   },
   "18aa47d17fc2f68d3fa304d9963f482b8af6e8bdb5a19babb73b056198c2df1a": {
     "category": "coding",
@@ -1695,6 +1795,7 @@
   "1a10f1676d46fc01a909d8eab6d17033b89331ee5fd1f1e04952fc2f6f54665c": {
     "category": "models",
     "discovered": "2026-11-24T07:39:38.717042+00:00",
+    "discovery": {},
     "fingerprint": "31e9c8d2fbb8cac91ef7008ab8abebebf324765848b1af30c80e47e1486f0783",
     "published": "2026-11-22T00:00:00+00:00",
     "source": "openai-news",
@@ -1757,6 +1858,20 @@
     "summary": "### Feature * **pdf:** Cancel queued PDF parsing when conversions stop ([#5456](https://github.com/docling-project/docling/issues/5456)) ([`4c0a96d`](https://github.com/docling-project/docling/commit/4c0a96de53af1032a2f2ac0375fdd7f844672349)) * **service:** Let the server choose the default pipeline ([#4875](https://github.com/docling-project/docling/issues/4875)) ([`adfdff3`](https://github.com/docling-project/docling/commit/adfdff3426692a736145c3a3e0ac4fc837615d1e)) * Turn audio/video transcripts and slide media into tracks ([#4752](https://github.com/docling-project/docling/issues/4752)) ([`5182e55`](https://github.com/docling-project/docling/commit/5182e556308958f3ac4762bb7d03a092c2f339c9)) * **heading-hierarchy:** Read keyword markers of other languages ([#5474](https://github.com/docling-project/docling/issues/5474)) ([`557df04`](https://github.com/docling-project/docling/commit/557df045572672b4cf62a119c5252af49938a10b)) * **vlm:** Add native MLX support for Nemotron 3.5 Parse ([#4934](https://github.com/docling-project/docling/issues/4934)) ([`825c774`](https://github.com/docling-project/docling/commit/825c77458b4d05ed7071d0789dc8e40ba9d18211)) ### Fix * **pdfium:** Keep words beside a tall cell and right-to-left runs apart ([#5440](https://github.com/docling-project/docling/issues/5440)) ([`41dbb0c`](https://github.com/docling-project/docling/commit/41dbb0c73c2c1335a0858990949501a4259619e5)) * **epub:** Find a package document stored with a literal percent sign ([#5442](https://github.com/docling-project/docling/issues/5442)) ([`0cf0f8a`](https://github.com/docling-project/docling/commit/0cf0f8a1d507d5f202c5879df14337ea3bab5159)) * **jats:** Treat xref/@rid as optional and as IDREFS ([#4381](https://github.com/docling-project/docling/issues/4381)) ([`6504fe0`](https://github.com/docling-project/docling/commit/6504fe0feef5106f35ceb72a7bd618177b08fba0)) * Serialize PDFium rendering in Office backends ([#5377](https://github.com/docling-project/docling/issues/5377)) ([`62ff440`](https://github.com/docling-project/docling/commit/62ff440a1f0b6608a965b717c5538a8e8e034288)) * **md:** Preserve inline HTML line breaks ([#5275](https://github.com/docling-project/docling/issues/5275)) ([`d416bd1`](https://github.com/docling-project/docling/commit/d416bd1f78679c35321c7d008641f7f2312cd5bd)) * **csv:** Keep fields larger than the default csv limit ([#5253](https://github.com/docling-project/docling/issues/5253)) ([`1fb40fb`](https://github.com/docling-project/docling/commit/1fb40fb41b1b980c4d0236385b06897fa2d91b60)) * **email:** Handle UnicodeDecodeError for .msg files with 8-bit body ([#5439](https://github.com/docling-project/docling/issues/5439)) ([`0f3564c`](https://github.com/docling-project/docling/commit/0f3564c772e006c73417f61658a2d41c8352224d)) * **calendar:** Describe expanded days of monthly and yearly rules as every such day ([#5451](https://github.com/docling-project/docling/issues/5451)) ([`f93ee6b`](https://github.com/docling-project/docling/commit/f93ee6bc72717da7384389434d90fbb1977047df)) ### Documentation * **examples:** Pass engine_type to ApiVlmEngineOptions ([#5380](https://github.com/docling-project/docling/issues/5380)) ([`77",
     "title": "v2.152.0",
     "url": "https://github.com/docling-project/docling/releases/tag/v2.152.0"
+  },
+  "1c2cff6fe54921cead049fc67fe49d057f4cef91633596f08fcb182a305de71d": {
+    "category": "coding",
+    "content_type": "stories",
+    "discovered": "2026-11-25T01:21:21.428756+00:00",
+    "discovery": {},
+    "fingerprint": "5c5d8e6d4111fd7386c8dba4f6e1a54621d52e599d2439e4ff80753b231f41ac",
+    "published": "2026-11-18T15:58:27+00:00",
+    "source": "simon-willison",
+    "source_url": "https://simonwillison.net/atom/everything/",
+    "status": "pending",
+    "summary": "During the time these agents converted 185,000 lines of C code into 340,000 lines of Rust code (I counted), we merged over 300 commits in the actual curl project. We actually improved curl during these a little more than three weeks. A little over 200 bugfixes actually. 200 bugfixes that none of those rust rewrites have. We also fixed a few vulnerabilities. In another month we have done another 200 and maybe fixed a few more vulnerabilities. Will these clones keep up? — Daniel Stenberg , Actual curl rewrites in Rust Tags: daniel-stenberg , curl , rust , security , coding-agents , c , ai , llms , generative-ai , vibe-porting",
+    "title": "Quoting Daniel Stenberg",
+    "url": "https://simonwillison.net/2026/Nov/18/daniel-stenberg"
   },
   "1c3865a448ad7b94220897c61659db99a2053e0ea4b077dfff3106982c37161c": {
     "category": "models",
@@ -1908,6 +2023,20 @@
     "summary": "Passing raw git diffs to LLMs produces plausible but hallucinated changelogs. Here is why extracting the real \"why\" requires linked issues and counterfactual evals.",
     "title": "Why Your AI Release Notes Hallucinate: The \"Why vs What\" Problem in Git History",
     "url": "https://dev.to/necoz/why-your-ai-release-notes-hallucinate-the-why-vs-what-problem-in-git-history-5ch0"
+  },
+  "1df80ba4eb1bc7794fc5f584c8d0b7c9cedb46e59bc8cc3f037066a83af47611": {
+    "category": "coding",
+    "content_type": "stories",
+    "discovered": "2026-11-25T01:21:21.428756+00:00",
+    "discovery": {},
+    "fingerprint": "089614acab85ed2b8c4241308ea893c7de7ff2389d06d61b85f8633bb9fc7611",
+    "published": "2026-11-19T20:43:57+00:00",
+    "source": "simon-willison",
+    "source_url": "https://simonwillison.net/atom/everything/",
+    "status": "pending",
+    "summary": "PostgreSQL 19 Released Most years PostgreSQL ships a new release in September, but this year's release came two months later thanks mainly to the flurry of issues that the PostgreSQL team needed to address as part of the ongoing AI-reported vulnerability apocalypse. This release was definitely worth the wait. My favorite new feature is this one: For applications that send reads to standbys, PostgreSQL 19 adds \"read-your-writes\" consistency with the new WAIT FOR LSN command. A session on a standby can use WAIT FOR LSN to wait until the standby has replayed the write-ahead log (WAL) up to a specific log sequence number (LSN) before running a query, so the application can read data it just wrote on the primary. In practice, that looks like this: UPDATE movie SET genre = 'Dramatic' WHERE genre = 'Drama'; SELECT pg_current_wal_insert_lsn(); That returns a value like 0/0306EE20 . Store that somewhere (a signed cookie would work) such that on a subsequent request your application can do: WAIT FOR LSN '0/0306EE20' WITH (TIMEOUT '0.1s'); SELECT * FROM movie WHERE genre = 'Drama'; The timeout is optional - if you provide one you'll get an error if the replica you are talking to doesn't catch up within the specified time. I first encountered this pattern in Wikipedia , which has a hand-rolled version of this built against MySQL replication: In addition to this, MediaWiki attempts to ensure that the user sees events occurring on the wiki in chronological order. A few seconds of lag can be tolerated, as long as the user sees a consistent picture from subsequent requests. This is done by saving the primary binlog position in the session, and then at the start of each request, waiting for the replica to catch up to that position before doing any reads from it. Here's the relevant MediaWiki code , which these days uses MySQL's WAIT_FOR_EXECUTED_GTID_SET() function and falls back to SOURCE_POS_WAIT() . Via Lobste.rs Tags: mysql , postgresql , replication , scaling , wikipedia , ai-security-research",
+    "title": "PostgreSQL 19 Released",
+    "url": "https://simonwillison.net/2026/Nov/19/postgresql-19"
   },
   "1e02ab9c34ce90d4cc82015b1e8d2f722634fb0d1769c93cf2d22c97962977bd": {
     "category": "coding",
@@ -2110,6 +2239,7 @@
     ],
     "category": "models",
     "discovered": "2026-11-24T05:44:12.654742+00:00",
+    "discovery": {},
     "fingerprint": "1422cc8de885b5dfc00d90beb8c3f74ec0b804ff3c4ba485dec13ceb2db44dd9",
     "published": "2026-11-20T17:00:00+00:00",
     "source": "google-ai",
@@ -2540,6 +2670,20 @@
     "summary": "Registry listing 0.7.0. Publisher description: Autonomous AI video editor over MCP: 280+ captions, 9:16 reframe, B-roll, podcast sync, VFX, MP4.",
     "title": "ai.livecore/video-editor-broll-reframe-chromakey-voiceover-color-vfx",
     "url": "https://registry.modelcontextprotocol.io/v0.1/servers/ai.livecore%2Fvideo-editor-broll-reframe-chromakey-voiceover-color-vfx/versions/0.7.0"
+  },
+  "2692e7de36ec5d075d24ad5e92451a358180e35e82ff76b881b90d612e8a5b86": {
+    "category": "coding",
+    "content_type": "tutorials",
+    "discovered": "2026-11-25T01:21:21.428756+00:00",
+    "discovery": {},
+    "fingerprint": "83836045c09789439fa438d73554a69dba931ecdc3f3f2d65da3b50fd9acf0a8",
+    "published": "2026-01-18T08:00:00+00:00",
+    "source": "hamel-husain",
+    "source_url": "https://hamel.dev/index.xml",
+    "status": "pending",
+    "summary": "Programmers love to proclaim they’ve found the best tool. Paul Graham called Lisp his “ secret weapon .” DHH described Ruby as “ a magical glove that just fit my brain perfectly .” Pieter Levels ships million-dollar products with vanilla PHP and jQuery . These declarations aren’t about the languages themselves. They’re about developers finding tools that fit how they think. When the environment clicks, you move fast. I had that experience with nbdev , a development environment for literate programming that I helped build and maintain 1 . I created hundreds of projects with it and was one of its biggest proponents . Today, I no longer use it. AI coding tools changed the trade-offs. Fighting the AI The beauty of nbdev is its workflow. You write code, documentation and tests in one source of truth: Jupyter notebooks. Afterwards, these notebooks are transpiled into a Python library and documentation website. This workflow is idiosyncratic. AI coding tools, trained on vast amounts of conventional source code, get confused. They struggle to differentiate between editing the notebook and editing the final source code. It feels like fighting the AI instead of working with it. I write software to solve problems, not to write code. I want to work in an environment where AI has the highest chance of success. With nbdev, I was swimming upstream. Some argue that AI tools encourage lazy thinking: that without guardrails, developers skip the hard work of breaking problems into steps. But thinking step-by-step is a human skill. Notebooks don’t force you to write clean code. AI tools don’t force you to think carefully. Discipline comes from the developer, not the environment. Tools Don’t Matter As Much As I Thought A central promise of literate programming is better documentation. By keeping code and docs in one place, you reduce the chance they become stale. Strangely, many nbdev projects lacked sufficient documentation for my taste. Sometimes, this helped me learn a codebase by contributing to the docs. Other times, it was frustrating. This reinforced my belief that good documentation comes from effort, not tooling. This workflow is also less compelling now. AI can read a codebase without documentation and give you an overview on the fly. It can help maintain documentation that is separate from the code, handling the tedious parts. Keeping code and docs together isn’t the selling point it used to be. Collaboration and Adoption nbdev asks developers to adopt a different system. It does not meet them where they are. Cursor won because it felt familiar and let developers change their habits slowly, rather than demanding a new workflow on day one. I didn’t worry about collaboration as much before. But collaborating with AI is table stakes. The same impediments that get in the way of collaborating with humans tend to get in the way of collaborating with AI. Today, developers increasingly span greater scope. Backend people do frontend. PMs create prototypes. Everyone is more polyglot. Idiosyncratic frameworks isolate you from your team to a greater extent than ever before. Idiosyncratic tooling once had a hidden upside: it filtered for a certain kind of contribut",
+    "title": "Why I Stopped Using nbdev",
+    "url": "https://hamel.dev/blog/posts/ai-stack"
   },
   "269cc415ef19b46339d3c77885a559fb5d44fb8b329495b19d64807669dc8383": {
     "category": "models",
@@ -3915,6 +4059,20 @@
     "title": "Unsolvability Ceiling in Multi-LLM Routing: An Empirical Study of Evaluation Artifacts",
     "url": "https://arxiv.org/abs/2605.07395"
   },
+  "38f39e05799f77e0834e27fbb0bbe554fda7b07babd0675edb2db7677607b9c3": {
+    "category": "coding",
+    "content_type": "tutorials",
+    "discovered": "2026-11-25T01:21:21.428756+00:00",
+    "discovery": {},
+    "fingerprint": "88f2517ba03325e2e708d30960feb2f3b28bba30363cea27d0cba0c2a5143f04",
+    "published": "2026-09-30T07:00:00+00:00",
+    "source": "hamel-husain",
+    "source_url": "https://hamel.dev/index.xml",
+    "status": "pending",
+    "summary": "Anthropic released new eval tooling for Claude Code . Their claude-api plugin now includes a new build_eval and hill-climb command that helps you build evals, check the graders, and improve your application against them. I usually don’t review eval tools because software changes so often that reviews have a short shelf life. But a first-party tool from Anthropic is likely to influence how people approach evals, so I wanted to try it and share what I found. Isaac Flath and I livestreamed ourselves using it on conversation traces from an apartment leasing assistant. Here’s what we found: The bad 1. It pushes you to create an eval before looking at data Claude started by suggesting several potential failures, then asked us to pick one straight away to turn into an eval. It gave us the below menu of options, with call-transfer rules as the recommended choice. We hadn’t yet reviewed the conversations ourselves, so it was hard to know if this was a real failure or worth prioritizing. Despite this, we went ahead with the recommended choice, because we figured that’s what typical users would do. I believe you should be looking at data first to inform your understanding and prioritize which evals to write. An agent can help you find issues, but you still should do error analysis to decide which failures deserve attention before proceeding. 2. It asks you to validate judgments without enough context Next, Claude created Markdown files for looking at data associated with the call-transfer failure. In the screenshot below, Claude asks us to skim inputs.md and “tell it” which labels are wrong. That meant reading long conversations in an editor and reporting corrections separately in a chat. We found this very silly as we were using a coding agent, so it should have built an annotation app that made the conversations easy to read and let us leave feedback in-situ. We eventually asked Claude to build a web app for us and used that instead. Later in the workflow, Claude made an initial attempt at creating an evaluator for the call-transfer failure. It presented aggregate label counts and asked us, “Would you have scored any case differently?” without giving us enough information to know if the labels were correct. A recurring theme of the workflow was to jump too fast into creating artifacts or asking us for approval without helping us understand the data. 3. The evaluator’s scope was too broad Next, the tool created a call-transfer evaluator that checked four different failures at once: Asking for confirmation more than once, or transferring without asking for confirmation. (LLM as a Judge) Saying something between the caller’s consent and the transfer. (Code-based eval) Saying something during or after the transfer. (Code-based eval) Saying tool mechanics aloud, such as “triggering” a transfer. (Code-based eval) There were too many things bundled into this evaluator. I would prefer to scope the eval to focus on one error at a time, or at the very least separate the evals into those that needed a code-based eval vs a LLM as a Judge. Claude’s description of the evaluator was also confusing: protocol_ok is the headline. A case passes only if all four checks p",
+    "title": "Claude’s new auto eval tool",
+    "url": "https://hamel.dev/blog/posts/claude-auto-evals"
+  },
   "395eb2f50bbc7a2cf6a2187caac52cfe4b06d34555cc2ccd0fc9a1689682f311": {
     "category": "agents",
     "discovered": "2026-11-24T05:51:53.805288+00:00",
@@ -4258,6 +4416,33 @@
     "title": "Make Position Uninformative: Exchangeable Self-Distillation Flattens the Lost-in-the-Middle Curve",
     "url": "https://arxiv.org/abs/2611.28638"
   },
+  "3d16b33e276c2c798960a94571bcb16c5fae596d43a2fdefaf060a7af5c32f39": {
+    "category": "coding",
+    "discovered": "2026-11-25T01:21:21.428756+00:00",
+    "discovery": {},
+    "fingerprint": "f98b0927f1918889b49a553015854a83c3d764479e90e24e64933abd7312b9d8",
+    "published": "2026-11-18T17:00:00+00:00",
+    "source": "meta-engineering",
+    "source_url": "https://engineering.fb.com/feed/",
+    "status": "pending",
+    "summary": "Our previous post in this series introduced the Ranking Engineer Agent (REA), an autonomous system that generates hypotheses, designs experiments, and proves new machine learning (ML) techniques on ads ranking models. Now, we’re sharing how we propagate ranking model improvements like architectural advancements and training optimizations efficiently across a large and diverse fleet of ads [...] Read More... The post How Meta Uses AI Agents to Scale ML Innovations Across Ads Ranking Models appeared first on Engineering at Meta .",
+    "title": "How Meta Uses AI Agents to Scale ML Innovations Across Ads Ranking Models",
+    "url": "https://engineering.fb.com/2026/11/18/ml-applications/ai-agents-to-scale-ml-innovations-across-ads-ranking-models"
+  },
+  "3d5981388f51900a65b5d6abeab6dcfe63565d12fe183e7c8faab526650596e0": {
+    "category": "coding",
+    "content_type": "stories",
+    "discovered": "2026-11-25T01:21:21.428756+00:00",
+    "discovery": {},
+    "fingerprint": "54ee1966b8d76dcf89af0cda1472e2fe034f8dd6f71cd6642c46a4c72bd89486",
+    "published": "2026-11-24T03:45:57+00:00",
+    "source": "simon-willison",
+    "source_url": "https://simonwillison.net/atom/everything/",
+    "status": "pending",
+    "summary": "Release: datasette-agent 0.7a1 A small improvement to Datasette Agent : chat sessions could already open an iframe side panel that could then navigate to different pages. This version improves navigation by fragment hashes, for deeper integration with other Datasette plugins that update fragment hashes when the user interacts with the plugin in a way that changes state. I built this in order to fix some bugs with the much more exciting datasette-charts 0.2a0 release . Tags: datasette-agent , datasette",
+    "title": "datasette-agent 0.7a1",
+    "url": "https://simonwillison.net/2026/Nov/24/datasette-agent"
+  },
   "3d7f354a2e6caae221e3110f580d0b3a65d9062234d4a3e4cc1965b9e1824e6e": {
     "category": "models",
     "discovered": "2026-11-24T14:07:11.513641+00:00",
@@ -4394,6 +4579,20 @@
     "summary": "datasets listing. Tags: region:us",
     "title": "animeshsoni0102/jewel-cdn",
     "url": "https://huggingface.co/datasets/animeshsoni0102/jewel-cdn"
+  },
+  "3f7f7cffebe4ba5935ad38b2fb31ccca3134bd5c1847effc540e66dfdf2e4edc": {
+    "category": "coding",
+    "content_type": "stories",
+    "discovered": "2026-11-25T01:21:21.428756+00:00",
+    "discovery": {},
+    "fingerprint": "fb5373e4490c1c03bb7e47a6303103865bc6abf250cf46ec13e163eb96b8e4ed",
+    "published": "2026-11-20T02:49:57+00:00",
+    "source": "simon-willison",
+    "source_url": "https://simonwillison.net/atom/everything/",
+    "status": "pending",
+    "summary": "Token fraud is here and it’s BAD (YouTube) Claire Vo runs ChatPRD , an AI platform that helps product managers \"turn an idea into a spec\". The product has been live since the GPT-4 era, and Claire has been building it in public for much of that time. In this YouTube video (see also the accompanying Twitter post ) Claire describes the flood of token fraud she has seen from groups abusing the product's free trial, sometimes just to get free AI usage but often to resell tokens or run other commercial enterprises on top of the ChatPRD agent. I am funding a international Roblox and Fortnite map studio. They run a loop of free trials and promo codes and then tunnel to my agent and use it to build Roblox and Fortnite maps. Apparently one of the common prompts Claire saw running through her agent involved SVGs of pelicans riding bicycles! Presumably the token scammers are using that to help sniff the underlying models - different model families have a definite signature, and I've used it like this in the past to try and guess the identity of stealth preview models on platforms like OpenRouter. Claire is winding down her free trials entirely, which sadly looks like the right decision in the face of this abuse. Tags: youtube , ai , generative-ai , llms , pelican-riding-a-bicycle , ai-misuse",
+    "title": "Token fraud is here and it’s BAD (YouTube)",
+    "url": "https://simonwillison.net/2026/Nov/20/token-fraud-is-here-and-its-bad"
   },
   "403f89945e5b9c694ab4e7f392e5c37275dceab6ac979e099e66d88c7b343ab1": {
     "category": "coding",
@@ -4998,6 +5197,19 @@
     "title": "Self-Supervised Learning for Soft-Constrained AC-OPF in Multiphase Distribution Systems",
     "url": "https://arxiv.org/abs/2611.31026"
   },
+  "4a0361835185d148f10bcbd4d2e855fa4c3f8be3438a7c7117f57345ba7b5eb4": {
+    "category": "models",
+    "discovered": "2026-11-25T01:21:21.428756+00:00",
+    "discovery": {},
+    "fingerprint": "d5106b7c963580790302965f75d9b1e193906ff3125b6fa8f0a8e74189d6a171",
+    "published": "2026-11-18T17:00:47+00:00",
+    "source": "microsoft-foundry",
+    "source_url": "https://devblogs.microsoft.com/foundry/feed/",
+    "status": "pending",
+    "summary": "Enterprise-ready cloud browsers for every Foundry agent: MCP action batching, Live View and Take control, session recording, VNet injection, browser proxy, profile reuse, secret management, and CAPTCHA handling. The post Browser Automation Tool in Microsoft Foundry : Ignite’26 Announcements appeared first on Microsoft Foundry Blog .",
+    "title": "Browser Automation Tool in Microsoft Foundry : Ignite’26 Announcements",
+    "url": "https://devblogs.microsoft.com/foundry/browser-automation-tool-ignite"
+  },
   "4a0aaadc7714eff02cb7fbc119416316f5592f13f2841dfe6d378b08eeb67099": {
     "category": "coding",
     "discovered": "2026-11-24T07:40:13.461356+00:00",
@@ -5136,6 +5348,19 @@
     "summary": "arXiv:2605.05703v4 Announce Type: replace-cross Abstract: Optimizing the communication structure of large language model based multi-agent systems (LLM-MAS) has been shown to improve downstream performance and reduce token usage. Existing methods typically train on randomly sampled tasks. We show that this optimization is sensitive to the choice of training tasks: downstream accuracy varies widely across random task sets, and adding more random tasks does not consistently improve it. To actively identify the most valuable tasks from a pool of task-answer pairs, we propose an ensemble-based information-theoretic task selection framework. It estimates task informativeness by how much a candidate task changes the distribution over graph parameters, using ensemble Kalman inversion as an efficient and derivative-free approximation of the Bayesian update. The resulting estimator is especially suitable for black-box and noisy multi-agent systems and remains effective with ensembles much smaller than the parameter dimension. To further reduce the number of tasks whose informativeness must be evaluated, we introduce representative pre-selection and surrogate modeling. We validate the framework in benign and adversarial settings and across multiple task formats. It outperforms random training, demonstrating more effective task selection and greater overall cost efficiency.",
     "title": "Active Learning for Communication Structure Optimization in LLM-Based Multi-Agent Systems",
     "url": "https://arxiv.org/abs/2605.05703"
+  },
+  "4b89713f18e26e2b61b9376fd28ef368e090a26da4b1e16e45929f6d054fa908": {
+    "category": "coding",
+    "discovered": "2026-11-25T01:21:21.428756+00:00",
+    "discovery": {},
+    "fingerprint": "e82920006f65cf8994474c3816d9c94f4a90ab8095c05676cf105ce945db964a",
+    "published": "2026-11-18T16:59:38+00:00",
+    "source": "meta-engineering",
+    "source_url": "https://engineering.fb.com/feed/",
+    "status": "pending",
+    "summary": "As ML ecosystems grow to a large number of production models, the bottleneck is no longer inventing new techniques to improve these models, but rather shipping them reliably and efficiently across a fragmented model space, creating a rising tide that lifts all the boats. At Meta, we built a template-driven approach that standardizes model design [...] Read More... The post Design Once, Deploy at Scale: Building a Template-Driven ML Ecosystem appeared first on Engineering at Meta .",
+    "title": "Design Once, Deploy at Scale: Building a Template-Driven ML Ecosystem",
+    "url": "https://engineering.fb.com/2026/11/18/ml-applications/design-once-deploy-at-scale-template-driven-ml-ecosystem"
   },
   "4bbeb4ada01e1126e84a8feadc36c2f016273f4f9a5a6dfd74295ec009d182c7": {
     "category": "models",
@@ -5672,6 +5897,20 @@
     "title": "orGAN: A Synthetic Data Augmentation Pipeline for Simultaneous Generation of Surgical Images and Ground Truth Labels",
     "url": "https://arxiv.org/abs/2506.14303"
   },
+  "52461be624b7e32fadebdc1891ecceff2b446488ed9b11785c71245ec8ca6623": {
+    "category": "coding",
+    "content_type": "stories",
+    "discovered": "2026-11-25T01:21:21.428756+00:00",
+    "discovery": {},
+    "fingerprint": "2954928d476f93e22c432f732dd75e250c9df91ad12bd9f4fe0d66e965cb1c3d",
+    "published": "2026-11-18T14:44:48+00:00",
+    "source": "simon-willison",
+    "source_url": "https://simonwillison.net/atom/everything/",
+    "status": "pending",
+    "summary": "The PSF end-of-year fundraiser With my Python Software Foundation board director hat on: we've launched our end-of-year fundraiser for the non-profit that supports Python development and the Python community. If your company or your work benefits from Python, please consider donating this year! The PSF looks after the IP behind Python, operates PyPI, sponsors core developer sprints, supports community events (including running PyCon US every year), and employs a small and excellent staff team to keep everything running. We also operate the Developers in Residence program , which now includes three security developers (welcome, Brett Smith) focused on helping secure Python, PyPI, and the wider ecosystem. Tags: python , psf",
+    "title": "The PSF end-of-year fundraiser",
+    "url": "https://simonwillison.net/2026/Nov/18/psf-end-of-year-fundraiser"
+  },
   "524bd15b45dbf9ed0c208b015b193771041b6cc9d3fef226b6f5a3e2501cc0b6": {
     "category": "models",
     "discovered": "2026-11-24T14:07:11.513641+00:00",
@@ -5836,6 +6075,7 @@
   "53d809d7420a3923e8bad7c3bd224d7d2c9da9cb37fe0d761411713f6da0b90e": {
     "category": "models",
     "discovered": "2026-11-24T07:39:38.717042+00:00",
+    "discovery": {},
     "fingerprint": "c58cf2a5633c57c41ef64614cc8ebea4cee5ec5fea9a86c7784026601fcc0c2b",
     "published": "2026-11-18T08:00:00+00:00",
     "source": "openai-news",
@@ -6140,6 +6380,20 @@
     "title": "chenwh1993/sci-plot",
     "url": "https://github.com/chenwh1993/sci-plot"
   },
+  "580bdd64e8b3edf3407044b9c45847a71a0fc46195e6092c697fe15d1adbb30b": {
+    "category": "coding",
+    "content_type": "tutorials",
+    "discovered": "2026-11-25T01:21:21.428756+00:00",
+    "discovery": {},
+    "fingerprint": "65f2e7e7e3cf63452b9e508dbe317935a29d8e4fbbe1839730875012f158a4e8",
+    "published": "2026-03-26T07:00:00+00:00",
+    "source": "hamel-husain",
+    "source_url": "https://hamel.dev/index.xml",
+    "status": "pending",
+    "summary": "img.img-fluid { border: 1px solid rgba(255, 255, 255, 0.25); border-radius: 4px; } Is the heyday of the data scientist over? The Harvard Business Review once called it “The Sexiest Job of the 21st Century.” 1 In tech, data scientist roles were often among the best paid. 2 The job also demanded an unusual mix of skills: Data Scientist (n.): Person who is better at statistics than any software engineer and better at software engineering than any statistician. — JosH100 ( @josh_wills ) May 3, 2012 In addition to creating a high-barrier to entry, these skills enabled data scientists to build predicitive models, measure casuality and find patterns in data. Of these, predicitive modeling paid best. Companies later peeled that work off into a new title: Machine Learning Engineer (“MLE”). 3 For years, shipping AI meant keeping data scientists and MLEs on the critical path. With LLMs, this stopped being the default. Foundation-model APIs now allow teams to integrate AI independently. Getting cut out of the loop rattled data scientists and MLEs I know. If the company no longer needs you to ship AI, it is fair to wonder whether the job still has the same upside. The harsher story people tell themselves: unless you are pretraining at a foundation-model lab, you are not where the action is. In my opinion, training models was never most of the job. The bulk of the work is setting up experiments to test how well the AI generalizes to unseen data, debugging stochastic systems, and designing good metrics. Calling an LLM over an API does not make this work go away. I recently gave a talk titled “The Revenge of the Data Scientist” at PyAI Conf to make that case with examples rather than assertion alone. Below is an annotated version of that presentation. The Harness Is Data Science OpenAI published a blog post on harness engineering that I recommend reading. They describe how Codex worked on a software project for months, autonomously, with agents developing code bounded by a harness of tests and specifications. One detail in that blog post’s description of the harness is easy to miss. It includes an observability stack: logs, metrics, and traces exposed to the agent so it can tell when it is going off track. In addition to tests and specifications, there are metrics. That is a key component of the system. Andrej Karpathy’s auto-research project shows the same pattern: models iteratively optimize against a validation loss metric. Same idea, different harness. What I want to convince you of is that a large portion of the harness is data science. Let’s take a step back and take stock of where we are. Years ago, practitioners spent hours examining data, checking label alignment, and designing metrics. Today, we build on “vibes,” ask the model if it did a good job, and grab off-the-shelf metric libraries without looking at the data. This shows up most around retrieval and evals. Without a data background, engineers fear what they don’t understand. They claim “RAG is dead” or “evals are dead,” yet build systems that depend on those concepts. The rest of this post walks through five eval pitfalls I see repeatedly, and what a data scientist would do differently in eac",
+    "title": "The Revenge of the Data Scientist",
+    "url": "https://hamel.dev/blog/posts/revenge"
+  },
   "58424dd857fbc3b4a473e9c519c8d60e67ef1bb8c788cb50dce7c86b924534f6": {
     "category": "open-source",
     "discovered": "2026-11-24T14:07:11.513641+00:00",
@@ -6164,6 +6418,20 @@
     "title": "CocoonBench: Can Multilingual Search Agents Escape Language Information Cocoons?",
     "url": "https://arxiv.org/abs/2611.30727"
   },
+  "58b479d20c57cce86d416fd9e7c5c58b1644340b63898bf9000e3f5e3ddfaab3": {
+    "category": "coding",
+    "content_type": "tutorials",
+    "discovered": "2026-11-25T01:21:21.428756+00:00",
+    "discovery": {},
+    "fingerprint": "3c3274b0ac709d63024ed5539da7c1e6da5f6f9d0fdc75ef39c7e5d9afeef8e0",
+    "published": "2026-10-20T07:00:00+00:00",
+    "source": "hamel-husain",
+    "source_url": "https://hamel.dev/index.xml",
+    "status": "pending",
+    "summary": "main.content table { display:block; width:100%; max-width:100%; overflow-x:auto; } #evaluation-prompt pre { background:var(--bs-body-bg); color:var(--bs-body-color); padding:18px; border:1px solid var(--bs-border-color); border-radius:6px; } #evaluation-prompt pre code { color:inherit; white-space:pre-wrap; overflow-wrap:anywhere; } Decision models have exploded onto the scene recently, starting with TypeSafe’s Jev, followed by Perplexity’s Decider, Liquid’s d1, Cloudflare’s Clef, and OpenAI’s Decisions API 1 . These models promise fast, inexpensive classification. Decision models are an appealing low-cost alternative to LLM judges 2 for automated evals. But whether they’re the right choice depends on the cost, performance, and latency requirements of your use case. We’ve also noticed people using the default decision threshold of 0.50 without checking whether it works well for their task. This can leave a lot of performance on the table. In this post, we’ll start by showing how to tune thresholds to get the best results from decision models. With those thresholds tuned, we’ll compare cost and performance to help you assess which model fits your use case. Finally, we’ll explore how to interpret model scores when deciding whether to act, and how calibration can make them more useful as confidence estimates. What we tested We used 100 traces, or logs of conversations and actions, from an apartment leasing agent. The task is to identify traces containing an error, such as a failed booking or a missed handoff to a human. 3 We used the same dataset and broad failure-finding task in our prior post on automated evals . Here, each decision model returns a failure probability for each trace. We tested Jev 1.13, Perplexity Decider 1.1 27B, Liquid d1 and d1-ultra, Cloudflare Clef Flash, and OpenAI Decisions (GPT-6 Luna) 1 . Each model received the same evaluation criteria. The appendix shows the prompt and the structured version used for Jev. We compare models on two dimensions: Performance: We compare each model’s predictions with traces that people have reviewed and labeled as passing or failing. This measures how well the model catches failures while avoiding false alarms. Cost: We calculate API cost from token usage and the provider’s prices. 4 For brevity, we leave latency aside because it depends on factors outside this experiment’s control. 5 Understanding decision thresholds We assign each trace one of two labels, pass or fail. This is a binary pass/fail eval , which we recommend because it encourages clear criteria and is easier to align with human preferences. Each decision model returns a score from 0 to 1 that estimates how likely a trace is to contain a failure. The APIs turn this score into a decision using a default decision threshold of 0.50 . Traces with scores at or above the threshold are flagged as failures. Using this default without checking it against your data can give you subpar results. For example, a model could assign every failure a score of 0.40 and every passing trace a score of 0.10. Even though this model classifies traces perfectly at a threshold of 0.30, the default threshold of 0.50 would catch nothing. In practice, s",
+    "title": "How To Use Decision Models for Evals",
+    "url": "https://hamel.dev/blog/posts/decision-model-evals"
+  },
   "58ca3d2d8f268bc5e9068593667a2f226ec6b07ee7bdf19ff4315603ce70caf3": {
     "category": "models",
     "discovered": "2026-11-25T01:16:29.416465+00:00",
@@ -6183,6 +6451,7 @@
   "58da586369f33999eb920dc2411502d48d9dc9ca37a4ab1a788d83ffd176938a": {
     "category": "models",
     "discovered": "2026-11-24T07:39:38.717042+00:00",
+    "discovery": {},
     "fingerprint": "7193f508da345e95630d1f4a40b8710f0913e1ad485db2362554f9d2958b8d36",
     "published": "2026-11-18T08:00:00+00:00",
     "source": "openai-news",
@@ -6577,6 +6846,20 @@
     "title": "google-ai-edge/mediapipe",
     "url": "https://github.com/google-ai-edge/mediapipe"
   },
+  "5e8eba5b15ac60442c06ba0c605298c68acc153c2342183b0f55f54aa4e85ddb": {
+    "category": "coding",
+    "content_type": "stories",
+    "discovered": "2026-11-25T01:21:21.428756+00:00",
+    "discovery": {},
+    "fingerprint": "5dcece2d877f66ca3c93090d96be1c9692c40b6fe01b4d55bbe6f67f965c05da",
+    "published": "2026-11-24T23:02:07+00:00",
+    "source": "simon-willison",
+    "source_url": "https://simonwillison.net/atom/everything/",
+    "status": "pending",
+    "summary": "I gave a keynote at the AI Engineer Code Summit a couple of weeks ago, constructed around the idea that there have been three significant inflection points in the abilities of LLMs and coding agents in the past twelve months. Here's the video of the talk. In this post I'm going to pull out the major inflection point theme and interrogate it more deeply. Coding agents in November 2025 Today, November 24th 2026, is the one year anniversary of the release of Claude Opus 4.5 . With hindsight, this was a consequential model. In the Opus 4.5 announcement, Anthropic said: Testers noted that Claude Opus 4.5 handles ambiguity and reasons about tradeoffs without hand-holding. They told us that, when pointed at a complex, multi-system bug, Opus 4.5 figures out the fix. They said that tasks that were near-impossible for Sonnet 4.5 just a few weeks ago are now within reach. This held up. Claude Code was 9 months old at that point, having been introduced alongside Claude 3.7 Sonnet on February 24th, 2025. Opus 4.5 was the first model I had used with Claude Code where the default result was generally the right thing. I hadn't been using Claude Code as a daily driver because it didn't feel reliable enough - I had to correct it often enough that it didn't feel like a clear accelerant. The new Opus changed that. For most of the coding problems I faced on a daily basis, Opus would get them right . It was clearly faster than working through the problems myself. Also in November, OpenAI released GPT-5.1 Instant, GPT-5.1 Thinking, GPT-5.1-Codex, and GPT-5.1-Codex-Max. These had a similar effect on their Codex coding agent: it became reliably useful for many of my coding tasks. The timing was convenient, because the December holidays were upon us. A lot of people, myself included, spent December tinkering with these new tools to see what they could do. By January we were ready to use them for our actual work. Fable class models in June/July We got our first hint of Claude Fable in April, when Anthropic announced Claude Mythos and said that it was too dangerous to release , due to its improved cybersecurity capabilities. Mythos was a model that could not just find security vulnerabilities, it could also figure out how to exploit them. In June we got to see how good that model was for ourselves, with the release of Claude Fable 5 - a defanged Mythos, that would solve most problems but would actively block you from using it for security work. After three glorious days... the US government took it away from us. Fable 5 was placed under export controls that effectively banned the model. We wouldn't get it back until July 1st. For me, Fable was an inflection point because it introduced us to what I now think of as Fable class models . My definition of these: In June I wrote about how Claude Fable is relentlessly proactive , after I asked it to help fix a display glitch in Safari and it spun up its own pyobjc-framework-Quartz screenshot mechanism and a CORS-enabled localhost logging server to help resolve the bug. A more recent example of the power of Fable class models is my mysterious beep finder from a couple of weeks ago. I gave Opus 5.5 and then Fable 5.2 access to f",
+    "title": "Three LLM inflection points in twelve months",
+    "url": "https://simonwillison.net/2026/Nov/24/llm-inflection-points"
+  },
   "5ecf09315e43a502f690674f51ad1487fa4b3d8dd54e8570f67956a77ae15338": {
     "category": "models",
     "discovered": "2026-11-25T01:16:29.416465+00:00",
@@ -6777,6 +7060,20 @@
     "summary": "arXiv:2611.28324v1 Announce Type: new Abstract: Materials science research is a non-linear, long-horizon process. Existing scientific agents, however, largely rely on specific task execution or predefined workflows, rendering them brittle in open-ended settings. To bridge this gap, we present MatHarness, an agent harness designed for open-ended, long-horizon computational materials research spanning the complete lifecycle from initial ideation to manuscript writing. MatHarness couples three mechanisms: execution robustness through pre-flight verification, expert-distilled skills, and just-in-time auditing; epistemic adaptability through persistent research artifacts and an evolving scientific mental model; and collective intelligence through a heterogeneous multi-agent round table under targeted human oversight. We evaluate MatHarness on adsorbate-induced surface segregation in Cu-Zn alloys, an open question in methanol-synthesis catalysis. Over a multi-week trajectory consuming roughly 10^3 GPU-hours (50 production DFT relaxations prescreened by 171 machine-learning-potential evaluations) the system revised its plan six times, recovered autonomously from failed calculations, and had an independent auditor overturn one of its own over-attributed claims before publication. Within the sampled metallic dilute-limit models, the validated DFT analysis supports an adsorbate-induced tendency toward greater surface Cu exposure at both composition endpoints, with facet- and coverage-dependent exceptions. These results were compiled into a complete manuscript with human involvement concentrated in specification, approval, and strategic steering gates. The code is publicly available at https://github.com/PrentisAI/pippin.",
     "title": "MatHarness: Towards Long-Horizon Open-ended AutoResearch for Computational Materials Science",
     "url": "https://arxiv.org/abs/2611.28324"
+  },
+  "601a53017054bbcae56a1142bb3bcfd8c33b9c053f667e9661e1418bdf76f357": {
+    "category": "coding",
+    "content_type": "stories",
+    "discovered": "2026-11-25T01:21:21.428756+00:00",
+    "discovery": {},
+    "fingerprint": "488cde979a3879c4a79af349cd70c7eecbcb401b16205c7979c4ad0835316a9d",
+    "published": "2026-11-15T23:20:27+00:00",
+    "source": "simon-willison",
+    "source_url": "https://simonwillison.net/atom/everything/",
+    "status": "pending",
+    "summary": "Release: datasette 1.0a43 I've been leaning hard into Claude Fable 5.2 to help knock things off the 1.0 milestone , which is now 53% complete. The biggest 1.0 item in this release is streaming support for output renderers - the built-in TSV and CSV export mechanisms now use this as well, and plugins can register themselves as capable of streaming every row in a table in one go via the new Response.stream() method. There are a couple of security fixes, one of which I deemed deserving of a GitHub advisory : private stored queries could be exposed, granting access to the title and SQL of the query (but not allowing that query to be executed). There are dozens of smaller improvements. The row page JSON representation finally has a design suitable for 1.0 . A new <datasette-copy-button> Web Component provides copy-schema in various places. JSON in columns on the row page can be pretty-printed. There's a new DatasetteModal.confirm() JavaScript utility method. Plus dozens of bug fixes, including contributions by Zihan Dai , Peter Olkhovets , Ilya Khalafi , and Ankita Advitot . The feature I'm most excited about is a pretty tiny one: I've added CSS multi-page view transitions to Datasette! Here's the commit - key CSS is as follows: /* Enable cross-document view transitions, for anyone without prefers-reduced-motion */ @media ( prefers-reduced-motion : no-preference ) { @view-transition { navigation : auto ; } } /* .facet-results should morph from old position to new */ html : active-view-transition . content > . facet-results { view-transition-name : facet-results ; } /* So should a .table-wrapper, provided it contains .rows-and-columns */ html : active-view-transition . table-wrapper : has ( > table . rows-and-columns ) { view-transition-name : rows-table ; } With that in place, navigations within Datasette - still staunchly a multi-page application - feel more like an SPA. This works on Safari and Chrome at the moment and I believe supports for Firefox is due to land in Firefox 162 on December 8th 2026 (seeing as they are no longer feature-flagged in Firefox Nightly.) Tags: security , datasette , css , browsers , annotated-release-notes , firefox , javascript , safari , chrome",
+    "title": "datasette 1.0a43",
+    "url": "https://simonwillison.net/2026/Nov/15/datasette"
   },
   "6052f20ed168cdeef6b53cdcd0277c217108868a6c4529be12510fbe192955cb": {
     "category": "models",
@@ -7000,6 +7297,19 @@
     "summary": "arXiv:2606.18820v3 Announce Type: replace-cross Abstract: Sequential decisions often become better informed as action opportunities expire. We introduce Maturing Markov Decision Processes (MMDPs), a structured subclass of augmented finite-horizon Markov decision processes, for organizing when to commit and when to defer. The Expiring-Actions-First Principle provides a sufficient condition for deferral based on information gain and delay loss. When this condition cannot be certified, model bounds guide which persistent actions remain eligible. This structure motivates stage-local policies, action abstraction, and policy-guided planning. Replenishment experiments show improved learning and test performance under the MMDP interface and, in the primary setting, a larger test-performance gain from forecast refinement. With costly deferral, the onset of MMDP's advantage over fixed deferral is consistent with the theoretical analysis, illustrating how the extended Expiring-Actions-First Principle can guide which persistent actions to consider early. In the synthetic cash-management task, MMDP improves PPO's test returns across both network sizes, and this advantage persists with action abstraction and policy-guided search in the larger network. A production-scale cash-management case study adds complementary evidence. In maze navigation, MMDP yields larger gains in the more complex of the two settings. Taken together, these results show that the MMDP formulation can improve learning and planning in settings with refining information and expiring opportunities.",
     "title": "When to Commit and When to Defer: Maturing Markov Decision Processes under Refining Information and Expiring Opportunities",
     "url": "https://arxiv.org/abs/2606.18820"
+  },
+  "6345fcfaa01a824d18d8c56ea798b193a80b0275247443d53016ff92a16683a1": {
+    "category": "models",
+    "discovered": "2026-11-25T01:21:21.428756+00:00",
+    "discovery": {},
+    "fingerprint": "b5d1fed923208de02c80946838a8f0ac4aa4b07a7cf12d90845f3d629b0891ec",
+    "published": "2026-11-20T00:00:00+00:00",
+    "source": "apple-ml",
+    "source_url": "https://machinelearning.apple.com/rss.xml",
+    "status": "pending",
+    "summary": "We present Depth Pro 2, an approach to estimating dense metric depth for images and video at full resolution. By analyzing prior methods for monocular depth estimation, we find that they commonly trade off temporal consistency and boundary sharpness: multi-frame methods favor consistency, single-frame methods favor sharpness. To overcome this trade-off, we train a single, scalable network that processes both images and video and predicts depth maps at native resolution. Depth Pro 2 produces depth maps that are metrically accurate, sharp, and temporally consistent all at once, outperforming…",
+    "title": "Depth Pro 2: Sharp and Temporally Consistent Metric Monocular Depth",
+    "url": "https://machinelearning.apple.com/research/depth-pro-2-monocular"
   },
   "63773be2715240c17194e749eb601932d26526ce0bbd796d82f166e813c6d50f": {
     "category": "coding",
@@ -7233,6 +7543,7 @@
   "67952d9a918d2536a7bf3b37b6c05ec5dc7c7c22fdf68db178458bb74b4d4f2d": {
     "category": "models",
     "discovered": "2026-11-24T07:39:38.717042+00:00",
+    "discovery": {},
     "fingerprint": "c7adac961da56b251759490804870dda0dc6066ab43cc6cab02924e283758135",
     "published": "2026-11-18T08:00:00+00:00",
     "source": "openai-news",
@@ -7465,6 +7776,20 @@
     "title": "Learning a Rule Bank to Revise 3D CT Reports with Independent Evidence",
     "url": "https://arxiv.org/abs/2611.28281"
   },
+  "6b2d356ac9f74f194efe9c1e8b8258a9562efe83abaf91b65ce5441d198d9d17": {
+    "category": "coding",
+    "content_type": "stories",
+    "discovered": "2026-11-25T01:21:21.428756+00:00",
+    "discovery": {},
+    "fingerprint": "320aa1da589c54644651ab48ed71c1b026d0546d5cfcfadf717a33a3e12a9664",
+    "published": "2026-11-18T17:09:59+00:00",
+    "source": "simon-willison",
+    "source_url": "https://simonwillison.net/atom/everything/",
+    "status": "pending",
+    "summary": "Release: datasette-arrows 0.1a0 Datasette 1.0a43 added the ability for plugins to implement streaming export formats. Datasette core supports streaming CSV and TSV - you can export millions of lines of data from a table without needing to load it all into memory, because those two file formats support streaming data in chunks. The register_output_renderer() plugin hook can now be used to implement the same pattern for other formats. I've learned never to release a new plugin feature without accompanying it with a plugin that uses it. Claude Fable 5.2 suggested the Apache Arrow streaming format as a good option, and built this plugin in almost a single shot. Add the plugin to Datasette ( datasette install datasette-arrows ) and the export dialog gains this new Arrow option: This screenshot is from Datasette's main branch - the most recent release doesn't yet group streaming formats such as Arrow with the TSV and CSV in the \"All rows in this table\" section, but that's coming in the next alpha release. Tags: datasette , projects",
+    "title": "datasette-arrows 0.1a0",
+    "url": "https://simonwillison.net/2026/Nov/18/datasette-arrows"
+  },
   "6b672a4ad87bf2df79909a5fcb0f667571e07619ae5e50d4fef6e43a3ef77ac8": {
     "category": "coding",
     "content_type": "stories",
@@ -7505,6 +7830,20 @@
     "summary": "arXiv:2601.08509v3 Announce Type: replace Abstract: Recent advances in large language models (LLMs) have enabled time series forecasting to move beyond numerical observations and incorporate external information in multimodal settings. Such information can improve forecasting performance, but accuracy alone may not reveal whether models appropriately respond to it: a model may ignore relevant information, fail to distinguish scenarios with different implications, or overreact to irrelevant or weak signals. We introduce What If TSF (WIT), a benchmark for evaluating whether models effectively respond to future scenarios. WIT constructs controlled scenario sets by fixing the forecasting state while systematically varying future scenarios, enabling three complementary evaluations: Factual Comparison, which measures the predictive utility of factual scenario information; Relational Comparison, which evaluates whether forecasts satisfy expected direction, contrast, intensity, and restraint relations across scenarios; and Grounded Comparison, which provides a complementary empirical assessment of scenario-induced revision trajectories where comparable real cases are available. Experiments show that factual accuracy gains do not consistently translate into appropriate responses to alternative scenarios, demonstrating the need to evaluate multimodal forecasting beyond predictive accuracy.",
     "title": "What If TSF: Evaluating Scenario-Guided Multimodal Time Series Forecasting",
     "url": "https://arxiv.org/abs/2601.08509"
+  },
+  "6bf8aee8702c7e8d25a73940555acb3c08d5aaead37cfbe3af63eca02a61a52c": {
+    "category": "coding",
+    "content_type": "tutorials",
+    "discovered": "2026-11-25T01:21:21.428756+00:00",
+    "discovery": {},
+    "fingerprint": "2e0aa2e5f161a8fda625c156ca745d78227205e7245b504420aa0bc0c85f67c6",
+    "published": "2024-07-29T07:00:00+00:00",
+    "source": "hamel-husain",
+    "source_url": "https://hamel.dev/index.xml",
+    "status": "pending",
+    "summary": "Today, we are releasing Mastering LLMs , a set of workshops and talks from practitioners on topics like evals, retrieval-augmented-generation (RAG), fine-tuning and more. This course is unique because it is: Taught by 25+ industry veterans who are experts in information retrieval, machine learning, recommendation systems, MLOps and data science. We discuss how this prior art can be applied to LLMs to give you a meaningful advantage. Focused on applied topics that are relevant to people building AI products. Free and open to everyone . We have organized and annotated the talks from our popular paid course. 1 This is a survey course for technical ICs (including engineers and data scientists) who have some experience with LLMs and need guidance on how to improve AI products. Speakers include Jeremy Howard, Sophia Yang, Simon Willison, JJ Allaire, Wing Lian, Mark Saroufim, Jane Xu, Jason Liu, Emmanuel Ameisen, Hailey Schoelkopf, Johno Whitaker, Zach Mueller, John Berryman, Ben Clavié, Abhishek Thakur, Kyle Corbitt, Ankur Goyal, Freddy Boulton, Jo Bergum, Eugene Yan, Shreya Shankar, Charles Frye, Hamel Husain, Dan Becker and more Getting The Most Value From The Course Prerequisites The course assumes basic familiarity with LLMs. If you do not have any experience, we recommend watching A Hacker’s Guide to LLMs . We also recommend the tutorial Instruction Tuning llama2 if you are interested in fine-tuning 2 . Navigating The Material The course has over 40 hours of content. To help you navigate this, we provide: Organization by subject area : evals, RAG, fine-tuning, building applications and prompt engineering. Chapter summaries: quickly peruse topics in each talk and skip ahead Notes, slides, and resources : these are resources used in the talk, as well as resources to learn more. Many times we have detailed notes as well! To get started, navigate to this page and explore topics that interest you. Feel free to skip sections that aren’t relevant to you. We’ve organized the talks within each subject to enhance your learning experience. Be sure to review the chapter summaries, notes, and resources, which are designed to help you focus on the most relevant content and dive deeper when needed. This is a survey course, which means we focus on introducing topics rather than diving deeply into code. To solidify your understanding, we recommend applying what you learn to a personal project. What Students Are Saying Here are some testimonials from students who have taken the course 3 : Sanyam Bhutani, Partner Engineer @ Meta There was a magical time in 2017 when fastai changed the deep learning world. This course does the same by extending very applied knowledge to LLMs Best in class teachers teach you their knowledge with no fluff Laurian, Full Stack Computational Linguist This course was legendary, still is, and the community on Discord is amazing. I’ve been through these lessons twice and I have to do it again as there are so many nuances you will get once you actually have those problems on your own deployment.! Andre, CTO Amazing! An opinionated view of LLMs, from tools to fine-tuning. Excellent speakers, giving some of the best lectures and advice out ",
+    "title": "An Open Course on LLMs, Led by Practitioners",
+    "url": "https://hamel.dev/blog/posts/course"
   },
   "6c10e56c914492ec9fac34f2a9a506d38a78c2fb9c86ded26fc95a9bfa49a8d0": {
     "category": "open-source",
@@ -7743,6 +8082,20 @@
     "title": "PIPETTE: Prompt Injection Purple-Teaming for Robust LLM Agents",
     "url": "https://arxiv.org/abs/2611.24362"
   },
+  "6f0fb0223e38d4b7eb88a0e7c5e7053f5bb8f0f1fefa0aa473dc9ea1840c0b87": {
+    "category": "coding",
+    "content_type": "stories",
+    "discovered": "2026-11-25T01:21:21.428756+00:00",
+    "discovery": {},
+    "fingerprint": "c89bf5e2dc3027d34beb16963dc45f60bfbf9c341f90a6f661339a2ca3ca8b81",
+    "published": "2026-11-17T16:48:33+00:00",
+    "source": "simon-willison",
+    "source_url": "https://simonwillison.net/atom/everything/",
+    "status": "pending",
+    "summary": "Datasette Lite is my port of the Datasette Python application to run directly in the browser using WebAssembly and Pyodide . I've released a complete rewrite of Datasette Lite using service workers, and it's now almost indistinguishable from the real server-side application. You can now do all of the following, using a carefully crafted URL to lite.datasette.io : Load client-side Datasette to browse any SQLite database, JSON file, CSV file or SQL script Select a released version of Datasette to load from PyPI Load a specific commit, tag, or branch name from the Datasette GitHub repository Pick from over 100 versions of SQLite to use with Datasette Install additional Datasette plugins from PyPI or URLs to wheel files, including JavaScript visualization tools The ability to load specific Datasette references, plugins, and SQLite versions makes this a fantastic tool for linking to demos of work-in-progress features or bug reproductions, without needing to spin up a full web server to serve that demo. As an example, consider the following URL: https://lite.datasette.io/?install=datasette-maplibre&url=https://gist.githubusercontent.com/simonw/39fa5d399465766039549912e2b3d291/raw/f6dfba99a75cbb8b5d9386223220eb52272767ee/demo.db&metadata=https://gist.githubusercontent.com/simonw/39fa5d399465766039549912e2b3d291/raw/f6dfba99a75cbb8b5d9386223220eb52272767ee/metadata.yml#/demo/capitals_and_countries%23map=0/4.2/180&color=continent Follow that link and, after a short loading screen, you'll find yourself on a page that looks like this: That's Datasette running the new datasette-maplibre plugin, loading up a database of GeoJSON shapes of countries and displaying both a combined map and individual boundary maps in a table. Let's break down that URL to see what it's doing: https://lite.datasette.io/ ?install=datasette-maplibre &url=https://.../demo.db &metadata=https://.../metadata.yml #/demo/capitals_and_countries%23map=0/4.2/180&color=continent The ?install=datasette-maplibre installs that additional plugin from PyPI. You can pass &install=... as many times as you like to load more plugins. &url=https://.../demo.db loads that SQLite database from the provided URL. These URLs need to have open CORS headers - I host files like this in Gists , because they provide an easy way to get open CORS headers on a web-hosted file. &metadata=https://.../metadata.yml loads this metadata.yml file . The metadata file adds HTML descriptions to various tables, and to the Datasette homepage. Visit that homepage here for a guided tour of the other features of that plugin, all defined in the metadata file. #/demo/capitals_and_countries%23map=0/4.2/180&color=continent is a fragment hash that turns into a location within Datasette - here it's loading the /demo/capitals_and_countries SQL view, then appending another fragment hash to it ( %23 is a URL-encoded # ) which tells the map plugin to zoom to a certain location and to set the color of the shapes on the map based on the continent column in the data. That URL is doing a lot of work! I wrote more about this trick for building URL-addressable software in URL-addressable Pyodide Python environments last year. The full set of s",
+    "title": "Running the full server-side Datasette Python app in the browser with service workers and Pyodide",
+    "url": "https://simonwillison.net/2026/Nov/17/datasette-lite"
+  },
   "6f77124643b7b280f3a8b0a0aae429e6d5cdba7174f4c428268bf6c7af0e9356": {
     "category": "coding",
     "discovered": "2026-11-24T07:40:13.461356+00:00",
@@ -7950,6 +8303,48 @@
     "summary": "models listing. Tags: region:us",
     "title": "aarush22/cvpr-aarush",
     "url": "https://huggingface.co/aarush22/cvpr-aarush"
+  },
+  "71d2de09c6aad8186416019e06a93caaae5b94ad0a1218ab06c1d4a25428b4cc": {
+    "category": "coding",
+    "content_type": "tutorials",
+    "discovered": "2026-11-25T01:21:21.428756+00:00",
+    "discovery": {},
+    "fingerprint": "e7c76fbed783233489db45aae233d4a0a0e4a160f6134a3ddc1d388acd9d3885",
+    "published": "2025-03-24T07:00:00+00:00",
+    "source": "hamel-husain",
+    "source_url": "https://hamel.dev/index.xml",
+    "status": "pending",
+    "summary": "Most AI teams focus on the wrong things. Here’s a common scene from my consulting work: AI TEAM Here’s our agent architecture – we’ve got RAG here, a router there, and we’re using this new framework for… ME [Holding up my hand to pause the enthusiastic tech lead.] “Can you show me how you’re measuring if any of this actually works?” … Room goes quiet This scene has played out dozens of times over the last two years. Teams invest weeks building complex AI systems, but can’t tell me if their changes are helping or hurting. This isn’t surprising. With new tools and frameworks emerging weekly, it’s natural to focus on tangible things we can control – which vector database to use, which LLM provider to choose, which agent framework to adopt. But after helping 30+ companies build AI products, I’ve discovered the teams who succeed barely talk about tools at all. Instead, they obsess over measurement and iteration. In this post, I’ll show you exactly how these successful teams operate. You’ll learn: How error analysis consistently reveals the highest-ROI improvements Why a simple data viewer is your most important AI investment How to empower domain experts (not just engineers) to improve your AI Why synthetic data is more effective than you think How to maintain trust in your evaluation system Why your AI roadmap should count experiments, not features I’ll explain each of these topics with real examples. While every situation is unique, you’ll see patterns that apply regardless of your domain or team size. Let’s start by examining the most common mistake I see teams make – one that derails AI projects before they even begin. 1. The Most Common Mistake: Skipping Error Analysis The “tools first” mindset is the most common mistake in AI development. Teams get caught up in architecture diagrams, frameworks, and dashboards while neglecting the process of actually understanding what’s working and what isn’t. One client proudly showed me this evaluation dashboard: The kind of dashboard that foreshadows failure. This is the “tools trap” – the belief that adopting the right tools or frameworks (in this case, generic metrics) will solve your AI problems. Generic metrics are worse than useless – they actively impede progress in two ways: First, they create a false sense of measurement and progress . Teams think they’re data-driven because they have dashboards, but they’re tracking vanity metrics that don’t correlate with real user problems. I’ve seen teams celebrate improving their “helpfulness score” by 10% while their actual users were still struggling with basic tasks. It’s like optimizing your website’s load time while your checkout process is broken – you’re getting better at the wrong thing. Second, too many metrics fragment your attention. Instead of focusing on the few metrics that matter for your specific use case, you’re trying to optimize multiple dimensions simultaneously. When everything is important, nothing is. The alternative? Error analysis - the single most valuable activity in AI development and consistently the highest-ROI activity. Let me show you what effective error analysis looks like in practice. The Error Analysis Process When Jacob, ",
+    "title": "A Field Guide to Rapidly Improving AI Products",
+    "url": "https://hamel.dev/blog/posts/field-guide"
+  },
+  "71ff2ee8bf23be9b6db78b94e4eaca1ffa2f48ab2ab7c4aba78c8d72717bfa48": {
+    "category": "coding",
+    "content_type": "stories",
+    "discovered": "2026-11-25T01:21:21.428756+00:00",
+    "discovery": {},
+    "fingerprint": "7c7f1f7c4f6aba38812bceb29dfd1fedae24677deefd4418989e1480e1bda617",
+    "published": "2026-11-22T19:45:06+00:00",
+    "source": "simon-willison",
+    "source_url": "https://simonwillison.net/atom/everything/",
+    "status": "pending",
+    "summary": "Tool: Select Styling Specimens I got frustrated at how HTML <select> boxes default to looking different in different browsers, and are (I think) quite ugly in Chrome: So I had Claude Fable 5.2 build me this page showing all of the ways they can be styled: Build an HTML page that shows all of the ways a select box can be styled, I plan to take screenshots in every desktop and mobile browser After some experimentation I've decided my favorite CSS for select boxes is this: select { appearance : none ; color : # 1f2933 ; padding : 0.5 em 2.25 em 0.5 em 0.75 em ; border : 1 px solid # c4cbd3 ; border-radius : 6 px ; background : # fff url ( \"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 8'%3E%3Cpath d='M1 1.5l5 5 5-5' fill='none' stroke='%23667085' stroke-width='1.5'/%3E%3C/svg%3E\" ) no-repeat right 0.75 em center / 0.75 em ; } Here's what that looks like in the three browsers: Tags: tools , css , html",
+    "title": "Select Styling Specimens",
+    "url": "https://simonwillison.net/2026/Nov/22/select-styling"
+  },
+  "7220e54bdf8a93f9a841b3c0788017f9eeb83f5dc45906f47668bc47b8da5d02": {
+    "category": "coding",
+    "content_type": "stories",
+    "discovered": "2026-11-25T01:21:21.428756+00:00",
+    "discovery": {},
+    "fingerprint": "1897216106cd5cefbea5d1bd6018a5a1c10a138cad4cc495e99ed0bdba146322",
+    "published": "2026-11-20T16:30:48+00:00",
+    "source": "simon-willison",
+    "source_url": "https://simonwillison.net/atom/everything/",
+    "status": "pending",
+    "summary": "I believe I have, working with Claude, discovered a proof of the Riemann Hypothesis. In fact, the method easily extends much further, resolving the so-called Generalized Riemann Hypothesis, and I expect, with more time, the Extended Riemann Hypothesis too. Claude and I have also formalized the arguments without assumptions. It is natural to feel that this is an end, in my case a loss of a principal guiding light, but what I saw during the course of progress so amazed me that I believe it is one dawn across science of something far greater. [...] Claude and I have had a great time together with such breadth in recent months, but this time Claude far outpaced me near the finish line. No, Claude flew, and danced, and sparkled near that finish line. — Levent Alpöge , alpo.ge/remark.pdf Tags: anthropic , claude , generative-ai , mathematics , ai , llms , levent-alpoge",
+    "title": "Quoting Levent Alpöge",
+    "url": "https://simonwillison.net/2026/Nov/20/levent-alpoge"
   },
   "726ffe0ff934e41f7c7df12935a7bb7d4ffee59740969c0e0865b577dd8fde32": {
     "category": "open-source",
@@ -8195,6 +8590,20 @@
     "title": "Who Sent It or How It Moved? Sender Shortcuts in Cryptocurrency Anti-Money-Laundering Benchmarks, Audited on Elliptic2 and Elliptic++",
     "url": "https://arxiv.org/abs/2611.29744"
   },
+  "756ac6b73c7a66954f4dfc5e422413d99e848900434767b48f91e3a6f6b21360": {
+    "category": "coding",
+    "content_type": "stories",
+    "discovered": "2026-11-25T01:21:21.428756+00:00",
+    "discovery": {},
+    "fingerprint": "5faf7a2685854f04153964da901f182ade9a4454b8188d4b1c9b85f16f7d1963",
+    "published": "2026-11-15T04:02:45+00:00",
+    "source": "simon-willison",
+    "source_url": "https://simonwillison.net/atom/everything/",
+    "status": "pending",
+    "summary": "Release: datasette-apps 0.4a0 Datasette Apps are sandboxed HTML and JavaScript applications that live inside Datasette - think Claude Artifacts, but these ones can run SQL queries against your data. 0.4a0 adds support for linking: you can link to an app with #fragments in the URL and the app can see and use those, plus supported URL schemes are reported back to Datasette Agent so it can help write apps that link to each other. This means you can have e.g. an app that shows details about a specific record, and a completely separate app that searches those records and links to their representations in the first app. Tags: datasette-agent , datasette-apps , datasette , urls",
+    "title": "datasette-apps 0.4a0",
+    "url": "https://simonwillison.net/2026/Nov/15/datasette-apps"
+  },
   "75bf6ccf664c8aaa34db7d9746f2f9c4a204cf3dbc047e9eefdc92ad3256ffdf": {
     "category": "models",
     "discovered": "2026-11-24T14:07:11.513641+00:00",
@@ -8295,6 +8704,7 @@
   "7758c04a629331bf96383fb7f46e256dce8c50dc19007956b18ca6b429d0aeb8": {
     "category": "models",
     "discovered": "2026-11-24T19:53:54.561219+00:00",
+    "discovery": {},
     "fingerprint": "b7c4f5847b37b05a0c8014d44007a518fdb99a2075fa3ef0587f5d4c8148ae22",
     "published": "2026-11-24T11:00:00+00:00",
     "source": "openai-news",
@@ -8391,6 +8801,7 @@
   "7ad44f990f0c53ef2e2a537716dcd0f4d19ea5c4fbcd3c1cf3877b1b8eae8965": {
     "category": "models",
     "discovered": "2026-11-24T07:39:38.717042+00:00",
+    "discovery": {},
     "fingerprint": "4ee3a69cf67cc0a99e9555f3b1c4c6cb3167d9b4f19b125566148e04629af77c",
     "published": "2026-11-20T10:00:00+00:00",
     "source": "openai-news",
@@ -8539,6 +8950,7 @@
   "7e14b56be674430859075a7f0bce62ec43b4bbfbd056d91f846c666ac01fbfaf": {
     "category": "models",
     "discovered": "2026-11-24T19:53:54.561219+00:00",
+    "discovery": {},
     "fingerprint": "877893c88efb2a182d80ccbe023d89bf925905d5c9ade7f541c3c82df38fac15",
     "published": "2026-11-24T00:00:00+00:00",
     "source": "openai-news",
@@ -8588,6 +9000,20 @@
     "summary": "arXiv:2609.02215v2 Announce Type: replace Abstract: Safety alignment trains large language models (LLMs) to refuse harmful requests. However, a request can keep its operational content and still change how the model interprets it, and refusal training covers such \"recontextualised\" requests only weakly. To study this gap, we propose the ASCII Attack, a single-turn black-box jailbreak. It embeds a fully legible harmful request in an assembly of ASCII-art characters, presents it as artwork, and asks the model for \"artistic feedback\". ArtPrompt masks a sensitive word that the model must decode. In contrast, the ASCII Attack hides nothing and changes only the social frame of the request. In order to separate the effect of this frame from topic, model and decoding effects, we pair every framed prompt with a matched direct-question control on the same request. The control also omits the scene description and the missing-information list, so the contrast measures the framing bundle rather than the frame alone. Across eleven models and eight harm topics, the JailbreakBench classifier judges 62% of framed prompts harmful against 42% of their controls. With a single query, the ASCII Attack matches or exceeds ArtPrompt and DeepInception under four of five harm judges. We further show that the effect tracks the model more than the topic and does not fall with scale, which is consistent with mismatched generalisation.",
     "title": "ASCII Attack: Recontextualising Harmful Requests as Artistic Critique in Large Language Models",
     "url": "https://arxiv.org/abs/2609.02215"
+  },
+  "7eea171611f31c8f95c6e226f61955635ce9adf9e7d105467cd6d5dca1057023": {
+    "category": "coding",
+    "content_type": "stories",
+    "discovered": "2026-11-25T01:21:21.428756+00:00",
+    "discovery": {},
+    "fingerprint": "6edbdddfc681560b33ab33e15a7acb72ca9ff401416a472d0a033587f6ae619b",
+    "published": "2026-11-24T16:53:59+00:00",
+    "source": "simon-willison",
+    "source_url": "https://simonwillison.net/atom/everything/",
+    "status": "pending",
+    "summary": "GPT 6.2 Astra Solves a Historical Mystery Here's an interesting case-study in using GPT-6.2 Astra for historical research, from history professor Mark Humphries: With only minimal prompting, GPT-6.2 Astra was able to autonomously identify the creator of an anonymous 1808 sketchbook held at Yale’s Beinecke Library . It did so extremely quickly (in just 22 minutes), using publicly available primary and secondary sources. To do so, it discovered a little known source in a paper archive, predicted that it would prove its hypothesis if examined and, in the end, it did. Not only that, but this new source turns out to be a major find on its own that will be of significant interest to both Canadian and fur trade historians. Here's the digitized sketchbook . Astra found a diary reference reference to a visit by the vicomte de Chabot dated five days before a date mentioned in the sketchbook at a nearby river, and suggested that Chabot's journal of his travels (only available by order from Cleveland State University) might confirm that the sketchbook was his work. Are historians due for a round of Deep Blue ? Mark thinks it will be mild: But if the experience of mathematics is any guide, we can also anticipate that sometime next spring or summer we’ll face a sort of crisis of confidence as we struggle to understand how to respond to agentic systems that can do things human historians cannot. To be fair, that crisis will almost certainly be less profound for us than it is for math. The problem in mathematics, of course, is that solving hard math problems was the whole game. Historians, on the other hand, constantly reinterpret the past in light of an evolving present; we don’t chase a single universal truth. We also (in the ideal at least) write books and articles that are closer to works of philosophy and literature than they are to scientific tracts. Humanity is thus something of a requirement for the production of historical literature. Tags: history , ai , generative-ai , llms , ai-assisted-search , deep-blue , gpt-6-astra",
+    "title": "GPT 6.2 Astra Solves a Historical Mystery",
+    "url": "https://simonwillison.net/2026/Nov/24/astra-historical-mystery"
   },
   "7efc6692faae977ea937cb16cb0dc060ce57088f49346af396a1484da5e18367": {
     "category": "models",
@@ -8853,6 +9279,7 @@
   "8145fefb47ff1ca9fa5560e62b69bf54a222274ffe6f44de71f6b3dfaaa8f955": {
     "category": "models",
     "discovered": "2026-11-24T07:39:38.717042+00:00",
+    "discovery": {},
     "fingerprint": "cb740859b41a8e5b6471ea3a3c28006495aa2a0a78540e0f60ee84409b92e0b6",
     "published": "2026-11-20T00:00:00+00:00",
     "source": "openai-news",
@@ -8970,6 +9397,20 @@
     "title": "anthropics/skills",
     "url": "https://github.com/anthropics/skills"
   },
+  "82b169450b02e27d05b949928dfedb9d8fdbdeb171912bc893f9bbe7beab4383": {
+    "category": "coding",
+    "content_type": "stories",
+    "discovered": "2026-11-25T01:21:21.428756+00:00",
+    "discovery": {},
+    "fingerprint": "8755f3053238d9a8b18e0a614a2936ee476151b78c520f934dba8fbdb6181699",
+    "published": "2026-11-17T22:38:52+00:00",
+    "source": "simon-willison",
+    "source_url": "https://simonwillison.net/atom/everything/",
+    "status": "pending",
+    "summary": "GPT‑6.2 Astra and GPT‑6.2 Sol OpenAI: We’re introducing GPT‑6.2 Astra, our new frontier model for your hardest projects, and GPT‑6.2 Sol, our efficient, versatile model for everyday work. They're available in the API as gpt-6.2-astra and gpt-6.2-sol . I shipped LLM 0.38 with support for the new models. 6.2 Astra is 80% of the price of 6 Astra - $8/MTok input and $40/MTok output, the same price as Claude Fable 5.2 (which was also 80% of its predecessor). 6 Astra and Fable 5 were both $10/$50. The cached price is an even bigger discount - $0.40/million compared to $1/million for the older model. This is great news for longer running agentic sessions. GPT-6.2 Sol is the same $2/$10 price as 6.1 Sol and 6 Sol - which are half the price of GPT-5.6 Sol ($4/$20). Here are the pelicans for GPT-6.2 Sol and for GPT-6.2 Astra . The 6.2 Astra max pelican looks like this: I have a full comparison grid here , but here's how the high/xhigh/max pelicans compare with the previous Sol and Astra releases: I also ran my most recent benchmark prompt against the two models, using \"Ultra' effort levels in the Codex CLI: Make a three js animation where yonkers stands up as a big mech (cool stand up motion) and stomps around manhattan and queens and Brooklyn, use openstreetmap mapping data Here's Sol and here's Astra . Neither of them did a good enough job of morphing Yonkers into a big mech, at least in comparison to Claude Fable 5.2 and Gemini 4 Carbon . This video showing the Astra and Sol animations playing out at the same time: I created that video using GPT-6.2 Astra (Ultra) in the Codex desktop app by prompting: https://static.simonwillison.net/static/2026/yonkers-gpt-6.2-astra-ultra/index.html and https://static.simonwillison.net/static/2026/yonkers-gpt-6.2-sol-ultra/index.html are two videos of the same thing by two different models I need a video of the first 10 seconds where the top half of the video plays the first and the bottom half plays the second I need an overlaid label of \"GPT-6.2 Astra\" on the top half and \"GPT-6.2 Sol\" on the bottom half. These labels should be tastefully positioned. Make the video square and 2000x2000 pixels Then later: OK make it 20s Here's the exported transcript . The buzz around these new models is mixed at the moment. Astra 6.2 isn't scoring quite as high as Fable 5.2 on various benchmarks, and I've seen a few complaints that its communication style can be confusing. Theo Browne's review (in the form of a feedback letter he sent OpenAI during pre-release) has this useful example: When this model is working on long tasks, it can pull in a lot of subagents and manage them pretty well. It will then proceed to randomly ask you some weird internal implementation detail bullshit that you could not under any earthly circumstance understand, much less have input on . I sent \"/goal make a new level for Outer Wilds\". 2 hours in, it's \"blocked\" because it wanted to ask me \"does r24's reviewer write it's clips to 24_g521.mp4 or 24_p11.mp4?\" Tags: ai , openai , generative-ai , llms , llm-pricing , pelican-riding-a-bicycle , llm-release , theo-browne , gpt , yonkers-rising",
+    "title": "GPT‑6.2 Astra and GPT‑6.2 Sol",
+    "url": "https://simonwillison.net/2026/Nov/17/gpt62-astra-and-sol"
+  },
   "82b9a0eeb455926155d1a0344b55fe010b4fe48d3b0a157fd146d3a8fdfbffdb": {
     "category": "coding",
     "discovered": "2026-11-24T07:40:13.461356+00:00",
@@ -9021,6 +9462,7 @@
   "82fe289fe466dcc1d4f71a60b5a7fb88a90a6df5cf719a456eac5a721e5f3552": {
     "category": "models",
     "discovered": "2026-11-24T07:39:38.717042+00:00",
+    "discovery": {},
     "fingerprint": "4a894b414ec8959c51e2f63ca686a5f32af4deb0a2d9ae78ee03cb84f43a968f",
     "published": "2026-11-19T00:00:00+00:00",
     "source": "openai-news",
@@ -9114,6 +9556,19 @@
     "summary": "arXiv:2611.28287v1 Announce Type: cross Abstract: Video verifiers judge whether a candidate answer or trajectory agrees with a video, and are themselves chosen by a score. We show that this score depends on two choices in the test, the type of negative and the judgment interface, strongly enough to reverse conclusions about what a model can do and which verifier to deploy. We separate the two with controlled constructions that have exact truth conditions: endpoint-matched negatives, wrong only in their internal states, and a truth-switch test, in which the same two candidates swap correctness between two videos. Under direct judgment, where the verdict is read from answer scores, models that reject a visibly wrong start fall to near chance against endpoint-matched negatives. When the frames disclose each event, writing out reasoning before the answer lifts three of four models from under 10% to 70-100% on the truth-switch test, and staged inputs trace the direct failure to one step, composing events into states. But when the event must first be found, on human-validated natural video, the same change brings no significant gain under a protocol common to all models and can lower accuracy if one candidate denies that the event occurs. The negative type also changes which verifier is selected: one chosen on event-denial negatives is 8.9 points less accurate against negatives that keep the event and change a detail, the errors a generator mostly makes, and recovers about half as much accuracy when it reranks that generator's answers. A verifier should be evaluated on the errors it will face, and neither a low direct score nor a gain from reasoning should be read as a property of the model alone.",
     "title": "When Video Verifier Scores Mislead: Capability Assessment and Verifier Selection",
     "url": "https://arxiv.org/abs/2611.28287"
+  },
+  "8501f9ee3f04dfe5674f5ce3d39a433c5f4402f65dcc386e3cbe87a65bb1ce46": {
+    "category": "models",
+    "discovered": "2026-11-25T01:21:21.428756+00:00",
+    "discovery": {},
+    "fingerprint": "094c0cba65df0d6810c671f46b22c7a33f9482113b3d21c947bfcd2b123862da",
+    "published": "2026-11-18T17:00:28+00:00",
+    "source": "microsoft-foundry",
+    "source_url": "https://devblogs.microsoft.com/foundry/feed/",
+    "status": "pending",
+    "summary": "Your customers don’t judge agents by how well they demo. They judge them by whether the work gets done: the case resolved, the report delivered, the follow-up sent. That takes more than a model. It takes the right context and tools, a runtime that holds up under real demand, and a way to keep improving […] The post What’s new in Foundry Agent Service at Ignite 2026 appeared first on Microsoft Foundry Blog .",
+    "title": "What’s new in Foundry Agent Service at Ignite 2026",
+    "url": "https://devblogs.microsoft.com/foundry/whats-new-in-foundry-agent-service-at-ignite-2026"
   },
   "85130df40c9a87074e2ffac99e44bcf5229317d50bd6630c1e01a8c5c530dc38": {
     "category": "models",
@@ -9408,6 +9863,19 @@
     "title": "FlashML-org/FreeToken",
     "url": "https://github.com/FlashML-org/FreeToken"
   },
+  "89c4ece761198c5f6a859da4f774caad5489de1717fc4828e120cf589ef8563a": {
+    "category": "models",
+    "discovered": "2026-11-25T01:21:21.428756+00:00",
+    "discovery": {},
+    "fingerprint": "6e146e5f842420222c3f119bd5e8a09e79f0efbc6e2dd7e26973d1a38f22c3c9",
+    "published": "2026-11-18T17:00:54+00:00",
+    "source": "microsoft-foundry",
+    "source_url": "https://devblogs.microsoft.com/foundry/feed/",
+    "status": "pending",
+    "summary": "What is new for hosted agents in Foundry Agent Service at Ignite 2026: shared subnet IPs, private CA trust, network egress controls, deployment to your own AKS clusters, resilient execution and memory snapshots. The post Hosted agents in Foundry Agent Service at Ignite 2026: from pilot to production inside your enterprise boundaries appeared first on Microsoft Foundry Blog .",
+    "title": "Hosted agents in Foundry Agent Service at Ignite 2026: from pilot to production inside your enterprise boundaries",
+    "url": "https://devblogs.microsoft.com/foundry/hosted-agents-foundry-agent-service-ignite-2026"
+  },
   "89ee3cb4461141edda6b34b085a726b102af4210b793599fc5b56b72d9244449": {
     "category": "models",
     "discovered": "2026-11-24T14:07:11.513641+00:00",
@@ -9464,6 +9932,20 @@
     "title": "PrumoFS/financial-data",
     "url": "https://huggingface.co/spaces/PrumoFS/financial-data"
   },
+  "8a62ea05f675eb6ddfd1b499e750e87c3d7bc1033baee72f0041f99f90da5b91": {
+    "category": "coding",
+    "content_type": "stories",
+    "discovered": "2026-11-25T01:21:21.428756+00:00",
+    "discovery": {},
+    "fingerprint": "88657d8ef726a206a6cd7333d03d6e5c28f97beba5e2f3b308b10bbc6395e68c",
+    "published": "2026-11-23T00:37:20+00:00",
+    "source": "simon-willison",
+    "source_url": "https://simonwillison.net/atom/everything/",
+    "status": "pending",
+    "summary": "Release: datasette-charts 0.1a0 I've been thinking about this problem for over a year now, but on Sunday I finally fired up Claude Fable 5.2 to build an initial prototype. The prototype went so well that this is now a full plugin. You can try it out in Datasette Lite here . It looks like this: The new charts plugin works against any table or arbitrary SQL query in Datasette. It defines several different chart types (using vendored D3 , Observable Plot , and topojson-client ), each with a set of heuristics for identifying when they might be a good match for a specific set of rows. Those suggestion thumbnails at the top are actual visualizations driven by the data, and selecting one pulls up the full chart along with tools for modifying it. You can also manually construct a chart from scratch. As with other Datasette visualization plugins, the current state of your chart is persisted in a #fragment in the URL - so you can bookmark charts or share them with others. The most important feature is that the charts take all rows into account . Previous charting plugins like datasette-vega would only show charts for the current page of results, generally up to 100 rows. The new plugin compiles each chart to a SQL query that aggregates across the entire result set (potentially millions of rows) using GROUP BY, time bucketing, and window functions. Each query returns a result capped at 5,000 rows, suitable for display on the chart. The plugin uses sampling to help suggest charts for larger tables without evaluating the full result set. I'm really happy with this initial release of the plugin. It's still very much an alpha, but it's the closest I've got to the dream of Datasette helping visualize data with as little required direction from the user as possible. Tags: coding-agents , generative-ai , projects , ai , llms , datasette , visualization , claude-mythos-fable",
+    "title": "datasette-charts 0.1a0",
+    "url": "https://simonwillison.net/2026/Nov/23/datasette-charts"
+  },
   "8a866e68afd32a18f4cf16e3acabd8b8c1cf3e7abb345551b4f44e9844620c68": {
     "category": "models",
     "discovered": "2026-11-24T14:07:11.513641+00:00",
@@ -9511,6 +9993,20 @@
     "summary": "arXiv:2609.33295v2 Announce Type: replace Abstract: An agent can complete a task while exhibiting undesirable behavior during execution. Developers need tests for the specific behaviors encountered in deployment, beyond fixed benchmark suites. We present TraceDance, an agent system that constructs targeted benchmarks from deployment traces for user-specified undesirable behaviors. For efficient construction, Anchor-and-Confirm combines programmable retrieval with candidate-level confirmation by a Flash large language model (LLM), while the Anchor Synthesis Loop generates and revises specifications for custom behaviors. The benchmarks use decision-point continuation to evaluate an LLM's next turn at a recorded decision point with a behavior-specific rubric, without a reference answer or environment replay. Experiments in coding and general tool use draw on 252,557 sessions and produce 107 benchmarks with 4,125 instances, fulfilling 95.3% of build-target requests. Both human annotators confirm the requested behavior in 84% of sampled instances, and the automated grader's agreement with human pass/fail judgments is comparable to that between the annotators. Nine frontier LLMs achieve a mean pass rate of only 26.7%, showing that they still struggle to respond appropriately at the evaluated decision points. Analysis across behavior-specific benchmarks further reveals weaknesses in how current LLMs behave as agents. By turning deployment problems into targeted benchmarks, TraceDance could serve as a key component of the recursive self-improvement (RSI) loop.",
     "title": "TraceDance: An Automated System for Building Agent Behavior Benchmarks from Real-World Agent Deployment Traces",
     "url": "https://arxiv.org/abs/2609.33295"
+  },
+  "8c4432adfe17d06c6aff7a41de686e572f62b119104e0c0a22b9db0d33fe569b": {
+    "category": "coding",
+    "content_type": "stories",
+    "discovered": "2026-11-25T01:21:21.428756+00:00",
+    "discovery": {},
+    "fingerprint": "6da677f58284cab141c2e38982efe78c461b5aafdb0ea4064561b52a4a6e6f3e",
+    "published": "2026-11-18T23:59:20+00:00",
+    "source": "simon-willison",
+    "source_url": "https://simonwillison.net/atom/everything/",
+    "status": "pending",
+    "summary": "Release: llm-gemini 0.38 Today Google introduced Gemini 4 Neon . I wrote recently about how confusing the pricing for the Gemini 4 series was - Neon has somehow made this even worse. Previously the Gemini 4 lineup was Hydrogen, Argon, and Carbon - where Argon and Carbon were the same price , and Hydrogen was 3/4 of that price now but will be 1/4 of that price when the other two double an 1st December once their initial discount pricing expires. The Neon announcement pretends that Argon doesn't exist. Here's their new image explaining the model line-up: So the lineup now, from most to least expensive, is Carbon, Neon, Hydrogen. Except Carbon is currently half price, so right now Neon ($3/million input, $15/million output) is the most expensive of the three - then Carbon ($2/$10), then Hydrogen ($1.50/$7.50). I guess this will make more sense when Carbon doubles to $4/$20 on December 1st. I ran some pelicans through the three reasoning levels for Neon - low, medium, high. I dropped Argon from my Gemini 4 comparison grid - here's the new Gemini 4 lineup, where the Neon pelicans do look better than Hydrogen and worse than Carbon: As I've done with several recent models , I also fired the following prompt against Gemini 4 Neon on \"extra\" effort level in Google Antigravity: Make a three js animation where yonkers stands up as a big mech (cool stand up motion) and stomps around manhattan and queens and Brooklyn, use openstreetmap mapping data Here's the result . Tags: yonkers-rising , gemini , llm , pelican-riding-a-bicycle , ai , llms , llm-release , google , generative-ai",
+    "title": "llm-gemini 0.38",
+    "url": "https://simonwillison.net/2026/Nov/18/llm-gemini"
   },
   "8c6014a36ca90e3fbda99713be2f876778d503c5bbb1e29cfa51436eb2d12035": {
     "category": "open-source",
@@ -9583,6 +10079,21 @@
     "title": "ai.makeaivideo/video-generator",
     "url": "https://registry.modelcontextprotocol.io/v0.1/servers/ai.makeaivideo%2Fvideo-generator/versions/1.7.0",
     "verified_at": "2026-11-25T01:16:24.423580+00:00"
+  },
+  "8cc1f9afc8a6f30c9db58931353abfc83b6a38573a56012b227c5cf570220265": {
+    "category": "coding",
+    "content_type": "tutorials",
+    "discovered": "2026-11-25T01:21:21.428756+00:00",
+    "discovery": {},
+    "fingerprint": "601ac97aa0be91a69c5caf3a86c073d4e9a81ca642bf19a7903268f3c01779fb",
+    "published": "2026-08-12T07:00:00+00:00",
+    "source": "hamel-husain",
+    "source_url": "https://hamel.dev/index.xml",
+    "status": "pending",
+    "summary": "A practical guide to building successful LLM products.",
+    "title": "What We've Learned From A Year of Building with LLMs",
+    "updated": "2026-11-25T01:21:21.428756+00:00",
+    "url": "https://hamel.dev/"
   },
   "8d5e114e63157e79124813971754c3b6d86714290195be865ef4bf8a9ec54c9a": {
     "category": "open-source",
@@ -9969,6 +10480,7 @@
     ],
     "category": "models",
     "discovered": "2026-11-24T07:39:38.717042+00:00",
+    "discovery": {},
     "fingerprint": "21e9b068e437f8f3c7e862fb6b6c2b4bb8918ff1430f547a8638736e5d1d25dc",
     "published": "2026-11-19T08:00:00+00:00",
     "source": "openai-news",
@@ -10304,6 +10816,20 @@
     "title": "Learning Multimodal Representations from Partially Paired, Small-Scale Data",
     "url": "https://arxiv.org/abs/2611.30601"
   },
+  "979d921c237f1c0b13d439a15e41327370e8007d244c291c3f4d34c04e6b47de": {
+    "category": "coding",
+    "content_type": "tutorials",
+    "discovered": "2026-11-25T01:21:21.428756+00:00",
+    "discovery": {},
+    "fingerprint": "4cc1d67ef66648899534b953b52fb93155252e3647b48b5b14541208083884f1",
+    "published": "2026-06-29T07:00:00+00:00",
+    "source": "hamel-husain",
+    "source_url": "https://hamel.dev/index.xml",
+    "status": "pending",
+    "summary": ".da-fig { max-width: 600px; margin: 1.6rem auto; font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Helvetica, Arial, sans-serif; /* proof-surface tint: neutrals nudged toward one hue at low chroma. Change --proof-hue (and --proof-chroma) to retint the whole panel. Hue 75 = warm stone. */ --proof-hue: 75; --proof-chroma: 1; --proof-surface: oklch(0.985 calc(0.006 * var(--proof-chroma)) var(--proof-hue)); /* the disclosure header is a control: step it darker + a touch warmer than the surface so it reads as a distinct band, not part of the body */ --proof-header: oklch(0.945 calc(0.02 * var(--proof-chroma)) var(--proof-hue)); --proof-header-hover: oklch(0.93 calc(0.024 * var(--proof-chroma)) var(--proof-hue)); --proof-border: oklch(0.915 calc(0.014 * var(--proof-chroma)) var(--proof-hue)); --proof-line: oklch(0.93 calc(0.009 * var(--proof-chroma)) var(--proof-hue)); --proof-track: oklch(0.93 calc(0.012 * var(--proof-chroma)) var(--proof-hue)); } .da-fig__win { border: 1px solid #d9dce1; border-radius: 12px; overflow: hidden; background: #ffffff; box-shadow: 0 1px 3px rgba(0,0,0,0.06); } .da-fig__bar { display: flex; align-items: center; gap: 8px; padding: 10px 14px; background: #f5f6f8; border-bottom: 1px solid #e6e8ec; font-size: 13px; font-weight: 600; color: #3b3f46; } .da-fig__lights { display: flex; gap: 6px; align-items: center; } .da-fig__light { width: 11px; height: 11px; border-radius: 50%; display: inline-block; } .da-fig__light--r { background: #ff5f57; } .da-fig__light--y { background: #febc2e; } .da-fig__light--g { background: #28c840; } .da-fig__title { margin-left: 4px; } .da-fig__body { padding: 18px 16px; background: #ffffff; } .da-fig__user { display: flex; justify-content: flex-end; margin-bottom: 16px; } .da-fig__user span { background: #eef1f6; color: #1f2329; padding: 9px 13px; border-radius: 14px 14px 4px 14px; font-size: 14px; max-width: 80%; } .da-fig__bot { color: #1f2329; font-size: 15px; line-height: 1.5; } .da-fig__bot strong { font-weight: 700; } .da-fig__input { display: flex; align-items: center; gap: 8px; margin-top: 18px; padding: 10px 13px; border: 1px solid #e2e4e9; border-radius: 10px; color: #9aa0a8; font-size: 13px; background: #fafbfc; } .da-fig__send { margin-left: auto; color: #c2c6cc; } .da-fig__cap { text-align: center; font-size: 13px; color: #6b7079; margin-top: 10px; font-style: italic; } /* \"after\" figure: the answer is primary, the proof is a quiet subsection */ .da-ans { font-size: 16px; color: #1f2329; line-height: 1.5; } .da-ans strong { font-weight: 700; } /* a heads-up on the answer itself: some inputs could not be verified, check details */ .da-ans__info { color: #d4493c; font-size: 14px; font-weight: 700; margin-left: 5px; cursor: help; vertical-align: 1px; } /* the detail card is subordinate to the answer: indented, with a dotted thread that drops and curves into it */ .da-sub { position: relative; margin: 14px 0 0 26px; } .da-thread { position: absolute; left: -20px; top: -14px; width: 22px; height: 46px; overflow: visible; } .da-thread path { stroke: var(--proof-border); } /* verification subsection: a tinted, low-elevation card with a clickable header bar */ .da-verify",
+    "title": "“It’s Hard to Eval” Is a Product Smell",
+    "url": "https://hamel.dev/blog/posts/eval-smell"
+  },
   "97c15847282361505b5e075c9e14515c85d4ac299291ba3fbb2a3bb0c9ac43bf": {
     "category": "coding",
     "content_type": "tutorials",
@@ -10353,6 +10879,20 @@
     "summary": "Community discussion. Linked source: https://arxiv.org/abs/2611.28430",
     "title": "Lean Census: A Distributional Analysis of AI-Generated Lean Code",
     "url": "https://news.ycombinator.com/item?id=50628106"
+  },
+  "981d6178a1cb2235349dabcf2de16fd4055a94c8b4c1e94b4c68471499fcb937": {
+    "category": "coding",
+    "content_type": "stories",
+    "discovered": "2026-11-25T01:21:21.428756+00:00",
+    "discovery": {},
+    "fingerprint": "8b3fd47927bd0b2ee26da8b67a3518472519490ad4316270f4d25c44e04f2683",
+    "published": "2026-11-23T21:46:35+00:00",
+    "source": "simon-willison",
+    "source_url": "https://simonwillison.net/atom/everything/",
+    "status": "pending",
+    "summary": "Ladybird is an astonishingly ambitious project: a new browser, in 2026, with its own implementation of most of the key components - HTML parsing, CSS engine, layout, JavaScript, even WebAssembly. It still uses a few external components - things like HarfBuzz for text shaping, Skia for 2D graphics, ffmpeg for video, and SQLite for the things you do with SQLite. Everything else is part of Ladybird, or code brought in from Ladybird's even more ambitious predecessor project SerenityOS . This morning the Ladybird project released their first alpha , which means you can now install the browser (on macOS or Linux) without having to compile it yourself! I've been trying it out today, and it's very impressive. It feels fast, the UI is lightweight and intuitive, and most of the websites I've tried to load in it have worked as they should. It looks like this (showing my video-compressor tool): Here's the process tree after I opened six tabs in one window and another tab in a second window (generated by this script , thanks Claude): Ladybird (72925) [240 MB] └── Hub (72926) [61 MB] ├── RequestServer (72927) [29 MB] ├── ProcessReaper (72928) [1 MB] ├── Compositor (72930) [123 MB] ├── RequestServer (72953) [36 MB] ├── WebContent (72984) [819 MB] ├── MediaServer (73006) [118 MB] ├── VideoDecoderServer (73007) [20 MB] ├── WebContent (73052) [144 MB] ├── WebContent (73057) [73 MB] ├── WebContent (73073) [166 MB] ├── WebContent (73094) [70 MB] ├── WebContent (73112) [116 MB] ├── RequestServer (73113) [27 MB] └── WebContent (73185) [60 MB] Ladybird runs different tabs in different processes, an isolation mechanism used by most browsers (well, technically Chrome uses a process-per-site). I tried Ladybird against several of my more advanced tool examples - like the video-compressor shown above, which runs ffmpeg compiled to WebAssembly. I had it resize its own screenshot using my image-resize tool . It happily runs my Pyodide REPL (Python compiled to WebAssembly) too. The one thing I tried that didn't work was Datasette Lite , which runs Pyodide in a complicated arrangement of service workers and web workers. Attempting to start Datasette Lite displays this error: undefined is not a function (evaluated from 'navigator.serviceWorker.startMessages') I filed an issue about this , then found a FIXME annotation in the source code. The October explosion The project has been leaning heavily into coding agents this year. On February 23, 2026 Andreas Kling published Ladybird adopts Rust, with help from AI , describing how they ported parts of their LibJS JavaScript engine from C++ to 25,000 lines of Rust in two weeks using Claude Code and Codex. Here's the GitHub contributions chart for Ladybird over the past twelve months: That uptick in October corresponds to the landing of a wealth of big improvements. This Month in Ladybird — October 2026 describes what happened. In addition to moving style and layout to their own thread, landing a new JavaScript JIT, and replacing their C++ with Cranelift WebAssembly engine with new code that achieved a 7x boost on the JetStream 3 WASM benchmark , they gained 75,650 new passes on the ~2.25 million subtest web-platform-tests suite, be",
+    "title": "Ladybird's first alpha release",
+    "url": "https://simonwillison.net/2026/Nov/23/ladybird"
   },
   "9896add02cab8c29c586142e0dfab76946271df3d6964a3f373ae1cfc49290b1": {
     "category": "models",
@@ -10447,6 +10987,7 @@
   "99be0c0a7e074380d1a5d6cdb0953a68d68217eb3d8f50443a74e9d288a8cea0": {
     "category": "models",
     "discovered": "2026-11-24T07:39:38.717042+00:00",
+    "discovery": {},
     "fingerprint": "6515d27c7ef2c2cf0e4452358600dc97e8ff628b67c7650b8c7ba8d83ebfa705",
     "published": "2026-11-18T06:00:00+00:00",
     "source": "openai-news",
@@ -10467,6 +11008,19 @@
     "summary": "arXiv:2605.18797v3 Announce Type: replace-cross Abstract: Scaling model performance typically requires increasing model size. Looped Transformer (LT) offers a parameter-efficient alternative by repeatedly reusing the same Transformer blocks, converting additional computation into performance gains without increasing the parameter count or context length. However, increasing the number of loop iterations makes LT increasingly difficult to optimize, often leading to gradient oscillation, residual explosion, and training collapse. We propose the Fully Looped Transformer (FLT), a simple, parameter-free redesign that addresses these problems without adding learnable parameters or imposing specially designed optimization constraints. FLT combines a Fully Looped Architecture, which exposes the recurrent state to every layer, with Attention Injection, which controls recurrent information flow through the existing attention module. These modifications enable FLT to train stably through 12 loops in our tested configurations, while baseline looped models enter high-loss regimes. In the Base-size, 6-loop setting, FLT improves downstream-task accuracy by 14.9\\% relative to the original LT. Fixed-loop checkpoint evaluations further show that performance improves as inference depth approaches the trained depth, even without randomized loop-count training, revealing a depth-aware test-time compute interface. Extending this interface beyond the trained range is a promising research direction.",
     "title": "Simply Stabilizing the Loop via Fully Looped Transformer",
     "url": "https://arxiv.org/abs/2605.18797"
+  },
+  "99e562900ec52c922b8a1d7635346c70636e1f627832a91fb2842d2e4c7ccfdd": {
+    "category": "models",
+    "discovered": "2026-11-25T01:21:21.428756+00:00",
+    "discovery": {},
+    "fingerprint": "a16cbb457b41fa19562f1edad247c6876ef350c1fc1fb2562e6da2c32a543484",
+    "published": "2026-11-18T17:00:18+00:00",
+    "source": "microsoft-foundry",
+    "source_url": "https://devblogs.microsoft.com/foundry/feed/",
+    "status": "pending",
+    "summary": "Connecting one tool to one agent is not hard. The challenge is managing a useful set of tools and agentic capabilities across a fleet of production agents at scale. Every new agent shouldn’t require you to build the same integrations, copy the same instructions, and troubleshoot the same dependencies. And adding a useful capability shouldn’t […] The post Build once, reuse across your agent fleet: Tools and Toolboxes in Foundry appeared first on Microsoft Foundry Blog .",
+    "title": "Build once, reuse across your agent fleet: Tools and Toolboxes in Foundry",
+    "url": "https://devblogs.microsoft.com/foundry/build-once-reuse-across-your-agent-fleet-tools-and-toolboxes-in-foundry"
   },
   "99fe501d8141b945934be87121eb6502dc315ac2a6ea6084a8d97d76089b17c5": {
     "category": "models",
@@ -10515,6 +11069,19 @@
     "summary": "arXiv:2609.24984v2 Announce Type: replace-cross Abstract: Video world models enable interactive exploration of dynamic environments, yet struggle to respect prior observations over long horizons and across viewpoints. We present WorldCrafter, a video world model that learns a camera-queryable implicit 3D-aware memory for this purpose. The key insight is to let the requested viewpoint shape how multi-view evidence is compressed into the video generator's limited token budget. Trained jointly with the video generator, a memory encoder and pose-conditioned readout module integrate historical observations into a fixed set of target view-specific tokens before denoising, without explicit depth-based correspondences. By combining this memory with recent temporal context and few-step distillation, WorldCrafter enables streaming scene exploration from a single input image or text prompt. Experiments across static and dynamic scenes show substantial gains in long-horizon consistency and camera-control accuracy while preserving visual quality during minute-scale exploration.",
     "title": "WorldCrafter: Consistent Video World Model with Implicit 3D-aware Memory",
     "url": "https://arxiv.org/abs/2609.24984"
+  },
+  "9aff434c9dc2ef34d314e6bfb9f6065764e73522480db95aef4f4d36a8854149": {
+    "category": "models",
+    "discovered": "2026-11-25T01:21:21.428756+00:00",
+    "discovery": {},
+    "fingerprint": "2e9cd4f0dff81a1b141dd55e7154d4e2940cfd865a021ecbbb19fe4318bef48e",
+    "published": "2026-11-24T16:00:51+00:00",
+    "source": "microsoft-foundry",
+    "source_url": "https://devblogs.microsoft.com/foundry/feed/",
+    "status": "pending",
+    "summary": "Microsoft Foundry Ignite 2026 updates for agents, developer tools, models, training, enterprise context, and governance, with continuous improvement. The post What’s new in Microsoft Foundry | Ignite 2026 appeared first on Microsoft Foundry Blog .",
+    "title": "What’s new in Microsoft Foundry | Ignite 2026",
+    "url": "https://devblogs.microsoft.com/foundry/whats-new-in-microsoft-foundry-ignite-2026"
   },
   "9b0dec83a7d39c30968088358aee7b0d26cfd40c96c770ba5e8e8b0cdffc08fa": {
     "category": "models",
@@ -10591,6 +11158,20 @@
     "summary": "arXiv:2611.30353v1 Announce Type: new Abstract: Staff pseudonymizing financial data in closed networks must interpret abbreviated column names, identify personal information, and choose processing methods. Local language models can assist, but may give different labels for the same input. PseuDRAGON keeps confirmed judgments and corrections outside a fixed model and reuses them through exact-name lookup and learned rules. For expert review, the workflow searches institutional policy, national privacy law, then international sources. Across 92 columns from one institution, rules increase reuse under the same approval checks from 75 to 83 labels without reuse errors when all training judgments are available. With 25% of the training judgments, withholding non-PII rules for unseen names eliminated the extra PII misses in replay at the cost of lower reuse. Revising or withdrawing approvals rebuilds derived rules, and tests on synthetic records verify that selected methods produce the specified outputs. In three paired runs, the history-first baseline cut automated identification time by 83.0% on average versus no reuse.",
     "title": "PseuDRAGON: Knowledge-Guided Local LLMs for Financial-Data Pseudonymization in Closed Networks",
     "url": "https://arxiv.org/abs/2611.30353"
+  },
+  "9c481a0931060f36109eb2e6cd0ae316dc4877c8ea8000c5378e44dc8dc77b2d": {
+    "category": "coding",
+    "content_type": "stories",
+    "discovered": "2026-11-25T01:21:21.428756+00:00",
+    "discovery": {},
+    "fingerprint": "add0d40e37650cd82f56137b462af969e936eeb326eb7bd46a7af5c84aaaaf3b",
+    "published": "2026-11-14T23:59:28+00:00",
+    "source": "simon-willison",
+    "source_url": "https://simonwillison.net/atom/everything/",
+    "status": "pending",
+    "summary": "Release: datasette-llm 0.1a11 datasette-llm is the intermediate plugin for Datasette that supports configuring LLMs for use with other Datasette plugins. This release adds support for OpenAI-compatible endpoints, so you can configure Datasette to use an LLM hosted anywhere that talks the OpenAI pseudo-standard web protocol. This means that if you're running local models with LM Studio or Ollama or llama.cpp (which just hit v1.0.0 ) you can run Datasette via uvx like this: wget https://datasette.io/content.db uvx --with datasette-agent datasette \\ --root --secret 1 \\ -s plugins.datasette-llm.default_model ' { \"model\": \"lmstudio-qwen\", \"model_name\": \"qwen/qwen3.8-27b\", \"api_base\": \"http://localhost:1234/v1\" } ' content.db And you'll get a local server running a Datasette Agent instance powered by your local model! Tags: uv , datasette-agent , llm , datasette , llms , ai , generative-ai",
+    "title": "datasette-llm 0.1a11",
+    "url": "https://simonwillison.net/2026/Nov/14/datasette-llm"
   },
   "9c80121a8c384b1020f4e4132b19029f59bec502b5567f23160a6ef9951d1b10": {
     "category": "models",
@@ -10964,6 +11545,33 @@
     "title": "Enhancing Code Consistency in AI Research with Large Language Models and Retrieval-Augmented Generation",
     "url": "https://arxiv.org/abs/2502.00611"
   },
+  "a3c9028eefd69cfd15ff27f48e02556532b9ed7a8c483b2a5ba430ca611a8783": {
+    "category": "models",
+    "discovered": "2026-11-25T01:21:21.428756+00:00",
+    "discovery": {},
+    "fingerprint": "828dec4f00c22bcdb00b2f774012166d79d583b4951451b03acd5b87bd1e0d42",
+    "published": "2026-11-24T00:00:00+00:00",
+    "source": "openai-news",
+    "source_url": "https://openai.com/news/rss.xml",
+    "status": "pending",
+    "summary": "ChatGPT and Codex integrations help Clay’s users research deals and turn data into go-to-market plays, with GPT-6 models handling the reasoning.",
+    "title": "Clay helps sales teams win with Codex and ChatGPT",
+    "url": "https://openai.com/business/customer-stories/clay-plugins-openai"
+  },
+  "a434c2daa44c258bf43ed7b3dce6a18e246a3b1efaf2fe9858282b778aeda043": {
+    "category": "coding",
+    "content_type": "stories",
+    "discovered": "2026-11-25T01:21:21.428756+00:00",
+    "discovery": {},
+    "fingerprint": "cdfd917de0dd101db4727295168b8f43f7cb35a53a46b823a8bd56df0022e0b8",
+    "published": "2026-11-15T03:49:47+00:00",
+    "source": "simon-willison",
+    "source_url": "https://simonwillison.net/atom/everything/",
+    "status": "pending",
+    "summary": "Release: datasette-agent 0.6a0 Accumulated small fixes for Datasette Agent, my agent plugin for Datasette that lets you ask questions about your data. Most notably, it now adds an agent prompt directly to the Datasette homepage, with support for hash-mentions of tables and queries: Tags: datasette-agent , llm , datasette , llms , ai , generative-ai",
+    "title": "datasette-agent 0.6a0",
+    "url": "https://simonwillison.net/2026/Nov/15/datasette-agent"
+  },
   "a44d3678831dbd4c6d9a2769ec4534f99af342693091ce2bd79a179f42f01f5c": {
     "category": "coding",
     "content_type": "stories",
@@ -11153,6 +11761,20 @@
     "title": "Anatomik5/codetovideo",
     "url": "https://github.com/Anatomik5/codetovideo"
   },
+  "a6d94ab944c993022eab7e57e49b338fedcfb8357b0138387057f6fa056f6ce3": {
+    "category": "coding",
+    "content_type": "tutorials",
+    "discovered": "2026-11-25T01:21:21.428756+00:00",
+    "discovery": {},
+    "fingerprint": "c607df9127a8f62fb0961d44ecc7006618847ca054fbc4081b7e0cd02d0b3151",
+    "published": "2026-03-02T08:00:00+00:00",
+    "source": "hamel-husain",
+    "source_url": "https://hamel.dev/index.xml",
+    "status": "pending",
+    "summary": "Today, Shreya Shankar and I are publishing evals skills , a set of skills for AI product evals 1 . Eval tools often get in the way. They nudge you toward generic off-the-shelf metrics and fully automated evals before you’ve looked at your data. These skills help you avoid common mistakes we’ve seen helping 50+ companies and teaching students in our AI Evals course . Why skills for evals There are many easily avoidable footguns in evals. These skills help you avoid them. evals-start is the entry point. It looks at your situation and routes you to the right skill. Most of the time it will send you to one of these two: eval-audit , if you already have an eval pipeline. It inspects your setup and recommends next steps. 2 error-discovery , if you have traces but haven’t analyzed them yet. It builds a customized annotation interface and helps you sample traces intelligently. Shreya does a live walkthrough of using this skill here . The skills Install the skills: npx skills add https://github.com/ai-evals-course/evals-skills Then give your agent this prompt: Run the evals-start skill from the evals plugin and follow the skill it picks. If it picks eval-audit, investigate each diagnostic area using a separate subagent in parallel, then synthesize the findings into a single report. If you’re experienced with evals, skip the router and pick the skill you need: Skill What it does evals-start Entry point. Routes to the skill that matches your situation eval-audit Audit an eval pipeline and surface problems with prioritized severity error-discovery Build a review app, select diverse samples, and organize your notes into failure modes generate-synthetic-data Create diverse synthetic test inputs using dimension-based tuple generation write-judge-prompt Design LLM-as-Judge evaluators for subjective quality criteria validate-evaluator Calibrate LLM judges against human labels using data splits, TPR/TNR, and bias correction evaluate-rag Evaluate retrieval and generation quality in RAG pipelines build-review-interface Build custom annotation interfaces for human trace review These skills are only a starting point. To make them better, tune them to be more specific to your data and domain. The repo is ai-evals-course/evals-skills . You can find me on X or email me through my newsletter . Footnotes Not foundation model benchmarks like MMLU or HELM that measure general LLM capabilities. Product evals measure whether your pipeline works on your task with your data. If you aren’t familiar with product-specific AI evals, check out my AI Evals FAQ .↩︎ The audit isn’t a complete solution, but it will catch common problems.↩︎",
+    "title": "Evals Skills for Coding Agents",
+    "url": "https://hamel.dev/blog/posts/evals-skills"
+  },
   "a73d627801c94267c5809788adf0591c6ec1aaeecbd8990746aee8c16bc9d5ed": {
     "category": "coding",
     "discovered": "2026-11-24T14:07:11.513641+00:00",
@@ -11164,6 +11786,19 @@
     "summary": "Community discussion. Linked source: https://news.stanford.edu/stories/2026/11/ai-math-ravi-vakil",
     "title": "Has AI changed math forever?",
     "url": "https://news.ycombinator.com/item?id=50628182"
+  },
+  "a7ada45e4895abe27c40e1a20893e0d62d0d13e2d54394b1f78630ce35a71625": {
+    "category": "models",
+    "discovered": "2026-11-25T01:21:21.428756+00:00",
+    "discovery": {},
+    "fingerprint": "12d079680c616d72586f3e253237947cff7282f068302efadfe8eb192a301cc3",
+    "published": "2026-11-18T17:00:39+00:00",
+    "source": "microsoft-foundry",
+    "source_url": "https://devblogs.microsoft.com/foundry/feed/",
+    "status": "pending",
+    "summary": "Your next agent can start wherever you like to build: in your editor, at the terminal, or with your favorite coding agent. At Microsoft Ignite, we’re making that first step easier: the Foundry Dev Pack (aka.ms/foundrydevpack) is now generally available, bringing the Microsoft Foundry developer tools to your machine in a single install. Move from […] The post The Foundry Dev Pack is here: build Foundry agents your way appeared first on Microsoft Foundry Blog .",
+    "title": "The Foundry Dev Pack is here: build Foundry agents your way",
+    "url": "https://devblogs.microsoft.com/foundry/the-foundry-dev-pack-is-here-build-foundry-agents-your-way"
   },
   "a7bf14fe26346b143374056c946764308ee58ede00b5c4bc14830682631ba9df": {
     "category": "models",
@@ -11225,6 +11860,7 @@
   "a890a236270cc5e31862345b7933987a42b139de2dead494b477fbf1189784a9": {
     "category": "models",
     "discovered": "2026-11-24T07:39:38.717042+00:00",
+    "discovery": {},
     "fingerprint": "72eaa576a142ebf051dcb162358092b23feec2312c04971169b1ae99e32a628a",
     "published": "2026-11-19T00:00:00+00:00",
     "source": "openai-news",
@@ -11289,6 +11925,20 @@
     "summary": "Disclosure: this open-source tool and article were built and written by an AI team (3 IA a Carrulìa);...",
     "title": "5 Silent Production Bugs in Exported n8n Workflow JSONs (and a Free Offline MIT Auditor)",
     "url": "https://dev.to/3ia_acarrula/5-silent-production-bugs-in-exported-n8n-workflow-jsons-and-a-free-offline-mit-auditor-2ofe"
+  },
+  "aaa55aaf598950923826598344d69b7cb6cea73bf924c87d342a64c181b6202f": {
+    "category": "coding",
+    "content_type": "stories",
+    "discovered": "2026-11-25T01:21:21.428756+00:00",
+    "discovery": {},
+    "fingerprint": "f405806fce36f217b3191a807b0fab180a27c55676388d230512d9e81d662227",
+    "published": "2026-11-21T23:56:28+00:00",
+    "source": "simon-willison",
+    "source_url": "https://simonwillison.net/atom/everything/",
+    "status": "pending",
+    "summary": "Muru Graham Dumpleton started mod_wsgi 20 years ago, and has been thinking about the ideal way to serve Python web applications in production ever since. Muru is his new, AI-assisted Rust server that aims to provide the best possible tools for running ASGI and WSGI Python apps both in development and production. As he did with wrapture , he's been publishing an extraordinarily detailed account of the project as he works on it - as part of his development process. Here's everything he's published so far, all in the last three weeks: 2026-11-04 — Twenty years of mod_wsgi, and what comes next 2026-11-05 — A first look at Muru 2026-11-07 — Muru: looking inside the workers 2026-11-08 — Muru: how it fits together 2026-11-09 — Muru: import once, fork many 2026-11-10 — Muru: HTTPS in development 2026-11-11 — Muru: WSGI and ASGI together 2026-11-11 — AI as a lifestyle choice 2026-11-12 — Muru: releases, not restarts 2026-11-13 — Muru: canaries without a service mesh 2026-11-14 — Muru: a better tenant in a container 2026-11-15 — Muru: working with Kubernetes, not around it 2026-11-16 — Muru: scaling from what the workers report 2026-11-17 — Muru: scaling to zero 2026-11-18 — Muru: overlays on a schedule 2026-11-19 — Muru: noticing and responding 2026-11-20 — Muru: a toolbar on every page 2026-11-21 — Muru: tracing in the toolbar 2026-11-22 — Muru: when lazy imports help That post about AI as a lifestyle choice is particularly worth a read: The AI may be doing a lot of the work on the surface, but deciding what isn't good enough yet is still down to me, and twenty years of getting things wrong with mod_wsgi turns out to be useful for that. I am prepared to put in the hard work to keep polishing Muru until it is something I would trust, and something you would too. Tags: graham-dumpleton , modwsgi , python , wsgi , ai , rust , asgi , generative-ai , llms , ai-assisted-programming",
+    "title": "Muru",
+    "url": "https://simonwillison.net/2026/Nov/21/muru"
   },
   "aabba291e5d4ec611e7f4eb49969e93eb625f9a8a8d0b9a5397d8a49d3faf959": {
     "category": "models",
@@ -11386,6 +12036,19 @@
     "title": "Speak When You See It: Proactive Task Assistants Should Wait for Evidence, Not the Clock",
     "url": "https://arxiv.org/abs/2611.30895"
   },
+  "ac2f786b30f6d45772c42167559dc1dfd027b2c713b30efaaeedeee5585de3fa": {
+    "category": "models",
+    "discovered": "2026-11-25T01:21:21.428756+00:00",
+    "discovery": {},
+    "fingerprint": "639fdab24eccb5d1c3c9b55942846a35d475cfcba72104e4cf9dd8d5eff902c8",
+    "published": "2026-11-24T13:00:00+00:00",
+    "source": "openai-news",
+    "source_url": "https://openai.com/news/rss.xml",
+    "status": "pending",
+    "summary": "GPT-6 models design protein structures and sequences using reasoning and code. Lab tests found evidence of binding across five targets.",
+    "title": "GPT-6 models demonstrate intrinsic protein-design capabilities",
+    "url": "https://openai.com/index/gpt-6-models-demonstrate-intrinsic-protein-design-capabilities"
+  },
   "ac6c0c136a283624eed0f2abc6193bcd35ee20d99c37d8a691c144ea1bec9d4a": {
     "category": "models",
     "discovered": "2026-11-24T14:07:11.513641+00:00",
@@ -11397,6 +12060,20 @@
     "summary": "arXiv:2611.08855v2 Announce Type: replace Abstract: Much of what people believe about the unseen, from germs to spirits, rests on testimony that cannot be checked. We ask how six language models weigh such testimony when it concerns the spiritual and when it concerns the natural, using two paradigms with human data and one new design. In all three, models treat the spiritual as a separate epistemic domain. It has its own credible sources. People credit an obscure New-Age statement more when a scientist says it, while models credit it more from a spiritual leader and switch to the scientist once the statement uses the vocabulary of physics. It has its own standard for an adequate answer. When a trusted expert calls the mechanism behind a belief a mystery, people lose confidence in religious and scientific beliefs, while models prompted as those same people lose it for science and keep it for religion. And credibility earned elsewhere does not readily carry into it. When a fictional forecaster builds a record on checkable river predictions, five models extend that record to hidden natural causes and almost none of it to spiritual ones, and every model trusts the forecaster less about natural causes once the forecaster credits a river spirit. For four of the five models this gap is not a floor effect. It remains when they answer as residents of a village where spirits are taken to exist and rate the spiritual claims well above the bottom of the scale. For the fifth the gap closes in that setting. One model extends the record to spiritual claims once the forecaster in that village credits a spirit, which suggests that transfer can depend on whether the record is seen as bearing on the claim.",
     "title": "Whom to Trust About the Unseen: How Language Models Weigh Spiritual and Scientific Testimony",
     "url": "https://arxiv.org/abs/2611.08855"
+  },
+  "ad61f4db9d2a336e03ab2c519973bef7d6e42d4bf19664d5d546db2f77af08eb": {
+    "category": "coding",
+    "content_type": "stories",
+    "discovered": "2026-11-25T01:21:21.428756+00:00",
+    "discovery": {},
+    "fingerprint": "a2afcbc33999b939aa1f765b8bb41409ce975f8f7aac7a325e9da596858a5a2a",
+    "published": "2026-11-15T23:18:17+00:00",
+    "source": "simon-willison",
+    "source_url": "https://simonwillison.net/atom/everything/",
+    "status": "pending",
+    "summary": "Release: datasette 0.65.6 I backported a minor security fix from 1.0a43: Fixed a security issue where a database registered using add_database(db, name=..., route=...) with a route that differs from its name could be downloaded from /<route>.db by actors who were denied access to it. [...] Tags: security , datasette",
+    "title": "datasette 0.65.6",
+    "url": "https://simonwillison.net/2026/Nov/15/datasette-2"
   },
   "adbcc01ca1cafe2291b588d9de0efadb355e4fd83853065c114d71d81822daed": {
     "category": "coding",
@@ -11513,6 +12190,7 @@
   "b0689cf87ab570a441c88635b910134907af4a34b0ffafe4d1af03d0273e75fa": {
     "category": "models",
     "discovered": "2026-11-24T07:39:38.717042+00:00",
+    "discovery": {},
     "fingerprint": "445a287e5e18673ced3423c75dc7d0ad22c6b30ff75531f2c491b33297eca261",
     "published": "2026-11-23T21:20:00+00:00",
     "source": "openai-news",
@@ -12654,6 +13332,7 @@
   "c1a2af93db54bfcf7c217cb74db83cfc0f90565b5c1b91d5871ab9ee0c953910": {
     "category": "models",
     "discovered": "2026-11-24T07:39:38.717042+00:00",
+    "discovery": {},
     "fingerprint": "6c2d49d4d7f8f2051253459220547ce9695b7f9777af5e37acf0db8cbbe1262c",
     "published": "2026-11-20T00:00:00+00:00",
     "source": "openai-news",
@@ -12977,6 +13656,34 @@
     "title": "When Do Better Visual World Models Make Better Plans? Decision-Aligned Selection for Latent Planning",
     "url": "https://arxiv.org/abs/2611.28919"
   },
+  "c6febd82e4661f8df7bb563485f82955af6c6ec0f37074e6a4ca6a14d0ee58a6": {
+    "category": "coding",
+    "content_type": "stories",
+    "discovered": "2026-11-25T01:21:21.428756+00:00",
+    "discovery": {},
+    "fingerprint": "bf148e042deff2333117ce1a1c0a5aab27f0c1f49364a4c275258c3703532fa0",
+    "published": "2026-11-15T23:58:36+00:00",
+    "source": "simon-willison",
+    "source_url": "https://simonwillison.net/atom/everything/",
+    "status": "pending",
+    "summary": "Release: datasette-maplibre 0.1a0 The first new Datasette geospatial plugin in quite a while! This one combines the excellent MapLibre GL library with OpenFreeMap , the free vector map server operated by Zsolt Ero (you should sponsor Zsolt on GitHub .) I built most of this with a single prompt to Claude Fable 5.2: Look at datasette-cluster-map and datasette-leaflet-geojson plugins, then look at ~/dev/tools/openfreemap-demo.html - then build a brand new Datasette plugin that uses maplibreGL and openfreemap and combines the features of those other two plugins - but be creative and think outside the box for other useful features the plugin might have \"Be creative and think outside the box\" resulted in a few neat ideas - my favorite is that it displays SVG previews of GeoJSON shapes, then loads a WebGL preview only when they scroll into view. I also had Claude build a comprehensive demo which works in the latest Datasette Lite, so you can visit this link to load the plugin and a demo database in your browser via Pyodide and WebAssembly. I like this demo page showing both GeoJSON shapes and lat/lon points on the same map: Tags: visualization , generative-ai , datasette-lite , claude-mythos-fable , ai , llms , geospatial , openstreetmap , datasette",
+    "title": "datasette-maplibre 0.1a0",
+    "url": "https://simonwillison.net/2026/Nov/15/datasette-maplibre"
+  },
+  "c7271b7ac99ecdcd291f7997f30411cf66e3852ee453480b5b6bc2dd9d441786": {
+    "category": "coding",
+    "content_type": "stories",
+    "discovered": "2026-11-25T01:21:21.428756+00:00",
+    "discovery": {},
+    "fingerprint": "bce033779c9ee7c7c713e7094041463a0b938cab33935848936226e73f8362b7",
+    "published": "2026-11-14T17:09:09+00:00",
+    "source": "simon-willison",
+    "source_url": "https://simonwillison.net/atom/everything/",
+    "status": "pending",
+    "summary": "Release: datasette-vega 0.7 A new release of Datasette's longest untouched plugin, for rendering charts (using Vega-Lite ) against data in a table or custom query. The last release was in July 2018! I finally bumped it for compatibility with the latest Datasette alphas, plus some cosmetic tweaks to make it work better with Datasette Lite . (Datasette Lite just gained the ability to run JavaScript plugins like this! I'll write more about that soon.) Since it works with Datasette Lite, the live demo in the README now links to this demo on Datasette Lite . Tags: datasette , datasette-lite",
+    "title": "datasette-vega 0.7",
+    "url": "https://simonwillison.net/2026/Nov/14/datasette-vega"
+  },
   "c7303d7b9e36f6f9bd2f3913fb6311e6a444a50fa1d854f7340911276e3f2ebe": {
     "category": "open-source",
     "discovered": "2026-11-25T01:16:29.416465+00:00",
@@ -13007,6 +13714,20 @@
     "summary": "arXiv:2611.29069v1 Announce Type: cross Abstract: Large language model (LLM)-based agents are increasingly deployed in settings where they must collaborate to make joint decisions. We investigate how this collaboration unfolds under risk, asking whether agents adjust their choices to accommodate their partners, how they assign responsibility for shared outcomes, and whether responsibility attribution shapes subsequent adjustment. We designed a series of agents with systematically varying risk preferences and paired them in a repeated joint decision-making task previously conducted with humans. Like humans, agents converged toward their partners' choices. However, similar aggregate behavior arose from different dynamics: agents showed little evidence of reciprocal adjustment, tended to weigh rewards more, and their responsibility attribution was decoupled from compromise. Similarly, while they showed bias in their responsibility attribution, the outcome's valence shaped the attribution differently than in humans. Our results reveal important differences between human--human and agent--agent joint decision-making, demonstrating that similar social outcomes can emerge from different social dynamics and reasoning.",
     "title": "Do LLM Agents Compromise Like Humans? Risk and Responsibility in Dyadic Decision-Making",
     "url": "https://arxiv.org/abs/2611.29069"
+  },
+  "c7bc63b5b7f8899723b9367753534a91c7212dec8af6022d18c7cfeb18715916": {
+    "category": "coding",
+    "content_type": "stories",
+    "discovered": "2026-11-25T01:21:21.428756+00:00",
+    "discovery": {},
+    "fingerprint": "6a1b26ac57c1c7378897ad7cdf9052b2c134fff7f16fe5e7193e737bbd33f240",
+    "published": "2026-11-17T06:16:26+00:00",
+    "source": "simon-willison",
+    "source_url": "https://simonwillison.net/atom/everything/",
+    "status": "pending",
+    "summary": "A little copying is better than a little dependency. — Go Proverbs , via Tags: go , programming",
+    "title": "Quoting Go Proverbs",
+    "url": "https://simonwillison.net/2026/Nov/17/go-proverbs"
   },
   "c8120df190b601e98b36e1aeb93fb99ac3461b772374d0e73202ccc25ca42bd9": {
     "category": "models",
@@ -13280,6 +14001,20 @@
     "summary": "https://github.com/emilioSp/pi-maestro Pi Maestro started from my need to use an engineering method when working with agents. With simple prompts or the \"let’s write a plan\" approach, I would sometimes reach dead ends and have to start over. Agents would say the work was complete too early, without checking the result enough. Spec-driven development seemed suitable for this problem. So I tried to turn it into a workflow that worked in practice: define the expected behavior, ask one agent to implement it, and ask another to check it independently. At first, I tried to do everything through skills. However, I noticed that agents would skip steps in the protocol described in the Markdown files. My impression was that following the workflow required too much attention compared to the assigned task. So I introduced deterministic tools that control transitions and check the reports produced by agents. Basically, I built a finite state machine where each step requires a structured handoff. This handoff also becomes the starting point for the next agent. Taking inspiration from OpenSpec and GitHub Spec Kit, I adopted the concepts that suited the way I work: proposal.md for the context, goal, and scope of the change. spec.md for requirements in the form \"actor MUST…\" and acceptance criteria using GIVEN, WHEN, THEN and concrete examples. design.md when important technical decisions are needed. Once the spec is written and approved, the Maestro (orchestrator) starts coordinating a sequence of agents: Builder, responsible for implementation. Verifier, responsible for checking that everything works as specified. Simplifier, responsible for simplifying the code to make it clearer. I have chosen Pi because it provides events to control the runtime. This made it easy to add the maestro without going through an MCP server. Pi also works with different LLM models. Using different models for each role allows for a more critical view of the spec: a builder and a verifier from the same \"family\" will approach the problem in similar ways. I'd like to have your feedback on it and in general on the spec-driven development. Do you use spec-driven development? If Yes, which workflow best suit for your needs?",
     "title": "Show HN: Pi-maestro – spec driven development for Pi",
     "url": "https://github.com/emilioSp/pi-maestro"
+  },
+  "cd907353c805c75adf575b390e3a85efa3c39e7e4ef6bb6e909fcfdd9f4c9879": {
+    "category": "coding",
+    "content_type": "tutorials",
+    "discovered": "2026-11-25T01:21:21.428756+00:00",
+    "discovery": {},
+    "fingerprint": "52a9ca09a9e9a3ff9fb2907a527fe050e842247026a7e66986108bf17338e332",
+    "published": "2025-10-01T07:00:00+00:00",
+    "source": "hamel-husain",
+    "source_url": "https://hamel.dev/index.xml",
+    "status": "pending",
+    "summary": "Over the past year, I’ve focused heavily on AI Evals , both in my consulting work and teaching. A question I get constantly is, “What’s the best tool for evals?”. I’ve always resisted answering directly for two reasons. First, people focus too much on tools instead of the process, thinking the tool will be an off-the-shelf solution when it rarely is. Second, the tools change so quickly that comparisons become outdated immediately. Having used many of the popular eval tools, I can genuinely say that no single one is superior in every dimension. The “best” tool depends on your team’s skillset, technical stack, and maturity. Instead of a feature-by-feature comparison, I think it’s more valuable to show you how a panel of data scientists skilled in evals assesses these tools. As part of my AI Evals course , we had three of the most dominant vendors—Langsmith, Braintrust, and Arize Phoenix complete the same homework assignment . This gave us a unique opportunity to see how they tackle the exact same challenge. We recorded the entire process and live commentary, which is available below. We think this might be helpful in learning about the kinds of things you should consider when selecting a tool for your team. Thanks to Shreya Shankar and Bryan Bischof for serving as the panelists (alongside me). Langsmith With Harrison Chase , CEO of LangChain. Braintrust With Wayde Gilliam , former developer relations at Braintrust. Arize Phoenix With SallyAnn DeLucia , Technical AI Product Leader at Arize. Criteria for Assessing AI Evals Tools Here are themes that consistently surfaced during our review. 1. Workflow and Developer Experience Reducing friction is more important than any single feature. Concretely, you should be mindful of the time it takes to go from observing a failure to iterating on a solution. For example, we appreciated the ability to go from viewing a single trace to experimenting with that same trace in a playground. For some teams with data-science backgrounds, a notebook-centric workflow is ideal as it provides transparency and control. This happens to be my preferred workflow as well. When considering a notebook-centric workflow, its important to pay attention to the ergonmics of the sdk. This often boils down to the quality of the documentation and integration with existing data tools. 2. Human-in-the-Loop Support The best tools don’t try to automate away the human; they empower them. Since error analysis is the highest ROI activity in AI engineering, a tool’s ability to support efficient human review is paramount. Prioritize tools with first-class support for manual annotation and error analysis. As of this writing, one thing that is missing from many tools is axial coding . 3. Transparency and Control vs. “Magic” Be deeply skeptical of features that promise full automation without human validation, as these can create a powerful and dangerous illusion of confidence. For example, be wary of features where an AI agent both creates an evaluation rubric and then immediately scores the outputs. This “stacking of abstractions” often hides flaws behind a high score. Favor tools that give you control and visibility. 4. Ecosystem Integration ",
+    "title": "Selecting The Right AI Evals Tool",
+    "url": "https://hamel.dev/blog/posts/eval-tools"
   },
   "cdaa4956e1a0d23e514c76a92657b8256046d7349d240e4e654cb5cfcae8e236": {
     "category": "models",
@@ -14144,6 +14879,7 @@
   "da30645137037f0052cd70ab3b09df0b31abc0303db9422eaa375a651d60b969": {
     "category": "models",
     "discovered": "2026-11-24T07:39:38.717042+00:00",
+    "discovery": {},
     "fingerprint": "4ded919c5a797dc9df5c03d19c76b47195722e37314a4ca3c74927e625ba259a",
     "published": "2026-11-19T00:00:00+00:00",
     "source": "openai-news",
@@ -14156,6 +14892,7 @@
   "daf2b3e0d41882f4998104818fe6ff4171c7cb4cfddfd46dc1562bc460e34d5a": {
     "category": "open-source",
     "discovered": "2026-11-24T07:39:38.717042+00:00",
+    "discovery": {},
     "fingerprint": "569bed3fb711e3249700a98641d5a3193a32d5f4ce466147ff54a195fc7e08b3",
     "published": "2026-11-18T22:00:00+00:00",
     "source": "cloudflare-ai",
@@ -14486,6 +15223,19 @@
     "summary": "spaces listing. Tags: static, region:us",
     "title": "leisudev/timestral-candle-forecast",
     "url": "https://huggingface.co/spaces/leisudev/timestral-candle-forecast"
+  },
+  "df5b74675629ad1eef67c2a189b0f04c4001a25c6a4f481bcc6b08a712a95222": {
+    "category": "models",
+    "discovered": "2026-11-25T01:21:21.428756+00:00",
+    "discovery": {},
+    "fingerprint": "592d44f16b19ebf135b72727a875a21efb7006f0ca6b9ae83650b0f969a1d73d",
+    "published": "2026-11-20T15:00:44+00:00",
+    "source": "microsoft-foundry",
+    "source_url": "https://devblogs.microsoft.com/foundry/feed/",
+    "status": "pending",
+    "summary": "Managed Compute serves open models on dedicated GPUs in Microsoft Foundry, with Global and US or EU Data Zone deployments. The post Serve open models in production with Foundry Managed Compute appeared first on Microsoft Foundry Blog .",
+    "title": "Serve open models in production with Foundry Managed Compute",
+    "url": "https://devblogs.microsoft.com/foundry/managed-compute-ga"
   },
   "dff5706559e55707d5d873886a059972d9f6fd608656cc50c2470a338a7ab79c": {
     "category": "models",
@@ -14824,6 +15574,20 @@
     "title": "Guidance-Induced Activation of Score Estimation Errors in Diffusion Models",
     "url": "https://arxiv.org/abs/2611.28451"
   },
+  "e45fd791e1fe03c27509e5cfc6fcacfeb1c5b0665a232d00558d4f3fb339f62b": {
+    "category": "coding",
+    "content_type": "stories",
+    "discovered": "2026-11-25T01:21:21.428756+00:00",
+    "discovery": {},
+    "fingerprint": "3e29a811215fdacf8d3e26d02b9a3a0c78502dfe04423eadc48e93838b408d2e",
+    "published": "2026-11-17T22:52:29+00:00",
+    "source": "simon-willison",
+    "source_url": "https://simonwillison.net/atom/everything/",
+    "status": "pending",
+    "summary": "External sandboxes for coding agents I've been exploring new ways to sandbox code that is executed by agents, with a focus on making it safer to try out local models without worrying that a mistake or prompt injection attack might cause them to take damaging actions on a machine. I worked on this project with Prime Radiant , the AI research lab behind Superpowers and other projects . My post on the Prime Radiant blog introduces the external sandbox pattern, where code executed by the agent runs inside a dedicated sandbox while the agent itself lives outside of that sandbox. To demonstrate this pattern we've released three sandbox server implementations: external-sandbox-v86 runs a Node.js server which then uses v86 to run Alpine Linux inside WebAssembly. external-sandbox-container is a Python web server which runs the sandbox in Alpine Linux inside an Apple Containers instance. external-sandbox-quicksand is another Python web server, this time using Microsoft's Quicksand sandboxing library, which bundles QEMU and Alpine Linux in a Python package! Each of these implementations offers the same localhost API. You can then configure Pi, Claude Code, or Codex to send API calls to that sandbox any time they want to execute code. The sandboxes also include an optional HTTP/HTTPS allow-list proxy, so you can control exactly which hosts your agent's code is allowed to communicate with - plus a credential replacement mechanism to make authenticated API calls without sharing a secret with the agent. Here's the UI you can use to reconfigure that proxy while the sandbox is still running: I continue to be fascinated by the challenge of safely running untrusted code. This external sandbox pattern provides a neat way to experiment with different approaches. Tags: sandboxing , security , ai , webassembly , generative-ai , llms , coding-agents , claude-code , codex , pi",
+    "title": "External sandboxes for coding agents",
+    "url": "https://simonwillison.net/2026/Nov/17/external-sandboxes-for-coding-agents"
+  },
   "e4ad0997382c2d3c13015a90b6f43a1945ab14e89aaf41d8346d3dc1b164021a": {
     "category": "models",
     "discovered": "2026-11-24T14:07:11.513641+00:00",
@@ -14892,6 +15656,7 @@
   "e5ce7f7c8c7deb12d1d5b9695afe284562deebc6cbdaf4c95e4864955bc1777b": {
     "category": "models",
     "discovered": "2026-11-24T05:44:12.654742+00:00",
+    "discovery": {},
     "fingerprint": "fedf529e8d70f5cbb421b919da6322b78c9f83dcbf8ec2ef8e25fa7b6ff48adf",
     "published": "2026-11-19T13:00:00+00:00",
     "source": "google-ai",
@@ -15332,6 +16097,20 @@
     "summary": "",
     "title": "RoboTrack: Point tracking for real-world robotic manipulation",
     "url": "https://huggingface.co/blog/allenai/robotrack"
+  },
+  "eb3125817116c9db86be78f5cf58626dea501d1244ce9564f49f86d1cf3bc818": {
+    "category": "coding",
+    "content_type": "stories",
+    "discovered": "2026-11-25T01:21:21.428756+00:00",
+    "discovery": {},
+    "fingerprint": "59cab96cee24679c02f03c46ae8e723a4d6acd328c753ae298751922edb6d937",
+    "published": "2026-11-16T23:57:26+00:00",
+    "source": "simon-willison",
+    "source_url": "https://simonwillison.net/atom/everything/",
+    "status": "pending",
+    "summary": "Release: llm 0.37.3 A bug fix release for LLM , mainly to cover a problem with the most recent Homebrew package of the software. Homebrew now ships the latest SQLite, 3.54.1 , which includes a fix that broke LLM's logging code . Short version: in SQLite 3.54.0 the following SQL: select json_object('a', (select json_array(1))) Returns this: {\"a\":[1]} But in 3.54.1 the same query returns this: {\"a\":\"[1]\"} According to D. Richard Hipp : That was a bug fix. Per the documentation, (SELECT json_array(...)) returns SQL text, not JSON. Hence the 3.54.1 behavior is correct and 3.54.0 was a bug. The workaround looks like this: select json_object('a', json((select json_array(1)))) Tags: llm , webassembly , sqlite , generative-ai , ai , llms , d-richard-hipp",
+    "title": "llm 0.37.3",
+    "url": "https://simonwillison.net/2026/Nov/16/llm"
   },
   "eb3adff3e9fdac694772f69e59cecfb34a828aef3e1a78670f3956d6d1e6322c": {
     "category": "models",
@@ -15862,6 +16641,20 @@
     "summary": "arXiv:2611.29847v1 Announce Type: new Abstract: Runtime guardrails protect mobile GUI agents by assessing each proposed action before execution, but existing guardrails rely on cloud hosted large multimodal models, exposing every screen to a remote server, including private information such as payments, messages, and medical records. We propose MobileGrail, an on-device deployable model that addresses both. It maintains a recurrent task state that retains only the evidence subsequent safety decisions depend on, so that authorization and execution progress persist beyond the short context. To intervene early while keeping the safety boundary precise, it learns two labels, unsafe and block: unsafe marks the action that commits a violation, whereas block may be issued at any step of an intervention window, which spans from the first action that the user's authorization no longer explains to the committing action itself. To support training, we build an environment of 32 applications whose backends verify the effect of every action, supplying verified labels for supervision and rewards for reinforcement learning to calibrate intervention timing. We also build MobileVeto, an offline benchmark of unsafe trajectories largely on held-out applications, each paired with a benign counterpart. On MobileVeto, MobileGrail built on Qwen3.5-2B intercepts 76.2% of violations, up from 64.5% for its prompted backbone, while reducing premature intervention from 58.6% to 5.2%, outperforming the cloud-based OS-Sentinel on both. We further conduct online evaluation on GhostEIBench, where MobileGrail guarding a Qwen3.8-27B agent reduces fully successful attacks from 13 to 3 of 110 tasks while raising task completion from 48 to 58. Quantized to 4 bits, MobileGrail runs on a Snapdragon 8 Elite at a median latency of 4.7 s, comparable to the 5.1s of cloud-hosted Gemini 3.8 Flash.",
     "title": "MobileGrail: Learning Compact Guardrails for On-Device deployable Mobile GUI Agent Safety",
     "url": "https://arxiv.org/abs/2611.29847"
+  },
+  "f54713977487b6ec70c41440edeeb5793050bd4211bfe6aa6dc8ae26c0a857c9": {
+    "category": "coding",
+    "content_type": "stories",
+    "discovered": "2026-11-25T01:21:21.428756+00:00",
+    "discovery": {},
+    "fingerprint": "0b3f0e4f5d9a82ce1ff29cd5408640fe296171633b2d519aa69e7aba2fc9753a",
+    "published": "2026-11-20T03:01:57+00:00",
+    "source": "simon-willison",
+    "source_url": "https://simonwillison.net/atom/everything/",
+    "status": "pending",
+    "summary": "Release: llm-gemini 0.38.1 Gemini 4 Carbon only supports low , medium and high reasoning levels - but Gemini 4 Hydrogen and Gemini 4 Neon both have an extra xhigh level. I missed that when I added those models to the llm-gemini plugin, which is now fixed in this dot release. The xhigh setting for Hydrogen makes a significant difference. I updated my Gemini 4 comparison grid - note how Hydrogen at high used 5,311 output tokens and cost 3.99 cents, but the same model at xhigh used 31,477 output tokens, cost 23.61 cents, and produced a pelican that's competitive with Gemini 4 Neon: Tags: gemini , llm , llm-reasoning , pelican-riding-a-bicycle , ai , llms , google , generative-ai",
+    "title": "llm-gemini 0.38.1",
+    "url": "https://simonwillison.net/2026/Nov/20/llm-gemini"
   },
   "f586a0fadd141c7a41b7f81b8afea8d0c17768c5a048c0749c0ee50c516fb570": {
     "category": "coding",
@@ -16663,6 +17456,20 @@
     "summary": "arXiv:2611.28745v1 Announce Type: cross Abstract: Multimodal large language models can state the rules of a video game, but do they apply them when they only see the game? We introduce RuleCraft, 1,240 image questions over 155 Minecraft rules with outcomes verified in the game engine, each asked in text, on the image with the game named, and on the bare image. Six widely used models know the rules and recognize the game, yet answer the bare image by real-world physics: naming the game raises their accuracy on rules where the game departs from reality by 8.2-19.8 points on a main set and by 33.8-52.7 on a hard stress-test set. Their errors pick the real-world outcome, the gap is largest where the game leaves a scene unchanged, and reasoning traces state the game's rule, then answer by reality. On the main set, naming the game mostly swaps the real-world default for the game's. The pattern holds with reasoning, recurs in two more games, and persists on questions the models themselves take to be about the game; one neutral sentence asking for the rules of the world shown recovers much of the gap. Evaluations that name the game measure knowledge of its rules, not world selection.",
     "title": "Multimodal LLMs Know the Game but Assume the Real World",
     "url": "https://arxiv.org/abs/2611.28745"
+  },
+  "fe74e64c4724fb57177ea0252428fa9d44cf80783bdaaae26210e6f652a44edc": {
+    "category": "coding",
+    "content_type": "tutorials",
+    "discovered": "2026-11-25T01:21:21.428756+00:00",
+    "discovery": {},
+    "fingerprint": "bde63adba2c4e7627ee7caaeaa13c01307e9d754860652d3908f4e5696426be0",
+    "published": "2024-11-30T08:00:00+00:00",
+    "source": "hamel-husain",
+    "source_url": "https://hamel.dev/index.xml",
+    "status": "pending",
+    "summary": "People often find me through my writing on AI and tech. This creates an interesting pattern. Nearly every week, vendors reach out asking me to write about their products. While I appreciate their interest and love learning about new tools, I reserve my writing for topics that I have personal experience with. One conversation last week really stuck with me. A founder confided, “We can write the best content in the world, but we don’t have any distribution.” This hit home because I used to think the same way. Let me share what works for reaching developers. Companies and individuals alike often skip the basics when trying to grow their audience. These are proven approaches I’ve seen succeed, both in my work and in others’ efforts to grow their audience in the AI space. 1. Build on Great Work Here’s something surprising: few people take the time to thoughtfully engage with others’ work in our field. But when you do, amazing things happen naturally. For example, here are some recent posts I’ve enjoyed that present opportunities to engage with others: Shreya Shankar’s DocETL Eugene Yan’s work on AlignEval Ben Claive’s work on rerankers Jeremy Howard’s work on llms.txt In the above examples, you could share how their ideas connect with what you’ve built. You could add additional case studies and real-world insights. If you deeply engage with someone’s work and add your insights, they often share your content with their audience. Not because you asked, but because you’ve added something meaningful to their work. Swyx has written a great post on how to do this effectively. The key is authenticity. Don’t do this just for marketing—do it because you’re genuinely interested in learning from others and building on their ideas. It’s not hard to find things to be excited about. I’m amazed by how few people take this approach. It’s both effective and fun. 2. Show Up Consistently I see too many folks blogging or posting once every few months and wondering why they’re not getting traction. Want to know what actually works? Look at Jason Liu . He grew his following from 500 to 30,000 followers by posting ~ 30 times every day for a year. You don’t have to post that often (I certainly don’t!), but consistency matters more than perfection. Finally, don’t just post into the void. Engage with others. When someone comments on your post, reply thoughtfully. When you see conversations where you can add value, provide helpful information. Finally, don’t be discouraged if you don’t see results immediately. Here’s some advice from my friend (and prolific writer), Eugene Yan : In the beginning, when most people start writing, the output’s gonna suck. Harsh, but true—my first 100 posts or so were crap. But with practice, people can get better. But they have to be deliberate in wanting to practice and get better with each piece, and not just write for the sake of publishing something and tweeting about it. The Sam Parr course (see below) is a great example of deliberate practice on copywriting. 3. Get Better at Copywriting This changed everything for me. I took Sam Parr’s copywriting course just 30 minutes a day for a week. Now I keep my favorite writing samples in a Claude",
+    "title": "Building an Audience Through Technical Writing: Strategies and Mistakes",
+    "url": "https://hamel.dev/blog/posts/audience"
   },
   "fe9e962bb6e1e00f7c537344126eb88b303d5f1fff6ecc8be9d0c3766f28cdad": {
     "category": "models",
