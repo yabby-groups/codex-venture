@@ -63,6 +63,13 @@ def record(task, result):
     row.update(result=result, due=due.isoformat())
     if task == 'backfill' and result in ('PUBLISHED', 'NO_NEW_CONTENT'):
         row['window'] = (row.get('window', 0) + 1) % 3
+    dry = ('NO_NEW_CONTENT', 'BACKLOG', 'SOURCE_BLOCKED')
+    if task != 'idle':
+        row['consecutive_dry_runs'] = row.get('consecutive_dry_runs', 0) + 1 if result in dry else 0
+    if task in ('news', 'backfill') and row.get('consecutive_dry_runs') == 2:
+        discovery = queue.setdefault('discover', {})
+        discovery['due'] = now.isoformat()
+        print(f'{task} has produced no content twice ({result}); discovery requested', flush=True)
     save(PATH, queue)
     message = json.dumps({'task': task, 'result': result, 'next_due': row['due']})
     print(message, flush=True)

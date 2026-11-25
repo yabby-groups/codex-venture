@@ -37,3 +37,17 @@ class OperationsQueue(unittest.TestCase):
             self.assertEqual(queue.select('backfill'), ('backfill', 30))
             queue.record('backfill', 'NO_NEW_CONTENT')
             self.assertEqual(queue.select('backfill'), ('backfill', 90))
+
+    def test_repeated_dry_news_makes_discovery_due(self):
+        with tempfile.TemporaryDirectory() as temporary, patch.object(
+            queue, 'PATH', Path(temporary) / 'queue.json'
+        ):
+            queue.record('discover', 'COLLECTED')
+            queue.select('news')
+            queue.record('news', 'BACKLOG')
+            original_due = queue.load(queue.PATH, {})['discover']['due']
+            queue.select('news')
+            queue.record('news', 'NO_NEW_CONTENT')
+            state = queue.load(queue.PATH, {})
+            self.assertEqual(state['news']['consecutive_dry_runs'], 2)
+            self.assertLess(state['discover']['due'], original_due)
