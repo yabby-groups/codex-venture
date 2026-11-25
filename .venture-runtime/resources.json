@@ -2346,6 +2346,7 @@
     "1337b22ce5978b29d57b8c933c8885a746d26a1aec2e9343a528e02ab93120bb": {
       "attempt": 1795602608.623829,
       "description": "Hugging Face model listing for microsoft/VibeVoice-1.5B. Pipeline: text-to-speech.",
+      "done": "published",
       "evidence": "---\nlanguage:\n- en\n- zh\nlicense: mit\npipeline_tag: text-to-speech\ntags:\n- Podcast\nlibrary_name: transformers\n## Installation and Usage\nPlease refer to [GitHub README](https://github.com/microsoft/VibeVoice?tab=readme-ov-file#installation)\n## Responsible Usage\n### Direct intended uses\nThe VibeVoice model is limited to research purpose use exploring highly realistic audio dialogue generation detailed in the [tech report](https://arxiv.org/pdf/2508.19205).\n### Out-of-scope uses\n## Risks and limitations\nWhile efforts have been made to optimize it through various techniques, it may still produce outputs that are unexpected, biased, or inaccurate. VibeVoice inherits any biases, errors, or omissions produced by its base model (specifically, Qwen2.5 1.5b in this release).\nPotential for Deepfakes and Disinformation: High-quality synthetic speech can be misused to create convincing fake audio content for impersonation, fraud, or spreading disinformation. Users must ensure transcripts are reliable, check content accuracy, and avoid using generated content in misleading ways. Users are expected to use the generated content and to deploy the models in a lawful manner, in full compliance with all applicable laws and regulations in the relevant jurisdictions. It is best practice to disclose the use of AI when sharing AI-generated content.\nEnglish and Chinese only: Transcripts in language other than English or Chinese may result in unexpected audio outputs.",
       "firstDiscoveredAt": "2026-11-25",
       "identity": "hf:microsoft/vibevoice-1.5b",
@@ -2365,6 +2366,7 @@
     "1367bcbf07232ea34e54bed3217972161c119a87f6d68114513bc1c7d7bb2098": {
       "attempt": 1795602610.5568447,
       "description": "Hugging Face model listing for nvidia/parakeet-tdt-0.6b-v2. Pipeline: automatic-speech-recognition.",
+      "done": "published",
       "evidence": "---\nlicense: cc-by-4.0\nlanguage:\n- en\npipeline_tag: automatic-speech-recognition\nlibrary_name: nemo\ndatasets:\n- nvidia/Granary\n- nvidia/nemo-asr-set-3.0\nthumbnail: null\n## <span style=\"color:#466f00;\">License/Terms of Use:</span>\nGOVERNING TERMS: Use of this model is governed by the [CC-BY-4.0](https://creativecommons.org/licenses/by/4.0/legalcode.en) license.\n### <span style=\"color:#466f00;\">Discover more from NVIDIA:</span>\nFor documentation, deployment guides, enterprise-ready APIs, and the latest open models—including Nemotron and other cutting-edge speech, translation, and generative AI—visit the NVIDIA Developer Portal at developer.nvidia.com.\n## <span style=\"color:#466f00;\">Try via API — No Setup Required</span>\nTranscribe audio instantly using the free hosted API on [build.nvidia.com](https://build.nvidia.com/nvidia/parakeet-tdt-0_6b-v2) — no GPU, no Docker, no model download needed.\n**1. Get a free API key:** Visit [build.nvidia.com/nvidia/parakeet-tdt-0_6b-v2](https://build.nvidia.com/nvidia/parakeet-tdt-0_6b-v2) and click **Get API Key**\n**2. Install the Riva client:**",
       "firstDiscoveredAt": "2026-11-25",
       "identity": "hf:nvidia/parakeet-tdt-0.6b-v2",
@@ -2402,6 +2404,7 @@
     "139d087a76742738fae3aacfb05dd754267f901a53ef0f3e8a45109f3bbcdbcf": {
       "attempt": 1795602610.9330773,
       "description": "Hugging Face model listing for unsloth/orpheus-3b-0.1-ft. Pipeline: text-to-speech.",
+      "done": "published",
       "evidence": "---\nlibrary_name: transformers\nlanguage:\n- en\npipeline_tag: text-to-speech\nlicense: apache-2.0\nbase_model:\n- canopylabs/orpheus-3b-0.1-ft\n- meta-llama/Llama-3.2-3B-Instruct\n- canopylabs/orpheus-3b-0.1-pretrained\n# Usage\nCheck out our Colab ([link to Colab](https://colab.research.google.com/drive/1KhXT56UePPUHhqitJNUxq63k-pQomz3N?usp=sharing)) or GitHub ([link to GitHub](https://github.com/canopyai/Orpheus-TTS)) on how to run easy inference on our finetuned models.\n# Model Misuse\nDo not use our models for impersonation without consent, misinformation or deception (including fake news or fraudulent calls), or any illegal or harmful activity. By using this model, you agree to follow all applicable laws and ethical guidelines. We disclaim responsibility for any use.",
       "firstDiscoveredAt": "2026-11-25",
       "identity": "hf:unsloth/orpheus-3b-0.1-ft",
@@ -2421,6 +2424,7 @@
     "140edf9328fabe856cf786d8f364a281d354476dbc80e4c59f5c2b972ab12391": {
       "attempt": 1795602611.3139927,
       "description": "Hugging Face model listing for tencent/HunyuanVideo. Pipeline: text-to-video.",
+      "done": "published",
       "evidence": "---\npipeline_tag: text-to-video\nlicense: other\nlicense_name: tencent-hunyuan-community\nlicense_link: LICENSE\n<!-- ## **HunyuanVideo** -->\n<p align=\"center\">\n<img src=\"https://raw.githubusercontent.com/Tencent/HunyuanVideo/refs/heads/main/assets/logo.png\"  height=100>\n</p>\n## Requirements\nThe following table shows the requirements for running HunyuanVideo model (batch size = 1) to generate videos:\n|    Model     | Setting<br/>(height/width/frame) | GPU Peak Memory |\n| :----------: | :------------------------------: | :-------------: |\n## Dependencies and Installation\nBegin by cloning the repository:\n```shell\ngit clone https://github.com/tencent/HunyuanVideo\n### Installation Guide for Linux\nWe recommend CUDA versions 12.4 or 11.8 for the manual installation.\nConda's installation instructions are available [here](https://docs.anaconda.com/free/miniconda/index.html).\n# 3. Install PyTorch and other dependencies using conda\n# For CUDA 11.8\nconda install pytorch==2.4.0 torchvision==0.19.0 torchaudio==2.4.0 pytorch-cuda=11.8 -c pytorch -c nvidia\n# For CUDA 12.4\n# 4. Install pip dependencies\npython -m pip install -r requirements.txt\n# 5. Install flash attention v2 for acceleration (requires CUDA 11.8 or above)\npython -m pip install ninja\npython -m pip install git+https://github.com/Dao-AILab/flash-attention.git@v2.6.3\n# 6. Install xDiT for parallel inference (It is recommended to use torch 2.4.0 and flash-attn 2.6.3)\npython -m pip install xfuser==0.4.0\n```\nIn case of running into float point exception(core dump) on the specific GPU type, you may try the following solutions:\n# Option 1: Making sure you have installed CUDA 12.4, CUBLAS>=12.4.5.8, and CUDNN>=9.00 (or simply using our CUDA 12 docker image).\npip install nvidia-cublas-cu12==12.4.5.8\nexport LD_LIBRARY_PATH=/opt/conda/lib/python3.8/site-packages/nvidia/cublas/lib/\n# Option 2: Forcing to explictly use the CUDA 11.8 com",
       "firstDiscoveredAt": "2026-11-25",
       "identity": "hf:tencent/hunyuanvideo",
@@ -2440,6 +2444,7 @@
     "1571cc5be35bb96b0b40c220f104d139214d6927679075bbc538da983d83272a": {
       "attempt": 1795602611.68273,
       "description": "Hugging Face model listing for unsloth/GLM-5.3-Flash-GGUF. Pipeline: text-generation.",
+      "done": "published",
       "evidence": "---\nlanguage:\n- en\n- zh\nlicense: mit\npipeline_tag: text-generation\nbase_model:\n- zai-org/GLM-5.3-Flash\ntags:\n- unsloth",
       "firstDiscoveredAt": "2026-11-25",
       "identity": "hf:unsloth/glm-5.3-flash-gguf",
@@ -2459,6 +2464,7 @@
     "15aaa56b59a5e3905f91bb8c211319490aef341a9dc1ceb3f9caf478ce5cac58": {
       "attempt": 1795602612.0603259,
       "description": "Hugging Face model listing for DavidAU/LFM2.5-24B-A2B-Turbo-Brilliance-50X-NEO-MAX-Imatrix-GGUF. Pipeline: text-generation.",
+      "done": "published",
       "evidence": "---\nlicense: other\nlicense_name: lfm1.0\nlicense_link: LICENSE\nlanguage:\n- en\n- ar\n- zh\n- fr\n- de\n#   attn_implementation=\"flash_attention_2\" <- uncomment on compatible GPU\n)\ntokenizer = AutoTokenizer.from_pretrained(model_id)\nstreamer = TextStreamer(tokenizer, skip_prompt=True, skip_special_tokens=True)",
       "firstDiscoveredAt": "2026-11-25",
       "identity": "hf:davidau/lfm2.5-24b-a2b-turbo-brilliance-50x-neo-max-imatrix-gguf",
@@ -7045,6 +7051,7 @@
     "466acda84a196ad86b04fa8954bfc0df547bcd5fa8f9c33dceb28cecc4a6a860": {
       "attempt": 1795602608.6232872,
       "description": "Antigravity IDE Exclusive - The ultimate persistent memory layer for your AI.",
+      "done": "declined",
       "evidence": "Antigravity IDE Exclusive - The ultimate persistent memory layer for your AI.",
       "firstDiscoveredAt": "2026-11-25",
       "identity": "openvsx:readysteadyscience.omni-sync",
@@ -7147,6 +7154,7 @@
     "475ade704447086386a915332b91c873e0cc1d140f50717bf341b7faf4ba0103": {
       "attempt": 1795602610.5563009,
       "description": "ERP Business Object aware Agentic AI MCP",
+      "done": "declined",
       "evidence": "ERP Business Object aware Agentic AI MCP",
       "firstDiscoveredAt": "2026-11-25",
       "identity": "openvsx:epidev.epidev",
@@ -7263,6 +7271,7 @@
     "482d730754a03b70bc60c1c52074425866573ce54c4495d24c8f89fbc2552089": {
       "attempt": 1795602610.9326513,
       "description": "Adapts - Chat with your wikis using AI.",
+      "done": "declined",
       "evidence": "Adapts - Chat with your wikis using AI.",
       "firstDiscoveredAt": "2026-11-25",
       "identity": "openvsx:adapts.adapts-assistant",
@@ -7431,6 +7440,7 @@
     "49df1c18a4366d1c82b9b6618a3d82d075d509ad016511a40c38ddb2dfb3e62c": {
       "attempt": 1795602611.3134649,
       "description": "Completion and validation for the YAML frontmatter of Claude Code SKILL.md, command, rule, subagent, and output style files.",
+      "done": "published",
       "evidence": "Completion and validation for the YAML frontmatter of Claude Code SKILL.md, command, rule, subagent, and output style files.",
       "firstDiscoveredAt": "2026-11-25",
       "identity": "openvsx:thedv91.claude-frontmatter",
@@ -7623,6 +7633,7 @@
     "4b8df1e05566ef5ac77fb1a13696dacaa8ba544f82d473c1ac9d7e7acf8bd203": {
       "attempt": 1795602611.6822324,
       "description": "The only VS Code extension that reads your Quartus project: build, flash, simulate, fit reports, pin-aware diagnostics and VHDL intelligence in one.",
+      "done": "published",
       "evidence": "The only VS Code extension that reads your Quartus project: build, flash, simulate, fit reports, pin-aware diagnostics and VHDL intelligence in one.",
       "firstDiscoveredAt": "2026-11-25",
       "identity": "openvsx:guizzz.quartus-assistant",
@@ -7803,6 +7814,7 @@
     "4d797a7d750d543d39b409c0fa556b015856a40d13dd4a3eaab7b84aa2ecd705": {
       "attempt": 1795602612.0599108,
       "description": "Free AI coding assistant for VS Code — use Claude, GPT-4, Gemini & 300+ models. Ask, Plan, and Agent modes. No subscription required.",
+      "done": "published",
       "evidence": "Free AI coding assistant for VS Code — use Claude, GPT-4, Gemini & 300+ models. Ask, Plan, and Agent modes. No subscription required.",
       "firstDiscoveredAt": "2026-11-25",
       "identity": "openvsx:zihadhosan.openrouter-agent",
@@ -10353,6 +10365,7 @@
     "6746930205e2b2130b2992f5d6b273662bee90d9310f9a10647624c10c0a7c55": {
       "attempt": 1795602608.6235526,
       "description": "Unofficial GTA 6 guide: sourced facts on characters, places, vehicles and release times.",
+      "done": "published",
       "evidence": "Unofficial GTA 6 guide: sourced facts on characters, places, vehicles and release times.",
       "firstDiscoveredAt": "2026-11-25",
       "identity": "mcp:ae.brainy.tipline/gta6",
@@ -10583,6 +10596,7 @@
     "68e35e565523d0eeb2c70e0edad9ca0b8156d114196f25ec04b66fbdc91f8a30": {
       "attempt": 1795602610.5565603,
       "description": "Meta Ads MCP server with 47 tools for campaigns, creatives, audiences, and insights.",
+      "done": "published",
       "evidence": "Meta Ads MCP server with 47 tools for campaigns, creatives, audiences, and insights.",
       "firstDiscoveredAt": "2026-11-25",
       "identity": "mcp:ai.adweave/meta-ads-mcp",
@@ -11131,6 +11145,7 @@
     "6eba96a227b6e79b44ac907eb25762bbb2eca12f0196e5e664d1f608ced99b25": {
       "attempt": 1795602610.9328656,
       "description": "Manage your real-estate stock on Propick (Dubai): bulk listing sync, lookups and run reports.",
+      "done": "published",
       "evidence": "Manage your real-estate stock on Propick (Dubai): bulk listing sync, lookups and run reports.",
       "firstDiscoveredAt": "2026-11-25",
       "identity": "mcp:ae.propick/propick",
@@ -11232,6 +11247,7 @@
     "6faac04f49c146acbe5872bdd0d89055cd1a7f70986522178585f76c0981743d": {
       "attempt": 1795602611.313757,
       "description": "Bluesky posts, profiles, feeds, threads & Substack newsletter search and publication feed MCP API.",
+      "done": "published",
       "evidence": "Bluesky posts, profiles, feeds, threads & Substack newsletter search and publication feed MCP API.",
       "firstDiscoveredAt": "2026-11-25",
       "identity": "mcp:ai.agentapigate/bluesky-substack-social-newsletter-scraper-api-mcp",
@@ -11385,6 +11401,7 @@
     "7080ffacfce06c18dff83aba1a840718ecabc3a58d3042c7ced1d97292b1cfad": {
       "attempt": 1795602611.6824565,
       "description": "AI-native beauty ads, sponsored product discovery, and brand recommendations.",
+      "done": "declined",
       "evidence": "AI-native beauty ads, sponsored product discovery, and brand recommendations.",
       "firstDiscoveredAt": "2026-11-25",
       "identity": "mcp:ai.adoraads/beauty",
@@ -11402,6 +11419,7 @@
     "7085e9b31b40c1235d3efd0377df1418f37861222dbaddc87babd5a01b8050be": {
       "attempt": 1795602612.0601194,
       "description": "Read your team's chats, decisions and wiki in Agent NEO, and save meeting notes back to a thread.",
+      "done": "published",
       "evidence": "Read your team's chats, decisions and wiki in Agent NEO, and save meeting notes back to a thread.",
       "firstDiscoveredAt": "2026-11-25",
       "identity": "mcp:ai.agent-neo/neo",
@@ -12994,6 +13012,7 @@
     "80d61d2fc3e5d019f3f1c4c9a9c3c7b136f5bd167cd9f897683c929dfc4de5db": {
       "attempt": 1795602608.6236439,
       "description": "蒸馏历代大师的内核。全模型通用，核心参数见 README。Distilling the essence of generations of masters. Works with any AI model. See the README for the core parameter.",
+      "done": "declined",
       "evidence": "蒸馏历代大师的内核。全模型通用，核心参数见 README。Distilling the essence of generations of masters. Works with any AI model. See the README for the core parameter.",
       "firstDiscoveredAt": "2026-11-25",
       "identity": "github:1457780791",
@@ -13091,6 +13110,7 @@
     "8214668ad502c7216b43e9933296c6a08eb26bec107eef3030b8bd3d34c0cfe6": {
       "attempt": 1795602610.5566545,
       "description": "🤖 Visual AI agent workflow automation platform with local LLM integration - build intelligent workflows using drag-and-drop interface, no cloud dependencies required.",
+      "done": "published",
       "evidence": "🤖 Visual AI agent workflow automation platform with local LLM integration - build intelligent workflows using drag-and-drop interface, no cloud dependencies required.",
       "firstDiscoveredAt": "2026-11-25",
       "identity": "github:1038546086",
@@ -13293,6 +13313,7 @@
     "83a57ee9f2c17573ea6827f3100af597d624775f642dc9679e501d8671b92965": {
       "attempt": 1795602610.9329388,
       "description": "Babysitter enforces obedience on agentic workforces and enables them to manage extremely complex tasks and workflows through deterministic, hallucination-free self-orchestration",
+      "done": "declined",
       "evidence": "Babysitter enforces obedience on agentic workforces and enables them to manage extremely complex tasks and workflows through deterministic, hallucination-free self-orchestration",
       "firstDiscoveredAt": "2026-11-25",
       "identity": "github:1128400700",
@@ -13327,6 +13348,7 @@
     "8401ed9e55f850c252a58f4a52d650ee6f4051ca4d9e7c9f60b0f7b96605c6f0": {
       "attempt": 1795602611.313836,
       "description": "280+ free n8n automation templates — ready-to-use workflows for Gmail, Telegram, Slack, Discord, WhatsApp, Google Drive, Notion, OpenAI, and more. AI agents, RAG chatbots, email automation, social media, DevOps, and document processing. The largest open-source n8n template collection.",
+      "done": "published",
       "evidence": "280+ free n8n automation templates — ready-to-use workflows for Gmail, Telegram, Slack, Discord, WhatsApp, Google Drive, Notion, OpenAI, and more. AI agents, RAG chatbots, email automation, social media, DevOps, and document processing. The largest open-source n8n template collection.",
       "firstDiscoveredAt": "2026-11-25",
       "identity": "github:980205160",
@@ -13361,6 +13383,7 @@
     "84517affb23ec318f6be22e45de82a52a059acd5b9d429d2eb534b45d682f63a": {
       "attempt": 1795602611.6825848,
       "description": "Kilo is the all-in-one agentic engineering platform. Build, ship, and iterate faster with the most popular open source coding agent.",
+      "done": "declined",
       "evidence": "Kilo is the all-in-one agentic engineering platform. Build, ship, and iterate faster with the most popular open source coding agent.",
       "firstDiscoveredAt": "2026-11-25",
       "identity": "github:946087422",
@@ -13621,6 +13644,7 @@
     "86583f185a75e996a81668073154c55440be2933d941f18167b1717370039aa2": {
       "attempt": 1795602612.0601904,
       "description": "Open-source design-method engine for Claude Code, Codex & Cursor. One agent skill with 22 internal workflows for fixed design judgment, multiple grammars, semantic palettes, reference compilation, and evidence-verified UI. MIT.",
+      "done": "published",
       "evidence": "Open-source design-method engine for Claude Code, Codex & Cursor. One agent skill with 22 internal workflows for fixed design judgment, multiple grammars, semantic palettes, reference compilation, and evidence-verified UI. MIT.",
       "firstDiscoveredAt": "2026-11-25",
       "identity": "github:1203405919",
@@ -14704,6 +14728,7 @@
     "91b3eb89f17c1b3f5aa947eb0177ff17848f062742ff1a3b14c1a0e9af6f9d00": {
       "attempt": 1795602608.6231747,
       "description": "Stop and check this skill before finishing any reply to a question about how to use Claude or a Claude product — it recommends matching courses, tutorials, and use cases from Claude Academy (academy.claude.com), Anthropic's learning hub. Trigger on: \"how do I\", \"how can I\", \"getting started with\", \"what can Claude do\", \"teach me\", \"learn to use\"; questions about artifacts, projects, skills, plugins, connectors, MCP; requests about rolling Claude out to a team, class, or organization; and any ask for training materials, onboarding content, or learning resources. Use it when the user is learning how to use a feature or product — not when they are mid-task and just want the task done. This skill composes with other skills: after consulting product documentation to answer how a Claude feature works, also check here for a matching course or tutorial — a docs-grounded answer and an Academy recommendation belong together. Only recommend on a strong match; never invent Academy content.",
+      "done": "published",
       "evidence": "---\nname: academy-guide\ndescription: >\nStop and check this skill before finishing any reply to a question about how\nto use Claude or a Claude product — it recommends matching courses,\ntutorials, and use cases from Claude Academy (academy.claude.com),\nAnthropic's learning hub. Trigger on: \"how do I\", \"how can I\", \"getting\nstarted with\", \"what can Claude do\", \"teach me\", \"learn to use\"; questions\nabout artifacts, projects, skills, plugins, connectors, MCP; requests about\nrolling Claude out to a team, class, or organization; and any ask for",
       "firstDiscoveredAt": "2026-11-25",
       "identity": "github-skill:1061953414:skills/academy-guide/SKILL.md",
@@ -14889,6 +14914,7 @@
     "93451e4be459834e8b947c666553994c4caea512ead939b18bb4ef5e19afdcb3": {
       "attempt": 1795602610.5561936,
       "description": "Ensure a usable SageMaker execution role exists before deploying or training. Use this skill whenever about to create a SageMaker endpoint, model, training job, or any resource that requires an execution role. Use it especially when the user has not provided a role ARN explicitly, when scripts are about to call `iam:CreateRole`, or when an AccessDenied error mentions an IAM action. Never blindly call `iam:CreateRole` — always check for existing roles first. This skill prevents the most common SageMaker deployment failure: trying to create IAM resources from an SSO principal that has no IAM write permissions.",
+      "done": "published",
       "evidence": "---\nname: hf-cloud-sagemaker-iam-preflight\ndescription: 'Ensure a usable SageMaker execution role exists before deploying or training. Use this skill whenever about to create a SageMaker endpoint, model, training job, or any resource that requires an execution role. Use it especially when the user has not provided a role ARN explicitly, when scripts are about to call `iam:CreateRole`, or when an AccessDenied error mentions an IAM action. Never blindly call `iam:CreateRole` — always check for existing roles first. This skill prevents the most common SageMaker deployment failure: trying to create IAM resources from an SSO principal that has no IAM write permissions.'\n# SageMaker IAM Preflight\nEvery SageMaker resource needs an **execution role** — the IAM role SageMaker assumes to read model artifacts from S3, pull serving containers from ECR, and write logs. Most deployments fail here because the script tried to create a new role without checking if a usable one already existed, then blew up because the caller is an SSO principal.\nThis skill encodes the right order: discover, validate, only create if necessary.\n## Running the helpers (cross-platform)\nThe helpers are Python so they run identically on Windows, macOS, and Linux:\n```bash\n## Minimum permissions\n`references/minimum-permissions.json` is the standalone inline policy for endpoint execution:\n- `s3:GetObject` + `s3:ListBucket` on the model artifact bucket\n- ECR pull permissions",
       "firstDiscoveredAt": "2026-11-25",
       "identity": "github-skill:1102903896:skills/hf-cloud-sagemaker-iam-preflight/SKILL.md",
@@ -14922,6 +14948,7 @@
     "935763ce1a6d2660bf0980b107b91ba7694e0cc7908feaaf1bb1752daea9fc2c": {
       "attempt": 1795602610.932568,
       "description": "Use when the user asks to create, scaffold, or edit Jupyter notebooks (`.ipynb`) for experiments, explorations, or tutorials; prefer the bundled templates and run the helper script `new_notebook.py` to generate a clean starting notebook.",
+      "done": "published",
       "evidence": "---\nname: \"jupyter-notebook\"\ndescription: \"Use when the user asks to create, scaffold, or edit Jupyter notebooks (`.ipynb`) for experiments, explorations, or tutorials; prefer the bundled templates and run the helper script `new_notebook.py` to generate a clean starting notebook.\"\n# Jupyter Notebook Skill\nCreate clean, reproducible Jupyter notebooks for two primary modes:\n- Experiments and exploratory analysis\n- Tutorials and teaching-oriented walkthroughs\nPrefer the bundled templates and the helper script for consistent structure and fewer JSON mistakes.\n## When to use\n## Dependencies (install only when needed)\nPrefer `uv` for dependency management.\nOptional Python packages for local notebook execution:\n```bash",
       "firstDiscoveredAt": "2026-11-25",
       "identity": "github-skill:1103643573:skills/.curated/jupyter-notebook/SKILL.md",
@@ -14978,6 +15005,7 @@
     "9400ea3f3569b1d51326a1588c54cb7857c3629ce76f8b5bc3bdb6e84402a22b": {
       "attempt": 1795602611.3133848,
       "description": "Capture conversations and decisions into structured Notion pages; use when turning chats/notes into wiki entries, how-tos, decisions, or FAQs with proper linking.",
+      "done": "published",
       "evidence": "---\nname: notion-knowledge-capture\ndescription: Capture conversations and decisions into structured Notion pages; use when turning chats/notes into wiki entries, how-tos, decisions, or FAQs with proper linking.\nmetadata:\nshort-description: Capture conversations into structured Notion pages\n# Knowledge Capture\nConvert conversations and notes into structured, linkable Notion pages for easy reuse.\n## Quick start\n1) Clarify what to capture (decision, how-to, FAQ, learning, documentation) and target audience.\n## References and examples\n- `reference/` — database schemas and templates (e.g., `team-wiki-database.md`, `how-to-guide-database.md`, `faq-database.md`, `decision-log-database.md`, `documentation-database.md`, `learning-database.md`, `database-best-practices.md`).\n- `examples/` — capture patterns in practice (e.g., `decision-capture.md`, `how-to-guide.md`, `conversation-to-faq.md`).",
       "firstDiscoveredAt": "2026-11-25",
       "identity": "github-skill:1103643573:skills/.curated/notion-knowledge-capture/SKILL.md",
@@ -16102,6 +16130,7 @@
     "a0b9e856639a41a5870dcb13a1b39b5ef8057935beecde6d7355ec25ac9afd64": {
       "attempt": 1795602612.05983,
       "description": "Run evaluations for Hugging Face Hub models using inspect-ai and lighteval on local hardware. Use for backend selection, local GPU evals, and choosing between vLLM / Transformers / accelerate. Not for HF Jobs orchestration, model-card PRs, .eval_results publication, or community-evals automation.",
+      "done": "published",
       "evidence": "---\nname: huggingface-community-evals\ndescription: Run evaluations for Hugging Face Hub models using inspect-ai and lighteval on local hardware. Use for backend selection, local GPU evals, and choosing between vLLM / Transformers / accelerate. Not for HF Jobs orchestration, model-card PRs, .eval_results publication, or community-evals automation.\n# Overview\nThis skill is for **running evaluations against models on the Hugging Face Hub on local hardware**.\nIt covers:\n- `inspect-ai` with local inference\n- `lighteval` with local inference\n- choosing between `vllm`, Hugging Face Transformers, and `accelerate`\n# Examples\nSee:\n- `examples/USAGE_EXAMPLES.md` for local command patterns\n- `scripts/inspect_eval_uv.py`",
       "firstDiscoveredAt": "2026-11-25",
       "identity": "github-skill:1102903896:skills/huggingface-community-evals/SKILL.md",
@@ -16198,6 +16227,7 @@
     "a1ab6134b977262b6793489fecd837bce370f226f0ca44f4ddc93221ebde2598": {
       "attempt": 1795602612.512657,
       "description": "Deploy applications to Render by analyzing codebases, generating render.yaml Blueprints, and providing Dashboard deeplinks. Use when the user wants to deploy, host, publish, or set up their application on Render's cloud platform.",
+      "done": "published",
       "evidence": "---\nname: render-deploy\ndescription: Deploy applications to Render by analyzing codebases, generating render.yaml Blueprints, and providing Dashboard deeplinks. Use when the user wants to deploy, host, publish, or set up their application on Render's cloud platform.\n# Deploy to Render\nRender supports **Git-backed** services and **prebuilt Docker image** services.\nThis skill covers **Git-backed** flows:\n1. **Blueprint Method** - Generate render.yaml for Infrastructure-as-Code deployments\n2. **Direct Creation** - Create services instantly via MCP tools\nBlueprints can also run a **prebuilt Docker image** by using `runtime: image`, but the `render.yaml` still must live in a Git repo.\n### Step 3: Validate Configuration\nValidate the render.yaml file to catch errors before deployment. If the CLI is installed, run the commands directly; only prompt the user if the CLI is missing:\n```bash\nrender whoami -o json  # Ensure CLI is authenticated (won't always prompt)\n### Step 3: Configure Environment Variables\nAdd required env vars via MCP after creation. See [references/direct-creation.md](references/direct-creation.md).\nRemind the user that secrets can be set in the Dashboard if they prefer not to pass them via MCP.\n### Step 4: Verify Deployment",
       "firstDiscoveredAt": "2026-11-25",
       "identity": "github-skill:1103643573:skills/.curated/render-deploy/SKILL.md",
@@ -18719,6 +18749,7 @@
     "bb7692348aaca4292a1aaa2fbc1d326d33654b396abdb5be38b789d2266ae814": {
       "attempt": 1795602609.147701,
       "description": "OpenVINO™ is an open source toolkit for optimizing and deploying AI inference",
+      "done": "published",
       "evidence": "OpenVINO™ is an open source toolkit for optimizing and deploying AI inference",
       "firstDiscoveredAt": "2026-11-25",
       "identity": "github:153097643",
@@ -18835,6 +18866,7 @@
     "bd5bd8679904d0d5f0c2a42550ef4f1dfd95c90c9f568aa6a4839ce2a3e41bba": {
       "attempt": 1795602610.932287,
       "description": "20+ high-performance LLMs with recipes to pretrain, finetune and deploy at scale.",
+      "done": "published",
       "evidence": "20+ high-performance LLMs with recipes to pretrain, finetune and deploy at scale.",
       "firstDiscoveredAt": "2026-11-25",
       "identity": "github:636372163",
@@ -19715,6 +19747,7 @@
     "c674448849d7a05d3c65aae344be63a30af3140234fbd879ecaaa8fe4a88017f": {
       "attempt": 1795602611.3131266,
       "description": "Turn any codebase, with its docs, SQL schemas, configs, and PDFs, into a queryable knowledge graph. A /graphify skill for Claude Code, Cursor, Codex, and Gemini CLI: local deterministic AST parsing, every edge explained, no vector store.",
+      "done": "published",
       "evidence": "Turn any codebase, with its docs, SQL schemas, configs, and PDFs, into a queryable knowledge graph. A /graphify skill for Claude Code, Cursor, Codex, and Gemini CLI: local deterministic AST parsing, every edge explained, no vector store.",
       "firstDiscoveredAt": "2026-11-25",
       "identity": "github:1200597263",
@@ -20306,6 +20339,7 @@
     "cd083ba10081353ab18f964f64704314316882f79d2ed423af56687dc06eafe1": {
       "attempt": 1795602611.6821234,
       "description": "Speech-to-text, text-to-speech, speaker diarization, speech enhancement, source separation, and VAD using next-gen Kaldi with onnxruntime without Internet connection. Support embedded systems, Android, iOS, HarmonyOS, Raspberry Pi, RISC-V, RK NPU, Axera NPU, Ascend NPU, x86_64 servers, websocket server/client, support 12 programming languages",
+      "done": "published",
       "evidence": "Speech-to-text, text-to-speech, speaker diarization, speech enhancement, source separation, and VAD using next-gen Kaldi with onnxruntime without Internet connection. Support embedded systems, Android, iOS, HarmonyOS, Raspberry Pi, RISC-V, RK NPU, Axera NPU, Ascend NPU, x86_64 servers, websocket server/client, support 12 programming languages",
       "firstDiscoveredAt": "2026-11-25",
       "identity": "github:531380835",
@@ -20427,6 +20461,7 @@
     "cda21546d0cf35ceb992d99c2677963bfb68ee82fbfb68925f9f29ad727ed26c": {
       "attempt": 1795602612.059454,
       "description": "GPT4All: Run Local LLMs on Any Device. Open-source and available for commercial use.",
+      "done": "published",
       "evidence": "GPT4All: Run Local LLMs on Any Device. Open-source and available for commercial use.",
       "firstDiscoveredAt": "2026-11-25",
       "identity": "github:619959033",
@@ -20646,6 +20681,7 @@
     "d00989521d8426ddde45fc5b7b18d98a3d77b7638fabfd952f13621f6183e5d0": {
       "attempt": 1795602612.5123718,
       "description": "Ray is an AI compute engine. Ray consists of a core distributed runtime and a set of AI Libraries for accelerating ML workloads.",
+      "done": "published",
       "evidence": "Ray is an AI compute engine. Ray consists of a core distributed runtime and a set of AI Libraries for accelerating ML workloads.",
       "firstDiscoveredAt": "2026-11-25",
       "identity": "github:71932349",
