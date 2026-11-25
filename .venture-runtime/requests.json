@@ -87,6 +87,13 @@
       "responses": 3,
       "successes": 2
     },
+    "elevenlabs.io": {
+      "daily": 2,
+      "hour": "2026-11-25T01",
+      "hourly": 2,
+      "responses": 2,
+      "successes": 2
+    },
     "engineering.fb.com": {
       "daily": 2,
       "hour": "2026-11-25T01",
@@ -123,11 +130,11 @@
       "successes": 5
     },
     "huggingface.co": {
-      "daily": 57,
+      "daily": 75,
       "hour": "2026-11-25T01",
-      "hourly": 57,
-      "responses": 57,
-      "successes": 55
+      "hourly": 75,
+      "responses": 75,
+      "successes": 73
     },
     "machinelearning.apple.com": {
       "daily": 2,
