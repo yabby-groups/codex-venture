@@ -82,3 +82,16 @@ class ResourceOperations(unittest.TestCase):
                 entries = list(catalogue.glob('*.json'))
                 self.assertEqual(len(entries), 1)
                 self.assertEqual(json.loads(entries[0].read_text())['version'], '2')
+
+    def test_unchanged_candidate_merges_sources_without_reopening_queue(self):
+        day = '2026-11-25'
+        site = 'https://example.org/resource'
+        row = ingest.candidate('tools', 'official:example', 'Example', site, 'Summary', site)
+        state = {}
+        ingest.enqueue(state, row, day)
+        queued = next(iter(state['rows'].values()))
+        queued['done'] = 'published'
+        alternate = 'https://example.org/docs'
+        ingest.enqueue(state, {**row, 'verificationSources': [alternate]}, day)
+        self.assertEqual(queued['done'], 'published')
+        self.assertEqual(queued['verificationSources'], [alternate, site])

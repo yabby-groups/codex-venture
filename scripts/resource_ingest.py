@@ -196,13 +196,12 @@ def enqueue(queue, row, day):
     old = rows.get(key, {})
     signature = digest(json.dumps({field: value for field, value in row.items()
                                    if field != 'verificationSources'}, sort_keys=True))
+    sources = sorted(set(row['verificationSources']) | set(old.get('verificationSources', [])))
     if old.get('signature') == signature:
+        old['verificationSources'] = sources
         return
-    row['signature'] = signature
-    row['verificationSources'] = sorted(set(row['verificationSources']) |
-                                        set(old.get('verificationSources', [])))
-    row['firstDiscoveredAt'] = old.get('firstDiscoveredAt', day)
-    rows[key] = row
+    rows[key] = {**row, 'signature': signature, 'verificationSources': sources,
+                 'firstDiscoveredAt': old.get('firstDiscoveredAt', day)}
 
 
 def find_existing(row, existing):
@@ -258,7 +257,7 @@ def prepare(task, kind, day, capacity=12):
                         if isinstance(license_id, str):
                             row['license'] = license_id
                     row['evidence'] = record(url, 'Publisher documentation', evidence)['excerpt']
-                    row['verificationSources'] = [canonical(url)]
+                    row['verificationSources'] = sorted(set(row['verificationSources']) | {canonical(url)})
                 else:
                     details = json.loads(document(row['site']))
                     row['evidence'] = json.dumps(details, ensure_ascii=False)[:1900]
@@ -280,6 +279,7 @@ def publish(response, candidates, day):
     existing = resource_context()
     writes = {}
     counts = {'added': 0, 'updated': 0}
+    accepted = set(response['skipped'])
     for edit in response['resources']:
         key = edit['key']
         source = candidates[key]
@@ -287,12 +287,19 @@ def publish(response, candidates, day):
             value = edit[field].strip()
             pattern = r'[\u3400-\u9fff]' if field.lower().endswith('zh') else r'[A-Za-z]{2}'
             if not re.search(pattern, value) or len(value) > (650 if len(field) == 2 else 70) or re.search(r'[<>\x00-\x1f]', value):
-                raise ValueError('Invalid bilingual resource copy')
+                print(f'Resource {key[:12]} needs revised {field}; kept in queue', flush=True)
+                break
+        else:
+            accepted.add(key)
+        if key not in accepted:
+            continue
         old = find_existing(source, existing)
         resource_id = old['id'] if old else 'resource-' + digest(source['type'] + ':' + source['identity'])
         row = {field: value for field, value in source.items()
                if field not in ('description', 'evidence', 'metadataUrl', 'signature')}
-        row = {**(old or {}), **row, 'id': resource_id, 'tested': False, 'verifiedAt': day,
+        row = {**(old or {}), **row, 'id': resource_id,
+               'tested': bool(old and old.get('tested') and old.get('version') == source.get('version')),
+               'verifiedAt': day,
                'summary': [edit['zh'].strip(), edit['en'].strip()],
                'categories': [[edit['categoryZh'].strip(), edit['categoryEn'].strip()]],
                'addedAt': old['addedAt'] if old else day}
@@ -305,10 +312,12 @@ def publish(response, candidates, day):
         path = DIRECTORY / f'{resource_id}.json'
         counts['updated' if old else 'added'] += 1
         writes[path] = row
+        if old:
+            existing.remove(old)
         existing.append(row)
     for path, row in writes.items():
         save(path, row)
-    for key in selected:
+    for key in accepted:
         queue['rows'][key]['done'] = 'published' if key not in response['skipped'] else 'declined'
     save(STATE, queue)
     return counts
