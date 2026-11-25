@@ -2520,6 +2520,7 @@
     "15f53aff17d2821d8a3b040ad5806ee0450fe9b0685e33819f3bc710cee03d45": {
       "attempt": 1795606666.4195035,
       "description": "Hugging Face model listing for facebook/wav2vec2-lv-60-espeak-cv-ft. Pipeline: automatic-speech-recognition.",
+      "done": "published",
       "evidence": "---\nlanguage: multilingual\ndatasets:\n- common_voice\ntags:\n- speech\n- audio\n- automatic-speech-recognition\n- phoneme-recognition\nwidget:\n# Usage\nTo transcribe audio files the model can be used as a standalone acoustic model as follows:\n```python\nfrom transformers import Wav2Vec2Processor, Wav2Vec2ForCTC",
       "firstDiscoveredAt": "2026-11-25",
       "identity": "hf:facebook/wav2vec2-lv-60-espeak-cv-ft",
@@ -2539,6 +2540,7 @@
     "1615c5cffb358b1449a7b99cd16a71c98bca662af0278a9a5770b8d0a138ed9f": {
       "attempt": 1795606668.6868315,
       "description": "Hugging Face model listing for tencent/HunyuanWorld-1. Pipeline: image-to-3d.",
+      "done": "published",
       "evidence": "---\nlibrary_name: diffusion-single-file\nlicense: other\nlicense_name: tencent-hunyuanworld-1.0-community\nlicense_link: https://github.com/Tencent-Hunyuan/HunyuanWorld-1.0/blob/main/LICENSE\nlanguage:\n- en\n- zh\ntags:\n- hunyuan3d",
       "firstDiscoveredAt": "2026-11-25",
       "identity": "hf:tencent/hunyuanworld-1",
@@ -2558,6 +2560,7 @@
     "163dca9cf358c68be1a4d6ece35b13cce89bcfd617d23c9a643c999c63071b6d": {
       "attempt": 1795606669.0678046,
       "description": "Hugging Face model listing for Qwen/Qwen3.6-27B-FP8. Pipeline: image-text-to-text.",
+      "done": "published",
       "evidence": "---\nlibrary_name: transformers\nlicense: apache-2.0\nlicense_link: https://huggingface.co/Qwen/Qwen3.6-27B-FP8/blob/main/LICENSE\npipeline_tag: image-text-to-text\nbase_model:\n- Qwen/Qwen3.6-27B\n# Qwen3.6-27B-FP8\n<img width=\"400px\" src=\"https://qianwen-res.oss-accelerate.aliyuncs.com/Qwen3.6/logo.png\">\n## Benchmark Results\n### Language\n<div style=\"font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;max-width:1000px;margin:0 auto;padding:16px 0\">\n<table style=\"width:100%;border-collapse:collapse;font-size:13px\">\n# Configured by environment variables\nclient = OpenAI()\nmessages = [\n{\"role\": \"user\", \"content\": \"Type \\\"I love Qwen3.6\\\" backwards\"},\n{\n# video frame sampling can be configured via `extra_body` (e.g., by setting `fps`).\n# This feature is currently supported only in vLLM.\n#\n# By default, `fps=2` and `do_sample_frames=True`.\nmessages = [...]\nchat_response = client.chat.completions.create(\n## Agentic Usage\nQwen3.6 excels in tool calling capabilities.\n### Qwen-Agent\nWe recommend using [Qwen-Agent](https://github.com/QwenLM/Qwen-Agent) to quickly build Agent applications with Qwen3.6.",
       "firstDiscoveredAt": "2026-11-25",
       "identity": "hf:qwen/qwen3.6-27b-fp8",
@@ -2577,6 +2580,7 @@
     "1641ef14098d078f10eae7a354468c518f4d71e0e9c1e8e4772c869ae4115b1f": {
       "attempt": 1795606669.4418917,
       "description": "Hugging Face model listing for ChrisColeTech/minimax-h3-turbo-GGUF. Pipeline: text-to-video.",
+      "done": "declined",
       "evidence": "---\nlicense: other\npipeline_tag: text-to-video\ntags:\n- text-to-video\n- image-to-video\n- gguf\n- quantized\n- minimax-h3\n- distilled",
       "firstDiscoveredAt": "2026-11-25",
       "identity": "hf:chriscoletech/minimax-h3-turbo-gguf",
@@ -2614,6 +2618,7 @@
     "173e476dca22bf4ae315f30a83d90eeeddb0c8071786d38366c6fd9fb7defc82": {
       "attempt": 1795606669.8154175,
       "description": "Hugging Face model listing for tristayqc/my_zh_CN_asr_cv13_model. Pipeline: automatic-speech-recognition.",
+      "done": "published",
       "evidence": "---\nlicense: apache-2.0\nbase_model: jonatasgrosman/wav2vec2-large-xlsr-53-chinese-zh-cn\ntags:\n- generated_from_trainer\ndatasets:\n- common_voice_13_0\nmetrics:\n- wer\n- cer\n## Intended uses & limitations\nMore information needed\n## Training and evaluation data\n### Training results\n| Training Loss | Epoch   | Step | Validation Loss | Cer    | Wer   |\n|:-------------:|:-------:|:----:|:---------------:|:------:|:-----:|\n| 0.0489        | 249.002 | 1000 | 0.1566          | 0.0638 | 0.375 |",
       "firstDiscoveredAt": "2026-11-25",
       "identity": "hf:tristayqc/my_zh_cn_asr_cv13_model",
@@ -2654,6 +2659,7 @@
     "177294e324cc6a4d52265acd2f236e0a2c7a6636a3e494b19c2434666107b22f": {
       "attempt": 1795606670.1824818,
       "description": "Hugging Face model listing for tencent/HunyuanWorld-Mirror. Pipeline: image-to-3d.",
+      "done": "published",
       "evidence": "---\nlicense: other\nlicense_name: tencent-hunyuanworld-mirror-community\nlicense_link: https://github.com/Tencent-Hunyuan/HunyuanWorld-Mirror/blob/main/License.txt\nlanguage:\n- en\n- zh\ntags:\n- hunyuan3d\n- worldmodel",
       "firstDiscoveredAt": "2026-11-25",
       "identity": "hf:tencent/hunyuanworld-mirror",
@@ -8118,6 +8124,7 @@
     "4f5eff43540895df88a2c98891a7f73379254d59e9909c9bd3ac941b3207447a": {
       "attempt": 1795606666.4188032,
       "description": "Track human vs AI code contributions. Boost your productivity by quantifying the real world impact of AI powered editors like Cursor, Windsurf, Trae and Github Copilot.",
+      "done": "published",
       "evidence": "Track human vs AI code contributions. Boost your productivity by quantifying the real world impact of AI powered editors like Cursor, Windsurf, Trae and Github Copilot.",
       "firstDiscoveredAt": "2026-11-25",
       "identity": "openvsx:human-gr8rthan-ai.coding-metrics",
@@ -8256,6 +8263,7 @@
     "50cf2797830f7d2f778b4786fe0616649ef7bb397c99a4f2845143d295e31657": {
       "attempt": 1795606668.6861598,
       "description": "Recommend the best available LLM (model, context, thinking) for a task using live benchmarks.",
+      "done": "published",
       "evidence": "Recommend the best available LLM (model, context, thinking) for a task using live benchmarks.",
       "firstDiscoveredAt": "2026-11-25",
       "identity": "openvsx:jft63.task-model-advisor",
@@ -8374,6 +8382,7 @@
     "5239428286f74239ea6fc1bc77af77c474c922a25d956be06cdbe0d0488164cd": {
       "attempt": 1795606669.0670705,
       "description": "Live task list for your Claude Code agents, with agent tree, tokens and cache — scoped to your workspace. Claude Code 2.1.233+: task tools are off by default; the extension turns them on in one click.",
+      "done": "published",
       "evidence": "Live task list for your Claude Code agents, with agent tree, tokens and cache — scoped to your workspace. Claude Code 2.1.233+: task tools are off by default; the extension turns them on in one click.",
       "firstDiscoveredAt": "2026-11-25",
       "identity": "openvsx:carlosjunior1992.claude-todos",
@@ -8574,6 +8583,7 @@
     "54fdcf52bba43ae651b740ed9582be9ad5de8b35be0076a26397e452f716ee27": {
       "attempt": 1795606669.441206,
       "description": "WarpScript & FLoWS support",
+      "done": "declined",
       "evidence": "WarpScript & FLoWS support",
       "firstDiscoveredAt": "2026-11-25",
       "identity": "openvsx:senx.warpscript-language",
@@ -8594,6 +8604,7 @@
     "55066e90f21f82ef87d9007180fe20ccaacfb43e2a8d233648bb7fe1da0b969f": {
       "attempt": 1795606669.8146968,
       "description": "Edit MATLAB code with syntax highlighting, linting, navigation support, and more",
+      "done": "published",
       "evidence": "Edit MATLAB code with syntax highlighting, linting, navigation support, and more",
       "firstDiscoveredAt": "2026-11-25",
       "identity": "openvsx:mathworks.language-matlab",
@@ -8614,6 +8625,7 @@
     "55578873ac64a504dd31e70f6f54f3f2dddc3d788c960139e4573519fb3592e5": {
       "attempt": 1795606670.1817918,
       "description": "An AI code assistant optimized for using Microchip products.",
+      "done": "declined",
       "evidence": "An AI code assistant optimized for using Microchip products.",
       "firstDiscoveredAt": "2026-11-25",
       "identity": "openvsx:microchip.mplab-ai-coding-assistant",
@@ -11515,6 +11527,7 @@
     "7109a06bb1229b2d941404de311c6c686d94e2779e311cd500fc9165eb8d1517": {
       "attempt": 1795606666.4191408,
       "description": "Sandbox marketplace where AI agents hire agents for verified outcomes. Test money only.",
+      "done": "published",
       "evidence": "Sandbox marketplace where AI agents hire agents for verified outcomes. Test money only.",
       "firstDiscoveredAt": "2026-11-25",
       "identity": "mcp:ai.afg/afg",
@@ -11887,6 +11900,7 @@
     "73e4b9dbd8d90e2fe78f232cb1bd163deb417e0163f137ecd9b3afd472874be8": {
       "attempt": 1795606668.6864755,
       "description": "Automated DOCX Redlining Engine",
+      "done": "published",
       "evidence": "Automated DOCX Redlining Engine",
       "firstDiscoveredAt": "2026-11-25",
       "identity": "mcp:ai.adeu/adeu",
@@ -11990,6 +12004,7 @@
     "74dd3c7b41412dc70f4b2ad915d359dd31453c91f4dca256f229acc7f150d515": {
       "attempt": 1795606669.067421,
       "description": "Shop GENOSYS Korean skincare in the UAE from chat: find products, AED prices, order and pay.",
+      "done": "published",
       "evidence": "Shop GENOSYS Korean skincare in the UAE from chat: find products, AED prices, order and pay.",
       "firstDiscoveredAt": "2026-11-25",
       "identity": "mcp:ae.genosys/genosys",
@@ -12822,6 +12837,7 @@
     "7f75beab430ecc089d3b589ca70404f87c783b56817e53fd96c5c2cbbb56a904": {
       "attempt": 1795606669.441531,
       "description": "Dubai real estate data: 2,400+ projects, developers, communities, purchase costs and Golden Visa.",
+      "done": "published",
       "evidence": "Dubai real estate data: 2,400+ projects, developers, communities, purchase costs and Golden Visa.",
       "firstDiscoveredAt": "2026-11-25",
       "identity": "mcp:ae.mrk/dubai-property",
@@ -13003,6 +13019,7 @@
     "80c0b1ce16a133fa5c9fe50140d8387d0f7a0427f428e7934f4e0fff837ee682": {
       "attempt": 1795606669.8150167,
       "description": "US county court directory: clerk, courthouse address, e-filing, filing fees, and case lookup.",
+      "done": "published",
       "evidence": "US county court directory: clerk, courthouse address, e-filing, filing fees, and case lookup.",
       "firstDiscoveredAt": "2026-11-25",
       "identity": "mcp:ai.1court.state/court-directory",
@@ -13087,6 +13104,7 @@
     "813cf345117448ccb17b9008d23ba7c479234323c3d5de8cde66a6a1efab4537": {
       "attempt": 1795606670.1821282,
       "description": "Services, prices, inquiries and free analytics, AI and Google visibility scans by JustIdea, Poland.",
+      "done": "published",
       "evidence": "Services, prices, inquiries and free analytics, AI and Google visibility scans by JustIdea, Poland.",
       "firstDiscoveredAt": "2026-11-25",
       "identity": "mcp:agency.justidea/justidea-agency",
@@ -13828,6 +13846,7 @@
     "88419ed0911092ad275f1bbb5b874ee15e6ea2bb58734f7146a2d04532e307df": {
       "attempt": 1795606666.4192584,
       "description": "Turn any PDF or image document into structured data for your AI. A powerful, lightweight OCR toolkit that bridges the gap between images/PDFs and LLMs. Supports 100+ languages.",
+      "done": "published",
       "evidence": "Turn any PDF or image document into structured data for your AI. A powerful, lightweight OCR toolkit that bridges the gap between images/PDFs and LLMs. Supports 100+ languages.",
       "firstDiscoveredAt": "2026-11-25",
       "identity": "github:262296122",
@@ -14172,6 +14191,7 @@
     "8bd24290e2337621a314cb80ab616f5f60fdcc74c455d8c39d4efe2b275ff0d2": {
       "attempt": 1795606668.6865923,
       "description": "The Memory Layer for AI Agents - Drop-in memory infrastructure for AI agents and apps. Context that persists. Built for production.",
+      "done": "published",
       "evidence": "The Memory Layer for AI Agents - Drop-in memory infrastructure for AI agents and apps. Context that persists. Built for production.",
       "firstDiscoveredAt": "2026-11-25",
       "identity": "github:656099147",
@@ -14417,6 +14437,7 @@
     "8e1933f3332d4924c3450d7bf6ff90db3eac462fd4b376b4327f380decc029e1": {
       "attempt": 1795606669.0675583,
       "description": "Turn any codebase, with its docs, SQL schemas, configs, and PDFs, into a queryable knowledge graph. A /graphify skill for Claude Code, Cursor, Codex, and Gemini CLI: local deterministic AST parsing, every edge explained, no vector store.",
+      "done": "published",
       "evidence": "Turn any codebase, with its docs, SQL schemas, configs, and PDFs, into a queryable knowledge graph. A /graphify skill for Claude Code, Cursor, Codex, and Gemini CLI: local deterministic AST parsing, every edge explained, no vector store.",
       "firstDiscoveredAt": "2026-11-25",
       "identity": "github:1200597263",
@@ -14435,6 +14456,7 @@
     "8eac30cb1d65e6f27994009485418c7175d682cea05254cf7654da255ee0dc35": {
       "attempt": 1795606669.4416492,
       "description": "Hexabot v3 is an AI workflow automation platform, combining workflows, actions, agents, and conversational channels in one runtime.",
+      "done": "published",
       "evidence": "Hexabot v3 is an AI workflow automation platform, combining workflows, actions, agents, and conversational channels in one runtime.",
       "firstDiscoveredAt": "2026-11-25",
       "identity": "github:854776745",
@@ -14730,6 +14752,7 @@
     "91718fa9b49058c5eaa4c8a85f97b64320e29ae0fe898c0db4282702937540fb": {
       "attempt": 1795606669.8151832,
       "description": "Open-source desktop AI agent that takes real actions on websites — 33 adapters for mail, shopping, social, and more.",
+      "done": "published",
       "evidence": "Open-source desktop AI agent that takes real actions on websites — 33 adapters for mail, shopping, social, and more.",
       "firstDiscoveredAt": "2026-11-25",
       "identity": "github:1369386589",
@@ -14850,6 +14873,7 @@
     "92c3df791c821ad615f72f51bafb3b8568d3dd5a817c2136eb05ee1d252e4894": {
       "attempt": 1795606670.1822474,
       "description": "Business operating system for Claude Code — 57 skills, 21 agents, smart daemon. Unified inbox (WhatsApp/Email/Slack/Telegram), autonomous PR merge, full-AWS monitoring, revenue (Stripe+RevenueCat), e-commerce (Shopify), marketing (Klaviyo/Meta/GA4), voice (Bland/ElevenLabs), APM (Datadog/NewRelic/OTEL), YOLO mode.",
+      "done": "declined",
       "evidence": "Business operating system for Claude Code — 57 skills, 21 agents, smart daemon. Unified inbox (WhatsApp/Email/Slack/Telegram), autonomous PR merge, full-AWS monitoring, revenue (Stripe+RevenueCat), e-commerce (Shopify), marketing (Klaviyo/Meta/GA4), voice (Bland/ElevenLabs), APM (Datadog/NewRelic/OTEL), YOLO mode.",
       "firstDiscoveredAt": "2026-11-25",
       "identity": "github:1207844328",
@@ -16532,6 +16556,7 @@
     "a4797b7ddb835d6e0c68d686acfd560b7d6caabe47ca86ac47561c637144562a": {
       "attempt": 1795606666.418671,
       "description": "After you give a substantive answer or draft that the user may act on — advice or recommendations, drafted artifacts such as goals, plans, pitches, proposals, or emails, estimates or projections, analysis or interpretation of data, factual claims they may rely on, or a multi-step argument — invoke this skill BEFORE finalizing your reply and then, if it applies, append 2-3 short follow-up questions, each tied to something specific in what you just produced, that help the user check key facts, probe the reasoning or assumptions, and notice missing context. Do this at most once per conversation. Skip it when the user asked a trivial how-to or simple lookup, wants a purely educational explanation, asked you only to format, convert, or assemble a file from content they provided, is writing code they will run, is doing creative writing or casual chat, or already asked you to double-check, cite, or review — the skill file explains these boundaries and the exact output format.",
+      "done": "published",
       "evidence": "---\nname: discernment-nudge\ndescription: >\nAfter you give a substantive answer or draft that the user may act on\n— advice or recommendations, drafted artifacts such as goals, plans,\npitches, proposals, or emails, estimates or projections, analysis or\ninterpretation of data, factual claims they may rely on, or a\nmulti-step argument — invoke this skill BEFORE finalizing your reply\nand then, if it applies, append 2-3 short follow-up questions, each\ntied to something specific in what you just produced, that help the",
       "firstDiscoveredAt": "2026-11-25",
       "identity": "github-skill:1061953414:skills/discernment-nudge/SKILL.md",
@@ -17390,6 +17415,7 @@
     "adb6abf412773002d663ae0c413a886e794b8910032692f4e852a03a4f59a080": {
       "attempt": 1795606668.6860063,
       "description": "Use for Vercel cost and performance optimization on deployed projects, especially Next.js, SvelteKit, Nuxt, and limited Astro apps. Collect Vercel metrics, usage, project config, and code scan results first; investigate only metric-backed candidates; produce ranked recommendations grounded in verified files and version-aware Vercel/framework docs. Trigger for Vercel bill reduction, slow or expensive routes, caching opportunities, Function Invocations, Build Minutes, Fast Data Transfer, Core Web Vitals, Bot Management, Fluid compute, or cost breakdown requests.",
+      "done": "published",
       "evidence": "---\nname: vercel-optimize\ndescription: \"Use for Vercel cost and performance optimization on deployed projects, especially Next.js, SvelteKit, Nuxt, and limited Astro apps. Collect Vercel metrics, usage, project config, and code scan results first; investigate only metric-backed candidates; produce ranked recommendations grounded in verified files and version-aware Vercel/framework docs. Trigger for Vercel bill reduction, slow or expensive routes, caching opportunities, Function Invocations, Build Minutes, Fast Data Transfer, Core Web Vitals, Bot Management, Fluid compute, or cost breakdown requests.\"\nmetadata:\nversion: \"1.2.0\"\n# Vercel Optimize\nRun an observability-first Vercel optimization audit. Do not inspect source files until `signals.json` exists and a deterministic gate points to a route, file, or project setting.\nCore doctrine: read [references/doctrine.md](references/doctrine.md) if any rule is unclear.\n- Metrics first. Recommendations start from Vercel production signals, not repo-wide grep.",
       "firstDiscoveredAt": "2026-11-25",
       "identity": "github-skill:1112540808:skills/vercel-optimize/SKILL.md",
@@ -18192,6 +18218,7 @@
     "b74b6b5fd24511e80b27a235c0849a97d19d644b7353dd37490da280b9bd6528": {
       "attempt": 1795606669.066936,
       "description": "AI demos and GPU compute with Gradio Spaces and Hugging Face Spaces ZeroGPU. Use when writing or reviewing code that uses `@spaces.GPU`, configuring `python_version` or `requirements.txt` for a ZeroGPU Space, or handling ZeroGPU-specific code constraints — pickle-based process isolation, `gr.State` semantics across the worker boundary, no `torch.compile` (use AoTI instead), CUDA wheel-only builds (no `nvcc` at build or runtime), large vs xlarge sizing, and dynamic duration callables. Make sure to use this skill whenever the user mentions ZeroGPU, `@spaces.GPU`, or the `spaces` Python package, or hits ZeroGPU-specific code errors like `PicklingError` across the worker boundary, `illegal duration`, or `flash-attn` wheel-build failures — even when the user does not explicitly ask for ZeroGPU coding guidance. Trigger on `import spaces` or `@spaces.GPU` in code.",
+      "done": "published",
       "evidence": "---\nname: huggingface-zerogpu\ndescription: AI demos and GPU compute with Gradio Spaces and Hugging Face Spaces ZeroGPU. Use when writing or reviewing code that uses `@spaces.GPU`, configuring `python_version` or `requirements.txt` for a ZeroGPU Space, or handling ZeroGPU-specific code constraints — pickle-based process isolation, `gr.State` semantics across the worker boundary, no `torch.compile` (use AoTI instead), CUDA wheel-only builds (no `nvcc` at build or runtime), large vs xlarge sizing, and dynamic duration callables. Make sure to use this skill whenever the user mentions ZeroGPU, `@spaces.GPU`, or the `spaces` Python package, or hits ZeroGPU-specific code errors like `PicklingError` across the worker boundary, `illegal duration`, or `flash-attn` wheel-build failures — even when the user does not explicitly ask for ZeroGPU coding guidance. Trigger on `import spaces` or `@spaces.GPU` in code.\n# Hugging Face ZeroGPU\nRules and patterns for ML demos on Hugging Face Spaces with **ZeroGPU** hardware. Covers `@spaces.GPU`, duration and quota tuning, process isolation, the CUDA availability model, concurrency safety, and CUDA build constraints.\n## Scope\nThis skill is for **Gradio SDK Spaces using ZeroGPU hardware**. Docker and Static Spaces cannot schedule onto ZeroGPU, and Streamlit apps now run as Docker Spaces — so this skill applies only to Gradio. For general Gradio coding (components, layouts, event listeners), see the `huggingface-gradio` skill in this repo. The authoritative ZeroGPU docs live at https://huggingface.co/docs/hub/spaces-zerogpu — refer to them for the current backing GPU, runtime version lists, and tier thresholds, all of which change over time.\n## Reference Files\n| Reference | When to read |\n## Local Development: Just Install `spaces`\nDo **not** wrap `import spaces` in `try/except` and redefine `spaces.GPU` as a no-op fallback for local runs. Of",
       "firstDiscoveredAt": "2026-11-25",
       "identity": "github-skill:1102903896:skills/huggingface-zerogpu/SKILL.md",
@@ -18494,6 +18521,7 @@
     "b91e389c7ac0d156018bcacac74e978eb8f4a747e5a9a691fb42bed1c211dcf7": {
       "attempt": 1795606669.44106,
       "description": "Build and publish a Gradio demo on Hugging Face Spaces for a user-provided LoRA. Use when someone asks to create, generate, ship, or publish a Space, demo, Gradio app, or playground for a LoRA — including LoRAs for Qwen-Image, Qwen-Image-Edit, LTX-Video, Wan, FLUX, SDXL, or other diffusion base models. Also triggers when someone describes a LoRA they trained or hosts on the Hub and wants to share it. Covers picking the right base pipeline and `diffusers` inference recipe, designing a UI tailored to the LoRA's task and inputs (Union/multi-task control, edit, video, image, etc.), respecting model-card recommendations (trigger words, steps, guidance, LoRA scale, example inputs), and shipping to ZeroGPU hardware as a private Space by default.",
+      "done": "published",
       "evidence": "---\nname: huggingface-lora-space-builder\ndescription: Build and publish a Gradio demo on Hugging Face Spaces for a user-provided LoRA. Use when someone asks to create, generate, ship, or publish a Space, demo, Gradio app, or playground for a LoRA — including LoRAs for Qwen-Image, Qwen-Image-Edit, LTX-Video, Wan, FLUX, SDXL, or other diffusion base models. Also triggers when someone describes a LoRA they trained or hosts on the Hub and wants to share it. Covers picking the right base pipeline and `diffusers` inference recipe, designing a UI tailored to the LoRA's task and inputs (Union/multi-task control, edit, video, image, etc.), respecting model-card recommendations (trigger words, steps, guidance, LoRA scale, example inputs), and shipping to ZeroGPU hardware as a private Space by default.\n# Gradio LoRA Space Builder\nBuild and publish a Gradio demo on Hugging Face Spaces that runs inference with a user-provided LoRA. Use whenever someone asks to create, generate, ship, or publish \"a Space\", \"a demo\", \"a Gradio app\", or \"a playground\" for a LoRA — whether the base model is Qwen-Image, Qwen-Image-Edit, LTX, or another diffusion model. Also use when someone describes a LoRA they trained or hosts on the Hub and wants to share it. The default target is ZeroGPU hardware and the default inference library is `diffusers` when the base model supports it.\nThe output is a real, published Space (private by default) that the user can try in the browser, not a local script.\n## What \"good\" looks like for these demos\nThe demo should feel handcrafted for this specific LoRA, not a generic template with the LoRA bolted on. Two LoRAs that share a task can still need different demos: a pose-control video LoRA and an outpainting video LoRA both take video in and produce video out, but the inputs the user provides, the preprocessing, and the controls are completely different. Recognizing t",
       "firstDiscoveredAt": "2026-11-25",
       "identity": "github-skill:1102903896:skills/huggingface-lora-space-builder/SKILL.md",
@@ -18876,6 +18904,7 @@
     "bc496da3e1675990a959a73d3cb85c3662bf39ed2ec0304da5d6008c07ab64a4": {
       "attempt": 1795606669.8145645,
       "description": "React and Next.js performance optimization guidelines from Vercel Engineering. This skill should be used when writing, reviewing, or refactoring React/Next.js code to ensure optimal performance patterns. Triggers on tasks involving React components, Next.js pages, data fetching, bundle optimization, or performance improvements.",
+      "done": "published",
       "evidence": "---\nname: vercel-react-best-practices\ndescription: React and Next.js performance optimization guidelines from Vercel Engineering. This skill should be used when writing, reviewing, or refactoring React/Next.js code to ensure optimal performance patterns. Triggers on tasks involving React components, Next.js pages, data fetching, bundle optimization, or performance improvements.\nlicense: MIT\nmetadata:\nauthor: vercel\nversion: \"1.0.0\"\n# Vercel React Best Practices\nComprehensive performance optimization guide for React and Next.js applications, maintained by Vercel. Contains 70 rules across 8 categories, prioritized by impact to guide automated refactoring and code generation.",
       "firstDiscoveredAt": "2026-11-25",
       "identity": "github-skill:1112540808:skills/react-best-practices/SKILL.md",
@@ -19559,6 +19588,7 @@
     "c3cbbfc69ca4efac5e9b2b37bff83183b2475a2932591c3af03338970751f87b": {
       "attempt": 1795606670.1816633,
       "description": "Set up an isolated Python environment for SageMaker / AWS work, with the right Python version and current boto3. Use this skill whenever Python code will be executed for a SageMaker deployment, training job, or any AWS automation — including when about to run `pip install`, when about to invoke `boto3`, when creating or activating a virtualenv, or when the user asks to \"set up the environment\". Never use system Python and never `pip install` into it. Always isolate. This skill prevents the most common failure modes: wrong Python version, dependency conflicts, and stale SDKs.",
+      "done": "published",
       "evidence": "---\nname: hf-cloud-python-env-setup\ndescription: 'Set up an isolated Python environment for SageMaker / AWS work, with the right Python version and current boto3. Use this skill whenever Python code will be executed for a SageMaker deployment, training job, or any AWS automation — including when about to run `pip install`, when about to invoke `boto3`, when creating or activating a virtualenv, or when the user asks to \"set up the environment\". Never use system Python and never `pip install` into it. Always isolate. This skill prevents the most common failure modes: wrong Python version, dependency conflicts, and stale SDKs.'\n# Python Environment Setup for SageMaker\nMost SageMaker deployment failures that look like AWS problems are actually Python environment problems: wrong Python version, broken dependency resolution, stale SDK that doesn't know about a current API. This skill makes env setup boring and correct.\n## Core rules\n1. **Never use the system Python.** Always work inside an isolated environment.\n2. **Pin the Python version, not the package versions.** Use 3.10, 3.11, or 3.12. Avoid 3.13+ — ML libraries lag on wheel availability and dependency resolution breaks in confusing ways.\n3. **Install the latest of each package.** Don't defensively pin `boto3` or `awscli`. Newer ones have current API surfaces and security fixes. Only pin if the user explicitly requires a specific version.",
       "firstDiscoveredAt": "2026-11-25",
       "identity": "github-skill:1102903896:skills/hf-cloud-python-env-setup/SKILL.md",
@@ -21402,6 +21432,7 @@
     "d6fc4f3c8e82891d28fb316f79b56f4baf1c7bcd7a6c6d72a31e127aa5827008": {
       "attempt": 1795606666.945724,
       "description": "Amphion (/æmˈfaɪən/) is a toolkit for Audio, Music, and Speech Generation. Its purpose is to support reproducible research and help junior researchers and engineers get started in the field of audio, music, and speech generation research and development.",
+      "done": "published",
       "evidence": "Amphion (/æmˈfaɪən/) is a toolkit for Audio, Music, and Speech Generation. Its purpose is to support reproducible research and help junior researchers and engineers get started in the field of audio, music, and speech generation research and development.",
       "firstDiscoveredAt": "2026-11-25",
       "identity": "github:719017363",
@@ -21438,6 +21469,7 @@
     "d768dfcbe99fd6fc0928bc83ffd66184b1641a1d08e68c64b33e0253a64e15ea": {
       "attempt": 1795606669.0665433,
       "description": "Learn AI Engineering! Learn it. Build it. Ship it for others.",
+      "done": "declined",
       "evidence": "Learn AI Engineering! Learn it. Build it. Ship it for others.",
       "firstDiscoveredAt": "2026-11-25",
       "identity": "github:1185590488",
@@ -21504,6 +21536,7 @@
     "d7e19233fcb5e3e18277c1c51a77937eb4d4beafbb32e957ef027f1c66d57acb": {
       "attempt": 1795606669.4406672,
       "description": "RuVector provides High Performance, Real-Time decisions and agent memory , Self-Learning Ai, Vector GNN DB built in Rust.",
+      "done": "published",
       "evidence": "RuVector provides High Performance, Real-Time decisions and agent memory , Self-Learning Ai, Vector GNN DB built in Rust.",
       "firstDiscoveredAt": "2026-11-25",
       "identity": "github:1099547803",
@@ -21616,6 +21649,7 @@
     "d92153bfda4c328d99ea4f25d092e183516c8a86d90f62b05052d123a69a7095": {
       "attempt": 1795606669.8141558,
       "description": "Rapid-MLX is an open-source (Apache 2.0) OpenAI- and Anthropic-compatible LLM inference server for Apple Silicon, built on MLX, focused on reliable tool calling for coding agents. Up to 4× faster than Apple's MLX (mlx-lm) on the same weights.",
+      "done": "published",
       "evidence": "Rapid-MLX is an open-source (Apache 2.0) OpenAI- and Anthropic-compatible LLM inference server for Apple Silicon, built on MLX, focused on reliable tool calling for coding agents. Up to 4× faster than Apple's MLX (mlx-lm) on the same weights.",
       "firstDiscoveredAt": "2026-11-25",
       "identity": "github:1166182351",
@@ -21998,6 +22032,7 @@
     "dd3312162dce5da1e506b22df6a47cdef84b561c633436b690b44f68d36177fe": {
       "attempt": 1795606670.1812615,
       "description": "本项目旨在分享大模型相关技术原理以及实战经验（大模型工程化、大模型应用落地）",
+      "done": "published",
       "evidence": "本项目旨在分享大模型相关技术原理以及实战经验（大模型工程化、大模型应用落地）",
       "firstDiscoveredAt": "2026-11-25",
       "identity": "github:644235905",
@@ -22478,6 +22513,7 @@
     "e044551d4572b914da8ea268f075ca5feef26e9f3a3ad46c282351c968c6d64b": {
       "attempt": 1795606670.5457685,
       "description": "ODS V3 Pre-Release: Public testing and refinement ahead of the official V3 launch. Turn your PC, Mac, or Linux box into a private AI server.",
+      "done": "published",
       "evidence": "ODS V3 Pre-Release: Public testing and refinement ahead of the official V3 launch. Turn your PC, Mac, or Linux box into a private AI server.",
       "firstDiscoveredAt": "2026-11-25",
       "identity": "github:1153579168",
