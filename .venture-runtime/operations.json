@@ -37,9 +37,9 @@
     "started": "2026-11-25T19:37:46.388649+08:00"
   },
   "stories": {
-    "consecutive_dry_runs": 1,
-    "due": "2026-11-25T21:34:05.088156+08:00",
-    "result": "SKIPPED",
+    "consecutive_dry_runs": 0,
+    "due": "2026-11-26T05:07:08.621068+08:00",
+    "result": "PUBLISHED",
     "started": "2026-11-25T21:04:05.088156+08:00"
   }
 }

@@ -27715,6 +27715,9 @@
     "url": "https://arxiv.org/abs/2611.29592"
   },
   "db34768d780f7b393d1b10207802e04cc42f24c09b8fc64306001d0023b13d18": {
+    "articles": [
+      "/news/checkmyapp-daily-check-broken-video-links/"
+    ],
     "category": "coding",
     "content_type": "stories",
     "discovered": "2026-11-25T11:43:09.397480+00:00",
@@ -27739,7 +27742,7 @@
     "published": "2026-11-24T22:13:47+00:00",
     "source": "hacker-news-1-0",
     "source_url": "https://hn.algolia.com/api/v1/search_by_date?query=Claude+Code&tags=story&hitsPerPage=12",
-    "status": "pending",
+    "status": "published",
     "summary": "No human in the loop is the new dream. CheckMyApp is the first half of the loop I believe every solo founder should have. It clicks through your changes in production (or PR preview urls if you like) and files tickets with screenshots of bugs. Hook those tickets to claude/codex and the loop closes. I've tasted agentic coding and I'm not going back. I have more ideas than I can count and all of them are stuck behind one slow guy checking if the app is working and billing is indeed fine. Don't skip the production check. Delegate it (and save your precious weekly quota). A whole check, no signup: https://checkmyapp.dev/example",
     "title": "Show HN: CheckMyApp – checks your live app with each deploy from coding agent",
     "url": "https://checkmyapp.dev/",
@@ -28438,6 +28441,9 @@
     "url": "https://github.com/benjiyaya/ComfyUI-PAN2-PromptWriter"
   },
   "e0edcb85572a93e4ecc2583b8912b736a0190dfde71f2947432ff7114a63592d": {
+    "articles": [
+      "/news/tillerly-coding-agent-review-queue/"
+    ],
     "category": "coding",
     "content_type": "stories",
     "discovered": "2026-11-25T11:43:09.397480+00:00",
@@ -28457,7 +28463,7 @@
     "published": "2026-11-24T23:33:45+00:00",
     "source": "hacker-news-1-1",
     "source_url": "https://hn.algolia.com/api/v1/search_by_date?query=AI+coding&tags=story&hitsPerPage=12",
-    "status": "pending",
+    "status": "published",
     "summary": "Why supervision does not scale with the AI coding agents",
     "title": "Why supervision does not scale with the AI coding agents",
     "url": "https://tillerly.dev/blog/managing-multiple-ai-coding-agents-from-one-list",
