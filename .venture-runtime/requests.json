@@ -9,11 +9,11 @@
       "successes": 2
     },
     "ai.google.dev": {
-      "daily": 10,
-      "hour": "2026-11-25T11",
-      "hourly": 4,
-      "responses": 10,
-      "successes": 5
+      "daily": 12,
+      "hour": "2026-11-25T20",
+      "hourly": 2,
+      "responses": 12,
+      "successes": 6
     },
     "airma.sh": {
       "daily": 2,
@@ -23,11 +23,11 @@
       "successes": 2
     },
     "aistudio.google.com": {
-      "daily": 10,
-      "hour": "2026-11-25T11",
-      "hourly": 4,
-      "responses": 10,
-      "successes": 10
+      "daily": 12,
+      "hour": "2026-11-25T20",
+      "hourly": 2,
+      "responses": 12,
+      "successes": 12
     },
     "api.github.com": {
       "daily": 239,
@@ -151,11 +151,11 @@
       "successes": 32
     },
     "huggingface.co": {
-      "daily": 136,
-      "hour": "2026-11-25T12",
-      "hourly": 15,
-      "responses": 136,
-      "successes": 130
+      "daily": 143,
+      "hour": "2026-11-25T20",
+      "hourly": 7,
+      "responses": 143,
+      "successes": 136
     },
     "kakatu.app": {
       "daily": 2,
