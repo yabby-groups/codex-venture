@@ -27,3 +27,10 @@
 二次资料只请求公开 HTTPS，校验并固定解析 IP，验证 TLS 及重定向目标，应用 robots.txt、流量上限及请求退避。资料进入模型前截取并标识来源。SKILL.md 作为文档读取，技能身份基于 GitHub 仓库 ID 和文件路径。网页、README、评论和清单均为外部证据。
 
 分页和游标持久化、Bluesky 作者及讨论串、跨域同事件语义合并、独立长期复查和逐来源发布归因尚待完善。各来源的当前 HTTP 状态和最近成功时间以运行记录为准。
+
+## 2026-11-25 端到端验收
+
+- 主动发现成功。GitHub Trending、GitHub Search、Hugging Face 三类 API、HN Algolia、DEV 五个标签、Open VSX 和 MCP Registry 均实际返回数据。状态分支新增 213 条候选，16 条带榜单名次，9 条记录新增二次证据。其中包括 Skills、插件、MCP、教程和使用故事。[发现运行](https://github.com/yabby-groups/codex-venture/actions/runs/45524448036)
+- 固定来源采集任务成功。该次运行记录 12 个来源成功或无变化，Hugging Face Papers Feed、PyTorch Blog Feed 和 MLX Release 请求失败并进入退避。其余入口受刷新间隔及已有健康状态调度。[固定采集运行](https://github.com/yabby-groups/codex-venture/actions/runs/45525049988)
+- 使用现有 Codex CLI 和 Responses API 完成一轮编辑，自动发布一篇双语资讯。Chromium 检查和 Cloudflare 验收通过。公网文章返回 HTTP 200，线上 release.txt 与本地构建一致。[编辑发布运行](https://github.com/yabby-groups/codex-venture/actions/runs/45524659016) · [公开文章](https://codex-venture.com/news/github-notification-subscription-rules/)
+- Python 编译、公开 HTTPS 地址限制、429 后暂停、六种内容类型轮转和安装证据截取检查通过。发布后本地构建通过 169 个 HTML 页面及站内链接、元数据、RSS、Sitemap 和 Pagefind 校验。
