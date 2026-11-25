@@ -12783,6 +12783,9 @@
     "url": "https://registry.modelcontextprotocol.io/v0.1/servers/ai.livecore%2Fvideo-editor-ai-video-editing-edit-video-captions-subtitles-srt-transcribe-transcription-tiktok-youtube-shorts-instagram-reels-podcast-multicam-interview-viral-clips-highlight/versions/0.7.0"
   },
   "6ffed5fb1a72e3e330488d0cdaa40908617ed6d5dbdba09b4b4a9bef0cd80b51": {
+    "articles": [
+      "/news/openhands-1-45-0-canvas-projects/"
+    ],
     "category": "agents",
     "discovered": "2026-11-25T03:19:53.460134+00:00",
     "discovery": {},
@@ -12790,7 +12793,7 @@
     "published": "2026-11-24T09:13:54+00:00",
     "source": "all-hands-ai-openhands",
     "source_url": "https://api.github.com/repos/All-Hands-AI/OpenHands/releases?per_page=10",
-    "status": "pending",
+    "status": "published",
     "summary": "## 1.45.0 (2026-11-24) ## What's Changed ### Features * feat(factories): show a factory's worklogs, newest first by @jpshackelford in https://github.com/OpenHands/OpenHands/pull/19811 * feat(factories): delete a factory from its page by @jpshackelford in https://github.com/OpenHands/OpenHands/pull/19861 * feat(projects): OpenHands Projects in Canvas (experimental) by @enyst in https://github.com/OpenHands/OpenHands/pull/19495 * feat(projects): project conversations in the sidebar, files and PRs beside the chat by @enyst in https://github.com/OpenHands/OpenHands/pull/19810 * feat(frontend): nest sub-agent conversations under their parent by @neubig in https://github.com/OpenHands/OpenHands/pull/20010 ### Bug Fixes * fix(automations): wrap the setup draft bar at phone width instead of squeezing its title by @enyst in https://github.com/OpenHands/OpenHands/pull/19558 * fix(automations): keep the setup page's repository menu on screen at phone widths by @enyst in https://github.com/OpenHands/OpenHands/pull/19479 * fix(api): resolve chat upload destination within conversation workspace by @lx3133584 in https://github.com/OpenHands/OpenHands/pull/18429 * fix(settings): keep a typed custom classifier in the Model Router editor by @enyst in https://github.com/OpenHands/OpenHands/pull/19716 * fix(files): refresh tree after terminal file changes by @malhotra5 in https://github.com/OpenHands/OpenHands/pull/19992 * fix(root): sequence first-run telemetry before onboarding by @malhotra5 in https://github.com/OpenHands/OpenHands/pull/19978 * fix(settings): label agent profile comboboxes by @malhotra5 in https://github.com/OpenHands/OpenHands/pull/19996 * fix(sidebar): keep the conversation preview on screen in the phone drawer by @enyst in https://github.com/OpenHands/OpenHands/pull/19150 * fix(a11y): home composer textbox semantics by @malhotra5 in https://github.com/OpenHands/OpenHands/pull/19976 * fix: keep selected Usage tab visible on phone by @malhotra5 in https://github.com/OpenHands/OpenHands/pull/19995 * fix: make workspace picker add action keyboard accessible by @malhotra5 in https://github.com/OpenHands/OpenHands/pull/19998 * fix(command-menu): hide desktop sidebar toggle on mobile by @malhotra5 in https://github.com/OpenHands/OpenHands/pull/19991 * fix: clarify voice input autosave settings by @malhotra5 in https://github.com/OpenHands/OpenHands/pull/19994 * fix(conversation): cancel inline rename on Escape by @malhotra5 in https://github.com/OpenHands/OpenHands/pull/19997 * fix(sidebar): trap mobile drawer focus by @malhotra5 in https://github.com/OpenHands/OpenHands/pull/19999 * fix(chat): close the agent profile and model pill popovers on Escape by @enyst in https://github.com/OpenHands/OpenHands/pull/18812 ### Documentation * docs(verify-openhands): smoke every app in the extensions catalog by @enyst in https://github.com/OpenHands/OpenHands/pull/19049 * docs(verify): include user hooks in the conversation feature map by @enyst in https://github.com/OpenHands/OpenHands/pull/19726 * docs(verify-openhands): map maintenance 2026-11-23 by @enyst in https://github.com/OpenHands/OpenHands/pull/20007 ### Maintenance * refactor(ui): name the exist",
     "title": "v1.45.0",
     "url": "https://github.com/OpenHands/OpenHands/releases/tag/v1.45.0"
@@ -15049,6 +15052,9 @@
     "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.323"
   },
   "845876460c50859707d418aac55873268d3db04d4cd8684ed1612efc6f0387aa": {
+    "articles": [
+      "/news/litellm-1-109-4-mcp-gateway-registration/"
+    ],
     "category": "open-source",
     "discovered": "2026-11-24T07:39:38.717042+00:00",
     "discovery": {},
@@ -15056,7 +15062,7 @@
     "published": "2026-11-24T04:15:26+00:00",
     "source": "litellm",
     "source_url": "https://api.github.com/repos/BerriAI/litellm/releases?per_page=10",
-    "status": "pending",
+    "status": "published",
     "summary": "## Verify this release ```bash cosign verify \\ --certificate-identity https://github.com/BerriAI/project-releaser/.github/workflows/release.yml@refs/heads/main \\ --certificate-oidc-issuer https://token.actions.githubusercontent.com \\ ghcr.io/berriai/litellm:v1.109.4 ``` Same command for `litellm-database`, `litellm-non_root` and the `docker.io/litellm/*` images ## What's new in 1.109.4 2 PRs. 1 changed. 1 needs action ### Action required - **MCP:** Set `LITELLM_MCP_DCR_GATEWAY_CLIENT=true` to keep automatic gateway-owned registration for new clientless DCR bridges (#53059) Also in [1.108.16](https://github.com/BerriAI/litellm/releases/tag/v1.108.16), [1.110.3](https://github.com/BerriAI/litellm/releases/tag/v1.110.3) ### Changes - **MCP:** Changed gateway-owned DCR client registration to opt-in, fixing `403 oauth_principal_mismatch` for shared service keys (#53059) Also in [1.108.16](https://github.com/BerriAI/litellm/releases/tag/v1.108.16), [1.110.3](https://github.com/BerriAI/litellm/releases/tag/v1.110.3) --- Backport #53179 · [Full changelog](https://github.com/BerriAI/litellm/compare/v1.109.3...v1.109.4)",
     "title": "v1.109.4",
     "updated": "2026-11-24T19:53:54.561219+00:00",
@@ -18994,7 +19000,7 @@
     "published": "2026-11-20T10:13:47.336812+00:00",
     "source": "ecosystem-mcp-registry",
     "source_url": "https://registry.modelcontextprotocol.io/v0.1/servers?version=latest&limit=12&search=video",
-    "status": "pending",
+    "status": "skipped",
     "summary": "Registry listing 1.0.0. Publisher description: Zero-signup x402 Base USDC & API-key MCP hub for Search, X, Video, Commerce, Jobs & SEC EDGAR.",
     "title": "ai.agentapihub/youtube-transcript-video-subtitles-search-mcp",
     "url": "https://registry.modelcontextprotocol.io/v0.1/servers/ai.agentapihub%2Fyoutube-transcript-video-subtitles-search-mcp/versions/1.0.0"
@@ -21411,7 +21417,7 @@
     "published": "2026-11-25T11:17:51+00:00",
     "source": "dev-opensource",
     "source_url": "https://dev.to/api/articles?tag=opensource&per_page=12",
-    "status": "pending",
+    "status": "skipped",
     "summary": "Your AI Coding Agent Says It's Done. Cairn Makes It Prove It. Ever had an AI coding agent...",
     "title": "Why Not Cairn?",
     "url": "https://dev.to/eventuallyconsistentcode/why-not-cairn-4jpe"
@@ -22808,6 +22814,9 @@
     "url": "https://news.ycombinator.com/item?id=50627543"
   },
   "cbf46f891ea775e1989c330c0d71cc711c4690a40bdf3df3d815fedf6ed5a220": {
+    "articles": [
+      "/news/litellm-1-111-0-opensearch-key-permissions/"
+    ],
     "category": "open-source",
     "discovered": "2026-11-25T03:19:53.460134+00:00",
     "discovery": {},
@@ -22823,7 +22832,7 @@
     "published": "2026-11-25T01:42:50+00:00",
     "source": "litellm",
     "source_url": "https://api.github.com/repos/BerriAI/litellm/releases?per_page=10",
-    "status": "pending",
+    "status": "published",
     "summary": "## Verify Docker Image Signature ```bash cosign verify \\ --certificate-identity https://github.com/BerriAI/project-releaser/.github/workflows/release.yml@refs/heads/main \\ --certificate-oidc-issuer https://token.actions.githubusercontent.com \\ ghcr.io/berriai/litellm:v1.111.0 ``` ## What's Changed * test(integration): follow cached prepared statements in the held statement relay by @devin-ai-integration[bot] in https://github.com/BerriAI/litellm/pull/50651 * feat(proxy): add OpenSearch index pass-through with per-key read/write grants by @quietjules in https://github.com/BerriAI/litellm/pull/50573 * test(e2e): repin the Together reasoning replay backend to MiniMax-M3.1-Flash by @yuneng-berri in https://github.com/BerriAI/litellm/pull/50601 * fix(proxy): build plugin session claims from FIPS provider services in fips_mode by @yucheng-berri in https://github.com/BerriAI/litellm/pull/50544 * feat(anthropic): add claude-fable-5-2 and its Claude Platform on AWS mirror by @devin-ai-integration[bot] in https://github.com/BerriAI/litellm/pull/50715 * feat(cost-map): rolling registry update (Anthropic and Bedrock Fable 5.2, Azure realtime cache, Vertex, Friendli) by @devin-ai-integration[bot] in https://github.com/BerriAI/litellm/pull/50707 * fix(proxy): show committed spend in the remaining budget gauges by @zoveki in https://github.com/BerriAI/litellm/pull/49199 * feat(azure): add azure_ai/claude-fable-5-2 and claude-fable-5-2-fast from the Foundry Claude page by @devin-ai-integration[bot] in https://github.com/BerriAI/litellm/pull/50723 * build(ui): fail lint on hardcoded English in dashboard JSX by @yuneng-berri in https://github.com/BerriAI/litellm/pull/50593 * fix(prompt_templates): keep moved private helpers importable from common_utils by @zoveki in https://github.com/BerriAI/litellm/pull/50721 * perf(router): look up host step answers by id instead of scanning every candidate by @narmstrong-berri in https://github.com/BerriAI/litellm/pull/50704 * feat(cost-map): add Claude Fable 5.2 on Vertex AI and repoint claude-fable-latest by @kerry-berri in https://github.com/BerriAI/litellm/pull/50713 * test(integration): cover claude-fable-5-2 capability flags and prompt-cache pricing on the scripted Anthropic upstream by @kerry-berri in https://github.com/BerriAI/litellm/pull/50722 * fix(cost)!: bill transcriptions by the seconds the provider reports by @ryan-crabbe-berri in https://github.com/BerriAI/litellm/pull/50727 * fix(logging): bill a refused response the router falls back from by @joshua-berri in https://github.com/BerriAI/litellm/pull/50735 * fix(audio): measure duration for PathLike multipart tuple contents by @raunakpandey1 in https://github.com/BerriAI/litellm/pull/49806 * feat(auth): grant access groups through principal attribute rules by @krrish-berri-2 in https://github.com/BerriAI/litellm/pull/50455 * fix(minimax): forward reasoning_effort instead of dropping it by @jeevan1098 in https://github.com/BerriAI/litellm/pull/49583 * fix(ollama_chat): give each streamed tool call its own index by @tedswinyar in https://github.com/BerriAI/litellm/pull/49183 * fix(redis): accept a bare service account email for GCP Memorystore IAM by @yujongl",
     "title": "v1.111.0",
     "url": "https://github.com/BerriAI/litellm/releases/tag/v1.111.0",
@@ -24698,6 +24707,9 @@
     "url": "https://github.com/openclaw/openclaw/releases/tag/v2026.10.33"
   },
   "dbf3279a2f3448f95b8e3d987c47d03af8e9a44eacb8a22c6bd7e0f0d2858399": {
+    "articles": [
+      "/news/ollama-0-40-18-jetpack-5-support-removal/"
+    ],
     "category": "open-source",
     "discovered": "2026-11-24T19:53:54.561219+00:00",
     "discovery": {},
@@ -24705,7 +24717,7 @@
     "published": "2026-11-24T04:18:13+00:00",
     "source": "ollama",
     "source_url": "https://api.github.com/repos/ollama/ollama/releases?per_page=10",
-    "status": "pending",
+    "status": "published",
     "summary": "## What's Changed * mlx: fuse Inkling residual mixing on Metal by @dhiltgen in https://github.com/ollama/ollama/pull/19808 * mlxrunner: share tensor helpers and model setup across architectures by @jaingaurav in https://github.com/ollama/ollama/pull/19805 * llama.cpp: version bump b12651 + remove jetpack5 support by @pdevine in https://github.com/ollama/ollama/pull/19865 * inkling2: faster Metal decode, prefill and draft rounds by @dhiltgen in https://github.com/ollama/ollama/pull/19843 **Full Changelog**: https://github.com/ollama/ollama/compare/v0.40.17...v0.40.18-rc0",
     "title": "v0.40.18",
     "url": "https://github.com/ollama/ollama/releases/tag/v0.40.18"
