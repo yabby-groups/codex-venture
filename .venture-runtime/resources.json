@@ -118,6 +118,16 @@
         "source": "github-skills"
       }
     },
+    "skills:google-gemini/gemini-cli": {
+      "attempt": 1795571996.0233455,
+      "item": {
+        "category": "agents",
+        "discovery": {},
+        "published": "2026-11-25",
+        "skill_scan": {},
+        "source": "github-skills"
+      }
+    },
     "skills:huggingface/skills": {
       "attempt": 1795570660.886439,
       "complete": "2026-12-02",
@@ -160,6 +170,16 @@
             "skills/trl-training/SKILL.md": "9046f03f975bcc061234266e70cb56ab43892526"
           }
         },
+        "source": "github-skills"
+      }
+    },
+    "skills:microsoft/skills": {
+      "attempt": 1795571995.941282,
+      "item": {
+        "category": "agents",
+        "discovery": {},
+        "published": "2026-11-25",
+        "skill_scan": {},
         "source": "github-skills"
       }
     },
@@ -223,6 +243,16 @@
             "skills/.system/skill-installer/SKILL.md": "8ca23bf833379d2272a0a67e0026c2709b8823f1"
           }
         },
+        "source": "github-skills"
+      }
+    },
+    "skills:remotion-dev/skills": {
+      "attempt": 1795571996.0569122,
+      "item": {
+        "category": "agents",
+        "discovery": {},
+        "published": "2026-11-25",
+        "skill_scan": {},
         "source": "github-skills"
       }
     },

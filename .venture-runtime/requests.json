@@ -23,13 +23,13 @@
       "successes": 2
     },
     "api.github.com": {
-      "daily": 160,
+      "daily": 161,
       "hour": "2026-11-25T01",
-      "hourly": 160,
-      "limited": 2,
+      "hourly": 161,
+      "limited": 3,
       "remaining": 0,
-      "responses": 160,
-      "resume": 1795571754.0,
+      "responses": 161,
+      "resume": 1795573559.0,
       "successes": 156
     },
     "blog.cloudflare.com": {
