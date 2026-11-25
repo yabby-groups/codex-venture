@@ -1,0 +1,31 @@
+{
+  "addedAt": "2026-11-25",
+  "categories": [
+    [
+      "Jupyter 笔记本编写",
+      "Jupyter notebook authoring"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-25",
+  "id": "resource-935763ce1a6d2660bf0980b107b91ba7694e0cc7908feaaf1bb1752daea9fc2c",
+  "identity": "github-skill:1103643573:skills/.curated/jupyter-notebook/SKILL.md",
+  "name": "jupyter-notebook",
+  "platforms": [
+    "Codex"
+  ],
+  "repository": "https://github.com/openai/skills",
+  "repositoryId": "1103643573",
+  "site": "https://github.com/openai/skills/blob/main/skills/.curated/jupyter-notebook/SKILL.md",
+  "sourcePath": "skills/.curated/jupyter-notebook/SKILL.md",
+  "sourceSignature": "665b5030bf9717aa33522547b1b03635af813d14b86877f389577dfac0c7936c",
+  "summary": [
+    "技能文档介绍了用于创建实验、探索性分析和教程类 Jupyter 笔记本的模板和辅助脚本。",
+    "The skill documentation describes templates and a helper script for creating Jupyter notebooks for experiments, exploratory analysis, and tutorials."
+  ],
+  "tested": false,
+  "type": "skills",
+  "verificationSources": [
+    "https://github.com/openai/skills/blob/main/skills/.curated/jupyter-notebook/SKILL.md"
+  ],
+  "verifiedAt": "2026-11-25"
+}

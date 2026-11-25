@@ -1,0 +1,28 @@
+{
+  "addedAt": "2026-11-25",
+  "categories": [
+    [
+      "游戏资料查询",
+      "Game information lookup"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-25",
+  "id": "resource-6746930205e2b2130b2992f5d6b273662bee90d9310f9a10647624c10c0a7c55",
+  "identity": "mcp:ae.brainy.tipline/gta6",
+  "name": "Tipline: unofficial GTA 6 guide",
+  "registryId": "ae.brainy.tipline/gta6",
+  "site": "https://registry.modelcontextprotocol.io/v0.1/servers/ae.brainy.tipline%2Fgta6/versions/1.0.1",
+  "sourceSignature": "5cb505678570f50345f39100ee06ccff48997fb3c87212cd6165e39e0eeeabde",
+  "summary": [
+    "据发布者介绍，Tipline 是一份非官方 GTA 6 指南，可查询附有来源的角色、地点、载具和发售时间信息。",
+    "The publisher describes Tipline as an unofficial GTA 6 guide for looking up sourced information on characters, locations, vehicles, and release times."
+  ],
+  "tested": false,
+  "transport": "streamable-http",
+  "type": "mcp",
+  "verificationSources": [
+    "https://registry.modelcontextprotocol.io/v0.1/servers/ae.brainy.tipline%2Fgta6/versions/1.0.1"
+  ],
+  "verifiedAt": "2026-11-25",
+  "version": "1.0.1"
+}

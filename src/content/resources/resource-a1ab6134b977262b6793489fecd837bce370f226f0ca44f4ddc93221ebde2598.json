@@ -1,0 +1,31 @@
+{
+  "addedAt": "2026-11-25",
+  "categories": [
+    [
+      "应用部署",
+      "Application Deployment"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-25",
+  "id": "resource-a1ab6134b977262b6793489fecd837bce370f226f0ca44f4ddc93221ebde2598",
+  "identity": "github-skill:1103643573:skills/.curated/render-deploy/SKILL.md",
+  "name": "render-deploy",
+  "platforms": [
+    "Codex"
+  ],
+  "repository": "https://github.com/openai/skills",
+  "repositoryId": "1103643573",
+  "site": "https://github.com/openai/skills/blob/main/skills/.curated/render-deploy/SKILL.md",
+  "sourcePath": "skills/.curated/render-deploy/SKILL.md",
+  "sourceSignature": "b7fb967ffd3e72d00329a343832889515186ad2c3bd66d763c316769582c39ae",
+  "summary": [
+    "这项技能的文档介绍了如何将基于 Git 的应用部署到 Render，包括分析代码库并生成 render.yaml Blueprint，或通过 MCP 直接创建服务。",
+    "The skill documentation describes how to deploy Git-backed applications to Render by analyzing the codebase and generating a render.yaml Blueprint, or by creating services through MCP."
+  ],
+  "tested": false,
+  "type": "skills",
+  "verificationSources": [
+    "https://github.com/openai/skills/blob/main/skills/.curated/render-deploy/SKILL.md"
+  ],
+  "verifiedAt": "2026-11-25"
+}

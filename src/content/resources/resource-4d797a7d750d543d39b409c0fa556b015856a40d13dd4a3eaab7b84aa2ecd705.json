@@ -1,0 +1,30 @@
+{
+  "addedAt": "2026-11-25",
+  "categories": [
+    [
+      "AI 编程辅助",
+      "AI Coding Assistance"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-25",
+  "id": "resource-4d797a7d750d543d39b409c0fa556b015856a40d13dd4a3eaab7b84aa2ecd705",
+  "identity": "openvsx:zihadhosan.openrouter-agent",
+  "install": "https://open-vsx.org/extension/ZihadHosan/openrouter-agent",
+  "name": "OpenRouter Agent — AI Coding Assistant",
+  "platforms": [
+    "Open VSX"
+  ],
+  "site": "https://open-vsx.org/extension/ZihadHosan/openrouter-agent",
+  "sourceSignature": "52b2722c9cbdcb94a86fe45013d95fc54091d73ee095fce7b25b327ae5bae6f2",
+  "summary": [
+    "据发布者介绍，这款 VS Code 编程助手可调用 Claude、GPT-4 和 Gemini 等模型，用于提问、规划代码修改和通过代理执行任务。",
+    "The publisher describes a VS Code coding assistant that lets you ask questions, plan changes, and use an agent with models such as Claude, GPT-4, and Gemini."
+  ],
+  "tested": false,
+  "type": "plugins",
+  "verificationSources": [
+    "https://open-vsx.org/api/-/search?offset=0&query=AI+assistant&size=25"
+  ],
+  "verifiedAt": "2026-11-25",
+  "version": "1.31.17"
+}

@@ -1,0 +1,28 @@
+{
+  "addedAt": "2026-11-25",
+  "categories": [
+    [
+      "智能体工作流自动化",
+      "Agent workflow automation"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-25",
+  "id": "resource-8214668ad502c7216b43e9933296c6a08eb26bec107eef3030b8bd3d34c0cfe6",
+  "identity": "github:1038546086",
+  "license": "NOASSERTION",
+  "name": "code-forge-temple/agentic-signal",
+  "repository": "https://github.com/code-forge-temple/agentic-signal",
+  "repositoryId": "1038546086",
+  "site": "https://github.com/code-forge-temple/agentic-signal",
+  "sourceSignature": "e7be1660964ba154bbc9dcbe4ca9276709649f16cdb9fd95b56c200d5c8245ed",
+  "summary": [
+    "据发布者介绍，agentic-signal 可通过拖放式编辑器搭建 AI 智能体工作流，并接入本地语言模型。",
+    "The publisher says agentic-signal lets users build AI agent workflows in a drag-and-drop editor and integrate local language models."
+  ],
+  "tested": false,
+  "type": "tools",
+  "verificationSources": [
+    "https://api.github.com/search/repositories?page=1&per_page=30&q=topic%3Aai-automation+archived%3Afalse+fork%3Afalse&sort=stars"
+  ],
+  "verifiedAt": "2026-11-25"
+}

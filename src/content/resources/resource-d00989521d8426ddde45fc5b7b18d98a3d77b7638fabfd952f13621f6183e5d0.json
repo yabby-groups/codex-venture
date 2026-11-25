@@ -1,0 +1,28 @@
+{
+  "addedAt": "2026-11-25",
+  "categories": [
+    [
+      "分布式机器学习",
+      "Distributed Machine Learning"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-25",
+  "id": "resource-d00989521d8426ddde45fc5b7b18d98a3d77b7638fabfd952f13621f6183e5d0",
+  "identity": "github:71932349",
+  "license": "Apache-2.0",
+  "name": "ray-project/ray",
+  "repository": "https://github.com/ray-project/ray",
+  "repositoryId": "71932349",
+  "site": "https://github.com/ray-project/ray",
+  "sourceSignature": "bb2fb45e61754c2da9d95edea43c5d288ed23856596734d4f8f6f9cb6258cd2c",
+  "summary": [
+    "据发布者介绍，Ray 提供分布式运行时和 AI 库，用于运行和加速机器学习工作负载。",
+    "The publisher describes Ray as a distributed runtime with AI libraries for running and accelerating machine learning workloads."
+  ],
+  "tested": false,
+  "type": "open-source",
+  "verificationSources": [
+    "https://api.github.com/search/repositories?page=1&per_page=30&q=topic%3Allm-inference+archived%3Afalse+fork%3Afalse&sort=stars"
+  ],
+  "verifiedAt": "2026-11-25"
+}

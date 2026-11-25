@@ -1,0 +1,28 @@
+{
+  "addedAt": "2026-11-25",
+  "categories": [
+    [
+      "云部署预检",
+      "Cloud deployment readiness"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-25",
+  "id": "resource-93451e4be459834e8b947c666553994c4caea512ead939b18bb4ef5e19afdcb3",
+  "identity": "github-skill:1102903896:skills/hf-cloud-sagemaker-iam-preflight/SKILL.md",
+  "name": "hf-cloud-sagemaker-iam-preflight",
+  "repository": "https://github.com/huggingface/skills",
+  "repositoryId": "1102903896",
+  "site": "https://github.com/huggingface/skills/blob/main/skills/hf-cloud-sagemaker-iam-preflight/SKILL.md",
+  "sourcePath": "skills/hf-cloud-sagemaker-iam-preflight/SKILL.md",
+  "sourceSignature": "b2b1ffc31038ff16b6995f4b4ef0c8e6df1b4b458fb94d98f148b0e12a6893e8",
+  "summary": [
+    "据发布者介绍，此技能可在 SageMaker 上部署模型或启动训练任务之前，查找并验证现有的 IAM 执行角色。",
+    "The publisher describes this skill as a preflight check for finding and validating existing IAM execution roles before deploying models or starting training jobs on SageMaker."
+  ],
+  "tested": false,
+  "type": "skills",
+  "verificationSources": [
+    "https://github.com/huggingface/skills/blob/main/skills/hf-cloud-sagemaker-iam-preflight/SKILL.md"
+  ],
+  "verifiedAt": "2026-11-25"
+}

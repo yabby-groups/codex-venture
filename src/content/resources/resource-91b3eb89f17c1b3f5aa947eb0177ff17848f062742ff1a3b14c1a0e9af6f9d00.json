@@ -1,0 +1,31 @@
+{
+  "addedAt": "2026-11-25",
+  "categories": [
+    [
+      "产品学习与入门",
+      "Product learning and onboarding"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-25",
+  "id": "resource-91b3eb89f17c1b3f5aa947eb0177ff17848f062742ff1a3b14c1a0e9af6f9d00",
+  "identity": "github-skill:1061953414:skills/academy-guide/SKILL.md",
+  "name": "academy-guide",
+  "platforms": [
+    "Claude"
+  ],
+  "repository": "https://github.com/anthropics/skills",
+  "repositoryId": "1061953414",
+  "site": "https://github.com/anthropics/skills/blob/main/skills/academy-guide/SKILL.md",
+  "sourcePath": "skills/academy-guide/SKILL.md",
+  "sourceSignature": "68a59534d959a3a7386346601568eaaa28d2cd67a599ce480fac2f46a71f45e9",
+  "summary": [
+    "据发布者介绍，academy-guide 可根据 Claude 使用问题，推荐 Claude Academy 中相关的课程、教程和应用案例。",
+    "The publisher says academy-guide matches questions about using Claude with relevant Claude Academy courses, tutorials, and use cases."
+  ],
+  "tested": false,
+  "type": "skills",
+  "verificationSources": [
+    "https://github.com/anthropics/skills/blob/main/skills/academy-guide/SKILL.md"
+  ],
+  "verifiedAt": "2026-11-25"
+}

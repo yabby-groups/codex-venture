@@ -1,0 +1,29 @@
+{
+  "addedAt": "2026-11-25",
+  "categories": [
+    [
+      "文本生成",
+      "Text Generation"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-25",
+  "id": "resource-15aaa56b59a5e3905f91bb8c211319490aef341a9dc1ceb3f9caf478ce5cac58",
+  "identity": "hf:davidau/lfm2.5-24b-a2b-turbo-brilliance-50x-neo-max-imatrix-gguf",
+  "name": "DavidAU/LFM2.5-24B-A2B-Turbo-Brilliance-50X-NEO-MAX-Imatrix-GGUF",
+  "site": "https://huggingface.co/DavidAU/LFM2.5-24B-A2B-Turbo-Brilliance-50X-NEO-MAX-Imatrix-GGUF",
+  "sourceSignature": "141cb629b2c21cd1751776660889ff7b3c9c6d50104a52c3d9e37fd43a8d004f",
+  "summary": [
+    "Hugging Face 上的发布页介绍了这款 LFM2.5 GGUF 文本生成模型，列出的语言包括英语、阿拉伯语、中文、法语和德语。",
+    "The Hugging Face listing describes this LFM2.5 GGUF model as a text generator for languages including English, Arabic, Chinese, French, and German."
+  ],
+  "tags": [
+    "text-generation"
+  ],
+  "tested": false,
+  "type": "models",
+  "verificationSources": [
+    "https://huggingface.co/DavidAU/LFM2.5-24B-A2B-Turbo-Brilliance-50X-NEO-MAX-Imatrix-GGUF/raw/main/README.md",
+    "https://huggingface.co/api/models?cursor=eyIkb3IiOlt7ImRvd25sb2FkcyI6MTg4MzY3OCwiX2lkIjp7IiRndCI6IjZhM2NiNGVkYjllZjcwOTRjMGM4MGQzNSJ9fSx7ImRvd25sb2FkcyI6eyIkbHQiOjE4ODM2Nzh9fSx7ImRvd25sb2FkcyI6bnVsbH1dLCJzZWFyY2hTZXF1ZW5jZVRva2VuIjoiQ0lEdHNBSWFDU0VBQUFBQUhyNDhRUm9PV2d4cVBMVHR1ZTl3bE1ESURUVWlEbG9NYWp5MDdibnZjSlRBeUEwMSJ9&direction=-1&full=true&limit=30&pipeline_tag=text-generation&sort=downloads"
+  ],
+  "verifiedAt": "2026-11-25"
+}

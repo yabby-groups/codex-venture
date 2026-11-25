@@ -1,0 +1,31 @@
+{
+  "addedAt": "2026-11-25",
+  "categories": [
+    [
+      "知识文档整理",
+      "Knowledge documentation"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-25",
+  "id": "resource-9400ea3f3569b1d51326a1588c54cb7857c3629ce76f8b5bc3bdb6e84402a22b",
+  "identity": "github-skill:1103643573:skills/.curated/notion-knowledge-capture/SKILL.md",
+  "name": "notion-knowledge-capture",
+  "platforms": [
+    "Codex"
+  ],
+  "repository": "https://github.com/openai/skills",
+  "repositoryId": "1103643573",
+  "site": "https://github.com/openai/skills/blob/main/skills/.curated/notion-knowledge-capture/SKILL.md",
+  "sourcePath": "skills/.curated/notion-knowledge-capture/SKILL.md",
+  "sourceSignature": "da58a10d49793e6026dfb5e6c3fd5c41bf972bda7f42d8d381db7aa0a0cbb8d7",
+  "summary": [
+    "技能文档介绍了如何将对话和笔记整理为相互链接的 Notion 页面，用于团队知识库、操作指南、决策记录和常见问题。",
+    "The skill documentation shows how to turn conversations and notes into linked Notion pages for team wikis, how-to guides, decision logs, and FAQs."
+  ],
+  "tested": false,
+  "type": "skills",
+  "verificationSources": [
+    "https://github.com/openai/skills/blob/main/skills/.curated/notion-knowledge-capture/SKILL.md"
+  ],
+  "verifiedAt": "2026-11-25"
+}

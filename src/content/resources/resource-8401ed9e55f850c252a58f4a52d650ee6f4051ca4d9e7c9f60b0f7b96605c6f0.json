@@ -1,0 +1,28 @@
+{
+  "addedAt": "2026-11-25",
+  "categories": [
+    [
+      "工作流自动化模板",
+      "Workflow automation templates"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-25",
+  "id": "resource-8401ed9e55f850c252a58f4a52d650ee6f4051ca4d9e7c9f60b0f7b96605c6f0",
+  "identity": "github:980205160",
+  "license": "NOASSERTION",
+  "name": "enescingoz/awesome-n8n-templates",
+  "repository": "https://github.com/enescingoz/awesome-n8n-templates",
+  "repositoryId": "980205160",
+  "site": "https://github.com/enescingoz/awesome-n8n-templates",
+  "sourceSignature": "4c1b47e322419814ea6eed474aba2e0691cd90d5fb2d506b78c23a113605881c",
+  "summary": [
+    "仓库介绍列出了用于邮件自动化、文档处理和搭建检索增强聊天机器人的 n8n 模板。",
+    "The repository description lists n8n templates for tasks such as email automation, document processing, and building retrieval-augmented chatbots."
+  ],
+  "tested": false,
+  "type": "tools",
+  "verificationSources": [
+    "https://api.github.com/search/repositories?page=1&per_page=30&q=topic%3Aai-automation+archived%3Afalse+fork%3Afalse&sort=stars"
+  ],
+  "verifiedAt": "2026-11-25"
+}

@@ -1,0 +1,29 @@
+{
+  "addedAt": "2026-11-25",
+  "categories": [
+    [
+      "文本转语音",
+      "Text-to-speech"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-25",
+  "id": "resource-139d087a76742738fae3aacfb05dd754267f901a53ef0f3e8a45109f3bbcdbcf",
+  "identity": "hf:unsloth/orpheus-3b-0.1-ft",
+  "name": "unsloth/orpheus-3b-0.1-ft",
+  "site": "https://huggingface.co/unsloth/orpheus-3b-0.1-ft",
+  "sourceSignature": "35e173e358c441072d0795fd8362eb04c9c92bce6020433012d9520b7519dd26",
+  "summary": [
+    "模型卡将这款微调版 Orpheus 模型列为英语文本转语音模型，并提供推理示例链接。",
+    "The model card lists this fine-tuned Orpheus model for generating speech from English text and links to inference examples."
+  ],
+  "tags": [
+    "text-to-speech"
+  ],
+  "tested": false,
+  "type": "models",
+  "verificationSources": [
+    "https://huggingface.co/api/models?cursor=eyIkb3IiOlt7ImRvd25sb2FkcyI6NzUxOTMsIl9pZCI6eyIkZ3QiOiI2YTE0NDM0YTczZmY2NjI4OGVjZjRmMzEifX0seyJkb3dubG9hZHMiOnsiJGx0Ijo3NTE5M319LHsiZG93bmxvYWRzIjpudWxsfV0sInNlYXJjaFNlcXVlbmNlVG9rZW4iOiJDTHJUb2dJYUNTRUFBQUFBa0Z2eVFCb09XZ3hxRkVOS2MvOW1LSTdQVHpFaURsb01haFJEU25QL1ppaU96MDh4In0%3D&direction=-1&full=true&limit=30&pipeline_tag=text-to-speech&sort=downloads",
+    "https://huggingface.co/unsloth/orpheus-3b-0.1-ft/raw/main/README.md"
+  ],
+  "verifiedAt": "2026-11-25"
+}

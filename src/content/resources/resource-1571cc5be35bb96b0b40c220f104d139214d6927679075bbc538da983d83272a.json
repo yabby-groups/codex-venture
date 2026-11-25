@@ -1,0 +1,29 @@
+{
+  "addedAt": "2026-11-25",
+  "categories": [
+    [
+      "文本生成",
+      "Text Generation"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-25",
+  "id": "resource-1571cc5be35bb96b0b40c220f104d139214d6927679075bbc538da983d83272a",
+  "identity": "hf:unsloth/glm-5.3-flash-gguf",
+  "name": "unsloth/GLM-5.3-Flash-GGUF",
+  "site": "https://huggingface.co/unsloth/GLM-5.3-Flash-GGUF",
+  "sourceSignature": "4990d1b87346cc39192cbb483dab109af76504810cad31eee43b881fe0e59e8b",
+  "summary": [
+    "Hugging Face 上的发布页将其列为 Z.ai GLM-5.3-Flash 的 GGUF 版本，可用于生成英文和中文文本。",
+    "The Hugging Face listing identifies this as a GGUF version of Z.ai’s GLM-5.3-Flash for English and Chinese text generation."
+  ],
+  "tags": [
+    "text-generation"
+  ],
+  "tested": false,
+  "type": "models",
+  "verificationSources": [
+    "https://huggingface.co/api/models?cursor=eyIkb3IiOlt7ImRvd25sb2FkcyI6Nzk2MjExLCJfaWQiOnsiJGd0IjoiNjcyMzg4ZjZlMTEzM2NmZjc5NzY2MzE4In19LHsiZG93bmxvYWRzIjp7IiRsdCI6Nzk2MjExfX0seyJkb3dubG9hZHMiOm51bGx9XSwic2VhcmNoU2VxdWVuY2VUb2tlbiI6IkNMdnA0UUVhQ1NFQUFBQUFaa3dvUVJvT1dneG5JNGoyNFJNOC8zbDJZeGdpRGxvTVp5T0k5dUVUUFA5NWRtTVkifQ%3D%3D&direction=-1&full=true&limit=30&pipeline_tag=text-generation&sort=downloads",
+    "https://huggingface.co/unsloth/GLM-5.3-Flash-GGUF/raw/main/README.md"
+  ],
+  "verifiedAt": "2026-11-25"
+}

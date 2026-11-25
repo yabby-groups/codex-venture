@@ -1,0 +1,28 @@
+{
+  "addedAt": "2026-11-25",
+  "categories": [
+    [
+      "房源管理",
+      "Real estate listing management"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-25",
+  "id": "resource-6eba96a227b6e79b44ac907eb25762bbb2eca12f0196e5e664d1f608ced99b25",
+  "identity": "mcp:ae.propick/propick",
+  "name": "Propick Integration MCP",
+  "registryId": "ae.propick/propick",
+  "site": "https://registry.modelcontextprotocol.io/v0.1/servers/ae.propick%2Fpropick/versions/1.0.0",
+  "sourceSignature": "cede5d29381fdb7f3f0e54895968228cca85f87d13832f0c2d1c196b37481883",
+  "summary": [
+    "发布方介绍，这款 MCP 集成可在 Propick 上批量同步迪拜房源、查询记录并生成报表。",
+    "The listing describes an MCP integration for bulk-syncing Dubai property listings on Propick, looking up records, and running reports."
+  ],
+  "tested": false,
+  "transport": "streamable-http",
+  "type": "mcp",
+  "verificationSources": [
+    "https://registry.modelcontextprotocol.io/v0.1/servers/ae.propick%2Fpropick/versions/1.0.0"
+  ],
+  "verifiedAt": "2026-11-25",
+  "version": "1.0.0"
+}

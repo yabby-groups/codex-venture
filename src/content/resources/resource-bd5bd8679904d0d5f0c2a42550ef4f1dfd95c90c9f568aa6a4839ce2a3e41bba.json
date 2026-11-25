@@ -1,0 +1,28 @@
+{
+  "addedAt": "2026-11-25",
+  "categories": [
+    [
+      "大语言模型训练与部署",
+      "LLM training and deployment"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-25",
+  "id": "resource-bd5bd8679904d0d5f0c2a42550ef4f1dfd95c90c9f568aa6a4839ce2a3e41bba",
+  "identity": "github:636372163",
+  "license": "Apache-2.0",
+  "name": "Lightning-AI/litgpt",
+  "repository": "https://github.com/Lightning-AI/litgpt",
+  "repositoryId": "636372163",
+  "site": "https://github.com/Lightning-AI/litgpt",
+  "sourceSignature": "ed6fe1669f06dd72b4b931e67f3c4c2c714f5d638ed2d7dc876a708707e2ca45",
+  "summary": [
+    "据发布者介绍，LitGPT 为 20 多种大语言模型提供规模化预训练、微调和部署的操作方案。",
+    "The publisher says LitGPT provides recipes for pretraining, fine-tuning, and deploying more than 20 large language models at scale."
+  ],
+  "tested": false,
+  "type": "open-source",
+  "verificationSources": [
+    "https://api.github.com/search/repositories?page=1&per_page=30&q=topic%3Allm-inference+archived%3Afalse+fork%3Afalse&sort=stars"
+  ],
+  "verifiedAt": "2026-11-25"
+}

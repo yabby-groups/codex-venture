@@ -1,0 +1,28 @@
+{
+  "addedAt": "2026-11-25",
+  "categories": [
+    [
+      "团队知识管理",
+      "Team Knowledge Management"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-25",
+  "id": "resource-7085e9b31b40c1235d3efd0377df1418f37861222dbaddc87babd5a01b8050be",
+  "identity": "mcp:ai.agent-neo/neo",
+  "name": "Agent NEO",
+  "registryId": "ai.agent-neo/neo",
+  "site": "https://registry.modelcontextprotocol.io/v0.1/servers/ai.agent-neo%2Fneo/versions/1.0.0",
+  "sourceSignature": "5d7006fa4a1a62749e4a5798358c1f99c08ed91c17c47b1aebd75f02d342d544",
+  "summary": [
+    "据发布页介绍，这个 MCP 服务器可读取 Agent NEO 中的团队聊天、决策记录和 Wiki 页面，并将会议纪要保存到讨论串。",
+    "According to the listing, this MCP server lets you read team chats, decisions, and wiki pages in Agent NEO and save meeting notes to a thread."
+  ],
+  "tested": false,
+  "transport": "streamable-http",
+  "type": "mcp",
+  "verificationSources": [
+    "https://registry.modelcontextprotocol.io/v0.1/servers/ai.agent-neo%2Fneo/versions/1.0.0"
+  ],
+  "verifiedAt": "2026-11-25",
+  "version": "1.0.0"
+}

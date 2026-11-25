@@ -1,0 +1,28 @@
+{
+  "addedAt": "2026-11-25",
+  "categories": [
+    [
+      "社交媒体与通讯内容检索",
+      "Social media and newsletter discovery"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-25",
+  "id": "resource-6faac04f49c146acbe5872bdd0d89055cd1a7f70986522178585f76c0981743d",
+  "identity": "mcp:ai.agentapigate/bluesky-substack-social-newsletter-scraper-api-mcp",
+  "name": "ai.agentapigate/bluesky-substack-social-newsletter-scraper-api-mcp",
+  "registryId": "ai.agentapigate/bluesky-substack-social-newsletter-scraper-api-mcp",
+  "site": "https://registry.modelcontextprotocol.io/v0.1/servers/ai.agentapigate%2Fbluesky-substack-social-newsletter-scraper-api-mcp/versions/1.3.0",
+  "sourceSignature": "c0c689fd6f79d5d722bc07f65e337f2b54360b415cd615ae4b007bb4d907c68d",
+  "summary": [
+    "发布方介绍，这款 MCP API 可获取 Bluesky 帖子、个人资料、动态流和讨论串，也可搜索 Substack 通讯并获取其刊物订阅源。",
+    "The listing describes an MCP API for retrieving Bluesky posts, profiles, feeds, and threads, searching Substack newsletters, and accessing Substack publication feeds."
+  ],
+  "tested": false,
+  "transport": "streamable-http",
+  "type": "mcp",
+  "verificationSources": [
+    "https://registry.modelcontextprotocol.io/v0.1/servers/ai.agentapigate%2Fbluesky-substack-social-newsletter-scraper-api-mcp/versions/1.3.0"
+  ],
+  "verifiedAt": "2026-11-25",
+  "version": "1.3.0"
+}

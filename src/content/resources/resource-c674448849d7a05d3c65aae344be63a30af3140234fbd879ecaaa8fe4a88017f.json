@@ -1,0 +1,28 @@
+{
+  "addedAt": "2026-11-25",
+  "categories": [
+    [
+      "代码库探索",
+      "Codebase exploration"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-25",
+  "id": "resource-c674448849d7a05d3c65aae344be63a30af3140234fbd879ecaaa8fe4a88017f",
+  "identity": "github:1200597263",
+  "license": "Apache-2.0",
+  "name": "Graphify-Labs/graphify",
+  "repository": "https://github.com/Graphify-Labs/graphify",
+  "repositoryId": "1200597263",
+  "site": "https://github.com/Graphify-Labs/graphify",
+  "sourceSignature": "c400ebd0951dea6bb9465f3cd37f67e71de833e85d007897e5291c02be80ab41",
+  "summary": [
+    "项目介绍称，可将源代码及配套文档、SQL 模式、配置文件和 PDF 转为可查询的知识图谱。",
+    "The project describes building a queryable knowledge graph from source code and accompanying materials such as documentation, SQL schemas, configuration files, and PDFs."
+  ],
+  "tested": false,
+  "type": "open-source",
+  "verificationSources": [
+    "https://api.github.com/search/repositories?page=1&per_page=30&q=topic%3Aai-agents+archived%3Afalse+fork%3Afalse&sort=stars"
+  ],
+  "verifiedAt": "2026-11-25"
+}

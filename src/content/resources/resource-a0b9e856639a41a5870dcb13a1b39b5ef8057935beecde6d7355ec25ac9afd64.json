@@ -1,0 +1,28 @@
+{
+  "addedAt": "2026-11-25",
+  "categories": [
+    [
+      "模型评测",
+      "Model Evaluation"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-25",
+  "id": "resource-a0b9e856639a41a5870dcb13a1b39b5ef8057935beecde6d7355ec25ac9afd64",
+  "identity": "github-skill:1102903896:skills/huggingface-community-evals/SKILL.md",
+  "name": "huggingface-community-evals",
+  "repository": "https://github.com/huggingface/skills",
+  "repositoryId": "1102903896",
+  "site": "https://github.com/huggingface/skills/blob/main/skills/huggingface-community-evals/SKILL.md",
+  "sourcePath": "skills/huggingface-community-evals/SKILL.md",
+  "sourceSignature": "24304ad97fff149e3999f39720482f7e3487788ecec8cc92c2f7c0cf6abbde72",
+  "summary": [
+    "这项技能的文档介绍了如何用 Inspect AI 或 LightEval 在本地评测 Hugging Face Hub 上的模型，并在 vLLM、Transformers 和 Accelerate 之间选择后端。",
+    "The skill documentation explains how to evaluate Hugging Face Hub models locally with Inspect AI or LightEval and choose among vLLM, Transformers, and Accelerate."
+  ],
+  "tested": false,
+  "type": "skills",
+  "verificationSources": [
+    "https://github.com/huggingface/skills/blob/main/skills/huggingface-community-evals/SKILL.md"
+  ],
+  "verifiedAt": "2026-11-25"
+}

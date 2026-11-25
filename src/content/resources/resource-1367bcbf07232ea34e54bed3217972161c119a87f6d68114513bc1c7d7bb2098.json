@@ -1,0 +1,29 @@
+{
+  "addedAt": "2026-11-25",
+  "categories": [
+    [
+      "语音识别",
+      "Speech recognition"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-25",
+  "id": "resource-1367bcbf07232ea34e54bed3217972161c119a87f6d68114513bc1c7d7bb2098",
+  "identity": "hf:nvidia/parakeet-tdt-0.6b-v2",
+  "name": "nvidia/parakeet-tdt-0.6b-v2",
+  "site": "https://huggingface.co/nvidia/parakeet-tdt-0.6b-v2",
+  "sourceSignature": "075684199f5cd1e54092f343e2ebf4146042231f9fa5f0274369c072f32bb8cd",
+  "summary": [
+    "据 NVIDIA 介绍，Parakeet TDT 0.6B v2 可将英语音频转写为文字，并可通过其托管 API 试用。",
+    "NVIDIA says Parakeet TDT 0.6B v2 transcribes English audio and can be tried through its hosted API."
+  ],
+  "tags": [
+    "automatic-speech-recognition"
+  ],
+  "tested": false,
+  "type": "models",
+  "verificationSources": [
+    "https://huggingface.co/api/models?cursor=eyIkb3IiOlt7ImRvd25sb2FkcyI6MTg2NTExLCJfaWQiOnsiJGd0IjoiNjYyYWVhZDQ5NDhiOTA4YTAwODZjYzU5In19LHsiZG93bmxvYWRzIjp7IiRsdCI6MTg2NTExfX0seyJkb3dubG9hZHMiOm51bGx9XSwic2VhcmNoU2VxdWVuY2VUb2tlbiI6IkNLVFMyd0VhQ1NFQUFBQUFlTVFHUVJvT1dneG1LdXJVbEl1UWlnQ0d6RmtpRGxvTVppcnExSlNMa0lvQWhzeFoifQ%3D%3D&direction=-1&full=true&limit=30&pipeline_tag=automatic-speech-recognition&sort=downloads",
+    "https://huggingface.co/nvidia/parakeet-tdt-0.6b-v2/raw/main/README.md"
+  ],
+  "verifiedAt": "2026-11-25"
+}

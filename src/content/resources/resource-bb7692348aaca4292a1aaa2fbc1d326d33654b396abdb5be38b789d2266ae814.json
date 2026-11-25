@@ -1,0 +1,28 @@
+{
+  "addedAt": "2026-11-25",
+  "categories": [
+    [
+      "推理优化与部署",
+      "Inference optimization and deployment"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-25",
+  "id": "resource-bb7692348aaca4292a1aaa2fbc1d326d33654b396abdb5be38b789d2266ae814",
+  "identity": "github:153097643",
+  "license": "Apache-2.0",
+  "name": "openvinotoolkit/openvino",
+  "repository": "https://github.com/openvinotoolkit/openvino",
+  "repositoryId": "153097643",
+  "site": "https://github.com/openvinotoolkit/openvino",
+  "sourceSignature": "c11bd75a35090d101b241b51787864630faba297e07c2d878d312bb22824476e",
+  "summary": [
+    "据发布者介绍，OpenVINO 是用于优化和部署 AI 模型推理的工具包。",
+    "The publisher describes OpenVINO as a toolkit for optimizing and deploying AI model inference."
+  ],
+  "tested": false,
+  "type": "open-source",
+  "verificationSources": [
+    "https://api.github.com/search/repositories?page=1&per_page=30&q=topic%3Allm-inference+archived%3Afalse+fork%3Afalse&sort=stars"
+  ],
+  "verifiedAt": "2026-11-25"
+}

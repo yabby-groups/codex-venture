@@ -1,0 +1,28 @@
+{
+  "addedAt": "2026-11-25",
+  "categories": [
+    [
+      "本地模型推理",
+      "Local Model Inference"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-25",
+  "id": "resource-cda21546d0cf35ceb992d99c2677963bfb68ee82fbfb68925f9f29ad727ed26c",
+  "identity": "github:619959033",
+  "license": "MIT",
+  "name": "nomic-ai/gpt4all",
+  "repository": "https://github.com/nomic-ai/gpt4all",
+  "repositoryId": "619959033",
+  "site": "https://github.com/nomic-ai/gpt4all",
+  "sourceSignature": "6cb88d713bb166ad1b377a5bfc764c97d71b1153df6d492558d836a4883693ac",
+  "summary": [
+    "据发布者介绍，GPT4All 可用于在本地运行大语言模型。",
+    "The publisher describes GPT4All as a tool for running large language models locally."
+  ],
+  "tested": false,
+  "type": "open-source",
+  "verificationSources": [
+    "https://api.github.com/search/repositories?page=1&per_page=30&q=topic%3Allm-inference+archived%3Afalse+fork%3Afalse&sort=stars"
+  ],
+  "verifiedAt": "2026-11-25"
+}

@@ -1,0 +1,30 @@
+{
+  "addedAt": "2026-11-25",
+  "categories": [
+    [
+      "YAML 编辑与校验",
+      "YAML editing and validation"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-25",
+  "id": "resource-49df1c18a4366d1c82b9b6618a3d82d075d509ad016511a40c38ddb2dfb3e62c",
+  "identity": "openvsx:thedv91.claude-frontmatter",
+  "install": "https://open-vsx.org/extension/thedv91/claude-frontmatter",
+  "name": "Claude Frontmatter",
+  "platforms": [
+    "Open VSX"
+  ],
+  "site": "https://open-vsx.org/extension/thedv91/claude-frontmatter",
+  "sourceSignature": "d69a3e53f88bd1128b709356d67638cb2da53b980e04b561e82b6c82ad212ac2",
+  "summary": [
+    "发布方介绍，这款插件可补全并校验 Claude Code 技能、命令、规则、子代理和输出样式文件的 YAML 前置元数据。",
+    "The listing describes YAML frontmatter completion and validation for Claude Code skill, command, rule, subagent, and output style files."
+  ],
+  "tested": false,
+  "type": "plugins",
+  "verificationSources": [
+    "https://open-vsx.org/api/-/search?offset=0&query=Claude&size=25"
+  ],
+  "verifiedAt": "2026-11-25",
+  "version": "0.1.3"
+}

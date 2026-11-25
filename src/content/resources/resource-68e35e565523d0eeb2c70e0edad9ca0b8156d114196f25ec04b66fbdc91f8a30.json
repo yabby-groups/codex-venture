@@ -1,0 +1,28 @@
+{
+  "addedAt": "2026-11-25",
+  "categories": [
+    [
+      "广告活动管理与数据分析",
+      "Ad campaign management and reporting"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-25",
+  "id": "resource-68e35e565523d0eeb2c70e0edad9ca0b8156d114196f25ec04b66fbdc91f8a30",
+  "identity": "mcp:ai.adweave/meta-ads-mcp",
+  "name": "AdWeave — Meta Ads MCP Server",
+  "registryId": "ai.adweave/meta-ads-mcp",
+  "site": "https://registry.modelcontextprotocol.io/v0.1/servers/ai.adweave%2Fmeta-ads-mcp/versions/1.0.0",
+  "sourceSignature": "f1242bc108bf86fc60de7dd553e226285b56592197a593e86ebc194d47a682b8",
+  "summary": [
+    "据发布者介绍，AdWeave 提供 MCP 工具，可处理 Meta 广告活动、广告素材和受众，并查看广告成效数据。",
+    "The publisher says AdWeave provides MCP tools for working with Meta Ads campaigns, ad creatives, audiences, and performance insights."
+  ],
+  "tested": false,
+  "transport": "streamable-http",
+  "type": "mcp",
+  "verificationSources": [
+    "https://registry.modelcontextprotocol.io/v0.1/servers/ai.adweave%2Fmeta-ads-mcp/versions/1.0.0"
+  ],
+  "verifiedAt": "2026-11-25",
+  "version": "1.0.0"
+}

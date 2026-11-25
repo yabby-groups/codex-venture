@@ -1,0 +1,28 @@
+{
+  "addedAt": "2026-11-25",
+  "categories": [
+    [
+      "界面设计",
+      "UI Design"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-25",
+  "id": "resource-86583f185a75e996a81668073154c55440be2933d941f18167b1717370039aa2",
+  "identity": "github:1203405919",
+  "license": "MIT",
+  "name": "bitjaru/styleseed",
+  "repository": "https://github.com/bitjaru/styleseed",
+  "repositoryId": "1203405919",
+  "site": "https://github.com/bitjaru/styleseed",
+  "sourceSignature": "4aa1cb602308b270514dc09002e489db466b093911654b2fbd7dc51562dc9666",
+  "summary": [
+    "据发布者介绍，这项代理技能可用于整理设计参考、定义语义配色，以及按设计准则审查界面。",
+    "The publisher describes an agent skill for compiling design references, defining semantic color palettes, and reviewing interfaces against design criteria."
+  ],
+  "tested": false,
+  "type": "tools",
+  "verificationSources": [
+    "https://api.github.com/search/repositories?page=1&per_page=30&q=topic%3Aai-design+archived%3Afalse+fork%3Afalse&sort=stars"
+  ],
+  "verifiedAt": "2026-11-25"
+}

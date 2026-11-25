@@ -1,0 +1,30 @@
+{
+  "addedAt": "2026-11-25",
+  "categories": [
+    [
+      "FPGA 开发",
+      "FPGA Development"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-25",
+  "id": "resource-4b8df1e05566ef5ac77fb1a13696dacaa8ba544f82d473c1ac9d7e7acf8bd203",
+  "identity": "openvsx:guizzz.quartus-assistant",
+  "install": "https://open-vsx.org/extension/Guizzz/quartus-assistant",
+  "name": "VHDL Essentials",
+  "platforms": [
+    "Open VSX"
+  ],
+  "site": "https://open-vsx.org/extension/Guizzz/quartus-assistant",
+  "sourceSignature": "0a0eee9e8af7810dc39d7ebd8d3d7abb212b4a6017557876ed532246a0dea089",
+  "summary": [
+    "据发布者介绍，这款 VS Code 扩展可用于构建和仿真 Quartus 项目、烧录器件、查看布局布线报告以及诊断引脚问题。",
+    "The publisher describes a VS Code extension for building and simulating Quartus projects, programming devices, reviewing fitter reports, and diagnosing pin issues."
+  ],
+  "tested": false,
+  "type": "plugins",
+  "verificationSources": [
+    "https://open-vsx.org/api/-/search?offset=0&query=coding+assistant&size=25"
+  ],
+  "verifiedAt": "2026-11-25",
+  "version": "0.16.5"
+}
