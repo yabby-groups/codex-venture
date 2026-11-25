@@ -17,7 +17,10 @@ from resource_editor import DIRECTORY, resource_context
 STATE = Path('.venture-runtime/resources.json')
 TYPES = ('skills', 'plugins', 'mcp', 'tools', 'models', 'open-source', 'resources', 'prompts', 'workflows')
 REGISTRY = 'https://registry.modelcontextprotocol.io/v0.1/servers'
-SKILL_REPOS = ('openai/skills', 'anthropics/skills', 'vercel-labs/agent-skills', 'huggingface/skills')
+SKILL_REPOS = (
+    'openai/skills', 'anthropics/skills', 'vercel-labs/agent-skills', 'huggingface/skills',
+    'microsoft/skills', 'google-gemini/gemini-cli', 'remotion-dev/skills',
+)
 SCHEMA = object_schema(resources=array(object_schema(key=STRING, zh=STRING, en=STRING,
                                                     categoryZh=STRING, categoryEn=STRING)),
                        skipped=array(STRING))
