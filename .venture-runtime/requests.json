@@ -123,11 +123,11 @@
       "successes": 5
     },
     "huggingface.co": {
-      "daily": 34,
+      "daily": 57,
       "hour": "2026-11-25T01",
-      "hourly": 34,
-      "responses": 34,
-      "successes": 32
+      "hourly": 57,
+      "responses": 57,
+      "successes": 55
     },
     "machinelearning.apple.com": {
       "daily": 2,
@@ -173,11 +173,11 @@
       "successes": 1
     },
     "registry.modelcontextprotocol.io": {
-      "daily": 17,
+      "daily": 24,
       "hour": "2026-11-25T01",
-      "hourly": 17,
-      "responses": 17,
-      "successes": 14
+      "hourly": 24,
+      "responses": 24,
+      "successes": 20
     },
     "simonwillison.net": {
       "daily": 2,
@@ -185,6 +185,20 @@
       "hourly": 2,
       "responses": 2,
       "successes": 2
+    },
+    "support.google.com": {
+      "daily": 3,
+      "hour": "2026-11-25T01",
+      "hourly": 3,
+      "responses": 3,
+      "successes": 2
+    },
+    "www.perplexity.ai": {
+      "daily": 2,
+      "hour": "2026-11-25T01",
+      "hourly": 2,
+      "responses": 2,
+      "successes": 1
     }
   }
 }
