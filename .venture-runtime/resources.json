@@ -932,6 +932,7 @@
     "05395a283dd1cca5e661d57fdaeaa1315e7016c42547c8419c71a333146aa150": {
       "attempt": 1795639248.4082093,
       "description": "Hugging Face model listing for zimengxiong/Modelr-SPAR3D. Pipeline: image-to-3d.",
+      "done": "declined",
       "evidence": "---\nlicense: other\nlicense_name: stabilityai-ai-community\nlicense_link: LICENSE.md\ntags:\n- image-to-3d\ndatasets:\n- allenai/objaverse\ninference: false\npipeline_tag: image-to-3d\n### License\n- **Community License:** Free for research, non-commercial, and commercial use by organizations and individuals generating annual revenue of US $1,000,000 (or local currency equivalent) or more, regardless of the source of that revenue. If your annual revenue exceeds US $1M, any commercial use of this model or derivative works thereof requires obtaining an Enterprise License directly from Stability AI. You may submit a request for an Enterprise License at https://stability.ai/enterprise. Please refer to Stability AI's Community License, available at https://stability.ai/license, for more information.\n### Model Sources\n* **Repository**: [https://github.com/Stability-AI/stable-point-aware-3d](https://github.com/Stability-AI/stable-point-aware-3d)\n## Usage\nFor usage instructions, please refer to our [GitHub repository](https://github.com/Stability-AI/stable-point-aware-3d)\n### Intended Uses\nIntended uses include the following:",
       "firstDiscoveredAt": "2026-11-25",
       "identity": "hf:zimengxiong/modelr-spar3d",
@@ -987,6 +988,7 @@
     "057c3808759e6e439e45e43149dc53c480451dda72603da7b60e618f823e8027": {
       "attempt": 1795639248.8881958,
       "description": "Hugging Face model listing for ornith-ai/Ornith-1.5-9B. Pipeline: text-generation.",
+      "done": "published",
       "evidence": "---\nlibrary_name: transformers\nlicense: mit\nlicense_link: https://huggingface.co/ornith-ai/Ornith-1.5-9B/blob/main/LICENSE\npipeline_tag: text-generation\n<img width=\"600px\" src=\"assets/ornith_logo.png\">\n# Ornith-1.5-9B\nChirp Chirp! 🐦 We are introducing Ornith-1.5, a major step toward building foundation models through end-to-end self-improvement.\nOrnith-1.5 extends Ornith-1.0 (which was developed on top of Qwen3.5 and Gemma4 with additional continued pretraining, mid-training, and post-training) by expanding the self-improvement loop from scaffold and rollout optimization to jointly optimizing task generation, scaffold construction, and solution rollouts. Rather than relying on a fixed set of human-curated tasks and manually designed harnesses, Ornith-1.5 continuously generates new training tasks, discovers effective strategies for solving them, and improves the policy through reinforcement learning. For more details on the task, harness, and rollout reward design, please refer to our [blog](https://ornith.ai/ornith_1_5.html).\n#### Basic Usage\n```python\nfrom openai import OpenAI\nclient = OpenAI(\n## Agentic Usage\nOrnith-1.5-9B exposes an OpenAI-compatible endpoint with tool calling, it works out of the box with standard agent frameworks.\n**Examples of using Ornith with agents:**\n#### Ollama\n# llama.cpp — serve an OpenAI-compatible API on port 8000.\nllama-server -hf hf.co/ornith-ai/Ornith-1.5-9B-GGUF --port 8000 -c 262144\n```\n#### llama.cpp\n#### Hermes Agent\n# Hermes talks to any OpenAI-compatible endpoint — point it at your Ornith server.\nexport OPENAI_BASE_URL=\"http://localhost:8000/v1\"\nexport OPENAI_API_KEY=\"EMPTY\"\nexport MODEL=\"ornith-ai/Ornith-1.5-9B\"\n# OpenClaw talks to any OpenAI-compatible endpoint — point it at your Ornith server.\nexport OPENAI_MODEL=\"ornith-ai/Ornith-1.5-9B\"\n# Register your local Ornith endpoint as a provider in ~/.config/opencode/opencode.json",
       "firstDiscoveredAt": "2026-11-25",
       "identity": "hf:ornith-ai/ornith-1.5-9b",
@@ -1086,6 +1088,7 @@
     "062857bbc028667c9af64407c067ae8d397beec43e8582ee15362be1a1fd7b4c": {
       "attempt": 1795639249.2211561,
       "description": "Hugging Face model listing for ibm-granite/granite-docling-258M. Pipeline: image-text-to-text.",
+      "done": "published",
       "evidence": "---\nlicense: apache-2.0\ndatasets:\n- ds4sd/SynthCodeNet\n- ds4sd/SynthFormulaNet\n- ds4sd/SynthChartNet\n- HuggingFaceM4/DoclingMatix\ntags:\n- text-generation\n- documents\n# For more options see the compare_vlm_models.py example.\npipeline_options = VlmPipelineOptions(\nvlm_options=vlm_model_specs.GRANITEDOCLING_MLX,\n)\n# pip install torch\n# pip install docling_core\n# pip install transformers\nimport torch\nfrom docling_core.types.doc import DoclingDocument\nfrom docling_core.types.doc.document import DocTagsDocument\n# output_path_html = Path(\"out/\") / \"example.html\"\n# doc.save_as_html(output_path_html)\n# Markdown:\n# output_path_md = Path(\"out/\") / \"example.md\"\n# doc.save_as_markdown(output_path_md)\n```\n</details>\n# pip install vllm\n# place page images you want to convert into \"img/\" dir\nimport time\nimport os",
       "firstDiscoveredAt": "2026-11-25",
       "identity": "hf:ibm-granite/granite-docling-258m",
@@ -1105,6 +1108,7 @@
     "06ac2b1a580198045757f762a3a65ccb44de9b034a0d0aa76075b7b4586f0d42": {
       "attempt": 1795639249.5523741,
       "description": "Hugging Face model listing for akhaliq/MOSS-Image-SFT-4-steps. Pipeline: text-to-image.",
+      "done": "published",
       "evidence": "---\nlicense: apache-2.0\nbase_model:\n- OpenMOSS-Team/MOSS-Image-SFT\n- lodestones/MOSS-Image-SFT-8-steps-dmd\npipeline_tag: text-to-image\ntags:\n- moss-image\n- diffusers\n- text-to-image",
       "firstDiscoveredAt": "2026-11-25",
       "identity": "hf:akhaliq/moss-image-sft-4-steps",
@@ -1317,6 +1321,7 @@
     "07fc7c42606cd171ccbd90c11e53ba3e075d6de806505bcbac16ded1c64d51b7": {
       "attempt": 1795639250.2019086,
       "description": "Hugging Face model listing for n4ze3m/tiny-voca. Pipeline: text-to-speech.",
+      "done": "published",
       "evidence": "---\nlicense: apache-2.0\nlanguage:\n- en\npipeline_tag: text-to-speech\ntags:\n- text-to-speech\n- onnx\ndatasets:\n- n4ze3m/tiny-voca\n## Usage\n### PyTorch\n```bash\npip install git+https://github.com/n4ze3m/dizione git+https://github.com/n4ze3m/tiny-voca\n## Limitations\n- English only, two fixed voices, no voice cloning.\n- The voice is clear but can sound slightly synthetic.\n- The F2 voice sounds younger than intended. It was designed as an adult voice\n## License\nThe weights and code are released under Apache-2.0. The files in `phonemizer/`\nare derived from the CMU Pronouncing Dictionary and other sources; their\nlicenses are in `phonemizer/LICENSE.cmudict` and",
       "firstDiscoveredAt": "2026-11-25",
       "identity": "hf:n4ze3m/tiny-voca",
@@ -2978,6 +2983,7 @@
     "13e85d4d277f03df12d99a721c2fb429f22db995aad7605f5443e5bffc9475f2": {
       "attempt": 1795639248.4067724,
       "description": "TRAE AI Extension is an AI programming assistant. It offers core capabilities such as code completion,supporting mainstream programming languages and IDEs. MarsCode...",
+      "done": "published",
       "evidence": "TRAE AI Extension is an AI programming assistant. It offers core capabilities such as code completion,supporting mainstream programming languages and IDEs. MarsCode...",
       "firstDiscoveredAt": "2026-11-25",
       "identity": "jetbrains:24326",
@@ -3162,6 +3168,7 @@
     "16151224d2200f22f8f154d7fb855779840055dd825dcf136aaae301ead8e1f2": {
       "attempt": 1795639248.8868005,
       "description": "Homepage | Github | Issues. Sponsor: The most productive Laravel development environment. Learn more. Features Environment variables completion based on .env...",
+      "done": "published",
       "evidence": "Homepage | Github | Issues. Sponsor: The most productive Laravel development environment. Learn more. Features Environment variables completion based on .env...",
       "firstDiscoveredAt": "2026-11-25",
       "identity": "jetbrains:9525",
@@ -3258,6 +3265,7 @@
     "167b253db824b0f4fdd3ffca51a579b88e35d26705e73ca982ac4ca8fabc452f": {
       "attempt": 1795639249.2197921,
       "description": "Unofficial. Log in, switch and check quota of several Claude Code accounts from the sidebar, while sessions and memory stay shared.",
+      "done": "published",
       "evidence": "Unofficial. Log in, switch and check quota of several Claude Code accounts from the sidebar, while sessions and memory stay shared.",
       "firstDiscoveredAt": "2026-11-25",
       "identity": "openvsx:p10node.claude-account-switch",
@@ -3905,6 +3913,7 @@
     "1babeecc1441ec0694c41772096c0b69aaccf914b71e30156ec163ed731053da": {
       "attempt": 1795639249.5509722,
       "description": "Adds snippets for all the AWS Serverless Application Model (SAM) resources in VS Code.",
+      "done": "published",
       "evidence": "Adds snippets for all the AWS Serverless Application Model (SAM) resources in VS Code.",
       "firstDiscoveredAt": "2026-11-25",
       "identity": "openvsx:dannysteenman.sam-snippets",
@@ -3925,6 +3934,7 @@
     "1c1d0b2e4d419ff012bc2313e56cba7a3bb74eae02416bb125b778330004c93a": {
       "attempt": 1795639249.8794975,
       "description": "Compose prompts in VS Code and send them to your active Copilot CLI session",
+      "done": "published",
       "evidence": "Compose prompts in VS Code and send them to your active Copilot CLI session",
       "firstDiscoveredAt": "2026-11-25",
       "identity": "openvsx:eliostruyf.send-to-copilot-cli",
@@ -3964,6 +3974,7 @@
     "1ce0632d3ef4e5c7e37996611603630e38e6e5c0972c058872af4166d4449a3f": {
       "attempt": 1795639250.2005558,
       "description": "Help Claude track open work across topics and compaction. Claude starts and updates a plan as you talk; Agent Plus installs with this extension and shows the plan beside the Claude Code panel, and you can answer by row number, even for several rows in one message: \"2.1: not now\". Rows Claude proposes stay \"discussing\" until you agree to make them \"todo\". The Claude Code panel also gets a line under each reply for time, context use, cost, model and effort, plus sound alerts.",
+      "done": "published",
       "evidence": "Help Claude track open work across topics and compaction. Claude starts and updates a plan as you talk; Agent Plus installs with this extension and shows the plan beside the Claude Code panel, and you can answer by row number, even for several rows in one message: \"2.1: not now\". Rows Claude proposes stay \"discussing\" until you agree to make them \"todo\". The Claude Code panel also gets a line under each reply for time, context use, cost, model and effort, plus sound alerts.",
       "firstDiscoveredAt": "2026-11-25",
       "identity": "openvsx:xnervwang.claude-code-plus",
@@ -4151,6 +4162,7 @@
     "1e2c45d79ae38963f0c75be23654e0c096c47e361aad11c58866064f8df03bae": {
       "attempt": 1795639250.5274742,
       "description": "Modern AI-Powered GUI Interface for Claude Code CLI",
+      "done": "declined",
       "evidence": "Modern AI-Powered GUI Interface for Claude Code CLI",
       "firstDiscoveredAt": "2026-11-25",
       "identity": "openvsx:maheshkok.claude-code-gui",
@@ -4322,6 +4334,7 @@
     "1f431df9ea17cc7fee67549806b890c07a5ca8a0be97bcd3f51eed1c1accec22": {
       "attempt": 1795639248.4077477,
       "description": "Walmart, Shopee, TikTok Shop, Shopify & WooCommerce live product & pricing MCP (x402 USDC or key).",
+      "done": "published",
       "evidence": "Walmart, Shopee, TikTok Shop, Shopify & WooCommerce live product & pricing MCP (x402 USDC or key).",
       "firstDiscoveredAt": "2026-11-25",
       "identity": "mcp:ai.agentapihub/amazon-product-walmart-shopify-ecommerce-mcp",
@@ -4980,6 +4993,7 @@
     "23be5fcedb1dbe4181ed3abfe9af0815b38d57f49d6c9a359df8f6b4aa1e7885": {
       "attempt": 1795639248.887753,
       "description": "SEC EDGAR filings, insider trades, XBRL facts, DEXScreener token pairs & DefiLlama TVL MCP.",
+      "done": "published",
       "evidence": "SEC EDGAR filings, insider trades, XBRL facts, DEXScreener token pairs & DefiLlama TVL MCP.",
       "firstDiscoveredAt": "2026-11-25",
       "identity": "mcp:ai.agentapihub/linkedin-company-b2b-business-profile-mcp",
@@ -5691,6 +5705,7 @@
     "2a4f86ca20e682c878d4d8ccde982e88cd830cd6f5adf11d15262f528701f544": {
       "attempt": 1795639249.2207155,
       "description": "Confidential computers for AI swarms: sealed VMs (Intel TDX) by the hour, USDC over x402.",
+      "done": "published",
       "evidence": "Confidential computers for AI swarms: sealed VMs (Intel TDX) by the hour, USDC over x402.",
       "firstDiscoveredAt": "2026-11-25",
       "identity": "mcp:ai.agentgates/compute",
@@ -5942,6 +5957,7 @@
     "2cdeba193df57f845f5eb5d4cf470ce27bb18a7f568080a98793b343692fb411": {
       "attempt": 1795639249.5519245,
       "description": "Real-time US stocks quote, stock & crypto OHLCV candles, Fear & Greed index and Polymarket MCP API.",
+      "done": "published",
       "evidence": "Real-time US stocks quote, stock & crypto OHLCV candles, Fear & Greed index and Polymarket MCP API.",
       "firstDiscoveredAt": "2026-11-25",
       "identity": "mcp:ai.agentapigate/stocks-crypto-ohlcv-quote-market-data-api-mcp",
@@ -6058,6 +6074,7 @@
     "2e808f9e93649ce363f856c8a26b4b7835c1dba0767670077be3091c09aa0653": {
       "attempt": 1795639249.8804536,
       "description": "Real-time X/Twitter search, tweets, threads, replies & profiles MCP (-87% compact tokens & x402).",
+      "done": "published",
       "evidence": "Real-time X/Twitter search, tweets, threads, replies & profiles MCP (-87% compact tokens & x402).",
       "firstDiscoveredAt": "2026-11-25",
       "identity": "mcp:ai.agentapigate/twitter-x-tweets-trending-topics-search-mcp",
@@ -6987,6 +7004,7 @@
     "37697dfe58bae947ee8c65e0cfd39795047d037d9c86f7adcb374b34550694a3": {
       "attempt": 1795639250.2014906,
       "description": "Candidate search for recruiters: find people for a role and check each requirement.",
+      "done": "published",
       "evidence": "Candidate search for recruiters: find people for a role and check each requirement.",
       "firstDiscoveredAt": "2026-11-25",
       "identity": "mcp:ai.agenticblue/agentic-blue",
@@ -18786,6 +18804,7 @@
     "99b4548027059d0cc964c2d115d5df10c56679badfb15f692b02153119b771a6": {
       "attempt": 1795639248.407057,
       "description": "Automate real Microsoft Excel with AI via MCP Server or CLI — Power Query, DAX, VBA, PivotTables, and charts.",
+      "done": "published",
       "evidence": "Automate real Microsoft Excel with AI via MCP Server or CLI — Power Query, DAX, VBA, PivotTables, and charts.",
       "firstDiscoveredAt": "2026-11-25",
       "identity": "github:1079141596",
@@ -18836,6 +18855,7 @@
     "99fce750350321dd64e7d539a4d91eb245d4f2c0a1ae01b06f12c3bd37fd1871": {
       "attempt": 1795639248.8870893,
       "description": "🎆 A Claude Code workflow that replicates ClaudeDesign — parallel design exploration, panel judging, synthesis, and adversarial refinement to a single world-class frontend page. 双语 README。",
+      "done": "published",
       "evidence": "🎆 A Claude Code workflow that replicates ClaudeDesign — parallel design exploration, panel judging, synthesis, and adversarial refinement to a single world-class frontend page. 双语 README。",
       "firstDiscoveredAt": "2026-11-25",
       "identity": "github:1266497775",
@@ -18854,6 +18874,7 @@
     "9a03275b38a0ada0d155af7635769999e95b5e5d738d4abd588dea0ec589feff": {
       "attempt": 1795639249.220075,
       "description": "Audits AI-generated frontend and rewrites it so it stops looking AI-made: purple-gradient slop and the \"tasteful\" defaults (cream + terracotta, mono chrome). Zero-dependency scanner included. The design counterpart to avoid-ai-writing.",
+      "done": "published",
       "evidence": "Audits AI-generated frontend and rewrites it so it stops looking AI-made: purple-gradient slop and the \"tasteful\" defaults (cream + terracotta, mono chrome). Zero-dependency scanner included. The design counterpart to avoid-ai-writing.",
       "firstDiscoveredAt": "2026-11-25",
       "identity": "github:1254685008",
@@ -18888,6 +18909,7 @@
     "9a7aa4bd174820041e914300bcf011b4f204a497e5d8d5bd9e777f7b83b0c976": {
       "attempt": 1795639249.5512533,
       "description": "企业级 AI 办公工作台",
+      "done": "declined",
       "evidence": "企业级 AI 办公工作台",
       "firstDiscoveredAt": "2026-11-25",
       "identity": "github:1008177062",
@@ -18939,6 +18961,7 @@
     "9ab652c5368f1fd0dffeb0688527b6652e5383badcea6738051accd2d0524187": {
       "attempt": 1795639249.8797598,
       "description": "Open-source LLM knowledge platform: turn raw documents into a queryable RAG, an autonomous reasoning agent, and a self-maintaining Wiki.",
+      "done": "published",
       "evidence": "Open-source LLM knowledge platform: turn raw documents into a queryable RAG, an autonomous reasoning agent, and a self-maintaining Wiki.",
       "firstDiscoveredAt": "2026-11-25",
       "identity": "github:1024118326",
@@ -19105,6 +19128,7 @@
     "9cc467f7b9304d5ee30591ee0de90dfcaa35ebbf26f3c45df7ec6baf1884d557": {
       "attempt": 1795639250.200825,
       "description": "Open-source Claude Code skills that turn one product photo into a full set of e-commerce visuals — main images, A+ detail pages, multi-angle shoots, social posts, and ad creatives. For cross-border sellers on Amazon, Shopify, TikTok Shop.",
+      "done": "published",
       "evidence": "Open-source Claude Code skills that turn one product photo into a full set of e-commerce visuals — main images, A+ detail pages, multi-angle shoots, social posts, and ad creatives. For cross-border sellers on Amazon, Shopify, TikTok Shop.",
       "firstDiscoveredAt": "2026-11-25",
       "identity": "github:1260548655",
@@ -25573,6 +25597,7 @@
     "d1182218804359883019c24d9767a1b18e4daa4412c949fb89031fcbe3e6fb45": {
       "attempt": 1795639248.886296,
       "description": "Guidance for distinctive, intentional visual design when building new UI or reshaping an existing one. Helps with aesthetic direction, typography, and making choices that don't read as templated defaults.",
+      "done": "published",
       "evidence": "---\nname: frontend-design\ndescription: Guidance for distinctive, intentional visual design when building new UI or reshaping an existing one. Helps with aesthetic direction, typography, and making choices that don't read as templated defaults.\nlicense: Complete terms in LICENSE.txt\n# Frontend Design\nApproach this as the design lead at a design studio known for giving every client a distinct visual identity that is not mistaken for anyone else's. This client has already rejected proposals that felt cliché or templated, and is paying for a distinctive point of view: make deliberate, opinionated choices about palette, typography, and layout that are specific to this brief, and take aesthetic risk if justified.\n## Ground your designs in the subject matter\nIf the brief does not identify what the product or subject matter is, identify it yourself before designing, and confirm with the client. You can come up with one concrete subject, the design's audience, and the design's primary job, as a proposal. If there's any information in your memory about the client's preferences or context about what they're building, use that as a hint. The subject's industry, subject matter, materials, and vernacular are where distinctive visual choices come from — a design for a toy for girls aged 8–11 will be very aesthetically different from a dashboard for financial analysts. Build with the brief's real content and subject matter throughout.\n## Design principles",
       "firstDiscoveredAt": "2026-11-25",
       "identity": "github-skill:1061953414:skills/frontend-design/SKILL.md",
@@ -26552,6 +26577,7 @@
     "d922abaa16b734c31680560c40e20ea42f7a56037e883bf5a5adaa9b7baa0a7c": {
       "attempt": 1795639249.55046,
       "description": "Knowledge and utilities for creating animated GIFs optimized for Slack. Provides constraints, validation tools, and animation concepts. Use when users request animated GIFs for Slack like \"make me a GIF of X doing Y for Slack.\"",
+      "done": "published",
       "evidence": "---\nname: slack-gif-creator\ndescription: Knowledge and utilities for creating animated GIFs optimized for Slack. Provides constraints, validation tools, and animation concepts. Use when users request animated GIFs for Slack like \"make me a GIF of X doing Y for Slack.\"\nlicense: Complete terms in LICENSE.txt\n# Slack GIF Creator\nA toolkit providing utilities and knowledge for creating animated GIFs optimized for Slack.\n## Slack Requirements\n**Dimensions:**\n- Emoji GIFs: 128x128 (recommended)\n- Message GIFs: 480x480\n## Dependencies\n```bash\npip install pillow imageio numpy\n```",
       "firstDiscoveredAt": "2026-11-25",
       "identity": "github-skill:1061953414:skills/slack-gif-creator/SKILL.md",
@@ -27001,6 +27027,7 @@
     "dc218ecd9c3ce53ca62b47a42ea9860f18900e3670e5675a233278f65bbbb865": {
       "attempt": 1795639249.8789852,
       "description": "Use when the user explicitly asks for a desktop or system screenshot (full screen, specific app or window, or a pixel region), or when tool-specific capture capabilities are unavailable and an OS-level capture is needed.",
+      "done": "published",
       "evidence": "---\nname: \"screenshot\"\ndescription: \"Use when the user explicitly asks for a desktop or system screenshot (full screen, specific app or window, or a pixel region), or when tool-specific capture capabilities are unavailable and an OS-level capture is needed.\"\n# Screenshot Capture\nFollow these save-location rules every time:\n1) If the user specifies a path, save there.\n2) If the user asks for a screenshot without a path, save to the OS default screenshot location.\n3) If Codex needs a screenshot for its own inspection, save to the temp directory.\n## Tool priority\n## macOS permission preflight (reduce repeated prompts)\nOn macOS, run the preflight helper once before window/app capture. It checks\nScreen Recording permission, explains why it is needed, and requests it in one\nplace.\n### Workflow examples\n- \"Take a look at <App> and tell me what you see\": capture to temp, then view each printed path in order.\n```bash\nbash <path-to-skill>/scripts/ensure_macos_permissions.sh && \\",
       "firstDiscoveredAt": "2026-11-25",
       "identity": "github-skill:1103643573:skills/.curated/screenshot/SKILL.md",
@@ -27172,6 +27199,7 @@
     "dd8f1e6e69e732fe65874fcd70f2c14721dd8ff13462d4745c3d16bc4a4e1ba8": {
       "attempt": 1795639250.1996577,
       "description": "Post-train LLMs with TRL (Transformers Reinforcement Learning) — SFT, DPO, GRPO, KTO, and reward-model training. Use when writing or debugging training code with the TRL Python API or the trl CLI.",
+      "done": "published",
       "evidence": "---\nname: trl-training\ndescription: Post-train LLMs with TRL (Transformers Reinforcement Learning) — SFT, DPO, GRPO, KTO, and reward-model training. Use when writing or debugging training code with the TRL Python API or the trl CLI.\nlicense: Apache-2.0\nmetadata:\nauthor: huggingface\ndocumentation: https://huggingface.co/docs/trl\n# TRL\nEach method pairs a `*Trainer` class with a `*Config` dataclass. Configs extend `transformers.TrainingArguments`, so all of its arguments work in any trainer config.",
       "firstDiscoveredAt": "2026-11-25",
       "identity": "github-skill:1102903896:skills/trl-training/SKILL.md",
@@ -27205,6 +27233,7 @@
     "ddb4888e8da09d7bf8ef29591255d553d6a7ee8b69c0ddbb33eacbde4e98baf9": {
       "attempt": 1795639250.5269294,
       "description": "Build or update a professional-grade design system in Figma from a codebase. Use when the user wants to create variables/tokens, build component libraries, set up theming (light/dark modes), document foundations, or reconcile gaps between code and Figma. This skill teaches WHAT to build and in WHAT ORDER — it complements the `figma-use` skill which teaches HOW to call the Plugin API. Both skills should be loaded together.",
+      "done": "published",
       "evidence": "---\nname: figma-generate-library\ndescription: \"Build or update a professional-grade design system in Figma from a codebase. Use when the user wants to create variables/tokens, build component libraries, set up theming (light/dark modes), document foundations, or reconcile gaps between code and Figma. This skill teaches WHAT to build and in WHAT ORDER — it complements the `figma-use` skill which teaches HOW to call the Plugin API. Both skills should be loaded together.\"\n# Design System Builder — Figma MCP Skill\nBuild professional-grade design systems in Figma that match code. This skill orchestrates multi-phase workflows across 20–100+ `use_figma` calls, enforcing quality patterns from real-world design systems (Material 3, Polaris, Figma UI3, Simple DS).\n**Prerequisites**: The `figma-use` skill MUST also be loaded for every `use_figma` call. It provides Plugin API syntax rules (return pattern, page reset, ID return, font loading, color range). This skill provides design system domain knowledge and workflow orchestration.\n**Always pass `skillNames: \"figma-generate-library\"` when calling `use_figma` as part of this skill.** This is a logging parameter — it does not affect execution.\n## 1. The One Rule That Matters Most\n## 4. State Management (Required for Long Workflows)\n> **`getPluginData()` / `setPluginData()` are NOT supported in `use_figma`.** Use `getSharedPluginData()` / `setSharedPluginData()` instead (these ARE supported), or use name-based lookups and the state ledger (returned IDs).\n| Entity type | Idempotency key | How to check existence |\n|-------------|----------------|----------------------|",
       "firstDiscoveredAt": "2026-11-25",
       "identity": "github-skill:1103643573:skills/.curated/figma-generate-library/SKILL.md",
@@ -29784,6 +29813,7 @@
     "f297348ccce1ef5930b5401ff545be84109cdbd5bdbdfadb3db45e0d2db38c43": {
       "attempt": 1795639248.406497,
       "description": "Gemma 4 26B-A4B inference in ~2 GB of RAM on any M-series MacBook",
+      "done": "declined",
       "evidence": "Gemma 4 26B-A4B inference in ~2 GB of RAM on any M-series MacBook",
       "firstDiscoveredAt": "2026-11-25",
       "identity": "github:1304159264",
@@ -30199,6 +30229,7 @@
     "f69591d59f55cdf1a96da2be26030f4cef7c79cd2d25dec444e485d5cdb7ee89": {
       "attempt": 1795639248.8865328,
       "description": "Find secrets with Gitleaks 🔑",
+      "done": "published",
       "evidence": "Find secrets with Gitleaks 🔑",
       "firstDiscoveredAt": "2026-11-25",
       "identity": "github:119190187",
@@ -30740,6 +30771,7 @@
     "fadd76550818fa3cbcd952395a2c0bd132235fc0590c5d7cf4a6bbc3a37b0ffe": {
       "attempt": 1795639249.219531,
       "description": "Multi-lingual large voice generation model, providing inference, training and deployment full-stack ability.",
+      "done": "published",
       "evidence": "Multi-lingual large voice generation model, providing inference, training and deployment full-stack ability.",
       "firstDiscoveredAt": "2026-11-25",
       "identity": "github:823430322",
@@ -30873,6 +30905,7 @@
     "fba9dc83e02ab7fb184d99994f7696d39cab448935abab0887a53f9dfa27b9e6": {
       "attempt": 1795639249.5507116,
       "description": "The job search that runs on your machine. AI job application framework built on Claude Code: evaluate postings, tailor CVs, write cover letters, prep interviews. Fork it and own it.",
+      "done": "published",
       "evidence": "The job search that runs on your machine. AI job application framework built on Claude Code: evaluate postings, tailor CVs, write cover letters, prep interviews. Fork it and own it.",
       "firstDiscoveredAt": "2026-11-25",
       "identity": "github:1185389803",
@@ -30974,6 +31007,7 @@
     "fc1db68960de7a133bacafa1ea04681ef2ed09b7b5e4c9c2191ff24a07238c6c": {
       "attempt": 1795639249.8792427,
       "description": "On-device Speech AI for Apple Silicon",
+      "done": "declined",
       "evidence": "On-device Speech AI for Apple Silicon",
       "firstDiscoveredAt": "2026-11-25",
       "identity": "github:748528018",
@@ -31094,6 +31128,7 @@
     "fcac323a882d79687bc9e25389712b987a3dafd3ab62bdf7704ea84f8c2bc387": {
       "attempt": 1795639250.2002861,
       "description": "A text-to-speech (TTS), speech-to-text (STT) and speech-to-speech (STS) library built on Apple's MLX framework, providing efficient speech analysis on Apple Silicon.",
+      "done": "published",
       "evidence": "A text-to-speech (TTS), speech-to-text (STT) and speech-to-speech (STS) library built on Apple's MLX framework, providing efficient speech analysis on Apple Silicon.",
       "firstDiscoveredAt": "2026-11-25",
       "identity": "github:895253710",
@@ -31144,6 +31179,7 @@
     "fdf22bf34be6881a56118232aa37e358b9329910697e45514093b1b1cc520c51": {
       "attempt": 1795639250.5271895,
       "description": "World's first open-source, agentic video production system. 12 production pipelines, 100+ tools, 700+ agent skill and production-knowledge files. Turn your AI coding assistant into a full video production studio.",
+      "done": "published",
       "evidence": "World's first open-source, agentic video production system. 12 production pipelines, 100+ tools, 700+ agent skill and production-knowledge files. Turn your AI coding assistant into a full video production studio.",
       "firstDiscoveredAt": "2026-11-25",
       "identity": "github:1195360525",
