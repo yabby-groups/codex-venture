@@ -1,0 +1,24 @@
+{
+  "addedAt": "2026-11-25",
+  "categories": [
+    [
+      "大语言模型与自然语言处理学习",
+      "LLM and NLP education"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-25",
+  "id": "resource-31de54bda540444ad29032288aa964beb66e0471c464ae92e440926716459fe8",
+  "identity": "url:https://huggingface.co/learn/llm-course/chapter1/1",
+  "name": "Hugging Face LLM Course",
+  "site": "https://huggingface.co/learn/llm-course/chapter1/1",
+  "summary": [
+    "Hugging Face 的课程使用 Transformers、Datasets、Tokenizers、Accelerate 和 Hugging Face Hub 讲解大语言模型与自然语言处理。",
+    "Hugging Face’s course teaches large language models and natural language processing using Transformers, Datasets, Tokenizers, Accelerate, and the Hugging Face Hub."
+  ],
+  "tested": false,
+  "type": "resources",
+  "verificationSources": [
+    "https://huggingface.co/learn/llm-course/chapter1/1"
+  ],
+  "verifiedAt": "2026-11-25"
+}

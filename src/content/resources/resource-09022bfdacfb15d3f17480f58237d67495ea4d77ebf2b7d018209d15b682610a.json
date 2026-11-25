@@ -1,0 +1,27 @@
+{
+  "addedAt": "2026-11-25",
+  "categories": [
+    [
+      "语音识别",
+      "Speech Recognition"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-25",
+  "id": "resource-09022bfdacfb15d3f17480f58237d67495ea4d77ebf2b7d018209d15b682610a",
+  "identity": "hf:openai/whisper-small",
+  "name": "openai/whisper-small",
+  "site": "https://huggingface.co/openai/whisper-small",
+  "summary": [
+    "OpenAI 的模型卡介绍如何用 Whisper Small 转写多种语言的语音，并将语音翻译成英文。OpenAI 指出，识别准确率因语言而异，转写结果也可能出现原音频中没有说过的内容。",
+    "OpenAI’s model card describes using Whisper Small to transcribe speech in multiple languages and translate speech into English. OpenAI notes that accuracy varies by language and that transcripts can include words that were never spoken."
+  ],
+  "tags": [
+    "automatic-speech-recognition"
+  ],
+  "tested": false,
+  "type": "models",
+  "verificationSources": [
+    "https://huggingface.co/openai/whisper-small/raw/main/README.md"
+  ],
+  "verifiedAt": "2026-11-25"
+}

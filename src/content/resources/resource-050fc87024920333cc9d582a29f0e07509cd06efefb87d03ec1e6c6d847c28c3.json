@@ -1,0 +1,30 @@
+{
+  "addedAt": "2026-11-25",
+  "categories": [
+    [
+      "AI 编程会话监控",
+      "AI coding session monitoring"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-25",
+  "id": "resource-050fc87024920333cc9d582a29f0e07509cd06efefb87d03ec1e6c6d847c28c3",
+  "identity": "openvsx:omarkara.claude-status-chip",
+  "install": "https://open-vsx.org/extension/omarkara/claude-status-chip",
+  "license": "MIT",
+  "name": "Claude Status Chip",
+  "platforms": [
+    "Open VSX"
+  ],
+  "site": "https://open-vsx.org/extension/omarkara/claude-status-chip",
+  "summary": [
+    "据发布者介绍，Claude Status Chip 在 Claude Code 面板中显示当前工作树的 Git 分支、上下文用量、扩展思考状态和会话费用。你可以逐项开关指标，也可以单独缩放对话记录。",
+    "According to the publisher, Claude Status Chip displays the current worktree’s Git branch, context usage, extended thinking status, and session cost in the Claude Code panel. You can toggle each indicator and zoom the transcript separately."
+  ],
+  "tested": false,
+  "type": "plugins",
+  "verificationSources": [
+    "https://open-vsx.org/api/omarkara/claude-status-chip/1.3.1"
+  ],
+  "verifiedAt": "2026-11-25",
+  "version": "1.3.1"
+}

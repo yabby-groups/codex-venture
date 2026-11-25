@@ -1,0 +1,27 @@
+{
+  "addedAt": "2026-11-25",
+  "categories": [
+    [
+      "邮件身份验证检查",
+      "Email authentication checks"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-25",
+  "id": "resource-0bfa5f7211f19cc78a1ae0e1f07c155119a389d1d5ad0fe9f1b68a183a9d06b7",
+  "identity": "mcp:ai.28in28/agent-service-desk",
+  "name": "28/28 Agent Service Desk: Fix & Verify",
+  "registryId": "ai.28in28/agent-service-desk",
+  "site": "https://registry.modelcontextprotocol.io/v0.1/servers/ai.28in28%2Fagent-service-desk/versions/1.1.0",
+  "summary": [
+    "据注册表条目介绍，28/28 Agent Service Desk MCP 服务器可检查域名的 SPF、DKIM 和 DMARC 配置，提供无约束力的修复报价，并在 DNS 修改后复查。",
+    "According to its registry listing, the 28/28 Agent Service Desk MCP server checks a domain’s SPF, DKIM, and DMARC settings, provides a non-binding quote for remediation, and rechecks the settings after DNS changes."
+  ],
+  "tested": false,
+  "transport": "streamable-http",
+  "type": "mcp",
+  "verificationSources": [
+    "https://registry.modelcontextprotocol.io/v0.1/servers/ai.28in28%2Fagent-service-desk/versions/1.1.0"
+  ],
+  "verifiedAt": "2026-11-25",
+  "version": "1.1.0"
+}

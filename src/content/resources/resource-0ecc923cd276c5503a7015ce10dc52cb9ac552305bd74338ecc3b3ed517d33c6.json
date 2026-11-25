@@ -1,0 +1,30 @@
+{
+  "addedAt": "2026-11-25",
+  "categories": [
+    [
+      "拉取请求创建",
+      "Pull request creation"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-25",
+  "id": "resource-0ecc923cd276c5503a7015ce10dc52cb9ac552305bd74338ecc3b3ed517d33c6",
+  "identity": "github-skill:1103643573:skills/.curated/yeet/SKILL.md",
+  "name": "yeet",
+  "platforms": [
+    "Codex"
+  ],
+  "repository": "https://github.com/openai/skills",
+  "repositoryId": "1103643573",
+  "site": "https://github.com/openai/skills/blob/main/skills/.curated/yeet/SKILL.md",
+  "sourcePath": "skills/.curated/yeet/SKILL.md",
+  "summary": [
+    "OpenAI 的 yeet 技能介绍如何在一个流程中暂存、提交和推送变更，再通过 GitHub CLI 创建拉取请求。",
+    "OpenAI’s yeet skill describes a single workflow for staging, committing, and pushing changes, then opening a pull request with the GitHub CLI."
+  ],
+  "tested": false,
+  "type": "skills",
+  "verificationSources": [
+    "https://github.com/openai/skills/blob/main/skills/.curated/yeet/SKILL.md"
+  ],
+  "verifiedAt": "2026-11-25"
+}

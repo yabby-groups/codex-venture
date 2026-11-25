@@ -1,0 +1,30 @@
+{
+  "addedAt": "2026-11-25",
+  "categories": [
+    [
+      "网站部署",
+      "Web deployment"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-25",
+  "id": "resource-0cf930e9fc18c2c94e1859e1c65f2c4c5fd72aa1f44c009978a05f3da1981596",
+  "identity": "github-skill:1103643573:skills/.curated/netlify-deploy/SKILL.md",
+  "name": "netlify-deploy",
+  "platforms": [
+    "Codex"
+  ],
+  "repository": "https://github.com/openai/skills",
+  "repositoryId": "1103643573",
+  "site": "https://github.com/openai/skills/blob/main/skills/.curated/netlify-deploy/SKILL.md",
+  "sourcePath": "skills/.curated/netlify-deploy/SKILL.md",
+  "summary": [
+    "OpenAI 的 netlify-deploy 技能介绍如何通过 Netlify CLI 检查登录状态和项目配置，并将网站部署到预览环境或生产环境。",
+    "OpenAI’s netlify-deploy skill describes using the Netlify CLI to check authentication and project configuration, then deploy a web project to a preview or production URL."
+  ],
+  "tested": false,
+  "type": "skills",
+  "verificationSources": [
+    "https://github.com/openai/skills/blob/main/skills/.curated/netlify-deploy/SKILL.md"
+  ],
+  "verifiedAt": "2026-11-25"
+}

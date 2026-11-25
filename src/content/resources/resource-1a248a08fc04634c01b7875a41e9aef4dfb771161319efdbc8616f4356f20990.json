@@ -1,0 +1,30 @@
+{
+  "addedAt": "2026-11-25",
+  "categories": [
+    [
+      "MCP 服务器开发",
+      "MCP Server Development"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-25",
+  "id": "resource-1a248a08fc04634c01b7875a41e9aef4dfb771161319efdbc8616f4356f20990",
+  "identity": "github-skill:1061953414:skills/mcp-builder/SKILL.md",
+  "name": "mcp-builder",
+  "platforms": [
+    "Claude"
+  ],
+  "repository": "https://github.com/anthropics/skills",
+  "repositoryId": "1061953414",
+  "site": "https://github.com/anthropics/skills/blob/main/skills/mcp-builder/SKILL.md",
+  "sourcePath": "skills/mcp-builder/SKILL.md",
+  "summary": [
+    "Anthropic 的 mcp-builder 指南介绍如何构建 MCP 服务器，让语言模型通过工具访问外部 API。指南涵盖 Python 和 Node/TypeScript 开发方式，以及如何设计彼此独立、只需执行只读操作的评估问题。",
+    "Anthropic’s mcp-builder guide covers building MCP servers that give language models access to external APIs through tools. It describes Python and Node/TypeScript approaches and how to design independent, read-only evaluation questions."
+  ],
+  "tested": false,
+  "type": "skills",
+  "verificationSources": [
+    "https://github.com/anthropics/skills/blob/main/skills/mcp-builder/SKILL.md"
+  ],
+  "verifiedAt": "2026-11-25"
+}

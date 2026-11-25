@@ -1,0 +1,27 @@
+{
+  "addedAt": "2026-11-25",
+  "categories": [
+    [
+      "语音识别",
+      "Speech recognition"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-25",
+  "id": "resource-035da1ddbdde228f43b9aede41bc6a680ea42ded9c981e4616f69f95411f08a9",
+  "identity": "hf:qwen/qwen3-asr-0.6b-hf",
+  "name": "Qwen/Qwen3-ASR-0.6B-hf",
+  "site": "https://huggingface.co/Qwen/Qwen3-ASR-0.6B-hf",
+  "summary": [
+    "Qwen 的模型卡介绍了如何通过 Transformers 的 pipeline 使用 Qwen3-ASR-0.6B-hf 转录语音，并列出中文、粤语、英语、阿拉伯语和德语等语言。",
+    "Qwen’s model card shows how to use Qwen3-ASR-0.6B-hf with the Transformers pipeline to transcribe speech and lists languages including Chinese, Cantonese, English, Arabic, and German."
+  ],
+  "tags": [
+    "automatic-speech-recognition"
+  ],
+  "tested": false,
+  "type": "models",
+  "verificationSources": [
+    "https://huggingface.co/Qwen/Qwen3-ASR-0.6B-hf/raw/main/README.md"
+  ],
+  "verifiedAt": "2026-11-25"
+}

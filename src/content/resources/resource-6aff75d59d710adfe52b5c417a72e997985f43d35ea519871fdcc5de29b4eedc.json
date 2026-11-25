@@ -1,0 +1,24 @@
+{
+  "addedAt": "2026-11-25",
+  "categories": [
+    [
+      "工作流配置",
+      "Workflow configuration"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-25",
+  "id": "resource-6aff75d59d710adfe52b5c417a72e997985f43d35ea519871fdcc5de29b4eedc",
+  "identity": "url:https://docs.github.com/en/actions/writing-workflows/workflow-syntax-for-github-actions",
+  "name": "GitHub Actions Workflow Syntax",
+  "site": "https://docs.github.com/en/actions/writing-workflows/workflow-syntax-for-github-actions",
+  "summary": [
+    "查阅 GitHub 的语法参考，了解如何组织工作流 YAML 文件、设置工作流名称和触发事件。文档也提供了 GitHub Agentic Workflows 的入口。",
+    "Use GitHub’s syntax reference to structure workflow YAML files and configure workflow names and event triggers. The reference also points to GitHub Agentic Workflows."
+  ],
+  "tested": false,
+  "type": "workflows",
+  "verificationSources": [
+    "https://docs.github.com/en/actions/writing-workflows/workflow-syntax-for-github-actions"
+  ],
+  "verifiedAt": "2026-11-25"
+}

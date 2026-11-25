@@ -1,0 +1,27 @@
+{
+  "addedAt": "2026-11-25",
+  "categories": [
+    [
+      "研究论文发布",
+      "Research publishing"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-25",
+  "id": "resource-109a1d539d0630c364f2e31c5cf299fe3d368c43d213b25146a5bd67ee8566a2",
+  "identity": "github-skill:1102903896:skills/huggingface-paper-publisher/SKILL.md",
+  "name": "huggingface-paper-publisher",
+  "repository": "https://github.com/huggingface/skills",
+  "repositoryId": "1102903896",
+  "site": "https://github.com/huggingface/skills/blob/main/skills/huggingface-paper-publisher/SKILL.md",
+  "sourcePath": "skills/huggingface-paper-publisher/SKILL.md",
+  "summary": [
+    "据 Hugging Face 介绍，这项技能可在 Hub 上创建论文页面，通过 arXiv ID 收录论文，将论文关联到模型和数据集，并认领作者身份。",
+    "Hugging Face describes this skill as a way to create paper pages on the Hub, index papers by arXiv ID, link them to models and datasets, and claim authorship."
+  ],
+  "tested": false,
+  "type": "skills",
+  "verificationSources": [
+    "https://github.com/huggingface/skills/blob/main/skills/huggingface-paper-publisher/SKILL.md"
+  ],
+  "verifiedAt": "2026-11-25"
+}

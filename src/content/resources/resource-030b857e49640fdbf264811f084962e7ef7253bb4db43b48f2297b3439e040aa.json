@@ -1,0 +1,30 @@
+{
+  "addedAt": "2026-11-25",
+  "categories": [
+    [
+      "脚本执行",
+      "Script execution"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-25",
+  "id": "resource-030b857e49640fdbf264811f084962e7ef7253bb4db43b48f2297b3439e040aa",
+  "identity": "openvsx:bdayadev.copilot-script-runner",
+  "install": "https://open-vsx.org/extension/bdayadev/copilot-script-runner",
+  "license": "MIT",
+  "name": "Copilot Script Runner",
+  "platforms": [
+    "Open VSX"
+  ],
+  "site": "https://open-vsx.org/extension/bdayadev/copilot-script-runner",
+  "summary": [
+    "据发布者介绍，Copilot Script Runner 可配合 GitHub Copilot 运行多行 PowerShell 和 Bash 脚本，先将脚本写入临时文件再执行。",
+    "According to the publisher, Copilot Script Runner lets you run multiline PowerShell and Bash scripts with GitHub Copilot by writing them to temporary files before execution."
+  ],
+  "tested": false,
+  "type": "plugins",
+  "verificationSources": [
+    "https://open-vsx.org/api/bdayadev/copilot-script-runner/5.0.1"
+  ],
+  "verifiedAt": "2026-11-25",
+  "version": "5.0.1"
+}

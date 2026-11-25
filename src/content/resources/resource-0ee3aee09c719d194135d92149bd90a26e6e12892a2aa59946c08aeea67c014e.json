@@ -1,0 +1,27 @@
+{
+  "addedAt": "2026-11-25",
+  "categories": [
+    [
+      "代码安全审计",
+      "Code security auditing"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-25",
+  "id": "resource-0ee3aee09c719d194135d92149bd90a26e6e12892a2aa59946c08aeea67c014e",
+  "identity": "mcp:agency.shipmate/shipready-mcp",
+  "name": "agency.shipmate/shipready-mcp",
+  "registryId": "agency.shipmate/shipready-mcp",
+  "site": "https://registry.modelcontextprotocol.io/v0.1/servers/agency.shipmate%2Fshipready-mcp/versions/0.1.0",
+  "summary": [
+    "据注册表介绍，Shipready MCP 可在本地扫描 Next.js、Supabase 和 Stripe 项目仓库，查找缺失的行级安全控制、泄露的密钥和未签名的 Webhook。",
+    "According to the registry listing, Shipready MCP scans local Next.js, Supabase, and Stripe repositories for missing row-level security, exposed secrets, and unsigned webhooks."
+  ],
+  "tested": false,
+  "transport": "stdio",
+  "type": "mcp",
+  "verificationSources": [
+    "https://registry.modelcontextprotocol.io/v0.1/servers/agency.shipmate%2Fshipready-mcp/versions/0.1.0"
+  ],
+  "verifiedAt": "2026-11-25",
+  "version": "0.1.0"
+}

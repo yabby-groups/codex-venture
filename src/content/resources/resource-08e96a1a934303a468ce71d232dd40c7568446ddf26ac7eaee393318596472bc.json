@@ -1,0 +1,27 @@
+{
+  "addedAt": "2026-11-25",
+  "categories": [
+    [
+      "语音识别",
+      "Speech Recognition"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-25",
+  "id": "resource-08e96a1a934303a468ce71d232dd40c7568446ddf26ac7eaee393318596472bc",
+  "identity": "hf:handy-computer/qwen3-asr-0.6b-gguf",
+  "name": "handy-computer/Qwen3-ASR-0.6B-gguf",
+  "site": "https://huggingface.co/handy-computer/Qwen3-ASR-0.6B-gguf",
+  "summary": [
+    "模型卡介绍如何配合 transcribe.cpp 使用这个 Qwen3-ASR-0.6B 的 GGUF 量化版本，并列出中文、英语和粤语转写。",
+    "The model card documents how to use this quantized GGUF build of Qwen3-ASR-0.6B with transcribe.cpp and lists Chinese, English, and Cantonese for transcription."
+  ],
+  "tags": [
+    "automatic-speech-recognition"
+  ],
+  "tested": false,
+  "type": "models",
+  "verificationSources": [
+    "https://huggingface.co/handy-computer/Qwen3-ASR-0.6B-gguf/raw/main/README.md"
+  ],
+  "verifiedAt": "2026-11-25"
+}

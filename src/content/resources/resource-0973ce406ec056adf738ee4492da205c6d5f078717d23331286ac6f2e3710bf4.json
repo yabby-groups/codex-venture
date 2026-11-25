@@ -1,0 +1,27 @@
+{
+  "addedAt": "2026-11-25",
+  "categories": [
+    [
+      "文生视频",
+      "Text-to-Video Generation"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-25",
+  "id": "resource-0973ce406ec056adf738ee4492da205c6d5f078717d23331286ac6f2e3710bf4",
+  "identity": "hf:unsloth/ltx-2.5-fp8",
+  "name": "unsloth/LTX-2.5-FP8",
+  "site": "https://huggingface.co/unsloth/LTX-2.5-FP8",
+  "summary": [
+    "Unsloth 的模型卡将 LTX-2.5-FP8 列为可根据文本提示生成视频的量化模型，并介绍了使用 ltx-pipelines 的 Python 工作流程。",
+    "Unsloth’s model card presents LTX-2.5-FP8 as a quantized checkpoint for generating video from text prompts and documents a Python workflow using ltx-pipelines."
+  ],
+  "tags": [
+    "text-to-video"
+  ],
+  "tested": false,
+  "type": "models",
+  "verificationSources": [
+    "https://huggingface.co/unsloth/LTX-2.5-FP8/raw/main/README.md"
+  ],
+  "verifiedAt": "2026-11-25"
+}

@@ -1,0 +1,24 @@
+{
+  "addedAt": "2026-11-25",
+  "categories": [
+    [
+      "智能体技能编写",
+      "Agent skill authoring"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-25",
+  "id": "resource-0f5fb9f42c2931f1b6f573d44eadf0ecd4a39c3c1fba0221781752101b27d158",
+  "identity": "url:https://agentskills.io/specification",
+  "name": "Agent Skills Specification",
+  "site": "https://agentskills.io/specification",
+  "summary": [
+    "查阅 Agent Skills 规范，了解如何组织技能目录、在 SKILL.md 中编写 YAML 元数据和 Markdown 指令，以及如何添加可选的配套文件。",
+    "Use the Agent Skills Specification to structure a skill directory and write a SKILL.md file with YAML metadata, Markdown instructions, and optional supporting files."
+  ],
+  "tested": false,
+  "type": "resources",
+  "verificationSources": [
+    "https://agentskills.io/specification"
+  ],
+  "verifiedAt": "2026-11-25"
+}

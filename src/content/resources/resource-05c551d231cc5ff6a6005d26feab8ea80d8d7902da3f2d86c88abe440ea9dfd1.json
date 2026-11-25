@@ -1,0 +1,27 @@
+{
+  "addedAt": "2026-11-25",
+  "categories": [
+    [
+      "三维场景重建",
+      "3D scene reconstruction"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-25",
+  "id": "resource-05c551d231cc5ff6a6005d26feab8ea80d8d7902da3f2d86c88abe440ea9dfd1",
+  "identity": "hf:zx1239856/pixarmesh-edgerunner",
+  "name": "zx1239856/PixARMesh-EdgeRunner",
+  "site": "https://huggingface.co/zx1239856/PixARMesh-EdgeRunner",
+  "summary": [
+    "据模型卡介绍，PixARMesh-EdgeRunner 是一个自回归模型，可从单张图像重建三维场景网格。",
+    "The model card describes PixARMesh-EdgeRunner as an autoregressive model for reconstructing a 3D scene as a mesh from a single image."
+  ],
+  "tags": [
+    "image-to-3d"
+  ],
+  "tested": false,
+  "type": "models",
+  "verificationSources": [
+    "https://huggingface.co/zx1239856/PixARMesh-EdgeRunner/raw/main/README.md"
+  ],
+  "verifiedAt": "2026-11-25"
+}

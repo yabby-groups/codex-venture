@@ -1,0 +1,27 @@
+{
+  "addedAt": "2026-11-25",
+  "categories": [
+    [
+      "广告投放管理",
+      "Ad Campaign Management"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-25",
+  "id": "resource-1252a43c5f0465e2752678589ed434033ef4db5107231817b5d81b899d3242d4",
+  "identity": "mcp:ai.adlab/adlab",
+  "name": "AdLab",
+  "registryId": "ai.adlab/adlab",
+  "site": "https://registry.modelcontextprotocol.io/v0.1/servers/ai.adlab%2Fadlab/versions/1.0.0",
+  "summary": [
+    "据 AdLab 的 MCP 注册条目，该服务器可用于跟踪付费流量、运行广告活动，以及管理流量路由、转化回传和优化规则。",
+    "According to AdLab’s MCP registry listing, its server lets you track paid traffic, run campaigns, and manage traffic routing, postbacks, and optimization rules."
+  ],
+  "tested": false,
+  "transport": "streamable-http",
+  "type": "mcp",
+  "verificationSources": [
+    "https://registry.modelcontextprotocol.io/v0.1/servers/ai.adlab%2Fadlab/versions/1.0.0"
+  ],
+  "verifiedAt": "2026-11-25",
+  "version": "1.0.0"
+}

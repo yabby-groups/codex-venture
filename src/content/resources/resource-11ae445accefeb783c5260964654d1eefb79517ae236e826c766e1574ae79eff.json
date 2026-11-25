@@ -1,0 +1,30 @@
+{
+  "addedAt": "2026-11-25",
+  "categories": [
+    [
+      "智能体技能编写",
+      "Agent skill authoring"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-25",
+  "id": "resource-11ae445accefeb783c5260964654d1eefb79517ae236e826c766e1574ae79eff",
+  "identity": "github-skill:1103643573:skills/.system/skill-creator/SKILL.md",
+  "name": "skill-creator",
+  "platforms": [
+    "Codex"
+  ],
+  "repository": "https://github.com/openai/skills",
+  "repositoryId": "1103643573",
+  "site": "https://github.com/openai/skills/blob/main/skills/.system/skill-creator/SKILL.md",
+  "sourcePath": "skills/.system/skill-creator/SKILL.md",
+  "summary": [
+    "OpenAI 的指南介绍如何新建或更新 Codex 技能，从明确具体使用场景，到编写 SKILL.md 的描述和操作说明。",
+    "OpenAI’s guide walks you through creating or updating a Codex skill, from identifying concrete use cases to writing the SKILL.md description and instructions."
+  ],
+  "tested": false,
+  "type": "skills",
+  "verificationSources": [
+    "https://github.com/openai/skills/blob/main/skills/.system/skill-creator/SKILL.md"
+  ],
+  "verifiedAt": "2026-11-25"
+}

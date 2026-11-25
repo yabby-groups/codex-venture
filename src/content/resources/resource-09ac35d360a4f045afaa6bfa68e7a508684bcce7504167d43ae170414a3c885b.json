@@ -1,0 +1,24 @@
+{
+  "addedAt": "2026-11-25",
+  "categories": [
+    [
+      "智能体开发与评估",
+      "Agent development and evaluation"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-25",
+  "id": "resource-09ac35d360a4f045afaa6bfa68e7a508684bcce7504167d43ae170414a3c885b",
+  "identity": "url:https://cookbook.openai.com/",
+  "name": "OpenAI Cookbook",
+  "site": "https://cookbook.openai.com/",
+  "summary": [
+    "在 OpenAI Cookbook 中查阅构建语音智能体和 Slack 机器人、在沙箱中运行智能体以及评估插件行为的指南。",
+    "Browse OpenAI Cookbook guides for building voice agents and Slack bots, running agents in sandboxes, and evaluating plugin behavior."
+  ],
+  "tested": false,
+  "type": "resources",
+  "verificationSources": [
+    "https://cookbook.openai.com/"
+  ],
+  "verifiedAt": "2026-11-25"
+}

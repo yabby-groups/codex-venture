@@ -1,0 +1,27 @@
+{
+  "addedAt": "2026-11-25",
+  "categories": [
+    [
+      "模型部署规划",
+      "Model Deployment Planning"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-25",
+  "id": "resource-1dbb606ecca3f719548059937aab43de6760c3ae1373bde30d67a4d1022d5145",
+  "identity": "github-skill:1102903896:skills/hf-cloud-sagemaker-deployment-planner/SKILL.md",
+  "name": "hf-cloud-sagemaker-deployment-planner",
+  "repository": "https://github.com/huggingface/skills",
+  "repositoryId": "1102903896",
+  "site": "https://github.com/huggingface/skills/blob/main/skills/hf-cloud-sagemaker-deployment-planner/SKILL.md",
+  "sourcePath": "skills/hf-cloud-sagemaker-deployment-planner/SKILL.md",
+  "summary": [
+    "Hugging Face 的 SageMaker 部署规划技能可帮助梳理模型服务需求，在实时、异步或批量推理等方案中做出选择，再衔接对应的部署技能。",
+    "Hugging Face’s SageMaker deployment planner guides you through gathering model-serving requirements, choosing among options such as real-time, asynchronous, or batch inference, and handing off to specialized deployment skills."
+  ],
+  "tested": false,
+  "type": "skills",
+  "verificationSources": [
+    "https://github.com/huggingface/skills/blob/main/skills/hf-cloud-sagemaker-deployment-planner/SKILL.md"
+  ],
+  "verifiedAt": "2026-11-25"
+}

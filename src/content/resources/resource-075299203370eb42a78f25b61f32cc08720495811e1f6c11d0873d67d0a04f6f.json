@@ -1,0 +1,27 @@
+{
+  "addedAt": "2026-11-25",
+  "categories": [
+    [
+      "视觉问答",
+      "Visual Question Answering"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-25",
+  "id": "resource-075299203370eb42a78f25b61f32cc08720495811e1f6c11d0873d67d0a04f6f",
+  "identity": "hf:unsloth/qwen3.5-4b-gguf",
+  "name": "unsloth/Qwen3.5-4B-GGUF",
+  "site": "https://huggingface.co/unsloth/Qwen3.5-4B-GGUF",
+  "summary": [
+    "据 Unsloth 的模型卡，这个 Qwen3.5-4B 的 GGUF 版本可根据包含图片和文字的提示生成文本回复。",
+    "Unsloth lists this GGUF build of Qwen3.5-4B for generating text responses to prompts that combine images and text."
+  ],
+  "tags": [
+    "image-text-to-text"
+  ],
+  "tested": false,
+  "type": "models",
+  "verificationSources": [
+    "https://huggingface.co/unsloth/Qwen3.5-4B-GGUF/raw/main/README.md"
+  ],
+  "verifiedAt": "2026-11-25"
+}

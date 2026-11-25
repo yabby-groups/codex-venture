@@ -1,0 +1,24 @@
+{
+  "addedAt": "2026-11-25",
+  "categories": [
+    [
+      "MCP 架构",
+      "MCP architecture"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-25",
+  "id": "resource-7277cd06a7d2bc3b9544214ad26fca730266a0d11a5dd86b59d8eba519070b73",
+  "identity": "url:https://modelcontextprotocol.io/docs/learn/architecture",
+  "name": "MCP Architecture",
+  "site": "https://modelcontextprotocol.io/docs/learn/architecture",
+  "summary": [
+    "MCP 文档解释主机、客户端和服务器如何建立连接并交换上下文，提供核心概念的示例，并概述 STDIO 和 Streamable HTTP 两种传输方式。",
+    "The MCP documentation explains how hosts, clients, and servers connect to exchange context, with examples of core concepts and an overview of STDIO and Streamable HTTP transports."
+  ],
+  "tested": false,
+  "type": "resources",
+  "verificationSources": [
+    "https://modelcontextprotocol.io/docs/learn/architecture"
+  ],
+  "verifiedAt": "2026-11-25"
+}

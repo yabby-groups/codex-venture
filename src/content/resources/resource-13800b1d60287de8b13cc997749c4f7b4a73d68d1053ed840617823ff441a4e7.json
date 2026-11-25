@@ -1,0 +1,27 @@
+{
+  "addedAt": "2026-11-25",
+  "categories": [
+    [
+      "移动应用开发",
+      "Mobile app development"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-25",
+  "id": "resource-13800b1d60287de8b13cc997749c4f7b4a73d68d1053ed840617823ff441a4e7",
+  "identity": "github-skill:1112540808:skills/react-native-skills/SKILL.md",
+  "name": "vercel-react-native-skills",
+  "repository": "https://github.com/vercel-labs/agent-skills",
+  "repositoryId": "1112540808",
+  "site": "https://github.com/vercel-labs/agent-skills/blob/main/skills/react-native-skills/SKILL.md",
+  "sourcePath": "skills/react-native-skills/SKILL.md",
+  "summary": [
+    "Vercel 的技能提供 React Native 和 Expo 开发指导，涵盖组件编写、列表性能优化、动画实现和原生模块使用。",
+    "Vercel’s skill provides React Native and Expo guidance for building components, improving list performance, implementing animations, and working with native modules."
+  ],
+  "tested": false,
+  "type": "skills",
+  "verificationSources": [
+    "https://github.com/vercel-labs/agent-skills/blob/main/skills/react-native-skills/SKILL.md"
+  ],
+  "verifiedAt": "2026-11-25"
+}

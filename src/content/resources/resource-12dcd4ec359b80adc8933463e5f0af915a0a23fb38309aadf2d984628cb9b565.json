@@ -1,0 +1,27 @@
+{
+  "addedAt": "2026-11-25",
+  "categories": [
+    [
+      "销售线索发掘",
+      "Sales Prospecting"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-25",
+  "id": "resource-12dcd4ec359b80adc8933463e5f0af915a0a23fb38309aadf2d984628cb9b565",
+  "identity": "mcp:agency.granek.signal/signal",
+  "name": "Granek Signal",
+  "registryId": "agency.granek.signal/signal",
+  "site": "https://registry.modelcontextprotocol.io/v0.1/servers/agency.granek.signal%2Fsignal/versions/1.0.0",
+  "summary": [
+    "据 Granek Signal 的 MCP 注册条目，该服务器可用于寻找近期出现采购信号的企业潜在客户，并查看企业档案、决策人和信息来源。",
+    "According to its MCP registry listing, Granek Signal helps you find B2B prospects with recent buying signals and review company profiles, decision-makers, and sources."
+  ],
+  "tested": false,
+  "transport": "streamable-http",
+  "type": "mcp",
+  "verificationSources": [
+    "https://registry.modelcontextprotocol.io/v0.1/servers/agency.granek.signal%2Fsignal/versions/1.0.0"
+  ],
+  "verifiedAt": "2026-11-25",
+  "version": "1.0.0"
+}

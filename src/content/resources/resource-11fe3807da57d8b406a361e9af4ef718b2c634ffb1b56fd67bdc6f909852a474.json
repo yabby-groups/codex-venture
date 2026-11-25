@@ -1,0 +1,27 @@
+{
+  "addedAt": "2026-11-25",
+  "categories": [
+    [
+      "航空法规检索",
+      "Aviation regulatory research"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-25",
+  "id": "resource-11fe3807da57d8b406a361e9af4ef718b2c634ffb1b56fd67bdc6f909852a474",
+  "identity": "mcp:aero.avioverse/library",
+  "name": "Avioverse EASA library",
+  "registryId": "aero.avioverse/library",
+  "site": "https://registry.modelcontextprotocol.io/v0.1/servers/aero.avioverse%2Flibrary/versions/1.0.0",
+  "summary": [
+    "据注册表介绍，Avioverse 可用于查阅欧洲航空安全局（EASA）的法规、可接受的符合性方法、指导材料和定义，每项都提供可引用的页面。",
+    "According to the registry listing, Avioverse lets you look up EASA regulations, acceptable means of compliance, guidance material, and definitions, with a page to cite for each entry."
+  ],
+  "tested": false,
+  "transport": "streamable-http",
+  "type": "mcp",
+  "verificationSources": [
+    "https://registry.modelcontextprotocol.io/v0.1/servers/aero.avioverse%2Flibrary/versions/1.0.0"
+  ],
+  "verifiedAt": "2026-11-25",
+  "version": "1.0.0"
+}

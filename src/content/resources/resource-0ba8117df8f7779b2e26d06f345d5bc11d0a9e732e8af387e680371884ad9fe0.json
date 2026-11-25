@@ -1,0 +1,27 @@
+{
+  "addedAt": "2026-11-25",
+  "categories": [
+    [
+      "在线商店搭建",
+      "Online store setup"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-25",
+  "id": "resource-0ba8117df8f7779b2e26d06f345d5bc11d0a9e732e8af387e680371884ad9fe0",
+  "identity": "mcp:ae.framerfy/store-builder",
+  "name": "Framerfy",
+  "registryId": "ae.framerfy/store-builder",
+  "site": "https://registry.modelcontextprotocol.io/v0.1/servers/ae.framerfy%2Fstore-builder/versions/1.0.0",
+  "summary": [
+    "据注册表条目介绍，Framerfy MCP 服务器可协助搭建以 Shopify 为后端的 Framer 商店，包括同步商品、配置主题、购物车和结账流程，以及发布和验证商店。",
+    "According to its registry listing, the Framerfy MCP server helps you build a Shopify-backed Framer store by syncing products, configuring the theme, cart, and checkout, and publishing and verifying the store."
+  ],
+  "tested": false,
+  "transport": "streamable-http",
+  "type": "mcp",
+  "verificationSources": [
+    "https://registry.modelcontextprotocol.io/v0.1/servers/ae.framerfy%2Fstore-builder/versions/1.0.0"
+  ],
+  "verifiedAt": "2026-11-25",
+  "version": "1.0.0"
+}

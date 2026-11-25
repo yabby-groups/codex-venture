@@ -1,0 +1,27 @@
+{
+  "addedAt": "2026-11-25",
+  "categories": [
+    [
+      "农业咨询与行情查询",
+      "Agricultural advice and market lookup"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-25",
+  "id": "resource-111cc97214602995556bad72158de712765b3edf13b808df7a4889ab689d4ceb",
+  "identity": "mcp:africa.divisi/divisi",
+  "name": "Divisi",
+  "registryId": "africa.divisi/divisi",
+  "site": "https://registry.modelcontextprotocol.io/v0.1/servers/africa.divisi%2Fdivisi/versions/26.11.20.1",
+  "summary": [
+    "据注册表介绍，Divisi 可用于咨询种什么、何时种植，了解作物出现的问题，并查询当地价格。",
+    "According to the registry listing, Divisi lets you ask what to plant and when, look into crop problems, and check local prices."
+  ],
+  "tested": false,
+  "transport": "streamable-http",
+  "type": "mcp",
+  "verificationSources": [
+    "https://registry.modelcontextprotocol.io/v0.1/servers/africa.divisi%2Fdivisi/versions/26.11.20.1"
+  ],
+  "verifiedAt": "2026-11-25",
+  "version": "26.11.20.1"
+}

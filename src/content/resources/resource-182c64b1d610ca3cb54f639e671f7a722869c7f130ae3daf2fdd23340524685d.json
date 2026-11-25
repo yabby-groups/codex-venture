@@ -1,0 +1,30 @@
+{
+  "addedAt": "2026-11-25",
+  "categories": [
+    [
+      "内部沟通写作",
+      "Internal Communications"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-25",
+  "id": "resource-182c64b1d610ca3cb54f639e671f7a722869c7f130ae3daf2fdd23340524685d",
+  "identity": "github-skill:1061953414:skills/internal-comms/SKILL.md",
+  "name": "internal-comms",
+  "platforms": [
+    "Claude"
+  ],
+  "repository": "https://github.com/anthropics/skills",
+  "repositoryId": "1061953414",
+  "site": "https://github.com/anthropics/skills/blob/main/skills/internal-comms/SKILL.md",
+  "sourcePath": "skills/internal-comms/SKILL.md",
+  "summary": [
+    "Anthropic 的 internal-comms 技能提供内部沟通写作格式，适用于公司简报、常见问题答复，以及按进展、计划和问题组织的工作更新。",
+    "Anthropic’s internal-comms skill offers formats for drafting company newsletters, FAQ responses, and updates organized around progress, plans, and problems."
+  ],
+  "tested": false,
+  "type": "skills",
+  "verificationSources": [
+    "https://github.com/anthropics/skills/blob/main/skills/internal-comms/SKILL.md"
+  ],
+  "verifiedAt": "2026-11-25"
+}

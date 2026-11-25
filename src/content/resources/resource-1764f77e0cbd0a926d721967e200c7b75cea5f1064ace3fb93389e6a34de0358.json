@@ -1,0 +1,30 @@
+{
+  "addedAt": "2026-11-25",
+  "categories": [
+    [
+      "插件开发",
+      "Plugin Development"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-25",
+  "id": "resource-1764f77e0cbd0a926d721967e200c7b75cea5f1064ace3fb93389e6a34de0358",
+  "identity": "github-skill:1103643573:skills/.system/plugin-creator/SKILL.md",
+  "name": "plugin-creator",
+  "platforms": [
+    "Codex"
+  ],
+  "repository": "https://github.com/openai/skills",
+  "repositoryId": "1103643573",
+  "site": "https://github.com/openai/skills/blob/main/skills/.system/plugin-creator/SKILL.md",
+  "sourcePath": "skills/.system/plugin-creator/SKILL.md",
+  "summary": [
+    "OpenAI 的 plugin-creator 技能介绍如何为 Codex 插件生成包含清单和可选文件的目录结构，并在仓库中添加或更新插件市场条目。",
+    "OpenAI’s plugin-creator skill documents how to scaffold a Codex plugin with a manifest and optional files, and how to add or update the repository’s plugin marketplace entries."
+  ],
+  "tested": false,
+  "type": "skills",
+  "verificationSources": [
+    "https://github.com/openai/skills/blob/main/skills/.system/plugin-creator/SKILL.md"
+  ],
+  "verifiedAt": "2026-11-25"
+}

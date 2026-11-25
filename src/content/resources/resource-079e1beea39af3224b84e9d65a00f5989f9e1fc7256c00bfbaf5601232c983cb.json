@@ -1,0 +1,30 @@
+{
+  "addedAt": "2026-11-25",
+  "categories": [
+    [
+      "编程助手技能管理",
+      "Coding Assistant Skill Management"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-25",
+  "id": "resource-079e1beea39af3224b84e9d65a00f5989f9e1fc7256c00bfbaf5601232c983cb",
+  "identity": "openvsx:allansantos-dv.copilot-skill-manager",
+  "install": "https://open-vsx.org/extension/allansantos-dv/copilot-skill-manager",
+  "license": "MIT",
+  "name": "Skill Manager for Copilot",
+  "platforms": [
+    "Open VSX"
+  ],
+  "site": "https://open-vsx.org/extension/allansantos-dv/copilot-skill-manager",
+  "summary": [
+    "据 Open VSX 上的发布说明，Skill Manager for Copilot 可用于查找、同步和管理来自多个 Git 仓库的 GitHub Copilot 技能。",
+    "According to its Open VSX listing, Skill Manager for Copilot helps you discover, sync, and manage GitHub Copilot skills from multiple Git repositories."
+  ],
+  "tested": false,
+  "type": "plugins",
+  "verificationSources": [
+    "https://open-vsx.org/api/allansantos-dv/copilot-skill-manager/0.28.0"
+  ],
+  "verifiedAt": "2026-11-25",
+  "version": "0.28.0"
+}

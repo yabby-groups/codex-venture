@@ -1,0 +1,27 @@
+{
+  "addedAt": "2026-11-25",
+  "categories": [
+    [
+      "文本转语音",
+      "Text-to-speech"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-25",
+  "id": "resource-04aefe72383705ff7cc57b678f734425eb053bd4f314ba66490776011deccddb",
+  "identity": "hf:christopherthompson81/moss-ttsd-gguf",
+  "name": "christopherthompson81/MOSS-TTSD-GGUF",
+  "site": "https://huggingface.co/christopherthompson81/MOSS-TTSD-GGUF",
+  "summary": [
+    "模型卡将此 GGUF 版 MOSS-TTSD 标注为支持中英文文本转语音，并展示了用 audio.cpp 合成英语语音的示例。",
+    "The model card lists English and Chinese text-to-speech support for this GGUF version of MOSS-TTSD and shows an English synthesis example using audio.cpp."
+  ],
+  "tags": [
+    "text-to-speech"
+  ],
+  "tested": false,
+  "type": "models",
+  "verificationSources": [
+    "https://huggingface.co/christopherthompson81/MOSS-TTSD-GGUF/raw/main/README.md"
+  ],
+  "verifiedAt": "2026-11-25"
+}

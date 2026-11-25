@@ -1,0 +1,27 @@
+{
+  "addedAt": "2026-11-25",
+  "categories": [
+    [
+      "AI 自动化评估",
+      "AI Automation Assessment"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-25",
+  "id": "resource-16588da2315627b39cfc453df556d8d27da7c1c117539083740d79ad7ef8fc66",
+  "identity": "mcp:ae.brainy/brainy-48",
+  "name": "ae.brainy/brainy-48",
+  "registryId": "ae.brainy/brainy-48",
+  "site": "https://registry.modelcontextprotocol.io/v0.1/servers/ae.brainy%2Fbrainy-48/versions/0.2.0",
+  "summary": [
+    "Brainy 的 MCP 条目列出了浏览自动化方案、申请评估和比较 AI 工具单席位成本的功能。发布方称其服务面向阿联酋和西班牙，不绑定特定模型。",
+    "Brainy’s MCP listing describes tools for browsing automation options, requesting an assessment, and comparing per-seat AI costs. The publisher describes its service as tailored to the UAE and Spain and independent of any one model."
+  ],
+  "tested": false,
+  "transport": "streamable-http",
+  "type": "mcp",
+  "verificationSources": [
+    "https://registry.modelcontextprotocol.io/v0.1/servers/ae.brainy%2Fbrainy-48/versions/0.2.0"
+  ],
+  "verifiedAt": "2026-11-25",
+  "version": "0.2.0"
+}

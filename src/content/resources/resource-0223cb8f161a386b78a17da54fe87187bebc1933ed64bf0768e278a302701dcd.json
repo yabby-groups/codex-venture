@@ -1,0 +1,30 @@
+{
+  "addedAt": "2026-11-25",
+  "categories": [
+    [
+      "聊天界面自定义",
+      "Chat interface customization"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-25",
+  "id": "resource-0223cb8f161a386b78a17da54fe87187bebc1933ed64bf0768e278a302701dcd",
+  "identity": "openvsx:smith89k.claude-code-style",
+  "install": "https://open-vsx.org/extension/smith89k/claude-code-style",
+  "license": "MIT",
+  "name": "Claude Code Style",
+  "platforms": [
+    "Open VSX"
+  ],
+  "site": "https://open-vsx.org/extension/smith89k/claude-code-style",
+  "summary": [
+    "据发布者介绍，Claude Code Style 扩展可为 Claude Code 聊天面板中的英语和高棉语文字选择字体与字号，并调整不同类型文本的样式。",
+    "The publisher describes Claude Code Style as an extension for choosing English and Khmer fonts and sizes and styling different kinds of text in the Claude Code chat panel."
+  ],
+  "tested": false,
+  "type": "plugins",
+  "verificationSources": [
+    "https://open-vsx.org/api/smith89k/claude-code-style/0.5.2"
+  ],
+  "verifiedAt": "2026-11-25",
+  "version": "0.5.2"
+}
