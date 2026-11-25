@@ -1,0 +1,28 @@
+{
+  "addedAt": "2026-11-26",
+  "categories": [
+    [
+      "大语言模型后训练",
+      "LLM post-training"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-25",
+  "id": "resource-dd8f1e6e69e732fe65874fcd70f2c14721dd8ff13462d4745c3d16bc4a4e1ba8",
+  "identity": "github-skill:1102903896:skills/trl-training/SKILL.md",
+  "name": "trl-training",
+  "repository": "https://github.com/huggingface/skills",
+  "repositoryId": "1102903896",
+  "site": "https://github.com/huggingface/skills/blob/main/skills/trl-training/SKILL.md",
+  "sourcePath": "skills/trl-training/SKILL.md",
+  "sourceSignature": "0c7c29123f817a4490e9d74379fd47e093339276498d6f3e6743ab8f1b893a83",
+  "summary": [
+    "该技能提供使用 TRL 的 Python API 或命令行工具编写和调试后训练代码的指南，涵盖 SFT、DPO、GRPO、KTO 和奖励模型训练。",
+    "The skill guides you through writing and debugging post-training code with TRL’s Python API or CLI. It covers SFT, DPO, GRPO, KTO, and reward model training."
+  ],
+  "tested": false,
+  "type": "skills",
+  "verificationSources": [
+    "https://github.com/huggingface/skills/blob/main/skills/trl-training/SKILL.md"
+  ],
+  "verifiedAt": "2026-11-26"
+}

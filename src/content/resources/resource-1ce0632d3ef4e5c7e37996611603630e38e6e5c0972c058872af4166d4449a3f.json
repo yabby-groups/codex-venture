@@ -1,0 +1,30 @@
+{
+  "addedAt": "2026-11-26",
+  "categories": [
+    [
+      "编程任务跟踪",
+      "Coding task tracking"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-25",
+  "id": "resource-1ce0632d3ef4e5c7e37996611603630e38e6e5c0972c058872af4166d4449a3f",
+  "identity": "openvsx:xnervwang.claude-code-plus",
+  "install": "https://open-vsx.org/extension/xnervwang/claude-code-plus",
+  "name": "Claude Code Plus",
+  "platforms": [
+    "Open VSX"
+  ],
+  "site": "https://open-vsx.org/extension/xnervwang/claude-code-plus",
+  "sourceSignature": "83c936eda1cc8a505611f518704d2a003b5f84d3f34fbd06379fe021ef2a75e6",
+  "summary": [
+    "据发布者介绍，这款扩展在 Claude Code 面板旁显示计划，方便在切换话题或压缩上下文后继续跟踪未完成的任务。你可以按行号回复，并确认哪些提议应加入待办列表。",
+    "The publisher says the extension displays a plan beside Claude Code to help track open tasks across topic changes and context compaction. You can respond by row number and approve proposed tasks before they enter the to-do list."
+  ],
+  "tested": false,
+  "type": "plugins",
+  "verificationSources": [
+    "https://open-vsx.org/api/-/search?offset=50&query=Claude&size=25"
+  ],
+  "verifiedAt": "2026-11-26",
+  "version": "1.5.0"
+}

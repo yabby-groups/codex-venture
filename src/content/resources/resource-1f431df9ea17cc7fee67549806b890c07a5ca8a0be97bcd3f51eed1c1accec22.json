@@ -1,0 +1,28 @@
+{
+  "addedAt": "2026-11-26",
+  "categories": [
+    [
+      "电商商品目录查询",
+      "E-commerce Catalog Lookup"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-25",
+  "id": "resource-1f431df9ea17cc7fee67549806b890c07a5ca8a0be97bcd3f51eed1c1accec22",
+  "identity": "mcp:ai.agentapihub/amazon-product-walmart-shopify-ecommerce-mcp",
+  "name": "AgentAPIHub — Walmart, Shopee, TikTok Shop, Shopify & WooCommerce Catalog MCP",
+  "registryId": "ai.agentapihub/amazon-product-walmart-shopify-ecommerce-mcp",
+  "site": "https://registry.modelcontextprotocol.io/v0.1/servers/ai.agentapihub%2Famazon-product-walmart-shopify-ecommerce-mcp/versions/1.0.0",
+  "sourceSignature": "2893ab6e5bed6af9c582e2696063d155c1faa151dc82e0369789a735e757093e",
+  "summary": [
+    "据发布方介绍，这个 MCP 服务器可查询 Walmart、Shopee、TikTok Shop、Shopify 和 WooCommerce 的最新商品与价格数据。",
+    "According to the listing, this MCP server lets you look up current product and pricing data from Walmart, Shopee, TikTok Shop, Shopify, and WooCommerce."
+  ],
+  "tested": false,
+  "transport": "streamable-http",
+  "type": "mcp",
+  "verificationSources": [
+    "https://registry.modelcontextprotocol.io/v0.1/servers/ai.agentapihub%2Famazon-product-walmart-shopify-ecommerce-mcp/versions/1.0.0"
+  ],
+  "verifiedAt": "2026-11-26",
+  "version": "1.0.0"
+}

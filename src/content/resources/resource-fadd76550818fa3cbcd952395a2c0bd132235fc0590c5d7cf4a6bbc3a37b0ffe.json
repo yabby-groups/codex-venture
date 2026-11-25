@@ -1,0 +1,28 @@
+{
+  "addedAt": "2026-11-26",
+  "categories": [
+    [
+      "多语言语音生成",
+      "Multilingual Voice Generation"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-25",
+  "id": "resource-fadd76550818fa3cbcd952395a2c0bd132235fc0590c5d7cf4a6bbc3a37b0ffe",
+  "identity": "github:823430322",
+  "license": "Apache-2.0",
+  "name": "QwenAudio/CosyVoice",
+  "repository": "https://github.com/QwenAudio/CosyVoice",
+  "repositoryId": "823430322",
+  "site": "https://github.com/QwenAudio/CosyVoice",
+  "sourceSignature": "451e00c877f7ccbd5eb8eb9ff35578bbe55049e5164bfd128c9735b0010742ff",
+  "summary": [
+    "据项目介绍，CosyVoice 是一款支持推理、训练和部署的多语言语音生成模型。",
+    "The project describes CosyVoice as a multilingual voice generation model with support for inference, training, and deployment."
+  ],
+  "tested": false,
+  "type": "open-source",
+  "verificationSources": [
+    "https://api.github.com/search/repositories?page=1&per_page=30&q=topic%3Atext-to-speech+archived%3Afalse+fork%3Afalse&sort=stars"
+  ],
+  "verifiedAt": "2026-11-26"
+}

@@ -1,0 +1,29 @@
+{
+  "addedAt": "2026-11-26",
+  "categories": [
+    [
+      "图像生成",
+      "Image Generation"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-25",
+  "id": "resource-06ac2b1a580198045757f762a3a65ccb44de9b034a0d0aa76075b7b4586f0d42",
+  "identity": "hf:akhaliq/moss-image-sft-4-steps",
+  "name": "akhaliq/MOSS-Image-SFT-4-steps",
+  "site": "https://huggingface.co/akhaliq/MOSS-Image-SFT-4-steps",
+  "sourceSignature": "4cce68e9dc4126322c2ca6fba90cb13703a14f0021b4c4637bc4a1e4424fc586",
+  "summary": [
+    "Hugging Face 页面将其描述为 MOSS-Image-SFT 的一个变体，可根据文本提示生成图像。",
+    "The Hugging Face listing describes a MOSS-Image-SFT variant that generates images from text prompts."
+  ],
+  "tags": [
+    "text-to-image"
+  ],
+  "tested": false,
+  "type": "models",
+  "verificationSources": [
+    "https://huggingface.co/akhaliq/MOSS-Image-SFT-4-steps/raw/main/README.md",
+    "https://huggingface.co/api/models?cursor=eyIkb3IiOlt7ImRvd25sb2FkcyI6NzQxMTksIl9pZCI6eyIkZ3QiOiI2YWM0YzBmOWNlYTQ2ZjMyNzEyOTgxZmIifX0seyJkb3dubG9hZHMiOnsiJGx0Ijo3NDExOX19LHsiZG93bmxvYWRzIjpudWxsfV0sInNlYXJjaFNlcXVlbmNlVG9rZW4iOiJDTDZndEFJYUNTRUFBQUFBY0JqeVFCb09XZ3hxeE1ENXpxUnZNbkVwZ2ZzaURsb01hc1RBK2M2a2J6SnhLWUg3In0%3D&direction=-1&full=true&limit=30&pipeline_tag=text-to-image&sort=downloads"
+  ],
+  "verifiedAt": "2026-11-26"
+}

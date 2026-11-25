@@ -1,0 +1,29 @@
+{
+  "addedAt": "2026-11-26",
+  "categories": [
+    [
+      "文档转换",
+      "Document Conversion"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-25",
+  "id": "resource-062857bbc028667c9af64407c067ae8d397beec43e8582ee15362be1a1fd7b4c",
+  "identity": "hf:ibm-granite/granite-docling-258m",
+  "name": "ibm-granite/granite-docling-258M",
+  "site": "https://huggingface.co/ibm-granite/granite-docling-258M",
+  "sourceSignature": "4bd5865beaa97e88ae5e0af5740c4ed4ddae26f41547e64ad6eedbfa00f64a81",
+  "summary": [
+    "Hugging Face 模型卡展示了如何将文档页面图像转换为结构化的 Docling 文档，并导出为 Markdown 或 HTML。",
+    "The Hugging Face model card shows how to convert document page images into structured Docling documents and export them as Markdown or HTML."
+  ],
+  "tags": [
+    "image-text-to-text"
+  ],
+  "tested": false,
+  "type": "models",
+  "verificationSources": [
+    "https://huggingface.co/api/models?cursor=eyIkb3IiOlt7ImRvd25sb2FkcyI6NTc1MTExLCJfaWQiOnsiJGd0IjoiNmE2N2RjYzgyMDcxODM5MzQ3MDQ0MDRmIn19LHsiZG93bmxvYWRzIjp7IiRsdCI6NTc1MTExfX0seyJkb3dubG9hZHMiOm51bGx9XSwic2VhcmNoU2VxdWVuY2VUb2tlbiI6IkNMbjN5UUlhQ1NFQUFBQUFEbzBoUVJvT1dneHFaOXpJSUhHRGswY0VRRThpRGxvTWFtZmN5Q0J4ZzVOSEJFQlAifQ%3D%3D&direction=-1&full=true&limit=30&pipeline_tag=image-text-to-text&sort=downloads",
+    "https://huggingface.co/ibm-granite/granite-docling-258M/raw/main/README.md"
+  ],
+  "verifiedAt": "2026-11-26"
+}

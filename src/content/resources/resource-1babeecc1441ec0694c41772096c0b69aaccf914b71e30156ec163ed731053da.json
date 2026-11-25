@@ -1,0 +1,30 @@
+{
+  "addedAt": "2026-11-26",
+  "categories": [
+    [
+      "无服务器开发",
+      "Serverless Development"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-25",
+  "id": "resource-1babeecc1441ec0694c41772096c0b69aaccf914b71e30156ec163ed731053da",
+  "identity": "openvsx:dannysteenman.sam-snippets",
+  "install": "https://open-vsx.org/extension/dannysteenman/sam-snippets",
+  "name": "AWS Serverless Application Model (SAM) Snippets",
+  "platforms": [
+    "Open VSX"
+  ],
+  "site": "https://open-vsx.org/extension/dannysteenman/sam-snippets",
+  "sourceSignature": "8b0b7b39fbdcb04d95c1eef5f8c2a6c2deab9b1c70fda0b520d0bd0f37c11a62",
+  "summary": [
+    "发布者提供代码片段，方便在模板中插入 AWS Serverless Application Model（SAM）资源定义。",
+    "The publisher provides code snippets for adding AWS Serverless Application Model (SAM) resource definitions to templates."
+  ],
+  "tested": false,
+  "type": "plugins",
+  "verificationSources": [
+    "https://open-vsx.org/api/-/search?offset=50&query=language+model&size=25"
+  ],
+  "verifiedAt": "2026-11-26",
+  "version": "1.20.1"
+}

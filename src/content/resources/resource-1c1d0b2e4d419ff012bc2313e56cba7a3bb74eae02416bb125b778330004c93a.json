@@ -1,0 +1,30 @@
+{
+  "addedAt": "2026-11-26",
+  "categories": [
+    [
+      "编程助手工作流",
+      "Coding assistant workflows"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-25",
+  "id": "resource-1c1d0b2e4d419ff012bc2313e56cba7a3bb74eae02416bb125b778330004c93a",
+  "identity": "openvsx:eliostruyf.send-to-copilot-cli",
+  "install": "https://open-vsx.org/extension/eliostruyf/send-to-copilot-cli",
+  "name": "Send to Copilot CLI",
+  "platforms": [
+    "Open VSX"
+  ],
+  "site": "https://open-vsx.org/extension/eliostruyf/send-to-copilot-cli",
+  "sourceSignature": "15b66f38e84fda3dce8c2fffc0d545f8c2b421efd695d7d181cc174309f8dd7a",
+  "summary": [
+    "据发布者介绍，这款扩展可将你在 VS Code 中编写的提示发送到正在运行的 Copilot CLI 会话。",
+    "The publisher says the extension lets you write prompts in VS Code and send them to an active Copilot CLI session."
+  ],
+  "tested": false,
+  "type": "plugins",
+  "verificationSources": [
+    "https://open-vsx.org/api/-/search?offset=50&query=Copilot&size=25"
+  ],
+  "verifiedAt": "2026-11-26",
+  "version": "0.0.3"
+}

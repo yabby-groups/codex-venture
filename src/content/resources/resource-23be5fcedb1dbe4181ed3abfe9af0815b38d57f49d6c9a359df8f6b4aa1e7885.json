@@ -1,0 +1,28 @@
+{
+  "addedAt": "2026-11-26",
+  "categories": [
+    [
+      "金融数据查询",
+      "Financial Data Lookup"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-25",
+  "id": "resource-23be5fcedb1dbe4181ed3abfe9af0815b38d57f49d6c9a359df8f6b4aa1e7885",
+  "identity": "mcp:ai.agentapihub/linkedin-company-b2b-business-profile-mcp",
+  "name": "AgentAPIHub — SEC EDGAR Filings, XBRL Facts, DEXScreener & DefiLlama DeFi MCP",
+  "registryId": "ai.agentapihub/linkedin-company-b2b-business-profile-mcp",
+  "site": "https://registry.modelcontextprotocol.io/v0.1/servers/ai.agentapihub%2Flinkedin-company-b2b-business-profile-mcp/versions/1.0.0",
+  "sourceSignature": "b4711c3ae279b0e40f8c9295842b41f62e72b836b0b9f2f7288a676e71ba4eac",
+  "summary": [
+    "据发布方介绍，这个 MCP 服务器可查询 SEC EDGAR 申报文件、内部人士交易和 XBRL 数据，以及 DEXScreener 的代币交易对和 DefiLlama 的总锁仓价值。",
+    "According to the listing, this MCP server lets you look up SEC EDGAR filings, insider trades, and XBRL facts, as well as DEXScreener token pairs and DefiLlama total value locked figures."
+  ],
+  "tested": false,
+  "transport": "streamable-http",
+  "type": "mcp",
+  "verificationSources": [
+    "https://registry.modelcontextprotocol.io/v0.1/servers/ai.agentapihub%2Flinkedin-company-b2b-business-profile-mcp/versions/1.0.0"
+  ],
+  "verifiedAt": "2026-11-26",
+  "version": "1.0.0"
+}

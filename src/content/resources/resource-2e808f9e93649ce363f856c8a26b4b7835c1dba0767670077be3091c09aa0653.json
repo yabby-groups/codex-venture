@@ -1,0 +1,28 @@
+{
+  "addedAt": "2026-11-26",
+  "categories": [
+    [
+      "社交媒体搜索",
+      "Social media search"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-25",
+  "id": "resource-2e808f9e93649ce363f856c8a26b4b7835c1dba0767670077be3091c09aa0653",
+  "identity": "mcp:ai.agentapigate/twitter-x-tweets-trending-topics-search-mcp",
+  "name": "AgentAPIHub — Real-Time X (Twitter) Search, Tweets, Threads & Profiles MCP",
+  "registryId": "ai.agentapigate/twitter-x-tweets-trending-topics-search-mcp",
+  "site": "https://registry.modelcontextprotocol.io/v0.1/servers/ai.agentapigate%2Ftwitter-x-tweets-trending-topics-search-mcp/versions/1.0.0",
+  "sourceSignature": "7d26a9ba95458fafb737fb89dbcbf22a70ba66030138e3d13b372fc0c4ce0f2b",
+  "summary": [
+    "据发布者介绍，这项 MCP 服务可实时搜索 X（Twitter），并获取帖子、讨论串、回复和用户资料。",
+    "The publisher describes an MCP service for searching X (Twitter) in real time and retrieving posts, threads, replies, and profiles."
+  ],
+  "tested": false,
+  "transport": "streamable-http",
+  "type": "mcp",
+  "verificationSources": [
+    "https://registry.modelcontextprotocol.io/v0.1/servers/ai.agentapigate%2Ftwitter-x-tweets-trending-topics-search-mcp/versions/1.0.0"
+  ],
+  "verifiedAt": "2026-11-26",
+  "version": "1.0.0"
+}

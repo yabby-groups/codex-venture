@@ -1,0 +1,28 @@
+{
+  "addedAt": "2026-11-26",
+  "categories": [
+    [
+      "敏感凭据扫描",
+      "Secret Scanning"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-25",
+  "id": "resource-f69591d59f55cdf1a96da2be26030f4cef7c79cd2d25dec444e485d5cdb7ee89",
+  "identity": "github:119190187",
+  "license": "MIT",
+  "name": "gitleaks/gitleaks",
+  "repository": "https://github.com/gitleaks/gitleaks",
+  "repositoryId": "119190187",
+  "site": "https://github.com/gitleaks/gitleaks",
+  "sourceSignature": "b93d00f9246d426641fade6b76696d0ca8ad0b910afd31da78729928bf718003",
+  "summary": [
+    "项目将 Gitleaks 描述为一款用于扫描泄露凭据的工具。",
+    "The project describes Gitleaks as a tool for scanning for exposed secrets."
+  ],
+  "tested": false,
+  "type": "open-source",
+  "verificationSources": [
+    "https://api.github.com/search/repositories?page=1&per_page=30&q=topic%3Allm-inference+archived%3Afalse+fork%3Afalse&sort=stars"
+  ],
+  "verifiedAt": "2026-11-26"
+}

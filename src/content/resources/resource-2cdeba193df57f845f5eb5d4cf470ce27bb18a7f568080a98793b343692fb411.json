@@ -1,0 +1,28 @@
+{
+  "addedAt": "2026-11-26",
+  "categories": [
+    [
+      "市场数据",
+      "Market Data"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-25",
+  "id": "resource-2cdeba193df57f845f5eb5d4cf470ce27bb18a7f568080a98793b343692fb411",
+  "identity": "mcp:ai.agentapigate/stocks-crypto-ohlcv-quote-market-data-api-mcp",
+  "name": "ai.agentapigate/stocks-crypto-ohlcv-quote-market-data-api-mcp",
+  "registryId": "ai.agentapigate/stocks-crypto-ohlcv-quote-market-data-api-mcp",
+  "site": "https://registry.modelcontextprotocol.io/v0.1/servers/ai.agentapigate%2Fstocks-crypto-ohlcv-quote-market-data-api-mcp/versions/1.3.0",
+  "sourceSignature": "0369d06d01f9312383224c499e06e5bff9d80121f5f43329356da06c4d35dd9f",
+  "summary": [
+    "据发布者介绍，这项 MCP 服务可查询美股实时报价、股票和加密货币的 OHLCV K 线数据、恐惧与贪婪指数及 Polymarket 数据。",
+    "The publisher says this MCP service provides real-time US stock quotes, stock and crypto OHLCV candles, a Fear & Greed Index, and Polymarket data."
+  ],
+  "tested": false,
+  "transport": "streamable-http",
+  "type": "mcp",
+  "verificationSources": [
+    "https://registry.modelcontextprotocol.io/v0.1/servers/ai.agentapigate%2Fstocks-crypto-ohlcv-quote-market-data-api-mcp/versions/1.3.0"
+  ],
+  "verifiedAt": "2026-11-26",
+  "version": "1.3.0"
+}

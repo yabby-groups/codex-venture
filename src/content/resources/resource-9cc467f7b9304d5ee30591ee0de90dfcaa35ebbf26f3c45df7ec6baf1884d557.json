@@ -1,0 +1,28 @@
+{
+  "addedAt": "2026-11-26",
+  "categories": [
+    [
+      "电商图片生成",
+      "E-commerce image generation"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-25",
+  "id": "resource-9cc467f7b9304d5ee30591ee0de90dfcaa35ebbf26f3c45df7ec6baf1884d557",
+  "identity": "github:1260548655",
+  "license": "MIT",
+  "name": "motiful/product-shots",
+  "repository": "https://github.com/motiful/product-shots",
+  "repositoryId": "1260548655",
+  "site": "https://github.com/motiful/product-shots",
+  "sourceSignature": "fc0bc14b494b75a05040b4a841aa0e137cc8c401434f484bfba6e6e1bac0ad0e",
+  "summary": [
+    "据发布者介绍，这组 Claude Code 技能可用一张商品照片生成商品主图、A+ 详情页配图、多角度商品图，以及社交媒体和广告素材。",
+    "The publisher describes a set of Claude Code skills for turning one product photo into listing images, A+ page visuals, multi-angle views, and creatives for social posts and ads."
+  ],
+  "tested": false,
+  "type": "tools",
+  "verificationSources": [
+    "https://api.github.com/search/repositories?page=1&per_page=30&q=topic%3Aai-design+archived%3Afalse+fork%3Afalse&sort=stars"
+  ],
+  "verifiedAt": "2026-11-26"
+}

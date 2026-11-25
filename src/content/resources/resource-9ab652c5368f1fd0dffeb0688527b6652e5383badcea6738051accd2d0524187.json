@@ -1,0 +1,28 @@
+{
+  "addedAt": "2026-11-26",
+  "categories": [
+    [
+      "文档知识库",
+      "Document knowledge bases"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-25",
+  "id": "resource-9ab652c5368f1fd0dffeb0688527b6652e5383badcea6738051accd2d0524187",
+  "identity": "github:1024118326",
+  "license": "NOASSERTION",
+  "name": "Tencent/WeKnora",
+  "repository": "https://github.com/Tencent/WeKnora",
+  "repositoryId": "1024118326",
+  "site": "https://github.com/Tencent/WeKnora",
+  "sourceSignature": "fb3be986724b4928c0df7f84b8d2128f7406633ffba0ce4a9192b79116b4d8f1",
+  "summary": [
+    "腾讯介绍，WeKnora 可将文档整理为可通过检索增强生成（RAG）查询的知识库，并提供推理智能体和自动维护的 Wiki。",
+    "Tencent describes WeKnora as a platform for turning documents into a knowledge base you can query with retrieval-augmented generation (RAG), with an agent for reasoning and a wiki that maintains itself."
+  ],
+  "tested": false,
+  "type": "tools",
+  "verificationSources": [
+    "https://api.github.com/search/repositories?page=1&per_page=30&q=topic%3Arag+archived%3Afalse+fork%3Afalse&sort=stars"
+  ],
+  "verifiedAt": "2026-11-26"
+}

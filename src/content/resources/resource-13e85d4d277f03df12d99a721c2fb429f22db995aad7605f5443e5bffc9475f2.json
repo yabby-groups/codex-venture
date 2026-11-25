@@ -1,0 +1,29 @@
+{
+  "addedAt": "2026-11-26",
+  "categories": [
+    [
+      "代码补全",
+      "Code Completion"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-25",
+  "id": "resource-13e85d4d277f03df12d99a721c2fb429f22db995aad7605f5443e5bffc9475f2",
+  "identity": "jetbrains:24326",
+  "install": "https://plugins.jetbrains.com/plugin/24326-trae-ai-coding-assistant",
+  "name": "TRAE AI: Coding Assistant",
+  "platforms": [
+    "JetBrains Marketplace"
+  ],
+  "site": "https://plugins.jetbrains.com/plugin/24326-trae-ai-coding-assistant",
+  "sourceSignature": "24030a47bd0de0cb8367057be94467b4f76cfef97ad6edc99837c9967f566024",
+  "summary": [
+    "市场页面将 TRAE AI 描述为一款编程助手，可在编写代码时提供补全建议。",
+    "The marketplace listing describes TRAE AI as a coding assistant that suggests completions as you write code."
+  ],
+  "tested": false,
+  "type": "plugins",
+  "verificationSources": [
+    "https://plugins.jetbrains.com/plugin/24326-trae-ai-coding-assistant"
+  ],
+  "verifiedAt": "2026-11-26"
+}

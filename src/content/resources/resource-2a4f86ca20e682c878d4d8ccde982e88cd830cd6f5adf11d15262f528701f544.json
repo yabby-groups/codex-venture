@@ -1,0 +1,28 @@
+{
+  "addedAt": "2026-11-26",
+  "categories": [
+    [
+      "机密计算",
+      "Confidential Computing"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-25",
+  "id": "resource-2a4f86ca20e682c878d4d8ccde982e88cd830cd6f5adf11d15262f528701f544",
+  "identity": "mcp:ai.agentgates/compute",
+  "name": "Agentgates Compute",
+  "registryId": "ai.agentgates/compute",
+  "site": "https://registry.modelcontextprotocol.io/v0.1/servers/ai.agentgates%2Fcompute/versions/1.0.3",
+  "sourceSignature": "ac065faf05f8219f4b8fc20f741a863544b662de2e766590178bceda2ff9b4d3",
+  "summary": [
+    "据发布者介绍，这项 MCP 服务可为 AI 智能体任务提供基于 Intel TDX 的机密虚拟机。",
+    "The publisher describes an MCP service for provisioning Intel TDX confidential virtual machines to run AI agent workloads."
+  ],
+  "tested": false,
+  "transport": "streamable-http",
+  "type": "mcp",
+  "verificationSources": [
+    "https://registry.modelcontextprotocol.io/v0.1/servers/ai.agentgates%2Fcompute/versions/1.0.3"
+  ],
+  "verifiedAt": "2026-11-26",
+  "version": "1.0.3"
+}

@@ -1,0 +1,31 @@
+{
+  "addedAt": "2026-11-26",
+  "categories": [
+    [
+      "GIF 动画制作",
+      "Animated GIF Creation"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-25",
+  "id": "resource-d922abaa16b734c31680560c40e20ea42f7a56037e883bf5a5adaa9b7baa0a7c",
+  "identity": "github-skill:1061953414:skills/slack-gif-creator/SKILL.md",
+  "name": "slack-gif-creator",
+  "platforms": [
+    "Claude"
+  ],
+  "repository": "https://github.com/anthropics/skills",
+  "repositoryId": "1061953414",
+  "site": "https://github.com/anthropics/skills/blob/main/skills/slack-gif-creator/SKILL.md",
+  "sourcePath": "skills/slack-gif-creator/SKILL.md",
+  "sourceSignature": "e45fe1fb93d08e52ff4027bcec646822374d4a0801f59c9688633b0d91f57f7a",
+  "summary": [
+    "技能文档介绍了用于制作和校验 Slack GIF 动画的工具，并给出了表情和消息用 GIF 的尺寸参考。",
+    "The skill documentation describes tools for creating and validating animated GIFs for Slack and gives dimensions for emoji and message GIFs."
+  ],
+  "tested": false,
+  "type": "skills",
+  "verificationSources": [
+    "https://github.com/anthropics/skills/blob/main/skills/slack-gif-creator/SKILL.md"
+  ],
+  "verifiedAt": "2026-11-26"
+}

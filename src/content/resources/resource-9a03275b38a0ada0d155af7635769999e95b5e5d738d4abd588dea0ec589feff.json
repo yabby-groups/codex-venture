@@ -1,0 +1,28 @@
+{
+  "addedAt": "2026-11-26",
+  "categories": [
+    [
+      "前端设计审查",
+      "Frontend Design Review"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-25",
+  "id": "resource-9a03275b38a0ada0d155af7635769999e95b5e5d738d4abd588dea0ec589feff",
+  "identity": "github:1254685008",
+  "license": "MIT",
+  "name": "funboy322/avoid-ai-design",
+  "repository": "https://github.com/funboy322/avoid-ai-design",
+  "repositoryId": "1254685008",
+  "site": "https://github.com/funboy322/avoid-ai-design",
+  "sourceSignature": "9a8bb004eff6b7997bd970234004c17b0d7f52edc3104c1d274e00932ea6530c",
+  "summary": [
+    "据发布者介绍，这款工具可扫描 AI 生成的前端代码，找出紫色渐变等常见视觉样式，并改写相关样式。",
+    "The publisher describes a tool that scans AI-generated frontend code for recurring visual patterns, such as purple gradients, and rewrites the affected styles."
+  ],
+  "tested": false,
+  "type": "tools",
+  "verificationSources": [
+    "https://api.github.com/search/repositories?page=1&per_page=30&q=topic%3Aai-design+archived%3Afalse+fork%3Afalse&sort=stars"
+  ],
+  "verifiedAt": "2026-11-26"
+}

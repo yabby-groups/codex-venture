@@ -1,0 +1,28 @@
+{
+  "addedAt": "2026-11-26",
+  "categories": [
+    [
+      "电子表格自动化",
+      "Spreadsheet Automation"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-25",
+  "id": "resource-99b4548027059d0cc964c2d115d5df10c56679badfb15f692b02153119b771a6",
+  "identity": "github:1079141596",
+  "license": "MIT",
+  "name": "sbroenne/mcp-server-excel",
+  "repository": "https://github.com/sbroenne/mcp-server-excel",
+  "repositoryId": "1079141596",
+  "site": "https://github.com/sbroenne/mcp-server-excel",
+  "sourceSignature": "f3cde87b5d2993e3a4ecfdaf534d3b9989886722eea15ba2608a3724fe77def2",
+  "summary": [
+    "据项目介绍，你可以通过 MCP 或命令行自动化 Excel 中涉及 Power Query、DAX、VBA、数据透视表和图表的任务。",
+    "The project description says you can automate Excel tasks involving Power Query, DAX, VBA, PivotTables, and charts through MCP or the command line."
+  ],
+  "tested": false,
+  "type": "tools",
+  "verificationSources": [
+    "https://api.github.com/search/repositories?page=1&per_page=30&q=topic%3Aai-automation+archived%3Afalse+fork%3Afalse&sort=stars"
+  ],
+  "verifiedAt": "2026-11-26"
+}

@@ -1,0 +1,28 @@
+{
+  "addedAt": "2026-11-26",
+  "categories": [
+    [
+      "招聘候选人搜寻",
+      "Candidate sourcing"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-25",
+  "id": "resource-37697dfe58bae947ee8c65e0cfd39795047d037d9c86f7adcb374b34550694a3",
+  "identity": "mcp:ai.agenticblue/agentic-blue",
+  "name": "Agentic Blue",
+  "registryId": "ai.agenticblue/agentic-blue",
+  "site": "https://registry.modelcontextprotocol.io/v0.1/servers/ai.agenticblue%2Fagentic-blue/versions/1.0.0",
+  "sourceSignature": "1c7d52d0df93dcc3df26305269585706ff254dbc7962ca308b7dcb65ad5224da",
+  "summary": [
+    "据发布者介绍，这项 MCP 服务可帮助招聘人员按岗位搜寻候选人，并逐项对照岗位要求查看候选人资料。",
+    "The publisher describes an MCP service for recruiters to find candidates for a role and check their profiles against individual job requirements."
+  ],
+  "tested": false,
+  "transport": "streamable-http",
+  "type": "mcp",
+  "verificationSources": [
+    "https://registry.modelcontextprotocol.io/v0.1/servers/ai.agenticblue%2Fagentic-blue/versions/1.0.0"
+  ],
+  "verifiedAt": "2026-11-26",
+  "version": "1.0.0"
+}

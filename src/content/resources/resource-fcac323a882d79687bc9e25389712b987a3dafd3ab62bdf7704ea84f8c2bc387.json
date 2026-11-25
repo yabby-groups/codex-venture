@@ -1,0 +1,28 @@
+{
+  "addedAt": "2026-11-26",
+  "categories": [
+    [
+      "语音处理",
+      "Speech processing"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-25",
+  "id": "resource-fcac323a882d79687bc9e25389712b987a3dafd3ab62bdf7704ea84f8c2bc387",
+  "identity": "github:895253710",
+  "license": "MIT",
+  "name": "Neywa-Labs/mlx-audio",
+  "repository": "https://github.com/Neywa-Labs/mlx-audio",
+  "repositoryId": "895253710",
+  "site": "https://github.com/Neywa-Labs/mlx-audio",
+  "sourceSignature": "46cf111cd5791abd99867cb3701fa11471abd0da70bde252b7370f875aa54f10",
+  "summary": [
+    "据发布者介绍，mlx-audio 是基于 Apple MLX 框架的语音处理库，支持文本转语音、语音转文字和语音到语音转换。",
+    "The publisher describes mlx-audio as a library built on Apple’s MLX framework for synthesizing speech from text, transcribing speech, and converting speech to speech."
+  ],
+  "tested": false,
+  "type": "open-source",
+  "verificationSources": [
+    "https://api.github.com/search/repositories?page=1&per_page=30&q=topic%3Atext-to-speech+archived%3Afalse+fork%3Afalse&sort=stars"
+  ],
+  "verifiedAt": "2026-11-26"
+}

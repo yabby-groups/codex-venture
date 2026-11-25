@@ -1,0 +1,31 @@
+{
+  "addedAt": "2026-11-26",
+  "categories": [
+    [
+      "设计系统构建",
+      "Design system development"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-25",
+  "id": "resource-ddb4888e8da09d7bf8ef29591255d553d6a7ee8b69c0ddbb33eacbde4e98baf9",
+  "identity": "github-skill:1103643573:skills/.curated/figma-generate-library/SKILL.md",
+  "name": "figma-generate-library",
+  "platforms": [
+    "Codex"
+  ],
+  "repository": "https://github.com/openai/skills",
+  "repositoryId": "1103643573",
+  "site": "https://github.com/openai/skills/blob/main/skills/.curated/figma-generate-library/SKILL.md",
+  "sourcePath": "skills/.curated/figma-generate-library/SKILL.md",
+  "sourceSignature": "e6e3e936f21c626a58b46b1c9ffa44c2a66233c9af9550f4896507bdcea27662",
+  "summary": [
+    "该技能介绍如何根据代码库在 Figma 中构建或更新设计系统，涵盖设计令牌、组件库、浅色和深色主题，以及设计基础文档。",
+    "The skill outlines how to build or update a Figma design system from a codebase, including design tokens, component libraries, light and dark themes, and documentation for design foundations."
+  ],
+  "tested": false,
+  "type": "skills",
+  "verificationSources": [
+    "https://github.com/openai/skills/blob/main/skills/.curated/figma-generate-library/SKILL.md"
+  ],
+  "verifiedAt": "2026-11-26"
+}

@@ -1,0 +1,28 @@
+{
+  "addedAt": "2026-11-26",
+  "categories": [
+    [
+      "求职申请辅助",
+      "Job Application Assistance"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-25",
+  "id": "resource-fba9dc83e02ab7fb184d99994f7696d39cab448935abab0887a53f9dfa27b9e6",
+  "identity": "github:1185389803",
+  "license": "MIT",
+  "name": "ai-job-search-dev/ai-job-search",
+  "repository": "https://github.com/ai-job-search-dev/ai-job-search",
+  "repositoryId": "1185389803",
+  "site": "https://github.com/ai-job-search-dev/ai-job-search",
+  "sourceSignature": "7e99edb1e32f1f3b4885b2ced1b2cd2049cd282b87a2bc2ae541ad894b23dc7a",
+  "summary": [
+    "据发布者介绍，这套基于 Claude Code 的框架在本机运行，可用于评估招聘信息、按岗位调整简历、起草求职信和准备面试。",
+    "The publisher describes a Claude Code framework that runs on your machine to evaluate job postings, tailor CVs, draft cover letters, and prepare for interviews."
+  ],
+  "tested": false,
+  "type": "open-source",
+  "verificationSources": [
+    "https://api.github.com/search/repositories?page=1&per_page=30&q=topic%3Aai-agents+archived%3Afalse+fork%3Afalse&sort=stars"
+  ],
+  "verifiedAt": "2026-11-26"
+}

@@ -1,0 +1,29 @@
+{
+  "addedAt": "2026-11-26",
+  "categories": [
+    [
+      "环境变量补全",
+      "Environment Variable Completion"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-25",
+  "id": "resource-16151224d2200f22f8f154d7fb855779840055dd825dcf136aaae301ead8e1f2",
+  "identity": "jetbrains:9525",
+  "install": "https://plugins.jetbrains.com/plugin/9525--env-files",
+  "name": ".env files",
+  "platforms": [
+    "JetBrains Marketplace"
+  ],
+  "site": "https://plugins.jetbrains.com/plugin/9525--env-files",
+  "sourceSignature": "8083822cd4b94e1fce418d458801716f07f123a2d0f898d8bf805cc817953eb9",
+  "summary": [
+    "市场页面介绍了一款根据 .env 文件提供环境变量补全建议的插件。",
+    "The marketplace listing describes a plugin that uses .env files to suggest environment variable completions."
+  ],
+  "tested": false,
+  "type": "plugins",
+  "verificationSources": [
+    "https://plugins.jetbrains.com/plugin/9525--env-files"
+  ],
+  "verifiedAt": "2026-11-26"
+}

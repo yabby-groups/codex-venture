@@ -1,0 +1,28 @@
+{
+  "addedAt": "2026-11-26",
+  "categories": [
+    [
+      "视频制作",
+      "Video production"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-25",
+  "id": "resource-fdf22bf34be6881a56118232aa37e358b9329910697e45514093b1b1cc520c51",
+  "identity": "github:1195360525",
+  "license": "AGPL-3.0",
+  "name": "OpenMontageInc/OpenMontage",
+  "repository": "https://github.com/OpenMontageInc/OpenMontage",
+  "repositoryId": "1195360525",
+  "site": "https://github.com/OpenMontageInc/OpenMontage",
+  "sourceSignature": "8e1c3ae4d63da3672b94425967a0ae9423550f423e7f3fe955a560bf16ff91c8",
+  "summary": [
+    "据发布者介绍，OpenMontage 提供可与 AI 编程助手配合使用的视频制作工作流、工具和技能。",
+    "The publisher describes OpenMontage as a collection of video production workflows, tools, and skills for use with an AI coding assistant."
+  ],
+  "tested": false,
+  "type": "open-source",
+  "verificationSources": [
+    "https://api.github.com/search/repositories?page=1&per_page=30&q=topic%3Atext-to-speech+archived%3Afalse+fork%3Afalse&sort=stars"
+  ],
+  "verifiedAt": "2026-11-26"
+}

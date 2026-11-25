@@ -1,0 +1,30 @@
+{
+  "addedAt": "2026-11-26",
+  "categories": [
+    [
+      "AI 账号管理",
+      "AI Account Management"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-25",
+  "id": "resource-167b253db824b0f4fdd3ffca51a579b88e35d26705e73ca982ac4ca8fabc452f",
+  "identity": "openvsx:p10node.claude-account-switch",
+  "install": "https://open-vsx.org/extension/p10node/claude-account-switch",
+  "name": "Claude Account Switch",
+  "platforms": [
+    "Open VSX"
+  ],
+  "site": "https://open-vsx.org/extension/p10node/claude-account-switch",
+  "sourceSignature": "1cc1176a883f20fe59fdde3735fbc1766257d85b23d495bdbc8f266aa5d25779",
+  "summary": [
+    "据发布者介绍，这款非官方侧边栏扩展可登录和切换多个 Claude Code 账号、查看各账号的使用额度，并在账号之间共享会话和记忆。",
+    "The publisher describes an unofficial sidebar extension for signing in to multiple Claude Code accounts, switching between them, and checking quotas while sharing sessions and memory across accounts."
+  ],
+  "tested": false,
+  "type": "plugins",
+  "verificationSources": [
+    "https://open-vsx.org/api/-/search?offset=50&query=Claude&size=25"
+  ],
+  "verifiedAt": "2026-11-26",
+  "version": "0.3.1"
+}

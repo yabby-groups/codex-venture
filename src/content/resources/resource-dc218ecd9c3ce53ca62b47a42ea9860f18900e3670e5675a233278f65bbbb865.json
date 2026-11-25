@@ -1,0 +1,31 @@
+{
+  "addedAt": "2026-11-26",
+  "categories": [
+    [
+      "屏幕截图",
+      "Screen Capture"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-25",
+  "id": "resource-dc218ecd9c3ce53ca62b47a42ea9860f18900e3670e5675a233278f65bbbb865",
+  "identity": "github-skill:1103643573:skills/.curated/screenshot/SKILL.md",
+  "name": "screenshot",
+  "platforms": [
+    "Codex"
+  ],
+  "repository": "https://github.com/openai/skills",
+  "repositoryId": "1103643573",
+  "site": "https://github.com/openai/skills/blob/main/skills/.curated/screenshot/SKILL.md",
+  "sourcePath": "skills/.curated/screenshot/SKILL.md",
+  "sourceSignature": "bb7b437f96cdefe81a39e4585d00419bba46e0362ce69d5932ccd02d3e416534",
+  "summary": [
+    "技能文档介绍了如何在操作系统层面截取整个桌面、指定应用或窗口，以及选定的屏幕区域。",
+    "The skill documentation covers taking OS-level screenshots of an entire desktop, an app or window, or a selected region."
+  ],
+  "tested": false,
+  "type": "skills",
+  "verificationSources": [
+    "https://github.com/openai/skills/blob/main/skills/.curated/screenshot/SKILL.md"
+  ],
+  "verifiedAt": "2026-11-26"
+}

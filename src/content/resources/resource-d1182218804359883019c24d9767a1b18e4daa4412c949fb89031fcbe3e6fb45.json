@@ -1,0 +1,31 @@
+{
+  "addedAt": "2026-11-26",
+  "categories": [
+    [
+      "前端设计",
+      "Frontend Design"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-25",
+  "id": "resource-d1182218804359883019c24d9767a1b18e4daa4412c949fb89031fcbe3e6fb45",
+  "identity": "github-skill:1061953414:skills/frontend-design/SKILL.md",
+  "name": "frontend-design",
+  "platforms": [
+    "Claude"
+  ],
+  "repository": "https://github.com/anthropics/skills",
+  "repositoryId": "1061953414",
+  "site": "https://github.com/anthropics/skills/blob/main/skills/frontend-design/SKILL.md",
+  "sourcePath": "skills/frontend-design/SKILL.md",
+  "sourceSignature": "4c3c4bcfc1abd8751f724d79375b8e53473789c4c31448c9c5a2bc7b8cdb6a5e",
+  "summary": [
+    "这份指南帮助你根据界面的主题、受众和用途，为新建或改版的界面选择配色、字体和布局。",
+    "This guide helps you choose a palette, typography, and layout for a new or existing interface based on its subject, audience, and purpose."
+  ],
+  "tested": false,
+  "type": "skills",
+  "verificationSources": [
+    "https://github.com/anthropics/skills/blob/main/skills/frontend-design/SKILL.md"
+  ],
+  "verifiedAt": "2026-11-26"
+}

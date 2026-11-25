@@ -1,0 +1,28 @@
+{
+  "addedAt": "2026-11-26",
+  "categories": [
+    [
+      "前端设计",
+      "Frontend Design"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-25",
+  "id": "resource-99fce750350321dd64e7d539a4d91eb245d4f2c0a1ae01b06f12c3bd37fd1871",
+  "identity": "github:1266497775",
+  "license": "MIT",
+  "name": "yizhiyanhua-ai/fireworks-design",
+  "repository": "https://github.com/yizhiyanhua-ai/fireworks-design",
+  "repositoryId": "1266497775",
+  "site": "https://github.com/yizhiyanhua-ai/fireworks-design",
+  "sourceSignature": "726a43bcd7bd6176dc450aa5a1fb8f2669da0de44a3212958800057441e244d6",
+  "summary": [
+    "项目介绍了一套 Claude Code 工作流，可并行探索和评估多个前端设计方案，再整合创意并打磨成一个页面。",
+    "The project describes a Claude Code workflow that explores several frontend designs in parallel, evaluates them, and combines and refines ideas into a single page."
+  ],
+  "tested": false,
+  "type": "tools",
+  "verificationSources": [
+    "https://api.github.com/search/repositories?page=1&per_page=30&q=topic%3Aai-design+archived%3Afalse+fork%3Afalse&sort=stars"
+  ],
+  "verifiedAt": "2026-11-26"
+}
