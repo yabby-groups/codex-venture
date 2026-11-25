@@ -963,6 +963,12 @@
     "url": "https://blog.cloudflare.com/tag/developers/rss/",
     "validators": {}
   },
+  "original-github-issues": {
+    "error": "collection request budget paused",
+    "failures": 1,
+    "first_failure": "2026-11-25T13:01:00.529460+00:00",
+    "retry_after": "2026-11-25T14:01:00.529460+00:00"
+  },
   "original-huggingface-guides": {
     "candidates": 0,
     "error": null,
@@ -973,6 +979,15 @@
     "validators": {
       "If-None-Match": "W/\"42270-nBN9iWdlDnwd4w3GFi9PEhpuLOE\""
     }
+  },
+  "original-show-hn-1": {
+    "candidates": 16,
+    "error": null,
+    "failures": 0,
+    "last_success": "2026-11-25T13:01:00.529460+00:00",
+    "retry_after": null,
+    "url": "https://hn.algolia.com/api/v1/search?query=AI+coding+workflow&tags=show_hn&hitsPerPage=16",
+    "validators": {}
   },
   "pibot": {
     "error": "collection request budget paused",

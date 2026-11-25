@@ -15,6 +15,13 @@
       "responses": 10,
       "successes": 5
     },
+    "airma.sh": {
+      "daily": 2,
+      "hour": "2026-11-25T13",
+      "hourly": 2,
+      "responses": 2,
+      "successes": 2
+    },
     "aistudio.google.com": {
       "daily": 10,
       "hour": "2026-11-25T11",
@@ -130,11 +137,11 @@
       "successes": 17
     },
     "hn.algolia.com": {
-      "daily": 29,
-      "hour": "2026-11-25T12",
-      "hourly": 12,
-      "responses": 29,
-      "successes": 24
+      "daily": 34,
+      "hour": "2026-11-25T13",
+      "hourly": 5,
+      "responses": 33,
+      "successes": 27
     },
     "huggingface.co": {
       "daily": 136,
@@ -165,11 +172,11 @@
       "successes": 2
     },
     "news.ycombinator.com": {
-      "daily": 1,
-      "hour": "2026-11-25T12",
+      "daily": 2,
+      "hour": "2026-11-25T13",
       "hourly": 1,
-      "responses": 1,
-      "successes": 1
+      "responses": 2,
+      "successes": 2
     },
     "open-vsx.org": {
       "daily": 38,

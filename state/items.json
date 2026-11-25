@@ -2492,6 +2492,24 @@
     "title": "Evernote turns AI-driven discovery into paid subscriptions",
     "url": "https://openai.com/ads/customers/evernote"
   },
+  "167debcac242ea72e7934307a2d70a54cb9ed1c832570872c636276675866a61": {
+    "category": "coding",
+    "content_type": "stories",
+    "discovered": "2026-11-25T13:01:00.529460+00:00",
+    "discovery": {
+      "author": "gjkim042",
+      "discussion": "https://news.ycombinator.com/item?id=47218469",
+      "hn_id": "47218469"
+    },
+    "fingerprint": "19f1b758332c6da0dbf196dadfee55b982f296fdbfcd407ee86351e11794859a",
+    "published": "2026-03-02T14:36:09+00:00",
+    "source": "original-show-hn-1",
+    "source_url": "https://hn.algolia.com/api/v1/search?query=AI+coding+workflow&tags=show_hn&hitsPerPage=16",
+    "status": "pending",
+    "summary": "Kelos is a Kubernetes framework for orchestrating autonomous AI coding agents (like Claude Code) in ephemeral pods. The original goal was sandboxing — I didn't want to run agents with --dangerously-skip-permissions locally. But the real unlock turned out to be declarative workflows. You define agent tasks as Kubernetes CRDs, things like: - Watch for \"bug\" issues → auto-draft a fix PR - Auto-review incoming pull requests - Auto-triage new issues with labels and priority - Periodically scan the codebase → propose improvements - Test the project as a new user → surface rough edges Self-development pipeline: https://github.com/kelos-dev/kelos/tree/main/self-developmen... I've been using Kelos to develop Kelos. When something breaks, I refine the YAML or add features to the controller. It's early and rough around the edges, but the core loop works. Happy to answer questions about the design or what's broken.",
+    "title": "Show HN: Kelos – Define your AI coding agent workflow as YAML on Kubernetes",
+    "url": "https://github.com/kelos-dev/kelos"
+  },
   "168e45840dc2573cf9fc605fb90cbd95bb9b74280147ccd3e92236292c6cf241": {
     "category": "open-source",
     "discovered": "2026-11-24T07:40:13.461356+00:00",
@@ -3767,6 +3785,24 @@
     "title": "Seeing Beyond Pixels: Radar Feature Generation from Images and Sparse Returns",
     "url": "https://arxiv.org/abs/2611.28119"
   },
+  "1f33ec024af3eb0917a1c019f4d04a56fdf695ca3f692765a0676a840f0eb376": {
+    "category": "coding",
+    "content_type": "stories",
+    "discovered": "2026-11-25T13:01:00.529460+00:00",
+    "discovery": {
+      "author": "sjhalani7",
+      "discussion": "https://news.ycombinator.com/item?id=48300485",
+      "hn_id": "48300485"
+    },
+    "fingerprint": "698b3f47168517232903f711a23d23584c44356e50491fc82eaaca0ae2e2337e",
+    "published": "2026-05-27T20:52:31+00:00",
+    "source": "original-show-hn-1",
+    "source_url": "https://hn.algolia.com/api/v1/search?query=AI+coding+workflow&tags=show_hn&hitsPerPage=16",
+    "status": "pending",
+    "summary": "Hi HN, I built VAEN (an open source CLI) because I kept running into a boring problem with AI coding-agent workflows: the setup becomes useful, but then it is hard to move. A good, useful agentic harness consists of more than just instructions: skills, mcp servers and more. There should be a better way to share those than just .MD files, and that is why I created VAEN. What works: create a yaml, run the CLI commands as per the repo, and get a .agent file that you can share and extract. Think of how awesome it could be if anyone could use a very useful agentic harness, and share it with one CLI command.",
+    "title": "Show HN: VAEN – Package and import portable AI coding-agent Harnesses",
+    "url": "https://github.com/sjhalani7/vaen"
+  },
   "1f397fe80b817ee23aec1462b69449b7aefd66f9958ad96c2aab49e4e2279bcd": {
     "category": "models",
     "discovered": "2026-11-24T14:07:11.513641+00:00",
@@ -4904,6 +4940,24 @@
     "title": "Omi Work",
     "url": "https://www.producthunt.com/products/omi-work"
   },
+  "28dfa788dbbb32b827a301cc0266cafb05a85abf4e25f681b63458408b0df2f0": {
+    "category": "coding",
+    "content_type": "stories",
+    "discovered": "2026-11-25T13:01:00.529460+00:00",
+    "discovery": {
+      "author": "Sharanxxxx",
+      "discussion": "https://news.ycombinator.com/item?id=48761586",
+      "hn_id": "48761586"
+    },
+    "fingerprint": "789135067fc4cc6e3e5cf5a5c9b4ecde032e588bde40e8cb8bcf298ba49e38f2",
+    "published": "2026-07-02T13:47:13+00:00",
+    "source": "original-show-hn-1",
+    "source_url": "https://hn.algolia.com/api/v1/search?query=AI+coding+workflow&tags=show_hn&hitsPerPage=16",
+    "status": "pending",
+    "summary": "Show HN: SEOAgent – Missing SEO system of record for AI coding workflows",
+    "title": "Show HN: SEOAgent – Missing SEO system of record for AI coding workflows",
+    "url": "https://seoagent.com/"
+  },
   "28ef95632f878d5d237e97a04e19da75383d892369e9009a4bade5250e0a4da4": {
     "category": "models",
     "discovered": "2026-11-25T11:43:09.397480+00:00",
@@ -5146,6 +5200,24 @@
     "summary": "arXiv:2611.32734v1 Announce Type: cross Abstract: Large language models (LLMs) excel at medical question answering yet are rarely evaluated on the stepwise diagnostic reasoning that defines real clinical workflows, where impressions are revised as information accumulates. We build Annotated Stepwise Clinical rEasoning for NaturalisTic Diagnosis (ASCENT), a clinician-annotated benchmark and training resource of 3,078 stepwise problems derived from MedQA-USMLE that decomposes each vignette into EMR-aligned steps (Findings, Impression, supporting Rationale), enabling evaluation of intermediate reasoning under incomplete information. Experiments and training with ASCENT revealed insights into how current LLMs handle stepwise diagnostic reasoning. Even strong reasoning models that perform well on MedQA-USMLE leave substantial headroom on ASCENT, and general-purpose frontier models trail further, exposing a persistent gap between fully informed and stepwise diagnosis. Fine-tuning Qwen2.5-7B and 32B on ASCENT yields measurable F1 gains over both pre-trained and HuatuoGPT-o1 CoT-trained baselines, with gains driven primarily by precision. Complementary robustness analyses (counterfactual perturbation, format-vs-content control, judge agreement, and rollout) further show that ASCENT-fine-tuned models rely on the diagnostic content of prior impressions rather than imitating their output format, while error propagation under rollout remains a key challenge for clinical deployment.",
     "title": "ASCENT: A Benchmark for Evaluating and Advancing Stepwise Diagnostic Reasoning in Large Language Models on Common Clinical Scenarios",
     "url": "https://arxiv.org/abs/2611.32734"
+  },
+  "2b500cbc5a385f6e1842b95062c6c929075ff9b57250bd6c24ce0f47b43729aa": {
+    "category": "coding",
+    "content_type": "stories",
+    "discovered": "2026-11-25T13:01:00.529460+00:00",
+    "discovery": {
+      "author": "rlarua",
+      "discussion": "https://news.ycombinator.com/item?id=47217890",
+      "hn_id": "47217890"
+    },
+    "fingerprint": "7c6df51f094cc10926fa855dbed06e1ef5d84d58360a913cf0d7c71780c6ac73",
+    "published": "2026-03-02T13:45:50+00:00",
+    "source": "original-show-hn-1",
+    "source_url": "https://hn.algolia.com/api/v1/search?query=AI+coding+workflow&tags=show_hn&hitsPerPage=16",
+    "status": "pending",
+    "summary": "AI coding agents ship code quickly. But in real-world projects, some basic questions remain: * What plan did this change follow? * Was the intent reviewed before execution? * What evidence do we have beyond “it works”? * When something fails, does the lesson get captured structurally? AgentTeams adds a lightweight governance layer on top of AI-driven development. Instead of just marking tasks as “Done”, it creates a traceable execution chain: 1. Plan Every task starts as an explicit plan. Priority, risk notes, and review status are recorded before execution. 2. Completion Report When work finishes, a report is generated automatically. It includes: * Number of files changed * Execution time * A quality score (e.g., 82 / 95) * Verification summary 3. Post-mortem If something goes wrong, root cause and preventive actions are recorded and linked back to the original plan and conventions. On the dashboard, you can see in real time: * How many plans are in progress * How many are waiting for review * How many were completed in the last 7 days * How many reports failed or were partially completed * How many post-mortems are still open The goal isn’t automation. It’s accountability and traceability for AI work. AgentTeams is currently in beta. If you’re running AI-assisted development workflows, I’d love critical feedback from real usage.",
+    "title": "Show HN: AgentTeams – Traceable AI coding workflows",
+    "url": "https://agentteams.run/"
   },
   "2b6258563847ef5d64ff4c27a81c56d36d8030156534432fedd970d59443107d": {
     "category": "models",
@@ -8722,6 +8794,24 @@
     "title": "Boosting Brain-to-Image Decoding with TRIBE v2 Data Augmentation",
     "url": "https://arxiv.org/abs/2606.06345"
   },
+  "4594150864213e7d337ddf192a655fca455dcb1695b43cc565d891b600165226": {
+    "category": "coding",
+    "content_type": "stories",
+    "discovered": "2026-11-25T13:01:00.529460+00:00",
+    "discovery": {
+      "author": "prplfsh",
+      "discussion": "https://news.ycombinator.com/item?id=46944477",
+      "hn_id": "46944477"
+    },
+    "fingerprint": "d75e6667d493c1a00a3315eea85e8181cdad21246cf826148e475d01b832bce0",
+    "published": "2026-02-09T12:23:30+00:00",
+    "source": "original-show-hn-1",
+    "source_url": "https://hn.algolia.com/api/v1/search?query=AI+coding+workflow&tags=show_hn&hitsPerPage=16",
+    "status": "pending",
+    "summary": "It uses your local Claude and GitHub CLI and git worktrees, so there's nothing to configure beyond what you already have. Our AI coding workflow was a hodgepodge of scripts and ad-hoc processes, so we built this to centralize and streamline - and most importantly adapt as things change. Some cool features so far (lots more planned): 1. One click github issue to agent working on it. 2. Ratcheting mode, where it watches CI for code review comments and build failures, and automatically fixes them. Would love genuine feedback, bug reports, PRs, suggestions, etc.",
+    "title": "Show HN: Factory Factory, open-source alternative to Codex App for Claude",
+    "url": "https://github.com/purplefish-ai/factory-factory"
+  },
   "459c60f6aee2370e4b0623ba3f9b808822aedd9c3a2ae8a8e21e461311feb9ec": {
     "category": "models",
     "discovered": "2026-11-25T11:43:09.397480+00:00",
@@ -10790,6 +10880,24 @@
     "summary": "Grants for nature projects, checked against funder pages Discussion | Link",
     "title": "naturefunding.org",
     "url": "https://www.producthunt.com/products/naturefunding-org"
+  },
+  "5491465f7c20eebffed57b8254a1abb8967f7ee05e820a25808ddd3fa3e70eff": {
+    "category": "coding",
+    "content_type": "stories",
+    "discovered": "2026-11-25T13:01:00.529460+00:00",
+    "discovery": {
+      "author": "vincentvandeth",
+      "discussion": "https://news.ycombinator.com/item?id=47207959",
+      "hn_id": "47207959"
+    },
+    "fingerprint": "b6d12a20f01a15c8c607170e1be04c4cc2892d6563f062832da5d5ae65f55f04",
+    "published": "2026-03-01T16:10:18+00:00",
+    "source": "original-show-hn-1",
+    "source_url": "https://hn.algolia.com/api/v1/search?query=AI+coding+workflow&tags=show_hn&hitsPerPage=16",
+    "status": "pending",
+    "summary": "Show HN: Glass box governance for multi-agent AI coding workflows",
+    "title": "Show HN: Glass box governance for multi-agent AI coding workflows",
+    "url": "https://github.com/Vinix24/vnx-orchestration"
   },
   "54b8c4bd0faaa8eb0f284aaa8faf95c034578b390d79406d8703836204244cc6": {
     "category": "models",
@@ -13125,6 +13233,24 @@
     "title": "RoadState: A Domain-Prior-Enhanced Vision-Language System for Industrial-Grade Lane-Level Map Updating",
     "url": "https://arxiv.org/abs/2611.10746"
   },
+  "66991126ceb56d30e8a762a7ac9558f69ec080900a8bad76c1e40d9b432942b1": {
+    "category": "coding",
+    "content_type": "stories",
+    "discovered": "2026-11-25T13:01:00.529460+00:00",
+    "discovery": {
+      "author": "andrewsthoughts",
+      "discussion": "https://news.ycombinator.com/item?id=46290617",
+      "hn_id": "46290617"
+    },
+    "fingerprint": "a1f95c7801e250f357ed56f8d5a7088a2829a994740c1b86384119d5f12b79a6",
+    "published": "2025-12-16T16:32:16+00:00",
+    "source": "original-show-hn-1",
+    "source_url": "https://hn.algolia.com/api/v1/search?query=AI+coding+workflow&tags=show_hn&hitsPerPage=16",
+    "status": "pending",
+    "summary": "Hi HN, I’m Andrew, Founder of Zencoder. While building our IDE extensions and cloud agents, we ran into the same issue many of you likely face when using coding agents in complex repos: agents getting stuck in loops, apologizing, and wasting time. We tried to manage this with scripts, but juggling terminal windows and copy-paste prompting was painful. So we built Zenflow, a free desktop tool to orchestrate AI coding workflows. It handles the things we were missing in standard chat interfaces: Cross-Model Verification: You can have Codex review Claude’s code, or run them in parallel to see which model handles the specific context better. Parallel Execution: Run five different approaches on a backlog item simultaneously—mix \"Human-in-the-Loop\" for hard problems with \"YOLO\" runs for simple tasks. Dynamic Workflows: Configured via simple .md files. Agents can actually \"rewire\" the next steps of the workflow dynamically based on the problem at hand. Project list/kanban views across all workload What we learned building this To tune Zenflow, we ran 100+ experiments across public benchmarks (SWE-Bench-*, T-Bench) and private datasets. Two major takeaways that might interest this community: Benchmark Saturation: Models are becoming progressively overtrained on all versions of SWE-Bench (even Pro). We found public results are diverging significantly from performance on private datasets. If you are building workflows, you can't rely on public benches. The \"Goldilocks\" Workflow: In autonomous mode, heavy multi-step processes often multiply errors rather than fix them. Massive, complex prompt templates look good on paper but fail in practice. The most reliable setups landed in a narrow “Goldilocks” zone of just enough structure without over-orchestration. The app is free to use and supports Claude Code, Codex, Gemini, and Zencoder. We’ve been dogfooding this heavily, but I'd love to hear your thoughts on the default workflows and if they fit your mental model for agentic coding. Download: https://zencoder.ai/zenflow YT flyby: https://www.youtube.com/watch?v=67Ai-klT-B8",
+    "title": "Show HN: Zenflow – orchestrate coding agents without \"you're right\" loops",
+    "url": "https://zencoder.ai/zenflow"
+  },
   "66c0140f14b7b3db6271203fedc5f0fa42c6e78bc75520cc4e781e5e20c15598": {
     "category": "models",
     "discovered": "2026-11-25T11:43:09.397480+00:00",
@@ -13637,6 +13763,14 @@
       "discussion": "https://news.ycombinator.com/item?id=15892066",
       "hn_id": "15892066"
     },
+    "evidence": [
+      {
+        "excerpt": "A lot of friendly fire among the HN crowd. \"Make go boom\" appears to be our goal.\nThe game space is a little crowded i felt. Otherwise pretty cool game ! Do you plan to open source or do you know of a HTML5 game of similar complexity that is ? Would love to read the code.\nFun fun fun. Good stuff.\nReally enjoyed this even after playing a few minutes. Good graphics and nice controls.\nthis is fun! how did you make it? give us some details.",
+        "label": "Community discussion, unverified author claims",
+        "url": "https://hn.algolia.com/api/v1/items/15892066"
+      }
+    ],
+    "evidence_checked": "2026-11-25T13:01:00.401518+00:00",
     "fingerprint": "e7a8207e56bb62e8189948b68f79ebc81aa9cad89151a3a53986072c2679d45e",
     "published": "2017-12-10T16:23:16+00:00",
     "source": "ecosystem-show-hn",
@@ -13644,7 +13778,8 @@
     "status": "pending",
     "summary": "Show HN: Airmash – Multiplayer Missile Warfare HTML5 Game",
     "title": "Show HN: Airmash – Multiplayer Missile Warfare HTML5 Game",
-    "url": "https://airma.sh/"
+    "url": "https://airma.sh/",
+    "verified_at": "2026-11-25T13:01:00.401518+00:00"
   },
   "6b85dfb0eff9c9d3aff19ea369b6c870338b532fd7f577283deb7a1d9fc72d91": {
     "category": "models",
@@ -17139,6 +17274,24 @@
     "title": "Chat with Work",
     "url": "https://www.producthunt.com/products/chat-with-work"
   },
+  "8678470559a3252f55c991ec62d60276a0fb8ec807250ebf0c3efe6ddd694978": {
+    "category": "coding",
+    "content_type": "stories",
+    "discovered": "2026-11-25T13:01:00.529460+00:00",
+    "discovery": {
+      "author": "cesargstn",
+      "discussion": "https://news.ycombinator.com/item?id=44948904",
+      "hn_id": "44948904"
+    },
+    "fingerprint": "a7176bac82c0fefebfd83ef599cc23c876010cf6d050150ccd0422a7aa01fc78",
+    "published": "2025-08-19T06:45:56+00:00",
+    "source": "original-show-hn-1",
+    "source_url": "https://hn.algolia.com/api/v1/search?query=AI+coding+workflow&tags=show_hn&hitsPerPage=16",
+    "status": "pending",
+    "summary": "Hi HN, I’m César, a non-developer who started building prototypes using vibe coding (AI + prompts instead of code). While doing this, I realized a big issue: it’s incredibly hard to get a good design. Most sites end up looking the same. So I built Skilfut — a SaaS that provides a library of 138 UI components, each with its associated prompt. You can copy/paste them into your no-code or AI-coding workflow and get functional, styled blocks right away. Already 138 components available New components added every week (+200 planned) Designed in collaboration with designers from companies like Uber Goal: help vibe coders / indie hackers ship faster while standing out visually I soft-launched on Reddit and was surprised: over 100 people joined the waitlist in just 2 days. Now the V1 is live: https://skilfut.com I’d love your feedback: – Do you think UI libraries like this can really help vibe coders / AI devs? – What would you want to see improved or added?",
+    "title": "Show HN: Skilfut – 138 UI components to help devs build faster and prettier",
+    "url": "https://news.ycombinator.com/item?id=44948904"
+  },
   "8680b12c3752eaee989dafa8972498ff5497a0447605dc35c4455b63d8884c07": {
     "category": "open-source",
     "discovered": "2026-11-24T14:07:11.513641+00:00",
@@ -17472,6 +17625,14 @@
       "discussion": "https://news.ycombinator.com/item?id=27303783",
       "hn_id": "27303783"
     },
+    "evidence": [
+      {
+        "excerpt": "Hey Everybody, We are really excited to open source NocoDB today. NocoDB is an open source Airtable alternative. Github : https://github.com/nocodb/nocodb NocoDB works by connecting to any relational database and transforming them into a smart spreadsheet interface! NocoDB currently works with MySQL, PostgreSQL, Microsoft SQL Server, SQLi\nThis is such an excellent release! I am already thinking of a many of use cases for our own org by combining this with Next.JS and build a self-hosted no-code API powered, headless CMS!\nWhy didn't I think of this. Looks awesome!\nLooks good - for monetization you should make the integrations paid and the core thing free.\nThis is great, I've been getting into using airtable / coda for some house management stuff, but I've not liked that it's in the cloud (because I want to be more sure that I can look back 5 years and still see it). I love the audit table, that's a nice touch.",
+        "label": "Community discussion, unverified author claims",
+        "url": "https://hn.algolia.com/api/v1/items/27303783"
+      }
+    ],
+    "evidence_checked": "2026-11-25T13:01:00.401518+00:00",
     "fingerprint": "5b3fa16968811750b81b63c81b78f425b9c970858219eee8b44f4f7f479a4092",
     "published": "2021-05-27T14:47:14+00:00",
     "source": "ecosystem-show-hn",
@@ -17479,7 +17640,8 @@
     "status": "pending",
     "summary": "Show HN: NocoDB – Open-Source Airtable Alternative",
     "title": "Show HN: NocoDB – Open-Source Airtable Alternative",
-    "url": "https://github.com/nocodb/nocodb"
+    "url": "https://github.com/nocodb/nocodb",
+    "verified_at": "2026-11-25T13:01:00.401518+00:00"
   },
   "89902b4e8cb16a059a765cce210da0ba95e8aeae924eb7e1896e0ce70179fd52": {
     "articles": [
@@ -18558,6 +18720,7 @@
     "category": "coding",
     "content_type": "stories",
     "discovered": "2026-11-24T14:07:11.513641+00:00",
+    "evidence_checked": "2026-11-25T13:01:00.401518+00:00",
     "fingerprint": "45cf5803e15367303bffa7ba9c2aa359b7818a62059772b0e2d8e5eec2e57ff8",
     "published": "2021-05-27T14:47:14+00:00",
     "source": "ecosystem-show-hn",
@@ -19142,6 +19305,7 @@
     "category": "coding",
     "content_type": "stories",
     "discovered": "2026-11-24T14:07:11.513641+00:00",
+    "evidence_checked": "2026-11-25T13:01:00.401518+00:00",
     "fingerprint": "e8f73bd962976012583be7c4fb0e7caee40193add4d3b50bae5a4aaf7cff2628",
     "published": "2018-01-23T19:52:44+00:00",
     "source": "ecosystem-show-hn",
@@ -20077,6 +20241,24 @@
     "title": "Unlearning Model Identity: Ablating LoRA Weights from Question-Based Identity Tuning",
     "url": "https://arxiv.org/abs/2611.28650"
   },
+  "9e38bdfa3ebe1f2eab0f41c70c67cebcff18f7b5d0d7bd2975776dc05c65e89b": {
+    "category": "coding",
+    "content_type": "stories",
+    "discovered": "2026-11-25T13:01:00.529460+00:00",
+    "discovery": {
+      "author": "jaimefjorge",
+      "discussion": "https://news.ycombinator.com/item?id=44309393",
+      "hn_id": "44309393"
+    },
+    "fingerprint": "d53cd5e542c485db95c0a1a9375f1b481f9be3b377efc677e429df4ef80ea179",
+    "published": "2025-06-18T12:42:51+00:00",
+    "source": "original-show-hn-1",
+    "source_url": "https://hn.algolia.com/api/v1/search?query=AI+coding+workflow&tags=show_hn&hitsPerPage=16",
+    "status": "pending",
+    "summary": "Hi HN! We just launched Codacy Guardrails, an IDE extension with a CLI for code analysis and MCP server that enforces security & quality rules on AI-generated code in real-time. It hooks into AI coding assistants (like VS Code Agent Mode, Cursor, Windsurf), silently scanning and fixing AI-suggested code that has vulnerabilities or violates your coding standards, while the code it’s being generated. We built this because coding agents can be a double-edged sword. They do boost productivity, but can easily introduce insecure or non-compliant code. One recent research team at NYU found that 40% of Copilot’s outputs were buggy or exploitable [1]. Other surveys mention that people are spending more time debugging AI-generated code [2]. That's why we created “guardrails” to catch security problems early. Codacy Guardrails uses a collection of open-source static analyzers (like Semgrep and Trivy) to scan the AI’s output against 2000+ rules. We currently support JavaScript/TypeScript, Python, and Java, focusing on things like OWASP Top 10 vulns, hardcoded secrets, dependency checks, code complexity and styling violations, and you can customize the rules to match your project’s needs. We're not using any AI models, it's “classic” static code analysis working alongside your AI assistant. Here’s a quick demo: https://youtu.be/pB02u0ntQpM The extension is free for all developers. (We do have paid plans for teams to apply rules centrally, but that’s not needed to use the extension and local code analysis with agents.) Setup is pretty straightforward: Install the extension and enable Codacy’s CLI and MCP Server from the sidebar. We’re eager to hear what the HN community thinks! Does this approach sound useful in your AI coding workflow? Have you encountered security issues from AI-generated code? We hope Codacy Guardrails can make AI-assisted development a bit safer and more trustworthy. Thanks for reading! Get extension: https://www.codacy.com/get-ide-extension Docs: https://docs.codacy.com/codacy-guardrails/codacy-guardrails-... Sources [1]: NYU Research: https://www.researchgate.net/publication/388193053_Asleep_at... [2]: https://devops.com/survey-ai-tools-are-increasing-amount-of-...",
+    "title": "Show HN: Free local security checks for AI coding in VSCode, Cursor and Windsurf",
+    "url": "https://news.ycombinator.com/item?id=44309393"
+  },
   "9e5dfad7d84c46ca20dc806f83653fe67920fd3614d09ad4525e90a5c6b307d2": {
     "category": "models",
     "discovered": "2026-11-24T14:07:11.513641+00:00",
@@ -20347,6 +20529,7 @@
     "category": "coding",
     "content_type": "stories",
     "discovered": "2026-11-24T14:07:11.513641+00:00",
+    "evidence_checked": "2026-11-25T13:01:00.401518+00:00",
     "fingerprint": "d4277d180fa5b22b079020a9e20dd472b98b54b7cf2207f5fed7e83d5847c4e6",
     "published": "2019-12-05T21:54:36+00:00",
     "source": "ecosystem-show-hn",
@@ -20497,6 +20680,7 @@
       "discussion": "https://news.ycombinator.com/item?id=16216960",
       "hn_id": "16216960"
     },
+    "evidence_checked": "2026-11-25T13:01:00.401518+00:00",
     "fingerprint": "32e1670785e77a1371281d4e6d9f882cadaffcb6d7594d67b268ba8829be57a2",
     "published": "2018-01-23T19:52:44+00:00",
     "source": "ecosystem-show-hn",
@@ -20587,6 +20771,24 @@
     "summary": "# Release v5.23.0 ## New Model additions ### Inkling2 Inkling 2 Small is a multimodal model from Thinking Machines Lab that accepts text and image inputs and generates text outputs, and it is intended for use in English and other languages and across multiple coding languages. Its language backbone has 48 mixture-of-experts decoder layers, each routing tokens to 8 of 384 experts, for 594B total and 17B active parameters. It keeps the Inkling decoder (learned relative attention, short causal convolutions, mixture-of-experts layers) and adds block attention residuals, gated attention with a learned sink, and dynamic key/value convolutions. Images are encoded by a Perception Encoder-based vision transformer and projected into the language model embeddings, one embedding per 40x40 pixel patch. **Links:** [Documentation](https://huggingface.co/docs/transformers/main/en/model_doc/inkling2) | [Blog Post](https://thinkingmachines.ai/news/inkling-2-small/) * Add inkling2 (#50682) by @guarin in [#50682](https://github.com/huggingface/transformers/pull/50682) ### JEV JEV is a decision head that scores single-token labels with a linear layer at the last token of the prompt, soft-capped like the logits of a language model head. `JevForDecision` is the model of the checkpoint and its head, and it reads the head files shipped next to the weights (`head.safetensors` and `judge_config.json` for JEV). The same head is also used by GEV and reads the 255 answer codes of pplx-decider and d3, and it can be run through the experimental `decision` pipeline or directly with `decide`. **Note:** JEV and the decision pipeline are currently experimental. Their APIs, configuration, and behavior may change as development continues. They should be used with caution in production environments. **Links:** [Documentation](https://huggingface.co/docs/transformers/main/en/model_doc/jev) * Add Jev + decision core (#50054) by @ArthurZucker in [#50054](https://github.com/huggingface/transformers/pull/50054) ### LFM3 LFM3 is the third generation of Liquid Foundation Models from Liquid AI. Like LFM2, it is a hybrid architecture that combines gated short convolutions with grouped-query attention, with the attention layers split between full-attention and sliding-window layers. The attention layers apply RMSNorm to the query and key heads and gate their output with a per-head sigmoid. Every layer applies a sandwich norm to the operator and feed-forward outputs before the residual addition. **Links:** [Documentation](https://huggingface.co/docs/transformers/main/en/model_doc/lfm3) * [Model] LFM3 Family: LFM3-Text (#50322) by @paulpak58 in [#50322](https://github.com/huggingface/transformers/pull/50322) ### Dots 3 Note Preview Dots 3 Note Preview is a mixture-of-experts causal language model that accepts native text, image, video, and audio inputs. It uses a shared vision encoder for images and videos and a Whisper-style audio encoder, and both encoders project their outputs into the language model's hidden space before autoregressive text generation. BF16 and FP8 inference are supported. **Links:** [Documentation](https://huggingface.co/docs/transformers/main/en/model_doc/dots3_note) * ",
     "title": "Release v5.23.0",
     "url": "https://github.com/huggingface/transformers/releases/tag/v5.23.0"
+  },
+  "a1d8c0e4a5b28bc14cc1115f55122b509819c460298af85fdd394f78deedb553": {
+    "category": "coding",
+    "content_type": "stories",
+    "discovered": "2026-11-25T13:01:00.529460+00:00",
+    "discovery": {
+      "author": "mantcz",
+      "discussion": "https://news.ycombinator.com/item?id=44671785",
+      "hn_id": "44671785"
+    },
+    "fingerprint": "b48f91cf1a24e85f37526059a1cd43c414aeba8137ebbf2f92830ee6a7c60892",
+    "published": "2025-07-24T15:19:49+00:00",
+    "source": "original-show-hn-1",
+    "source_url": "https://hn.algolia.com/api/v1/search?query=AI+coding+workflow&tags=show_hn&hitsPerPage=16",
+    "status": "pending",
+    "summary": "I have worked with AI assistants for a while, and while I am really excited about it, there were times when I felt really frustrated. LLM would end up in a loop with no end. This is when I started experimenting with creating work plans. Initially simple todo list, but it felt like \"product vibing\", so a bit more sophisticated later on. I started seeing value in it. The one day it hit me. Why not use the same GitOps principles to managing product tickets? I started playing with that and really liked the way it worked. After a chat with a friend of mine, I realised that a standard or a spec would be something really useful. You could then create all sort of tooling around this. I took an inspiration from the way kubernetes yaml are used, cause I find it quite neat. You can view examples here: https://spec.productascode.org/draft/#sec-Epic-Example-YAML- Key design decisions so far: 1. YAML over JSON: Human-readable, git-diff friendly, excellent tooling ecosystem 2. Hierarchical structure: Epics → Tickets → Tasks (matches development workflow) 3. Atomic tickets: Each ticket = one branch = one PR (prevents scope creep) 4. ISO 8601 timestamps/durations: Machine-parseable time data If I manage to create an epic with a bunch of tickets in backlog, then my favourite part of work is to tell Claude Code: \"Close the current ticket, and start another one\". Here is the link to the post which has links to draft spec and GitHub repository. Currently working on v0.1.0 and I would love to hear your thoughts. https://mantcz.com/blog/introducing-product-as-code/",
+    "title": "Show HN: Product as Code – YAML-based product management for AI coding workflows",
+    "url": "https://productascode.org/"
   },
   "a1de396d3910fa2e0f79d5fc1596f0a162b45e4ee5be0f06557fa126a8cc5915": {
     "category": "models",
@@ -22794,6 +22996,24 @@
     "title": "Semuti/9router-day",
     "url": "https://huggingface.co/spaces/Semuti/9router-day"
   },
+  "b737a80875660fc4ed5a9b571e7f103a0c3e6d8b442c0278232afcaa0c88042c": {
+    "category": "coding",
+    "content_type": "stories",
+    "discovered": "2026-11-25T13:01:00.529460+00:00",
+    "discovery": {
+      "author": "firdavs9512",
+      "discussion": "https://news.ycombinator.com/item?id=46214875",
+      "hn_id": "46214875"
+    },
+    "fingerprint": "b990b7e1bcc9a643bba250ee648f1dd55ef23e67c18140bbe6fa24173142b350",
+    "published": "2025-12-10T06:53:48+00:00",
+    "source": "original-show-hn-1",
+    "source_url": "https://hn.algolia.com/api/v1/search?query=AI+coding+workflow&tags=show_hn&hitsPerPage=16",
+    "status": "pending",
+    "summary": "Hey HN, I'm a solo developer and kept running into the same problem: I'd want Claude CLI to work on multiple tasks at once, but locally I could only run one instance at a time. So I built The Box. It lets you spin up isolated sandbox environments in the cloud and run Claude CLI agents in parallel. You write the prompt, pick a GitHub repo, and it handles the rest – creates a branch, does the work, and opens a PR. The core workflow: - Connect your GitHub repos - Create tasks with prompts - Claude CLI runs in isolated sandboxes - Get notified when done (browser push or Telegram) - Review and merge PRs Tech stack: Go (Fiber) for backend services, Next.js for frontend, PostgreSQL, Redis for signaling, RabbitMQ for task queue. Workers run Claude CLI in Docker containers. Currently free to use (with limits) while I finish payment integration. Would love feedback from anyone who's tried to scale their AI coding workflow. https://the-box.dev",
+    "title": "Show HN: The Box – Run multiple Claude CLI agents in parallel in the cloud",
+    "url": "https://the-box.dev/"
+  },
   "b747adfb22b3ef8e8d9c3d96d4c4987a93419e420b413918ee16d2d99803515e": {
     "category": "models",
     "discovered": "2026-11-24T14:07:11.513641+00:00",
@@ -23435,6 +23655,24 @@
     "title": "Assessing Robustness to Catastrophic Forgetting in Continual Deep Reinforcement Learning for Cyber-Physical Systems",
     "url": "https://arxiv.org/abs/2611.32496"
   },
+  "bb0b75b87e2f9010e344e8b3fa4c6bc12709f835986eef0b70c033dc250e0d8c": {
+    "category": "coding",
+    "content_type": "stories",
+    "discovered": "2026-11-25T13:01:00.529460+00:00",
+    "discovery": {
+      "author": "GrimLabs",
+      "discussion": "https://news.ycombinator.com/item?id=47270193",
+      "hn_id": "47270193"
+    },
+    "fingerprint": "f83af568102dff2aa6406a79c93184410a58c0c7d49f44538b0916b6d00503d2",
+    "published": "2026-03-06T02:44:22+00:00",
+    "source": "original-show-hn-1",
+    "source_url": "https://hn.algolia.com/api/v1/search?query=AI+coding+workflow&tags=show_hn&hitsPerPage=16",
+    "status": "pending",
+    "summary": "I built aidevshield, a free open-source security scanner that catches vulnerabilities in AI coding tool configurations things like Cursor, Copilot, and Cline setups. The problem: AI coding assistants are becoming attack surfaces. In the past year we've seen real exploits: Clinejection (Dec 2025): Prompt injection via GitHub issue titles → AI triage bot executes shell commands → malicious npm package published to 5M users tj-actions/changed-files (Mar 2025): Tag repointing attack hit 23,000 repos via pull_request_target Shai-Hulud (2025): First self-propagating npm worm using postinstall hooks Rules File Backdoor (Feb 2025): Hidden Unicode characters in .cursorrules for invisible prompt injection Existing tools cover parts of this — Zizmor and actionlint for GitHub Actions, Socket.dev for npm — but nothing scans across all four domains: workflows + AI configs + npm packages + prompt injection. aidevshield does. One command, zero dependencies beyond js-yaml, fully offline: npx aidevshield scan . What it detects: Dangerous GitHub Actions patterns (wildcard users, untrusted event field interpolation, unpinned third-party actions) pull_request_target with untrusted checkout (Pwn Request pattern) Malicious npm lifecycle scripts (postinstall curl | sh, node -e inline exec) Hidden Unicode in AI config files (.cursorrules, .github/copilot-instructions.md) Wildcard tool permissions (Bash(), Edit()) Exposed .env files without .gitignore protection Cache poisoning + credential exposure combos Outputs text, JSON, or SARIF (for GitHub Code Scanning integration). 56 end-to-end tests. Every detection maps to a documented real-world attack. MIT licensed. No signup, no paywall. GitHub: https://github.com/aidevshield/aidevshield Happy to answer questions about the threat landscape or implementation.",
+    "title": "Show HN: Aidevshield NPM audit for AI coding tool workflows",
+    "url": "https://github.com/aidevshield/aidevshield"
+  },
   "bb3149676d2d41509856e18f69b5c9e42bdc5bea40d87a5bda8f311c600a4367": {
     "category": "agents",
     "discovered": "2026-11-25T03:19:53.460134+00:00",
@@ -23650,6 +23888,24 @@
     "summary": "OpenAI is raising Security Bug Bounty rewards and introducing report quality, loyalty, and priority campaign bonuses for independent security researchers.",
     "title": "Rewarding defenders with bigger bug bounties",
     "url": "https://openai.com/index/rewarding-defenders-with-bigger-bug-bounties"
+  },
+  "bcadedf5cd7581f4b73ee93eedc57d7762aa0e9c41ebad761eb3c27f8dbcb0de": {
+    "category": "coding",
+    "content_type": "stories",
+    "discovered": "2026-11-25T13:01:00.529460+00:00",
+    "discovery": {
+      "author": "strandnerd",
+      "discussion": "https://news.ycombinator.com/item?id=46874743",
+      "hn_id": "46874743"
+    },
+    "fingerprint": "b885f916a0eed4e4e3a38510d541e0a8f5134edb936520aa386a30427a5fc1a6",
+    "published": "2026-02-03T18:11:29+00:00",
+    "source": "original-show-hn-1",
+    "source_url": "https://hn.algolia.com/api/v1/search?query=AI+coding+workflow&tags=show_hn&hitsPerPage=16",
+    "status": "pending",
+    "summary": "ContextPin addresses a common pain in agent workflows: context drifts, docs go stale, and markdown ends up scattered. It’s a local-first workspace where AI assistants can read and manage real project context via MCP. Highlights: - Local-only storage, offline friendly - Structured docs with folders, references, and file linking - Warnings for broken references - Mermaid validation feedback for agents - Multiple tabs + version history - Sync coming soon Happy to answer questions and hear feedback.",
+    "title": "Show HN: ContextPin – local-first context manager for AI coding workflows",
+    "url": "https://contextpin.com/blog/introducing-contextpin"
   },
   "bcbf417a73daa5089fb72e25b5f422dd998c034da82e426eaa48b11f8804925b": {
     "category": "models",
@@ -25799,6 +26055,7 @@
     "category": "coding",
     "content_type": "stories",
     "discovered": "2026-11-24T14:07:11.513641+00:00",
+    "evidence_checked": "2026-11-25T13:01:00.401518+00:00",
     "fingerprint": "542b4f3bd20cfbebc880a78e1f79b26ed92a74f41e3b53d878fac69265c99033",
     "published": "2017-12-10T16:23:16+00:00",
     "source": "ecosystem-show-hn",
@@ -26669,6 +26926,24 @@
     "summary": "arXiv:2611.30670v1 Announce Type: new Abstract: Tuning a mixed-integer programming (MIP) solver is an instance-specific problem, where a poor configuration can increase solving time by orders of magnitude. Existing Bayesian optimization tuners treat solver tuning as a black-box optimization problem: each evaluation returns a single score, allowing the tuner to learn which configuration is faster, but not why. Inspired by the use of profilers in GPU-kernel optimization, we introduce APEC (Agent for Per-instance Explainable Configuration), a log-grounded tuning agent for MIP solvers. APEC has three layers: a deterministic layer that profiles each log, an interpretation layer that guides hypothesis-driven diagnosis, and a system layer that controls evaluation, enabling more reliable and interpretable solver tuning. On the full MIPLIB 2017 benchmark set, APEC achieves a 1.58X improvement over the default configuration with over 38% fewer parameter changes than the baselines, making the results easier to read.",
     "title": "Beyond the Black Box: A Diagnosis-Driven Agent for Interpretable MIP Solver Tuning",
     "url": "https://arxiv.org/abs/2611.30670"
+  },
+  "d64c949a7010678960b0cb5df70bf7fb169bd13fad4729d25f43271635a4289a": {
+    "category": "coding",
+    "content_type": "stories",
+    "discovered": "2026-11-25T13:01:00.529460+00:00",
+    "discovery": {
+      "author": "saadn92",
+      "discussion": "https://news.ycombinator.com/item?id=46863804",
+      "hn_id": "46863804"
+    },
+    "fingerprint": "dc60392db88fba2ba30060e1c64995c84ac7dc9ae91d4fd191736afef988eebd",
+    "published": "2026-02-02T23:30:52+00:00",
+    "source": "original-show-hn-1",
+    "source_url": "https://hn.algolia.com/api/v1/search?query=AI+coding+workflow&tags=show_hn&hitsPerPage=16",
+    "status": "pending",
+    "summary": "I’ve been doing more AI-assisted development lately using tools like Claude Code and Aider, and I kept running into the same friction: too many terminal tabs and split windows to manage at once — agent, shell, dev server, tests, git, etc. So I built a small macOS app called aTerm — a terminal workspace designed around multi-pane, agent-driven coding workflows rather than single shells. Core ideas: - project-based terminal workspaces - predefined layouts for common AI coding setups (AI + Shell, AI + Dev + Shell, AI + Git) - terminals persist per project when switching - built-in git panel for staging/committing/diffs - split panes with drag resize - per-pane font sizing and themes - keyboard-first navigation (project switching, pane control) - Stack is React + TypeScript + xterm.js on the frontend and Tauri (Rust + portable-pty) on the backend. It’s early (v0.1.x) but already usable for my daily workflow. I’m mainly trying to see whether this workflow pattern is useful to other people doing agentic or multi-terminal development. Repo + macOS build: https://github.com/saadnvd1/aTerm Happy to get feedback or criticism.",
+    "title": "Show HN: aTerm – a terminal workspace built for AI coding workflows",
+    "url": "https://github.com/saadnvd1/aTerm"
   },
   "d67f3518489f95ae79afa9216c749b580b4930347ad5c5d869f75fc3e97abf3f": {
     "category": "coding",
@@ -27605,6 +27880,24 @@
     "summary": "arXiv:2611.00807v2 Announce Type: replace Abstract: AI data analysis today is three fragmented worlds: LLMs understand semantics but cannot compute; BI aggregates precisely but is stateless; ML processes large-scale data on a stateful kernel but lacks semantics. This paper proposes a combination mechanism, named Multi-engine Joint State Data Analysis, that fills a still-open gap - the multi-engine joint context: the data context is embedded into LLM conversational analysis, where the LLM serves only as the semantic, reasoning, and orchestration layer (not computation) and connects four engines through the 1M context window - Python and R ML kernels, SQL over relational databases, Cypher over graph databases - yielding two multiplications, \"semantics and precise computation\" and \"relational and graph\", under enterprise-grade governance. The novelty is a four-dimensional coordinate system: horizontal (engine kinds), vertical (state flow - the watershed), spatial (business generalization), temporal (iterative convergence); a deterministic grounding method (one-shot injection of schema.json + notes.md, M+S) carries the spatial and temporal dimensions. Empirically, all four dimensions are substantiated: horizontally, four engines are quantified - SQL, Cypher (96.5% on CypherBench movie), ML in Python and R (TabReD weather); vertically, state flows across engines and grounding is reused across kernels; spatially, SQL generalizes across three business databases - AdventureWorks 91.3%, financial 95.3%, formula_1 94.6% (average), about 20-23 points above single-shot SOTA 74.45%; temporally, accuracy converges monotonically as notes accumulate. The core invariant - the separation of semantics from computation plus a cross-data-domain persistent context - does not expire as LLMs and agents evolve or engine forms change.",
     "title": "AI Data Analysis: A New Approach - Multi-engine Joint State Data Analysis",
     "url": "https://arxiv.org/abs/2611.00807"
+  },
+  "dc641dc2facf86ab13067b2719ffcfbd0cad7f8cd2780832fd2ea9f7f89025b5": {
+    "category": "coding",
+    "content_type": "stories",
+    "discovered": "2026-11-25T13:01:00.529460+00:00",
+    "discovery": {
+      "author": "jaimefjorge",
+      "discussion": "https://news.ycombinator.com/item?id=45823379",
+      "hn_id": "45823379"
+    },
+    "fingerprint": "56303754978152227c789420c6bf068abc71c2da9a635428830a6cbfaf6045b3",
+    "published": "2025-11-05T14:44:54+00:00",
+    "source": "original-show-hn-1",
+    "source_url": "https://hn.algolia.com/api/v1/search?query=AI+coding+workflow&tags=show_hn&hitsPerPage=16",
+    "status": "pending",
+    "summary": "Hi HN. We launched a free AI Coding Risk Assessment tool to help engineering teams and businesses benchmark the security and compliance posture of their AI coding workflows and policies against peers in the industry. This anonymous 24-question survey delivers: - A 0–100 risk score that measures your AI coding security posture - A live benchmark that compares your AI-assisted development practices with peers - A research-based checklist that identifies improvement areas We're seeing more and more clients signal their concerns about the sudden increase of source code written by AI coding agents that nobody’s fully watching or even knows how to oversee. That’s why we created this open benchmarking tool. We hope this will help companies identify where they stand, compare themselves to the market, and take concrete, actionable steps to leverage AI at scale. Thanks for reading, we are keen to hear your thoughts! Link: https://ai-risk.codacy.com/",
+    "title": "Show HN: Benchmark your team's AI coding security posture",
+    "url": "https://news.ycombinator.com/item?id=45823379"
   },
   "dc6f680e172269b6b78447d939c434743ef68b0d1b31dd917f9f1261afc66377": {
     "category": "models",
@@ -28700,6 +28993,7 @@
     "category": "coding",
     "content_type": "stories",
     "discovered": "2026-11-24T14:07:11.513641+00:00",
+    "evidence_checked": "2026-11-25T13:01:00.401518+00:00",
     "fingerprint": "7aff70882b5cc9054284c5264db3817ac8c92dd336a0a8bbb73417637412a317",
     "published": "2022-08-23T23:06:43+00:00",
     "source": "ecosystem-show-hn",
@@ -29372,6 +29666,24 @@
     "summary": "arXiv:2611.29477v1 Announce Type: cross Abstract: Adaptive visual token routers aim to save computation while preserving the image detail needed to answer each question. A higher average score could reflect better choices for individual images or more frequent use of high resolution on tasks that need it. We distinguish the two by keeping action counts fixed within each task and comparing the router's assignments with random pairings of the same actions and images. On equally weighted ChartQA and TextVQA, both Qwen2.5-VL-3B and -7B gain from matching but lose more from their action frequencies relative to a task table, with a 1.71-point gain and a 3.95-point loss on 7B. Exchanging the continuous resolutions chosen by the external selector CARES also lowers quality on 7B. When requests arrive with task labels, the table outscores the discrete router by 1.92 points and saves 31.76 ms per complete 7B request on average.",
     "title": "Separating Action Allocation from Image Matching in Visual Token Routing",
     "url": "https://arxiv.org/abs/2611.29477"
+  },
+  "ebe73777c72c1e619df7a599b9f9195647a28cc855d2e86b6b691b766872d3d6": {
+    "category": "coding",
+    "content_type": "stories",
+    "discovered": "2026-11-25T13:01:00.529460+00:00",
+    "discovery": {
+      "author": "ThailandJohn",
+      "discussion": "https://news.ycombinator.com/item?id=45165897",
+      "hn_id": "45165897"
+    },
+    "fingerprint": "1af5a86aac2356ad3d44a041df43a1198a9ea31453e0829612081d3b6b9f6770",
+    "published": "2025-09-08T08:28:15+00:00",
+    "source": "original-show-hn-1",
+    "source_url": "https://hn.algolia.com/api/v1/search?query=AI+coding+workflow&tags=show_hn&hitsPerPage=16",
+    "status": "pending",
+    "summary": "I'm an infrastructure architect who started using AI assistants to write code 3 months ago. After building several systems with Claude, I noticed a pattern: the code always had security issues I could spot from my ops background, but I couldn't fix them myself since I can't actually write code. Why I built this: I needed a way to verify AI-generated code was production-safe. Existing tools either required cloud uploads (privacy concern) or produced output too large for AI context windows. TheAuditor solves both problems - it runs completely offline and chunks findings into 65KB segments that fit in Claude/GPT-4 context limits. What I discovered: Testing on real projects, TheAuditor consistently finds 50-200+ vulnerabilities in AI-generated code. The patterns are remarkably consistent: - SQL queries using f-strings instead of parameterization - Hardcoded secrets (JWT_SECRET = \"secret\" appears in nearly every project) - Missing authentication on critical endpoints - Rate limiting using in-memory storage that resets on restart Technical approach: TheAuditor runs 14 analysis phases in parallel, including taint analysis (tracking data from user input to dangerous sinks), pattern matching against 100+ security rules, and orchestrating industry tools (ESLint, Ruff, MyPy, Bandit). Everything outputs to structured JSON optimized for LLM consumption. Interesting obstacle: When scanning files with vulnerabilities, antivirus software often quarantines our reports because they contain \"malicious\" SQL injection patterns - even though we're just documenting them. Had to implement pattern defanging to reduce false positives. Current usage: Run aud full in any Python/JS/TS project. It generates a complete security audit in .pf/readthis/. The AI can then read these reports and fix its own vulnerabilities. I've seen projects go from 185 critical issues to zero in 3-4 iterations. The tool is particularly useful if you're using AI assistants for production code but worry about security. It provides the \"ground truth\" that AI needs to self-correct. Would appreciate feedback on: - Additional vulnerability patterns common in AI-generated code - Better ways to handle the antivirus false-positive issue - Integration ideas for different AI coding workflows Thanks for taking a look! /TheAuditorTool",
+    "title": "Show HN: TheAuditor – Offline security scanner for AI-generated code",
+    "url": "https://github.com/TheAuditorTool/Auditor"
   },
   "ebf70f8dfd6a83ce97d9951d360360b6ee089b7fef0109846a20f054ae711a87": {
     "category": "models",
