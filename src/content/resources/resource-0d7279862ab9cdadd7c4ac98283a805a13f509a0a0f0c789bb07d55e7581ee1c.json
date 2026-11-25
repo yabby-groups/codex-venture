@@ -1,0 +1,30 @@
+{
+  "addedAt": "2026-11-25",
+  "categories": [
+    [
+      "IDE 内网页浏览",
+      "IDE browsing"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-25",
+  "id": "resource-0d7279862ab9cdadd7c4ac98283a805a13f509a0a0f0c789bb07d55e7581ee1c",
+  "identity": "openvsx:cmr5hp4pp7-hub.ide-play-browser",
+  "install": "https://open-vsx.org/extension/cmr5hp4pp7-hub/IDE-play-browser",
+  "name": "IDE Play Browser",
+  "platforms": [
+    "Open VSX"
+  ],
+  "site": "https://open-vsx.org/extension/cmr5hp4pp7-hub/IDE-play-browser",
+  "sourceSignature": "360abc39d867077329f5b7ad4fe5c88a3ee6033dfb4bb3fca14d772dcebf2763",
+  "summary": [
+    "在 VS Code 侧边栏浏览网页。发布者介绍这是一款双引擎浏览器，内置 MCP 服务器，可连接外部 AI 智能体。",
+    "Browse web pages in the VS Code sidebar. The publisher describes a dual-engine browser with a built-in MCP server for connecting external AI agents."
+  ],
+  "tested": false,
+  "type": "plugins",
+  "verificationSources": [
+    "https://open-vsx.org/api/-/search?offset=50&query=language+model&size=25"
+  ],
+  "verifiedAt": "2026-11-25",
+  "version": "2.3.6"
+}

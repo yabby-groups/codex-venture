@@ -1,0 +1,28 @@
+{
+  "addedAt": "2026-11-25",
+  "categories": [
+    [
+      "AI 基础设施设计",
+      "AI Infrastructure Design"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-25",
+  "id": "resource-e6dddb9f52ffd04d6c8dd59b5cb6d40f4eda9bd8d9deada388208bc10ac53634",
+  "identity": "github:1342935078",
+  "license": "Apache-2.0",
+  "name": "bojieli/ai-infra-book",
+  "repository": "https://github.com/bojieli/ai-infra-book",
+  "repositoryId": "1342935078",
+  "site": "https://github.com/bojieli/ai-infra-book",
+  "sourceSignature": "55f36af5edf4b1051b39624d0c252b9c11074a77b7f8a5952f1a534e17b5d417",
+  "summary": [
+    "李博杰的书稿从硬件约束和模型架构出发，量化推导大语言模型训练与推理系统的设计。项目页面列有全书正文、PDF、配套计算工具和实验。",
+    "Li Bojie's manuscript works through quantitative design decisions for LLM training and inference systems using hardware constraints and model architectures. The listing includes the full text, a PDF, calculation tools, and experiments."
+  ],
+  "tested": false,
+  "type": "open-source",
+  "verificationSources": [
+    "https://api.github.com/search/repositories?page=1&per_page=30&q=topic%3Allm-inference+archived%3Afalse+fork%3Afalse&sort=stars"
+  ],
+  "verifiedAt": "2026-11-25"
+}

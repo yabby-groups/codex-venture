@@ -1,0 +1,28 @@
+{
+  "addedAt": "2026-11-25",
+  "categories": [
+    [
+      "数据集探索",
+      "Dataset Exploration"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-25",
+  "id": "resource-c74bbe3443c52bf75e70ffeea1d0df8d06408dc2e3a689c77a2b62c28114f014",
+  "identity": "github-skill:1102903896:skills/huggingface-datasets/SKILL.md",
+  "name": "huggingface-datasets",
+  "repository": "https://github.com/huggingface/skills",
+  "repositoryId": "1102903896",
+  "site": "https://github.com/huggingface/skills/blob/main/skills/huggingface-datasets/SKILL.md",
+  "sourcePath": "skills/huggingface-datasets/SKILL.md",
+  "sourceSignature": "447e4148c3980ee8c2138db098a4e310a0f9de7f153e301fb7610e0ddc3dc8bb",
+  "summary": [
+    "该技能文档介绍如何使用 Hugging Face Dataset Viewer API 查看子集和数据划分、预览和筛选数据行、搜索文本、获取 Parquet 下载链接，以及查看数据集统计信息。",
+    "The skill documentation covers using the Hugging Face Dataset Viewer API to inspect subsets and splits, preview and filter rows, search text, retrieve Parquet download URLs, and check dataset statistics."
+  ],
+  "tested": false,
+  "type": "skills",
+  "verificationSources": [
+    "https://github.com/huggingface/skills/blob/main/skills/huggingface-datasets/SKILL.md"
+  ],
+  "verifiedAt": "2026-11-25"
+}

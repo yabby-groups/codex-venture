@@ -1,0 +1,28 @@
+{
+  "addedAt": "2026-11-25",
+  "categories": [
+    [
+      "贸易数据查询",
+      "Trade Data Lookup"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-25",
+  "id": "resource-031f92347c00ddce46d603668880261e8c2b0b294864a858e665d5dd16626235",
+  "identity": "mcp:ai.agentapihub/customs-bill-of-lading-import-export-trade-mcp",
+  "name": "ai.agentapihub/customs-bill-of-lading-import-export-trade-mcp",
+  "registryId": "ai.agentapihub/customs-bill-of-lading-import-export-trade-mcp",
+  "site": "https://registry.modelcontextprotocol.io/v0.1/servers/ai.agentapihub%2Fcustoms-bill-of-lading-import-export-trade-mcp/versions/1.2.0",
+  "sourceSignature": "9f930382638596102f661fff90383611d5f7c104a0ffbf799676ba2b07a1b395",
+  "summary": [
+    "据 AgentAPIHub 介绍，这个 MCP API 可查询全球提单货运记录、HS 商品编码，以及进口商、出口商和供应商的贸易数据。",
+    "AgentAPIHub lists an MCP API for looking up global shipment records from bills of lading, HS codes, and trade data on importers, exporters, and suppliers."
+  ],
+  "tested": false,
+  "transport": "streamable-http",
+  "type": "mcp",
+  "verificationSources": [
+    "https://registry.modelcontextprotocol.io/v0.1/servers/ai.agentapihub%2Fcustoms-bill-of-lading-import-export-trade-mcp/versions/1.2.0"
+  ],
+  "verifiedAt": "2026-11-25",
+  "version": "1.2.0"
+}

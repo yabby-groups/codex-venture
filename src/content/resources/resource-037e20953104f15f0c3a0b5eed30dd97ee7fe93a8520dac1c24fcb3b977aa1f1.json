@@ -1,0 +1,29 @@
+{
+  "addedAt": "2026-11-25",
+  "categories": [
+    [
+      "文本转语音",
+      "Text-to-Speech"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-25",
+  "id": "resource-037e20953104f15f0c3a0b5eed30dd97ee7fe93a8520dac1c24fcb3b977aa1f1",
+  "identity": "hf:cstr/qwen3-tts-1.7b-customvoice-gguf",
+  "name": "cstr/qwen3-tts-1.7b-customvoice-GGUF",
+  "site": "https://huggingface.co/cstr/qwen3-tts-1.7b-customvoice-GGUF",
+  "sourceSignature": "479c1d9cfaa91b0d9e7c5308473d550016f0e2e22162c71b1a5df71be1d91626",
+  "summary": [
+    "发布者提供 Qwen3-TTS-12Hz-1.7B-CustomVoice 的 GGUF 转换版，用于将文本合成为语音。",
+    "The publisher provides a GGUF conversion of Qwen3-TTS-12Hz-1.7B-CustomVoice for generating speech from text."
+  ],
+  "tags": [
+    "text-to-speech"
+  ],
+  "tested": false,
+  "type": "models",
+  "verificationSources": [
+    "https://huggingface.co/api/models?cursor=eyIkb3IiOlt7ImRvd25sb2FkcyI6MTc4ODgsIl9pZCI6eyIkZ3QiOiI2YWIyNzhjMjhlZGY1YjRiOTYxN2EwMzkifX0seyJkb3dubG9hZHMiOnsiJGx0IjoxNzg4OH19LHsiZG93bmxvYWRzIjpudWxsfV0sInNlYXJjaFNlcXVlbmNlVG9rZW4iOiJDSy9YeVFJYUNTRUFBQUFBQUhqUlFCb09XZ3hxc25qQ2p0OWJTNVlYb0RraURsb01hcko0d283ZlcwdVdGNkE1In0%3D&direction=-1&full=true&limit=30&pipeline_tag=text-to-speech&sort=downloads",
+    "https://huggingface.co/cstr/qwen3-tts-1.7b-customvoice-GGUF/raw/main/README.md"
+  ],
+  "verifiedAt": "2026-11-25"
+}

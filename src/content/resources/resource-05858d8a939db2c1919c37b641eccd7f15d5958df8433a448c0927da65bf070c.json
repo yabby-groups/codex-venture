@@ -1,0 +1,30 @@
+{
+  "addedAt": "2026-11-25",
+  "categories": [
+    [
+      "编程辅助",
+      "Coding Assistance"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-25",
+  "id": "resource-05858d8a939db2c1919c37b641eccd7f15d5958df8433a448c0927da65bf070c",
+  "identity": "openvsx:grik.ricochet",
+  "install": "https://open-vsx.org/extension/grik/ricochet",
+  "name": "Ricochet",
+  "platforms": [
+    "Open VSX"
+  ],
+  "site": "https://open-vsx.org/extension/grik/ricochet",
+  "sourceSignature": "2981222b13abb33d99a0fa41798c70b41777cf595afab291188f8fedf4be57cd",
+  "summary": [
+    "据 Ricochet 的页面介绍，它提供面向 VS Code 的编程助手，并可通过 Ether Mode 在聊天应用中远程操作开发环境。",
+    "Ricochet’s listing describes a coding assistant for VS Code and an Ether Mode for remotely controlling the development environment through a messaging app."
+  ],
+  "tested": false,
+  "type": "plugins",
+  "verificationSources": [
+    "https://open-vsx.org/api/-/search?offset=50&query=coding+assistant&size=25"
+  ],
+  "verifiedAt": "2026-11-25",
+  "version": "0.2.14"
+}

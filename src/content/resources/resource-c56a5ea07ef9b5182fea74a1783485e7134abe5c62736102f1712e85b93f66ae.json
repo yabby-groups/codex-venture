@@ -1,0 +1,31 @@
+{
+  "addedAt": "2026-11-25",
+  "categories": [
+    [
+      "静态视觉设计",
+      "Static Visual Design"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-25",
+  "id": "resource-c56a5ea07ef9b5182fea74a1783485e7134abe5c62736102f1712e85b93f66ae",
+  "identity": "github-skill:1061953414:skills/canvas-design/SKILL.md",
+  "name": "canvas-design",
+  "platforms": [
+    "Claude"
+  ],
+  "repository": "https://github.com/anthropics/skills",
+  "repositoryId": "1061953414",
+  "site": "https://github.com/anthropics/skills/blob/main/skills/canvas-design/SKILL.md",
+  "sourcePath": "skills/canvas-design/SKILL.md",
+  "sourceSignature": "18cda54d2e4662af7c082bbfc5200b1c7c39d3f55713007a08669446763904c7",
+  "summary": [
+    "该技能文档介绍如何构思视觉风格，并将其用于创作原创海报或其他静态设计，输出为 PNG 或 PDF。",
+    "The skill documentation describes how to develop a visual concept and turn it into an original poster or other static design in PNG or PDF format."
+  ],
+  "tested": false,
+  "type": "skills",
+  "verificationSources": [
+    "https://github.com/anthropics/skills/blob/main/skills/canvas-design/SKILL.md"
+  ],
+  "verifiedAt": "2026-11-25"
+}

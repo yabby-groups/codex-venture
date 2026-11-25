@@ -1,0 +1,28 @@
+{
+  "addedAt": "2026-11-25",
+  "categories": [
+    [
+      "AI 智能体开发学习",
+      "AI Agent Development Education"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-25",
+  "id": "resource-92ccd067e9965f627cf63b7ac79efe76cceaaa615e24f85550d5c7ef76778dbd",
+  "identity": "github:1053118194",
+  "license": "Apache-2.0",
+  "name": "bojieli/ai-agent-book",
+  "repository": "https://github.com/bojieli/ai-agent-book",
+  "repositoryId": "1053118194",
+  "site": "https://github.com/bojieli/ai-agent-book",
+  "sourceSignature": "82e18f92b05b14dbe154bf95c98316d795ff680ee467e406b5dcdacaaa051ec7",
+  "summary": [
+    "据仓库介绍，读者可阅读李博杰所著《深入理解 AI Agent：设计原理与工程实践》的全文及编译版 PDF，并按章节查阅配套代码。",
+    "The repository lists the full text and compiled PDF of Bojie Li’s book on AI agent design and engineering, along with companion code organized by chapter."
+  ],
+  "tested": false,
+  "type": "tools",
+  "verificationSources": [
+    "https://api.github.com/search/repositories?page=1&per_page=30&q=topic%3Arag+archived%3Afalse+fork%3Afalse&sort=stars"
+  ],
+  "verifiedAt": "2026-11-25"
+}

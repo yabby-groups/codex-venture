@@ -1,0 +1,28 @@
+{
+  "addedAt": "2026-11-25",
+  "categories": [
+    [
+      "语音合成",
+      "Speech synthesis"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-25",
+  "id": "resource-e8b8bd44920bd3a6a756e85ba09bdc147dcdf4ec9aece18af6d2b8bf89a24537",
+  "identity": "github:1057664813",
+  "license": "Apache-2.0",
+  "name": "OpenBMB/VoxCPM",
+  "repository": "https://github.com/OpenBMB/VoxCPM",
+  "repositoryId": "1057664813",
+  "site": "https://github.com/OpenBMB/VoxCPM",
+  "sourceSignature": "97552ec50fa0473ccec5636899a65257c8b534b22eb6778d8cda844c12bdc9c4",
+  "summary": [
+    "从文本生成多语言语音。发布者将 VoxCPM2 描述为无需分词器的模型，并称其支持音色设计和声音克隆。",
+    "Generate multilingual speech from text. The publisher describes VoxCPM2 as a tokenizer-free model that also supports voice design and voice cloning."
+  ],
+  "tested": false,
+  "type": "open-source",
+  "verificationSources": [
+    "https://api.github.com/search/repositories?page=1&per_page=30&q=topic%3Atext-to-speech+archived%3Afalse+fork%3Afalse&sort=stars"
+  ],
+  "verifiedAt": "2026-11-25"
+}

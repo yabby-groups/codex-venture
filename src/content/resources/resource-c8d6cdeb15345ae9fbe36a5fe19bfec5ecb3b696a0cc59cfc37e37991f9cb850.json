@@ -1,0 +1,28 @@
+{
+  "addedAt": "2026-11-25",
+  "categories": [
+    [
+      "本地模型部署",
+      "Local Model Deployment"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-25",
+  "id": "resource-c8d6cdeb15345ae9fbe36a5fe19bfec5ecb3b696a0cc59cfc37e37991f9cb850",
+  "identity": "github-skill:1102903896:skills/huggingface-local-models/SKILL.md",
+  "name": "huggingface-local-models",
+  "repository": "https://github.com/huggingface/skills",
+  "repositoryId": "1102903896",
+  "site": "https://github.com/huggingface/skills/blob/main/skills/huggingface-local-models/SKILL.md",
+  "sourcePath": "skills/huggingface-local-models/SKILL.md",
+  "sourceSignature": "2ebbf8018c8acdc35dd6e303a3713ada806d8c67342f266727b57a0c43b16277",
+  "summary": [
+    "该技能文档介绍如何在 Hugging Face 查找 GGUF 文件、选择量化版本，以及通过 llama.cpp 的命令行工具或服务器在本地运行模型。",
+    "The skill documentation covers finding GGUF files on Hugging Face, choosing a quantization, and running the model locally with llama.cpp from the command line or as a server."
+  ],
+  "tested": false,
+  "type": "skills",
+  "verificationSources": [
+    "https://github.com/huggingface/skills/blob/main/skills/huggingface-local-models/SKILL.md"
+  ],
+  "verifiedAt": "2026-11-25"
+}

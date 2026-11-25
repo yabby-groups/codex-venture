@@ -1,0 +1,29 @@
+{
+  "addedAt": "2026-11-25",
+  "categories": [
+    [
+      "流式语音识别",
+      "Streaming Speech Recognition"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-25",
+  "id": "resource-00a1735f66707331dd8593905db2107baf92df2c0f29bf97d7125322c7641bbc",
+  "identity": "hf:nvidia/nemotron-speech-streaming-en-0.6b",
+  "name": "nvidia/nemotron-speech-streaming-en-0.6b",
+  "site": "https://huggingface.co/nvidia/nemotron-speech-streaming-en-0.6b",
+  "sourceSignature": "c004e81660b74c68ac7164547d596703de8f81fd12c30c57b1970dc5b9601a28",
+  "summary": [
+    "NVIDIA 说明了如何实时转录输入的英语语音、调整流式音频分块大小，以及通过其托管的 NIM API 试用转录。",
+    "NVIDIA documents how to transcribe English speech as audio arrives, adjust the streaming chunk size, and try transcription through its hosted NIM API."
+  ],
+  "tags": [
+    "automatic-speech-recognition"
+  ],
+  "tested": false,
+  "type": "models",
+  "verificationSources": [
+    "https://huggingface.co/api/models?cursor=eyIkb3IiOlt7ImRvd25sb2FkcyI6MTEzMzI0LCJfaWQiOnsiJGd0IjoiNmE2YTM5N2VjNTdiNDM2MzJjNjQ0ZWI4In19LHsiZG93bmxvYWRzIjp7IiRsdCI6MTEzMzI0fX0seyJkb3dubG9hZHMiOm51bGx9XSwic2VhcmNoU2VxdWVuY2VUb2tlbiI6IkNOMkR4QUlhQ1NFQUFBQUF3S3I3UUJvT1dneHFhamwreFh0RFl5eGtUcmdpRGxvTWFtbzVmc1Y3UTJNc1pFNjQifQ%3D%3D&direction=-1&full=true&limit=30&pipeline_tag=automatic-speech-recognition&sort=downloads",
+    "https://huggingface.co/nvidia/nemotron-speech-streaming-en-0.6b/raw/main/README.md"
+  ],
+  "verifiedAt": "2026-11-25"
+}

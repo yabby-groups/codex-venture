@@ -1,0 +1,28 @@
+{
+  "addedAt": "2026-11-25",
+  "categories": [
+    [
+      "界面设计",
+      "UI Design"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-25",
+  "id": "resource-94159ff7c5c5b06d7448bf47a9a82bb6560be64ac7e133cf2db560e5289beea1",
+  "identity": "github:1418521605",
+  "license": "MIT",
+  "name": "ZSeven-W/codex-openpencil",
+  "repository": "https://github.com/ZSeven-W/codex-openpencil",
+  "repositoryId": "1418521605",
+  "site": "https://github.com/ZSeven-W/codex-openpencil",
+  "sourceSignature": "3bffb0de5cdc9b93437578162ebdcd36cb465d2121ff0e69f6f46f32235b8f37",
+  "summary": [
+    "据发布者介绍，这款面向 OpenPencil 的 Codex 插件可根据提示生成可编辑的 .op 文件、细化选中的界面元素，并生成图像素材。",
+    "The publisher describes a Codex plugin for OpenPencil that generates editable .op files from prompts, refines selected UI elements, and generates image assets."
+  ],
+  "tested": false,
+  "type": "tools",
+  "verificationSources": [
+    "https://api.github.com/search/repositories?page=1&per_page=30&q=topic%3Aai-design+archived%3Afalse+fork%3Afalse&sort=stars"
+  ],
+  "verifiedAt": "2026-11-25"
+}

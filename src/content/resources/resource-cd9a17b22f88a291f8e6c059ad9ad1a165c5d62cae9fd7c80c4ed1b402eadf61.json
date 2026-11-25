@@ -1,0 +1,31 @@
+{
+  "addedAt": "2026-11-25",
+  "categories": [
+    [
+      "开发文档查询",
+      "Developer Documentation Lookup"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-25",
+  "id": "resource-cd9a17b22f88a291f8e6c059ad9ad1a165c5d62cae9fd7c80c4ed1b402eadf61",
+  "identity": "github-skill:1103643573:skills/.system/openai-docs/SKILL.md",
+  "name": "openai-docs",
+  "platforms": [
+    "Codex"
+  ],
+  "repository": "https://github.com/openai/skills",
+  "repositoryId": "1103643573",
+  "site": "https://github.com/openai/skills/blob/main/skills/.system/openai-docs/SKILL.md",
+  "sourcePath": "skills/.system/openai-docs/SKILL.md",
+  "sourceSignature": "00c8b4cb6fb5c1037f74b159f8f16107b4e4d1e0edb52919ce3bcf6ee390d053",
+  "summary": [
+    "该技能文档介绍如何查找并引用 OpenAI 官方开发文档，解答 API 和 Codex 相关问题，包括模型选择与 API 迁移。",
+    "The skill documentation describes how to find and cite official OpenAI developer documentation for API and Codex questions, including model selection and API migrations."
+  ],
+  "tested": false,
+  "type": "skills",
+  "verificationSources": [
+    "https://github.com/openai/skills/blob/main/skills/.system/openai-docs/SKILL.md"
+  ],
+  "verifiedAt": "2026-11-25"
+}

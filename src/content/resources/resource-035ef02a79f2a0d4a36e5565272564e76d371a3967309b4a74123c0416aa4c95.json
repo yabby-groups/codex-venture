@@ -1,0 +1,29 @@
+{
+  "addedAt": "2026-11-25",
+  "categories": [
+    [
+      "多模态文本生成",
+      "Multimodal Text Generation"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-25",
+  "id": "resource-035ef02a79f2a0d4a36e5565272564e76d371a3967309b4a74123c0416aa4c95",
+  "identity": "hf:davidau/qwen3.8-27b-cold-fusion-gain-v1.1-nm-dau-neo-max-mtp-gguf",
+  "name": "DavidAU/Qwen3.8-27B-Cold-Fusion-GAIN-V1.1-NM-DAU-NEO-MAX-MTP-GGUF",
+  "site": "https://huggingface.co/DavidAU/Qwen3.8-27B-Cold-Fusion-GAIN-V1.1-NM-DAU-NEO-MAX-MTP-GGUF",
+  "sourceSignature": "1c25d352ebde98a7dad90cb64be3e1eab3352b6396e452ce2b7c5d0b08b2ebcc",
+  "summary": [
+    "模型页面将此 GGUF 版本列为图文转文本模型，并展示了如何让模型直接作答。",
+    "The model listing describes a GGUF release that generates text from image and text inputs. The model card also shows how to request direct answers."
+  ],
+  "tags": [
+    "image-text-to-text"
+  ],
+  "tested": false,
+  "type": "models",
+  "verificationSources": [
+    "https://huggingface.co/DavidAU/Qwen3.8-27B-Cold-Fusion-GAIN-V1.1-NM-DAU-NEO-MAX-MTP-GGUF/raw/main/README.md",
+    "https://huggingface.co/api/models?cursor=eyIkb3IiOlt7ImRvd25sb2FkcyI6NTc1MTExLCJfaWQiOnsiJGd0IjoiNmE2N2RjYzgyMDcxODM5MzQ3MDQ0MDRmIn19LHsiZG93bmxvYWRzIjp7IiRsdCI6NTc1MTExfX0seyJkb3dubG9hZHMiOm51bGx9XSwic2VhcmNoU2VxdWVuY2VUb2tlbiI6IkNMbjN5UUlhQ1NFQUFBQUFEbzBoUVJvT1dneHFaOXpJSUhHRGswY0VRRThpRGxvTWFtZmN5Q0J4ZzVOSEJFQlAifQ%3D%3D&direction=-1&full=true&limit=30&pipeline_tag=image-text-to-text&sort=downloads"
+  ],
+  "verifiedAt": "2026-11-25"
+}

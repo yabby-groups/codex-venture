@@ -1,0 +1,31 @@
+{
+  "addedAt": "2026-11-25",
+  "categories": [
+    [
+      "精灵图动画制作",
+      "Sprite animation"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-25",
+  "id": "resource-cf6141eea4d9b70cf4b77ec73bddfcbb9991798a23368cd3f1349f8c77e1e1bf",
+  "identity": "github-skill:1103643573:skills/.curated/hatch-pet/SKILL.md",
+  "name": "hatch-pet",
+  "platforms": [
+    "Codex"
+  ],
+  "repository": "https://github.com/openai/skills",
+  "repositoryId": "1103643573",
+  "site": "https://github.com/openai/skills/blob/main/skills/.curated/hatch-pet/SKILL.md",
+  "sourcePath": "skills/.curated/hatch-pet/SKILL.md",
+  "sourceSignature": "96b64999076efcb67681e0c054018decdd4a50801b03fd6e4953fd1ad12b43e8",
+  "summary": [
+    "将角色原画或视觉参考做成动画宠物。发布者介绍了如何组装并目视检查 8×9 精灵图集，再与 pet.json 文件一同打包供 Codex 使用。",
+    "Turn character art or visual references into an animated pet. The publisher documents assembling and visually checking an 8×9 sprite atlas, then packaging it with a pet.json file for Codex."
+  ],
+  "tested": false,
+  "type": "skills",
+  "verificationSources": [
+    "https://github.com/openai/skills/blob/main/skills/.curated/hatch-pet/SKILL.md"
+  ],
+  "verifiedAt": "2026-11-25"
+}

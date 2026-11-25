@@ -1,0 +1,29 @@
+{
+  "addedAt": "2026-11-25",
+  "categories": [
+    [
+      "AI 编程辅助",
+      "AI Coding Assistance"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-25",
+  "id": "resource-07cc3b213c6c206b09d07fdeff1fcc6072ecc2cc02396e12a891ca001027c406",
+  "identity": "jetbrains:20587",
+  "install": "https://plugins.jetbrains.com/plugin/20587-codegeex-ai-coding-assistant",
+  "name": "CodeGeeX: AI Coding Assistant",
+  "platforms": [
+    "JetBrains Marketplace"
+  ],
+  "site": "https://plugins.jetbrains.com/plugin/20587-codegeex-ai-coding-assistant",
+  "sourceSignature": "d236fcb1eaeda05294b525ac929779f6f1f582d1cf74cf6bf35397613d316abc",
+  "summary": [
+    "据市场页面介绍，CodeGeeX 可为多种编程语言生成和补全代码。",
+    "The marketplace listing describes CodeGeeX as a coding assistant that generates and completes code in multiple programming languages."
+  ],
+  "tested": false,
+  "type": "plugins",
+  "verificationSources": [
+    "https://plugins.jetbrains.com/plugin/20587-codegeex-ai-coding-assistant"
+  ],
+  "verifiedAt": "2026-11-25"
+}

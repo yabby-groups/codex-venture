@@ -1,0 +1,28 @@
+{
+  "addedAt": "2026-11-25",
+  "categories": [
+    [
+      "域名与科研资料查询",
+      "Domain and Research Lookup"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-25",
+  "id": "resource-000090208c04e5c385a50e5cd1b0070f74abd6c274863d5bc42be4245f3e7009",
+  "identity": "mcp:ai.agentapihub/sec-edgar-crypto-real-estate-pinterest-mcp",
+  "name": "AgentAPIHub — Domain RDAP/WHOIS/DNS/SSL, Shodan CVEs, arXiv & ClinicalTrials MCP",
+  "registryId": "ai.agentapihub/sec-edgar-crypto-real-estate-pinterest-mcp",
+  "site": "https://registry.modelcontextprotocol.io/v0.1/servers/ai.agentapihub%2Fsec-edgar-crypto-real-estate-pinterest-mcp/versions/1.0.0",
+  "sourceSignature": "969eba69b9fcbb4c196b6668a652a6ae29b1982096d5fd9ba4611303b2554c76",
+  "summary": [
+    "据 AgentAPIHub 介绍，这个 MCP 服务可查询域名注册信息、DNS 记录和 SSL 证书信息，也可在 OpenAlex 和 arXiv 查找论文，在 ClinicalTrials.gov 查找临床研究。",
+    "AgentAPIHub lists an MCP server for looking up domain registration, DNS records, and SSL certificate information, as well as finding papers in OpenAlex and arXiv and studies in ClinicalTrials.gov."
+  ],
+  "tested": false,
+  "transport": "streamable-http",
+  "type": "mcp",
+  "verificationSources": [
+    "https://registry.modelcontextprotocol.io/v0.1/servers/ai.agentapihub%2Fsec-edgar-crypto-real-estate-pinterest-mcp/versions/1.0.0"
+  ],
+  "verifiedAt": "2026-11-25",
+  "version": "1.0.0"
+}

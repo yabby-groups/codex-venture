@@ -1,0 +1,29 @@
+{
+  "addedAt": "2026-11-25",
+  "categories": [
+    [
+      "AI 编程辅助",
+      "AI Coding Assistance"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-25",
+  "id": "resource-07c994d46e1ea1fb9256f11d67f0d46ec67c190a7c9176cbf8e9b80aba610971",
+  "identity": "jetbrains:29268",
+  "install": "https://plugins.jetbrains.com/plugin/29268-intellego-grok-ai-assistant",
+  "name": "Intellego Grok AI Assistant",
+  "platforms": [
+    "JetBrains Marketplace"
+  ],
+  "site": "https://plugins.jetbrains.com/plugin/29268-intellego-grok-ai-assistant",
+  "sourceSignature": "4b39e777bc7e49c98e4fcbbc0020892a3dd8a79374fd5a787583f6065165fd4a",
+  "summary": [
+    "据市场页面介绍，此插件提供 Grok 登录测试功能，符合条件的 Grok 订阅用户可在编辑器内使用聊天和智能体模式。",
+    "The marketplace listing describes a beta Grok sign-in feature for using chat and agent mode in the editor with an eligible Grok subscription."
+  ],
+  "tested": false,
+  "type": "plugins",
+  "verificationSources": [
+    "https://plugins.jetbrains.com/plugin/29268-intellego-grok-ai-assistant"
+  ],
+  "verifiedAt": "2026-11-25"
+}

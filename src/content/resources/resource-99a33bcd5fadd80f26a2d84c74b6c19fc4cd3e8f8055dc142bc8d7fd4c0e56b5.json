@@ -1,0 +1,28 @@
+{
+  "addedAt": "2026-11-25",
+  "categories": [
+    [
+      "多智能体协作",
+      "Multi-agent coordination"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-25",
+  "id": "resource-99a33bcd5fadd80f26a2d84c74b6c19fc4cd3e8f8055dc142bc8d7fd4c0e56b5",
+  "identity": "github:1198124295",
+  "license": "Apache-2.0",
+  "name": "mvschwarz/openrig",
+  "repository": "https://github.com/mvschwarz/openrig",
+  "repositoryId": "1198124295",
+  "site": "https://github.com/mvschwarz/openrig",
+  "sourceSignature": "7dfe32e6c556aa098708ff661c0bcba94948c6eca789c6cbfb78add86940c2c6",
+  "summary": [
+    "将 Claude Code、Codex 和 Pi 智能体组织成可持续协作的团队。据发布者介绍，团队可以分配角色和任务负责人，并共享上下文。",
+    "Organize Claude Code, Codex, and Pi agents into persistent teams. The publisher describes assigning roles and task ownership while sharing context across the team."
+  ],
+  "tested": false,
+  "type": "tools",
+  "verificationSources": [
+    "https://api.github.com/search/repositories?page=1&per_page=30&q=topic%3Aai-coding+archived%3Afalse+fork%3Afalse&sort=stars"
+  ],
+  "verifiedAt": "2026-11-25"
+}

@@ -1,0 +1,28 @@
+{
+  "addedAt": "2026-11-25",
+  "categories": [
+    [
+      "智能体技能检索",
+      "Agent Skill Discovery"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-25",
+  "id": "resource-95e9f0a04b2f7bbc3e349b4b1912263dcbbe3dae1ffb3b1670dfce9b9e7f0116",
+  "identity": "github:1134426800",
+  "license": "MIT",
+  "name": "sickn33/agentic-awesome-skills",
+  "repository": "https://github.com/sickn33/agentic-awesome-skills",
+  "repositoryId": "1134426800",
+  "site": "https://github.com/sickn33/agentic-awesome-skills",
+  "sourceSignature": "4ddb0406494c4c94f5775ec1446d708cf6bfd96a18029535e079ff9e7e1ebcde",
+  "summary": [
+    "据发布者介绍，该项目汇集了可复用的 AI 智能体技能。AAS Core 让智能体检索本地目录、选择技能并预览计划。",
+    "The publisher describes a catalog of reusable AI agent skills. AAS Core lets agents search the local catalog, select skills, and preview a plan."
+  ],
+  "tested": false,
+  "type": "tools",
+  "verificationSources": [
+    "https://api.github.com/search/repositories?page=1&per_page=30&q=topic%3Aai-coding+archived%3Afalse+fork%3Afalse&sort=stars"
+  ],
+  "verifiedAt": "2026-11-25"
+}

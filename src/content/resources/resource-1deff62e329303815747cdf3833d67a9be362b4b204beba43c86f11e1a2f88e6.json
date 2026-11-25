@@ -1,0 +1,28 @@
+{
+  "addedAt": "2026-11-25",
+  "categories": [
+    [
+      "社交媒体数据提取",
+      "Social media data extraction"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-25",
+  "id": "resource-1deff62e329303815747cdf3833d67a9be362b4b204beba43c86f11e1a2f88e6",
+  "identity": "mcp:ai.agentapihub/threads-instagram-truthsocial-linkedin-posts-mcp",
+  "name": "ai.agentapihub/threads-instagram-truthsocial-linkedin-posts-mcp",
+  "registryId": "ai.agentapihub/threads-instagram-truthsocial-linkedin-posts-mcp",
+  "site": "https://registry.modelcontextprotocol.io/v0.1/servers/ai.agentapihub%2Fthreads-instagram-truthsocial-linkedin-posts-mcp/versions/1.5.0",
+  "sourceSignature": "96fb03b8ee60096d585ea7cebd8907e2fb0807d2758c85825314285d80b3801f",
+  "summary": [
+    "通过 MCP 提取社交媒体帖子和资料。发布者列出的范围包括 Threads、Instagram Reels 和个人资料、Truth Social 帖子，以及 LinkedIn 公司页面和个人资料。",
+    "Retrieve social media posts and profile data through MCP. The publisher lists Threads, Instagram Reels and profiles, Truth Social posts, and LinkedIn company pages and profiles."
+  ],
+  "tested": false,
+  "transport": "streamable-http",
+  "type": "mcp",
+  "verificationSources": [
+    "https://registry.modelcontextprotocol.io/v0.1/servers/ai.agentapihub%2Fthreads-instagram-truthsocial-linkedin-posts-mcp/versions/1.5.0"
+  ],
+  "verifiedAt": "2026-11-25",
+  "version": "1.5.0"
+}

@@ -1,0 +1,29 @@
+{
+  "addedAt": "2026-11-25",
+  "categories": [
+    [
+      "文生图",
+      "Text-to-image generation"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-25",
+  "id": "resource-050ee268ea248852bb2fb6cca24452378b995a61c4d4b38628a66971411e6c70",
+  "identity": "hf:comfy-org/chroma1-hd",
+  "name": "Comfy-Org/Chroma1-HD",
+  "site": "https://huggingface.co/Comfy-Org/Chroma1-HD",
+  "sourceSignature": "41ea485a6e044cda4acbee6a5608e3d09b977e24b766796ed94458ba467bb428",
+  "summary": [
+    "使用 Chroma1-HD 根据文字提示生成图像。发布者将其列为单文件扩散模型。",
+    "Generate images from text prompts with Chroma1-HD. The publisher lists it as a single-file diffusion model."
+  ],
+  "tags": [
+    "text-to-image"
+  ],
+  "tested": false,
+  "type": "models",
+  "verificationSources": [
+    "https://huggingface.co/Comfy-Org/Chroma1-HD/raw/main/README.md",
+    "https://huggingface.co/api/models?cursor=eyIkb3IiOlt7ImRvd25sb2FkcyI6NzQxMTksIl9pZCI6eyIkZ3QiOiI2YWM0YzBmOWNlYTQ2ZjMyNzEyOTgxZmIifX0seyJkb3dubG9hZHMiOnsiJGx0Ijo3NDExOX19LHsiZG93bmxvYWRzIjpudWxsfV0sInNlYXJjaFNlcXVlbmNlVG9rZW4iOiJDTDZndEFJYUNTRUFBQUFBY0JqeVFCb09XZ3hxeE1ENXpxUnZNbkVwZ2ZzaURsb01hc1RBK2M2a2J6SnhLWUg3In0%3D&direction=-1&full=true&limit=30&pipeline_tag=text-to-image&sort=downloads"
+  ],
+  "verifiedAt": "2026-11-25"
+}

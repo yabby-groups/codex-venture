@@ -1,0 +1,28 @@
+{
+  "addedAt": "2026-11-25",
+  "categories": [
+    [
+      "提示词工程学习",
+      "Prompt Engineering Education"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-25",
+  "id": "resource-e5d8e359be12342c76763de9d44d0d02d1310aeb769d0cb1f1533c784c9535e5",
+  "identity": "github:599716050",
+  "license": "Apache-2.0",
+  "name": "promptslab/Awesome-Prompt-Engineering",
+  "repository": "https://github.com/promptslab/Awesome-Prompt-Engineering",
+  "repositoryId": "599716050",
+  "site": "https://github.com/promptslab/Awesome-Prompt-Engineering",
+  "sourceSignature": "7fa5090350b17eeae443141cf72f333ba2f4338e343c85d00a77fb4c4941c5f2",
+  "summary": [
+    "据维护者介绍，这个仓库汇集了精选的提示词工程资料，主要涉及 GPT、ChatGPT 和 PaLM。",
+    "The maintainers describe a curated collection for finding prompt engineering resources focused on GPT, ChatGPT, and PaLM."
+  ],
+  "tested": false,
+  "type": "open-source",
+  "verificationSources": [
+    "https://api.github.com/search/repositories?page=1&per_page=30&q=topic%3Atext-to-speech+archived%3Afalse+fork%3Afalse&sort=stars"
+  ],
+  "verifiedAt": "2026-11-25"
+}

@@ -1,0 +1,28 @@
+{
+  "addedAt": "2026-11-25",
+  "categories": [
+    [
+      "搜索与数据检索",
+      "Search and data retrieval"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-25",
+  "id": "resource-14bf7f71083305d79bf4cf02ed1dccd0a7301bae2e03e398b8a91bf20281b910",
+  "identity": "mcp:ai.agentapihub/youtube-transcript-video-subtitles-search-mcp",
+  "name": "AgentAPIHub — Zero-Signup x402 Base USDC Data & Search MCP Hub",
+  "registryId": "ai.agentapihub/youtube-transcript-video-subtitles-search-mcp",
+  "site": "https://registry.modelcontextprotocol.io/v0.1/servers/ai.agentapihub%2Fyoutube-transcript-video-subtitles-search-mcp/versions/1.0.0",
+  "sourceSignature": "5cfa9e894844a357484c81609efd9089cf257af01e6704cac7fc5e781b0f752b",
+  "summary": [
+    "通过同一个 MCP 服务搜索和检索多个来源的数据。发布者列出的覆盖范围包括 X、视频、电商、招聘和美国证交会的 EDGAR 数据库。",
+    "Use one MCP hub to run searches and look up data across sources. The publisher lists X, video, commerce, jobs, and SEC EDGAR."
+  ],
+  "tested": false,
+  "transport": "streamable-http",
+  "type": "mcp",
+  "verificationSources": [
+    "https://registry.modelcontextprotocol.io/v0.1/servers/ai.agentapihub%2Fyoutube-transcript-video-subtitles-search-mcp/versions/1.0.0"
+  ],
+  "verifiedAt": "2026-11-25",
+  "version": "1.0.0"
+}

@@ -1,0 +1,29 @@
+{
+  "addedAt": "2026-11-25",
+  "categories": [
+    [
+      "图像转 3D",
+      "Image-to-3D generation"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-25",
+  "id": "resource-03dbe98b421f34e0efe72966751fd6c0d3830deae83af3c9e6ec6a2fabed61b4",
+  "identity": "hf:zjwfufu/smd-trellis.2",
+  "name": "zjwfufu/SMD-TRELLIS.2",
+  "site": "https://huggingface.co/zjwfufu/SMD-TRELLIS.2",
+  "sourceSignature": "cff4375ff9028bc82011ad9d1e4bfde4fbd752cdff563b5acbde21186934b4ac",
+  "summary": [
+    "从图像重建带纹理的 3D 网格。发布者展示了导出的 GLB，并注明示例中的形状和纹理各用四步生成。",
+    "Reconstruct a textured 3D mesh from an image. The publisher shows a GLB export and reports four steps each for shape and texture generation in its example."
+  ],
+  "tags": [
+    "image-to-3d"
+  ],
+  "tested": false,
+  "type": "models",
+  "verificationSources": [
+    "https://huggingface.co/api/models?cursor=eyIkb3IiOlt7ImRvd25sb2FkcyI6MjM1LCJfaWQiOnsiJGd0IjoiNjk0MjY5M2RkMmUxYmMyYWU1NWZiMDNjIn19LHsiZG93bmxvYWRzIjp7IiRsdCI6MjM1fX0seyJkb3dubG9hZHMiOm51bGx9XSwic2VhcmNoU2VxdWVuY2VUb2tlbiI6IkNLNkJwZ0lhQ1NFQUFBQUFBR0J0UUJvT1dneHBRbWs5MHVHOEt1VmZzRHdpRGxvTWFVSnBQZExodkNybFg3QTgifQ%3D%3D&direction=-1&full=true&limit=30&pipeline_tag=image-to-3d&sort=downloads",
+    "https://huggingface.co/zjwfufu/SMD-TRELLIS.2/raw/main/README.md"
+  ],
+  "verifiedAt": "2026-11-25"
+}

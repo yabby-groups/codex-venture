@@ -1,0 +1,29 @@
+{
+  "addedAt": "2026-11-25",
+  "categories": [
+    [
+      "文本生成",
+      "Text Generation"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-25",
+  "id": "resource-009d049d94c8b891efdc4af97c59e0fd771b3efa5e7ee447fb0463532d00d7b4",
+  "identity": "hf:unsloth/qwen3-4b-gguf",
+  "name": "unsloth/Qwen3-4B-GGUF",
+  "site": "https://huggingface.co/unsloth/Qwen3-4B-GGUF",
+  "sourceSignature": "1a80247ca382f106def8abce4c44386a4257b3d76d6452303ee061fd08eb5439",
+  "summary": [
+    "Unsloth 提供用于文本生成的 Qwen3-4B GGUF 版本，并说明如何在多轮对话中逐轮切换思考与非思考模式。",
+    "Unsloth lists a GGUF version of Qwen3-4B for text generation and documents how to switch between thinking and non-thinking modes from one turn to the next."
+  ],
+  "tags": [
+    "text-generation"
+  ],
+  "tested": false,
+  "type": "models",
+  "verificationSources": [
+    "https://huggingface.co/api/models?cursor=eyIkb3IiOlt7ImRvd25sb2FkcyI6NTk3NDM1LCJfaWQiOnsiJGd0IjoiNjk4ZDZkYTRlN2UyMDk3ZDAzZTRkYmJhIn19LHsiZG93bmxvYWRzIjp7IiRsdCI6NTk3NDM1fX0seyJkb3dubG9hZHMiOm51bGx9XSwic2VhcmNoU2VxdWVuY2VUb2tlbiI6IkNLcjh0UUlhQ1NFQUFBQUFkanNpUVJvT1dneHBqVzJrNStJSmZRUGsyN29pRGxvTWFZMXRwT2ZpQ1gwRDVOdTYifQ%3D%3D&direction=-1&full=true&limit=30&pipeline_tag=text-generation&sort=downloads",
+    "https://huggingface.co/unsloth/Qwen3-4B-GGUF/raw/main/README.md"
+  ],
+  "verifiedAt": "2026-11-25"
+}

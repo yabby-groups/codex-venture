@@ -1,0 +1,28 @@
+{
+  "addedAt": "2026-11-25",
+  "categories": [
+    [
+      "提示词工作流设计",
+      "Prompt Workflow Design"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-25",
+  "id": "resource-951151b066f9ae36dba0ab9cff743364654372fede707fb3280c137aa59f15ab",
+  "identity": "github:941652610",
+  "license": "MIT",
+  "name": "minipuft/claude-prompts-mcp",
+  "repository": "https://github.com/minipuft/claude-prompts-mcp",
+  "repositoryId": "941652610",
+  "site": "https://github.com/minipuft/claude-prompts-mcp",
+  "sourceSignature": "dc2decac5af5d6e6f2c203b88843fde6096356e5dc16835b728dcdd3a77eecc3",
+  "summary": [
+    "据发布者介绍，此 MCP 服务器可复用提示词模板，将它们串成多步工作流，加入质量检查，并将工作流导出为技能。",
+    "The publisher describes an MCP server for reusing prompt templates, chaining them into multi-step workflows, adding quality checks, and exporting workflows as skills."
+  ],
+  "tested": false,
+  "type": "tools",
+  "verificationSources": [
+    "https://api.github.com/search/repositories?page=1&per_page=30&q=topic%3Aai-automation+archived%3Afalse+fork%3Afalse&sort=stars"
+  ],
+  "verifiedAt": "2026-11-25"
+}

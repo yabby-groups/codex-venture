@@ -1,0 +1,28 @@
+{
+  "addedAt": "2026-11-25",
+  "categories": [
+    [
+      "模型训练与微调",
+      "Model training and fine-tuning"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-25",
+  "id": "resource-cdca1479ce92a53aa7d725fc5d8eba8718a47203d709a3eb91eef9714d2fe62e",
+  "identity": "github-skill:1102903896:skills/huggingface-llm-trainer/SKILL.md",
+  "name": "huggingface-llm-trainer",
+  "repository": "https://github.com/huggingface/skills",
+  "repositoryId": "1102903896",
+  "site": "https://github.com/huggingface/skills/blob/main/skills/huggingface-llm-trainer/SKILL.md",
+  "sourcePath": "skills/huggingface-llm-trainer/SKILL.md",
+  "sourceSignature": "4dc2d44d45bbf2621dfb7e27e0253d90645b98cfc2315d73fc909af1bcd3e913",
+  "summary": [
+    "准备数据集，并在 Hugging Face Jobs 上训练或微调模型。发布者的指南涵盖 TRL 和 Unsloth 工作流、使用 Trackio 监控训练，以及转换为 GGUF 以便本地部署。",
+    "Prepare datasets and train or fine-tune models on Hugging Face Jobs. The publisher’s guide covers TRL and Unsloth workflows, training monitoring with Trackio, and GGUF conversion for local deployment."
+  ],
+  "tested": false,
+  "type": "skills",
+  "verificationSources": [
+    "https://github.com/huggingface/skills/blob/main/skills/huggingface-llm-trainer/SKILL.md"
+  ],
+  "verifiedAt": "2026-11-25"
+}

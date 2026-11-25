@@ -1,0 +1,28 @@
+{
+  "addedAt": "2026-11-25",
+  "categories": [
+    [
+      "工作流调度",
+      "Workflow Scheduling"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-25",
+  "id": "resource-129f162c2163b68b40abb21df16b360aba4e2706c22e31d0beb7bcdc23445203",
+  "identity": "mcp:ai.agentasy/cronjob",
+  "name": "agent-cronjob",
+  "registryId": "ai.agentasy/cronjob",
+  "site": "https://registry.modelcontextprotocol.io/v0.1/servers/ai.agentasy%2Fcronjob/versions/0.0.1",
+  "sourceSignature": "d52cf1ee1aa97466e782650b69a134544f143c2085c576306a00d2e86ac1b0ba",
+  "summary": [
+    "据发布者介绍，此 MCP 服务可为 AI 智能体定时发送带 HMAC 签名的 Webhook 请求，并在投递失败时重试。",
+    "The publisher describes an MCP service that schedules HMAC-signed webhook calls for AI agents and retries failed deliveries."
+  ],
+  "tested": false,
+  "transport": "streamable-http",
+  "type": "mcp",
+  "verificationSources": [
+    "https://registry.modelcontextprotocol.io/v0.1/servers/ai.agentasy%2Fcronjob/versions/0.0.1"
+  ],
+  "verifiedAt": "2026-11-25",
+  "version": "0.0.1"
+}
