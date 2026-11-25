@@ -1990,6 +1990,7 @@
     "1060384e6334241670aacef440965a1ffc9c56f045d606370081a78f3a66fbd1": {
       "attempt": 1795583901.9707522,
       "description": "Hugging Face model listing for mlx-community/Qwen3-TTS-12Hz-1.7B-Base-bf16. Pipeline: text-to-speech.",
+      "done": "published",
       "evidence": "---\nlicense: apache-2.0\ntags:\n- mlx\n- text-to-speech\n- speech\n- speech generation\n- voice cloning\n- tts\n- mlx-audio\n### CLI Example:\n```bash\npython -m mlx_audio.tts.generate --model mlx-community/Qwen3-TTS-12Hz-1.7B-Base-bf16 --text \"Hello, this is a test.\"\n```\n### Python Example:\n```python\nfrom mlx_audio.tts.utils import load_model\nfrom mlx_audio.tts.generate import generate_audio",
       "firstDiscoveredAt": "2026-11-25",
       "identity": "hf:mlx-community/qwen3-tts-12hz-1.7b-base-bf16",
@@ -2046,6 +2047,7 @@
     "10a20282935543055cb8edc2321adec7353fa1ceb7b6ee864d7ff5d663275f9f": {
       "attempt": 1795583903.6796942,
       "description": "Hugging Face model listing for ResembleAI/chatterbox. Pipeline: text-to-speech.",
+      "done": "published",
       "evidence": "---\nlicense: mit\nlanguage:\n- ar\n- da\n- de\n- el\n- en\n- es\n- fi\n# Installation\n```\npip install chatterbox-tts\n# Usage\n```python\nimport torchaudio as ta\nfrom chatterbox.tts import ChatterboxTTS",
       "firstDiscoveredAt": "2026-11-25",
       "identity": "hf:resembleai/chatterbox",
@@ -2101,6 +2103,7 @@
     "10e4f2eccbc39edad80001b52e31131d1c378ae33fa5a1ab799d7eb637738143": {
       "attempt": 1795583904.0507913,
       "description": "Hugging Face model listing for Qwen/Qwen2.5-1.5B-Instruct-GGUF. Pipeline: text-generation.",
+      "done": "published",
       "evidence": "---\nlicense: apache-2.0\nlicense_link: https://huggingface.co/Qwen/Qwen2.5-1.5B-Instruct-GGUF/blob/main/LICENSE\nlanguage:\n- en\npipeline_tag: text-generation\nbase_model: Qwen/Qwen2.5-1.5B-Instruct\ntags:\n- chat",
       "firstDiscoveredAt": "2026-11-25",
       "identity": "hf:qwen/qwen2.5-1.5b-instruct-gguf",
@@ -2138,6 +2141,7 @@
     "115a1a5440b15e2544e2133250750ed1557cf214be94c2688ec6b218cfcd1d35": {
       "attempt": 1795583904.422359,
       "description": "Hugging Face model listing for RunDiffusion/Juggernaut-XL-v9. Pipeline: text-to-image.",
+      "done": "published",
       "evidence": "---\nlicense: creativeml-openrail-m\nlanguage:\n- en\nlibrary_name: diffusers\npipeline_tag: text-to-image\nbase_model: stabilityai/stable-diffusion-xl-base-1.0\ntags:\n- stable-diffusion\n- stable-diffusion-xl",
       "firstDiscoveredAt": "2026-11-25",
       "identity": "hf:rundiffusion/juggernaut-xl-v9",
@@ -2248,6 +2252,7 @@
     "12afca54d1daae199869b8265504f27f9bccd2c214a1ca4e51783e1bdc5f85fe": {
       "attempt": 1795583904.796691,
       "description": "Hugging Face model listing for tencent/Hunyuan3D-2. Pipeline: image-to-3d.",
+      "done": "published",
       "evidence": "---\nlibrary_name: hunyuan3d-2\nlicense: other\nlicense_name: tencent-hunyuan-community\nlicense_link: https://huggingface.co/tencent/Hunyuan3D-2/blob/main/LICENSE.txt\nlanguage:\n- en\n- zh\ntags:\n- image-to-3d\n### Install Requirements\nPlease install Pytorch via the [official](https://pytorch.org/) site. Then install the other requirements via\n```bash\npip install -r requirements.txt\n### API Usage\nWe designed a diffusers-like API to use our shape generation model - Hunyuan3D-DiT and texture synthesis model -\nHunyuan3D-Paint.\nYou could assess **Hunyuan3D-DiT** via:",
       "firstDiscoveredAt": "2026-11-25",
       "identity": "hf:tencent/hunyuan3d-2",
@@ -2321,6 +2326,7 @@
     "132ef220482d44b47deb2f66b200d01fdb2f2b39fd61a43e35ec075a82c6c5e2": {
       "attempt": 1795583905.210916,
       "description": "Hugging Face model listing for Veda-Sparse/Minimax-H3-T2VA-Veda-8NFE-600Step-Preview. Pipeline: text-to-video.",
+      "done": "published",
       "evidence": "---\nlicense: other\nlicense_name: minimax-h3-community\nlicense_link: LICENSE\nbase_model:\n- MiniMaxAI/MiniMax-H3\n- larryvrh/MiniMax-H3-Turbo-Lora\npipeline_tag: text-to-video\ntags:\n- text-to-video\n## Usage\n### ComfyUI\nInstall the node via the [Comfy CLI](https://docs.comfy.org/comfy-cli/getting-started#install-cli):\n```bash\n## License\nThis model inherits the [MiniMax H3 Community License](LICENSE) from its base model.\n## Citation\n```bibtex",
       "firstDiscoveredAt": "2026-11-25",
       "identity": "hf:veda-sparse/minimax-h3-t2va-veda-8nfe-600step-preview",
@@ -6062,6 +6068,7 @@
     "3c5921828d44359c1bbeaffa814a8fb49e2e71fbb2de675197b1f54b0b33c255": {
       "attempt": 1795583901.9701679,
       "description": "GitHub Copilot review suggestions don't always come with an 'Apply' button. This extension fills that gap — fetch every pending Copilot review comment and apply all fixes automatically, straight from VS Code.",
+      "done": "published",
       "evidence": "GitHub Copilot review suggestions don't always come with an 'Apply' button. This extension fills that gap — fetch every pending Copilot review comment and apply all fixes automatically, straight from VS Code.",
       "firstDiscoveredAt": "2026-11-25",
       "identity": "openvsx:veverke.copilot-reviewer-assistant",
@@ -6114,6 +6121,7 @@
     "3d6e066ddb9cb44d82064aa6dfe0931f3f7b54e09cbc5a991f9b7201338f7040": {
       "attempt": 1795583903.6792214,
       "description": "100% local AI coding assistant & Copilot alternative for VS Code, Cursor & Antigravity. Zero-cloud inline completion, local RAG, codebase chat & approval-first agent with Ollama, DeepSeek, Qwen & LM Studio.",
+      "done": "published",
       "evidence": "100% local AI coding assistant & Copilot alternative for VS Code, Cursor & Antigravity. Zero-cloud inline completion, local RAG, codebase chat & approval-first agent with Ollama, DeepSeek, Qwen & LM Studio.",
       "firstDiscoveredAt": "2026-11-25",
       "identity": "openvsx:reflexor-app.reflexor",
@@ -6516,6 +6524,7 @@
     "40eb3d37e613c2215bd4de8286b72c0ed61703b56e5b633443c1a94bd788c89a": {
       "attempt": 1795583904.0503426,
       "description": "Browse and resume Claude Code sessions, track usage and 5-hour/weekly limits, switch accounts, and manage MCP servers, skills, hooks, agents, plugins, file checkpoints and prompt history from your VS Code sidebar. 100% local, zero telemetry.",
+      "done": "published",
       "evidence": "Browse and resume Claude Code sessions, track usage and 5-hour/weekly limits, switch accounts, and manage MCP servers, skills, hooks, agents, plugins, file checkpoints and prompt history from your VS Code sidebar. 100% local, zero telemetry.",
       "firstDiscoveredAt": "2026-11-25",
       "identity": "openvsx:vishalguptax.claude-manager",
@@ -6681,6 +6690,7 @@
     "43124dda8066d9b9ce233a90aff7bead18941a78ec901d82752794672e2e9d28": {
       "attempt": 1795583904.4219174,
       "description": "View machine learning model files with Netron directly on the local or Remote SSH host without copying weights to local disk.",
+      "done": "published",
       "evidence": "View machine learning model files with Netron directly on the local or Remote SSH host without copying weights to local disk.",
       "firstDiscoveredAt": "2026-11-25",
       "identity": "openvsx:liaojianjin.remote-model-viewer",
@@ -6781,6 +6791,7 @@
     "447823c682e432be36dcf4439141a97e8359f6c5ee6b078f25c43ecc1e26f52d": {
       "attempt": 1795583904.796239,
       "description": "vLLM (& OpenRouter) integration for GitHub Copilot & Agents window on self-hosted and remote servers (supports full featureset of vLLM, OpenRouter and Copilot). No subscription, no telemetry, no work content to any third party. Dashboard UI with full statistics of your servers. Optionally runs the same models in the built-in DeepSeek Harness agent, Copilot not required.",
+      "done": "published",
       "evidence": "vLLM (& OpenRouter) integration for GitHub Copilot & Agents window on self-hosted and remote servers (supports full featureset of vLLM, OpenRouter and Copilot). No subscription, no telemetry, no work content to any third party. Dashboard UI with full statistics of your servers. Optionally runs the same models in the built-in DeepSeek Harness agent, Copilot not required.",
       "firstDiscoveredAt": "2026-11-25",
       "identity": "openvsx:system-sciences.vllm-copilot",
@@ -9527,6 +9538,7 @@
     "60b1d775341bbc9cc8da2dbdb6bab251ab852c8973eb0c0786afc51dd535aa04": {
       "attempt": 1795583901.9704554,
       "description": "Walmart, Shopee, TikTok Shop, Shopify & WooCommerce live product & pricing MCP (x402 USDC or key).",
+      "done": "published",
       "evidence": "Walmart, Shopee, TikTok Shop, Shopify & WooCommerce live product & pricing MCP (x402 USDC or key).",
       "firstDiscoveredAt": "2026-11-25",
       "identity": "mcp:ai.agentapigate/amazon-product-walmart-shopify-ecommerce-mcp",
@@ -9680,6 +9692,7 @@
     "6175bac8686000f7a5cf0d4b19d49f40eb0cd2a8420bc1831cf87916dbd95ad4": {
       "attempt": 1795583903.679466,
       "description": "UAE Corporate Tax: CT computation, SBR, penalties, free zone test, TP and health-check.",
+      "done": "published",
       "evidence": "UAE Corporate Tax: CT computation, SBR, penalties, free zone test, TP and health-check.",
       "firstDiscoveredAt": "2026-11-25",
       "identity": "mcp:ae.grovisor/grotax",
@@ -9763,6 +9776,7 @@
     "61b7f5677079ce8a98f07f1be64510ce389aa8b0666cff3c81ae4f098318a192": {
       "attempt": 1795583904.0505702,
       "description": "Check ad creative against brand rules, plan where, when and how to run it, and guard live campaigns.",
+      "done": "published",
       "evidence": "Check ad creative against brand rules, plan where, when and how to run it, and guard live campaigns.",
       "firstDiscoveredAt": "2026-11-25",
       "identity": "mcp:ai.advizion/advizion",
@@ -9884,6 +9898,7 @@
     "62ffd632711af3759b1bd847a4c1fd3bc571d6e8f8888f22cc5bd83bce1b25e1": {
       "attempt": 1795583904.422141,
       "description": "500+ typed UI atoms an agent composes into real rendered interfaces. Free, no API key.",
+      "done": "published",
       "evidence": "500+ typed UI atoms an agent composes into real rendered interfaces. Free, no API key.",
       "firstDiscoveredAt": "2026-11-25",
       "identity": "mcp:ai.a2uicatalog/catalog",
@@ -9922,6 +9937,7 @@
     "63330370705a6cacb72e9568818581e4ea6979d7d25bc1d0ee0c9e490081c41f": {
       "attempt": 1795583904.7964718,
       "description": "Google, Meta, LinkedIn and ChatGPT Ads for AI assistants. Every change needs your approval.",
+      "done": "published",
       "evidence": "Google, Meta, LinkedIn and ChatGPT Ads for AI assistants. Every change needs your approval.",
       "firstDiscoveredAt": "2026-11-25",
       "identity": "mcp:ai.adako/ads",
@@ -10273,6 +10289,7 @@
     "66fe1880a35df6c8f34e7c91f46b32cf949b7363992ac3fb62ff6d0a3a616842": {
       "attempt": 1795583905.2106814,
       "description": "Scrape, search and extract the public web. 3,000 free credits at https://vera.waggle.ae/signup",
+      "done": "published",
       "evidence": "Scrape, search and extract the public web. 3,000 free credits at https://vera.waggle.ae/signup",
       "firstDiscoveredAt": "2026-11-25",
       "identity": "mcp:ae.waggle/vera",
@@ -11810,6 +11827,7 @@
     "73f3c6699fd8eaf73b1ec8602c7bf69aef5b67b0dab054984238960d21cc210c": {
       "attempt": 1795583901.9705334,
       "description": "Plan, run and supervise fleets of agents from task to merged PR. Desktop (macOS, Windows, Linux) + iPhone & Android apps. Supports Claude Code, Codex & 35+ coding agents.",
+      "done": "published",
       "evidence": "Plan, run and supervise fleets of agents from task to merged PR. Desktop (macOS, Windows, Linux) + iPhone & Android apps. Supports Claude Code, Codex & 35+ coding agents.",
       "firstDiscoveredAt": "2026-11-25",
       "identity": "github:1156994049",
@@ -11844,6 +11862,7 @@
     "74751859e1c9917ee849a6a691385eb2432bce049bb8e79cd4ee0ca86d26075b": {
       "attempt": 1795583903.6795259,
       "description": "Aixio Layer v2 recovers editable layers from flat designs where possible. 150-design benchmark vs Canva Magic Layers, Qwen-Image-Layer and GPT-6 Astra Ultra.",
+      "done": "published",
       "evidence": "Aixio Layer v2 recovers editable layers from flat designs where possible. 150-design benchmark vs Canva Magic Layers, Qwen-Image-Layer and GPT-6 Astra Ultra.",
       "firstDiscoveredAt": "2026-11-25",
       "identity": "github:1411286244",
@@ -11988,6 +12007,7 @@
     "76e99b028595dc4f9a1148cf33ac49e06663c78ccd23adb6c193b034ba524024": {
       "attempt": 1795583904.050628,
       "description": "🐙 Guides, papers, lessons, notebooks and resources for prompt engineering, context engineering, RAG, and AI Agents.",
+      "done": "published",
       "evidence": "🐙 Guides, papers, lessons, notebooks and resources for prompt engineering, context engineering, RAG, and AI Agents.",
       "firstDiscoveredAt": "2026-11-25",
       "identity": "github:579082810",
@@ -12338,6 +12358,7 @@
     "7aeb0deee90b774c7e8032f1e8861ca7628fbfc54b28de8ee68a19e6ae18d593": {
       "attempt": 1795583904.4221992,
       "description": "Open-source Rust coding agent for terminal, web, and desktop. Any model, multi-agent fleets, MCP & plugins, OS sandboxing, and session receipts.",
+      "done": "published",
       "evidence": "Open-source Rust coding agent for terminal, web, and desktop. Any model, multi-agent fleets, MCP & plugins, OS sandboxing, and session receipts.",
       "firstDiscoveredAt": "2026-11-25",
       "identity": "github:1137711311",
@@ -12489,6 +12510,7 @@
     "7cde1ea7a964c2f90222f6921ddc854735a287d24ae007f42182b8d3b3686c14": {
       "attempt": 1795583904.7965302,
       "description": "Gentle-AI configures the AI coding agents you already use: Claude Code, Cursor, OpenCode, Codex, Pi, and more. Choose persistent memory, Organic-Driven Development, curated skills, MCP servers, personas, and optional bounded review. Open source, no agent lock-in.",
+      "done": "published",
       "evidence": "Gentle-AI configures the AI coding agents you already use: Claude Code, Cursor, OpenCode, Codex, Pi, and more. Choose persistent memory, Organic-Driven Development, curated skills, MCP servers, personas, and optional bounded review. Open source, no agent lock-in.",
       "firstDiscoveredAt": "2026-11-25",
       "identity": "github:1168900408",
@@ -12685,6 +12707,7 @@
     "7f6d8e90d38606205260e78fb2a7eeb9fbad8df780fadafc38cb6d69f1c8ef4c": {
       "attempt": 1795583905.2107391,
       "description": "Oil UI 的 DeepSeek Harness 原生插件，支持自动切换本地安装的 Oil UI Pro",
+      "done": "published",
       "evidence": "Oil UI 的 DeepSeek Harness 原生插件，支持自动切换本地安装的 Oil UI Pro",
       "firstDiscoveredAt": "2026-11-25",
       "identity": "github:1424154311",
@@ -13577,6 +13600,7 @@
     "86b1f1e0d3b74d38b9d8864e5654dd3f530705b60699dbac037363c7f9f8ae6b": {
       "attempt": 1795583901.9700618,
       "description": "Perform language and framework specific security best-practice reviews and suggest improvements. Trigger only when the user explicitly requests security best practices guidance, a security review/report, or secure-by-default coding help. Trigger only for supported languages (python, javascript/typescript, go). Do not trigger for general code review, debugging, or non-security tasks.",
+      "done": "published",
       "evidence": "---\nname: \"security-best-practices\"\ndescription: \"Perform language and framework specific security best-practice reviews and suggest improvements. Trigger only when the user explicitly requests security best practices guidance, a security review/report, or secure-by-default coding help. Trigger only for supported languages (python, javascript/typescript, go). Do not trigger for general code review, debugging, or non-security tasks.\"\n# Security Best Practices\n## Overview\nThis skill provides a description of how to identify the language and frameworks used by the current context, and then to load information from this skill's references directory about the security best practices for this language and or frameworks.\nThis information, if present, can be used to write new secure by default code, or to passively detect major issues within existing code, or (if requested by the user) provide a vulnerability report and suggest fixes.\n## Workflow\nThe initial step for this skill is to identify ALL languages and ALL frameworks which you are being asked to use or already exist in the scope of the project you are working in. Focus on the primary core frameworks. Often you will want to identify both frontend and backend languages and frameworks.",
       "firstDiscoveredAt": "2026-11-25",
       "identity": "github-skill:1103643573:skills/.curated/security-best-practices/SKILL.md",
@@ -13631,6 +13655,7 @@
     "871c78449466abb58a634e97a29f8b11a63e44c1ee964ab79d761b3d91aabd7f": {
       "attempt": 1795583903.6791334,
       "description": "Use this skill whenever the user wants to create, read, edit, or manipulate Word documents (.docx files) or Word templates (.dotx files). Triggers include: any mention of 'Word doc', 'word document', '.docx', '.dotx', or requests to produce professional documents with formatting like tables of contents, headings, page numbers, or letterheads. Also use when extracting or reorganizing content from .docx or .dotx files, inserting or replacing images in documents, performing find-and-replace in Word files, working with tracked changes or comments, or converting content into a polished Word document. If the user asks for a 'report', 'memo', 'letter', 'template', or similar deliverable as a Word or .docx file, use this skill. Do NOT use for PDFs, spreadsheets, Google Docs, or general coding tasks unrelated to document generation.",
+      "done": "published",
       "evidence": "---\nname: docx\ndescription: \"Use this skill whenever the user wants to create, read, edit, or manipulate Word documents (.docx files) or Word templates (.dotx files). Triggers include: any mention of 'Word doc', 'word document', '.docx', '.dotx', or requests to produce professional documents with formatting like tables of contents, headings, page numbers, or letterheads. Also use when extracting or reorganizing content from .docx or .dotx files, inserting or replacing images in documents, performing find-and-replace in Word files, working with tracked changes or comments, or converting content into a polished Word document. If the user asks for a 'report', 'memo', 'letter', 'template', or similar deliverable as a Word or .docx file, use this skill. Do NOT use for PDFs, spreadsheets, Google Docs, or general coding tasks unrelated to document generation.\"\nlicense: Complete terms in LICENSE.txt\n# DOCX creation, editing, and analysis\nA `.docx` is a ZIP archive of XML files. Choose your approach by task:\n| Task | Approach |\n|---|---|\n| **Create** a new document | Write a `docx` (npm) script — see gotchas below |\n## Dependencies\n`docx` (npm, preinstalled — install only if `require('docx')` fails) · `pandoc` · LibreOffice (`soffice`) · `pdftoppm` (Poppler)",
       "firstDiscoveredAt": "2026-11-25",
       "identity": "github-skill:1061953414:skills/docx/SKILL.md",
@@ -13905,6 +13930,7 @@
     "8b0f5b43d8d5e259b44c29abe679b80baa066d7646234797ffeceef08678253b": {
       "attempt": 1795583904.0502663,
       "description": "Replace with description of the skill and when Claude should use it.",
+      "done": "declined",
       "evidence": "---\nname: template-skill\ndescription: Replace with description of the skill and when Claude should use it.\n# Insert instructions below",
       "firstDiscoveredAt": "2026-11-25",
       "identity": "github-skill:1061953414:template/SKILL.md",
@@ -14140,6 +14166,7 @@
     "8d28a48b8576353119a455284cf1160a0c4156fe1fc0f07a0ca5dea092056496": {
       "attempt": 1795583904.4218395,
       "description": "Suite of tools for creating elaborate, multi-component claude.ai HTML artifacts using modern frontend web technologies (React, Tailwind CSS, shadcn/ui). Use for complex artifacts requiring state management, routing, or shadcn/ui components - not for simple single-file HTML/JSX artifacts.",
+      "done": "published",
       "evidence": "---\nname: web-artifacts-builder\ndescription: Suite of tools for creating elaborate, multi-component claude.ai HTML artifacts using modern frontend web technologies (React, Tailwind CSS, shadcn/ui). Use for complex artifacts requiring state management, routing, or shadcn/ui components - not for simple single-file HTML/JSX artifacts.\nlicense: Complete terms in LICENSE.txt\n# Web Artifacts Builder\nTo build powerful frontend claude.ai artifacts, follow these steps:\n1. Initialize the frontend repo using `scripts/init-artifact.sh`\n2. Develop your artifact by editing the generated code\n3. Bundle all code into a single HTML file using `scripts/bundle-artifact.sh`",
       "firstDiscoveredAt": "2026-11-25",
       "identity": "github-skill:1061953414:skills/web-artifacts-builder/SKILL.md",
@@ -14160,6 +14187,7 @@
     "8d6420e41a33a1737f82065c814b7903e42663e486749ba01fffecc98f042466": {
       "attempt": 1795583904.7961595,
       "description": "Use this skill any time a .pptx or .potx file is involved in any way — as input, output, or both. This includes: creating slide decks, pitch decks, or presentations; reading, parsing, or extracting text from any .pptx or .potx file (even if the extracted content will be used elsewhere, like in an email or summary); editing, modifying, or updating existing presentations; combining or splitting slide files; working with templates (.potx), layouts, speaker notes, or comments. Trigger whenever the user mentions \"deck,\" \"slides,\" \"presentation,\" or references a .pptx or .potx filename, regardless of what they plan to do with the content afterward. If a .pptx or .potx file needs to be opened, created, or touched, use this skill.",
+      "done": "published",
       "evidence": "---\nname: pptx\ndescription: \"Use this skill any time a .pptx or .potx file is involved in any way — as input, output, or both. This includes: creating slide decks, pitch decks, or presentations; reading, parsing, or extracting text from any .pptx or .potx file (even if the extracted content will be used elsewhere, like in an email or summary); editing, modifying, or updating existing presentations; combining or splitting slide files; working with templates (.potx), layouts, speaker notes, or comments. Trigger whenever the user mentions \\\"deck,\\\" \\\"slides,\\\" \\\"presentation,\\\" or references a .pptx or .potx filename, regardless of what they plan to do with the content afterward. If a .pptx or .potx file needs to be opened, created, or touched, use this skill.\"\nlicense: Complete terms in LICENSE.txt\n# PPTX creation, editing, and analysis\nA `.pptx` is a ZIP archive of XML files. Choose your approach by task:\n| Task | Approach |\n|---|---|\n| **Create** a new deck | Write a `pptxgenjs` script — see gotchas below — and build it as a [structured deck](#structured-decks) unless the user asks for a quick throwaway |\n## QA (Required)\nYour first render usually has a few real issues — overlaps, overflow, misalignment. Find and fix those, re-render only the slides you changed, and stop.\n### Content QA (required)\n```bash\npython scripts/slide_text.py output.pptx\n```\n### File QA (required)\npython scripts/office/validate.py output.pptx                      # built from scratch\npython scripts/office/validate.py output.pptx --original src.pptx  # built from a template\n### Visual QA (required)\nConvert the slides to images (see [Converting to Images](#converting-to-images)) and inspect every one. After staring at the generating code you tend to see what you expect rather than what rendered, so look at the images fresh (a subagent works well for this if you have one). User-visible defects to",
       "firstDiscoveredAt": "2026-11-25",
       "identity": "github-skill:1061953414:skills/pptx/SKILL.md",
@@ -14244,6 +14272,7 @@
     "8df2191c93e331ed3675e7c97d2b427ab8f974a9d06c006bd9a0d60cb9fa4234": {
       "attempt": 1795583905.2103794,
       "description": "**MANDATORY prerequisite** — you MUST invoke this skill BEFORE every `use_figma` tool call. NEVER call `use_figma` directly without loading this skill first. Skipping it causes common, hard-to-debug failures. Trigger whenever the user wants to perform a write action or a unique read action that requires JavaScript execution in the Figma file context — e.g. create/edit/delete nodes, set up variables or tokens, build components and variants, modify auto-layout or fills, bind variables to properties, or inspect file structure programmatically.",
+      "done": "published",
       "evidence": "---\nname: figma-use\ndescription: \"**MANDATORY prerequisite** — you MUST invoke this skill BEFORE every `use_figma` tool call. NEVER call `use_figma` directly without loading this skill first. Skipping it causes common, hard-to-debug failures. Trigger whenever the user wants to perform a write action or a unique read action that requires JavaScript execution in the Figma file context — e.g. create/edit/delete nodes, set up variables or tokens, build components and variants, modify auto-layout or fills, bind variables to properties, or inspect file structure programmatically.\"\n# use_figma — Figma Plugin API Skill\nUse `use_figma` MCP to execute JavaScript in Figma files via the Plugin API. All detailed reference docs live in `references/`.\n**Always pass `skillNames: \"figma-use\"` when calling `use_figma`.** This is a logging parameter used to track skill usage — it does not affect execution.\n**If the task involves building or updating a full page, screen, or multi-section layout in Figma from code**, also load [figma-generate-design](../figma-generate-design/SKILL.md). It provides the workflow for discovering design system components via `search_design_system`, importing them, and assembling screens incrementally. Both skills work together: this one for the API rules, that one for the screen-building workflow.\nBefore anything, load [plugin-api-standalone.index.md](references/plugin-api-standalone.index.md) to understand what is possible. When you are asked to write plugin API code, use this context to grep [plugin-api-standalone.d.ts](references/plugin-api-standalone.d.ts) for relevant types, methods, and properties. This is the definitive source of truth for the API surface. It is a large typings file, so do not load it all at once, grep for relevant sections as needed.\nIMPORTANT: Whenever you work with design systems, start with [working-with-design-systems/wwds.md](ref",
       "firstDiscoveredAt": "2026-11-25",
       "identity": "github-skill:1103643573:skills/.curated/figma-use/SKILL.md",
@@ -16728,6 +16757,7 @@
     "a7ad12181c7c859d66f54b89c85753b28c08f5ab8c38cb2ab70e33a104f26c41": {
       "attempt": 1795583902.5213199,
       "description": "End-to-End Speech Processing Toolkit",
+      "done": "declined",
       "evidence": "End-to-End Speech Processing Toolkit",
       "firstDiscoveredAt": "2026-11-25",
       "identity": "github:114054873",
@@ -17344,6 +17374,7 @@
     "af4ca50e28384c34597603770fb8b9a7917ffdff00270ca5e1534a106690e823": {
       "attempt": 1795583904.0499177,
       "description": "Orca lets you run a fleet of bots with your own subscription (e.g. Claude Code, Grok, Agy, Codex). Available on desktop, mobile and remote runtime.",
+      "done": "declined",
       "evidence": "Orca lets you run a fleet of bots with your own subscription (e.g. Claude Code, Grok, Agy, Codex). Available on desktop, mobile and remote runtime.",
       "firstDiscoveredAt": "2026-11-25",
       "identity": "github:1183888342",
@@ -17476,6 +17507,7 @@
     "b0bbf3c7457ce873ac1512ab5d6abd1df2c8213eb5048b3ff82056271c8c62dd": {
       "attempt": 1795583904.421476,
       "description": "The open-source app everyone uses to manage agents at work",
+      "done": "declined",
       "evidence": "The open-source app everyone uses to manage agents at work",
       "firstDiscoveredAt": "2026-11-25",
       "identity": "github:1170821064",
@@ -17865,6 +17897,7 @@
     "b533e606e11910b59717a65082c6633c861d1e24ae62fb354685b518b2698f7b": {
       "attempt": 1795583904.7957897,
       "description": "High-speed Large Language Model Serving for Local Deployment",
+      "done": "published",
       "evidence": "High-speed Large Language Model Serving for Local Deployment",
       "firstDiscoveredAt": "2026-11-25",
       "identity": "github:731842419",
@@ -18128,6 +18161,7 @@
     "b7dfc421a509d9241f2c20afef284beeab6a40c40305f840bded009dd7e205c3": {
       "attempt": 1795583905.2099903,
       "description": "Official Crawl4AI Cloud: a hosted web scraping, extraction, and search API for AI agents. Free API key, 1,000 credits a month, no card. Fully open source: this repo is the Apache-2.0 crawler that powers it, and you can self-host it.",
+      "done": "published",
       "evidence": "Official Crawl4AI Cloud: a hosted web scraping, extraction, and search API for AI agents. Free API key, 1,000 credits a month, no card. Fully open source: this repo is the Apache-2.0 crawler that powers it, and you can self-host it.",
       "firstDiscoveredAt": "2026-11-25",
       "identity": "github:798201435",
@@ -18508,6 +18542,7 @@
     "ba40f302842bb945f7927a836ebc9b765164e21af61aab0c2a4c16b67b28ec5e": {
       "attempt": 1795583905.581908,
       "description": "Open-source Python library for AI browser agents, plus Browser Use Cloud: stealth browsers and a hosted agent API.",
+      "done": "published",
       "evidence": "Open-source Python library for AI browser agents, plus Browser Use Cloud: stealth browsers and a hosted agent API.",
       "firstDiscoveredAt": "2026-11-25",
       "identity": "github:881458615",
