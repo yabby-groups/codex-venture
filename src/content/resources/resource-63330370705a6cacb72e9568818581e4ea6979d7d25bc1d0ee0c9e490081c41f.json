@@ -1,0 +1,28 @@
+{
+  "addedAt": "2026-11-25",
+  "categories": [
+    [
+      "广告活动管理",
+      "Ad Campaign Management"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-25",
+  "id": "resource-63330370705a6cacb72e9568818581e4ea6979d7d25bc1d0ee0c9e490081c41f",
+  "identity": "mcp:ai.adako/ads",
+  "name": "Adako: ad ops for AI assistants",
+  "registryId": "ai.adako/ads",
+  "site": "https://registry.modelcontextprotocol.io/v0.1/servers/ai.adako%2Fads/versions/0.3.2",
+  "sourceSignature": "1c18503b03cd63b8009a34f86f1a787894b267baf0afe8c9938950cfd0b963db",
+  "summary": [
+    "Adako 称，其 MCP 服务可让 AI 助手管理 Google、Meta、LinkedIn 和 ChatGPT 的广告，每项改动都需用户批准。",
+    "Adako says its MCP server lets AI assistants manage Google, Meta, LinkedIn, and ChatGPT ads, with each change subject to user approval."
+  ],
+  "tested": false,
+  "transport": "streamable-http",
+  "type": "mcp",
+  "verificationSources": [
+    "https://registry.modelcontextprotocol.io/v0.1/servers/ai.adako%2Fads/versions/0.3.2"
+  ],
+  "verifiedAt": "2026-11-25",
+  "version": "0.3.2"
+}

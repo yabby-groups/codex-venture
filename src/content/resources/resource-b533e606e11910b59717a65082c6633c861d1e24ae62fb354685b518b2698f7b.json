@@ -1,0 +1,28 @@
+{
+  "addedAt": "2026-11-25",
+  "categories": [
+    [
+      "本地大语言模型服务",
+      "Local LLM Serving"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-25",
+  "id": "resource-b533e606e11910b59717a65082c6633c861d1e24ae62fb354685b518b2698f7b",
+  "identity": "github:731842419",
+  "license": "MIT",
+  "name": "Tiiny-AI/PowerInfer",
+  "repository": "https://github.com/Tiiny-AI/PowerInfer",
+  "repositoryId": "731842419",
+  "site": "https://github.com/Tiiny-AI/PowerInfer",
+  "sourceSignature": "e26a9c85468e55c2895c307db8dcaebebd639d3a0f9128270388375f12e414ce",
+  "summary": [
+    "据发布者介绍，PowerInfer 可用于在本地部署大语言模型并提供推理服务。",
+    "The publisher describes PowerInfer as a tool for serving large language models in local deployments."
+  ],
+  "tested": false,
+  "type": "open-source",
+  "verificationSources": [
+    "https://api.github.com/search/repositories?page=1&per_page=30&q=topic%3Allm-inference+archived%3Afalse+fork%3Afalse&sort=stars"
+  ],
+  "verifiedAt": "2026-11-25"
+}

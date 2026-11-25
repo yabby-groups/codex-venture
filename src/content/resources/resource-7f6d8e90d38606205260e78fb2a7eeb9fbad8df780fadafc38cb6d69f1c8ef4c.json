@@ -1,0 +1,28 @@
+{
+  "addedAt": "2026-11-25",
+  "categories": [
+    [
+      "智能体界面集成",
+      "Agent Interface Integration"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-25",
+  "id": "resource-7f6d8e90d38606205260e78fb2a7eeb9fbad8df780fadafc38cb6d69f1c8ef4c",
+  "identity": "github:1424154311",
+  "license": "MIT",
+  "name": "oil-oil/dsh-oil-ui",
+  "repository": "https://github.com/oil-oil/dsh-oil-ui",
+  "repositoryId": "1424154311",
+  "site": "https://github.com/oil-oil/dsh-oil-ui",
+  "sourceSignature": "f354ff4446e1f801813c288e20417fe071a475cd8dbeebe01216517477c068dc",
+  "summary": [
+    "发布方将 dsh-oil-ui 描述为面向 DeepSeek Harness 的 Oil UI 原生插件，可自动切换到本地已安装的 Oil UI Pro。",
+    "The publisher describes dsh-oil-ui as a native Oil UI plugin for DeepSeek Harness that can automatically switch to a locally installed copy of Oil UI Pro."
+  ],
+  "tested": false,
+  "type": "tools",
+  "verificationSources": [
+    "https://api.github.com/search/repositories?page=1&per_page=30&q=topic%3Aai-design+archived%3Afalse+fork%3Afalse&sort=stars"
+  ],
+  "verifiedAt": "2026-11-25"
+}

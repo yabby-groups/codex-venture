@@ -1,0 +1,30 @@
+{
+  "addedAt": "2026-11-25",
+  "categories": [
+    [
+      "编程智能体管理",
+      "Coding Agent Management"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-25",
+  "id": "resource-40eb3d37e613c2215bd4de8286b72c0ed61703b56e5b633443c1a94bd788c89a",
+  "identity": "openvsx:vishalguptax.claude-manager",
+  "install": "https://open-vsx.org/extension/vishalguptax/claude-manager",
+  "name": "Claude Code Manager — Sessions, History, Usage, MCP & Accounts",
+  "platforms": [
+    "Open VSX"
+  ],
+  "site": "https://open-vsx.org/extension/vishalguptax/claude-manager",
+  "sourceSignature": "29c0954ce909588ade1a34addda11bf1294882345e07c83256e17da4363ac476",
+  "summary": [
+    "据发布者介绍，这款扩展可让你在侧边栏浏览并恢复 Claude Code 会话、查看用量限额、切换账号和管理 MCP 服务器。",
+    "The publisher says the extension lets you browse and resume Claude Code sessions, track usage limits, switch accounts, and manage MCP servers from a sidebar."
+  ],
+  "tested": false,
+  "type": "plugins",
+  "verificationSources": [
+    "https://open-vsx.org/api/-/search?offset=0&query=Claude&size=25"
+  ],
+  "verifiedAt": "2026-11-25",
+  "version": "2.21.1"
+}

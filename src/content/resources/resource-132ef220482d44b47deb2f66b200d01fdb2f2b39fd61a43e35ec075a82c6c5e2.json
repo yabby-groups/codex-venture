@@ -1,0 +1,29 @@
+{
+  "addedAt": "2026-11-25",
+  "categories": [
+    [
+      "文本生成视频",
+      "Text-to-Video Generation"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-25",
+  "id": "resource-132ef220482d44b47deb2f66b200d01fdb2f2b39fd61a43e35ec075a82c6c5e2",
+  "identity": "hf:veda-sparse/minimax-h3-t2va-veda-8nfe-600step-preview",
+  "name": "Veda-Sparse/Minimax-H3-T2VA-Veda-8NFE-600Step-Preview",
+  "site": "https://huggingface.co/Veda-Sparse/Minimax-H3-T2VA-Veda-8NFE-600Step-Preview",
+  "sourceSignature": "75a127dfedb87e7e434a74d818140ff03e8e8f8347347c1dfb183875c0f94256",
+  "summary": [
+    "Veda-Sparse 将这款基于 MiniMax H3 的预览模型用于从文本生成视频，并在模型卡中指向相应的 ComfyUI 节点。",
+    "Veda-Sparse lists this MiniMax H3-based preview for generating video from text and points readers to a ComfyUI node."
+  ],
+  "tags": [
+    "text-to-video"
+  ],
+  "tested": false,
+  "type": "models",
+  "verificationSources": [
+    "https://huggingface.co/Veda-Sparse/Minimax-H3-T2VA-Veda-8NFE-600Step-Preview/raw/main/README.md",
+    "https://huggingface.co/api/models?cursor=eyIkb3IiOlt7ImRvd25sb2FkcyI6MzgzOTcsIl9pZCI6eyIkZ3QiOiI2N2JlYWM3OTljMGY0MTFhY2I1YjcyZGIifX0seyJkb3dubG9hZHMiOnsiJGx0IjozODM5N319LHsiZG93bmxvYWRzIjpudWxsfV0sInNlYXJjaFNlcXVlbmNlVG9rZW4iOiJDTE9xOWdFYUNTRUFBQUFBb0wvaVFCb09XZ3hudnF4NW5BOUJHc3RiY3RzaURsb01aNzZzZVp3UFFSckxXM0xiIn0%3D&direction=-1&full=true&limit=30&pipeline_tag=text-to-video&sort=downloads"
+  ],
+  "verifiedAt": "2026-11-25"
+}

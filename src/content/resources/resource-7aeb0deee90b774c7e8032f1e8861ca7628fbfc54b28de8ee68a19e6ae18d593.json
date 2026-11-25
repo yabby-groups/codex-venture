@@ -1,0 +1,28 @@
+{
+  "addedAt": "2026-11-25",
+  "categories": [
+    [
+      "编程辅助",
+      "Coding Assistance"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-25",
+  "id": "resource-7aeb0deee90b774c7e8032f1e8861ca7628fbfc54b28de8ee68a19e6ae18d593",
+  "identity": "github:1137711311",
+  "license": "MIT",
+  "name": "codewhale-hq/Codewhale",
+  "repository": "https://github.com/codewhale-hq/Codewhale",
+  "repositoryId": "1137711311",
+  "site": "https://github.com/codewhale-hq/Codewhale",
+  "sourceSignature": "4f86644bb339595909509c7c5997c22a3a4ca5fc394711a0ff0297f3bb79d0e4",
+  "summary": [
+    "据发布者介绍，Codewhale 是一款用 Rust 编写的编程智能体，可用于协调多个智能体，并通过 MCP 服务器和插件扩展功能。",
+    "The publisher describes Codewhale as a Rust-based coding agent that lets you coordinate multiple agents and extend them with MCP servers and plugins."
+  ],
+  "tested": false,
+  "type": "tools",
+  "verificationSources": [
+    "https://api.github.com/search/repositories?page=1&per_page=30&q=topic%3Aai-coding+archived%3Afalse+fork%3Afalse&sort=stars"
+  ],
+  "verifiedAt": "2026-11-25"
+}

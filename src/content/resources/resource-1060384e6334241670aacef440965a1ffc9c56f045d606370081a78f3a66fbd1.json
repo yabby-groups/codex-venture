@@ -1,0 +1,29 @@
+{
+  "addedAt": "2026-11-25",
+  "categories": [
+    [
+      "文本转语音",
+      "Text-to-Speech"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-25",
+  "id": "resource-1060384e6334241670aacef440965a1ffc9c56f045d606370081a78f3a66fbd1",
+  "identity": "hf:mlx-community/qwen3-tts-12hz-1.7b-base-bf16",
+  "name": "mlx-community/Qwen3-TTS-12Hz-1.7B-Base-bf16",
+  "site": "https://huggingface.co/mlx-community/Qwen3-TTS-12Hz-1.7B-Base-bf16",
+  "sourceSignature": "9844a287c14e59c60ac5982fd697ff9cf5559d24e23c67870a7dab7572cf5a24",
+  "summary": [
+    "模型卡展示了如何通过 MLX Audio 命令行或 Python 调用这款 Qwen3-TTS 模型，将文本转换为语音。",
+    "The model card shows how to turn text into speech with this Qwen3-TTS model using the MLX Audio command line or Python."
+  ],
+  "tags": [
+    "text-to-speech"
+  ],
+  "tested": false,
+  "type": "models",
+  "verificationSources": [
+    "https://huggingface.co/api/models?cursor=eyIkb3IiOlt7ImRvd25sb2FkcyI6MzIzNDcsIl9pZCI6eyIkZ3QiOiI2YTM1MmU0NTZmYzcwM2EwM2VmNzhjYjMifX0seyJkb3dubG9hZHMiOnsiJGx0IjozMjM0N319LHsiZG93bmxvYWRzIjpudWxsfV0sInNlYXJjaFNlcXVlbmNlVG9rZW4iOiJDTlg0d3dJYUNTRUFBQUFBd0piZlFCb09XZ3hxTlM1RmI4Y0RvRDczakxNaURsb01halV1UlcvSEE2QSs5NHl6In0%3D&direction=-1&full=true&limit=30&pipeline_tag=text-to-speech&sort=downloads",
+    "https://huggingface.co/mlx-community/Qwen3-TTS-12Hz-1.7B-Base-bf16/raw/main/README.md"
+  ],
+  "verifiedAt": "2026-11-25"
+}

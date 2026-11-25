@@ -1,0 +1,31 @@
+{
+  "addedAt": "2026-11-25",
+  "categories": [
+    [
+      "设计文件自动化",
+      "Design File Automation"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-25",
+  "id": "resource-8df2191c93e331ed3675e7c97d2b427ab8f974a9d06c006bd9a0d60cb9fa4234",
+  "identity": "github-skill:1103643573:skills/.curated/figma-use/SKILL.md",
+  "name": "figma-use",
+  "platforms": [
+    "Codex"
+  ],
+  "repository": "https://github.com/openai/skills",
+  "repositoryId": "1103643573",
+  "site": "https://github.com/openai/skills/blob/main/skills/.curated/figma-use/SKILL.md",
+  "sourcePath": "skills/.curated/figma-use/SKILL.md",
+  "sourceSignature": "afb91dea91bd50a29231c1e3521d958f7893b62aa4e0ba7e9cc48aec3099260f",
+  "summary": [
+    "figma-use 文档介绍了如何通过 JavaScript 调用 Figma 插件 API，检查文件结构并编辑节点、组件、变量和自动布局。",
+    "The figma-use documentation covers using JavaScript with Figma’s Plugin API to inspect file structure and edit elements such as nodes, components, variables, and auto layout."
+  ],
+  "tested": false,
+  "type": "skills",
+  "verificationSources": [
+    "https://github.com/openai/skills/blob/main/skills/.curated/figma-use/SKILL.md"
+  ],
+  "verifiedAt": "2026-11-25"
+}

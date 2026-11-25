@@ -1,0 +1,30 @@
+{
+  "addedAt": "2026-11-25",
+  "categories": [
+    [
+      "编程助手模型接入",
+      "Coding Assistant Model Integration"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-25",
+  "id": "resource-447823c682e432be36dcf4439141a97e8359f6c5ee6b078f25c43ecc1e26f52d",
+  "identity": "openvsx:system-sciences.vllm-copilot",
+  "install": "https://open-vsx.org/extension/System-Sciences/vllm-copilot",
+  "name": "vLLM-Copilot",
+  "platforms": [
+    "Open VSX"
+  ],
+  "site": "https://open-vsx.org/extension/System-Sciences/vllm-copilot",
+  "sourceSignature": "563a8f36544ad70fcc36a7c3ec6486ba55815dbaeade7ab94e56b6c46c7d5c19",
+  "summary": [
+    "发布方称，vLLM-Copilot 可将 GitHub Copilot 和 Agents 窗口接入 vLLM 或 OpenRouter，并通过仪表板查看服务器统计数据。",
+    "The publisher says vLLM-Copilot connects GitHub Copilot and the Agents window to vLLM or OpenRouter and provides a dashboard for viewing server statistics."
+  ],
+  "tested": false,
+  "type": "plugins",
+  "verificationSources": [
+    "https://open-vsx.org/api/-/search?offset=0&query=Copilot&size=25"
+  ],
+  "verifiedAt": "2026-11-25",
+  "version": "1.40.1"
+}

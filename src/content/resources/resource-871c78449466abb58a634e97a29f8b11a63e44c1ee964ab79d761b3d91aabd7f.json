@@ -1,0 +1,31 @@
+{
+  "addedAt": "2026-11-25",
+  "categories": [
+    [
+      "Word 文档编辑",
+      "Word Document Editing"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-25",
+  "id": "resource-871c78449466abb58a634e97a29f8b11a63e44c1ee964ab79d761b3d91aabd7f",
+  "identity": "github-skill:1061953414:skills/docx/SKILL.md",
+  "name": "docx",
+  "platforms": [
+    "Claude"
+  ],
+  "repository": "https://github.com/anthropics/skills",
+  "repositoryId": "1061953414",
+  "site": "https://github.com/anthropics/skills/blob/main/skills/docx/SKILL.md",
+  "sourcePath": "skills/docx/SKILL.md",
+  "sourceSignature": "b48481a9b01e1c34299d8cf9d71df4764b1750d0e1476a3141e390928497c06c",
+  "summary": [
+    "技能文档介绍了如何创建和编辑 Word 文档及模板、提取内容，以及处理批注和修订记录。",
+    "The skill’s documentation describes how to create and edit Word documents and templates, extract content, and work with comments and tracked changes."
+  ],
+  "tested": false,
+  "type": "skills",
+  "verificationSources": [
+    "https://github.com/anthropics/skills/blob/main/skills/docx/SKILL.md"
+  ],
+  "verifiedAt": "2026-11-25"
+}

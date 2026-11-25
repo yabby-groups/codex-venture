@@ -1,0 +1,28 @@
+{
+  "addedAt": "2026-11-25",
+  "categories": [
+    [
+      "提示词工程学习",
+      "Prompt Engineering Education"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-25",
+  "id": "resource-76e99b028595dc4f9a1148cf33ac49e06663c78ccd23adb6c193b034ba524024",
+  "identity": "github:579082810",
+  "license": "MIT",
+  "name": "dair-ai/Prompt-Engineering-Guide",
+  "repository": "https://github.com/dair-ai/Prompt-Engineering-Guide",
+  "repositoryId": "579082810",
+  "site": "https://github.com/dair-ai/Prompt-Engineering-Guide",
+  "sourceSignature": "95c1397ba1dc50c9a64ca9d9d039e1e033c1394c969e60751a0625da621584f3",
+  "summary": [
+    "DAIR.AI 的指南汇集了课程、论文和笔记本，供读者学习提示词工程、上下文工程、检索增强生成（RAG）和 AI 智能体。",
+    "DAIR.AI's guide collects lessons, papers, and notebooks for studying prompt engineering, context engineering, retrieval-augmented generation (RAG), and AI agents."
+  ],
+  "tested": false,
+  "type": "tools",
+  "verificationSources": [
+    "https://api.github.com/search/repositories?page=1&per_page=30&q=topic%3Arag+archived%3Afalse+fork%3Afalse&sort=stars"
+  ],
+  "verifiedAt": "2026-11-25"
+}

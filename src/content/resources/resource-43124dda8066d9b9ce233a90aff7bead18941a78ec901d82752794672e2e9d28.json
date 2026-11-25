@@ -1,0 +1,30 @@
+{
+  "addedAt": "2026-11-25",
+  "categories": [
+    [
+      "模型查看",
+      "Model Inspection"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-25",
+  "id": "resource-43124dda8066d9b9ce233a90aff7bead18941a78ec901d82752794672e2e9d28",
+  "identity": "openvsx:liaojianjin.remote-model-viewer",
+  "install": "https://open-vsx.org/extension/LiaoJianjin/remote-model-viewer",
+  "name": "Remote Model Viewer",
+  "platforms": [
+    "Open VSX"
+  ],
+  "site": "https://open-vsx.org/extension/LiaoJianjin/remote-model-viewer",
+  "sourceSignature": "cac212e4f53cdbe3a1d268dc28e4817e12c5edf95e4a660e5635797d0de8d589",
+  "summary": [
+    "据发布者介绍，你可以用 Netron 查看本机或 SSH 远程主机上的机器学习模型文件，远程查看时权重留在远程主机上。",
+    "The publisher says you can inspect machine learning model files in Netron on your local machine or directly on a remote SSH host, where the weights stay on the remote host."
+  ],
+  "tested": false,
+  "type": "plugins",
+  "verificationSources": [
+    "https://open-vsx.org/api/-/search?offset=0&query=language+model&size=25"
+  ],
+  "verifiedAt": "2026-11-25",
+  "version": "0.0.10"
+}

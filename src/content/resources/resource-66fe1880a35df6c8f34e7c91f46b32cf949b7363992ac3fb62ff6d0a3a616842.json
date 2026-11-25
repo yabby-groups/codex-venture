@@ -1,0 +1,28 @@
+{
+  "addedAt": "2026-11-25",
+  "categories": [
+    [
+      "网页搜索与内容提取",
+      "Web Search and Extraction"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-25",
+  "id": "resource-66fe1880a35df6c8f34e7c91f46b32cf949b7363992ac3fb62ff6d0a3a616842",
+  "identity": "mcp:ae.waggle/vera",
+  "name": "Vera",
+  "registryId": "ae.waggle/vera",
+  "site": "https://registry.modelcontextprotocol.io/v0.1/servers/ae.waggle%2Fvera/versions/0.2.0",
+  "sourceSignature": "f5a3c30ec1a4b19c2a4e246fcda855685a12c92c71dfd1c2b55a98f1770bb0f1",
+  "summary": [
+    "发布方将 Vera 描述为一项 MCP 服务，可用于搜索公开网页、抓取页面并提取内容。",
+    "The publisher describes Vera as an MCP server for searching the public web, scraping pages, and extracting content."
+  ],
+  "tested": false,
+  "transport": "streamable-http",
+  "type": "mcp",
+  "verificationSources": [
+    "https://registry.modelcontextprotocol.io/v0.1/servers/ae.waggle%2Fvera/versions/0.2.0"
+  ],
+  "verifiedAt": "2026-11-25",
+  "version": "0.2.0"
+}

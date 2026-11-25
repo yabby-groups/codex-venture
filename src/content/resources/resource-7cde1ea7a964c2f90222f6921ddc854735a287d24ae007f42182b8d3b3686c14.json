@@ -1,0 +1,28 @@
+{
+  "addedAt": "2026-11-25",
+  "categories": [
+    [
+      "编程智能体配置",
+      "Coding Agent Configuration"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-25",
+  "id": "resource-7cde1ea7a964c2f90222f6921ddc854735a287d24ae007f42182b8d3b3686c14",
+  "identity": "github:1168900408",
+  "license": "MIT",
+  "name": "Gentleman-Programming/gentle-ai",
+  "repository": "https://github.com/Gentleman-Programming/gentle-ai",
+  "repositoryId": "1168900408",
+  "site": "https://github.com/Gentleman-Programming/gentle-ai",
+  "sourceSignature": "7523ca005f2ad44d1b6b92233c33a5c38ceeb7c5e728cae599174731319f4030",
+  "summary": [
+    "发布方称，Gentle-AI 可为 Claude Code、Cursor、Codex 等编程智能体配置持久记忆、技能、MCP 服务、角色和可选的审查功能。",
+    "The publisher says Gentle-AI lets users configure persistent memory, skills, MCP servers, personas, and optional review for coding agents such as Claude Code, Cursor, and Codex."
+  ],
+  "tested": false,
+  "type": "tools",
+  "verificationSources": [
+    "https://api.github.com/search/repositories?page=1&per_page=30&q=topic%3Aai-coding+archived%3Afalse+fork%3Afalse&sort=stars"
+  ],
+  "verifiedAt": "2026-11-25"
+}

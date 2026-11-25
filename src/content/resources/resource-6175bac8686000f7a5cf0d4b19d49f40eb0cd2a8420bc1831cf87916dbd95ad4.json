@@ -1,0 +1,28 @@
+{
+  "addedAt": "2026-11-25",
+  "categories": [
+    [
+      "企业税务评估",
+      "Corporate Tax Assessment"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-25",
+  "id": "resource-6175bac8686000f7a5cf0d4b19d49f40eb0cd2a8420bc1831cf87916dbd95ad4",
+  "identity": "mcp:ae.grovisor/grotax",
+  "name": "groTAX by Grovisor",
+  "registryId": "ae.grovisor/grotax",
+  "site": "https://registry.modelcontextprotocol.io/v0.1/servers/ae.grovisor%2Fgrotax/versions/1.3.0",
+  "sourceSignature": "b4e9b67d496b88b92e5eab0619f4fc76a0a99ea18001a09e8baf87ac263943fe",
+  "summary": [
+    "Grovisor 称，groTAX 可协助计算阿联酋企业所得税，评估小企业税收减免和自由区税收待遇的适用资格，并检查罚款和转让定价事项。",
+    "Grovisor says groTAX helps calculate UAE corporate tax, assess small business relief and free zone eligibility, and review penalties and transfer pricing."
+  ],
+  "tested": false,
+  "transport": "streamable-http",
+  "type": "mcp",
+  "verificationSources": [
+    "https://registry.modelcontextprotocol.io/v0.1/servers/ae.grovisor%2Fgrotax/versions/1.3.0"
+  ],
+  "verifiedAt": "2026-11-25",
+  "version": "1.3.0"
+}

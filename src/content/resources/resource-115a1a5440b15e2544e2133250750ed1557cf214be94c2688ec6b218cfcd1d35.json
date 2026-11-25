@@ -1,0 +1,29 @@
+{
+  "addedAt": "2026-11-25",
+  "categories": [
+    [
+      "文生图",
+      "Text-to-Image Generation"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-25",
+  "id": "resource-115a1a5440b15e2544e2133250750ed1557cf214be94c2688ec6b218cfcd1d35",
+  "identity": "hf:rundiffusion/juggernaut-xl-v9",
+  "name": "RunDiffusion/Juggernaut-XL-v9",
+  "site": "https://huggingface.co/RunDiffusion/Juggernaut-XL-v9",
+  "sourceSignature": "7bc1a27e7f473f8c4d763c6a95c2282580a97b1e8aeec032ec282617351d2931",
+  "summary": [
+    "据 RunDiffusion 的页面介绍，Juggernaut XL v9 是一款基于 SDXL 的模型，可根据文字提示生成图像。",
+    "The RunDiffusion listing describes Juggernaut XL v9 as an SDXL-based model for generating images from text prompts."
+  ],
+  "tags": [
+    "text-to-image"
+  ],
+  "tested": false,
+  "type": "models",
+  "verificationSources": [
+    "https://huggingface.co/RunDiffusion/Juggernaut-XL-v9/raw/main/README.md",
+    "https://huggingface.co/api/models?direction=-1&full=true&limit=30&pipeline_tag=text-to-image&sort=downloads"
+  ],
+  "verifiedAt": "2026-11-25"
+}

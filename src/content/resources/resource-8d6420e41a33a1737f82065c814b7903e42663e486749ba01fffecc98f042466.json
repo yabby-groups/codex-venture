@@ -1,0 +1,31 @@
+{
+  "addedAt": "2026-11-25",
+  "categories": [
+    [
+      "演示文稿制作与编辑",
+      "Presentation Creation and Editing"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-25",
+  "id": "resource-8d6420e41a33a1737f82065c814b7903e42663e486749ba01fffecc98f042466",
+  "identity": "github-skill:1061953414:skills/pptx/SKILL.md",
+  "name": "pptx",
+  "platforms": [
+    "Claude"
+  ],
+  "repository": "https://github.com/anthropics/skills",
+  "repositoryId": "1061953414",
+  "site": "https://github.com/anthropics/skills/blob/main/skills/pptx/SKILL.md",
+  "sourcePath": "skills/pptx/SKILL.md",
+  "sourceSignature": "71af4331a69a22fd744bce78fb761f5ba29ae09466005edcde5e7f16763670ee",
+  "summary": [
+    "pptx 技能文档介绍了如何创建和编辑 PowerPoint 演示文稿、提取幻灯片文字、使用模板，以及检查渲染后的幻灯片是否存在排版问题。",
+    "The pptx skill documentation covers creating and editing PowerPoint decks, extracting slide text, working with templates, and checking rendered slides for layout issues."
+  ],
+  "tested": false,
+  "type": "skills",
+  "verificationSources": [
+    "https://github.com/anthropics/skills/blob/main/skills/pptx/SKILL.md"
+  ],
+  "verifiedAt": "2026-11-25"
+}

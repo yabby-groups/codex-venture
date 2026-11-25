@@ -1,0 +1,30 @@
+{
+  "addedAt": "2026-11-25",
+  "categories": [
+    [
+      "代码审查自动化",
+      "Code Review Automation"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-25",
+  "id": "resource-3c5921828d44359c1bbeaffa814a8fb49e2e71fbb2de675197b1f54b0b33c255",
+  "identity": "openvsx:veverke.copilot-reviewer-assistant",
+  "install": "https://open-vsx.org/extension/Veverke/copilot-reviewer-assistant",
+  "name": "Copilot Reviewer Assistant",
+  "platforms": [
+    "Open VSX"
+  ],
+  "site": "https://open-vsx.org/extension/Veverke/copilot-reviewer-assistant",
+  "sourceSignature": "ed96de9f48a0f582ef38c654876dab852f135f13cd219fe4c1890bd05373ed9f",
+  "summary": [
+    "发布方称，这款扩展可以获取 GitHub Copilot 尚待处理的审查评论，并批量应用建议的修复。",
+    "The publisher says this extension fetches pending GitHub Copilot review comments and applies the suggested fixes in bulk."
+  ],
+  "tested": false,
+  "type": "plugins",
+  "verificationSources": [
+    "https://open-vsx.org/api/-/search?offset=25&query=Copilot&size=25"
+  ],
+  "verifiedAt": "2026-11-25",
+  "version": "1.0.2"
+}

@@ -1,0 +1,28 @@
+{
+  "addedAt": "2026-11-25",
+  "categories": [
+    [
+      "广告投放管理",
+      "Ad Campaign Management"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-25",
+  "id": "resource-61b7f5677079ce8a98f07f1be64510ce389aa8b0666cff3c81ae4f098318a192",
+  "identity": "mcp:ai.advizion/advizion",
+  "name": "AdVizion",
+  "registryId": "ai.advizion/advizion",
+  "site": "https://registry.modelcontextprotocol.io/v0.1/servers/ai.advizion%2Fadvizion/versions/0.3.0",
+  "sourceSignature": "7e9851c0b59f82c83ddda339e80e8fcb9b20e20e2f85f21ec99885008bc826c5",
+  "summary": [
+    "据 AdVizion 介绍，其 MCP 服务可按品牌规范检查广告素材、协助规划投放时间和渠道，并监测正在投放的广告活动。",
+    "AdVizion says its MCP service can check ad creative against brand rules, help plan when and where to run ads, and monitor live campaigns."
+  ],
+  "tested": false,
+  "transport": "streamable-http",
+  "type": "mcp",
+  "verificationSources": [
+    "https://registry.modelcontextprotocol.io/v0.1/servers/ai.advizion%2Fadvizion/versions/0.3.0"
+  ],
+  "verifiedAt": "2026-11-25",
+  "version": "0.3.0"
+}

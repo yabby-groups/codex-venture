@@ -1,0 +1,29 @@
+{
+  "addedAt": "2026-11-25",
+  "categories": [
+    [
+      "文本生成",
+      "Text Generation"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-25",
+  "id": "resource-10e4f2eccbc39edad80001b52e31131d1c378ae33fa5a1ab799d7eb637738143",
+  "identity": "hf:qwen/qwen2.5-1.5b-instruct-gguf",
+  "name": "Qwen/Qwen2.5-1.5B-Instruct-GGUF",
+  "site": "https://huggingface.co/Qwen/Qwen2.5-1.5B-Instruct-GGUF",
+  "sourceSignature": "59bd791e761a60aede619c5eecf26bfcd7d288964cbe6543c314940112fb1351",
+  "summary": [
+    "Qwen 将这款 GGUF 格式的 Qwen2.5-1.5B-Instruct 模型列为文本生成模型，可用于生成文本和聊天回复。",
+    "Qwen lists this GGUF version of Qwen2.5-1.5B-Instruct as a model for generating text and chat responses."
+  ],
+  "tags": [
+    "text-generation"
+  ],
+  "tested": false,
+  "type": "models",
+  "verificationSources": [
+    "https://huggingface.co/Qwen/Qwen2.5-1.5B-Instruct-GGUF/raw/main/README.md",
+    "https://huggingface.co/api/models?cursor=eyIkb3IiOlt7ImRvd25sb2FkcyI6Nzk2MjExLCJfaWQiOnsiJGd0IjoiNjcyMzg4ZjZlMTEzM2NmZjc5NzY2MzE4In19LHsiZG93bmxvYWRzIjp7IiRsdCI6Nzk2MjExfX0seyJkb3dubG9hZHMiOm51bGx9XSwic2VhcmNoU2VxdWVuY2VUb2tlbiI6IkNMdnA0UUVhQ1NFQUFBQUFaa3dvUVJvT1dneG5JNGoyNFJNOC8zbDJZeGdpRGxvTVp5T0k5dUVUUFA5NWRtTVkifQ%3D%3D&direction=-1&full=true&limit=30&pipeline_tag=text-generation&sort=downloads"
+  ],
+  "verifiedAt": "2026-11-25"
+}

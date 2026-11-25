@@ -1,29 +1,36 @@
 {
-  "id": "crawl4ai",
-  "type": "open-source",
-  "name": "Crawl4AI",
-  "summary": [
-    "Crawl4AI 提供基于浏览器的网页采集，可保留标题、表格和代码，并按内容条件过滤页面正文。",
-    "Crawl4AI collects pages in a browser and can preserve headings, tables and code while filtering page content."
-  ],
-  "site": "https://github.com/unclecode/crawl4ai",
-  "repository": "https://github.com/unclecode/crawl4ai",
+  "addedAt": "2026-11-24",
   "categories": [
     [
-      "网页提取",
-      "Web extraction"
+      "网页抓取与内容提取",
+      "Web Crawling and Extraction"
     ]
   ],
-  "verifiedAt": "2026-11-24",
-  "addedAt": "2026-11-24",
   "detail": "/news/crawl4ai-browser-markdown-extraction/",
-  "tested": false,
+  "firstDiscoveredAt": "2026-11-25",
+  "id": "crawl4ai",
+  "identity": "github:798201435",
+  "license": "Apache-2.0",
+  "name": "unclecode/crawl4ai",
+  "repository": "https://github.com/unclecode/crawl4ai",
+  "repositoryId": "798201435",
+  "site": "https://github.com/unclecode/crawl4ai",
+  "sourceSignature": "497de625a1ba4671264c3ab8f03121187225aec0a86cb370ec494c3767631ae4",
+  "summary": [
+    "发布方称，Crawl4AI 爬虫可自行部署，Crawl4AI Cloud 则提供托管 API，用于网页抓取、内容提取和搜索。",
+    "The publisher says Crawl4AI can be self-hosted for web crawling and that Crawl4AI Cloud offers a hosted API for scraping, extraction, and search."
+  ],
   "tags": [
     "crawl4ai",
     "browser-automation",
     "rag"
   ],
+  "tested": false,
+  "type": "open-source",
+  "updatedAt": "2026-11-25",
   "verificationSources": [
+    "https://api.github.com/search/repositories?page=1&per_page=30&q=topic%3Aai-agents+archived%3Afalse+fork%3Afalse&sort=stars",
     "https://github.com/unclecode/crawl4ai"
-  ]
+  ],
+  "verifiedAt": "2026-11-25"
 }

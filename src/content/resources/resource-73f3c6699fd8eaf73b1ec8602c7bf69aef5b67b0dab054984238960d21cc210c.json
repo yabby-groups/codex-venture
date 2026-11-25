@@ -1,0 +1,28 @@
+{
+  "addedAt": "2026-11-25",
+  "categories": [
+    [
+      "编码智能体编排",
+      "Coding Agent Orchestration"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-25",
+  "id": "resource-73f3c6699fd8eaf73b1ec8602c7bf69aef5b67b0dab054984238960d21cc210c",
+  "identity": "github:1156994049",
+  "license": "Apache-2.0",
+  "name": "OrchestratorInc/agent-orchestrator",
+  "repository": "https://github.com/OrchestratorInc/agent-orchestrator",
+  "repositoryId": "1156994049",
+  "site": "https://github.com/OrchestratorInc/agent-orchestrator",
+  "sourceSignature": "5191df9fe382cd256afdc01e685da51120117e5c8e9cc0c23faf181b374c9232",
+  "summary": [
+    "OrchestratorInc 称，这款工具可用于规划任务、运行多个编码智能体，并跟踪工作进展直至拉取请求合并。",
+    "OrchestratorInc says its tool lets users plan tasks, run multiple coding agents, and supervise their work through pull request merge."
+  ],
+  "tested": false,
+  "type": "tools",
+  "verificationSources": [
+    "https://api.github.com/search/repositories?page=1&per_page=30&q=topic%3Aai-coding+archived%3Afalse+fork%3Afalse&sort=stars"
+  ],
+  "verifiedAt": "2026-11-25"
+}

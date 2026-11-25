@@ -1,0 +1,27 @@
+{
+  "addedAt": "2026-11-25",
+  "categories": [
+    [
+      "设计图层恢复",
+      "Design Layer Recovery"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-25",
+  "id": "resource-74751859e1c9917ee849a6a691385eb2432bce049bb8e79cd4ee0ca86d26075b",
+  "identity": "github:1411286244",
+  "name": "Aixio-AI/aixio-layer-v2",
+  "repository": "https://github.com/Aixio-AI/aixio-layer-v2",
+  "repositoryId": "1411286244",
+  "site": "https://github.com/Aixio-AI/aixio-layer-v2",
+  "sourceSignature": "d212791054d2d3e23a425e05efb2cf23d55a4589c73e89c10a7d552805af14dd",
+  "summary": [
+    "Aixio AI 称，Aixio Layer v2 可在条件允许时从已合并图层的设计图中恢复可编辑图层。",
+    "Aixio AI says Aixio Layer v2 can recover editable layers from flattened designs where possible."
+  ],
+  "tested": false,
+  "type": "tools",
+  "verificationSources": [
+    "https://api.github.com/search/repositories?page=1&per_page=30&q=topic%3Aai-design+archived%3Afalse+fork%3Afalse&sort=stars"
+  ],
+  "verifiedAt": "2026-11-25"
+}

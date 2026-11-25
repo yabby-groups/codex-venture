@@ -1,0 +1,30 @@
+{
+  "addedAt": "2026-11-25",
+  "categories": [
+    [
+      "AI 编码辅助",
+      "AI Coding Assistance"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-25",
+  "id": "resource-3d6e066ddb9cb44d82064aa6dfe0931f3f7b54e09cbc5a991f9b7201338f7040",
+  "identity": "openvsx:reflexor-app.reflexor",
+  "install": "https://open-vsx.org/extension/reflexor-app/reflexor",
+  "name": "Reflexor: Local AI Coding Assistant & Agent (Ollama, DeepSeek, LLM, RAG)",
+  "platforms": [
+    "Open VSX"
+  ],
+  "site": "https://open-vsx.org/extension/reflexor-app/reflexor",
+  "sourceSignature": "f93ba8eefa864c90454c55a564f697c2ec96ee5b56cb3495f57f8e9ac0af7970",
+  "summary": [
+    "发布方称，Reflexor 可在本地提供行内代码补全，通过检索代码库回答问题，并在编码智能体执行操作前征求批准。",
+    "Reflexor’s publisher describes a local coding assistant that offers inline completions, answers questions using codebase retrieval, and asks for approval before agent actions."
+  ],
+  "tested": false,
+  "type": "plugins",
+  "verificationSources": [
+    "https://open-vsx.org/api/-/search?offset=25&query=coding+assistant&size=25"
+  ],
+  "verifiedAt": "2026-11-25",
+  "version": "0.7.9"
+}

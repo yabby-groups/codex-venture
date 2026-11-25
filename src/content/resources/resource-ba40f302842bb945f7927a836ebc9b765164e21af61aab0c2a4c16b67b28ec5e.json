@@ -1,0 +1,28 @@
+{
+  "addedAt": "2026-11-25",
+  "categories": [
+    [
+      "浏览器自动化",
+      "Browser Automation"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-25",
+  "id": "resource-ba40f302842bb945f7927a836ebc9b765164e21af61aab0c2a4c16b67b28ec5e",
+  "identity": "github:881458615",
+  "license": "MIT",
+  "name": "browser-use/browser-use",
+  "repository": "https://github.com/browser-use/browser-use",
+  "repositoryId": "881458615",
+  "site": "https://github.com/browser-use/browser-use",
+  "sourceSignature": "290d2ea440f52a91eabda99385c244a080ddad850e2eb553a7bb1f1dc1f658fe",
+  "summary": [
+    "发布方提供用于构建 AI 浏览器智能体的 Python 库，并通过 Browser Use Cloud 提供托管的智能体 API。",
+    "The publisher offers a Python library for building AI browser agents and a hosted agent API through Browser Use Cloud."
+  ],
+  "tested": false,
+  "type": "open-source",
+  "verificationSources": [
+    "https://api.github.com/search/repositories?page=1&per_page=30&q=topic%3Aai-agents+archived%3Afalse+fork%3Afalse&sort=stars"
+  ],
+  "verifiedAt": "2026-11-25"
+}

@@ -1,0 +1,31 @@
+{
+  "addedAt": "2026-11-25",
+  "categories": [
+    [
+      "防御性代码安全审查",
+      "Defensive Code Security Review"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-25",
+  "id": "resource-86b1f1e0d3b74d38b9d8864e5654dd3f530705b60699dbac037363c7f9f8ae6b",
+  "identity": "github-skill:1103643573:skills/.curated/security-best-practices/SKILL.md",
+  "name": "security-best-practices",
+  "platforms": [
+    "Codex"
+  ],
+  "repository": "https://github.com/openai/skills",
+  "repositoryId": "1103643573",
+  "site": "https://github.com/openai/skills/blob/main/skills/.curated/security-best-practices/SKILL.md",
+  "sourcePath": "skills/.curated/security-best-practices/SKILL.md",
+  "sourceSignature": "d4d1c4b2fc6eea44332c0027f57d74cea410809bbf3435e807c6369d7e72b708",
+  "summary": [
+    "技能文档介绍了如何依据语言和框架的安全指南，审查 Python、JavaScript、TypeScript 和 Go 代码中的安全问题，并提出修复建议。",
+    "The skill’s documentation describes using language- and framework-specific guidance to review Python, JavaScript, TypeScript, and Go code for security issues and suggest fixes."
+  ],
+  "tested": false,
+  "type": "skills",
+  "verificationSources": [
+    "https://github.com/openai/skills/blob/main/skills/.curated/security-best-practices/SKILL.md"
+  ],
+  "verifiedAt": "2026-11-25"
+}

@@ -1,0 +1,31 @@
+{
+  "addedAt": "2026-11-25",
+  "categories": [
+    [
+      "网页制品开发",
+      "Web Artifact Development"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-25",
+  "id": "resource-8d28a48b8576353119a455284cf1160a0c4156fe1fc0f07a0ca5dea092056496",
+  "identity": "github-skill:1061953414:skills/web-artifacts-builder/SKILL.md",
+  "name": "web-artifacts-builder",
+  "platforms": [
+    "Claude"
+  ],
+  "repository": "https://github.com/anthropics/skills",
+  "repositoryId": "1061953414",
+  "site": "https://github.com/anthropics/skills/blob/main/skills/web-artifacts-builder/SKILL.md",
+  "sourcePath": "skills/web-artifacts-builder/SKILL.md",
+  "sourceSignature": "7eb63ee973ace72206c92e5252121fe8725447c3a4442bbb198dfad3c7a88f76",
+  "summary": [
+    "据技能文档介绍，可用 React、Tailwind CSS 和 shadcn/ui 构建包含多个组件的 HTML 制品，再将其打包为单个 HTML 文件。",
+    "The skill documentation describes building multi-component HTML artifacts with React, Tailwind CSS, and shadcn/ui, then bundling the result into one HTML file."
+  ],
+  "tested": false,
+  "type": "skills",
+  "verificationSources": [
+    "https://github.com/anthropics/skills/blob/main/skills/web-artifacts-builder/SKILL.md"
+  ],
+  "verifiedAt": "2026-11-25"
+}

@@ -1,0 +1,28 @@
+{
+  "addedAt": "2026-11-25",
+  "categories": [
+    [
+      "用户界面组装",
+      "UI Composition"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-25",
+  "id": "resource-62ffd632711af3759b1bd847a4c1fd3bc571d6e8f8888f22cc5bd83bce1b25e1",
+  "identity": "mcp:ai.a2uicatalog/catalog",
+  "name": "A2UI Atomic Catalog",
+  "registryId": "ai.a2uicatalog/catalog",
+  "site": "https://registry.modelcontextprotocol.io/v0.1/servers/ai.a2uicatalog%2Fcatalog/versions/1.0.0",
+  "sourceSignature": "7db31ba3c80a29d8e5095c8d3c41084cd09880f191dbc55f0d484997acee6dac",
+  "summary": [
+    "据发布者介绍，这是一个 MCP 界面组件库，提供带类型定义的基础组件，供智能体组合成可渲染的界面。",
+    "The publisher describes an MCP catalog of typed UI building blocks that agents can assemble into rendered interfaces."
+  ],
+  "tested": false,
+  "transport": "streamable-http",
+  "type": "mcp",
+  "verificationSources": [
+    "https://registry.modelcontextprotocol.io/v0.1/servers/ai.a2uicatalog%2Fcatalog/versions/1.0.0"
+  ],
+  "verifiedAt": "2026-11-25",
+  "version": "1.0.0"
+}
