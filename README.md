@@ -51,3 +51,7 @@ npm run preview
 ## 网站统计
 
 公开内容产出见 `/stats/`，访问统计及本地偏好说明见 `/privacy/`。网站统计、搜索接入、模型计价、私有数据保存和策略回滚见 [人工配置清单](docs/analytics.md)。
+
+## 免费资讯采集
+
+固定来源见 [来源注册表](config/sources.yaml)。主动发现、二次证据、平台访问条件和实测记录见 [免费采集运营说明](docs/free-collection.md)。采集服务费用为零，编辑使用现有模型预算。

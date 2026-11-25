@@ -3,7 +3,7 @@ set -euo pipefail
 
 # Use a separate index. The checkout and its trusted scripts stay on the workflow SHA.
 ref=refs/heads/venture-state
-files=(state/items.json .venture-runtime/health.json .venture-runtime/usage.json)
+files=(state/items.json .venture-runtime/health.json .venture-runtime/usage.json .venture-runtime/requests.json .venture-runtime/github-snapshots.json)
 parent=""
 if git ls-remote --exit-code --heads origin "$ref" >/dev/null; then
     git fetch --quiet --no-tags --depth=1 origin "$ref"

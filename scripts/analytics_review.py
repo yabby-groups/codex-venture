@@ -18,7 +18,7 @@ DEFAULT = Path('config/editorial-strategy.json')
 
 def valid(strategy):
     return (type(strategy) is dict and set(strategy) == {'category_weights', 'candidate_limit', 'max_articles'}
-            and type(strategy['candidate_limit']) is int and 4 <= strategy['candidate_limit'] <= 8
+            and type(strategy['candidate_limit']) is int and 4 <= strategy['candidate_limit'] <= 24
             and type(strategy['max_articles']) is int and 1 <= strategy['max_articles'] <= 3
             and type(strategy['category_weights']) is dict
             and all(key in CATEGORIES and type(value) is int and -1 <= value <= 1

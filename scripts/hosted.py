@@ -7,13 +7,14 @@ import subprocess
 import sys
 import tempfile
 import time
-from datetime import datetime
+from datetime import datetime, timedelta
 from decimal import Decimal
 from pathlib import Path
 from urllib.parse import urlsplit
 
 from collect import collect, load, save
 from discover import discovery
+from evidence import enrich
 from resource_editor import resource_context
 from editor import ITEMS, DATE_ZONE, RUN_BUDGET, choose, metadata, output_schema, sync, write_articles
 from model_cost import configured_price, event_usage, worst_case
@@ -74,10 +75,22 @@ def prepare(task):
     sync(items, articles)
     save(ITEMS, items)
     if task in ('collect', 'discover'):
+        if task == 'discover':
+            queued = {key: item for key, item in items.items() if not item.get('evidence_checked')
+                      or now - datetime.fromisoformat(item['evidence_checked']) > timedelta(
+                          days=3 if item.get('evidence') else 1)}
+            counts = enrich(items, choose('news', queued, now, strategy={'candidate_limit': 40}), now, limit=10)
+            save(ITEMS, items)
+            path = BATCH.parent / 'collection.json'
+            save(path, {**load(path, {}), **counts})
         return
     slug = 'weekly-' + day if task == 'weekly' else day
-    rules = strategy() if os.getenv('VENTURE_STRATEGY_AUTO_UPDATE') == 'true' else {}
+    rules = strategy() if os.getenv('VENTURE_STRATEGY_AUTO_UPDATE') == 'true' else load(Path('config/editorial-strategy.json'), {})
     candidates = choose(task, items, now, days if task in ('weekly', 'backfill') else 2, rules)
+    if task == 'backfill':
+        enrich(items, candidates, now)
+        save(ITEMS, items)
+        candidates = choose(task, items, now, days, rules)
     if task != 'smoke-test' and (not candidates or (
         task in ('daily', 'weekly') and any(
             article['collection'] == 'daily' and article['slug'] == slug for article in articles

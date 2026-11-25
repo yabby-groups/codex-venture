@@ -37,3 +37,45 @@ sources:
   - {id: github-open-source, kind: feed, url: 'https://github.blog/open-source/feed/', category: open-source}
   - {id: cloudflare-ai, kind: feed, url: 'https://blog.cloudflare.com/tag/ai/rss/', category: open-source}
   - {id: pytorch-blog, kind: feed, url: 'https://pytorch.org/feed.xml', category: open-source}
+  - {id: ml-explore-mlx, kind: github, repo: ml-explore/mlx, category: models, interval_hours: 6}
+  - {id: ml-explore-mlx-lm, kind: github, repo: ml-explore/mlx-lm, category: models, interval_hours: 6}
+  - {id: pytorch-pytorch, kind: github, repo: pytorch/pytorch, category: models, interval_hours: 6}
+  - {id: deepseek-ai-deepseek-r1, kind: github, repo: deepseek-ai/DeepSeek-R1, category: models, interval_hours: 6}
+  - {id: nvidia-nemo, kind: github, repo: NVIDIA/NeMo, category: models, interval_hours: 6}
+  - {id: vllm-project-vllm, kind: github, repo: vllm-project/vllm, category: open-source, interval_hours: 6}
+  - {id: sgl-project-sglang, kind: github, repo: sgl-project/sglang, category: open-source, interval_hours: 6}
+  - {id: run-llama-llama_index, kind: github, repo: run-llama/llama_index, category: open-source, interval_hours: 6}
+  - {id: huggingface-accelerate, kind: github, repo: huggingface/accelerate, category: open-source, interval_hours: 6}
+  - {id: huggingface-trl, kind: github, repo: huggingface/trl, category: open-source, interval_hours: 6}
+  - {id: huggingface-peft, kind: github, repo: huggingface/peft, category: open-source, interval_hours: 6}
+  - {id: rocm-rocm-libraries, kind: github, repo: ROCm/rocm-libraries, category: open-source, interval_hours: 6}
+  - {id: qdrant-qdrant, kind: github, repo: qdrant/qdrant, category: open-source, interval_hours: 6}
+  - {id: chroma-core-chroma, kind: github, repo: chroma-core/chroma, category: open-source, interval_hours: 6}
+  - {id: axolotl-ai-cloud-axolotl, kind: github, repo: axolotl-ai-cloud/axolotl, category: open-source, interval_hours: 6}
+  - {id: unslothai-unsloth, kind: github, repo: unslothai/unsloth, category: open-source, interval_hours: 6}
+  - {id: bentoml-bentoml, kind: github, repo: bentoml/BentoML, category: open-source, interval_hours: 6}
+  - {id: ray-project-ray, kind: github, repo: ray-project/ray, category: open-source, interval_hours: 6}
+  - {id: apache-tvm, kind: github, repo: apache/tvm, category: open-source, interval_hours: 6}
+  - {id: dottxt-ai-outlines, kind: github, repo: dottxt-ai/outlines, category: open-source, interval_hours: 6}
+  - {id: openrouterteam-ai-sdk-provider, kind: github, repo: OpenRouterTeam/ai-sdk-provider, category: open-source, interval_hours: 6}
+  - {id: langchain-ai-langchain, kind: github, repo: langchain-ai/langchain, category: agents, interval_hours: 6}
+  - {id: langgenius-dify, kind: github, repo: langgenius/dify, category: agents, interval_hours: 6}
+  - {id: huggingface-smolagents, kind: github, repo: huggingface/smolagents, category: agents, interval_hours: 6}
+  - {id: microsoft-autogen, kind: github, repo: microsoft/autogen, category: agents, interval_hours: 6}
+  - {id: microsoft-semantic-kernel, kind: github, repo: microsoft/semantic-kernel, category: agents, interval_hours: 6}
+  - {id: google-adk-python, kind: github, repo: google/adk-python, category: agents, interval_hours: 6}
+  - {id: getzep-graphiti, kind: github, repo: getzep/graphiti, category: agents, interval_hours: 6}
+  - {id: crewaiinc-crewai, kind: github, repo: crewAIInc/crewAI, category: agents, interval_hours: 6}
+  - {id: all-hands-ai-openhands, kind: github, repo: All-Hands-AI/OpenHands, category: agents, interval_hours: 6}
+  - {id: aider-ai-aider, kind: github, repo: Aider-AI/aider, category: coding, interval_hours: 6}
+  - {id: continuedev-continue, kind: github, repo: continuedev/continue, category: coding, interval_hours: 6}
+  - {id: moonshotai-kimi-cli, kind: github, repo: MoonshotAI/kimi-cli, category: coding, interval_hours: 6}
+  - {id: open-webui-open-webui, kind: github, repo: open-webui/open-webui, category: coding, interval_hours: 6}
+  - {id: huggingface-diffusers, kind: github, repo: huggingface/diffusers, category: image, interval_hours: 6}
+  - {id: comfy-org-comfyui_frontend, kind: github, repo: Comfy-Org/ComfyUI_frontend, category: image, interval_hours: 6}
+  - {id: ggml-org-whisper.cpp, kind: github, repo: ggml-org/whisper.cpp, category: audio, interval_hours: 6}
+  - {id: simon-willison, kind: feed, url: 'https://simonwillison.net/atom/everything/', category: coding, interval_hours: 12, content_type: stories}
+  - {id: hamel-husain, kind: feed, url: 'https://hamel.dev/index.xml', category: coding, interval_hours: 12, content_type: tutorials}
+  - {id: apple-ml, kind: feed, url: 'https://machinelearning.apple.com/rss.xml', category: models, interval_hours: 12}
+  - {id: microsoft-foundry, kind: feed, url: 'https://devblogs.microsoft.com/foundry/feed/', category: models, interval_hours: 12}
+  - {id: meta-engineering, kind: feed, url: 'https://engineering.fb.com/feed/', category: coding, interval_hours: 12}

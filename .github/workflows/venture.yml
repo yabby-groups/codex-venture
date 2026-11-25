@@ -2,7 +2,7 @@ name: Codex Venture
 on:
   schedule:
     - cron: '0 * * * *'
-    - cron: '30 23 * * *'
+    - cron: '37 2,8,14,20 * * *'
     - cron: '20 0,4,10 * * *'
     - cron: '20 14 * * *'
     - cron: '30 13 * * 0'
@@ -69,7 +69,7 @@ jobs:
           if [[ -z "$task" ]]; then
             case "$SCHEDULE" in
               '0 * * * *') task=collect ;;
-              '30 23 * * *') task=discover ;;
+              '37 2,8,14,20 * * *') task=discover ;;
               '20 0,4,10 * * *') task=news ;;
               '20 14 * * *') task=daily ;;
               '30 13 * * 0') task=weekly ;;
@@ -102,6 +102,7 @@ jobs:
         if: steps.task.outputs.task != 'health'
         env:
           TASK: ${{ steps.task.outputs.task }}
+          VENTURE_GITHUB_READ_TOKEN: ${{ github.token }}
           CODEX_MODEL: ${{ vars.CODEX_MODEL || secrets.CODEX_MODEL }}
           CODEX_ADVANCED_MODEL: ${{ vars.CODEX_ADVANCED_MODEL }}
           VENTURE_MODEL_PRICING_JSON: ${{ secrets.VENTURE_MODEL_PRICING_JSON }}

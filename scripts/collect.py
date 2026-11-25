@@ -1,11 +1,11 @@
 import hashlib
+import http.client
 import json
 import os
 import re
 import subprocess
 import time
 import urllib.error
-import urllib.request
 import urllib.robotparser
 import xml.etree.ElementTree as ET
 from datetime import datetime, timedelta, timezone
@@ -15,6 +15,9 @@ from html import unescape
 from urllib.parse import parse_qsl, urlencode, urlsplit, urlunsplit
 
 from pathlib import Path
+
+from collection_budget import record, reserve
+from public_http import request as https_request
 
 AGENT = 'CodexVentureBot'
 CATEGORIES = {'models', 'coding', 'image', 'video', 'audio', 'agents', 'open-source'}
@@ -49,21 +52,13 @@ def clean(value):
     return ' '.join(unescape(re.sub(r'<[^>]*>', ' ', value or '')).split())
 
 
-class NoRedirect(urllib.request.HTTPRedirectHandler):
-    def redirect_request(self, req, fp, code, msg, headers, newurl):
-        return None
-
-
-OPENER = urllib.request.build_opener(NoRedirect())
-
-
 def request(url, headers=None):
-    req = urllib.request.Request(url, headers={'User-Agent': AGENT, **(headers or {})})
-    with OPENER.open(req, timeout=12) as response:
-        body = response.read(4_000_001)
-        if len(body) > 4_000_000:
-            raise ValueError('response exceeds 4 MB')
-        return body, response.headers
+    request_headers = {'User-Agent': AGENT, **(headers or {})}
+    parts = urlsplit(url)
+    token = os.getenv('VENTURE_GITHUB_READ_TOKEN')
+    if token and parts.netloc == 'api.github.com' and not parts.path.startswith('/robots.txt'):
+        request_headers['Authorization'] = 'Bearer ' + token
+    return https_request(url, request_headers, before_request=reserve, after_request=record)
 
 
 @lru_cache
@@ -142,14 +137,21 @@ def collect(days=7, extra=(), only_extra=False, refresh=False):
     health_path = Path('.venture-runtime/health.json')
     items, health = load(items_path, {}), load(health_path, {})
     now = datetime.now(timezone.utc)
+    deadline = time.monotonic() + (170 if refresh else 240)
+    config.sort(key=lambda source: health.get(source['id'], {}).get('last_success', ''))
     known = {item['fingerprint']: key for key, item in items.items()}
     healthy = 0
     attempted = failed = duplicate = discovered = 0
     for source in config:
+        if time.monotonic() >= deadline:
+            print("Collection time budget elapsed", flush=True)
+            break
         key, kind = source['id'], source['kind']
         if source['category'] not in CATEGORIES or kind not in ('github', 'feed', 'discovery'):
             raise ValueError(f'{key}: invalid source configuration')
-        if source.get('enabled') is False:
+        if source.get('enabled') is False or (source.get('interval_hours', 1) > 1 and not refresh
+                and health.get(key, {}).get('last_success')
+                and now - timestamp(health[key]['last_success']) < timedelta(hours=source['interval_hours'])):
             continue
         url = ('https://api.github.com/repos/' + source['repo'] + '/releases?per_page=10'
                if kind == 'github' else source['url'])
@@ -158,7 +160,7 @@ def collect(days=7, extra=(), only_extra=False, refresh=False):
         if status.get('retry_after') and timestamp(status['retry_after']) > now:
             print(f'{key}: backoff', flush=True)
             continue
-        validators = status.get('validators', {}) if status.get('url') == url and not refresh else {}
+        validators = status.get('validators', {}) if status.get('url') == url and not refresh and not source.get('check_without_validators') else {}
         attempted += 1
         try:
             body, headers = fetch(url, validators)
@@ -167,14 +169,18 @@ def collect(days=7, extra=(), only_extra=False, refresh=False):
                         for row in json.loads(body) if not row['draft'] and not row['prerelease']) if kind == 'github' else feed_rows(body) if kind == 'feed' else ()
                 if kind == 'discovery':
                     rows = source['parse'](body)
-                for title, link, published, summary in rows:
+                for row in rows:
+                    title, link, published, summary = row[:4]
+                    details = row[4] if len(row) > 4 else {}
                     if not (title and link and published):
                         continue
                     try:
                         date, link = timestamp(published), canonical(link)
                     except (ValueError, TypeError):
                         continue
-                    if date > now + timedelta(minutes=5) or (not source.get('content_type') and date < now - timedelta(days=days)):
+                    window = max(days, 14 if kind == 'github' else 30 if details.get('repository_id') else days)
+                    if date > now + timedelta(minutes=5) or (
+                            not source.get('content_type') and date < now - timedelta(days=window)):
                         continue
                     title, summary = clean(title)[:300], clean(summary)[:3200]
                     if not title or not summary:
@@ -184,6 +190,9 @@ def collect(days=7, extra=(), only_extra=False, refresh=False):
                     if item_id in items:
                         duplicate += 1
                         entry = items[item_id]
+                        entry.setdefault('discovery', {}).update(details)
+                        if source.get('content_type') and (not entry.get('content_type') or source['content_type'] == 'skills'):
+                            entry['content_type'] = source['content_type']
                         if entry['fingerprint'] != fingerprint:
                             entry.update(title=title, summary=summary[:3200], fingerprint=fingerprint,
                                          updated=now.isoformat())
@@ -194,7 +203,7 @@ def collect(days=7, extra=(), only_extra=False, refresh=False):
                         continue
                     items[item_id] = dict(url=link, published=date.isoformat(), discovered=now.isoformat(),
                                           source=key, source_url=url, category=source['category'], title=title,
-                                          summary=summary[:3200], fingerprint=fingerprint, status='pending')
+                                          summary=summary[:3200], fingerprint=fingerprint, status='pending', discovery=details)
                     if source.get('content_type'):
                         items[item_id]['content_type'] = source['content_type']
                     known[fingerprint] = item_id
@@ -206,7 +215,7 @@ def collect(days=7, extra=(), only_extra=False, refresh=False):
                           error=None, retry_after=None)
             healthy += 1
             print(f'{key}: {"unchanged" if body is None else "ok"}', flush=True)
-        except (ValueError, OSError, ET.ParseError, KeyError, TypeError) as error:
+        except (ValueError, OSError, ET.ParseError, KeyError, TypeError, http.client.HTTPException) as error:
             status.setdefault('first_failure', now.isoformat())
             failures = status.get('failures', 0) + 1
             delay = timedelta(hours=min(24, 2 ** min(failures - 1, 5)))
@@ -227,10 +236,11 @@ def collect(days=7, extra=(), only_extra=False, refresh=False):
     if 'RUNNER_TEMP' in os.environ:
         path = Path(os.environ['RUNNER_TEMP']) / 'venture' / 'collection.json'
         counts = load(path, {})
+        counts['collection_service_cost_usd'] = 0
+        counts['candidate_backlog'] = sum(item['status'] == 'pending' for item in items.values())
         for key, count in dict(attempted=attempted, succeeded=healthy, failed=failed,
                                duplicates=duplicate, discovered=discovered).items():
             counts[key] = counts.get(key, 0) + count
         save(path, counts)
-    if not healthy:
-        raise RuntimeError('no sources completed successfully')
+
     return items

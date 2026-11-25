@@ -43,9 +43,10 @@ def metadata():
 
 
 def sync(items, articles):
+    by_url = {item['url']: item for item in items.values()}
     for story in articles:
         for source in story['sources']:
-            entry = items.get(digest(canonical(source['url'])))
+            entry = by_url.get(canonical(source['url']))
             if entry:
                 article = f"/{story['collection']}/{story['slug']}/"
                 entry.update(status='published', articles=sorted(set(entry.get('articles', [])) | {article}))
@@ -109,61 +110,53 @@ def choose(mode, items, now, days=2, strategy=None):
     limit = strategy.get('candidate_limit', CANDIDATE_LIMIT)
     weights = strategy.get('category_weights', {})
     candidates = {}
-    selected_sources = set()
-    deferred = []
-
-    def priority(pair):
-        item = pair[1]
-        previously_reported = mode in ('daily', 'weekly') and any(
-            path.startswith('/news/') for path in item.get('articles', [])
-        )
-        discovery_lead = item.get('source', '').startswith(
-            ('github-search-', 'trending-', 'hacker-news-', 'product-hunt')
-        )
-        return previously_reported, weights.get(item['category'], 0), not discovery_lead, timestamp(item['published'])
-
+    groups = {}
     briefing = mode in ('daily', 'weekly')
-    for key, item in sorted(items.items(), key=priority, reverse=True):
-        evergreen = bool(item.get('content_type'))
-        if (briefing and evergreen) or (not evergreen and timestamp(item['published']) < now - timedelta(days=days)):
+    for key, item in items.items():
+        content_type = item.get('content_type')
+        source = item.get('source', '')
+        details = item.get('discovery', {})
+        group = content_type or ('release' if '/releases/' in item['url'] else
+                                 'projects' if details.get('repository_id') else
+                                 'research' if source.startswith(('arxiv-', 'hf-')) else 'news')
+        if briefing and content_type:
+            continue
+        window = days if briefing else {'release': 14, 'projects': 30, 'research': 14, 'news': 7}.get(group)
+        published = timestamp(item['published'])
+        if window and published < now - timedelta(days=max(days, window)):
             continue
         eligible = item['status'] == 'pending' or (mode == 'backfill' and item['status'] == 'expired')
-        if mode in ('daily', 'weekly'):
-            eligible = eligible or any(path.startswith('/news/') for path in item.get('articles', []))
+        if briefing:
+            articles = item.get('articles', [])
+            eligible = eligible or any(path.startswith('/news/') for path in articles)
             if mode == 'daily':
-                eligible = eligible and not any(path.startswith('/daily/') for path in item.get('articles', []))
+                eligible = eligible and not any(path.startswith('/daily/') for path in articles)
         if eligible and item.get('summary'):
-            source = item.get('source', item['url'])
+            priority = (bool(item.get('evidence')), weights.get(item['category'], 0), published)
+            groups.setdefault(group, []).append((priority, key))
+    for group in groups.values():
+        group.sort()
+    byte_limit = 54000
+    used_bytes = 0
+    while groups and len(candidates) < limit:
+        for group in sorted(groups, key=lambda name: groups[name][-1][0], reverse=True):
+            _, key = groups[group].pop()
+            if not groups[group]:
+                del groups[group]
+            item = items[key]
             evidence = {field: item[field] for field in ('title', 'url', 'published', 'summary', 'category')}
-            if evergreen:
+            evidence['summary'] = evidence['summary'][:1400]
+            if item.get('content_type'):
                 evidence['suggestedType'] = item['content_type']
-            if source in selected_sources:
-                deferred.append((key, evidence))
-            else:
-                selected_sources.add(source)
+            evidence['documents'] = item.get('evidence', [])[:3]
+            evidence['lastVerified'] = item.get('verified_at')
+            evidence['discovery'] = item.get('discovery', {})
+            size = len(json.dumps(evidence, ensure_ascii=False).encode())
+            if size + used_bytes <= byte_limit:
                 candidates[key] = evidence
-        if len(candidates) == limit:
-            break
-    if not briefing and limit > 1:
-        # Give an evergreen lead room even when recent releases dominate the queue.
-        if not any(item.get('suggestedType') for item in candidates.values()):
-            for key, item in sorted(items.items(), key=priority, reverse=True):
-                if item.get('content_type') and item['status'] == 'pending' and item.get('summary'):
-                    if len(candidates) == limit:
-                        candidates.pop(next(reversed(candidates)))
-                    candidates[key] = {field: item[field] for field in ('title', 'url', 'published', 'summary', 'category')}
-                    candidates[key]['suggestedType'] = item['content_type']
-                    break
-    if weights:
-        # Reserve one slot for an otherwise eligible item outside the promoted categories.
-        exploration = next(((key, item) for key, item in deferred if weights.get(item['category'], 0) <= 0), None)
-        if exploration:
-            if len(candidates) == limit and all(weights.get(item['category'], 0) > 0 for item in candidates.values()):
-                candidates.pop(next(reversed(candidates)))
-            if len(candidates) < limit:
-                candidates.update([exploration])
-    candidates.update((key, item) for key, item in deferred[:limit - len(candidates)]
-                      if key not in candidates)
+                used_bytes += size
+            if len(candidates) == limit:
+                break
     return candidates
 
 
@@ -204,7 +197,9 @@ def write_articles(response, mode, candidates, now, limit=3):
         evidence = [candidates[key] for key in ids]
         links = set(map(unescape, re.findall(r'href="([^"]+)"', body)))
         valid_links = {item['url'] for item in evidence}
-        if not links <= valid_links or (mode in ('daily', 'weekly') and links != valid_links):
+        primary_links = valid_links.copy()
+        valid_links.update(doc['url'] for item in evidence for doc in item.get('documents', []))
+        if not links <= valid_links or (mode in ('daily', 'weekly') and not primary_links <= links):
             raise ValueError('article links do not match its evidence')
         if len(body) > 12000:
             raise ValueError('article too long')
@@ -238,6 +233,12 @@ def write_articles(response, mode, candidates, now, limit=3):
         article['tags'] = list(dict.fromkeys(tag for tag in tags if tag))
         article['published'] = now.isoformat(timespec='seconds')
         article['sources'] = [dict(title=item['title'], url=item['url']) for item in evidence]
+        primary_links = {source['url'] for source in article['sources']}
+        for item in evidence:
+            for doc in item.get('documents', []):
+                if doc['url'] in links and doc['url'] not in primary_links:
+                    article['sources'].append(dict(title=doc['label'], url=doc['url']))
+                    primary_links.add(doc['url'])
         # JSON scalar values are valid in YAML frontmatter.
         front = '\n'.join(f'{key}: {json.dumps(value, ensure_ascii=False)}' for key, value in article.items())
         writes[path] = f'---\n{front}\n---\n{body.strip()}\n'
