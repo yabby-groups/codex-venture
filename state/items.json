@@ -1251,7 +1251,7 @@
     "published": "2026-11-04T21:29:15.449120+00:00",
     "source": "ecosystem-open-vsx",
     "source_url": "https://open-vsx.org/api/-/search?query=AI+testing&size=10",
-    "status": "pending",
+    "status": "skipped",
     "summary": "Open VSX version 1.30.88. Publisher description: Editor for AVAP Unit Testing.",
     "title": "AVAP Unit Testing",
     "url": "https://open-vsx.org/extension/101OBeXCorp/avap-unit-testing"
@@ -1928,6 +1928,9 @@
     "url": "https://github.com/unslothai/unsloth/releases/tag/v0.1.918-beta"
   },
   "1aee7760aefdcea31631f72b5df1808cdc40f3e8c2421d12f772afeb34d3e19c": {
+    "articles": [
+      "/news/ray-2-57-2-certificate-trust-fixes/"
+    ],
     "category": "open-source",
     "discovered": "2026-11-25T03:19:53.460134+00:00",
     "discovery": {},
@@ -1935,7 +1938,7 @@
     "published": "2026-11-24T19:13:42+00:00",
     "source": "ray-project-ray",
     "source_url": "https://api.github.com/repos/ray-project/ray/releases?per_page=10",
-    "status": "pending",
+    "status": "published",
     "summary": "## Security Fixes ### Security: eMudhra intermediate CA compromise The eMudhra intermediate CA keys were reported compromised on October 20, 2026\\. pip trusts its own vendored certifi bundle in addition to the system store, so updating OS ca-certificates alone doesn't protect pip. This release moves every place Ray installs or bundles a CA bundle to the fixed releases, the same as 2.58.2 and 2.59.1. - Docker images: pip 26.2.2 on every Python version, conda and site-packages certifi 2026.10.19, uv 0.13.4 (\\#67295, \\#67350, pick \\#68040). - Windows and macOS wheel builds: pip 26.2.2 and uv 0.13.4 (\\#67298, pick \\#68040). - virtualenv 21.14.12, which bundles pip 26.2.2 for runtime\\_env virtualenvs. This also moves packaging, typing-extensions, distlib and python-discovery to the versions virtualenv requires (\\#67301, pick \\#68040). - certifi\\>=2026.10.19 floor in Ray's security requirements (\\#67305, pick \\#68040). ### Security: aiohttp - aiohttp 3.14.4 and yarl 1.25.1 in Ray's pinned dependencies and the images, and an aiohttp\\>=3.14.4 floor for ray\\[default\\]. Fixes CVE-2026-111064, CVE-2026-111066 and GHSA-2g87-pp6c-29x5 (\\#67304, pick \\#68040). ### Security: Brotli - Brotli 1.2.1 in the Docker images and in Ray's pinned dependencies. Fixes CVE-2026-111497. The images get conda brotli-python\\>=1.2.1, or PyPI Brotli==1.2.1 on Python 3.10, where conda-forge has no 1.2.1 build (\\#67596, \\#67789, pick \\#68041). ### Security: idna - idna 3.15 or newer in Ray's security requirements, pinned dependencies and dependency locks, including the ones that feed the TPU images. Fixes CVE-2026-45409, a denial of service in idna before 3.15. 2.57.1 shipped idna 3.12 (\\#64056, pick \\#68047). ### Security: log4j - log4j-api, log4j-core and log4j-slf4j-impl 2.25.4, up from 2.25.3, in ray\\_dist.jar. Fixes CVE-2026-34477, CVE-2026-34478, CVE-2026-34479, CVE-2026-34480 and CVE-2025-68161 (\\#64269, pick \\#68047). ## Contributors @elliot-barn, @nh-atuan, @ronaldosaheki",
     "title": "Ray-2.57.2",
     "url": "https://github.com/ray-project/ray/releases/tag/ray-2.57.2"
@@ -3158,6 +3161,9 @@
     "url": "https://arxiv.org/abs/2611.28576"
   },
   "2bd2158312c4d19c14ebef96ecb7bf86bf8091b4286fe0fd3e11d4dcc397eb10": {
+    "articles": [
+      "/news/litellm-1-108-17-lts-tool-calls-and-budgets/"
+    ],
     "category": "open-source",
     "discovered": "2026-11-25T03:19:53.460134+00:00",
     "discovery": {},
@@ -3165,7 +3171,7 @@
     "published": "2026-11-24T22:56:05+00:00",
     "source": "litellm",
     "source_url": "https://api.github.com/repos/BerriAI/litellm/releases?per_page=10",
-    "status": "pending",
+    "status": "published",
     "summary": "> [!TIP] > The `lts` image tag always points to the latest LTS release. Pull `ghcr.io/berriai/litellm:lts` to stay on the newest LTS patch ## Verify this release ```bash cosign verify \\ --certificate-identity https://github.com/BerriAI/project-releaser/.github/workflows/release.yml@refs/heads/main \\ --certificate-oidc-issuer https://token.actions.githubusercontent.com \\ ghcr.io/berriai/litellm:v1.108.17 ``` Same command for `litellm-database`, `litellm-non_root` and the `docker.io/litellm/*` images ## What's new in 1.108.17 (LTS) 40 PRs. 2 added, 29 fixed, 1 improved. No action needed to upgrade ### Highlights - **OpenAI:** Fixed streamed OpenAI tool calls reaching agents with empty arguments when OpenAI sends them only at the end (#52069, #53306) - **Chat completions:** Fixed `chat-latest` and `gpt-chat-latest` on OpenAI, Azure and Azure AI failing with 400 on the first prompt (#51151) - **AWS Bedrock:** Fixed a Bedrock Claude tool with shared `$defs` stalling a worker for about 30 seconds and then failing with 400 (#54118) - **Cost tracking and pricing:** Fixed OpenAI Agents API session calls through `/openai` logging $0, so key and team budgets now apply (#53881) - **Vertex AI and Gemini:** Added Gemini page and sheet range options for files on chat completions, so only that part is read and billed (#52611) - **Other providers:** Added MiniMax-H3-Image on `/v1/images/generations` and `/v1/images/edits` with cost tracking (#53986) - **Other providers:** Fixed DeepSeek V4 on `/v1/messages` ignoring the caller's effort, so Claude Code's `--effort` now applies (#52196) - **Performance:** Improved end-user restriction refreshes to read only restricted customers instead of the whole end-user table (#51772) Also in [1.109.5](https://github.com/BerriAI/litellm/releases/tag/v1.109.5), [1.110.4](https://github.com/BerriAI/litellm/releases/tag/v1.110.4), [1.111.0](https://github.com/BerriAI/litellm/releases/tag/v1.111.0) ### All changes OpenAI (5) - Fixed OpenAI, Azure and vLLM errors losing `param`, `type` and `code` and returning raw JSON in `message` (#51809, #53217) - Fixed chat completions dropping `access_programs` and prompt cache fields when LiteLLM runs on OpenAI SDK 3 (#51814) - Fixed streamed OpenAI tool calls reaching agents with empty arguments when OpenAI sends them only at the end (#52069, #53306) - Fixed `background_options` on `/v1/responses` being dropped before reaching OpenAI (#53993) - Fixed o3 `reasoning_effort` `minimal` and `none` returning OpenAI's 400 even with `drop_params` on (#54066) Anthropic (2) - Fixed a malformed `thinking_blocks` on Claude requests failing with 500, now a 400 naming the field (#53762) - Fixed failed `/v1/messages` streams logging placeholder output tokens and cost when Claude sends an error frame (#53920) AWS Bedrock (5) - Fixed Bedrock batch retrieve and cancel reporting and saving `/v1/chat/completions` for embeddings batches (#53831) - Fixed OpenAI SDK embeddings on Bedrock Nova 2 always failing with 400 on `encoding_format` (#53938) - Fixed Nova Sonic realtime sessions hanging when `api_base` or the runtime endpoint is set to an empty value (#53969) - Fixed a Bedrock Claude tool with shared `$def",
     "title": "1.108.17 (LTS)",
     "url": "https://github.com/BerriAI/litellm/releases/tag/v1.108.17"
@@ -6813,7 +6819,7 @@
     "published": "2026-11-25T01:16:26+00:00",
     "source": "hf-datasets",
     "source_url": "https://huggingface.co/api/datasets?sort=lastModified&direction=-1&limit=16&full=true",
-    "status": "pending",
+    "status": "skipped",
     "summary": "datasets listing. Tags: region:us",
     "title": "Falcon79epok/symbion-multi-ohlcv",
     "url": "https://huggingface.co/datasets/Falcon79epok/symbion-multi-ohlcv"
@@ -7237,7 +7243,7 @@
     "published": "2026-11-25T01:13:08+00:00",
     "source": "github-search-inference",
     "source_url": "https://api.github.com/search/repositories?q=topic%3Ainference+pushed%3A%3E%3D2026-11-18+archived%3Afalse+stars%3A%3E%3D10&sort=stars&per_page=14",
-    "status": "pending",
+    "status": "skipped",
     "summary": "Cross-platform, customizable ML solutions for live and streaming media. License: Apache-2.0.",
     "title": "google-ai-edge/mediapipe",
     "url": "https://github.com/google-ai-edge/mediapipe"
@@ -7267,7 +7273,7 @@
     "published": "2026-11-25T01:16:26+00:00",
     "source": "hf-datasets",
     "source_url": "https://huggingface.co/api/datasets?sort=lastModified&direction=-1&limit=16&full=true",
-    "status": "pending",
+    "status": "skipped",
     "summary": "datasets listing. Tags: region:us",
     "title": "bunnyhop1/i58-replay-bf862a1c",
     "url": "https://huggingface.co/datasets/bunnyhop1/i58-replay-bf862a1c"
@@ -12337,6 +12343,9 @@
     "url": "https://arxiv.org/abs/2611.07066"
   },
   "a50ec739fa6280114cf069d8143a5d37e8ca974f90fe55d6abe2291a667c76f5": {
+    "articles": [
+      "/news/litellm-1-110-4-ui-image-and-restriction-refresh/"
+    ],
     "category": "open-source",
     "discovered": "2026-11-25T03:19:53.460134+00:00",
     "discovery": {},
@@ -12344,7 +12353,7 @@
     "published": "2026-11-25T00:31:02+00:00",
     "source": "litellm",
     "source_url": "https://api.github.com/repos/BerriAI/litellm/releases?per_page=10",
-    "status": "pending",
+    "status": "published",
     "summary": "## Verify this release ```bash cosign verify \\ --certificate-identity https://github.com/BerriAI/project-releaser/.github/workflows/release.yml@refs/heads/main \\ --certificate-oidc-issuer https://token.actions.githubusercontent.com \\ ghcr.io/berriai/litellm:v1.110.4 ``` Same command for `litellm-database`, `litellm-non_root` and the `docker.io/litellm/*` images ## What's new in 1.110.4 4 PRs. 1 fixed, 1 improved. No action needed to upgrade ### Changes - **Deployment:** Fixed the standalone UI image shipping outdated nginx and zlib, now nginx 1.31.10 and zlib 1.4 (#54150) - **Performance:** Improved end-user restriction refreshes to read only restricted customers instead of the whole end-user table (#51772) Also in [1.108.17](https://github.com/BerriAI/litellm/releases/tag/v1.108.17), [1.109.5](https://github.com/BerriAI/litellm/releases/tag/v1.109.5), [1.111.0](https://github.com/BerriAI/litellm/releases/tag/v1.111.0) --- Backport #54069 · [Full changelog](https://github.com/BerriAI/litellm/compare/v1.110.3...v1.110.4)",
     "title": "v1.110.4",
     "url": "https://github.com/BerriAI/litellm/releases/tag/v1.110.4"
@@ -12556,7 +12565,7 @@
     "published": "2026-11-24T13:52:15+00:00",
     "source": "hacker-news-ai",
     "source_url": "https://hn.algolia.com/api/v1/search_by_date?query=AI&tags=story&hitsPerPage=20",
-    "status": "pending",
+    "status": "skipped",
     "summary": "Community discussion. Linked source: https://news.stanford.edu/stories/2026/11/ai-math-ravi-vakil",
     "title": "Has AI changed math forever?",
     "url": "https://news.ycombinator.com/item?id=50628182"
@@ -13888,6 +13897,9 @@
     "url": "https://news.ycombinator.com/item?id=50627889"
   },
   "bcedd58cb29bc178aefc2c747b61a037ee433f066dfb98166cf93ee27e9b688d": {
+    "articles": [
+      "/news/cerulion-libero-pro-harness-benchmark/"
+    ],
     "category": "coding",
     "content_type": "stories",
     "discovered": "2026-11-25T01:16:29.416465+00:00",
@@ -13917,7 +13929,7 @@
     "published": "2026-11-24T21:33:44+00:00",
     "source": "hacker-news-0-0",
     "source_url": "https://hn.algolia.com/api/v1/search_by_date?query=AI+workflow&tags=story&hitsPerPage=12",
-    "status": "pending",
+    "status": "published",
     "summary": "Hey HN! I'm Lakshay, and at Cerulion we cooked up a harness for physical AI. Built on top of our deterministic runtime, we now have MCP tools that let any LLM see and move a robot. It closes the loop with measurements so a model doesn't try to guess its way through the task, and imbues common sense and robotics best practices into the workflow. We ran the numbers on LIBERO-PRO and quite frankly are a bit shocked. Gemini 3.8 Flash with Cerulion solved 73 of 100 LIBERO-PRO tasks. GPT-6 Astra on a bare 3-tool baseline (arXiv:2610.30051) solved 71, at about 12x the cost and 3x the wall time per run. Flash on that same baseline solved 25. Guys. Gemini 3.8 Flash matched GPT-6 Astra for robotics. Model intelligence is not the bottleneck. A harness is all you need ;) Star us and follow along. Try the quickstart, lmk what you guys wanna see next. I'll post again soon! (teaser: my Nespresso machine is getting a lot of attention from my robot arm)",
     "title": "Show HN: Cerulion – Harness for Robotics, Gemini 3.8 Flash Matches GPT-6 Astra",
     "url": "https://github.com/cerulion-inc/cerulion",
@@ -15435,7 +15447,7 @@
     "published": "2026-10-30T16:43:10.531103+00:00",
     "source": "ecosystem-open-vsx",
     "source_url": "https://open-vsx.org/api/-/search?query=AI+testing&size=10",
-    "status": "pending",
+    "status": "skipped",
     "summary": "Open VSX version 3.1.1. Publisher description: Create early development tests for z/OS applications",
     "title": "IBM Early Development Testing",
     "url": "https://open-vsx.org/extension/IBM/taz-edt-extension"
