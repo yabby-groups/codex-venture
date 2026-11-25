@@ -3851,7 +3851,7 @@
     "published": "2026-11-24T03:50:24+00:00",
     "source": "gemini-cli",
     "source_url": "https://api.github.com/repos/google-gemini/gemini-cli/releases?per_page=10",
-    "status": "pending",
+    "status": "skipped",
     "summary": "## What's Changed * fix(patch): cherry-pick aafdfdf to release/v0.71.0-pr-30420 to patch version v0.71.0 and create version 0.71.1 by @gemini-cli-robot in https://github.com/google-gemini/gemini-cli/pull/30429 **Full Changelog**: https://github.com/google-gemini/gemini-cli/compare/v0.71.0...v0.71.1",
     "title": "Release v0.71.1",
     "url": "https://github.com/google-gemini/gemini-cli/releases/tag/v0.71.1"
@@ -8612,6 +8612,9 @@
     "url": "https://arxiv.org/abs/2611.33065"
   },
   "45a96695d7c0e997c9878e56627047609d38ee6c81e3eae1a55635db9b269e86": {
+    "articles": [
+      "/news/gemini-cli-0-71-0-powershell-spinner/"
+    ],
     "category": "coding",
     "discovered": "2026-11-24T05:44:12.654742+00:00",
     "discovery": {},
@@ -8619,7 +8622,7 @@
     "published": "2026-11-24T01:16:44+00:00",
     "source": "gemini-cli",
     "source_url": "https://api.github.com/repos/google-gemini/gemini-cli/releases?per_page=10",
-    "status": "pending",
+    "status": "published",
     "summary": "## What's Changed * Changelog for v0.70.0-preview.0 by @gemini-cli-robot in https://github.com/google-gemini/gemini-cli/pull/30361 * chore(release): bump version to 0.71.0-nightly.20261118.g615d6bc8c by @gemini-cli-robot in https://github.com/google-gemini/gemini-cli/pull/30366 * Changelog for v0.69.0 by @gemini-cli-robot in https://github.com/google-gemini/gemini-cli/pull/30365 * fix(core,cli): parse PowerShell commands asynchronously to prevent UI spinner freeze by @tadipavan in https://github.com/google-gemini/gemini-cli/pull/30334 * chore(gcp): push development worker to private artifact registry by @DavidAPierce in https://github.com/google-gemini/gemini-cli/pull/30319 **Full Changelog**: https://github.com/google-gemini/gemini-cli/compare/v0.70.0...v0.71.0",
     "title": "Release v0.71.0",
     "url": "https://github.com/google-gemini/gemini-cli/releases/tag/v0.71.0"
@@ -10722,7 +10725,7 @@
     "published": "2026-11-25T11:49:12+00:00",
     "source": "dev-automation",
     "source_url": "https://dev.to/api/articles?tag=automation&per_page=12",
-    "status": "pending",
+    "status": "skipped",
     "summary": "The Illusion of Done: Why Quiet Python Scripts Fail Operators When an inherited internal...",
     "title": "Standardizing Run Summaries and Failure Reporting for Operational Python Scripts",
     "url": "https://dev.to/romdevin/standardizing-run-summaries-and-failure-reporting-for-operational-python-scripts-5a55",
@@ -12924,6 +12927,9 @@
     "url": "https://openai.com/index/teens-learn-and-plan"
   },
   "6632044ca6ee3667da9dd4aa2668829b005a5e618c85eb41e32fbdb6e5335df0": {
+    "articles": [
+      "/news/crewai-1-15-45-pdf-artifacts/"
+    ],
     "category": "agents",
     "discovered": "2026-11-25T03:19:53.460134+00:00",
     "discovery": {},
@@ -12931,7 +12937,7 @@
     "published": "2026-11-24T03:54:54+00:00",
     "source": "crewaiinc-crewai",
     "source_url": "https://api.github.com/repos/crewAIInc/crewAI/releases?per_page=10",
-    "status": "pending",
+    "status": "published",
     "summary": "## What's Changed ### Features - Add ability to save HTML or markdown output as a PDF artifact. ### Bug Fixes - Fix dependency issue by bumping e2b for Python >=3.11 to pull patched wcmatch. - Wrap file-like inputs in `normalize_input_files`. - Reject negative checkpoint prune retention counts. - Report MongoDB tool's real environment variables. - Enable Bedrock S3 uploads with `prefer_upload`. - Validate foreign models against the target schema. - Preserve narrow dimensions when resizing images. - Reject empty credentials and use constant-time comparison in server authentication. - Make `HyperbrowserLoadTool` parameters optional in its schema. - Keep fields with explicit non-null defaults as non-nullable. - Maintain a streamed Azure delta when its chunk also carries usage. - Reject non-positive text chunk sizes. - Drop credentials on cross-origin redirects. - Stop chunking once a chunk reaches the end of the text. - Serialize enums by value in `CrewJSONEncoder`. - Never cache `save_artifact` tool results. - Set `from_cache` on the native tool finished event. ### Documentation - Document that anthropic file blocks carry no cache control. ## Contributors @Ayushraj06-bit, @Kelvin-Waititu, @Kiko0301, @MaiAditya, @SDLSY, @Sakura-798, @Vidit-Ostwal, @YeChenglin8888, @gabemilani, @houyunsun, @jjhong011001, @joaomdmoura, @kushagra0526, @lkuko, @nazek52, @nurlanmnn",
     "title": "1.15.45",
     "url": "https://github.com/crewAIInc/crewAI/releases/tag/1.15.45"
@@ -27823,6 +27829,9 @@
     "url": "https://openai.com/index/an-alien-mind"
   },
   "e1011549d8b866b4ece5756ccce7b2aebd440750644056ce4afee4affb806955": {
+    "articles": [
+      "/news/comfyui-frontend-1-61-8-link-navigation/"
+    ],
     "category": "image",
     "discovered": "2026-11-25T03:19:53.460134+00:00",
     "discovery": {},
@@ -27830,7 +27839,7 @@
     "published": "2026-11-24T04:06:49+00:00",
     "source": "comfy-org-comfyui_frontend",
     "source_url": "https://api.github.com/repos/Comfy-Org/ComfyUI_frontend/releases?per_page=10",
-    "status": "pending",
+    "status": "published",
     "summary": "## What's Changed * perf: share one tooltip across all Vue nodes (FRONT-4128) by @jtydhr88 in https://github.com/Comfy-Org/ComfyUI_frontend/pull/23950 * [chore] Update Ingest API types from cloud@7cde33cd by @comfy-pr-bot in https://github.com/Comfy-Org/ComfyUI_frontend/pull/23580 * fix: ask Cloud for capped job and asset list totals by @vqt123 in https://github.com/Comfy-Org/ComfyUI_frontend/pull/23387 * fix(load3d): install onExecuted before the Save3D(Advanced) viewer mounts by @christian-byrne in https://github.com/Comfy-Org/ComfyUI_frontend/pull/24131 * fix(image-preview): ignore load failures of thumbnails from a replaced batch FRONT-4330 by @jtydhr88 in https://github.com/Comfy-Org/ComfyUI_frontend/pull/24074 * feat(agent): carry error catalog id and failed job id in Ask agent context by @christian-byrne in https://github.com/Comfy-Org/ComfyUI_frontend/pull/23842 * feat(canvas): go to the other end of a socket's links (DES-1283) by @shrimbly in https://github.com/Comfy-Org/ComfyUI_frontend/pull/21911 * test: cover runtime widget type swaps by @christian-byrne in https://github.com/Comfy-Org/ComfyUI_frontend/pull/15766 * refactor: theme stylesheets and data-attribute hooks for Vue nodes by @DrJKL in https://github.com/Comfy-Org/ComfyUI_frontend/pull/24116 * fix: clear subgraph IO resize handle from the add slot by @DrJKL in https://github.com/Comfy-Org/ComfyUI_frontend/pull/24142 * fix: read MP4/MOV workflow metadata when moov sits past the first 64 MiB by @christian-byrne in https://github.com/Comfy-Org/ComfyUI_frontend/pull/24015 * fix: loadApiJson without a file name opens a new workflow instead of throwing by @christian-byrne in https://github.com/Comfy-Org/ComfyUI_frontend/pull/24043 * SDK release: ingest-types 1.7.2, account-core 1.0.0-alpha.10, account-ui 1.0.0-alpha.3, billing-contract 1.0.0-alpha.4 by @comfy-pr-bot in https://github.com/Comfy-Org/ComfyUI_frontend/pull/23771 * fix: Keep local media dropdown values as filenames by @DrJKL in https://github.com/Comfy-Org/ComfyUI_frontend/pull/24075 * feat(open-on-cloud): upload the models Comfy Cloud lacks from local ComfyUI (DPLAT-3611) by @huang47 in https://github.com/Comfy-Org/ComfyUI_frontend/pull/23831 * fix(deploy): show the video's preview image until it plays, and restore its Play/Pause button (DPLAT-4360) by @huang47 in https://github.com/Comfy-Org/ComfyUI_frontend/pull/23888 * test: add a 1000-node gesture perf suite for Vue nodes and LiteGraph by @jtydhr88 in https://github.com/Comfy-Org/ComfyUI_frontend/pull/24030 * fix(openOnCloud): check workflows whose inputs come in through links by @huang47 in https://github.com/Comfy-Org/ComfyUI_frontend/pull/24152 * fix: restore original workflow tab label font size by @uytieu in https://github.com/Comfy-Org/ComfyUI_frontend/pull/24167 * perf: scrub progress bars with a paused animation so a running job stops forcing compositing updates (FRONT-4128) by @jtydhr88 in https://github.com/Comfy-Org/ComfyUI_frontend/pull/23870 * FRONT-4221 test(billing): cover embedded top-up after reload by @aliranjah in https://github.com/Comfy-Org/ComfyUI_frontend/pull/23967 * FRONT-4212 test(billing): cover low credits by subscription state by @al",
     "title": "v1.61.8",
     "url": "https://github.com/Comfy-Org/ComfyUI_frontend/releases/tag/v1.61.8"
@@ -27961,6 +27970,9 @@
     "url": "https://github.com/pascalorg/editor"
   },
   "e1e5a31593c25ae0c5a642610919e4a499b5e83e4f75ccdd5ed7b8bea47c598f": {
+    "articles": [
+      "/news/video-preview-enhanced-0-11-0/"
+    ],
     "category": "coding",
     "content_type": "plugins",
     "discovered": "2026-11-25T01:16:29.416465+00:00",
@@ -27984,7 +27996,7 @@
     "published": "2026-11-24T08:09:03.650704+00:00",
     "source": "ecosystem-open-vsx",
     "source_url": "https://open-vsx.org/api/-/search?query=AI+video&size=10",
-    "status": "pending",
+    "status": "published",
     "summary": "Open VSX version 0.12.0. Publisher description: Play MP4, MKV, MOV, AVI and WebM with sound in VS Code. Remote-SSH, WSL, video URLs, frame-accurate stepping, synchronized comparison and PNG export.",
     "title": "Video Preview Enhanced",
     "updated": "2026-11-25T11:43:09.397480+00:00",
