@@ -96,6 +96,56 @@
       "If-None-Match": "W/\"058a620b3b417ae9363294103107411fb7216933d31fdc92ff0c81575399afb2\""
     }
   },
+  "dev-ai": {
+    "error": null,
+    "failures": 0,
+    "last_success": "2026-11-25T01:16:29.416465+00:00",
+    "retry_after": null,
+    "url": "https://dev.to/api/articles?tag=ai&per_page=12",
+    "validators": {
+      "If-None-Match": "W/\"48224b0a97da0cef99639611a8b84f27\""
+    }
+  },
+  "dev-automation": {
+    "error": null,
+    "failures": 0,
+    "last_success": "2026-11-25T01:16:29.416465+00:00",
+    "retry_after": null,
+    "url": "https://dev.to/api/articles?tag=automation&per_page=12",
+    "validators": {
+      "If-None-Match": "W/\"dc664d894608f9bc783883b9a23ef86a\""
+    }
+  },
+  "dev-machinelearning": {
+    "error": null,
+    "failures": 0,
+    "last_success": "2026-11-25T01:16:29.416465+00:00",
+    "retry_after": null,
+    "url": "https://dev.to/api/articles?tag=machinelearning&per_page=12",
+    "validators": {
+      "If-None-Match": "W/\"b274fe6036286a9a87c8ccbca8a1f5cf\""
+    }
+  },
+  "dev-opensource": {
+    "error": null,
+    "failures": 0,
+    "last_success": "2026-11-25T01:16:29.416465+00:00",
+    "retry_after": null,
+    "url": "https://dev.to/api/articles?tag=opensource&per_page=12",
+    "validators": {
+      "If-None-Match": "W/\"49a259dd05c9bfda999a75e23ff622df\""
+    }
+  },
+  "dev-tutorial": {
+    "error": null,
+    "failures": 0,
+    "last_success": "2026-11-25T01:16:29.416465+00:00",
+    "retry_after": null,
+    "url": "https://dev.to/api/articles?tag=tutorial&per_page=12",
+    "validators": {
+      "If-None-Match": "W/\"e46c52a0c7c12e12ac1fdd7fbda59331\""
+    }
+  },
   "docling": {
     "error": null,
     "failures": 0,
@@ -109,25 +159,25 @@
   "ecosystem-mcp-registry": {
     "error": null,
     "failures": 0,
-    "last_success": "2026-11-24T14:07:11.513641+00:00",
+    "last_success": "2026-11-25T01:16:29.416465+00:00",
     "retry_after": null,
-    "url": "https://registry.modelcontextprotocol.io/v0.1/servers?version=latest&limit=12&search=testing",
+    "url": "https://registry.modelcontextprotocol.io/v0.1/servers?version=latest&limit=12&search=video",
     "validators": {}
   },
   "ecosystem-open-vsx": {
     "error": null,
     "failures": 0,
-    "last_success": "2026-11-24T14:07:11.513641+00:00",
+    "last_success": "2026-11-25T01:16:29.416465+00:00",
     "retry_after": null,
-    "url": "https://open-vsx.org/api/-/search?query=AI+testing&size=10",
+    "url": "https://open-vsx.org/api/-/search?query=AI+video&size=10",
     "validators": {
-      "If-None-Match": "\"0a02319822e56db35d6cd044ce5a6dcaf\""
+      "If-None-Match": "\"0346b38a9da117b80dac60fc7c1c93007\""
     }
   },
   "ecosystem-show-hn": {
     "error": null,
     "failures": 0,
-    "last_success": "2026-11-24T14:07:11.513641+00:00",
+    "last_success": "2026-11-25T01:16:29.416465+00:00",
     "retry_after": null,
     "url": "https://hn.algolia.com/api/v1/search?query=AI&tags=show_hn&hitsPerPage=15",
     "validators": {}
@@ -135,9 +185,9 @@
   "ecosystem-skill-search": {
     "error": null,
     "failures": 0,
-    "last_success": "2026-11-24T14:07:11.513641+00:00",
+    "last_success": "2026-11-25T01:16:29.416465+00:00",
     "retry_after": null,
-    "url": "https://api.github.com/search/repositories?q=agent-skills+testing+in%3Aname%2Cdescription%2Creadme+archived%3Afalse&sort=updated&per_page=10",
+    "url": "https://api.github.com/search/repositories?q=agent-skills+video+in%3Aname%2Cdescription%2Creadme+archived%3Afalse&sort=updated&per_page=10",
     "validators": {}
   },
   "elevenlabs-python": {
@@ -195,9 +245,9 @@
   "github-search-3d": {
     "error": null,
     "failures": 0,
-    "last_success": "2026-11-24T14:07:11.513641+00:00",
+    "last_success": "2026-11-25T01:16:29.416465+00:00",
     "retry_after": null,
-    "url": "https://api.github.com/search/repositories?q=topic%3A3d+pushed%3A%3E%3D2026-11-17+archived%3Afalse+stars%3A%3E%3D25&sort=stars&per_page=10",
+    "url": "https://api.github.com/search/repositories?q=topic%3A3d+pushed%3A%3E%3D2026-11-18+archived%3Afalse+stars%3A%3E%3D10&sort=stars&per_page=14",
     "validators": {}
   },
   "github-search-image-generation": {
@@ -208,12 +258,20 @@
     "url": "https://api.github.com/search/repositories?q=topic%3Aimage-generation+created%3A%3E%3D2026-11-17+archived%3Afalse+stars%3A%3E%3D25&sort=stars&per_page=10",
     "validators": {}
   },
+  "github-search-inference": {
+    "error": null,
+    "failures": 0,
+    "last_success": "2026-11-25T01:16:29.416465+00:00",
+    "retry_after": null,
+    "url": "https://api.github.com/search/repositories?q=topic%3Ainference+pushed%3A%3E%3D2026-11-18+archived%3Afalse+stars%3A%3E%3D10&sort=stars&per_page=14",
+    "validators": {}
+  },
   "github-search-video-generation": {
     "error": null,
     "failures": 0,
-    "last_success": "2026-11-24T14:07:11.513641+00:00",
+    "last_success": "2026-11-25T01:16:29.416465+00:00",
     "retry_after": null,
-    "url": "https://api.github.com/search/repositories?q=topic%3Avideo-generation+pushed%3A%3E%3D2026-11-17+archived%3Afalse+stars%3A%3E%3D25&sort=stars&per_page=10",
+    "url": "https://api.github.com/search/repositories?q=topic%3Avideo-generation+created%3A%3E%3D2026-11-18+archived%3Afalse+stars%3A1..50&sort=updated&per_page=14",
     "validators": {}
   },
   "google-ai": {
@@ -222,6 +280,30 @@
     "last_success": "2026-11-24T19:53:54.561219+00:00",
     "retry_after": null,
     "url": "https://blog.google/innovation-and-ai/rss/",
+    "validators": {}
+  },
+  "hacker-news-0-0": {
+    "error": null,
+    "failures": 0,
+    "last_success": "2026-11-25T01:16:29.416465+00:00",
+    "retry_after": null,
+    "url": "https://hn.algolia.com/api/v1/search_by_date?query=AI+workflow&tags=story&hitsPerPage=12",
+    "validators": {}
+  },
+  "hacker-news-0-1": {
+    "error": null,
+    "failures": 0,
+    "last_success": "2026-11-25T01:16:29.416465+00:00",
+    "retry_after": null,
+    "url": "https://hn.algolia.com/api/v1/search_by_date?query=Agent+Skills&tags=story&hitsPerPage=12",
+    "validators": {}
+  },
+  "hacker-news-0-2": {
+    "error": null,
+    "failures": 0,
+    "last_success": "2026-11-25T01:16:29.416465+00:00",
+    "retry_after": null,
+    "url": "https://hn.algolia.com/api/v1/search_by_date?query=AI+%E8%87%AA%E5%8B%95%E5%8C%96&tags=story&hitsPerPage=12",
     "validators": {}
   },
   "hacker-news-ai": {
@@ -242,14 +324,34 @@
       "If-None-Match": "W/\"416146f784bc2c798404f2146d55f2e7bbe1c71d99cc92b4a93097664d22cae2\""
     }
   },
+  "hf-datasets": {
+    "error": null,
+    "failures": 0,
+    "last_success": "2026-11-25T01:16:29.416465+00:00",
+    "retry_after": null,
+    "url": "https://huggingface.co/api/datasets?sort=lastModified&direction=-1&limit=16&full=true",
+    "validators": {
+      "If-None-Match": "W/\"33ab-IT02KhuZDvljDsAs9n6ojKR+YXk\""
+    }
+  },
   "hf-models": {
     "error": null,
     "failures": 0,
-    "last_success": "2026-11-24T14:07:11.513641+00:00",
+    "last_success": "2026-11-25T01:16:29.416465+00:00",
     "retry_after": null,
-    "url": "https://huggingface.co/api/models?sort=trendingScore&limit=12&full=true&cardData=true",
+    "url": "https://huggingface.co/api/models?sort=lastModified&direction=-1&limit=16&full=true",
     "validators": {
-      "If-None-Match": "W/\"769d-/gBnaeJfpiPDloOt0wR2Illq9oY\""
+      "If-None-Match": "W/\"27be2c-rF8hAWojJXoBfhdcxs86y0PSQOs\""
+    }
+  },
+  "hf-spaces": {
+    "error": null,
+    "failures": 0,
+    "last_success": "2026-11-25T01:16:29.416465+00:00",
+    "retry_after": null,
+    "url": "https://huggingface.co/api/spaces?sort=lastModified&direction=-1&limit=16&full=true",
+    "validators": {
+      "If-None-Match": "W/\"65c97-2PgHKOipN70VLFzCjMUm1YiG7No\""
     }
   },
   "hugging-face": {
@@ -433,6 +535,28 @@
       "If-None-Match": "W/\"f594ba16b610c9f80c80e2923e67af4239ac24987cb6d17afdc68ba7143d0d6b\""
     }
   },
+  "skills-anthropics": {
+    "error": null,
+    "failures": 0,
+    "last_success": "2026-11-25T01:16:29.416465+00:00",
+    "retry_after": null,
+    "url": "https://api.github.com/repos/anthropics/skills",
+    "validators": {
+      "If-Modified-Since": "Wed, 25 Nov 2026 01:15:18 GMT",
+      "If-None-Match": "\"2652fb5b21a2ac588b0904f12529d8352290ee050152cd8d90654b5685b8899f\""
+    }
+  },
+  "skills-openai": {
+    "error": null,
+    "failures": 0,
+    "last_success": "2026-11-25T01:16:29.416465+00:00",
+    "retry_after": null,
+    "url": "https://api.github.com/repos/openai/skills",
+    "validators": {
+      "If-Modified-Since": "Wed, 25 Nov 2026 00:38:11 GMT",
+      "If-None-Match": "\"fe1a051446160192d4c33d4f0675e386dca44e461c5529d40b7b131208fe52b7\""
+    }
+  },
   "tensorrt-llm": {
     "error": null,
     "failures": 0,
@@ -467,34 +591,34 @@
   "trending-alibaba-open-code-review": {
     "error": null,
     "failures": 0,
-    "last_success": "2026-11-24T14:07:11.513641+00:00",
+    "last_success": "2026-11-25T01:16:29.416465+00:00",
     "retry_after": null,
     "url": "https://api.github.com/repos/alibaba/open-code-review",
     "validators": {
-      "If-Modified-Since": "Tue, 24 Nov 2026 14:07:04 GMT",
-      "If-None-Match": "W/\"42026262e700b7663507959834338e6a0163bc693d0b356dabc36e79ec4b43f6\""
+      "If-Modified-Since": "Wed, 25 Nov 2026 01:15:13 GMT",
+      "If-None-Match": "\"b2be88203dec6456d8eb118b5e3ea1c25a13b0eaf52e01b4584eb2d0ed933242\""
     }
   },
   "trending-anthropics-skills": {
     "error": null,
     "failures": 0,
-    "last_success": "2026-11-24T14:07:11.513641+00:00",
+    "last_success": "2026-11-25T01:16:29.416465+00:00",
     "retry_after": null,
     "url": "https://api.github.com/repos/anthropics/skills",
     "validators": {
-      "If-Modified-Since": "Tue, 24 Nov 2026 14:06:38 GMT",
-      "If-None-Match": "W/\"8eb380f6d7981ef6311fbe9f1bfe4e3b2b5c7d45679247be085971f7bd918aa3\""
+      "If-Modified-Since": "Wed, 25 Nov 2026 01:15:18 GMT",
+      "If-None-Match": "\"2652fb5b21a2ac588b0904f12529d8352290ee050152cd8d90654b5685b8899f\""
     }
   },
   "trending-backnotprop-plannotator": {
     "error": null,
     "failures": 0,
-    "last_success": "2026-11-24T14:07:11.513641+00:00",
+    "last_success": "2026-11-25T01:16:29.416465+00:00",
     "retry_after": null,
     "url": "https://api.github.com/repos/backnotprop/plannotator",
     "validators": {
-      "If-Modified-Since": "Tue, 24 Nov 2026 14:07:15 GMT",
-      "If-None-Match": "W/\"b9bfd8c400f9c13722c852db6b9c26861f8c0758d5a041000e0729ac4c839de0\""
+      "If-Modified-Since": "Wed, 25 Nov 2026 01:16:24 GMT",
+      "If-None-Match": "\"c8df3965b545fd24ec589e9dab8a1b6f2460ea9fabb0831f4455f6b9d02399e0\""
     }
   },
   "trending-cathrynlavery-diagram-design": {
@@ -511,45 +635,89 @@
   "trending-chromedevtools-chrome-devtools-mcp": {
     "error": null,
     "failures": 0,
-    "last_success": "2026-11-24T14:07:11.513641+00:00",
+    "last_success": "2026-11-25T01:16:29.416465+00:00",
     "retry_after": null,
     "url": "https://api.github.com/repos/ChromeDevTools/chrome-devtools-mcp",
     "validators": {
-      "If-Modified-Since": "Tue, 24 Nov 2026 13:59:15 GMT",
-      "If-None-Match": "W/\"4e2e7eff112230f1c4ec1fd31ac4edd1d69d9daf81ad762eaa0045b5192c6dd5\""
+      "If-Modified-Since": "Wed, 25 Nov 2026 01:14:39 GMT",
+      "If-None-Match": "\"e8026746d752ee52f0132ef2689f494cc77147f22977758758d60b5ff2fb1d58\""
     }
   },
   "trending-cloudflare-security-audit-skill": {
     "error": null,
     "failures": 0,
-    "last_success": "2026-11-24T14:07:11.513641+00:00",
+    "last_success": "2026-11-25T01:16:29.416465+00:00",
     "retry_after": null,
     "url": "https://api.github.com/repos/cloudflare/security-audit-skill",
     "validators": {
-      "If-Modified-Since": "Tue, 24 Nov 2026 14:07:12 GMT",
-      "If-None-Match": "W/\"7f04ae5827ede63384594712367ffc12b53aee4db236a6715a644d2c384e4d14\""
+      "If-Modified-Since": "Wed, 25 Nov 2026 01:15:06 GMT",
+      "If-None-Match": "\"71ed45e190b8b000f8835f354750e3ab3f0b0eff01890a6a391efb78cf4e5b2e\""
+    }
+  },
+  "trending-cursor-plugins": {
+    "error": null,
+    "failures": 0,
+    "last_success": "2026-11-25T01:16:29.416465+00:00",
+    "retry_after": null,
+    "url": "https://api.github.com/repos/cursor/plugins",
+    "validators": {
+      "If-Modified-Since": "Wed, 25 Nov 2026 01:12:19 GMT",
+      "If-None-Match": "\"b2e1af17f38b156aecd069f409ecd93be7a86afd720349148e79e0164a04d240\""
+    }
+  },
+  "trending-elementalsouls-claude-bughunter": {
+    "error": null,
+    "failures": 0,
+    "last_success": "2026-11-25T01:16:29.416465+00:00",
+    "retry_after": null,
+    "url": "https://api.github.com/repos/elementalsouls/Claude-BugHunter",
+    "validators": {
+      "If-Modified-Since": "Wed, 25 Nov 2026 01:16:29 GMT",
+      "If-None-Match": "\"ba0b314778257075faabb03b7448aeed5a6c6e7acb8da4441b55ee0f1949d767\""
+    }
+  },
+  "trending-firecrawl-firecrawl": {
+    "error": null,
+    "failures": 0,
+    "last_success": "2026-11-25T01:16:29.416465+00:00",
+    "retry_after": null,
+    "url": "https://api.github.com/repos/firecrawl/firecrawl",
+    "validators": {
+      "If-Modified-Since": "Wed, 25 Nov 2026 01:13:44 GMT",
+      "If-None-Match": "\"efc369923c95e8e67b0857b737b73c7b1323e62b58bbb0afec65e78e2c72a76b\""
+    }
+  },
+  "trending-google-labs-code-stitch-skills": {
+    "error": null,
+    "failures": 0,
+    "last_success": "2026-11-25T01:16:29.416465+00:00",
+    "retry_after": null,
+    "url": "https://api.github.com/repos/google-labs-code/stitch-skills",
+    "validators": {
+      "If-Modified-Since": "Wed, 25 Nov 2026 01:16:16 GMT",
+      "If-None-Match": "\"1e4114dde497b5e67f99d21404e757c976e73e2d8fe051a219b45f1ad876e768\""
     }
   },
   "trending-googlechrome-modern-web-guidance-src": {
     "error": null,
     "failures": 0,
-    "last_success": "2026-11-24T14:07:11.513641+00:00",
+    "last_success": "2026-11-25T01:16:29.416465+00:00",
     "retry_after": null,
     "url": "https://api.github.com/repos/GoogleChrome/modern-web-guidance-src",
     "validators": {
-      "If-Modified-Since": "Tue, 24 Nov 2026 14:05:04 GMT",
-      "If-None-Match": "W/\"825f8fd6c0051680edca3f90ba889331f1d5d32efa483dc9884a2a6ea43e5e15\""
+      "If-Modified-Since": "Wed, 25 Nov 2026 01:13:14 GMT",
+      "If-None-Match": "\"7523add9749d9487a1eaeede52bb548d183c391ee2a4967a7459fff2cd1349db\""
     }
   },
   "trending-hkuds-cli-anything": {
     "error": null,
     "failures": 0,
-    "last_success": "2026-11-24T14:07:11.513641+00:00",
+    "last_success": "2026-11-25T01:16:29.416465+00:00",
     "retry_after": null,
     "url": "https://api.github.com/repos/HKUDS/CLI-Anything",
     "validators": {
-      "If-Modified-Since": "Tue, 24 Nov 2026 14:05:40 GMT",
-      "If-None-Match": "W/\"4d566f7324cde49be98ff50b7cc62b69da0291f57a50c44437c84a73caca870c\""
+      "If-Modified-Since": "Wed, 25 Nov 2026 01:14:44 GMT",
+      "If-None-Match": "\"66786783662682b0341d3ed891424aab4fcac23266c1d28550a076a05764a4b2\""
     }
   },
   "trending-hkuds-deeptutor": {
@@ -574,15 +742,81 @@
       "If-None-Match": "W/\"82c28320869146ca522a0a928b431525eecf081b1b5fbbca6d5faacc433b9df9\""
     }
   },
+  "trending-jingyaogong-minimind": {
+    "error": null,
+    "failures": 0,
+    "last_success": "2026-11-25T01:16:29.416465+00:00",
+    "retry_after": null,
+    "url": "https://api.github.com/repos/jingyaogong/minimind",
+    "validators": {
+      "If-Modified-Since": "Wed, 25 Nov 2026 01:16:28 GMT",
+      "If-None-Match": "\"60c253ec2179387d988c180b33c156939c783d215ac1fa69d3e5d6e5c86a858d\""
+    }
+  },
+  "trending-milind-soni-openmausbot": {
+    "error": null,
+    "failures": 0,
+    "last_success": "2026-11-25T01:16:29.416465+00:00",
+    "retry_after": null,
+    "url": "https://api.github.com/repos/milind-soni/OpenMausBot",
+    "validators": {
+      "If-Modified-Since": "Wed, 25 Nov 2026 01:09:33 GMT",
+      "If-None-Match": "\"63702e052fc9aca77d95dad53b8a6d6f4cd4f351f17808ce1a2213e0d411bbca\""
+    }
+  },
+  "trending-mvanhorn-last30days-skill": {
+    "error": null,
+    "failures": 0,
+    "last_success": "2026-11-25T01:16:29.416465+00:00",
+    "retry_after": null,
+    "url": "https://api.github.com/repos/mvanhorn/last30days-skill",
+    "validators": {
+      "If-Modified-Since": "Wed, 25 Nov 2026 01:15:40 GMT",
+      "If-None-Match": "\"ae934934ef6174592cf745b6b7283eb5364236a6e713e8ce5b5fe85852b2fa90\""
+    }
+  },
   "trending-nutlope-hallmark": {
     "error": null,
     "failures": 0,
-    "last_success": "2026-11-24T14:07:11.513641+00:00",
+    "last_success": "2026-11-25T01:16:29.416465+00:00",
     "retry_after": null,
     "url": "https://api.github.com/repos/Nutlope/hallmark",
     "validators": {
-      "If-Modified-Since": "Tue, 24 Nov 2026 14:04:45 GMT",
-      "If-None-Match": "W/\"67ff23c3eb0bcddf814bfcd897863b82d30df735e903f526750dbbbb6efa2809\""
+      "If-Modified-Since": "Wed, 25 Nov 2026 01:16:08 GMT",
+      "If-None-Match": "\"83c987cc18e36906b211f18f95b05c3f904d9de44a7a46bdc2d6a77df09b0012\""
+    }
+  },
+  "trending-obra-superpowers": {
+    "error": null,
+    "failures": 0,
+    "last_success": "2026-11-25T01:16:29.416465+00:00",
+    "retry_after": null,
+    "url": "https://api.github.com/repos/obra/superpowers",
+    "validators": {
+      "If-Modified-Since": "Wed, 25 Nov 2026 01:14:46 GMT",
+      "If-None-Match": "\"80eded4a77caef47aef48db771d6c59bad223d3dd03bbfe91b15ee62fb679b3f\""
+    }
+  },
+  "trending-pingdotgg-t3code": {
+    "error": null,
+    "failures": 0,
+    "last_success": "2026-11-25T01:16:29.416465+00:00",
+    "retry_after": null,
+    "url": "https://api.github.com/repos/pingdotgg/t3code",
+    "validators": {
+      "If-Modified-Since": "Wed, 25 Nov 2026 01:16:35 GMT",
+      "If-None-Match": "\"6c255cb58a4ddbf2a5e18443ddb09a403e15d466551bc4c473139bfb60365f10\""
+    }
+  },
+  "trending-thedotmack-claude-mem": {
+    "error": null,
+    "failures": 0,
+    "last_success": "2026-11-25T01:16:29.416465+00:00",
+    "retry_after": null,
+    "url": "https://api.github.com/repos/thedotmack/claude-mem",
+    "validators": {
+      "If-Modified-Since": "Wed, 25 Nov 2026 01:11:53 GMT",
+      "If-None-Match": "\"6800711b2df8a7ba1683f70a6a35fd655433201deaae7f8ad6d911efea35b9d4\""
     }
   },
   "xai-sdk": {

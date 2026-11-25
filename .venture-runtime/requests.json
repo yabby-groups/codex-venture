@@ -1,0 +1,70 @@
+{
+  "day": "2026-11-25",
+  "providers": {
+    "api.github.com": {
+      "daily": 38,
+      "hour": "2026-11-25T01",
+      "hourly": 38,
+      "remaining": 4967,
+      "responses": 38,
+      "successes": 37
+    },
+    "dev.to": {
+      "daily": 7,
+      "hour": "2026-11-25T01",
+      "hourly": 7,
+      "responses": 7,
+      "successes": 7
+    },
+    "github.blog": {
+      "daily": 3,
+      "hour": "2026-11-25T01",
+      "hourly": 3,
+      "responses": 3,
+      "successes": 2
+    },
+    "github.com": {
+      "daily": 5,
+      "hour": "2026-11-25T01",
+      "hourly": 5,
+      "responses": 5,
+      "successes": 5
+    },
+    "hn.algolia.com": {
+      "daily": 6,
+      "hour": "2026-11-25T01",
+      "hourly": 6,
+      "responses": 6,
+      "successes": 5
+    },
+    "huggingface.co": {
+      "daily": 5,
+      "hour": "2026-11-25T01",
+      "hourly": 5,
+      "responses": 5,
+      "successes": 4
+    },
+    "open-vsx.org": {
+      "daily": 4,
+      "hour": "2026-11-25T01",
+      "hourly": 4,
+      "remaining": 10799,
+      "responses": 4,
+      "successes": 3
+    },
+    "openvsx.eclipsecontent.org": {
+      "daily": 2,
+      "hour": "2026-11-25T01",
+      "hourly": 2,
+      "responses": 2,
+      "successes": 1
+    },
+    "registry.modelcontextprotocol.io": {
+      "daily": 3,
+      "hour": "2026-11-25T01",
+      "hourly": 3,
+      "responses": 3,
+      "successes": 2
+    }
+  }
+}
