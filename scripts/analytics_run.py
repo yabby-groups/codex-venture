@@ -54,8 +54,8 @@ def record(phase, task):
         receipt = load(WORK / 'model' / 'receipt.json', None)
         response = load(WORK / 'model' / 'response.json', {})
         if isinstance(response, list):
-            details['generated'] = sum(len(part.get('articles', [])) for part in response)
-            details['resources_generated'] = sum(len(part.get('resources', [])) for part in response)
+            details['generated'] = sum(len((part or {}).get('articles', [])) for part in response)
+            details['resources_generated'] = sum(len((part or {}).get('resources', [])) for part in response)
         else:
             details['generated'] = len(response.get('articles', []))
         if receipt:

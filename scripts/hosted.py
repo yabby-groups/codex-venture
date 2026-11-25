@@ -64,6 +64,8 @@ def cost_allows(root, day, tokens, price, reserved_calls):
 
 
 def prepare(task):
+    coverage = operations_queue.public_coverage()
+    print('Public coverage:', json.dumps(coverage), flush=True)
     task, days = operations_queue.select(task)
     if output := os.getenv('GITHUB_OUTPUT'):
         with open(output, 'a') as stream:
@@ -108,12 +110,14 @@ def prepare(task):
         return
     slug = 'weekly-' + day if task == 'weekly' else day
     rules = strategy() if os.getenv('VENTURE_STRATEGY_AUTO_UPDATE') == 'true' else load(Path('config/editorial-strategy.json'), {})
-    candidates = (resource_ingest.prepare(task, os.getenv('RESOURCE_TYPE') or 'all', day, capacity=12 * BATCH_SLOTS)
+    candidates = (resource_ingest.prepare(task, os.getenv('RESOURCE_TYPE') or 'all', day, capacity=12 * BATCH_SLOTS, coverage=coverage.get('resources'))
                   if resource_task else choose(task, items, now, days if task in ('weekly', 'backfill') else 2, rules))
-    if task == 'backfill':
-        enrich(items, candidates, now)
+    if task in ('news', 'backfill'):
+        counts = enrich(items, candidates, now, limit=10)
+        path = WORK / 'collection.json'
+        save(path, {**load(path, {}), **counts})
         save(ITEMS, items)
-        candidates = choose(task, items, now, days, rules)
+        candidates = choose(task, items, now, days if task == 'backfill' else 2, rules)
     if task != 'smoke-test' and (not candidates or (
         task in ('daily', 'weekly') and any(
             article['collection'] == 'daily' and article['slug'] == slug for article in articles
@@ -268,7 +272,7 @@ def invoke():
         except (RuntimeError, OSError, ValueError) as error:
             failure = error
             print(f'Model batch {len(receipts)} failed: {error}', flush=True)
-            break
+            responses.append(None)
         if time.monotonic() - started > EDIT_WINDOW - MODEL_TIMEOUT:
             break
     usage = None
@@ -277,11 +281,12 @@ def invoke():
         fields = set.intersection(*(set(row['usage']) for row in charged))
         usage = {field: sum(row['usage'][field] for row in charged) for field in fields}
         print(f"Observed model tokens: {usage['input_tokens']} input, {usage['output_tokens']} output")
-    print(f'Model sessions: {len(charged)} attempted, {len(responses)} completed')
+    completed = sum(response is not None for response in responses)
+    print(f'Model sessions: {len(charged)} attempted, {completed} completed')
     save(MODEL / 'receipt.json', {**receipts[0], 'usage': usage, 'sessions': len(charged),
-                                'status': 'partial' if failure and responses else receipts[-1]['status'],
+                                'status': 'partial' if failure and completed else 'failed' if failure else 'success',
                                 'batches': receipts, 'duration_seconds': round(time.monotonic() - started, 3)})
-    if failure and not responses:
+    if failure and not completed:
         raise failure
     if not smoke:
         save(MODEL / 'response.json', responses)
@@ -402,6 +407,8 @@ def accept():
     routes, counts = [], {'added': 0, 'updated': 0, 'invalid': 0}
     directories = set()
     for part, response in zip(batch['batches'], results):
+        if response is None:
+            continue
         if batch['task'].startswith('resource-'):
             stats = resource_ingest.publish(response, part['candidates'], batch['date'])
             for key in counts:
@@ -502,6 +509,12 @@ def health(wait=False):
     for attempt in range(24 if wait else 1):
         try:
             probe(base, release)
+            if Path('dist/coverage.json').exists():
+                request = Request(f'{base}/coverage.json?release={release}', headers=PROBE_HEADERS)
+                with urlopen(request, timeout=8) as response:
+                    coverage = json.load(response)
+                if coverage != load(Path('dist/coverage.json'), {}):
+                    raise RuntimeError('Public coverage differs from the built inventory')
             for route in routes:
                 request = Request(f'{base}/{route}?release={release}', headers=PROBE_HEADERS)
                 with urlopen(request, timeout=8) as response:

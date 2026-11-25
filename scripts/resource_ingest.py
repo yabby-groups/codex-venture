@@ -8,7 +8,7 @@ import re
 import time
 from urllib.error import HTTPError
 from pathlib import Path
-from urllib.parse import quote, urlencode
+from urllib.parse import quote, urlencode, urlsplit
 
 from article_schema import STRING, array, conforms, object_schema
 from collect import canonical, clean, digest, fetch, load, save
@@ -256,7 +256,7 @@ def editorial_input(candidates):
     return compact
 
 
-def prepare(task, kind, day, capacity=12):
+def prepare(task, kind, day, capacity=12, coverage=None):
     if kind not in ('all', *TYPES):
         raise ValueError('Unknown resource type')
     queue = load(STATE, {})
@@ -275,7 +275,9 @@ def prepare(task, kind, day, capacity=12):
             pair[1].get('attempt', 0), pair[1]['firstDiscoveredAt'], pair[0])):
         if not row.get('done') and kind in ('all', row['type']):
             pending[row['type']].append((key, row))
-    for entry in (entry for group in zip_longest(*pending.values()) for entry in group if entry):
+    order = sorted(pending, key=lambda name: (coverage or {}).get(name, 0))
+    paused_hosts = set()
+    for entry in (entry for group in zip_longest(*(pending[name] for name in order)) for entry in group if entry):
         key, row = entry
         if len(candidates) >= capacity or time.monotonic() >= deadline:
             break
@@ -297,6 +299,9 @@ def prepare(task, kind, day, capacity=12):
                     url = row['site'] + '/raw/main/README.md'
                 elif row.get('repository'):
                     url = row['metadataUrl'] + '/readme'
+                host = urlsplit(url).hostname
+                if host in paused_hosts:
+                    continue
                 if row.get('metadataUrl'):
                     evidence = document(url, plain=row['type'] in ('models', 'plugins') or bool(row.get('repository')), accept='application/vnd.github.raw+json'
                                         if row.get('repository') else None)
@@ -320,8 +325,14 @@ def prepare(task, kind, day, capacity=12):
                 if len(row['missingChecks']) == 2 and canonical(url) == canonical(row['site']):
                     row['done'] = 'unavailable'
                 counts['missing_document'] += 1
+            if error.code == 429 or (error.headers and error.headers.get('X-RateLimit-Remaining') == '0'):
+                paused_hosts.add(host)
+                counts['paused_hosts'] = len(paused_hosts)
             print(f'{row["type"]}/{key[:10]}: HTTP {error.code}', flush=True)
         except (OSError, ValueError, KeyError, http.client.HTTPException) as error:
+            if str(error) == 'collection request budget paused':
+                paused_hosts.add(host)
+                counts['paused_hosts'] = len(paused_hosts)
             print(f'{row["type"]}/{key[:10]}: {type(error).__name__}: {error}', flush=True)
     save(STATE, queue)
     print('Resource preparation:', json.dumps(counts), flush=True)
