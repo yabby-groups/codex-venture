@@ -375,7 +375,7 @@
     "published": "2026-11-25T11:43:10+00:00",
     "source": "hf-datasets",
     "source_url": "https://huggingface.co/api/datasets?sort=lastModified&direction=-1&limit=16&full=true",
-    "status": "pending",
+    "status": "skipped",
     "summary": "datasets listing. Tags: region:us",
     "title": "DONGDA/stack_simple_8_20261125_202856",
     "url": "https://huggingface.co/datasets/DONGDA/stack_simple_8_20261125_202856"
@@ -7675,6 +7675,9 @@
     "url": "https://arxiv.org/abs/2611.28686"
   },
   "4ce612ee14691da9a9ba4e17220e6582fcf56822904dbb3b22cddf4ee8d0418f": {
+    "articles": [
+      "/news/unsloth-inkling-2-mini-fine-tuning/"
+    ],
     "category": "open-source",
     "discovered": "2026-11-25T03:19:53.460134+00:00",
     "discovery": {},
@@ -7682,7 +7685,7 @@
     "published": "2026-11-24T14:38:51+00:00",
     "source": "unslothai-unsloth",
     "source_url": "https://api.github.com/repos/unslothai/unsloth/releases?per_page=10",
-    "status": "pending",
+    "status": "published",
     "summary": "# Inkling Fine-tuning You can now fine-tune Inkling 2 Mini 1.8 to 3.1x faster and use 50% less VRAM in Unsloth with LoRA or QLoRA, then export it to GGUF or a merged 16-bit model. It trains on Kaggle's free 2x T4 and now supports tensor, pipeline and context parallel across GPUs. Also new: faster `adamw_8bit` steps, faster Z-Image LoRA training on T4 and fixes for thinking models in chat. ## Highlights - **Fine-tune Inkling 2 Mini 3x faster + 50% less VRAM** in Unsloth Desktop. [Guide](https://unsloth.ai/docs/models/inkling-2-mini/finetuning-inkling-2-mini) - **Faster Inkling 2 Mini inference** Fixed incorrect max context length (2-3x faster inference) - **Faster `adamw_8bit`** up to 12% less time per step on small batches - **Z-Image LoRA training on T4** 1.7x faster per step - **`unsloth eval` on chat fine-tunes** now scores your own datasets in the model's chat format ## Inkling 2 training - Train Inkling 2 Mini with LoRA or QLoRA, including the vision layers. It fits on Kaggle's 2x T4 at about 26 s per step, but not on a single 15 GB T4. - Inkling 2 Small is supported too but needs about 290 GB of GPU memory in 4-bit. - `save_pretrained_merged` with `merged_16bit` and `save_pretrained_gguf` now work for Inkling 2. `merged_4bit` is still not supported. - A fine-tuned Inkling 2 Mini exports to a 17.5 GB `q4_k_m` GGUF that runs in llama.cpp. The export needs about 150 GB of free disk, so use a Colab A100 instead of Kaggle. - On NVIDIA Ampere or newer GPUs, Inkling 2 training uses FlexAttention, about 15% faster per step on L4. ## Training - `optim = \"adamw_8bit\"` now updates each parameter group in one step, up to 12% less time per step on L4 with small batches. - GRPO rollouts with a 16-bit LoRA decode about 20% faster per token on L4. - Native FSDP2 full fine-tuning takes 17 to 21% less time per step on 2x T4. - AsyncGRPO tree packing now also covers Mamba2 models such as Nemotron-H and Granite-4.0-H, and LFM2, with newer TRL. - Left-padded training batches no longer let pad positions see future tokens. - `unsloth eval` on a chat fine-tune with your own .jsonl, .json or .csv dataset no longer scores near 0. - After `add_new_tokens` on a tied-embedding model, merged and GGUF exports no longer drop the trained `lm_head`. - Phi-3 and Phi-3.5 training text now ends with the EOS token again. - Chat datasets with custom keys such as `speaker` and `text` no longer get role and content swapped. ## Images + video - Z-Image LoRA training on T4 is 1.7x faster per step. - On 24 GB GPUs, MiniMax-H3-Image now denoises the images of a multi-image request together instead of one by one. - MiniMax-H3 video re-renders with the same reference clip or keyframe skip re-encoding it. - FLUX.3 Klein base has an opt-in Fast CFG switch, about 10% faster renders with a small image change. - On AMD Strix Halo, FLUX.2 klein 4B LoRA training takes about 11% less time per step. - Krea 2 no longer gets killed while loading on T4 machines with limited RAM. ## Chat + Desktop - `unsloth start --continue` reopens your last agent session on the same model and settings. - Inkling 2 Mini no longer freezes laptops with 8 GB of VRAM and 16 GB of RAM after a few chats. - Thinking ",
     "title": "Inkling finetuning + perf fixes",
     "url": "https://github.com/unslothai/unsloth/releases/tag/v0.1.924-beta"
@@ -11726,6 +11729,9 @@
     "url": "https://simonwillison.net/2026/Nov/20/levent-alpoge"
   },
   "722343cd0c5e268c442ae8cb7bfe9e80fe763f5dc451364d849f4cae6c08e149": {
+    "articles": [
+      "/news/kakatu-claude-code-macos-beta/"
+    ],
     "category": "coding",
     "content_type": "stories",
     "discovered": "2026-11-25T11:43:09.397480+00:00",
@@ -11745,7 +11751,7 @@
     "published": "2026-11-25T11:33:37+00:00",
     "source": "hacker-news-1-0",
     "source_url": "https://hn.algolia.com/api/v1/search_by_date?query=Claude+Code&tags=story&hitsPerPage=12",
-    "status": "pending",
+    "status": "published",
     "summary": "Show HN: The ultimate companion for Claude Code",
     "title": "Show HN: The ultimate companion for Claude Code",
     "url": "https://kakatu.app/",
@@ -14087,6 +14093,9 @@
     "url": "https://github.com/nocodb/nocodb"
   },
   "89902b4e8cb16a059a765cce210da0ba95e8aeae924eb7e1896e0ce70179fd52": {
+    "articles": [
+      "/news/graphiti-0-32-kuzu-removal-group-checks/"
+    ],
     "category": "agents",
     "discovered": "2026-11-25T03:19:53.460134+00:00",
     "discovery": {},
@@ -14094,7 +14103,7 @@
     "published": "2026-11-24T16:29:11+00:00",
     "source": "getzep-graphiti",
     "source_url": "https://api.github.com/repos/getzep/graphiti/releases?per_page=10",
-    "status": "pending",
+    "status": "published",
     "summary": "Version 0.32.1 has no functional code changes. It replaces the GitHub release of 0.32.0. The 0.32.0 notes follow. ## Changes in 0.32.1 * Update the MCP lockfile to graphiti-core 0.32.0 by @mehulp93 in https://github.com/getzep/graphiti/pull/2203 * Set graphiti-core to 0.32.1 by @mehulp93 in https://github.com/getzep/graphiti/pull/2208 # 0.32.0 ## Breaking changes - Removed the Kuzu driver (#2151). - UUID operations now check the group (#2178). When a caller gives `group_id`, a UUID from another group causes `NodeNotFoundError` or `EdgeNotFoundError`, and the call does not read or change data. This applies to episodes, facts (`EntityEdge.get_by_uuid` and `get_by_uuids`), sagas (`summarize_saga`), and `add_triplet`. - An unknown predecessor episode UUID now causes `NodeNotFoundError`. Before, Graphiti skipped it. - `add_episode(uuid=...)` without `group_id` looks only in the default group. ## What's Changed * Remove the neo4j extra from the standalone MCP image and set the MCP server to 1.1.3 by @pevans in https://github.com/getzep/graphiti/pull/2047 * Update the Zep and Graphiti positioning in the README by @danielchalef in https://github.com/getzep/graphiti/pull/2053 * fix(llm_client): Use a valid Anthropic default model and remove duplicate Gemini schema text by @mehulp93 in https://github.com/getzep/graphiti/pull/2079 * Upgrade Pillow, aiohttp, OpenTelemetry, setuptools, and nbconvert to fix the Dependabot alerts by @jackaldenryan in https://github.com/getzep/graphiti/pull/2097 * Remove the Kuzu driver by @danielchalef in https://github.com/getzep/graphiti/pull/2151 * Fix identity-property node merge through the public API by @danielchalef in https://github.com/getzep/graphiti/pull/2153 * Add concurrent ingestion for one graph by @danielchalef in https://github.com/getzep/graphiti/pull/2154 * Harden the graphiti-core release job and set its PyPI URL by @paul-paliychuk in https://github.com/getzep/graphiti/pull/2163 * fix(llm-client): stop sending temperature to Anthropic messages.create by @mehulp93 in https://github.com/getzep/graphiti/pull/2171 * fix(deps): declare httpx as a direct dependency of graphiti-core by @mehulp93 in https://github.com/getzep/graphiti/pull/2174 * chore(deps): remove unused langchain-anthropic and lock anthropic 2.x by @mehulp93 in https://github.com/getzep/graphiti/pull/2172 * Clarify the expired_at field description by @mehulp93 in https://github.com/getzep/graphiti/pull/2175 * Add an embedded Relate graph driver by @akollegger in https://github.com/getzep/graphiti/pull/2176 * [Codex Security] Episode UUID lookups bypass the selected group boundary by @danielchalef in https://github.com/getzep/graphiti/pull/2178 ## New Contributors * @akollegger made their first contribution in https://github.com/getzep/graphiti/pull/2176 **Full Changelog**: https://github.com/getzep/graphiti/compare/v0.31.2...v0.32.1",
     "title": "v0.32.1 - Relate driver, concurrent ingestion, group isolation, and Kuzu removal",
     "url": "https://github.com/getzep/graphiti/releases/tag/v0.32.1"
@@ -15828,6 +15837,9 @@
     "url": "https://arxiv.org/abs/2609.24984"
   },
   "9aff434c9dc2ef34d314e6bfb9f6065764e73522480db95aef4f4d36a8854149": {
+    "articles": [
+      "/news/microsoft-foundry-ignite-2026-agent-evaluation/"
+    ],
     "category": "models",
     "discovered": "2026-11-25T01:21:21.428756+00:00",
     "discovery": {},
@@ -15843,7 +15855,7 @@
     "published": "2026-11-24T16:00:51+00:00",
     "source": "microsoft-foundry",
     "source_url": "https://devblogs.microsoft.com/foundry/feed/",
-    "status": "pending",
+    "status": "published",
     "summary": "Microsoft Foundry Ignite 2026 updates for agents, developer tools, models, training, enterprise context, and governance, with continuous improvement. The post What’s new in Microsoft Foundry | Ignite 2026 appeared first on Microsoft Foundry Blog .",
     "title": "What’s new in Microsoft Foundry | Ignite 2026",
     "url": "https://devblogs.microsoft.com/foundry/whats-new-in-microsoft-foundry-ignite-2026",
@@ -19762,7 +19774,7 @@
     "published": "2026-11-25T00:32:02+00:00",
     "source": "dev-opensource",
     "source_url": "https://dev.to/api/articles?tag=opensource&per_page=12",
-    "status": "pending",
+    "status": "skipped",
     "summary": "A clean-room replacement for pull_to_refresh that works with any ScrollPhysics, handles short lists, and ships localised, accessible indicators.",
     "title": "pull_refresh: pull-to-refresh and load-more for any Flutter scroll view",
     "url": "https://dev.to/abdeldjalilchougui/pullrefresh-pull-to-refresh-and-load-more-for-any-flutter-scroll-view-4m1d"
@@ -21619,6 +21631,9 @@
     "url": "https://github.com/NVIDIA/TensorRT-LLM/releases/tag/v1.3.0"
   },
   "d9b238bc44f98e15f90a63505fa5b7a77e8ff3ee7744815db2e04f03f33e244e": {
+    "articles": [
+      "/news/graphiti-mcp-1-1-5-group-isolation/"
+    ],
     "category": "agents",
     "discovered": "2026-11-25T03:19:53.460134+00:00",
     "discovery": {},
@@ -21626,7 +21641,7 @@
     "published": "2026-11-24T17:09:14+00:00",
     "source": "getzep-graphiti",
     "source_url": "https://api.github.com/repos/getzep/graphiti/releases?per_page=10",
-    "status": "pending",
+    "status": "published",
     "summary": "Version 1.1.5 replaces 1.1.4. The 1.1.4 release job failed, and it did not publish Docker images. ## Security - MCP tools now send the selected group to graphiti-core. A UUID from another group causes an error, and the tool does not read or change that group's data. This applies to `delete_episode`, `get_episode_entities`, `get_entity_edge`, `delete_entity_edge`, and `summarize_saga` (#2178). ## Fixes - The combined FalkorDB image builds in one stage on `falkordb/falkordb:latest`, and it does not run apt. Before, the apt step failed because the FalkorDB image has no perl (#2206). - The `--temperature` help text states that the Anthropic provider ignores it. - The combined FalkorDB guide uses the correct Compose file name, and its port example keeps the `127.0.0.1` bindings. ## Dependencies - MCP server 1.1.5 requires `graphiti-core>=0.32.0`. The Docker images use graphiti-core 0.32.1 (#2178, #2203, #2208). - Upgraded Pillow, aiohttp, OpenTelemetry, setuptools, and nbconvert for Dependabot alerts (#2097). ## Documentation - The README describes the group checks of the episode, fact, and saga tools. - The Anthropic model table uses the Claude 5 models. **Full Changelog**: https://github.com/getzep/graphiti/compare/mcp-v1.1.3...mcp-v1.1.5",
     "title": "mcp-v1.1.5 - Group isolation for MCP tools",
     "url": "https://github.com/getzep/graphiti/releases/tag/mcp-v1.1.5"
