@@ -1001,7 +1001,7 @@
     "published": "2026-11-25T01:16:47+00:00",
     "source": "ecosystem-skill-search",
     "source_url": "https://api.github.com/search/repositories?q=agent-skills+video+in%3Aname%2Cdescription%2Creadme+archived%3Afalse&sort=updated&per_page=10",
-    "status": "pending",
+    "status": "skipped",
     "summary": "Awesome AI tools, updated daily by TolsAI | 每日更新的 AI 工具导航精选 — https://www.tolsai.com License: unknown.",
     "title": "allen16881/awesome-tolsai",
     "url": "https://github.com/allen16881/awesome-tolsai"
@@ -1170,7 +1170,7 @@
     "published": "2026-11-25T01:16:36+00:00",
     "source": "hf-models",
     "source_url": "https://huggingface.co/api/models?sort=lastModified&direction=-1&limit=16&full=true",
-    "status": "pending",
+    "status": "skipped",
     "summary": "models listing. Tags: region:us",
     "title": "khtsly/h",
     "url": "https://huggingface.co/khtsly/h"
@@ -1563,7 +1563,7 @@
     "published": "2026-11-24T00:34:20.073048+00:00",
     "source": "ecosystem-open-vsx",
     "source_url": "https://open-vsx.org/api/-/search?query=AI+testing&size=10",
-    "status": "pending",
+    "status": "skipped",
     "summary": "Open VSX version 1.157.1795480367. Publisher description: Sourcegraph’s AI code assistant goes beyond individual dev productivity, helping enterprises achieve consistency and quality at scale with AI. & codebase context to help you write code faster. Cody brings you autocomplete, chat, and commands, so you can generate code, write unit tests, create docs, and explain complex code using AI. Choose from the best LLMs, including GPT-4o and Claude Sonnet 4.",
     "title": "Testing Extension",
     "url": "https://open-vsx.org/extension/sourcegraph/cody-testing"
@@ -7779,7 +7779,7 @@
     "published": "2026-11-25T01:16:37+00:00",
     "source": "hf-models",
     "source_url": "https://huggingface.co/api/models?sort=lastModified&direction=-1&limit=16&full=true",
-    "status": "pending",
+    "status": "skipped",
     "summary": "models listing. Tags: region:us",
     "title": "Saltmandamsun/Playground",
     "url": "https://huggingface.co/Saltmandamsun/Playground"
@@ -8102,6 +8102,9 @@
     "url": "https://arxiv.org/abs/2611.31190"
   },
   "7450adb57091544b5a4eaf1c8cac49653734b1c5b6c053bcc61b39df8b03475d": {
+    "articles": [
+      "/news/github-notification-subscription-rules/"
+    ],
     "category": "coding",
     "discovered": "2026-11-24T19:53:54.561219+00:00",
     "evidence": [
@@ -8116,7 +8119,7 @@
     "published": "2026-11-24T16:40:59+00:00",
     "source": "github-changelog",
     "source_url": "https://github.blog/changelog/feed/",
-    "status": "pending",
+    "status": "published",
     "summary": "Starting December 1, 2026, we’re migrating notifications on GitHub.com over the course of a week to make subscriptions more predictable, correct unexpected behavior, and support the growing scale of activity.… The post More predictable notifications on GitHub.com appeared first on The GitHub Blog .",
     "title": "More predictable notifications on GitHub.com",
     "url": "https://github.blog/changelog/2026-11-24-more-predictable-notifications-on-github-com",
@@ -9776,7 +9779,7 @@
     "published": "2026-11-25T01:13:30+00:00",
     "source": "dev-tutorial",
     "source_url": "https://dev.to/api/articles?tag=tutorial&per_page=12",
-    "status": "pending",
+    "status": "skipped",
     "summary": "When building ColdMailAI, one of the core features I needed was a way to score cold emails before...",
     "title": "How to Build a Cold Email Scoring System with JavaScript",
     "url": "https://dev.to/peterpark_coldmail/how-to-build-a-cold-email-scoring-system-with-javascript-42kl",
