@@ -32,6 +32,13 @@
       "resume": 1795608610.0,
       "successes": 219
     },
+    "arxiv.org": {
+      "daily": 6,
+      "hour": "2026-11-25T11",
+      "hourly": 6,
+      "responses": 6,
+      "successes": 6
+    },
     "blog.cloudflare.com": {
       "daily": 8,
       "hour": "2026-11-25T11",
@@ -109,11 +116,11 @@
       "successes": 14
     },
     "github.com": {
-      "daily": 9,
+      "daily": 13,
       "hour": "2026-11-25T11",
-      "hourly": 4,
-      "responses": 9,
-      "successes": 9
+      "hourly": 8,
+      "responses": 13,
+      "successes": 13
     },
     "hamel.dev": {
       "daily": 4,
@@ -123,11 +130,11 @@
       "successes": 4
     },
     "hn.algolia.com": {
-      "daily": 12,
+      "daily": 17,
       "hour": "2026-11-25T11",
-      "hourly": 6,
-      "responses": 12,
-      "successes": 10
+      "hourly": 11,
+      "responses": 17,
+      "successes": 14
     },
     "huggingface.co": {
       "daily": 107,
