@@ -9,18 +9,18 @@
       "successes": 2
     },
     "ai.google.dev": {
-      "daily": 6,
-      "hour": "2026-11-25T10",
+      "daily": 8,
+      "hour": "2026-11-25T11",
       "hourly": 2,
-      "responses": 6,
-      "successes": 3
+      "responses": 8,
+      "successes": 4
     },
     "aistudio.google.com": {
-      "daily": 6,
-      "hour": "2026-11-25T10",
+      "daily": 8,
+      "hour": "2026-11-25T11",
       "hourly": 2,
-      "responses": 6,
-      "successes": 6
+      "responses": 8,
+      "successes": 8
     },
     "api.github.com": {
       "daily": 229,
@@ -130,11 +130,11 @@
       "successes": 5
     },
     "huggingface.co": {
-      "daily": 91,
-      "hour": "2026-11-25T10",
+      "daily": 98,
+      "hour": "2026-11-25T11",
       "hourly": 7,
-      "responses": 91,
-      "successes": 89
+      "responses": 98,
+      "successes": 96
     },
     "machinelearning.apple.com": {
       "daily": 2,
