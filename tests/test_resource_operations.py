@@ -15,6 +15,21 @@ import resource_ingest as ingest
 
 
 class ResourceOperations(unittest.TestCase):
+    def test_truncated_skill_tree_resumes_after_throttle(self):
+        tree = dict(truncated=True, sha='root')
+        root = dict(tree=[dict(type='tree', path='skills', sha='branch')])
+        branch = dict(tree=[dict(type='blob', path='SKILL.md', sha='manifest')])
+        with patch.object(evidence, 'document', side_effect=[
+            json.dumps(tree), json.dumps(root), OSError('rate limited'), json.dumps(branch)
+        ]) as document:
+            state = {}
+            with self.assertRaises(OSError):
+                evidence.skill_index('https://api.github.com/repo', 'main', state, time.monotonic() + 90)
+            state = json.loads(json.dumps(state))
+            self.assertEqual(evidence.skill_index('https://api.github.com/repo', 'main', state,
+                                                  time.monotonic() + 90), {'skills/SKILL.md': 'manifest'})
+            self.assertEqual(document.call_args.args[0], 'https://api.github.com/repo/git/trees/branch')
+
     def test_multiline_yaml_and_resumable_skill_scan(self):
         yaml = '---\nname: "文档"\ndescription: |\n  First line\n  第二行\n---\nbody'
         self.assertEqual(evidence.skill_metadata(yaml)['description'], 'First line\n第二行')
@@ -95,3 +110,24 @@ class ResourceOperations(unittest.TestCase):
         ingest.enqueue(state, {**row, 'verificationSources': [alternate]}, day)
         self.assertEqual(queued['done'], 'published')
         self.assertEqual(queued['verificationSources'], [alternate, site])
+
+    def test_invalid_copy_does_not_block_valid_resource(self):
+        day = '2026-11-25'
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            with patch.multiple(ingest, DIRECTORY=root / 'catalogue', STATE=root / 'queue.json',
+                                resource_context=lambda: []):
+                state = {}
+                for name in ('valid', 'invalid'):
+                    site = f'https://example.org/{name}'
+                    ingest.enqueue(state, ingest.candidate('tools', name, name, site, 'Summary', site), day)
+                ingest.save(ingest.STATE, state)
+                entries = {row['name']: key for key, row in state['rows'].items()}
+                edits = [dict(key=entries[name], zh=zh, en='Example resource',
+                              categoryZh='示例', categoryEn='Example')
+                         for name, zh in [('valid', '示例资源'), ('invalid', 'English only')]]
+                self.assertEqual(ingest.publish(dict(resources=edits, skipped=[]), state['rows'], day),
+                                 {'added': 1, 'updated': 0})
+                rows = ingest.load(ingest.STATE, {})['rows']
+                self.assertEqual(rows[entries['valid']]['done'], 'published')
+                self.assertNotIn('done', rows[entries['invalid']])

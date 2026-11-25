@@ -119,23 +119,29 @@ def evidence_for(item):
         yield record(link, 'Community discussion, unverified author claims', '\n'.join(filter(None, comments)))
 
 
-def skill_index(base, branch):
-    tree = json.loads(document(base + '/git/trees/' + branch + '?recursive=1'))
-    if not tree.get('truncated'):
-        return {row['path']: row['sha'] for row in tree['tree']
-                if row['type'] == 'blob' and row['path'].split('/')[-1] == 'SKILL.md'}
-    root = json.loads(document(base + '/git/trees/' + branch))
-    remaining, paths = [('', root)], {}
+def skill_index(base, branch, state, deadline):
+    if 'tree_queue' not in state:
+        tree = json.loads(document(base + '/git/trees/' + branch + '?recursive=1'))
+        if not tree.get('truncated'):
+            return {row['path']: row['sha'] for row in tree['tree']
+                    if row['type'] == 'blob' and row['path'].split('/')[-1] == 'SKILL.md'}
+        state.update(tree_queue=[['', tree.get('sha') or branch]], tree_paths={})
+    remaining, paths = state['tree_queue'], state['tree_paths']
     while remaining:
-        prefix, node = remaining.pop()
+        if time.monotonic() >= deadline:
+            return None
+        prefix, sha = remaining[-1]
+        node = json.loads(document(base + '/git/trees/' + sha))
         if node.get('truncated'):
             raise ValueError('GitHub truncated a nonrecursive tree')
+        remaining.pop()
         for row in node['tree']:
             path = prefix + row['path']
             if row['type'] == 'tree':
-                remaining.append((path + '/', json.loads(document(base + '/git/trees/' + row['sha']))))
+                remaining.append([path + '/', row['sha']])
             elif row['type'] == 'blob' and row['path'] == 'SKILL.md':
                 paths[path] = row['sha']
+    del state['tree_queue'], state['tree_paths']
     return paths
 
 
@@ -150,10 +156,13 @@ def skill_files(item, repo, deadline):
         data = json.loads(document('https://api.github.com/repos/' + repo))
         base = 'https://api.github.com/repos/' + data['full_name']
         branch = quote(data['default_branch'], safe='')
-        paths = skill_index(base, branch)
+        paths = skill_index(base, branch, state, deadline)
+        if paths is None:
+            return
+        seen = state.get('seen', {}) if (state.get('repo'), state.get('branch')) == (data['full_name'], branch) else {}
         state.update(repo=data['full_name'], branch=branch, repository_id=data['id'],
                      pending={path: sha for path, sha in sorted(paths.items())
-                              if state.get('seen', {}).get(path) != sha})
+                              if seen.get(path) != sha})
     base = 'https://api.github.com/repos/' + state['repo']
     for path, sha in list(state['pending'].items()):
         if time.monotonic() >= deadline:
@@ -184,7 +193,8 @@ def enrich(items, candidates, now, limit=5):
             break
         item = items[key]
         last = item.get('evidence_checked')
-        if last and not item.get('skill_scan', {}).get('pending') and now - timestamp(last) < timedelta(days=3 if item.get('evidence') else 1):
+        scan = item.get('skill_scan', {})
+        if last and not (scan.get('pending') or scan.get('tree_queue')) and now - timestamp(last) < timedelta(days=3 if item.get('evidence') else 1):
             continue
         attempted += 1
         documents = []

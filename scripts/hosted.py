@@ -82,7 +82,8 @@ def prepare(task):
     if task in ('collect', 'discover'):
         if task == 'discover':
             queued = sorted((key for key, item in items.items()
-                             if item['status'] == 'pending' or item.get('skill_scan', {}).get('pending')),
+                             if item['status'] == 'pending' or
+                             any(item.get('skill_scan', {}).get(field) for field in ('pending', 'tree_queue'))),
                             key=lambda key: items[key].get('evidence_checked', ''))
             counts = enrich(items, queued, now, limit=10)
             save(ITEMS, items)

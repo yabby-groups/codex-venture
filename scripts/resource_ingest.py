@@ -175,7 +175,8 @@ def discover(queue, kind, day, refresh=False):
                                     platforms={'openai/skills': ['Codex'], 'anthropics/skills': ['Claude']}.get(feed))
                     enqueue(queue, row, day)
                     save(STATE, queue)
-                next_cursor = True if item['skill_scan']['pending'] else None
+                scan = item['skill_scan']
+                next_cursor = True if scan.get('pending') or scan.get('tree_queue') else None
             else:
                 rows, next_cursor = page(name, feed, state.get('cursor'))
                 for row in rows:
