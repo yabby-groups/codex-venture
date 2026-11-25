@@ -2249,6 +2249,19 @@
       "discussion": "https://news.ycombinator.com/item?id=50639090",
       "hn_id": "50639090"
     },
+    "evidence": [
+      {
+        "excerpt": "<p align=\"center\">\n<a href=\"../../releases\"><img alt=\"Release\" src=\"https://img.shields.io/github/v/release/sao-coding/sightline?include_prereleases\"></a>\n<a href=\"../../actions/workflows/ci.yml\"><img alt=\"CI\" src=\"https://img.shields.io/github/actions/workflow/status/sao-coding/sightline/ci.yml?branch=main&label=CI\"></a>\n<img alt=\"Windows 10 and 11\" src=\"https://img.shields.io/badge/Windows-10%20%7C%2011-0078D4\">\n<a href=\"LICENSE\"><img alt=\"License: AGPL-3.0\" src=\"https://img.shields.io/badge/license-AGPL--3.0-blue\"></a>\n</p>\n<p align=\"center\"><b>English</b> · <a href=\"README.zh-CN.md\">简体中文</a> · <a href=\"README.zh-TW.md\">繁體中文</a></p>\n# sightline\nEyes and a stopwatch for AI coding agents on Windows. One small exe, command `sight`.\nsightline finds windows, screenshots them even when covered, waits for the UI to change and then stop\n## Install\n**PowerShell one-liner** (installs to `%LOCALAPPDATA%\\Programs\\sight` and adds it to your user `PATH`):\n```powershell\nirm https://raw.githubusercontent.com/sao-coding/sightline/main/install.ps1 | iex\n# example: C:\\tools\\sight (user PATH, no admin needed)\n[Environment]::SetEnvironmentVariable('Path', \"$([Environment]::GetEnvironmentVariable('Path','User'));C:\\tools\\sight\", 'User')\n```\nOr via Settings → System → About → Advanced system settings → Environment Variables → `Path` → New.\n## Limitations\n- `--expect-change` / `wait --change` baseline on the first captured frame (about 0.3 s after\nstart), so a change that finished earlier is not detected; use `--baseline` for that.\n- The window formulas and `--crop` were only verified on 100% DPI monitors; they are plain physical-px\n## License\n[AGPL-3.0](LICENSE).",
+        "label": "README",
+        "url": "https://api.github.com/repos/sao-coding/sightline/readme"
+      },
+      {
+        "excerpt": "GNU AFFERO GENERAL PUBLIC LICENSE\nVersion 3, 19 November 2007\nCopyright (C) 2007 Free Software Foundation, Inc. <https://fsf.org/>\nEveryone is permitted to copy and distribute verbatim copies\nof this license document, but changing it is not allowed.\nPreamble\nThe GNU Affero General Public License is a free, copyleft license for\nsoftware and other kinds of works, specifically designed to ensure\ncooperation with the community in the case of network server software.\nThe licenses for most software and other practical works are designed",
+        "label": "LICENSE",
+        "url": "https://api.github.com/repos/sao-coding/sightline/license"
+      }
+    ],
+    "evidence_checked": "2026-11-25T13:04:05.107592+00:00",
     "fingerprint": "1e78e31a07d9bafd1f2bfc0e43ffc0040bdcb5eb982941c4762e8fa3f4e5cf78",
     "published": "2026-11-25T06:08:51+00:00",
     "source": "hacker-news-1-1",
@@ -2256,7 +2269,8 @@
     "status": "pending",
     "summary": "Show HN: Sightline – Windows CLI for AI agents to capture UI and map DPI coords",
     "title": "Show HN: Sightline – Windows CLI for AI agents to capture UI and map DPI coords",
-    "url": "https://github.com/sao-coding/sightline"
+    "url": "https://github.com/sao-coding/sightline",
+    "verified_at": "2026-11-25T13:04:05.107592+00:00"
   },
   "13f08bab005ffd3059f206ffa72c6e33c964e3c7d26d1a7dcfc700eaa55ed2fc": {
     "category": "open-source",
@@ -2381,6 +2395,14 @@
       "discussion": "https://news.ycombinator.com/item?id=50636574",
       "hn_id": "50636574"
     },
+    "evidence": [
+      {
+        "excerpt": "Aircraft found in public satellite pictures, each one linked to its source. How it works . FLIGHT-MATCHED · ADS-B · Commercial aircraft ATR 72-600 ZK-MVO at 13,960 ft, 38 km south-east of Blenheim, New Zealand, tracking 036° Scene centre: 55 km south of Blenheim, Marlborough, New Zealand · 23 Nov, 22:27 UTC · 41.7944° S, 174.2232° E · tile 59GQP Zoomed crop. Heading 32° Band offset 16.2 px Apparent speed 313 kt Scene S2C_59GQP_20261123_0_L2A Matched to ATR-72-600 ZK-MVO at a reported altitude of 13,960 ft, reported ground speed 239 kt. The flight record was 41 m from the detected position. Measured from the image: heading 32°, apparent speed about 313 kt. Apparent speed is not ground speed. Open the dossier From the wider world Away from the airports IMAGE REVIEWED · Unidentified Aircraft in flight, 47 km north of Dellys, Algeria, heading west-south-west Scene centre: 65 km north-west of Dellys, Boumerdes, Algeria · 24 Nov, 10:40 UTC · tile 31SEB Reviewed. Passed image review. Not matched to a flight record. This is not a flight-matched sighting. Where we look Scan log Show as Heatmap Dots · Scanned sky on Flight-matched and reviewed sightings 5 scenes read here 5 scenes read here 6 scenes read here 2 scenes read here 1 scene read here 6 scenes read here 5 scenes read here 2 scenes read here 1 scene read here 1 scene read here 2 scenes read here 2 scenes read here 6 scenes read here 3 scenes read here 5 scenes read here 10 scenes read here 10 scenes read here 1 scene read here 5 scenes read here 1 scene read here 1 scene read here 4 scenes read here 4 scenes read here 5 scenes read here 5 scenes read here 3 scenes read here 14 scenes read here 8 scenes read here 13 scenes read here 6 scenes read here 8 scenes read here 3 scenes read here 2 scenes read here 1 scene read here 2 scenes read here 4 scenes read here 11 scenes read here 6 scenes read here 2 scenes read here",
+        "label": "Original publication",
+        "url": "https://ufoptix.org/"
+      }
+    ],
+    "evidence_checked": "2026-11-25T13:04:05.107592+00:00",
     "fingerprint": "48c3229ffc35f3817cb4517d45b4ee5f34646536008cf5db6b285b90b9450c88",
     "published": "2026-11-24T23:53:59+00:00",
     "source": "hacker-news-1-1",
@@ -2388,7 +2410,8 @@
     "status": "pending",
     "summary": "I (well my agent swarm) created this in the last 48 hours based on method in a research paper I found ( https://www.mdpi.com/2072-4292/13/15/3016 ) for detecting flying craft from OSINT Sentinel 2 satellite imagery from the European space agency. There's something about the pixelated detections from images coming off the satellite.. I discussed the build in another post: https://fmsg.ai/blog/agent-swarm-ufo-optix",
     "title": "Show HN: UFO OPTIX Scanning satellite imagery for flying craft artifacts",
-    "url": "https://ufoptix.org/"
+    "url": "https://ufoptix.org/",
+    "verified_at": "2026-11-25T13:04:05.107592+00:00"
   },
   "151e475c102d28324e18c57e54abbad71b2ebd0046e76c3226e0cb09d27685ff": {
     "category": "models",
@@ -11032,6 +11055,7 @@
       "discussion": "https://news.ycombinator.com/item?id=50636989",
       "hn_id": "50636989"
     },
+    "evidence_checked": "2026-11-25T13:04:05.107592+00:00",
     "fingerprint": "178d5c8540ef89c3a48e54d131643d855a92fe081cf7aa74d1131861e679dce4",
     "published": "2026-11-25T00:45:24+00:00",
     "source": "hacker-news-1-0",
@@ -11902,6 +11926,14 @@
       "discussion": "https://news.ycombinator.com/item?id=50638960",
       "hn_id": "50638960"
     },
+    "evidence": [
+      {
+        "excerpt": "Days after Nvidia CEO Jensen Huang resigned, journalists unearth covert influence operation using right-wing outlets to promote Nvidia AI chip export to...China News By Efosa Udinmwen Published 21 November 2026 3 min read Over 80 influencers were reportedly paid to praise AI exports to China (Image credit: Getty Images) Copy link Facebook X Whatsapp Reddit Pinterest Flipboard Threads Email Instagram Share this article 0 Join the conversation Follow us Add us as a preferred source on Google Newsletter Subscribe to our newsletter More than 80 influencers allegedly promoted Nvidia chip exports to China The campaign's participating creators collectively reached approximately 14 million followers More than 8,000 posts contained identifiable promotional tracking arrangements An investigation published days after Jensen Huang's departure from Nvidia has uncovered an extensive influencer campaign supporting American artificial intelligence chip exports to China. The operation allegedly used right-wing social media personalities and online publications to build public support for selling Nvidia 's advanced processors to Chinese customers. Investigators identified thousands of promotional posts, with participating creators collectively reaching approximately 14 million followers across their social media audiences. Latest Videos From TechRadar Watch full video here: More than 80 influencers allegedly participated in coordinated chip export promotions The investigation by The Midas Project found that more than 80 influencers had apparently received payments to promote technology industry interests through coordinated online campaigns. Several promotions specifically supported American approval of Nvidia's H200 processors for Chinese buyers, following Washington's decision to authorize certain exports. According to the investigation, numerous creators published promotional materi",
+        "label": "Original publication",
+        "url": "https://www.techradar.com/pro/days-after-nvidia-ceo-resigned-journalists-unearth-covert-influence-operation-using-right-wing-outlets-to-promote-nvidia-ai-chip-export-to-china"
+      }
+    ],
+    "evidence_checked": "2026-11-25T13:04:05.107592+00:00",
     "fingerprint": "c5cc25d81e346bce085ce111aec1697290046b802c2fb3d1c79493715ca23f60",
     "published": "2026-11-25T05:43:32+00:00",
     "source": "hacker-news-2-1",
@@ -11909,7 +11941,8 @@
     "status": "pending",
     "summary": "Investigation uncovers influencers paid to promote Nvidia to China",
     "title": "Investigation uncovers influencers paid to promote Nvidia to China",
-    "url": "https://www.techradar.com/pro/days-after-nvidia-ceo-resigned-journalists-unearth-covert-influence-operation-using-right-wing-outlets-to-promote-nvidia-ai-chip-export-to-china"
+    "url": "https://www.techradar.com/pro/days-after-nvidia-ceo-resigned-journalists-unearth-covert-influence-operation-using-right-wing-outlets-to-promote-nvidia-ai-chip-export-to-china",
+    "verified_at": "2026-11-25T13:04:05.107592+00:00"
   },
   "5ce86270e5b38969637a5bea7351944bd7eecfafb5c3e407a2cef4ef7d1c30b9": {
     "category": "models",
@@ -12130,6 +12163,7 @@
     "content_type": "stories",
     "discovered": "2026-11-25T01:21:21.428756+00:00",
     "discovery": {},
+    "evidence_checked": "2026-11-25T13:04:05.107592+00:00",
     "fingerprint": "5dcece2d877f66ca3c93090d96be1c9692c40b6fe01b4d55bbe6f67f965c05da",
     "published": "2026-11-24T23:02:07+00:00",
     "source": "simon-willison",
@@ -18073,7 +18107,7 @@
     "status": "pending",
     "summary": "A practical guide to building successful LLM products.",
     "title": "What We've Learned From A Year of Building with LLMs",
-    "updated": "2026-11-25T12:08:46.883246+00:00",
+    "updated": "2026-11-25T13:04:05.199245+00:00",
     "url": "https://hamel.dev/"
   },
   "8cd82371d998702d530717a2db00e473cde7a21db2b42feae3ef7e259dacb20b": {
@@ -22650,6 +22684,28 @@
     "summary": "arXiv:2512.15948v4 Announce Type: replace Abstract: Where do objective functions come from? How do we select what goals to pursue? Human intelligence is adept at synthesizing new objective functions on the fly. How does this work, and can we endow artificial systems with the same ability? This paper proposes an approach to answering these questions, starting with the concept of a subjective function, a higher-order objective function that is endogenous to the agent (i.e., defined with respect to the agent's features, rather than an external task). Expected prediction error is studied as a concrete example of a subjective function. This proposal has many connections to ideas in psychology, neuroscience, and machine learning.",
     "title": "Subjective functions",
     "url": "https://arxiv.org/abs/2512.15948"
+  },
+  "b46c68050813b373b614d1024dde36bdaa9708234043a8008ec240dbc91efb6b": {
+    "basis": "public-operations",
+    "category": "coding",
+    "content_type": "building-in-public",
+    "discovered": "2026-11-25T21:04:05.107592+08:00",
+    "evidence": [
+      {
+        "excerpt": "Recover recurring editorial work and surface recent resources\nChanged entry points: .github/workflows/venture.yml, scripts/collect.py, scripts/hosted.py, scripts/operations_queue.py",
+        "label": "Public production commit",
+        "url": "https://github.com/yabby-groups/codex-venture/commit/57a918a51a77649ea85fd50a5b8f353f0f77ee53"
+      }
+    ],
+    "fingerprint": "20117c4533218b2662af4b0b06ed0cde31c2f419806e50cd4c1fb0188b0e38f6",
+    "published": "2026-11-25T11:36:31Z",
+    "source": "original",
+    "source_url": "https://github.com/yabby-groups/codex-venture/commit/57a918a51a77649ea85fd50a5b8f353f0f77ee53",
+    "status": "pending",
+    "summary": "Recover recurring editorial work and surface recent resources\nChanged entry points: .github/workflows/venture.yml, scripts/collect.py, scripts/hosted.py, scripts/operations_queue.py",
+    "title": "Recover recurring editorial work and surface recent resources",
+    "url": "https://github.com/yabby-groups/codex-venture/commit/57a918a51a77649ea85fd50a5b8f353f0f77ee53",
+    "verified_at": "2026-11-25T21:04:05.107592+08:00"
   },
   "b47c70932cccb99642eb62f541762c731796121616b224253da976d7918abe8f": {
     "category": "coding",
@@ -27666,6 +27722,19 @@
       "discussion": "https://news.ycombinator.com/item?id=50635545",
       "hn_id": "50635545"
     },
+    "evidence": [
+      {
+        "excerpt": "Your agent says “done”. We check your app. After each deploy and every day, we walk the journeys you choose on your live app, and tell your agent what passed and what failed — with screenshots. Claude Code Cursor Codex claude mcp add --scope user --transport http checkmyapp https://checkmyapp.dev/mcp Copy command Sign in once: /mcp → checkmyapp → Authenticate. Then tell your agent: “ set up checkmyapp for this app ” Free account: $3 of checks, no card · Why an independent check? · See a whole check Caught on real apps joblander.app/practice PATCH /user → 401 joblander.app daily check Choosing a coach failed for everyone who signed in with email Fixed that night meetbashar.com/learn/holotope-meditation watch?v=4EjTHkgOgG8 → 404 ×2 meetbashar.com daily check A linked YouTube video was unavailable in two places in the guide Found by the daily check. The other 30 linked videos were available admin.shopify.com/store/•••••/apps/••••• store and app address hidden stack trace shown to merchants Shopify app pilot A direct link to the app opened a crash page with a stack trace Reported to the app’s team 01 Connect your agent Paste the command. Your browser opens once to sign in and allow it. 02 Hand over the journeys Your agent sends them from your code, with a test user. Or we find them on your live app. 03 Connect your deploys Install our GitHub App. Checks run automatically after each connected deploy. Critical journeys: every deploy, whatever changed. Mark the ones you can’t afford to break. Your other chosen journeys are checked daily and when their pages change — things break without a deploy, too. Sign up with email , critical every deploy Sign in , critical every deploy Change language , not critical daily Web apps Public pages, and behind sign-in as your test user. Shopify apps pilot Inside a store’s admin. Ask to join Chrome extensions pilot Installed in Chrome, the w",
+        "label": "Original publication",
+        "url": "https://checkmyapp.dev/"
+      },
+      {
+        "excerpt": "For Beekeeper Studio (beekeeperstudio.io) I do this already with a schedule on https://claude.ai/code . It takes screenshots and videos of bugs, even though it's a desktop app, and files them as issues on GitHub. Is there something different that CheckMyApp offers? Wasn't clear to me from the quick homepage scan.",
+        "label": "Community discussion, unverified author claims",
+        "url": "https://hn.algolia.com/api/v1/items/50635545"
+      }
+    ],
+    "evidence_checked": "2026-11-25T13:04:05.107592+00:00",
     "fingerprint": "2c2d4720095d2aa7c49740cb5923c9703e6ec27c980dde298ee7575f6831b30c",
     "published": "2026-11-24T22:13:47+00:00",
     "source": "hacker-news-1-0",
@@ -27673,7 +27742,8 @@
     "status": "pending",
     "summary": "No human in the loop is the new dream. CheckMyApp is the first half of the loop I believe every solo founder should have. It clicks through your changes in production (or PR preview urls if you like) and files tickets with screenshots of bugs. Hook those tickets to claude/codex and the loop closes. I've tasted agentic coding and I'm not going back. I have more ideas than I can count and all of them are stuck behind one slow guy checking if the app is working and billing is indeed fine. Don't skip the production check. Delegate it (and save your precious weekly quota). A whole check, no signup: https://checkmyapp.dev/example",
     "title": "Show HN: CheckMyApp – checks your live app with each deploy from coding agent",
-    "url": "https://checkmyapp.dev/"
+    "url": "https://checkmyapp.dev/",
+    "verified_at": "2026-11-25T13:04:05.107592+00:00"
   },
   "db3c3238063fcc5dc904b83c4ba0cdf6cef47c7c2dda0a0f2a3f64bafa1a9d59": {
     "category": "coding",
@@ -28375,6 +28445,14 @@
       "discussion": "https://news.ycombinator.com/item?id=50636375",
       "hn_id": "50636375"
     },
+    "evidence": [
+      {
+        "excerpt": "November 23, 2026 Managing multiple AI coding agents from one list Every agent you add is one more thing that can stop you in the middle of a thought. Managing multiple AI coding agents comes down to deciding, before the work starts, what is allowed to stop you. Name the few moments that need a person. Everything else the agent settles alone, or it writes down what it needs and waits for you. Then what waits sits in one list, and you read it when you choose. Why supervision does not scale with the agents Addy Osmani put the limit in one sentence in 2026. \"What scales is your throughput of supervision, not your throughput of understanding.\" He gives his own number too. \"My ceiling for a typical session is somewhere around three to four threads depending on complexity.\" His advice is to narrow each agent's task before you cut the count. We agree. He also writes that an agent's judgment calls cannot queue up like email, and there we part. They cannot queue when any agent may ask anything at any time. They can when the flow says in advance which questions exist. Decide first which moments need a person Tillerly runs AI coding agents on your team's machines, sandboxed, from ticket to pull request. Every ticket takes the same seven Steps, plan, publish, resolve, pull request, CI, QA and merge, and each Step blocks the next. One agent, the planner, designs the change. Another, the resolver, implements it. A person is needed at a short, fixed list of moments. The plan. The planner asks what it cannot decide alone, and the plan is implemented only when you say so. A question on the ticket. The resolver asks on your tracker and waits for whoever answers there. The pull request. Your team opens it. The agent never does. A comment that needs a decision. It waits for you. QA. When the build is green, QA waits for you. The merge. Your team merges on the code host. Outside that list",
+        "label": "Original publication",
+        "url": "https://tillerly.dev/blog/managing-multiple-ai-coding-agents-from-one-list"
+      }
+    ],
+    "evidence_checked": "2026-11-25T13:04:05.107592+00:00",
     "fingerprint": "53b58becd9449163407910c1696a677a1947a43a868068443759c2bc243c12ec",
     "published": "2026-11-24T23:33:45+00:00",
     "source": "hacker-news-1-1",
@@ -28382,7 +28460,8 @@
     "status": "pending",
     "summary": "Why supervision does not scale with the AI coding agents",
     "title": "Why supervision does not scale with the AI coding agents",
-    "url": "https://tillerly.dev/blog/managing-multiple-ai-coding-agents-from-one-list"
+    "url": "https://tillerly.dev/blog/managing-multiple-ai-coding-agents-from-one-list",
+    "verified_at": "2026-11-25T13:04:05.107592+00:00"
   },
   "e0f75446731d598ce3aa65499f449c5b7555321e70d85cabfdb7b6f4f8659ba0": {
     "category": "models",
@@ -30339,6 +30418,7 @@
       "discussion": "https://news.ycombinator.com/item?id=50636552",
       "hn_id": "50636552"
     },
+    "evidence_checked": "2026-11-25T13:04:05.107592+00:00",
     "fingerprint": "ffcf2e6a8e7652e8f185e4c4421a7d79af940a584cf8c46344920e27d480c1ec",
     "published": "2026-11-24T23:51:09+00:00",
     "source": "hacker-news-1-0",

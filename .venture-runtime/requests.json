@@ -30,14 +30,14 @@
       "successes": 10
     },
     "api.github.com": {
-      "daily": 231,
-      "hour": "2026-11-25T12",
-      "hourly": 1,
+      "daily": 239,
+      "hour": "2026-11-25T13",
+      "hourly": 8,
       "limited": 5,
-      "remaining": 0,
-      "responses": 231,
+      "remaining": 4991,
+      "responses": 239,
       "resume": 1795611790.0,
-      "successes": 219
+      "successes": 226
     },
     "arxiv.org": {
       "daily": 6,
@@ -59,6 +59,13 @@
       "hourly": 4,
       "responses": 12,
       "successes": 12
+    },
+    "checkmyapp.dev": {
+      "daily": 2,
+      "hour": "2026-11-25T13",
+      "hourly": 2,
+      "responses": 2,
+      "successes": 2
     },
     "cookbook.openai.com": {
       "daily": 2,
@@ -130,18 +137,18 @@
       "successes": 23
     },
     "hamel.dev": {
-      "daily": 25,
-      "hour": "2026-11-25T12",
-      "hourly": 21,
-      "responses": 25,
-      "successes": 17
+      "daily": 27,
+      "hour": "2026-11-25T13",
+      "hourly": 2,
+      "responses": 27,
+      "successes": 19
     },
     "hn.algolia.com": {
-      "daily": 34,
+      "daily": 40,
       "hour": "2026-11-25T13",
-      "hourly": 5,
-      "responses": 33,
-      "successes": 27
+      "hourly": 11,
+      "responses": 39,
+      "successes": 32
     },
     "huggingface.co": {
       "daily": 136,
@@ -229,11 +236,11 @@
       "successes": 3
     },
     "simonwillison.net": {
-      "daily": 8,
-      "hour": "2026-11-25T12",
-      "hourly": 4,
-      "responses": 8,
-      "successes": 8
+      "daily": 11,
+      "hour": "2026-11-25T13",
+      "hourly": 3,
+      "responses": 11,
+      "successes": 10
     },
     "support.google.com": {
       "daily": 3,
@@ -242,12 +249,48 @@
       "responses": 3,
       "successes": 2
     },
+    "tillerly.dev": {
+      "daily": 3,
+      "hour": "2026-11-25T13",
+      "hourly": 3,
+      "responses": 3,
+      "successes": 2
+    },
+    "ufoptix.org": {
+      "daily": 2,
+      "hour": "2026-11-25T13",
+      "hourly": 2,
+      "responses": 2,
+      "successes": 2
+    },
+    "www.everydev.ai": {
+      "daily": 1,
+      "hour": "2026-11-25T13",
+      "hourly": 1,
+      "limited": 1,
+      "responses": 1,
+      "resume": 1795612754.797189
+    },
     "www.perplexity.ai": {
       "daily": 2,
       "hour": "2026-11-25T01",
       "hourly": 2,
       "responses": 2,
       "successes": 1
+    },
+    "www.reddit.com": {
+      "daily": 1,
+      "hour": "2026-11-25T13",
+      "hourly": 1,
+      "responses": 1,
+      "successes": 1
+    },
+    "www.techradar.com": {
+      "daily": 2,
+      "hour": "2026-11-25T13",
+      "hourly": 2,
+      "responses": 2,
+      "successes": 2
     }
   }
 }
