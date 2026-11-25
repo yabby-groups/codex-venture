@@ -9,18 +9,18 @@
       "successes": 2
     },
     "ai.google.dev": {
-      "daily": 8,
+      "daily": 10,
       "hour": "2026-11-25T11",
-      "hourly": 2,
-      "responses": 8,
-      "successes": 4
+      "hourly": 4,
+      "responses": 10,
+      "successes": 5
     },
     "aistudio.google.com": {
-      "daily": 8,
+      "daily": 10,
       "hour": "2026-11-25T11",
-      "hourly": 2,
-      "responses": 8,
-      "successes": 8
+      "hourly": 4,
+      "responses": 10,
+      "successes": 10
     },
     "api.github.com": {
       "daily": 230,
@@ -137,11 +137,11 @@
       "successes": 14
     },
     "huggingface.co": {
-      "daily": 107,
+      "daily": 121,
       "hour": "2026-11-25T11",
-      "hourly": 16,
-      "responses": 107,
-      "successes": 103
+      "hourly": 30,
+      "responses": 121,
+      "successes": 117
     },
     "kakatu.app": {
       "daily": 2,
@@ -165,12 +165,12 @@
       "successes": 2
     },
     "open-vsx.org": {
-      "daily": 26,
+      "daily": 32,
       "hour": "2026-11-25T11",
-      "hourly": 2,
+      "hourly": 8,
       "remaining": 10799,
-      "responses": 26,
-      "successes": 25
+      "responses": 32,
+      "successes": 31
     },
     "openai.com": {
       "daily": 8,
@@ -186,6 +186,13 @@
       "responses": 2,
       "successes": 1
     },
+    "plugins.jetbrains.com": {
+      "daily": 3,
+      "hour": "2026-11-25T11",
+      "hourly": 3,
+      "responses": 3,
+      "successes": 3
+    },
     "pytorch.org": {
       "daily": 4,
       "hour": "2026-11-25T11",
@@ -194,11 +201,11 @@
       "successes": 2
     },
     "registry.modelcontextprotocol.io": {
-      "daily": 26,
+      "daily": 28,
       "hour": "2026-11-25T11",
-      "hourly": 2,
-      "responses": 26,
-      "successes": 21
+      "hourly": 4,
+      "responses": 28,
+      "successes": 22
     },
     "rss.arxiv.org": {
       "daily": 2,

@@ -20,6 +20,11 @@
     "result": "PUBLISHED",
     "started": "2026-11-25T19:50:11.071693+08:00"
   },
+  "resource-refresh": {
+    "due": "2026-11-25T20:26:30.421563+08:00",
+    "result": "SKIPPED",
+    "started": "2026-11-25T19:56:30.421563+08:00"
+  },
   "resource-sync": {
     "due": "2026-11-25T21:42:00.177246+08:00",
     "result": "PUBLISHED",
