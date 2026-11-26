@@ -1,0 +1,28 @@
+{
+  "addedAt": "2026-11-27",
+  "categories": [
+    [
+      "AI 编程模板",
+      "AI coding templates"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-26",
+  "id": "resource-29b88864e3ebb7ff5e83d5bd15301075bc1ca9a8a7002e6da123f9336941b24f",
+  "identity": "github:1246521137",
+  "license": "MIT",
+  "name": "Arnie016/codex-prompt-templates",
+  "repository": "https://github.com/Arnie016/codex-prompt-templates",
+  "repositoryId": "1246521137",
+  "site": "https://github.com/Arnie016/codex-prompt-templates",
+  "sourceSignature": "5d760799cbce507cfbc79120e8d7b2527cd508074dad7e210f704fcee791f03f",
+  "summary": [
+    "发布者提供用颜色区分的 Codex 提示词模板和 Agent Skills，用于协调插件、安全使用 MCP、分析代码仓库和自动化编程流程。",
+    "The publisher offers color-coded Codex prompt templates and Agent Skills for tasks such as coordinating plugins, working safely with MCP, analyzing repositories, and automating coding workflows."
+  ],
+  "tested": false,
+  "type": "prompts",
+  "verificationSources": [
+    "https://api.github.com/search/repositories?page=2&per_page=30&q=topic%3Aprompt-templates+archived%3Afalse+fork%3Afalse&sort=stars"
+  ],
+  "verifiedAt": "2026-11-27"
+}

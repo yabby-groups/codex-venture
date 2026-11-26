@@ -1,0 +1,30 @@
+{
+  "addedAt": "2026-11-27",
+  "categories": [
+    [
+      "编程会话管理",
+      "Coding session management"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-25",
+  "id": "resource-2f27856b993d2349674de0794a8961e0f6681bebb6d5143fe9f8d19ca28cfe6c",
+  "identity": "openvsx:swaroopgajula.claude-terminal-sessions",
+  "install": "https://open-vsx.org/extension/SwaroopGajula/claude-terminal-sessions",
+  "name": "Claude Terminal Sessions",
+  "platforms": [
+    "Open VSX"
+  ],
+  "site": "https://open-vsx.org/extension/SwaroopGajula/claude-terminal-sessions",
+  "sourceSignature": "a654db1e98a31eb5845d5e990993e909f01787aa417d1503e9271695606c27f3",
+  "summary": [
+    "据发布者介绍，这款工具可在侧边栏跨文件夹搜索和恢复 Claude Code 会话，将会话交给队友继续，并查看费用和代码差异。",
+    "The publisher says the sidebar lets you search and resume Claude Code sessions across folders, hand sessions off to teammates, and see costs and code diffs."
+  ],
+  "tested": false,
+  "type": "plugins",
+  "verificationSources": [
+    "https://open-vsx.org/api/-/search?offset=50&query=Claude&size=25"
+  ],
+  "verifiedAt": "2026-11-27",
+  "version": "0.11.1"
+}

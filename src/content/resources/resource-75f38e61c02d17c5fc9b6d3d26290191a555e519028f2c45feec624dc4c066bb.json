@@ -1,0 +1,28 @@
+{
+  "addedAt": "2026-11-27",
+  "categories": [
+    [
+      "新闻监测与检索",
+      "News monitoring and search"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-25",
+  "id": "resource-75f38e61c02d17c5fc9b6d3d26290191a555e519028f2c45feec624dc4c066bb",
+  "identity": "mcp:ai.agentic-news/mcp",
+  "name": "Agentic News",
+  "registryId": "ai.agentic-news/mcp",
+  "site": "https://registry.modelcontextprotocol.io/v0.1/servers/ai.agentic-news%2Fmcp/versions/1.0.0",
+  "sourceSignature": "9438dc6a39ab363c227cf32de06c69003252c0eecee582f691d072a78a67fee2",
+  "summary": [
+    "发布者提供用于个性化新闻监测、新闻简报和语义搜索的 MCP 工具。",
+    "The publisher lists MCP tools for personalized news monitoring, briefings, and semantic search."
+  ],
+  "tested": false,
+  "transport": "streamable-http",
+  "type": "mcp",
+  "verificationSources": [
+    "https://registry.modelcontextprotocol.io/v0.1/servers/ai.agentic-news%2Fmcp/versions/1.0.0"
+  ],
+  "verifiedAt": "2026-11-27",
+  "version": "1.0.0"
+}

@@ -1,0 +1,28 @@
+{
+  "addedAt": "2026-11-27",
+  "categories": [
+    [
+      "自主学习",
+      "Self-paced learning"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-26",
+  "id": "resource-1c5be8dcfb7f5ff17ced99750587b3151186d3382e33b459d028275b6e214a3c",
+  "identity": "github:1446185425",
+  "license": "MIT",
+  "name": "munitkala/selfsemester",
+  "repository": "https://github.com/munitkala/selfsemester",
+  "repositoryId": "1446185425",
+  "site": "https://github.com/munitkala/selfsemester",
+  "sourceSignature": "fb8f9efb9ccd55fde0fb31086bb4b47824a87e304dc0be0a8f78e7c74be28c20",
+  "summary": [
+    "据发布者介绍，这款桌面应用可用你选定的 AI 将学习主题编排成有进度安排的课程，并为作业评分。",
+    "The publisher describes a desktop app that uses an AI of your choice to turn a topic into a course with a schedule and graded work."
+  ],
+  "tested": false,
+  "type": "resources",
+  "verificationSources": [
+    "https://api.github.com/search/repositories?page=1&per_page=30&q=topic%3Aai-education+archived%3Afalse+fork%3Afalse&sort=stars"
+  ],
+  "verifiedAt": "2026-11-27"
+}

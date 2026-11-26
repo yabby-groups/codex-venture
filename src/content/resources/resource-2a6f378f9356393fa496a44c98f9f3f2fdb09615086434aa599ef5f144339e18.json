@@ -1,0 +1,28 @@
+{
+  "addedAt": "2026-11-27",
+  "categories": [
+    [
+      "软件规划与审查",
+      "Software planning and review"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-26",
+  "id": "resource-2a6f378f9356393fa496a44c98f9f3f2fdb09615086434aa599ef5f144339e18",
+  "identity": "github:945592798",
+  "license": "MIT",
+  "name": "nurettincoban/ai-prd-workflow",
+  "repository": "https://github.com/nurettincoban/ai-prd-workflow",
+  "repositoryId": "945592798",
+  "site": "https://github.com/nurettincoban/ai-prd-workflow",
+  "sourceSignature": "a303d7433b6b7ed98e9ede9671ba982b613f7789ff537cb7f8eb8cb689bf561d",
+  "summary": [
+    "据发布者介绍，这套由 RFC 驱动的流程可帮助 AI 编程智能体从想法或现有代码库出发，编写并核验产品需求文档、安排功能提案的顺序，并审查产出的代码。",
+    "The publisher describes an RFC-driven workflow that helps AI coding agents turn an idea or existing codebase into a verified product requirements document, sequence feature proposals, and review the resulting code."
+  ],
+  "tested": false,
+  "type": "workflows",
+  "verificationSources": [
+    "https://api.github.com/search/repositories?page=1&per_page=30&q=topic%3Aai-workflow+archived%3Afalse+fork%3Afalse&sort=stars"
+  ],
+  "verifiedAt": "2026-11-27"
+}

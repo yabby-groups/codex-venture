@@ -1,0 +1,31 @@
+{
+  "addedAt": "2026-11-27",
+  "categories": [
+    [
+      "技能查找与安装",
+      "Skill discovery and installation"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-25",
+  "id": "resource-f11fbc0506b33942af4c1285e62d668a0ebc3ac0c775a222703789b6b2b14128",
+  "identity": "github-skill:1103643573:skills/.system/skill-installer/SKILL.md",
+  "name": "skill-installer",
+  "platforms": [
+    "Codex"
+  ],
+  "repository": "https://github.com/openai/skills",
+  "repositoryId": "1103643573",
+  "site": "https://github.com/openai/skills/blob/main/skills/.system/skill-installer/SKILL.md",
+  "sourcePath": "skills/.system/skill-installer/SKILL.md",
+  "sourceSignature": "15c05937ac92cce577300da520c3217bafb3d0f177699e09e8f4b580d2e04da2",
+  "summary": [
+    "据发布者介绍，这款辅助工具可列出精选 Codex 技能，并从精选目录或指定的 GitHub 仓库路径安装技能。",
+    "The publisher describes a helper for listing curated Codex skills and installing them from the curated collection or a specified GitHub repository path."
+  ],
+  "tested": false,
+  "type": "skills",
+  "verificationSources": [
+    "https://github.com/openai/skills/blob/main/skills/.system/skill-installer/SKILL.md"
+  ],
+  "verifiedAt": "2026-11-27"
+}

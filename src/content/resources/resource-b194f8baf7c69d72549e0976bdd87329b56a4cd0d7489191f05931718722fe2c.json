@@ -1,0 +1,28 @@
+{
+  "addedAt": "2026-11-27",
+  "categories": [
+    [
+      "个人知识管理",
+      "Personal knowledge management"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-25",
+  "id": "resource-b194f8baf7c69d72549e0976bdd87329b56a4cd0d7489191f05931718722fe2c",
+  "identity": "github:1123208325",
+  "license": "MIT",
+  "name": "smixs/agent-second-brain",
+  "repository": "https://github.com/smixs/agent-second-brain",
+  "repositoryId": "1123208325",
+  "site": "https://github.com/smixs/agent-second-brain",
+  "sourceSignature": "13d1c347648175ca414e07e260cc1135f04dc0661816ff263eab334973816f74",
+  "summary": [
+    "据发布者介绍，这款工具可将 Telegram 语音笔记转成文字，并以带链接的笔记存入你的 Obsidian 知识库。",
+    "The publisher describes a tool that turns Telegram voice notes into linked text notes in your Obsidian vault."
+  ],
+  "tested": false,
+  "type": "tools",
+  "verificationSources": [
+    "https://api.github.com/search/repositories?page=1&per_page=30&q=topic%3Aai-automation+archived%3Afalse+fork%3Afalse&sort=stars"
+  ],
+  "verifiedAt": "2026-11-27"
+}

@@ -1,0 +1,27 @@
+{
+  "addedAt": "2026-11-27",
+  "categories": [
+    [
+      "多智能体开发",
+      "Multi-agent development"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-26",
+  "id": "resource-3e7bfa84ab5b672973ea1ddcf0b8a1561c55c8e68e1ee16a109bd406170ab086",
+  "identity": "github:808334043",
+  "name": "ksm26/AI-Agentic-Design-Patterns-with-AutoGen",
+  "repository": "https://github.com/ksm26/AI-Agentic-Design-Patterns-with-AutoGen",
+  "repositoryId": "808334043",
+  "site": "https://github.com/ksm26/AI-Agentic-Design-Patterns-with-AutoGen",
+  "sourceSignature": "d89afa566e03186c758229f43587bd6d92ceaa9e4c224623c853015e93565f0f",
+  "summary": [
+    "据发布者介绍，这门课程讲解如何使用 AutoGen 构建和定制多智能体应用，重点介绍智能体协作与设计模式。",
+    "The publisher describes a course on building and customizing multi-agent applications with AutoGen, with a focus on agent collaboration and design patterns."
+  ],
+  "tested": false,
+  "type": "workflows",
+  "verificationSources": [
+    "https://api.github.com/search/repositories?page=2&per_page=30&q=topic%3Aai-workflow+archived%3Afalse+fork%3Afalse&sort=stars"
+  ],
+  "verifiedAt": "2026-11-27"
+}
