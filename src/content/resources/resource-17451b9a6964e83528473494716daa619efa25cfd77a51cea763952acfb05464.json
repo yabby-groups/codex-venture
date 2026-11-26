@@ -1,0 +1,28 @@
+{
+  "addedAt": "2026-11-27",
+  "categories": [
+    [
+      "提示词管理",
+      "Prompt management"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-26",
+  "id": "resource-17451b9a6964e83528473494716daa619efa25cfd77a51cea763952acfb05464",
+  "identity": "github:1360687494",
+  "license": "AGPL-3.0",
+  "name": "Mamout-Prompt/Mamout",
+  "repository": "https://github.com/Mamout-Prompt/Mamout",
+  "repositoryId": "1360687494",
+  "site": "https://github.com/Mamout-Prompt/Mamout",
+  "sourceSignature": "69e340eb305c01c91836dbbf9ea704e18735adfa81cc2de6251ec16e514a29a4",
+  "summary": [
+    "据发布者介绍，Mamout 是一款 Android 应用，可用来整理提示词，并通过 AI 驱动的动态模板复用提示词。",
+    "The publisher describes Mamout as an Android app for organizing prompts and reusing them through dynamic, AI-powered templates."
+  ],
+  "tested": false,
+  "type": "prompts",
+  "verificationSources": [
+    "https://api.github.com/search/repositories?page=2&per_page=30&q=topic%3Aprompt-templates+archived%3Afalse+fork%3Afalse&sort=stars"
+  ],
+  "verifiedAt": "2026-11-27"
+}

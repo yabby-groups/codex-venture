@@ -1,0 +1,31 @@
+{
+  "addedAt": "2026-11-27",
+  "categories": [
+    [
+      "ChatGPT 应用开发",
+      "ChatGPT app development"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-25",
+  "id": "resource-ea0849618e79340308067bc71226b1dc0432ff90ae3140732d59e69a87aea6fc",
+  "identity": "github-skill:1103643573:skills/.curated/chatgpt-apps/SKILL.md",
+  "name": "chatgpt-apps",
+  "platforms": [
+    "Codex"
+  ],
+  "repository": "https://github.com/openai/skills",
+  "repositoryId": "1103643573",
+  "site": "https://github.com/openai/skills/blob/main/skills/.curated/chatgpt-apps/SKILL.md",
+  "sourcePath": "skills/.curated/chatgpt-apps/SKILL.md",
+  "sourceSignature": "e1d69bb1442dbe1e5b0901606643129ddd8eb6899476fac390e77f6dbc7ebe6c",
+  "summary": [
+    "据技能说明，它可用于搭建和排查由 MCP 服务器与界面组件组成的 ChatGPT Apps SDK 项目，也涵盖定义工具、注册界面资源，以及通过 MCP Apps 桥接层连接界面组件。",
+    "The skill description covers scaffolding and troubleshooting ChatGPT Apps SDK projects that pair an MCP server with a widget. It also covers defining tools, registering UI resources, and connecting the widget through the MCP Apps bridge."
+  ],
+  "tested": false,
+  "type": "skills",
+  "verificationSources": [
+    "https://github.com/openai/skills/blob/main/skills/.curated/chatgpt-apps/SKILL.md"
+  ],
+  "verifiedAt": "2026-11-27"
+}

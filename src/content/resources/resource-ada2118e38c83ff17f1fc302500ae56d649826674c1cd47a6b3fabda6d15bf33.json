@@ -1,0 +1,27 @@
+{
+  "addedAt": "2026-11-27",
+  "categories": [
+    [
+      "客服邮件自动化",
+      "Customer support email automation"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-25",
+  "id": "resource-ada2118e38c83ff17f1fc302500ae56d649826674c1cd47a6b3fabda6d15bf33",
+  "identity": "github:813154710",
+  "name": "kaymen99/langgraph-email-automation",
+  "repository": "https://github.com/kaymen99/langgraph-email-automation",
+  "repositoryId": "813154710",
+  "site": "https://github.com/kaymen99/langgraph-email-automation",
+  "sourceSignature": "1646f139815408cbc49befeb91f69a33ac059efaf91508b68cb2286c921f9be7",
+  "summary": [
+    "据作者介绍，这个项目使用基于 LangChain 和 LangGraph 构建的多个 AI 智能体，实现客服邮件流程自动化。",
+    "The author describes a project that uses multiple AI agents built with LangChain and LangGraph to automate customer support email workflows."
+  ],
+  "tested": false,
+  "type": "tools",
+  "verificationSources": [
+    "https://api.github.com/search/repositories?page=1&per_page=30&q=topic%3Aai-automation+archived%3Afalse+fork%3Afalse&sort=stars"
+  ],
+  "verifiedAt": "2026-11-27"
+}

@@ -1,0 +1,28 @@
+{
+  "addedAt": "2026-11-27",
+  "categories": [
+    [
+      "工作流自动化",
+      "Workflow automation"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-26",
+  "id": "resource-210730f2da5831bea121afee15ec125c370c61789c2b96cc6caf06c53b954000",
+  "identity": "github:1090697926",
+  "license": "Apache-2.0",
+  "name": "zengfr/n8n-workflow-all-templates",
+  "repository": "https://github.com/zengfr/n8n-workflow-all-templates",
+  "repositoryId": "1090697926",
+  "site": "https://github.com/zengfr/n8n-workflow-all-templates",
+  "sourceSignature": "21a6fca675714da1351c1a5a071199e20ee6c5370f1f73748f3f5ff8e64429ae",
+  "summary": [
+    "据发布者介绍，这是一个 n8n 工作流模板合集，可在搭建自动化流程时查找参考模板。",
+    "The publisher describes a collection of n8n workflow templates you can browse for starting points when building automations."
+  ],
+  "tested": false,
+  "type": "workflows",
+  "verificationSources": [
+    "https://api.github.com/search/repositories?page=2&per_page=30&q=topic%3Aai-workflow+archived%3Afalse+fork%3Afalse&sort=stars"
+  ],
+  "verifiedAt": "2026-11-27"
+}

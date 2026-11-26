@@ -1,0 +1,28 @@
+{
+  "addedAt": "2026-11-27",
+  "categories": [
+    [
+      "关键词与搜索趋势研究",
+      "Keyword and search trend research"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-25",
+  "id": "resource-6844d53d3baabf38dc3568257be431dcbd4e27e0899f80379a648ee662f583bd",
+  "identity": "mcp:ai.agentapihub/google-trends-seo-keywords-serp-search-mcp",
+  "name": "ai.agentapihub/google-trends-seo-keywords-serp-search-mcp",
+  "registryId": "ai.agentapihub/google-trends-seo-keywords-serp-search-mcp",
+  "site": "https://registry.modelcontextprotocol.io/v0.1/servers/ai.agentapihub%2Fgoogle-trends-seo-keywords-serp-search-mcp/versions/1.2.0",
+  "sourceSignature": "ec3a01470e175c43bc15cbf6dc11bcca8fcf73427c1af4419a45538b70f03e8f",
+  "summary": [
+    "据发布者介绍，这个 MCP 服务器可用于关键词研究，提供 Google Trends 中搜索量激增的查询词、校准后的每日搜索热度、关键词搜索量和搜索结果。",
+    "The publisher says this MCP server lets you research keywords using breakout queries from Google Trends, calibrated daily search interest, keyword volumes, and search results."
+  ],
+  "tested": false,
+  "transport": "streamable-http",
+  "type": "mcp",
+  "verificationSources": [
+    "https://registry.modelcontextprotocol.io/v0.1/servers/ai.agentapihub%2Fgoogle-trends-seo-keywords-serp-search-mcp/versions/1.2.0"
+  ],
+  "verifiedAt": "2026-11-27",
+  "version": "1.2.0"
+}

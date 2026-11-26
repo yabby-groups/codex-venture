@@ -1,0 +1,28 @@
+{
+  "addedAt": "2026-11-27",
+  "categories": [
+    [
+      "语音智能体开发",
+      "Voice agent development"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-26",
+  "id": "resource-094cbd2b2ff7fc1ed24a740aa2b2662a0d23074491d6254a4ceb4255cea4f1ff",
+  "identity": "github:1313435339",
+  "license": "Apache-2.0",
+  "name": "QwenAudio/qwen-audio-agent",
+  "repository": "https://github.com/QwenAudio/qwen-audio-agent",
+  "repositoryId": "1313435339",
+  "site": "https://github.com/QwenAudio/qwen-audio-agent",
+  "sourceSignature": "271d7dba02d08e1ae582a647e26cc6b1cd41a11f26750e6cdf66d373e18f13b3",
+  "summary": [
+    "据 QwenAudio 介绍，这是一个为 AI 智能体提供实时语音交互的运行时。",
+    "QwenAudio describes this project as a runtime for adding real-time voice interaction to AI agents."
+  ],
+  "tested": false,
+  "type": "open-source",
+  "verificationSources": [
+    "https://api.github.com/search/repositories?page=2&per_page=30&q=topic%3Atext-to-speech+archived%3Afalse+fork%3Afalse&sort=stars"
+  ],
+  "verifiedAt": "2026-11-27"
+}

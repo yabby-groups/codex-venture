@@ -1,0 +1,28 @@
+{
+  "addedAt": "2026-11-27",
+  "categories": [
+    [
+      "AI 辅助游戏策划",
+      "AI-assisted game design"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-26",
+  "id": "resource-24fa110272a4d98b8385587230c16158cf158513c9b270d35d4bc5f1407a5b9f",
+  "identity": "github:1264457158",
+  "license": "NOASSERTION",
+  "name": "eremes81/game-design-ai-practice",
+  "repository": "https://github.com/eremes81/game-design-ai-practice",
+  "repositoryId": "1264457158",
+  "site": "https://github.com/eremes81/game-design-ai-practice",
+  "sourceSignature": "3c5ee3487cbcd72a3d15bf6efb1c6723f23394597a9071aba6ad1b5584cfceda",
+  "summary": [
+    "据发布者介绍，这份韩文书稿讲解如何在日常游戏策划工作中使用 AI 和 Claude Code。",
+    "The publisher describes a Korean-language manuscript on applying AI and Claude Code to day-to-day game design work."
+  ],
+  "tested": false,
+  "type": "workflows",
+  "verificationSources": [
+    "https://api.github.com/search/repositories?page=2&per_page=30&q=topic%3Aai-workflow+archived%3Afalse+fork%3Afalse&sort=stars"
+  ],
+  "verifiedAt": "2026-11-27"
+}

@@ -1,0 +1,30 @@
+{
+  "addedAt": "2026-11-27",
+  "categories": [
+    [
+      "AI 视频制作",
+      "AI video production"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-26",
+  "id": "resource-07d251744cb482766d15d7cc3649b840d3ef49e809a15229a9b3fcaedafebf03",
+  "identity": "github:1145022970",
+  "license": "MIT",
+  "name": "HBAI-Ltd/Toonflow-app",
+  "repository": "https://github.com/HBAI-Ltd/Toonflow-app",
+  "repositoryId": "1145022970",
+  "site": "https://github.com/HBAI-Ltd/Toonflow-app",
+  "sourceSignature": "c8072d8fbc0d86d72b1cf3cac580e6d84b38b4bd70aff88a79115d2f63191ddf",
+  "summary": [
+    "据项目介绍，Toonflow 通过画布把短剧和漫剧制作的多个环节串起来，可用于编写剧本、制作分镜、管理角色和场景素材，以及生成图像和视频。",
+    "The project describes a canvas-based tool for producing short dramas and motion comics. You can write scripts, develop storyboards, manage character and scene assets, and generate images and video."
+  ],
+  "tested": false,
+  "type": "open-source",
+  "verificationSources": [
+    "https://api.github.com/search/repositories?page=1&per_page=30&q=topic%3Aimage-generation+archived%3Afalse+fork%3Afalse&sort=stars",
+    "https://api.github.com/search/repositories?page=1&per_page=30&q=topic%3Avideo-generation+archived%3Afalse+fork%3Afalse&sort=stars",
+    "https://api.github.com/search/repositories?page=4&per_page=30&q=topic%3Aai-agents+archived%3Afalse+fork%3Afalse&sort=stars"
+  ],
+  "verifiedAt": "2026-11-27"
+}
