@@ -212,7 +212,7 @@ def prepare(task, queued=False, excluded=()):
                      candidates=batches[0]['candidates']))
 
 
-def config(smoke, instructions, directory=None):
+def config(smoke, instructions, directory=None, *, yolo=False):
     required = ('CODEX_BASE_URL', 'CODEX_MODEL', 'CODEX_API_KEY')
     missing = [name for name in required if not os.environ.get(name)]
     if missing:
@@ -233,6 +233,7 @@ def config(smoke, instructions, directory=None):
     if (home / 'auth.json').exists():
         raise RuntimeError('Hosted Codex requires a fresh home without auth.json')
     config_file = home / 'config.toml'
+    plugin_config = 'plugins = false\nremote_plugin = false\nskill_search = false\n' if yolo else ''
     config_file.write_text(f'''model = {json.dumps(model)}
 model_provider = "venture"
 model_reasoning_effort = {json.dumps(effort)}
@@ -247,7 +248,7 @@ enabled = false
 [features]
 shell_tool = false
 shell_snapshot = false
-
+{plugin_config}
 [sandbox_workspace_write]
 network_access = false
 
@@ -323,7 +324,7 @@ def run_model(batch, smoke, receipt, *, yolo=False):
             (REPOSITORY / ('ops/resource-editor.md' if batch['task'].startswith('resource-') else 'ops/editor.md')).read_text()
         )
         receipt['sessions'] = 0
-        config(smoke, instructions, workspace / '.codex')
+        config(smoke, instructions, workspace / '.codex', yolo=yolo)
         advanced = batch['task'] == 'weekly' and os.getenv('CODEX_ADVANCED_MODEL')
         receipt['model'] = os.environ['CODEX_ADVANCED_MODEL' if advanced else 'CODEX_MODEL']
         receipt['effort'] = os.getenv('CODEX_ADVANCED_REASONING_EFFORT' if advanced else

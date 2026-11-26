@@ -678,13 +678,13 @@ def manage(args, db):
             if os.getenv('VENTURE_MODE', 'validation') != 'validation':
                 raise ValueError('Run the model probe in validation mode')
             day = datetime.now(DATE_ZONE).date().isoformat()
-            batch = dict(task='news', date=day, existingResources=[], reservation=10000,
+            batch = dict(task='news', date=day, existingResources=[], reservation=int(os.getenv('VENTURE_RUN_TOKENS', '25000')),
                          unlimited=False, enforce_cost_limit=bool(os.getenv('VENTURE_DAILY_COST_LIMIT')),
                          batches=[{'candidates': {}}])
             with queue.transaction(db):
                 if not queue.setting(db, 'imported'):
                     raise RuntimeError('Import Hosted usage before running a model probe')
-                queue.enqueue(db, 'editor', 'edit', 'model-probe:' + day,
+                queue.enqueue(db, 'editor', 'edit', 'model-probe:editor-only:' + day,
                               {'kind': 'model-probe', 'batch': batch}, 30)
             return {'enqueued': args.kind}
         if args.kind not in PHASES['collector']:
