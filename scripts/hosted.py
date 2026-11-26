@@ -145,6 +145,17 @@ def prepare(task, queued=False, excluded=()):
         return
 
     if queued:
+        if task in ('news', 'backfill'):
+            # Leave room for Codex instructions and output in the per-call reservation.
+            selected = {}
+            size = 0
+            for key, candidate in candidates.items():
+                candidate_size = len(json.dumps(candidate, ensure_ascii=False).encode())
+                if selected and (len(selected) >= 6 or size + candidate_size > 14000):
+                    continue
+                selected[key] = candidate
+                size += candidate_size
+            candidates = selected
         profiles = resource_context() if task in ('news', 'backfill') else []
         context = [{field: row[field] for field in ('id', 'name', 'site')}
                    for row in profiles if any(
