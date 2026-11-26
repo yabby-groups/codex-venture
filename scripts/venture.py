@@ -25,7 +25,7 @@ from model_cost import configured_price, estimate, worst_case
 CODE = Path(__file__).resolve().parent.parent
 ROOT = Path(os.getenv('VENTURE_DATA', '/data')).resolve()
 DB = ROOT / 'venture.sqlite'
-PRIVATE = ROOT / 'private'
+PRIVATE = Path(os.environ.get('VENTURE_PRIVATE', ROOT / 'private'))
 REPO = PRIVATE / 'site'
 STATE = REPO / '.venture-runtime'
 ITEMS = PRIVATE / 'items.json'

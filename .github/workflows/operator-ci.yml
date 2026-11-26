@@ -29,7 +29,7 @@ jobs:
           docker compose exec -T scheduler venture run collect
           docker compose exec -T scheduler venture backup
           for i in {1..60}; do
-            backup=$(docker compose exec -T scheduler ls /data/private/backups | awk '/^[0-9]+T[0-9]+$/ {print; exit}')
+            backup=$(docker compose exec -T scheduler ls /venture-private/backups | awk '/^[0-9]+T[0-9]+$/ {print; exit}')
             if [[ -n "$backup" ]]; then break; fi
             sleep 5
           done
@@ -41,6 +41,6 @@ jobs:
           docker compose exec -T scheduler venture doctor
       - name: Build checked-out production site in operator image
         run: |
-          docker compose exec -T publisher sh -ec 'cd /data/private/site && npm run build'
+          docker compose exec -T publisher sh -ec 'cd /venture-private/site && npm run build'
       - if: always()
         run: docker compose ps -a && docker compose logs --tail=100

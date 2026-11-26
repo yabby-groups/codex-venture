@@ -34,7 +34,7 @@ services:
     command: [serve, scheduler]
     volumes:
       - queue:/data
-      - private:/data/private
+      - private:/venture-private
     cpus: 0.25
     mem_limit: 512m
     healthcheck:
@@ -45,7 +45,7 @@ services:
     command: [serve, collector]
     volumes:
       - queue:/data
-      - private:/data/private
+      - private:/venture-private
     secrets: [github_read]
     cpus: 0.75
     mem_limit: 1g
@@ -68,7 +68,7 @@ services:
     command: [serve, publisher]
     volumes:
       - queue:/data
-      - private:/data/private
+      - private:/venture-private
     secrets: [github_write]
     cpus: 1.5
     mem_limit: 2560m
