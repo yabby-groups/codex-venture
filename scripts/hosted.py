@@ -274,7 +274,7 @@ stream_max_retries = 0
     config_file.chmod(0o600)
 
 
-def invoke():
+def invoke(*, yolo=False):
     batch = load(BATCH, {})
     smoke = batch['task'] == 'smoke-test'
     MODEL.mkdir(parents=True, exist_ok=True)
@@ -340,9 +340,12 @@ def run_model(batch, smoke, receipt):
                                required=['marker'], additionalProperties=False)
             prompt = "Call the venture_smoke check tool once and return its output text as marker."
         save(schema, schema_data)
+        sandbox_args = ['--sandbox', 'workspace-write' if smoke else 'read-only']
+        if yolo and not smoke:
+            sandbox_args = ['--dangerously-bypass-approvals-and-sandbox']
         command = [
             'codex', 'exec', '--skip-git-repo-check', '--ephemeral', '--json',
-            '--sandbox', 'workspace-write' if smoke else 'read-only',
+            *sandbox_args,
             '--output-schema', str(schema), '-o', str(result), '-',
         ]
         environment = {name: os.environ[name] for name in

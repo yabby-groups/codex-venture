@@ -196,7 +196,7 @@ def run_editor(payload):
         hosted = configure_phase(Path(temp))
         save(hosted.BATCH, batch)
         try:
-            hosted.invoke()
+            hosted.invoke(yolo=True)
         except (OSError, ValueError, RuntimeError) as error:
             return {'error': str(error), 'receipt': load(hosted.MODEL / 'receipt.json', {})}
         return {'response': load(hosted.MODEL / 'response.json', []),
