@@ -287,7 +287,7 @@ def invoke(*, yolo=False):
                    'estimated_cost': None, 'sessions': 0}
         receipts.append(receipt)
         try:
-            response = run_model({**batch, **part}, smoke, receipt)
+            response = run_model({**batch, **part}, smoke, receipt, yolo=yolo)
             responses.append(response)
             receipt['status'] = 'success'
         except (RuntimeError, OSError, ValueError) as error:
@@ -313,7 +313,7 @@ def invoke(*, yolo=False):
         save(MODEL / 'response.json', responses)
 
 
-def run_model(batch, smoke, receipt):
+def run_model(batch, smoke, receipt, *, yolo=False):
     with tempfile.TemporaryDirectory(prefix='venture-edit-') as directory:
         workspace = Path(directory)
         schema, result = workspace / 'schema.json', workspace / 'result.json'

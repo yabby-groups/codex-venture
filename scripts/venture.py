@@ -1,6 +1,7 @@
 """Production scheduler, service supervisor and management CLI."""
 import argparse
 import fcntl
+import hashlib
 import json
 import os
 import shutil
@@ -82,14 +83,20 @@ def checkout():
     else:
         shutil.copyfile(ITEMS, REPO / 'state/items.json')
     git('clean', '-fd', '--', *CONTENT)
-    if not (REPO / 'node_modules').exists():
+    lockfile = (CODE / 'package-lock.json').read_text()
+    if (REPO / 'package-lock.json').read_text() != lockfile:
+        raise RuntimeError('Rebuild operator image for the current package-lock.json')
+    fingerprint = hashlib.sha256(lockfile.encode()).hexdigest()
+    dependencies = REPO / 'node_modules'
+    stamp = dependencies / '.venture-lock'
+    if not stamp.is_file() or stamp.read_text() != fingerprint:
         temporary = REPO / '.venture-runtime' / 'dependencies'
         shutil.rmtree(temporary, ignore_errors=True)
         temporary.parent.mkdir(exist_ok=True)
         shutil.copytree(CODE / 'node_modules', temporary, symlinks=True)
-        temporary.rename(REPO / 'node_modules')
-    if (REPO / 'package-lock.json').read_text() != (CODE / 'package-lock.json').read_text():
-        raise RuntimeError('Rebuild operator image for the current package-lock.json')
+        (temporary / stamp.name).write_text(fingerprint)
+        shutil.rmtree(dependencies, ignore_errors=True)
+        temporary.rename(dependencies)
 
 
 def dispatch(db, kind, key):

@@ -1,7 +1,7 @@
 name: VPS operator verification
 on:
   push:
-    paths: ['Dockerfile.operator', 'docker-compose.yml', 'scripts/**', 'ops/venture', '.github/workflows/operator-ci.yml']
+    paths: ['Dockerfile.operator', 'package.json', 'package-lock.json', 'docker-compose.yml', 'scripts/**', 'ops/venture', '.github/workflows/operator-ci.yml']
   workflow_dispatch:
 permissions:
   contents: read
@@ -41,6 +41,6 @@ jobs:
           docker compose exec -T scheduler venture doctor
       - name: Build checked-out production site in operator image
         run: |
-          docker compose exec -T publisher sh -ec 'cd /venture-private/site && npm run build'
+          docker compose exec -T publisher sh -ec 'cd /venture-private/site && npm run build && node /opt/venture/scripts/check-articles-browser.mjs'
       - if: always()
         run: docker compose ps -a && docker compose logs --tail=100
