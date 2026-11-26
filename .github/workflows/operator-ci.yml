@@ -1,0 +1,46 @@
+name: VPS operator verification
+on:
+  push:
+    paths: ['Dockerfile.operator', 'docker-compose.yml', 'scripts/**', 'ops/venture', '.github/workflows/operator-ci.yml']
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  operator:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v6
+      - name: Test queue and budget recovery
+        run: python3 -m unittest discover -s tests -p 'test_venture*.py'
+      - name: Build and start four services
+        run: |
+          cp .env.example .env
+          mkdir -p secrets
+          touch secrets/{github_read,github_write,codex_api_key}
+          chmod 0444 secrets/*
+          docker compose build
+          docker compose up -d --wait --wait-timeout 120
+          docker compose exec -T scheduler venture doctor
+      - name: Import Hosted state and verify backup and restart
+        run: |
+          docker compose exec -T scheduler venture import-state origin/venture-state
+          docker compose exec -T scheduler venture resume
+          docker compose exec -T scheduler venture run collect
+          docker compose exec -T scheduler venture backup
+          for i in {1..60}; do
+            backup=$(docker compose exec -T scheduler ls /data/private/backups | awk '/^[0-9]+T[0-9]+$/ {print; exit}')
+            if [[ -n "$backup" ]]; then break; fi
+            sleep 5
+          done
+          test -n "$backup"
+          docker compose exec -T scheduler venture pause
+          docker compose stop
+          docker compose run --rm --no-deps scheduler restore "$backup"
+          docker compose up -d --wait --wait-timeout 120
+          docker compose exec -T scheduler venture doctor
+      - name: Build checked-out production site in operator image
+        run: |
+          docker compose exec -T publisher sh -ec 'cd /data/private/site && npm run build'
+      - if: always()
+        run: docker compose ps -a && docker compose logs --tail=100

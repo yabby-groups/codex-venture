@@ -1,5 +1,6 @@
 """Persist local ceilings and provider backoff across hosted runs."""
 
+import os
 from datetime import datetime, timezone
 from email.utils import parsedate_to_datetime
 from pathlib import Path
@@ -14,6 +15,14 @@ LIMITS = {
     'hacker-news.firebaseio.com': (40, 200),
     'dev.to': (20, 100),
 }
+
+
+class CollectionPaused(OSError):
+    def __init__(self, host, reason, resume):
+        self.host = host
+        self.reason = reason
+        self.resume = resume
+        super().__init__(f'{host}: {reason}')
 
 
 def reserve(host):
@@ -32,8 +41,15 @@ def reserve(host):
     if row.get('hour') != hour:
         row.update(hour=hour, hourly=0)
     hourly, daily = LIMITS.get(host, (24, 100))
-    if row.get('resume', 0) > now.timestamp() or row.get('hourly', 0) >= hourly or row.get('daily', 0) >= daily:
-        raise OSError('collection request budget paused')
+    if row.get('resume', 0) > now.timestamp():
+        raise CollectionPaused(host, 'provider rate limit', row['resume'])
+    resource = os.getenv('VENTURE_COLLECTION_LANE') == 'resource'
+    hourly_limit = hourly * 2 // 3 if resource else hourly
+    daily_limit = daily * 2 // 3 if resource else daily
+    if row.get('daily', 0) >= daily_limit:
+        raise CollectionPaused(host, 'local daily request allowance', (int(now.timestamp()) // 86400 + 1) * 86400)
+    if row.get('hourly', 0) >= hourly_limit:
+        raise CollectionPaused(host, 'local hourly request allowance', (int(now.timestamp()) // 3600 + 1) * 3600)
     row['hourly'] += 1
     row['daily'] = row.get('daily', 0) + 1
     save(PATH, state)

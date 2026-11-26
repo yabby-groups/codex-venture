@@ -8,3 +8,5 @@ dist
 .venture-runtime
 .env*
 __pycache__
+
+secrets

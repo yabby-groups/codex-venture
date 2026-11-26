@@ -10,6 +10,7 @@ from html.parser import HTMLParser
 from pathlib import Path
 from urllib.parse import quote, urlsplit
 
+from collection_budget import CollectionPaused
 from collect import canonical, clean, digest, fetch, load, save, timestamp
 
 
@@ -252,8 +253,11 @@ def enrich(items, candidates, now, limit=5):
                 for source in evidence_for(item):
                     if source['excerpt']:
                         documents.append(source)
+        except CollectionPaused as error:
+            print(f'{key[:12]} evidence: {error}', flush=True)
+            continue
         except (OSError, ValueError, KeyError, TypeError, http.client.HTTPException) as error:
-            print(f'{key[:12]} evidence: {type(error).__name__}', flush=True)
+            print(f'{key[:12]} evidence: {type(error).__name__}: {error}', flush=True)
         item['evidence_checked'] = checked
         if documents:
             item['evidence'] = documents[:4]

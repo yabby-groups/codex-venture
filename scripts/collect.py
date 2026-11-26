@@ -16,7 +16,7 @@ from urllib.parse import parse_qsl, urlencode, urlsplit, urlunsplit
 
 from pathlib import Path
 
-from collection_budget import record, reserve
+from collection_budget import CollectionPaused, record, reserve
 from public_http import request as https_request
 
 AGENT = 'CodexVentureBot'
@@ -91,6 +91,8 @@ def fetch(url, headers):
                 return None, error.headers
             if error.code not in (500, 502, 503, 504) or error.headers.get('Retry-After') or attempt:
                 raise
+        except CollectionPaused:
+            raise
         except OSError:
             if attempt:
                 raise
@@ -141,7 +143,7 @@ def collect(days=7, extra=(), only_extra=False, refresh=False):
     config.sort(key=lambda source: health.get(source['id'], {}).get('last_success', ''))
     known = {item['fingerprint']: key for key, item in items.items()}
     healthy = 0
-    attempted = failed = duplicate = discovered = 0
+    attempted = failed = duplicate = discovered = paused = 0
     for source in config:
         if time.monotonic() >= deadline:
             print("Collection time budget elapsed", flush=True)
@@ -213,10 +215,15 @@ def collect(days=7, extra=(), only_extra=False, refresh=False):
                               [('If-None-Match', 'ETag'), ('If-Modified-Since', 'Last-Modified')] if response_header in headers}
             status['candidates'] = status.get('candidates', 0) + discovered - before_source
             status.pop('first_failure', None)
+            status.pop('budget_pause', None)
             status.update(url=url, validators=validators, last_success=now.isoformat(), failures=0,
                           error=None, retry_after=None)
             healthy += 1
             print(f'{key}: {"unchanged" if body is None else "ok"}', flush=True)
+        except CollectionPaused as error:
+            paused += 1
+            status['budget_pause'] = {'reason': error.reason, 'resume': error.resume}
+            print(f'{key}: {error}', flush=True)
         except (ValueError, OSError, ET.ParseError, KeyError, TypeError, http.client.HTTPException) as error:
             status.setdefault('first_failure', now.isoformat())
             failures = status.get('failures', 0) + 1
@@ -232,7 +239,7 @@ def collect(days=7, extra=(), only_extra=False, refresh=False):
                         pass
             status.update(error=str(error), failures=failures, retry_after=(now + delay).isoformat())
             failed += 1
-            print(f'{key}: {type(error).__name__}', flush=True)
+            print(f'{key}: {type(error).__name__}: {error}', flush=True)
     save(items_path, items)
     save(health_path, health)
     if 'RUNNER_TEMP' in os.environ:
@@ -241,7 +248,7 @@ def collect(days=7, extra=(), only_extra=False, refresh=False):
         counts['collection_service_cost_usd'] = 0
         counts['candidate_backlog'] = sum(item['status'] == 'pending' for item in items.values())
         for key, count in dict(attempted=attempted, succeeded=healthy, failed=failed,
-                               duplicates=duplicate, discovered=discovered).items():
+                               duplicates=duplicate, discovered=discovered, paused=paused).items():
             counts[key] = counts.get(key, 0) + count
         save(path, counts)
 

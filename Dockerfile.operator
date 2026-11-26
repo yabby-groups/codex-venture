@@ -1,0 +1,19 @@
+FROM node:24.14.0-bookworm-slim
+ARG CODEX_CLI_VERSION=0.171.0
+ENV PYTHONUNBUFFERED=1 PYTHONDONTWRITEBYTECODE=1 ASTRO_TELEMETRY_DISABLED=1 \
+    PLAYWRIGHT_BROWSERS_PATH=/opt/playwright VENTURE_DATA=/data
+RUN apt-get update && apt-get install -y --no-install-recommends python3 git ca-certificates tzdata \
+    && rm -rf /var/lib/apt/lists/*
+WORKDIR /opt/venture
+COPY package.json package-lock.json ./
+RUN npm ci --ignore-scripts && npm install --global --ignore-scripts "@openai/codex@${CODEX_CLI_VERSION}" \
+    && test "$(codex --version)" = "codex-cli ${CODEX_CLI_VERSION}" \
+    && ./node_modules/.bin/playwright install --with-deps chromium \
+    && rm -rf /var/lib/apt/lists/*
+COPY scripts ./scripts
+COPY ops ./ops
+COPY config ./config
+RUN mkdir -p /data/private && chown -R node:node /data \
+    && ln -s /opt/venture/ops/venture /usr/local/bin/venture
+USER node
+ENTRYPOINT ["venture"]

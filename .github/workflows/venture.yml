@@ -45,7 +45,7 @@ env:
 
 jobs:
   prepare:
-    if: github.ref == 'refs/heads/main' && (inputs.task == 'health' || inputs.task == 'smoke-test' || vars.VENTURE_ENABLED == 'true')
+    if: github.ref == 'refs/heads/main' && (inputs.task == 'health' || (vars.VENTURE_OPERATIONS_OWNER != 'vps' && (inputs.task == 'smoke-test' || vars.VENTURE_ENABLED == 'true')))
     runs-on: ubuntu-24.04
     timeout-minutes: 12
     permissions:

@@ -64,10 +64,10 @@ def cost_allows(root, day, tokens, price, reserved_calls):
     return accounted_calls >= reserved_calls and spent + worst_case(price, tokens) <= Decimal(limit)
 
 
-def prepare(task):
+def prepare(task, queued=False):
     coverage = operations_queue.public_coverage()
     print('Public coverage:', json.dumps(coverage), flush=True)
-    task, days = operations_queue.select(task)
+    task, days = (task, 7) if queued else operations_queue.select(task)
     if output := os.getenv('GITHUB_OUTPUT'):
         with open(output, 'a') as stream:
             stream.write(f'task={task}\n')
@@ -87,7 +87,7 @@ def prepare(task):
     elif task == 'backfill':
         collect(days, refresh=True)
         discovery(days)
-    if task == 'news' and not any(item['status'] == 'pending' for item in load(ITEMS, {}).values()):
+    if not queued and task == 'news' and not any(item['status'] == 'pending' for item in load(ITEMS, {}).values()):
         collect()
         discovery()
     if task in original.TYPES:
@@ -140,6 +140,18 @@ def prepare(task):
                 item['status'] == 'pending' for item in items.values()) else 'NO_NEW_CONTENT'
         operations_queue.record(task, result)
         print('No eligible editorial batch')
+        return
+
+    if queued:
+        profiles = resource_context() if task in ('news', 'backfill') else []
+        context = [{field: row[field] for field in ('id', 'name', 'site')}
+                   for row in profiles if any(
+                       row['site'] == item['url'] or
+                       (row.get('repository') and row['repository'] ==
+                        item.get('discovery', {}).get('upstream')) for item in candidates.values())]
+        save(BATCH, dict(task=task, date=day, now=now.isoformat(timespec='seconds'),
+                         reservation=RUN_BUDGET, unlimited=False, enforce_cost_limit=True,
+                         batches=[dict(candidates=candidates, existingResources=context)]))
         return
 
     ledger_path = STATE / 'usage.json'
@@ -198,7 +210,7 @@ def prepare(task):
                      candidates=batches[0]['candidates']))
 
 
-def config(smoke, instructions):
+def config(smoke, instructions, directory=None):
     required = ('CODEX_BASE_URL', 'CODEX_MODEL', 'CODEX_API_KEY')
     missing = [name for name in required if not os.environ.get(name)]
     if missing:
@@ -214,7 +226,7 @@ def config(smoke, instructions):
                              'CODEX_REASONING_EFFORT') or 'low')
     if not model or effort not in ('none', 'minimal', 'low', 'medium', 'high', 'xhigh'):
         raise ValueError('Invalid Codex model or reasoning effort')
-    home = Path.home() / '.codex'
+    home = directory if directory is not None else Path.home() / '.codex'
     home.mkdir(mode=0o700, exist_ok=True)
     if (home / 'auth.json').exists():
         raise RuntimeError('Hosted Codex requires a fresh home without auth.json')
@@ -309,7 +321,7 @@ def run_model(batch, smoke, receipt):
             (REPOSITORY / ('ops/resource-editor.md' if batch['task'].startswith('resource-') else 'ops/editor.md')).read_text()
         )
         receipt['sessions'] = 0
-        config(smoke, instructions)
+        config(smoke, instructions, workspace / '.codex')
         advanced = batch['task'] == 'weekly' and os.getenv('CODEX_ADVANCED_MODEL')
         receipt['model'] = os.environ['CODEX_ADVANCED_MODEL' if advanced else 'CODEX_MODEL']
         receipt['effort'] = os.getenv('CODEX_ADVANCED_REASONING_EFFORT' if advanced else
@@ -333,6 +345,7 @@ def run_model(batch, smoke, receipt):
         ]
         environment = {name: os.environ[name] for name in
                        ('PATH', 'HOME', 'LANG', 'CODEX_API_KEY') if name in os.environ}
+        environment['CODEX_HOME'] = str(workspace / '.codex')
         key = environment['CODEX_API_KEY']
         with subprocess.Popen(command, stdin=subprocess.PIPE, stdout=subprocess.PIPE, stderr=subprocess.PIPE,
                               text=True, cwd=workspace, env=environment, start_new_session=True) as process:

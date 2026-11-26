@@ -55,3 +55,7 @@ npm run preview
 ## 免费资讯采集
 
 固定来源见 [来源注册表](config/sources.yaml)。主动发现、二次证据、平台访问条件和实测记录见 [免费采集运营说明](docs/free-collection.md)。采集服务费用为零，编辑使用现有模型预算。
+
+### VPS 自主运营
+
+四服务 Compose、状态迁移、Secrets、回退与故障排查见 [VPS 自主运营](docs/vps-operator.md)。

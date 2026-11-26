@@ -1,4 +1,5 @@
 """Discover and edit independent resources using the existing hosted trust boundary."""
+from collection_budget import CollectionPaused
 from collections import Counter
 from datetime import date, timedelta
 from itertools import zip_longest
@@ -289,6 +290,8 @@ def prepare(task, kind, day, capacity=12, coverage=None):
         row['attempt'] = time.time()
         needs_evidence = not row.get('evidence')
         counts['evidence_attempted'] += needs_evidence
+        host = urlsplit(row.get('metadataUrl') or row['site']).hostname
+        url = row.get('metadataUrl') or row['site']
         try:
             evidence = structured_evidence(row)
             if evidence:
@@ -330,8 +333,8 @@ def prepare(task, kind, day, capacity=12, coverage=None):
                 counts['paused_hosts'] = len(paused_hosts)
             print(f'{row["type"]}/{key[:10]}: HTTP {error.code}', flush=True)
         except (OSError, ValueError, KeyError, http.client.HTTPException) as error:
-            if str(error) == 'collection request budget paused':
-                paused_hosts.add(host)
+            if isinstance(error, CollectionPaused):
+                paused_hosts.add(error.host)
                 counts['paused_hosts'] = len(paused_hosts)
             print(f'{row["type"]}/{key[:10]}: {type(error).__name__}: {error}', flush=True)
     save(STATE, queue)

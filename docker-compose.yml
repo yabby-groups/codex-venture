@@ -1,15 +1,105 @@
+x-operator: &operator
+  image: ${VENTURE_OPERATOR_IMAGE:-codex-venture-operator:local}
+  build:
+    context: .
+    dockerfile: Dockerfile.operator
+    args:
+      CODEX_CLI_VERSION: ${CODEX_CLI_VERSION:-0.171.0}
+  env_file: .env
+  init: true
+  restart: unless-stopped
+  stop_grace_period: 35s
+  read_only: true
+  tmpfs:
+    - /tmp:mode=1777
+  security_opt:
+    - no-new-privileges:true
+  cap_drop: [ALL]
+  pids_limit: 256
+  logging:
+    driver: json-file
+    options:
+      max-size: "10m"
+      max-file: "3"
+
+x-health: &health
+  interval: 20s
+  timeout: 5s
+  retries: 3
+  start_period: 30s
+
 services:
+  scheduler:
+    <<: *operator
+    command: [serve, scheduler]
+    volumes:
+      - queue:/data
+      - private:/data/private
+    cpus: 0.25
+    mem_limit: 512m
+    healthcheck:
+      <<: *health
+      test: [CMD, venture, health, scheduler]
+  collector:
+    <<: *operator
+    command: [serve, collector]
+    volumes:
+      - queue:/data
+      - private:/data/private
+    secrets: [github_read]
+    cpus: 0.75
+    mem_limit: 1g
+    healthcheck:
+      <<: *health
+      test: [CMD, venture, health, collector]
+  editor:
+    <<: *operator
+    command: [serve, editor]
+    volumes:
+      - queue:/data
+    secrets: [codex_api_key]
+    cpus: 1.5
+    mem_limit: 2g
+    healthcheck:
+      <<: *health
+      test: [CMD, venture, health, editor]
+  publisher:
+    <<: *operator
+    command: [serve, publisher]
+    volumes:
+      - queue:/data
+      - private:/data/private
+    secrets: [github_write]
+    cpus: 1.5
+    mem_limit: 2560m
+    shm_size: 256m
+    healthcheck:
+      <<: *health
+      test: [CMD, venture, health, publisher]
   web:
-    build: .
+    profiles: [preview]
+    build:
+      context: .
+      dockerfile: Dockerfile
     ports:
       - "${VENTURE_BIND:-127.0.0.1}:${VENTURE_PORT:-8080}:8080"
     volumes:
-      - type: bind
-        source: ${VENTURE_DEPLOY_ROOT:-./.venture-runtime/site}
-        target: /srv/venture
-        read_only: true
+      - "${VENTURE_DEPLOY_ROOT:-./.venture-runtime/site}:/srv/venture:ro"
     restart: unless-stopped
+    init: true
     logging:
       options:
         max-size: "10m"
         max-file: "3"
+
+volumes:
+  queue:
+  private:
+
+secrets:
+  github_read:
+    file: ${VENTURE_SECRETS_DIR:-./secrets}/github_read
+  github_write:
+    file: ${VENTURE_SECRETS_DIR:-./secrets}/github_write
+  codex_api_key:
+    file: ${VENTURE_SECRETS_DIR:-./secrets}/codex_api_key
