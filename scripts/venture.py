@@ -88,7 +88,7 @@ def checkout():
         temporary.parent.mkdir(exist_ok=True)
         shutil.copytree(CODE / 'node_modules', temporary, symlinks=True)
         temporary.rename(REPO / 'node_modules')
-    if (REPO / 'package-lock.json').read_bytes() != (CODE / 'package-lock.json').read_bytes():
+    if (REPO / 'package-lock.json').read_text() != (CODE / 'package-lock.json').read_text():
         raise RuntimeError('Rebuild operator image for the current package-lock.json')
 
 
