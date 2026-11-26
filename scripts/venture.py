@@ -390,8 +390,9 @@ def complete(db, row, owner, payload, result):
             queue.finish(db, task, owner, 'dead' if known else 'blocked', result,
                          error=result['error'])
             return
-        queue.enqueue(db, 'publisher', 'publish', f'publish:{task}',
-                      {**payload, 'response': result['response']}, row['priority'])
+        if payload['kind'] != 'model-probe':
+            queue.enqueue(db, 'publisher', 'publish', f'publish:{task}',
+                          {**payload, 'response': result['response']}, row['priority'])
     elif kind == 'publish' and result.get('published'):
         queue.enqueue(db, 'publisher', 'verify', f'verify:{task}',
                       {**result, 'kind': payload['kind']}, 30, delay=20)
@@ -411,7 +412,7 @@ def execute(row, owner):
         path = Path(temp)
         save(path / 'payload.json', payload)
         if kind == 'edit':
-            if os.getenv('VENTURE_MODE', 'validation') != 'production':
+            if os.getenv('VENTURE_MODE', 'validation') != 'production' and payload['kind'] != 'model-probe':
                 queue.finish(db, task, owner, 'retry', error='Model calls disabled in validation mode', delay=900)
                 return
             with queue.transaction(db):
@@ -673,6 +674,19 @@ def manage(args, db):
             queue.store(db, 'paused', paused)
         return {'paused': paused}
     if action == 'run':
+        if args.kind == 'model-probe':
+            if os.getenv('VENTURE_MODE', 'validation') != 'validation':
+                raise ValueError('Run the model probe in validation mode')
+            day = datetime.now(DATE_ZONE).date().isoformat()
+            batch = dict(task='news', date=day, existingResources=[], reservation=10000,
+                         unlimited=False, enforce_cost_limit=bool(os.getenv('VENTURE_DAILY_COST_LIMIT')),
+                         batches=[{'candidates': {}}])
+            with queue.transaction(db):
+                if not queue.setting(db, 'imported'):
+                    raise RuntimeError('Import Hosted usage before running a model probe')
+                queue.enqueue(db, 'editor', 'edit', 'model-probe:' + day,
+                              {'kind': 'model-probe', 'batch': batch}, 30)
+            return {'enqueued': args.kind}
         if args.kind not in PHASES['collector']:
             raise ValueError('Unknown collection or editorial task')
         dispatch(db, args.kind, f'manual:{args.kind}:{time.time_ns()}')
