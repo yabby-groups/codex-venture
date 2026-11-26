@@ -257,7 +257,7 @@ def editorial_input(candidates):
     return compact
 
 
-def prepare(task, kind, day, capacity=12, coverage=None):
+def prepare(task, kind, day, capacity=12, coverage=None, excluded=()):
     if kind not in ('all', *TYPES):
         raise ValueError('Unknown resource type')
     queue = load(STATE, {})
@@ -274,7 +274,7 @@ def prepare(task, kind, day, capacity=12, coverage=None):
     counts = Counter()
     for key, row in sorted(queue.get('rows', {}).items(), key=lambda pair: (
             pair[1].get('attempt', 0), pair[1]['firstDiscoveredAt'], pair[0])):
-        if not row.get('done') and kind in ('all', row['type']):
+        if key not in excluded and not row.get('done') and kind in ('all', row['type']):
             pending[row['type']].append((key, row))
     order = sorted(pending, key=lambda name: (coverage or {}).get(name, 0))
     paused_hosts = set()

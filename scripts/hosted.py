@@ -64,7 +64,7 @@ def cost_allows(root, day, tokens, price, reserved_calls):
     return accounted_calls >= reserved_calls and spent + worst_case(price, tokens) <= Decimal(limit)
 
 
-def prepare(task, queued=False):
+def prepare(task, queued=False, excluded=()):
     coverage = operations_queue.public_coverage()
     print('Public coverage:', json.dumps(coverage), flush=True)
     task, days = (task, 7) if queued else operations_queue.select(task)
@@ -117,14 +117,16 @@ def prepare(task, queued=False):
         return
     slug = 'weekly-' + day if task == 'weekly' else day
     rules = strategy() if os.getenv('VENTURE_STRATEGY_AUTO_UPDATE') == 'true' else load(Path('config/editorial-strategy.json'), {})
-    candidates = (resource_ingest.prepare(task, os.getenv('RESOURCE_TYPE') or 'all', day, capacity=12 * BATCH_SLOTS, coverage=coverage.get('resources'))
-                  if resource_task else choose(task, items, now, days if task in ('weekly', 'backfill') else 2, rules))
+    eligible = {key: item for key, item in items.items() if key not in excluded} if excluded else items
+    candidates = (resource_ingest.prepare(task, os.getenv('RESOURCE_TYPE') or 'all', day, capacity=12 if queued else 12 * BATCH_SLOTS, coverage=coverage.get('resources'), excluded=excluded)
+                  if resource_task else choose(task, eligible, now, days if task in ('weekly', 'backfill') else 2, rules))
     if task in ('news', 'backfill'):
         counts = enrich(items, candidates, now, limit=10)
         path = WORK / 'collection.json'
         save(path, {**load(path, {}), **counts})
         save(ITEMS, items)
-        candidates = choose(task, items, now, days if task == 'backfill' else 2, rules)
+        eligible = {key: item for key, item in items.items() if key not in excluded} if excluded else items
+        candidates = choose(task, eligible, now, days if task == 'backfill' else 2, rules)
     if task != 'smoke-test' and (not candidates or (
         task in ('daily', 'weekly') and any(
             article['collection'] == 'daily' and article['slug'] == slug for article in articles

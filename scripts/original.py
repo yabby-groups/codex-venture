@@ -125,7 +125,7 @@ def add(items, url, title, published, now, kind, basis, docs, **extra):
 
 def prepare(section, items, now):
     operations(section, items, now)
-    if section == 'practices':
+    if section == 'practices' and os.getenv('VENTURE_EXPERIMENTS_ENABLED') == 'true':
         # This recipe uses the dependency already installed by the trusted lockfile.
         # A new version gets a new candidate. Other discovered tools are documentation leads.
         from practice_probe import UPSTREAM, run

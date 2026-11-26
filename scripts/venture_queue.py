@@ -73,7 +73,7 @@ def recover(db, now):
     db.execute("""
         UPDATE tasks SET status=CASE
             WHEN role='editor' AND EXISTS(SELECT 1 FROM model_usage WHERE task=tasks.id) THEN 'blocked'
-            WHEN attempts>=5 THEN 'dead' ELSE 'retry' END,
+            WHEN attempts>=5 AND role!='publisher' THEN 'dead' ELSE 'retry' END,
         lease_owner=NULL,lease_expires_at=NULL,updated_at=?,available_at=?,
         last_error=CASE WHEN role='editor' THEN 'Lease expired. Inspect model reservation before retry.'
                         ELSE 'Worker lease expired' END

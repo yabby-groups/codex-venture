@@ -99,7 +99,7 @@ def dispatch(db, kind, key):
 
 def live(db, kind):
     return db.execute("""
-        SELECT 1 FROM tasks WHERE status IN ('pending','running','retry','blocked')
+        SELECT 1 FROM tasks WHERE status IN ('pending','running','retry')
         AND (type=? OR json_extract(payload,'$.kind')=?) LIMIT 1
     """, (kind, kind)).fetchone()
 
@@ -123,6 +123,10 @@ def schedule(db):
             if now.weekday() == 6:
                 dispatch(db, 'weekly', f'weekly:{now.date()}')
         queue.enqueue(db, 'scheduler', 'backup', f'backup:{now.date()}')
+        db.execute("""
+            UPDATE tasks SET payload='{}'
+            WHERE status='completed' AND type IN ('edit','publish') AND payload!='{}' AND finished_at<?
+        """, (time.time() - 7 * 86400,))
 
 
 def configure_phase(path):
@@ -159,9 +163,30 @@ def prepare(kind):
         os.environ['RUNNER_TEMP'] = temp
         path = Path(temp) / 'venture'
         hosted = configure_phase(path)
-        hosted.prepare(kind, queued=True)
+        with queue.connect(DB) as db:
+            active = db.execute("""
+                SELECT payload FROM tasks WHERE type IN ('edit','publish')
+                AND status IN ('pending','running','retry','blocked')
+                AND json_extract(payload,'$.kind')=?
+            """, (kind,)).fetchall()
+        excluded = {key for row in active for batch in json.loads(row[0])['batch']['batches']
+                    for key in batch['candidates']}
+        hosted.prepare(kind, queued=True, excluded=excluded)
         save(ITEMS, load(REPO / 'state/items.json', {}))
-        return {'batch': load(hosted.BATCH, None), 'collection': load(path / 'collection.json', {})}
+        inventory = json.loads(subprocess.check_output(['node', 'scripts/metadata.mjs'], text=True))
+        today = datetime.now(DATE_ZONE).date().isoformat()
+        counts = {}
+        for article in inventory:
+            kind_name = article.get('type') or article['collection']
+            row = counts.setdefault(kind_name, {'total': 0, 'today': 0})
+            row['total'] += 1
+            row['today'] += str(article['published']).startswith(today)
+        resource_counts = {}
+        for file in (REPO / 'src/content/resources').glob('*.json'):
+            rows = load(file, [])
+            if isinstance(rows, list):
+                resource_counts[file.stem] = len(rows)
+        return {'inventory': {'articles': counts, 'resources': resource_counts}, 'batch': load(hosted.BATCH, None), 'collection': load(path / 'collection.json', {})}
 
 
 def run_editor(payload):
@@ -345,6 +370,8 @@ def complete(db, row, owner, payload, result):
     task, kind = row['id'], row['type']
     if kind == 'publish' and result.get('published'):
         queue.store(db, 'last_push', result)
+    if 'inventory' in result:
+        queue.store(db, 'inventory', result['inventory'])
     if 'coverage' in result:
         queue.store(db, 'coverage', result['coverage'])
     if kind == 'verify':
@@ -421,6 +448,8 @@ def serve(role):
     signal.signal(signal.SIGTERM, lambda *_: STOP.set())
     signal.signal(signal.SIGINT, lambda *_: STOP.set())
     workers = int(os.getenv('VENTURE_EDITOR_CONCURRENCY', '2')) if role == 'editor' else 1
+    if role not in PHASES:
+        raise ValueError(f'Unknown service role {role}')
     if not 1 <= workers <= 2:
         raise ValueError('Editor concurrency must be 1 or 2')
     initialize()
@@ -582,9 +611,20 @@ def report(db):
                                      'resource-refresh', 'backfill')},
         'production': production,
         'verification_pending': bool(last_push and last_push['sha'] != production.get('publication_sha')),
+        'source_health': {key: {
+            'success_rate': value.get('successes', 0) /
+                (value.get('successes', 0) + value.get('failed_requests', 0))
+                if value.get('successes', 0) + value.get('failed_requests', 0) else None,
+            'last_success': value.get('last_success'), 'error': value.get('error'),
+            'budget_pause': value.get('budget_pause'),
+        } for key, value in load(STATE / 'health.json', {}).items()},
+        'candidate_backlog': sum(value.get('status') == 'pending' for value in load(ITEMS, {}).values()),
+        'resource_backlog': sum(not value.get('done') for value in
+                                load(STATE / 'resources.json', {}).get('rows', {}).values()),
         'source_requests': load(STATE / 'requests.json', {}),
         'budget': budget(db),
-        'content': queue.setting(db, 'coverage', {}),
+        'content': queue.setting(db, 'inventory', {}),
+        'verified_coverage': queue.setting(db, 'coverage', {}),
         'attention': ('No verified publication within 24 hours' if now.timestamp() -
                       production.get('verified_at', 0) > 86400 else None),
     }
@@ -661,6 +701,7 @@ def manage(args, db):
         with offline():
             if pending_publication():
                 raise RuntimeError('Complete pending publication recovery before export')
+            BACKUPS.mkdir(exist_ok=True)
             directory = Path(tempfile.mkdtemp(prefix='hosted-export-', dir=BACKUPS))
             shutil.copytree(STATE, directory / '.venture-runtime', ignore=shutil.ignore_patterns('site'))
             save(directory / 'state/items.json', load(ITEMS, {}))

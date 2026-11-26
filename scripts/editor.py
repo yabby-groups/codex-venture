@@ -1,7 +1,6 @@
 import json
 import os
 import re
-import signal
 from html import unescape
 import subprocess
 from datetime import datetime, timedelta
@@ -10,7 +9,6 @@ from zoneinfo import ZoneInfo
 
 from article_schema import BLOCKS, conforms
 from collect import canonical, digest, load, save, timestamp
-from release import RUNTIME
 from original import TYPES as ORIGINAL_TYPES, ready
 from resource_editor import resource_context
 
@@ -18,7 +16,6 @@ ITEMS = Path('state/items.json')
 DATE_ZONE = ZoneInfo('Asia/Shanghai')
 CANDIDATE_LIMIT = 8
 CONTENT_TYPES = load(Path('config/content-types.json'), {})
-DAILY_BUDGET = int(os.environ.get('VENTURE_DAILY_TOKENS', '100000'))
 RUN_BUDGET = int(os.environ.get('VENTURE_RUN_TOKENS', '25000'))
 
 
@@ -51,59 +48,6 @@ def sync(items, articles):
                 entry['articles'] = sorted(set(entry.get('articles', [])) | {article})
                 if story['collection'] == 'news':
                     entry['status'] = 'published'
-
-
-def budget_path(day):
-    return RUNTIME / f'tokens-{day}.json'
-
-
-def event_usage(text):
-    for line in text.splitlines():
-        try:
-            event = json.loads(line)
-        except ValueError:
-            continue
-        if event.get('type') == 'turn.completed':
-            usage = event.get('usage', {})
-            return usage.get('input_tokens', 0) + usage.get('output_tokens', 0)
-    return None
-
-
-def invoke(prompt, day, candidates):
-    budget_file = budget_path(day)
-    spent = load(budget_file, {'tokens': 0})['tokens']
-    if spent + RUN_BUDGET > DAILY_BUDGET:
-        print('Daily Codex token budget exhausted')
-        return None
-    save(budget_file, {'tokens': spent + RUN_BUDGET})
-    schema, result = RUNTIME / 'editor-schema.json', RUNTIME / 'editor-result.json'
-    save(schema, output_schema(candidates))
-    result.unlink(missing_ok=True)
-    command = [
-        os.environ.get('VENTURE_CODEX', 'codex'), 'exec', '--ignore-user-config',
-        '--ephemeral', '--json', '--sandbox', 'read-only',
-        '-c', 'approval_policy="never"', '-c', 'model_reasoning_effort="low"',
-        '--output-schema', str(schema), '-o', str(result), '-',
-    ]
-    if model := os.environ.get('VENTURE_MODEL'):
-        command[2:2] = ['--model', model]
-    with subprocess.Popen(command, stdin=subprocess.PIPE, stdout=subprocess.PIPE, text=True,
-                          start_new_session=True) as process:
-        try:
-            events, _ = process.communicate(prompt, timeout=240)
-        except subprocess.TimeoutExpired:
-            os.killpg(process.pid, signal.SIGKILL)
-            process.communicate()
-            raise
-    usage = event_usage(events)
-    if usage is not None:
-        save(budget_file, {'tokens': spent + usage})
-        print(f'Codex used {usage} tokens')
-    if process.returncode or not result.exists() or usage is None:
-        raise RuntimeError(f'Codex failed or did not report usage ({process.returncode})')
-    if usage > RUN_BUDGET:
-        raise RuntimeError('Codex exceeded the per-run token budget')
-    return load(result, {})
 
 
 def choose(mode, items, now, days=2, strategy=None):
@@ -265,29 +209,3 @@ def write_articles(response, mode, candidates, now):
             path.unlink(missing_ok=True)
         raise
     return skipped
-
-
-def edit(mode):
-    items = load(ITEMS, {})
-    articles = metadata()
-    sync(items, articles)
-    now = datetime.now(DATE_ZONE)
-    day = now.date().isoformat()
-    save(ITEMS, items)
-    if mode == 'daily' and any(story['collection'] == 'daily' and story['slug'] == day for story in articles):
-        print('Daily briefing already exists')
-        return
-    candidates = choose(mode, items, now)
-    if not candidates:
-        print('No new candidates for the editorial window')
-        return
-    payload = json.dumps(dict(mode=mode, date=day, candidates=candidates, existingResources=resource_context()), ensure_ascii=False)
-    response = invoke(Path('ops/editor.md').read_text() + '\n\n' + payload, day, candidates)
-    if response is None:
-        return
-    skipped = write_articles(response, mode, candidates, now)
-    sync(items, metadata())
-    for key in skipped:
-        if items[key]['status'] == 'pending':
-            items[key]['status'] = 'skipped'
-    save(ITEMS, items)

@@ -10,7 +10,6 @@ import urllib.robotparser
 import xml.etree.ElementTree as ET
 from datetime import datetime, timedelta, timezone
 from email.utils import parsedate_to_datetime
-from functools import lru_cache
 from html import unescape
 from urllib.parse import parse_qsl, urlencode, urlsplit, urlunsplit
 
@@ -61,16 +60,31 @@ def request(url, headers=None):
     return https_request(url, request_headers, before_request=reserve, after_request=record)
 
 
-@lru_cache
 def robots(origin):
+    path = Path('.venture-runtime/robots.json')
+    cache = load(path, {})
+    previous = cache.get(origin, {})
+    checked = time.time()
     parser = urllib.robotparser.RobotFileParser()
+    if checked < previous.get('checked', 0) + 3600:
+        parser.parse(previous['body'])
+        return parser
     try:
-        body, _ = request(origin + '/robots.txt')
-        parser.parse(body.decode('utf-8', errors='replace').splitlines())
+        body, headers = request(origin + '/robots.txt', previous.get('validators', {}))
+        lines = body.decode('utf-8', errors='replace').splitlines()
+        validators = {key: headers[value] for key, value in
+                      [('If-None-Match', 'ETag'), ('If-Modified-Since', 'Last-Modified')] if value in headers}
     except urllib.error.HTTPError as error:
-        if error.code not in (404, 410):
+        if error.code == 304 and previous:
+            lines, validators = previous['body'], previous.get('validators', {})
+        elif error.code in (404, 410):
+            lines, validators = [], {}
+        else:
             raise
-        parser.parse([])
+    parser.parse(lines)
+    if sum(len(line) for line in lines) <= 131072:
+        cache[origin] = dict(body=lines, checked=checked, validators=validators)
+        save(path, dict(sorted(cache.items(), key=lambda pair: pair[1]['checked'])[-256:]))
     return parser
 
 
@@ -214,6 +228,7 @@ def collect(days=7, extra=(), only_extra=False, refresh=False):
                 validators = {request_header: headers[response_header] for request_header, response_header in
                               [('If-None-Match', 'ETag'), ('If-Modified-Since', 'Last-Modified')] if response_header in headers}
             status['candidates'] = status.get('candidates', 0) + discovered - before_source
+            status['successes'] = status.get('successes', 0) + 1
             status.pop('first_failure', None)
             status.pop('budget_pause', None)
             status.update(url=url, validators=validators, last_success=now.isoformat(), failures=0,
@@ -225,6 +240,7 @@ def collect(days=7, extra=(), only_extra=False, refresh=False):
             status['budget_pause'] = {'reason': error.reason, 'resume': error.resume}
             print(f'{key}: {error}', flush=True)
         except (ValueError, OSError, ET.ParseError, KeyError, TypeError, http.client.HTTPException) as error:
+            status['failed_requests'] = status.get('failed_requests', 0) + 1
             status.setdefault('first_failure', now.isoformat())
             failures = status.get('failures', 0) + 1
             delay = timedelta(hours=min(24, 2 ** min(failures - 1, 5)))
