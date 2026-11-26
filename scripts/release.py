@@ -40,6 +40,10 @@ def point(root, target):
     temporary.replace(current)
 
 
+class ReleaseMarkerMismatch(RuntimeError):
+    pass
+
+
 def probe(base, release, routes=ROUTES):
     for route in routes:
         url = base.rstrip('/') + '/' + route
@@ -51,7 +55,7 @@ def probe(base, release, routes=ROUTES):
                 if response.status != 200:
                     raise RuntimeError(f'{url}: unexpected HTTP {response.status}')
                 if route == 'release.txt' and response.read(256).decode().strip() != release:
-                    raise RuntimeError(f'{url}: release marker mismatch')
+                    raise ReleaseMarkerMismatch(f'{url}: release marker mismatch')
         except OSError as error:
             raise RuntimeError(f'{url}: {error}') from error
 

@@ -22,6 +22,7 @@ import venture_queue as queue
 from collect import load, save
 from editor import DATE_ZONE
 from model_cost import configured_price, estimate, worst_case
+from release import ReleaseMarkerMismatch
 
 CODE = Path(__file__).resolve().parent.parent
 ROOT = Path(os.getenv('VENTURE_DATA', '/data')).resolve()
@@ -34,6 +35,8 @@ JOURNAL = PRIVATE / 'publish.json'
 BACKUPS = PRIVATE / 'backups'
 REMOTE = 'https://github.com/yabby-groups/codex-venture.git'
 STOP = threading.Event()
+DEPLOY_WAIT_SECONDS = 480
+DEPLOY_RECHECK_SECONDS = 60
 INTERVALS = {'collect': 15, 'discover': 30, 'news': 30, 'resource-discover': 30,
              'resource-sync': 30, 'practices': 120, 'stories': 120,
              'resource-refresh': 360, 'backfill': 1440}
@@ -295,7 +298,10 @@ def verify(payload):
         save(path / 'routes.json', payload['routes'])
         save(path / 'resource-routes.json', payload['resource_routes'])
         build(path)
-        hosted.health()
+        try:
+            hosted.health()
+        except ReleaseMarkerMismatch as error:
+            return {'deployment_pending': str(error)}
         return {'sha': current, 'publication_sha': payload['sha'],
                 'release': Path('dist/release.txt').read_text().strip(), 'verified': True,
                 'coverage': load(Path('dist/coverage.json'), {})}
@@ -431,6 +437,14 @@ def execute(row, owner):
             if process.returncode:
                 raise RuntimeError(f'{kind} phase exit {process.returncode}')
             result = load(path / 'result.json', None)
+            if kind == 'verify' and result and result.get('deployment_pending'):
+                remaining = row['created_at'] + DEPLOY_WAIT_SECONDS - time.time()
+                if remaining <= 0:
+                    raise RuntimeError(f"Cloudflare deployment not verified within "
+                                       f"{DEPLOY_WAIT_SECONDS} seconds: {result['deployment_pending']}")
+                print(f'Task {task} (verify): waiting for Cloudflare deployment', flush=True)
+                queue.finish(db, task, owner, 'retry', delay=min(DEPLOY_RECHECK_SECONDS, remaining))
+                return
             with queue.transaction(db):
                 complete(db, row, owner, payload, result)
             if kind == 'publish':
