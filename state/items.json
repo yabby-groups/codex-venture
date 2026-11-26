@@ -7713,6 +7713,20 @@
     "title": "Mind the Gaps: State-Guided Supervision Allocation for Object Detection Dataset Distillation",
     "url": "https://arxiv.org/abs/2611.30369"
   },
+  "3c53fbfc405d080f0b262faedbaede80b9004a3e81fc673b56aadb152d45e2a0": {
+    "category": "coding",
+    "content_type": "stories",
+    "discovered": "2026-11-26T03:12:22.829298+00:00",
+    "discovery": {},
+    "fingerprint": "8e412a148c5b45bd6e50db642da17fb6dd3725d79ca4434e321d8b94fcaa9101",
+    "published": "2026-11-25T23:26:32+00:00",
+    "source": "simon-willison",
+    "source_url": "https://simonwillison.net/atom/everything/",
+    "status": "pending",
+    "summary": "It’s now obvious that we’ll be getting, not one-off solutions to this or that complexity question, but a whole new continent of mathematical truth, one that we’d previously only glimpsed through fog. Picture van Leeuwenhoek first training a microscope on pondwater, or Galileo first training his telescope on the stars. That might give you some idea of how our resolution into the complexity-theoretic universe, and the whole universe of mathematical truth beyond it, has now improved. — Scott Aaronson Tags: mathematics , llms , ai , generative-ai",
+    "title": "Quoting Scott Aaronson",
+    "url": "https://simonwillison.net/2026/Nov/25/scott-aaronson"
+  },
   "3c656477d84bc672796f16cc342f3c57381979a11782d7546695bcc52ac35350": {
     "category": "models",
     "discovered": "2026-11-25T11:43:09.397480+00:00",
@@ -9209,6 +9223,19 @@
     "summary": "arXiv:2611.30134v1 Announce Type: new Abstract: Personalized large language models (LLMs) should continually adapt to users' evolving preferences. Yet extracting preference changes from noisy interaction histories while supporting inexpensive updates remains challenging. We introduce WASP (Weight Adaptation for Streaming Personalization), a recurrent framework that captures fine-grained preferences directly from raw user interactions and generates personalized LoRA adapters without expensive per-user optimization. Specifically, WASP achieves this by training a shared hypernetwork that maintains a compact user representation and outputs adapter weights in a single forward pass. As new interactions arrive, WASP updates this representation without reprocessing full interaction history, enabling continual adaptation with per-update costs independent of history length. Experiments on personalization benchmarks and chronological interaction streams show that WASP sustains high-quality personalization over long horizons under fixed compute and storage budgets. Together, these results support efficient streaming personalization and facilitate privacy-preserving on-device deployment.",
     "title": "WASP: Continual Weight Adaptation for Streaming LLM Personalization",
     "url": "https://arxiv.org/abs/2611.30134"
+  },
+  "48919c55052d9c9281a8daf63d0b56bf1a42bd136dc3b9b4f81c0c03c63f98a7": {
+    "category": "open-source",
+    "discovered": "2026-11-26T03:12:22.829298+00:00",
+    "discovery": {},
+    "fingerprint": "61f4b7fc400f94a7fbbd645fb4fdc3e7365418b03e15ebc63f38448c6e6a6351",
+    "published": "2026-11-25T14:00:00+00:00",
+    "source": "cloudflare-ai",
+    "source_url": "https://blog.cloudflare.com/tag/ai/rss/",
+    "status": "pending",
+    "summary": "Flip one toggle to make your site searchable by AI agents — complete with automatic content indexing, a discoverable search API, and native HTTP QUERY support.",
+    "title": "Introducing Search for Agents",
+    "url": "https://blog.cloudflare.com/search-for-agents"
   },
   "48d620a145eb3f8455ce76f92e167b8d9aa4fd85931d4b54f4a6fbe55b297bea": {
     "category": "coding",
@@ -13607,6 +13634,19 @@
     "summary": "arXiv:2608.16207v3 Announce Type: replace Abstract: Consider a firm that surveys its competition for a particular agentic task and seeks to offer superior accuracy at every price point. A firm that Pareto-dominated its competitors would leave no rational customer a reason to buy elsewhere. This paper shows a path to this kind of capability by evolving multi-LLM Python agents from training pools of at most 100 examples. Given a priced menu of nine LLM endpoints; brief documentation of the task, objective, and API; a simple seed agent; and an operator-chosen per-problem cost target--usually set at an incumbent's own price--RoboPhD, an evolutionary meta-agent, evolves complete agent programs that attack the public frontiers of two semantically dissimilar tasks point by point: DS-1000 (execution-checked code generation) and PaperFindingBench (LLM-judged scientific document retrieval). On public leaderboards for each task, the evolved agents hold every Pareto-frontier slot on PaperFindingBench and all but one on DS-1000, including Pareto domination of both the top-scoring and the lowest-cost competing points.",
     "title": "Competing at Every Price Point with Agentic Evolution over a Menu of LLMs",
     "url": "https://arxiv.org/abs/2608.16207"
+  },
+  "69c0601d70f93f1e53f8616ba484ac3a4c105d6fa324e7e4e37ccd8f11b97f14": {
+    "category": "coding",
+    "discovered": "2026-11-26T03:12:22.829298+00:00",
+    "discovery": {},
+    "fingerprint": "30f46c20f9ef290c37f5db898da199c65551ab73cf12241dca53df33bdf5b2c3",
+    "published": "2026-11-25T22:18:03+00:00",
+    "source": "github-changelog",
+    "source_url": "https://github.blog/changelog/feed/",
+    "status": "pending",
+    "summary": "If you haven’t chosen how to bill Copilot code review for members with a Copilot license, those reviews will be billed to your organization starting December 30, 2026. To keep… The post Copilot code review billing will default to the organization appeared first on The GitHub Blog .",
+    "title": "Copilot code review billing will default to the organization",
+    "url": "https://github.blog/changelog/2026-11-25-copilot-code-review-billing-will-default-to-the-organization"
   },
   "69d4d9d74efa01629a6c751d8fa58a99d17f0aecb815f679bbfeeb3edf259e44": {
     "category": "models",

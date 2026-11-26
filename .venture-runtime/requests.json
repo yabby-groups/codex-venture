@@ -1,293 +1,95 @@
 {
-  "day": "2026-11-25",
+  "day": "2026-11-26",
   "providers": {
-    "agentskills.io": {
-      "daily": 2,
-      "hour": "2026-11-25T01",
-      "hourly": 2,
-      "responses": 2,
-      "successes": 2
-    },
-    "ai.google.dev": {
-      "daily": 12,
-      "hour": "2026-11-25T20",
-      "hourly": 2,
-      "responses": 12,
-      "successes": 6
-    },
-    "airma.sh": {
-      "daily": 2,
-      "hour": "2026-11-25T13",
-      "hourly": 2,
-      "responses": 2,
-      "successes": 2
-    },
-    "aistudio.google.com": {
-      "daily": 12,
-      "hour": "2026-11-25T20",
-      "hourly": 2,
-      "responses": 12,
-      "successes": 12
-    },
     "api.github.com": {
-      "daily": 239,
-      "hour": "2026-11-25T13",
-      "hourly": 8,
-      "limited": 5,
-      "remaining": 4991,
-      "responses": 239,
-      "resume": 1795611790.0,
-      "successes": 226
-    },
-    "arxiv.org": {
-      "daily": 6,
-      "hour": "2026-11-25T11",
-      "hourly": 6,
-      "responses": 6,
-      "successes": 6
+      "daily": 1,
+      "hour": "2026-11-26T03",
+      "hourly": 1,
+      "limited": 1,
+      "remaining": 0,
+      "responses": 1,
+      "resume": 1795664127.0
     },
     "blog.cloudflare.com": {
-      "daily": 14,
-      "hour": "2026-11-25T12",
-      "hourly": 6,
-      "responses": 14,
-      "successes": 14
-    },
-    "blog.google": {
-      "daily": 12,
-      "hour": "2026-11-25T12",
-      "hourly": 4,
-      "responses": 12,
-      "successes": 12
-    },
-    "checkmyapp.dev": {
       "daily": 2,
-      "hour": "2026-11-25T13",
+      "hour": "2026-11-26T03",
       "hourly": 2,
       "responses": 2,
       "successes": 2
     },
-    "cookbook.openai.com": {
+    "blog.google": {
       "daily": 2,
-      "hour": "2026-11-25T01",
+      "hour": "2026-11-26T03",
       "hourly": 2,
-      "responses": 2
+      "responses": 2,
+      "successes": 2
     },
     "cursor.com": {
-      "daily": 12,
-      "hour": "2026-11-25T12",
-      "hourly": 4,
-      "responses": 12,
-      "successes": 12
-    },
-    "dev.to": {
-      "daily": 22,
-      "hour": "2026-11-25T12",
-      "hourly": 13,
-      "responses": 22,
-      "successes": 22
+      "daily": 2,
+      "hour": "2026-11-26T03",
+      "hourly": 2,
+      "responses": 2,
+      "successes": 2
     },
     "devblogs.microsoft.com": {
-      "daily": 10,
-      "hour": "2026-11-25T12",
-      "hourly": 4,
-      "responses": 10,
-      "successes": 9
-    },
-    "developers.openai.com": {
-      "daily": 3,
-      "hour": "2026-11-25T01",
-      "hourly": 3,
-      "responses": 3,
-      "successes": 2
-    },
-    "docs.github.com": {
-      "daily": 3,
-      "hour": "2026-11-25T01",
-      "hourly": 3,
-      "responses": 3,
-      "successes": 2
-    },
-    "elevenlabs.io": {
       "daily": 2,
-      "hour": "2026-11-25T01",
+      "hour": "2026-11-26T03",
       "hourly": 2,
       "responses": 2,
       "successes": 2
     },
     "engineering.fb.com": {
-      "daily": 8,
-      "hour": "2026-11-25T12",
-      "hourly": 4,
-      "responses": 8,
-      "successes": 8
-    },
-    "github.blog": {
-      "daily": 21,
-      "hour": "2026-11-25T12",
-      "hourly": 6,
-      "responses": 21,
-      "successes": 20
-    },
-    "github.com": {
-      "daily": 23,
-      "hour": "2026-11-25T12",
-      "hourly": 10,
-      "responses": 23,
-      "successes": 23
-    },
-    "hamel.dev": {
-      "daily": 27,
-      "hour": "2026-11-25T13",
-      "hourly": 2,
-      "responses": 27,
-      "successes": 19
-    },
-    "hn.algolia.com": {
-      "daily": 40,
-      "hour": "2026-11-25T13",
-      "hourly": 11,
-      "responses": 39,
-      "successes": 32
-    },
-    "huggingface.co": {
-      "daily": 143,
-      "hour": "2026-11-25T20",
-      "hourly": 7,
-      "responses": 143,
-      "successes": 136
-    },
-    "kakatu.app": {
       "daily": 2,
-      "hour": "2026-11-25T11",
+      "hour": "2026-11-26T03",
       "hourly": 2,
       "responses": 2,
+      "successes": 2
+    },
+    "github.blog": {
+      "daily": 3,
+      "hour": "2026-11-26T03",
+      "hourly": 3,
+      "responses": 3,
+      "successes": 3
+    },
+    "hamel.dev": {
+      "daily": 2,
+      "hour": "2026-11-26T03",
+      "hourly": 2,
+      "responses": 2,
+      "successes": 2
+    },
+    "huggingface.co": {
+      "daily": 3,
+      "hour": "2026-11-26T03",
+      "hourly": 3,
+      "responses": 3,
       "successes": 2
     },
     "machinelearning.apple.com": {
-      "daily": 8,
-      "hour": "2026-11-25T12",
-      "hourly": 4,
-      "responses": 8,
-      "successes": 8
-    },
-    "modelcontextprotocol.io": {
-      "daily": 3,
-      "hour": "2026-11-25T01",
-      "hourly": 3,
-      "responses": 3,
-      "successes": 2
-    },
-    "news.ycombinator.com": {
       "daily": 2,
-      "hour": "2026-11-25T13",
-      "hourly": 1,
+      "hour": "2026-11-26T03",
+      "hourly": 2,
       "responses": 2,
       "successes": 2
-    },
-    "open-vsx.org": {
-      "daily": 38,
-      "hour": "2026-11-25T12",
-      "hourly": 6,
-      "remaining": 10799,
-      "responses": 38,
-      "successes": 36
     },
     "openai.com": {
-      "daily": 12,
-      "hour": "2026-11-25T12",
-      "hourly": 4,
-      "responses": 12,
-      "successes": 12
-    },
-    "openvsx.eclipsecontent.org": {
-      "daily": 4,
-      "hour": "2026-11-25T12",
+      "daily": 2,
+      "hour": "2026-11-26T03",
       "hourly": 2,
-      "responses": 4,
+      "responses": 2,
       "successes": 2
-    },
-    "plugins.jetbrains.com": {
-      "daily": 3,
-      "hour": "2026-11-25T11",
-      "hourly": 3,
-      "responses": 3,
-      "successes": 3
     },
     "pytorch.org": {
-      "daily": 4,
-      "hour": "2026-11-25T11",
+      "daily": 2,
+      "hour": "2026-11-26T03",
       "hourly": 2,
-      "responses": 4,
-      "successes": 2
-    },
-    "registry.modelcontextprotocol.io": {
-      "daily": 32,
-      "hour": "2026-11-25T12",
-      "hourly": 4,
-      "responses": 32,
-      "successes": 24
-    },
-    "rss.arxiv.org": {
-      "daily": 6,
-      "hour": "2026-11-25T12",
-      "hourly": 4,
-      "responses": 6,
-      "successes": 3
+      "responses": 2,
+      "successes": 1
     },
     "simonwillison.net": {
-      "daily": 11,
-      "hour": "2026-11-25T13",
-      "hourly": 3,
-      "responses": 11,
-      "successes": 10
-    },
-    "support.google.com": {
-      "daily": 3,
-      "hour": "2026-11-25T01",
-      "hourly": 3,
-      "responses": 3,
-      "successes": 2
-    },
-    "tillerly.dev": {
-      "daily": 3,
-      "hour": "2026-11-25T13",
-      "hourly": 3,
-      "responses": 3,
-      "successes": 2
-    },
-    "ufoptix.org": {
       "daily": 2,
-      "hour": "2026-11-25T13",
-      "hourly": 2,
-      "responses": 2,
-      "successes": 2
-    },
-    "www.everydev.ai": {
-      "daily": 1,
-      "hour": "2026-11-25T13",
-      "hourly": 1,
-      "limited": 1,
-      "responses": 1,
-      "resume": 1795612754.797189
-    },
-    "www.perplexity.ai": {
-      "daily": 2,
-      "hour": "2026-11-25T01",
-      "hourly": 2,
-      "responses": 2,
-      "successes": 1
-    },
-    "www.reddit.com": {
-      "daily": 1,
-      "hour": "2026-11-25T13",
-      "hourly": 1,
-      "responses": 1,
-      "successes": 1
-    },
-    "www.techradar.com": {
-      "daily": 2,
-      "hour": "2026-11-25T13",
+      "hour": "2026-11-26T03",
       "hourly": 2,
       "responses": 2,
       "successes": 2
