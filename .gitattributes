@@ -1,2 +1,4 @@
 /ops/venture text eol=lf
 /ops/hosted-state text eol=lf
+/ops/hosted-git text eol=lf
+/ops/analytics-store text eol=lf
