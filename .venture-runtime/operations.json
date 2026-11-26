@@ -12,8 +12,9 @@
     "started": "2026-11-26T11:12:22.719580+08:00"
   },
   "daily": {
-    "due": "2026-11-26T21:18:35.151400+08:00",
-    "result": "SKIPPED",
+    "consecutive_dry_runs": 0,
+    "due": "2026-11-27T20:00:00+08:00",
+    "result": "PUBLISHED",
     "started": "2026-11-26T20:48:35.151400+08:00"
   },
   "discover": {
