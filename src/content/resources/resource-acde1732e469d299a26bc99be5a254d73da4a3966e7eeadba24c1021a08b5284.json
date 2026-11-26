@@ -1,0 +1,28 @@
+{
+  "addedAt": "2026-11-26",
+  "categories": [
+    [
+      "AI 辅助编程",
+      "AI Coding"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-25",
+  "id": "resource-acde1732e469d299a26bc99be5a254d73da4a3966e7eeadba24c1021a08b5284",
+  "identity": "github:1148960257",
+  "license": "MIT",
+  "name": "zhukunpenglinyutong/desktop-cc-gui",
+  "repository": "https://github.com/zhukunpenglinyutong/desktop-cc-gui",
+  "repositoryId": "1148960257",
+  "site": "https://github.com/zhukunpenglinyutong/desktop-cc-gui",
+  "sourceSignature": "2c076a9fbd866e3c2666ed79192ba5ddc24d6e59f32b57167a62b6ed6f24578c",
+  "summary": [
+    "据项目介绍，这款桌面客户端可在同一个图形界面中使用 Claude Code、Codex、Gemini、OpenCode 等编程工具。",
+    "The project describes a desktop client for working with Claude Code, Codex, Gemini, OpenCode, and other coding tools through one graphical interface."
+  ],
+  "tested": false,
+  "type": "tools",
+  "verificationSources": [
+    "https://api.github.com/search/repositories?page=1&per_page=30&q=topic%3Aai-coding+archived%3Afalse+fork%3Afalse&sort=stars"
+  ],
+  "verifiedAt": "2026-11-26"
+}

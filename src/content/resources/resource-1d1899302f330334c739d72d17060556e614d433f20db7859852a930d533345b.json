@@ -1,0 +1,28 @@
+{
+  "addedAt": "2026-11-26",
+  "categories": [
+    [
+      "产品规划与原型开发",
+      "Product Planning and Prototyping"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-26",
+  "id": "resource-1d1899302f330334c739d72d17060556e614d433f20db7859852a930d533345b",
+  "identity": "github:966284222",
+  "license": "MIT",
+  "name": "KhazP/vibe-coding-prompt-template",
+  "repository": "https://github.com/KhazP/vibe-coding-prompt-template",
+  "repositoryId": "966284222",
+  "site": "https://github.com/KhazP/vibe-coding-prompt-template",
+  "sourceSignature": "18d9b685a7ab5975244498d6f10301b4551043bca6f8a54123d03b8c96b9ea58",
+  "summary": [
+    "该仓库提供提示词模板和工作流程，可在 AI IDE 中借助大语言模型起草产品需求文档和技术设计，并构建最小可行产品。",
+    "The repository offers prompt templates and a workflow for using language models in AI IDEs to draft product requirements and technical designs and build a minimum viable product."
+  ],
+  "tested": false,
+  "type": "workflows",
+  "verificationSources": [
+    "https://api.github.com/search/repositories?page=1&per_page=30&q=topic%3Aai-workflow+archived%3Afalse+fork%3Afalse&sort=stars"
+  ],
+  "verifiedAt": "2026-11-26"
+}

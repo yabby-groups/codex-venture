@@ -1,0 +1,31 @@
+{
+  "addedAt": "2026-11-26",
+  "categories": [
+    [
+      "设计转代码规范",
+      "Design-to-Code Rules"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-25",
+  "id": "resource-e96dd9b9565d2813bc876579f96a2dfb8375ffbafa1654641fd49f936804fa91",
+  "identity": "github-skill:1103643573:skills/.curated/figma-create-design-system-rules/SKILL.md",
+  "name": "figma-create-design-system-rules",
+  "platforms": [
+    "Codex"
+  ],
+  "repository": "https://github.com/openai/skills",
+  "repositoryId": "1103643573",
+  "site": "https://github.com/openai/skills/blob/main/skills/.curated/figma-create-design-system-rules/SKILL.md",
+  "sourcePath": "skills/.curated/figma-create-design-system-rules/SKILL.md",
+  "sourceSignature": "34f9ce479132a255a281df3bbe8cd576810055709816c07adaf3c038941a788b",
+  "summary": [
+    "据技能文档介绍，它可为编程智能体生成项目专用规范，指导智能体将 Figma 设计转为代码时如何复用组件等。该技能需要连接 Figma MCP 服务器。",
+    "The skill documentation describes how to generate project-specific rules for coding agents implementing Figma designs, including conventions for component reuse. It requires a Figma MCP server connection."
+  ],
+  "tested": false,
+  "type": "skills",
+  "verificationSources": [
+    "https://github.com/openai/skills/blob/main/skills/.curated/figma-create-design-system-rules/SKILL.md"
+  ],
+  "verifiedAt": "2026-11-26"
+}

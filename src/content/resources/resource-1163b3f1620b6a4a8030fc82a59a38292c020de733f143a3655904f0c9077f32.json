@@ -1,0 +1,27 @@
+{
+  "addedAt": "2026-11-26",
+  "categories": [
+    [
+      "机器学习实践",
+      "Machine Learning Practice"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-26",
+  "id": "resource-1163b3f1620b6a4a8030fc82a59a38292c020de733f143a3655904f0c9077f32",
+  "identity": "github:686270235",
+  "name": "AliValizade/machine-learning-coursework",
+  "repository": "https://github.com/AliValizade/machine-learning-coursework",
+  "repositoryId": "686270235",
+  "site": "https://github.com/AliValizade/machine-learning-coursework",
+  "sourceSignature": "0a9bc55185e261add21b2a5435b413888f7fb9721a4f19d58716bf8eb8d00862",
+  "summary": [
+    "据仓库介绍，读者可以完成 Python 算法练习，并通过贪吃蛇游戏比较基于规则和基于机器学习的玩法。",
+    "The repository lists Python algorithm assignments and a Snake game for comparing rule-based and machine-learning approaches to gameplay."
+  ],
+  "tested": false,
+  "type": "resources",
+  "verificationSources": [
+    "https://api.github.com/search/repositories?page=1&per_page=30&q=topic%3Amachine-learning-course+archived%3Afalse+fork%3Afalse&sort=stars"
+  ],
+  "verifiedAt": "2026-11-26"
+}

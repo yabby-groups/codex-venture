@@ -1,0 +1,28 @@
+{
+  "addedAt": "2026-11-26",
+  "categories": [
+    [
+      "人声合成",
+      "Voice Synthesis"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-26",
+  "id": "resource-076bc9045a254bbb9c5c6a943e8f4e2911787b1fa6cc3ea0e4fe7104550fb9ff",
+  "identity": "github:439211693",
+  "license": "MIT",
+  "name": "MoonInTheRiver/DiffSinger",
+  "repository": "https://github.com/MoonInTheRiver/DiffSinger",
+  "repositoryId": "439211693",
+  "site": "https://github.com/MoonInTheRiver/DiffSinger",
+  "sourceSignature": "0add396606b3865769b0cc8092a5f1270cc02ed1b47cec2700744586523ed86a",
+  "summary": [
+    "DiffSinger 仓库提供 AAAI 2022 论文的官方代码，可用于研究如何用浅层扩散方法合成歌声和朗读语音。",
+    "The DiffSinger repository provides the official code for the AAAI 2022 paper, letting readers explore shallow diffusion for singing voice synthesis and text-to-speech."
+  ],
+  "tested": false,
+  "type": "open-source",
+  "verificationSources": [
+    "https://api.github.com/search/repositories?page=2&per_page=30&q=topic%3Atext-to-speech+archived%3Afalse+fork%3Afalse&sort=stars"
+  ],
+  "verifiedAt": "2026-11-26"
+}

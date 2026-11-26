@@ -1,0 +1,28 @@
+{
+  "addedAt": "2026-11-26",
+  "categories": [
+    [
+      "多智能体工作流设计",
+      "Multi-Agent Workflow Design"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-26",
+  "id": "resource-16aa72019c00e833e9d3dacb8e70bf8f3c26541ade079e0c21d4a34c61401be7",
+  "identity": "github:1337815068",
+  "license": "MIT",
+  "name": "SeeRay11/OpenFlow",
+  "repository": "https://github.com/SeeRay11/OpenFlow",
+  "repositoryId": "1337815068",
+  "site": "https://github.com/SeeRay11/OpenFlow",
+  "sourceSignature": "a9c32e7df3fcfdc238a25b925c04dec0df1ae954de9ea0b43471b276408e6cd7",
+  "summary": [
+    "据项目介绍，OpenFlow 是基于 OpenCode 引擎的可视化工具，可用于搭建多智能体 AI 工作流。",
+    "The project describes OpenFlow as a visual builder for creating multi-agent AI workflows on the OpenCode engine."
+  ],
+  "tested": false,
+  "type": "workflows",
+  "verificationSources": [
+    "https://api.github.com/search/repositories?page=2&per_page=30&q=topic%3Aai-workflow+archived%3Afalse+fork%3Afalse&sort=stars"
+  ],
+  "verifiedAt": "2026-11-26"
+}

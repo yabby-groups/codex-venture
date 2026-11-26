@@ -1,0 +1,28 @@
+{
+  "addedAt": "2026-11-26",
+  "categories": [
+    [
+      "财务记账",
+      "Bookkeeping"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-25",
+  "id": "resource-616b5fbdc58a35a9070f177369d10385bb4fd0f649804ea82718b63201777bea",
+  "identity": "mcp:ai.agenticbooks/books",
+  "name": "AgenticBooks",
+  "registryId": "ai.agenticbooks/books",
+  "site": "https://registry.modelcontextprotocol.io/v0.1/servers/ai.agenticbooks%2Fbooks/versions/0.1.0",
+  "sourceSignature": "e777eb677bd7531007f3ce47b45fa9e196b171d4bd28c34fcb606c60ffcc1d6c",
+  "summary": [
+    "据 AgenticBooks 的介绍，这项 MCP 服务可利用实时银行和账单数据查看损益和余额、处理审批并执行期末结账。",
+    "The AgenticBooks listing describes an MCP service for using live bank and billing feeds to view profit and loss and balances, handle approvals, and close accounting periods."
+  ],
+  "tested": false,
+  "transport": "streamable-http",
+  "type": "mcp",
+  "verificationSources": [
+    "https://registry.modelcontextprotocol.io/v0.1/servers/ai.agenticbooks%2Fbooks/versions/0.1.0"
+  ],
+  "verifiedAt": "2026-11-26",
+  "version": "0.1.0"
+}
