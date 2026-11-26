@@ -1,0 +1,28 @@
+{
+  "addedAt": "2026-11-26",
+  "categories": [
+    [
+      "规格驱动开发",
+      "Spec-Driven Development"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-26",
+  "id": "resource-150f15acc073ae1396e2b1ebf715520e95327dbfa9768d79ea5a0dc5f9ed7280",
+  "identity": "github:1059905582",
+  "license": "MIT",
+  "name": "madebyaris/spec-kit-command-cursor",
+  "repository": "https://github.com/madebyaris/spec-kit-command-cursor",
+  "repositoryId": "1059905582",
+  "site": "https://github.com/madebyaris/spec-kit-command-cursor",
+  "sourceSignature": "794cfe7ee881427addfade212dbf4b5720436b5db5eff739fe0f1b3dc6a335bc",
+  "summary": [
+    "仓库列出了 /specify、/plan 和 /tasks 命令，可在 Cursor 工作流中将想法整理成规格、计划和可执行任务。",
+    "The repository lists the /specify, /plan, and /tasks commands for turning ideas into specifications, plans, and actionable tasks in a Cursor workflow."
+  ],
+  "tested": false,
+  "type": "workflows",
+  "verificationSources": [
+    "https://api.github.com/search/repositories?page=2&per_page=30&q=topic%3Aai-workflow+archived%3Afalse+fork%3Afalse&sort=stars"
+  ],
+  "verifiedAt": "2026-11-26"
+}

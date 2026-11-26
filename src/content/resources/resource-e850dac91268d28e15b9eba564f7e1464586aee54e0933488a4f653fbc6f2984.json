@@ -1,0 +1,28 @@
+{
+  "addedAt": "2026-11-26",
+  "categories": [
+    [
+      "计算机视觉模型训练",
+      "Computer Vision Model Training"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-25",
+  "id": "resource-e850dac91268d28e15b9eba564f7e1464586aee54e0933488a4f653fbc6f2984",
+  "identity": "github-skill:1102903896:skills/huggingface-vision-trainer/SKILL.md",
+  "name": "huggingface-vision-trainer",
+  "repository": "https://github.com/huggingface/skills",
+  "repositoryId": "1102903896",
+  "site": "https://github.com/huggingface/skills/blob/main/skills/huggingface-vision-trainer/SKILL.md",
+  "sourcePath": "skills/huggingface-vision-trainer/SKILL.md",
+  "sourceSignature": "242776d0b8cadd453dddb7410962259b92799a117e6c2b30960ad17fa79ca296",
+  "summary": [
+    "该技能文档介绍了如何准备数据集，在 Hugging Face Jobs 上微调目标检测、图像分类和 SAM 或 SAM2 分割模型，以及如何评估结果。",
+    "The skill documentation describes how to prepare datasets, fine-tune models for object detection, image classification, and SAM or SAM2 segmentation on Hugging Face Jobs, and evaluate the results."
+  ],
+  "tested": false,
+  "type": "skills",
+  "verificationSources": [
+    "https://github.com/huggingface/skills/blob/main/skills/huggingface-vision-trainer/SKILL.md"
+  ],
+  "verifiedAt": "2026-11-26"
+}

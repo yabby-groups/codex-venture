@@ -1,0 +1,28 @@
+{
+  "addedAt": "2026-11-26",
+  "categories": [
+    [
+      "口语练习",
+      "Spoken Language Practice"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-26",
+  "id": "resource-06deedcef97494a0163f9476026e84a625c7c039a787992e05cfe3c51acd361e",
+  "identity": "github:648612004",
+  "license": "MIT",
+  "name": "bystritskiy/ElevenSpeak",
+  "repository": "https://github.com/bystritskiy/ElevenSpeak",
+  "repositoryId": "648612004",
+  "site": "https://github.com/bystritskiy/ElevenSpeak",
+  "sourceSignature": "e6ba03405733bbaea643ad8aa5d0dc9398cfd22066f6a06dd9db6223bf357c0a",
+  "summary": [
+    "ElevenSpeak 仓库介绍了一款基于 ChatGPT、Whisper 和 ElevenLabs 的语音辅导工具，可用于练习口语。",
+    "The ElevenSpeak repository describes a voice-based language tutor built with ChatGPT, Whisper, and ElevenLabs for practicing a language aloud."
+  ],
+  "tested": false,
+  "type": "resources",
+  "verificationSources": [
+    "https://api.github.com/search/repositories?page=2&per_page=30&q=topic%3Aai-education+archived%3Afalse+fork%3Afalse&sort=stars"
+  ],
+  "verifiedAt": "2026-11-26"
+}

@@ -1,0 +1,28 @@
+{
+  "addedAt": "2026-11-26",
+  "categories": [
+    [
+      "大语言模型推理",
+      "LLM Inference"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-26",
+  "id": "resource-059cb35665ba66d882e832f90b51e047431ea5c30fe33c4e53c9f503841dc71f",
+  "identity": "github:1274723381",
+  "license": "Apache-2.0",
+  "name": "ashhart/TensorFold",
+  "repository": "https://github.com/ashhart/TensorFold",
+  "repositoryId": "1274723381",
+  "site": "https://github.com/ashhart/TensorFold",
+  "sourceSignature": "6ec2c447a08a27cbc8d80fc766cb879d2d53efdcea5d5d7bd1244499d09e6761",
+  "summary": [
+    "TensorFold 仓库将其描述为用于运行大语言模型推理的引擎，并列出 Metal、CUDA 和 Vulkan 作为后端。",
+    "The TensorFold repository describes an engine for running large language model inference and lists Metal, CUDA, and Vulkan as backends."
+  ],
+  "tested": false,
+  "type": "open-source",
+  "verificationSources": [
+    "https://api.github.com/search/repositories?page=2&per_page=30&q=topic%3Allm-inference+archived%3Afalse+fork%3Afalse&sort=stars"
+  ],
+  "verifiedAt": "2026-11-26"
+}

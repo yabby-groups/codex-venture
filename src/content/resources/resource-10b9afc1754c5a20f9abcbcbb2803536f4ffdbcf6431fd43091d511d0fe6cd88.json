@@ -1,0 +1,27 @@
+{
+  "addedAt": "2026-11-26",
+  "categories": [
+    [
+      "大语言模型评估",
+      "LLM Evaluation"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-26",
+  "id": "resource-10b9afc1754c5a20f9abcbcbb2803536f4ffdbcf6431fd43091d511d0fe6cd88",
+  "identity": "github:651441273",
+  "name": "DAMO-NLP-SG/M3Exam",
+  "repository": "https://github.com/DAMO-NLP-SG/M3Exam",
+  "repositoryId": "651441273",
+  "site": "https://github.com/DAMO-NLP-SG/M3Exam",
+  "sourceSignature": "fda5ad22f3336d19eed540ef9334ab9287886fe3592924f142399ca25869ce48",
+  "summary": [
+    "M3Exam 仓库提供数据和代码，可使用涵盖多种语言、模态和级别的考试题评估大语言模型。",
+    "The M3Exam repository provides data and code for evaluating large language models on exam questions across languages, modalities, and levels."
+  ],
+  "tested": false,
+  "type": "resources",
+  "verificationSources": [
+    "https://api.github.com/search/repositories?page=1&per_page=30&q=topic%3Aai-education+archived%3Afalse+fork%3Afalse&sort=stars"
+  ],
+  "verifiedAt": "2026-11-26"
+}

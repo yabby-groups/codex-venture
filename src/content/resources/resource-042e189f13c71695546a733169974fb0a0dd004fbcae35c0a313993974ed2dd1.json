@@ -2,8 +2,8 @@
   "addedAt": "2026-11-25",
   "categories": [
     [
-      "AI 编程工作流管理",
-      "AI coding workflow management"
+      "编程助手管理",
+      "Coding Assistant Management"
     ]
   ],
   "firstDiscoveredAt": "2026-11-25",
@@ -16,15 +16,18 @@
     "Open VSX"
   ],
   "site": "https://open-vsx.org/extension/xdev-asia/xdev-ai",
+  "sourceSignature": "872a9f084ce1bab299febfbfef6cd4f00c586a049911c78cdc2abe3f8de30e21",
   "summary": [
-    "据发布者介绍，xDev AI 可在 VS Code 中管理 AI 账号、打开 Claude Code、Codex 和 Gemini 的终端，并协调 AI 编程任务。",
-    "According to the publisher, xDev AI lets you manage AI accounts, open terminals for Claude Code, Codex, and Gemini, and coordinate AI coding tasks in VS Code."
+    "xDev AI 的条目介绍了一款编辑器扩展，可用于管理 AI 账户、打开 Claude Code、Codex 和 Gemini 的终端会话，以及协调 AI 任务。",
+    "The xDev AI listing describes an extension for managing AI accounts, opening terminal sessions for Claude Code, Codex, and Gemini, and coordinating AI tasks from the editor."
   ],
   "tested": false,
   "type": "plugins",
+  "updatedAt": "2026-11-26",
   "verificationSources": [
+    "https://open-vsx.org/api/-/search?offset=150&query=AI+assistant&size=25",
     "https://open-vsx.org/api/xdev-asia/xdev-ai/0.13.0"
   ],
-  "verifiedAt": "2026-11-25",
-  "version": "0.13.0"
+  "verifiedAt": "2026-11-26",
+  "version": "0.17.0"
 }

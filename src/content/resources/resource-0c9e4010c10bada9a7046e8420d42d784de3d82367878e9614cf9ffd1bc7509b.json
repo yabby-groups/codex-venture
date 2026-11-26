@@ -1,0 +1,29 @@
+{
+  "addedAt": "2026-11-26",
+  "categories": [
+    [
+      "文本生成视频",
+      "Text-to-Video Generation"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-25",
+  "id": "resource-0c9e4010c10bada9a7046e8420d42d784de3d82367878e9614cf9ffd1bc7509b",
+  "identity": "hf:thepun1sher/skyreels-v2-t2v-14b-540p-gguf",
+  "name": "ThePun1sher/SkyReels-V2-T2V-14B-540P-GGUF",
+  "site": "https://huggingface.co/ThePun1sher/SkyReels-V2-T2V-14B-540P-GGUF",
+  "sourceSignature": "03f40879d1e9ac6faf52a0f83d3b118fabe88b89744848bf2f8d089da4daeb04",
+  "summary": [
+    "Hugging Face 条目列出了 SkyReels-V2-T2V-14B-540P 的 GGUF 版本，可用于根据文本提示生成视频。",
+    "The Hugging Face listing identifies a GGUF variant of SkyReels-V2-T2V-14B-540P for generating video from text prompts."
+  ],
+  "tags": [
+    "text-to-video"
+  ],
+  "tested": false,
+  "type": "models",
+  "verificationSources": [
+    "https://huggingface.co/ThePun1sher/SkyReels-V2-T2V-14B-540P-GGUF/raw/main/README.md",
+    "https://huggingface.co/api/models?cursor=eyIkb3IiOlt7ImRvd25sb2FkcyI6NTMwNiwiX2lkIjp7IiRndCI6IjY5ZTk2Y2Y1ZjgyZDU4OWQzMjYyMzhlYSJ9fSx7ImRvd25sb2FkcyI6eyIkbHQiOjUzMDZ9fSx7ImRvd25sb2FkcyI6bnVsbH1dLCJzZWFyY2hTZXF1ZW5jZVRva2VuIjoiQ0xidXdRSWFDU0VBQUFBQUFMcTBRQm9PV2d4cDZXejErQzFZblRKaU9Pb2lEbG9NYWVsczlmZ3RXSjB5WWpqcSJ9&direction=-1&full=true&limit=30&pipeline_tag=text-to-video&sort=downloads"
+  ],
+  "verifiedAt": "2026-11-26"
+}

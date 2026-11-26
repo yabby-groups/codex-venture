@@ -1,0 +1,28 @@
+{
+  "addedAt": "2026-11-26",
+  "categories": [
+    [
+      "代码文档管理",
+      "Code Documentation"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-26",
+  "id": "resource-0f5b5eed72fac31bc3d2e13f48f153e7cc552d7f9bf6504a0bac8874077e8bc9",
+  "identity": "github:1233658145",
+  "license": "MIT",
+  "name": "merlinhu1/truthmark",
+  "repository": "https://github.com/merlinhu1/truthmark",
+  "repositoryId": "1233658145",
+  "site": "https://github.com/merlinhu1/truthmark",
+  "sourceSignature": "b5d9abff4f506cf8411806abf7571a67a44b1756b235bbfd70f3c2b39d0d4213",
+  "summary": [
+    "truthmark 仓库介绍了一套基于 Git 的工作流，可按分支跟踪文档，让审阅者同时查看文档和代码的变更。",
+    "The truthmark repository describes a Git-based workflow for tracking documentation by branch so reviewers can see documentation changes alongside code changes."
+  ],
+  "tested": false,
+  "type": "workflows",
+  "verificationSources": [
+    "https://api.github.com/search/repositories?page=2&per_page=30&q=topic%3Aai-workflow+archived%3Afalse+fork%3Afalse&sort=stars"
+  ],
+  "verifiedAt": "2026-11-26"
+}
