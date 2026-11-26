@@ -198,7 +198,9 @@ def prepare(kind):
 
 def run_editor(payload):
     os.environ['CODEX_API_KEY'] = secret('codex_api_key')
-    batch = payload['batch']
+    batch = dict(payload['batch'],
+                 unlimited=os.getenv('VENTURE_DAILY_TOKEN_LIMIT') == 'unlimited',
+                 enforce_cost_limit=bool(os.getenv('VENTURE_DAILY_COST_LIMIT')))
     with tempfile.TemporaryDirectory(prefix='venture-model-') as temp:
         hosted = configure_phase(Path(temp))
         save(hosted.BATCH, batch)

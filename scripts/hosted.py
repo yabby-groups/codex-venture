@@ -145,7 +145,9 @@ def prepare(task, queued=False, excluded=()):
         return
 
     if queued:
-        if task in ('news', 'backfill'):
+        unlimited = os.getenv('VENTURE_DAILY_TOKEN_LIMIT') == 'unlimited'
+        cost_limited = bool(os.getenv('VENTURE_DAILY_COST_LIMIT'))
+        if task in ('news', 'backfill') and (not unlimited or cost_limited):
             # Leave room for Codex instructions and output in the per-call reservation.
             selected = {}
             size = 0
@@ -163,7 +165,7 @@ def prepare(task, queued=False, excluded=()):
                        (row.get('repository') and row['repository'] ==
                         item.get('discovery', {}).get('upstream')) for item in candidates.values())]
         save(BATCH, dict(task=task, date=day, now=now.isoformat(timespec='seconds'),
-                         reservation=RUN_BUDGET, unlimited=False, enforce_cost_limit=True,
+                         reservation=RUN_BUDGET, unlimited=unlimited, enforce_cost_limit=cost_limited,
                          batches=[dict(candidates=candidates, existingResources=context)]))
         return
 
