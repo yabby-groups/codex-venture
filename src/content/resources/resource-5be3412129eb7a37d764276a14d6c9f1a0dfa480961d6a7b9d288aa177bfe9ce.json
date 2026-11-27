@@ -1,0 +1,28 @@
+{
+  "addedAt": "2026-11-28",
+  "categories": [
+    [
+      "云资源部署",
+      "Cloud resource provisioning"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-26",
+  "id": "resource-5be3412129eb7a37d764276a14d6c9f1a0dfa480961d6a7b9d288aa177bfe9ce",
+  "identity": "github-skill:1135891523:.github/plugins/azure-sdk-dotnet/skills/azure-resource-manager-sql-dotnet/SKILL.md",
+  "name": "azure-resource-manager-sql-dotnet",
+  "repository": "https://github.com/microsoft/skills",
+  "repositoryId": "1135891523",
+  "site": "https://github.com/microsoft/skills/blob/main/.github/plugins/azure-sdk-dotnet/skills/azure-resource-manager-sql-dotnet/SKILL.md",
+  "sourcePath": ".github/plugins/azure-sdk-dotnet/skills/azure-resource-manager-sql-dotnet/SKILL.md",
+  "sourceSignature": "da911154d8b441da911f9a8c89b69e2965310d7cd32ed85853ff5c46b91a7b1a",
+  "summary": [
+    "微软的这项 .NET 技能介绍如何通过 Azure Resource Manager 创建 Azure SQL 服务器、数据库和弹性池，并配置防火墙规则。先添加 Azure.ResourceManager.Sql 和 Azure.Identity 包。该技能涵盖管理平面操作。执行 SQL 查询需要单独的数据平面客户端。",
+    "Microsoft’s .NET skill shows how to provision Azure SQL servers, databases, and elastic pools and configure firewall rules through Azure Resource Manager. Start by adding the Azure.ResourceManager.Sql and Azure.Identity packages. The skill covers management-plane operations. Executing SQL queries requires a separate data-plane client."
+  ],
+  "tested": false,
+  "type": "skills",
+  "verificationSources": [
+    "https://github.com/microsoft/skills/blob/main/.github/plugins/azure-sdk-dotnet/skills/azure-resource-manager-sql-dotnet/SKILL.md"
+  ],
+  "verifiedAt": "2026-11-28"
+}
