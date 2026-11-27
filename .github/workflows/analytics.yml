@@ -84,8 +84,7 @@ jobs:
           export_environment_variables: false
       - id: ga4
         if: >-
-          (steps.task.outputs.task == 'sync' || steps.task.outputs.task == 'backfill' ||
-          steps.task.outputs.task == 'smoke-test') && steps.task.outputs.domain != 'search' &&
+          steps.task.outputs.task != '' && steps.task.outputs.domain != 'search' &&
           vars.GOOGLE_GA4_PROPERTY_ID != '' &&
           vars.GOOGLE_WORKLOAD_IDENTITY_PROVIDER != '' && vars.GOOGLE_SERVICE_ACCOUNT != ''
         uses: google-github-actions/auth@v3

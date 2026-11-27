@@ -354,6 +354,12 @@ def main(task, domain='all', lookback='7'):
     stats = content(metadata())
     save(root / 'content' / (today.isoformat() + '.json'), stats)
     start, end = period(task, today)
+    if os.getenv('GOOGLE_GA4_PROPERTY_ID'):
+        for day in days_between(max(start, end - timedelta(days=2)), end):
+            snapshot = ga4(day)
+            path = root / 'commerce/ga4' / (day + '.json')
+            if snapshot['status'] == 'available' or not path.exists():
+                save(path, snapshot)
     data = report(root, start, end, stats)
     save(root / 'reports' / task / (end.isoformat() + '.json'), data)
     summary = os.getenv('GITHUB_STEP_SUMMARY')
