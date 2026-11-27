@@ -1,0 +1,27 @@
+{
+  "addedAt": "2026-11-27",
+  "categories": [
+    [
+      "商业提示词模板",
+      "Business Prompt Templates"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-26",
+  "id": "resource-d04b8e45648005170bf9534cb57ac255f016efe25ea5d8ebc120769bf44a1fd5",
+  "identity": "github:1176319975",
+  "name": "CedricTri-logis/free-ai-prompt-templates",
+  "repository": "https://github.com/CedricTri-logis/free-ai-prompt-templates",
+  "repositoryId": "1176319975",
+  "site": "https://github.com/CedricTri-logis/free-ai-prompt-templates",
+  "sourceSignature": "2e4722eaa7c1f63e8fd445b69c78ea009833f756636459dc61ca9f3b949648fe",
+  "summary": [
+    "据发布者介绍，这套资源提供 50 多个结构化模板，可按 RCTFE 框架为商业任务编写 AI 提示词。",
+    "The publisher describes a collection of more than 50 structured templates for drafting AI prompts for business tasks using the RCTFE framework."
+  ],
+  "tested": false,
+  "type": "prompts",
+  "verificationSources": [
+    "https://api.github.com/search/repositories?page=2&per_page=30&q=topic%3Aprompt-templates+archived%3Afalse+fork%3Afalse&sort=stars"
+  ],
+  "verifiedAt": "2026-11-27"
+}

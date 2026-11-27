@@ -1,0 +1,28 @@
+{
+  "addedAt": "2026-11-27",
+  "categories": [
+    [
+      "多智能体编排",
+      "Multi-Agent Orchestration"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-26",
+  "id": "resource-d3682f13c837bb50f40b51db87d0180eee1a9b48749195e73b1cf89e90cdb70a",
+  "identity": "github:1176565109",
+  "license": "MIT",
+  "name": "ionclaw-org/ionclaw",
+  "repository": "https://github.com/ionclaw-org/ionclaw",
+  "repositoryId": "1176565109",
+  "site": "https://github.com/ionclaw-org/ionclaw",
+  "sourceSignature": "47cfa950bd44d8b6b2cce25cddc1d9550d04a7c9b7db63e3e6de7efb717b6a49",
+  "summary": [
+    "据项目介绍，IonClaw 是用 C++ 编写的编排工具，可在独立运行的自动化环境中协调多个 AI 智能体。",
+    "The project describes IonClaw as a C++ orchestrator for coordinating multiple AI agents in a self-contained automation setup."
+  ],
+  "tested": false,
+  "type": "workflows",
+  "verificationSources": [
+    "https://api.github.com/search/repositories?page=2&per_page=30&q=topic%3Aai-workflow+archived%3Afalse+fork%3Afalse&sort=stars"
+  ],
+  "verifiedAt": "2026-11-27"
+}

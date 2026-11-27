@@ -1,0 +1,28 @@
+{
+  "addedAt": "2026-11-27",
+  "categories": [
+    [
+      "知识图谱构建",
+      "Knowledge Graph Construction"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-26",
+  "id": "resource-d1a533c3f91e81ff1698a7f368906ed3f0c26f4146686a270ff6c222c376c760",
+  "identity": "github:1251771970",
+  "license": "MIT",
+  "name": "SenolIsci/mykg",
+  "repository": "https://github.com/SenolIsci/mykg",
+  "repositoryId": "1251771970",
+  "site": "https://github.com/SenolIsci/mykg",
+  "sourceSignature": "5ad186ec255edc4d7d79033e8a2256067d3389b9c7a6b86a680d5bf595b3023b",
+  "summary": [
+    "据项目介绍，MyKG 可将原始文件转换为知识图谱，并从输入数据中归纳图谱本体。",
+    "The project describes MyKG as an engine for building knowledge graphs from raw files and deriving the ontology from the input."
+  ],
+  "tested": false,
+  "type": "workflows",
+  "verificationSources": [
+    "https://api.github.com/search/repositories?page=2&per_page=30&q=topic%3Aai-workflow+archived%3Afalse+fork%3Afalse&sort=stars"
+  ],
+  "verifiedAt": "2026-11-27"
+}

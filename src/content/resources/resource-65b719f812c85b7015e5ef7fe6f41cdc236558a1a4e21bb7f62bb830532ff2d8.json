@@ -1,0 +1,28 @@
+{
+  "addedAt": "2026-11-27",
+  "categories": [
+    [
+      "机器学习教学",
+      "Machine Learning Education"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-26",
+  "id": "resource-65b719f812c85b7015e5ef7fe6f41cdc236558a1a4e21bb7f62bb830532ff2d8",
+  "identity": "github:1462073319",
+  "license": "BSD-3-Clause",
+  "name": "samirmartins/machine_learning_eng",
+  "repository": "https://github.com/samirmartins/machine_learning_eng",
+  "repositoryId": "1462073319",
+  "site": "https://github.com/samirmartins/machine_learning_eng",
+  "sourceSignature": "439b006fadb088ee855c3f5d8510ce3871f1541c5825f062a40f4e8ed49b2a9a",
+  "summary": [
+    "据仓库介绍，这套 UFSJ 电气工程本科课程资料包含课件、Python 笔记本和作业，可用于学习分类、回归、系统辨识和推荐系统。",
+    "The repository description lists slides, Python notebooks, and assignments from a UFSJ undergraduate electrical engineering course for studying classification, regression, system identification, and recommender systems."
+  ],
+  "tested": false,
+  "type": "resources",
+  "verificationSources": [
+    "https://api.github.com/search/repositories?page=2&per_page=30&q=topic%3Amachine-learning-course+archived%3Afalse+fork%3Afalse&sort=stars"
+  ],
+  "verifiedAt": "2026-11-27"
+}

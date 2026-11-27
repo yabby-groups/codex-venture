@@ -1,0 +1,28 @@
+{
+  "addedAt": "2026-11-27",
+  "categories": [
+    [
+      "Kubernetes 成本优化",
+      "Kubernetes Cost Optimization"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-26",
+  "id": "resource-17783ed6addbbd2c05960b5204562931319c4459fcfc87318b276360e6b3ed13",
+  "identity": "github-skill:1135891523:.github/plugins/aks-skills/skills/aks-cost-optimization/SKILL.md",
+  "name": "aks-cost-optimization",
+  "repository": "https://github.com/microsoft/skills",
+  "repositoryId": "1135891523",
+  "site": "https://github.com/microsoft/skills/blob/main/.github/plugins/aks-skills/skills/aks-cost-optimization/SKILL.md",
+  "sourcePath": ".github/plugins/aks-skills/skills/aks-cost-optimization/SKILL.md",
+  "sourceSignature": "4a7fac6f2ae3626d71029b72479c046688603358536d0d7fe9e2ad9ac0652bea",
+  "summary": [
+    "据 Microsoft 介绍，这项技能可用于评估 Azure Kubernetes 服务（AKS）的节点自动预配准备情况，分析工作负载的节点分布和存储成本，并排查节点伸缩瓶颈及缩容受阻的原因。",
+    "Microsoft describes this skill as a way to assess Azure Kubernetes Service (AKS) node auto-provisioning readiness, analyze workload placement and storage costs, and diagnose node scaling bottlenecks and blocked scale-downs."
+  ],
+  "tested": false,
+  "type": "skills",
+  "verificationSources": [
+    "https://github.com/microsoft/skills/blob/main/.github/plugins/aks-skills/skills/aks-cost-optimization/SKILL.md"
+  ],
+  "verifiedAt": "2026-11-27"
+}

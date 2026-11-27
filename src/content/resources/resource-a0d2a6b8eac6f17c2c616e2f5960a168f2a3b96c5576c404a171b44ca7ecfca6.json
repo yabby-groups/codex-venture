@@ -1,0 +1,28 @@
+{
+  "addedAt": "2026-11-27",
+  "categories": [
+    [
+      "统计数据检索",
+      "Statistical Data Retrieval"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-25",
+  "id": "resource-a0d2a6b8eac6f17c2c616e2f5960a168f2a3b96c5576c404a171b44ca7ecfca6",
+  "identity": "mcp:ai.aard/aard",
+  "name": "Aard",
+  "registryId": "ai.aard/aard",
+  "site": "https://registry.modelcontextprotocol.io/v0.1/servers/ai.aard%2Faard/versions/0.1.0",
+  "sourceSignature": "b196180fa8acf3e42b01981bbb7757505a5129b17845270d80569b4c4d5a872c",
+  "summary": [
+    "据 Aard 介绍，其 MCP 服务可用自然语言查询来自 170 多家发布机构的官方统计数据，并追溯结果来源。",
+    "Aard says its MCP service lets users find official statistics from more than 170 publishers using natural-language queries and trace the results to their sources."
+  ],
+  "tested": false,
+  "transport": "streamable-http",
+  "type": "mcp",
+  "verificationSources": [
+    "https://registry.modelcontextprotocol.io/v0.1/servers/ai.aard%2Faard/versions/0.1.0"
+  ],
+  "verifiedAt": "2026-11-27",
+  "version": "0.1.0"
+}
