@@ -1,0 +1,28 @@
+{
+  "addedAt": "2026-11-27",
+  "categories": [
+    [
+      "语音合成",
+      "Speech Synthesis"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-26",
+  "id": "resource-1b130eabbdd3fbfaf363b3de928a2c64a205fb847a7c9009bbd49e82f037c9ca",
+  "identity": "github:1044232198",
+  "license": "MIT",
+  "name": "High-Logic/Genie-TTS",
+  "repository": "https://github.com/High-Logic/Genie-TTS",
+  "repositoryId": "1044232198",
+  "site": "https://github.com/High-Logic/Genie-TTS",
+  "sourceSignature": "dee384646306bd5028735421dd4e8ebf1ca06b95f4fe3abe2f620c98413c4506",
+  "summary": [
+    "据项目介绍，Genie-TTS 可通过 ONNX 运行 GPT-SoVITS 推理，并将 GPT-SoVITS 模型转换为 ONNX 格式。",
+    "The project describes Genie-TTS as an engine for running GPT-SoVITS inference with ONNX and converting GPT-SoVITS models to ONNX."
+  ],
+  "tested": false,
+  "type": "open-source",
+  "verificationSources": [
+    "https://api.github.com/search/repositories?page=3&per_page=30&q=topic%3Atext-to-speech+archived%3Afalse+fork%3Afalse&sort=stars"
+  ],
+  "verifiedAt": "2026-11-27"
+}

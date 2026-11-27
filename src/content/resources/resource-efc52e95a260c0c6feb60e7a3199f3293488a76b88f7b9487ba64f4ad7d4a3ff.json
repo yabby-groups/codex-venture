@@ -1,0 +1,28 @@
+{
+  "addedAt": "2026-11-27",
+  "categories": [
+    [
+      "AI 助手定制",
+      "AI Assistant Customization"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-26",
+  "id": "resource-efc52e95a260c0c6feb60e7a3199f3293488a76b88f7b9487ba64f4ad7d4a3ff",
+  "identity": "github:1133867300",
+  "license": "MIT",
+  "name": "dannote/dot-pi",
+  "repository": "https://github.com/dannote/dot-pi",
+  "repositoryId": "1133867300",
+  "site": "https://github.com/dannote/dot-pi",
+  "sourceSignature": "2d329973fabc0d60021cee39e1a3f60f0434928cfd40fae6a681a1ef8aaf3094",
+  "summary": [
+    "据项目介绍，dot-pi 汇集了扩展、技能、提示词快捷指令和规则，可用于定制 Pi。",
+    "The project describes dot-pi as a curated package for customizing Pi with extensions, skills, prompt shortcuts, and rules."
+  ],
+  "tested": false,
+  "type": "prompts",
+  "verificationSources": [
+    "https://api.github.com/search/repositories?page=1&per_page=30&q=topic%3Aprompt-templates+archived%3Afalse+fork%3Afalse&sort=stars"
+  ],
+  "verifiedAt": "2026-11-27"
+}

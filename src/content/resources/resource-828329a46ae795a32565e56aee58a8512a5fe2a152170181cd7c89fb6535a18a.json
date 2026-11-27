@@ -1,0 +1,28 @@
+{
+  "addedAt": "2026-11-27",
+  "categories": [
+    [
+      "AI 辅导",
+      "AI Tutoring"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-26",
+  "id": "resource-828329a46ae795a32565e56aee58a8512a5fe2a152170181cd7c89fb6535a18a",
+  "identity": "github:1244473756",
+  "license": "MIT",
+  "name": "TovTechOrg/Tov-learn",
+  "repository": "https://github.com/TovTechOrg/Tov-learn",
+  "repositoryId": "1244473756",
+  "site": "https://github.com/TovTechOrg/Tov-learn",
+  "sourceSignature": "3a09833c81cb2ba12bf2e571d4db657c39528783d0b193d0f195102292a2c933",
+  "summary": [
+    "据项目介绍，Tov-learn 是一款 Claude Code 交互式辅导技能，提供间隔复习、个性化项目示例和学习进度面板。",
+    "The project describes Tov-learn as an interactive Claude Code tutor that uses spaced repetition and personalized project examples, with a dashboard for tracking progress."
+  ],
+  "tested": false,
+  "type": "resources",
+  "verificationSources": [
+    "https://api.github.com/search/repositories?page=1&per_page=30&q=topic%3Aai-education+archived%3Afalse+fork%3Afalse&sort=stars"
+  ],
+  "verifiedAt": "2026-11-27"
+}

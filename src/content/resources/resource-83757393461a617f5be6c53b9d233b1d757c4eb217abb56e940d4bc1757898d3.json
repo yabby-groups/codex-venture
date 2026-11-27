@@ -1,0 +1,28 @@
+{
+  "addedAt": "2026-11-27",
+  "categories": [
+    [
+      "交互内容创作",
+      "Interactive Content Creation"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-26",
+  "id": "resource-83757393461a617f5be6c53b9d233b1d757c4eb217abb56e940d4bc1757898d3",
+  "identity": "github:1402525166",
+  "license": "MIT",
+  "name": "DozenTwelve/Papermorph",
+  "repository": "https://github.com/DozenTwelve/Papermorph",
+  "repositoryId": "1402525166",
+  "site": "https://github.com/DozenTwelve/Papermorph",
+  "sourceSignature": "f986c6a0965e4f629e7812c66783717e49dc79d98770e3dacd007423afa90f4f",
+  "summary": [
+    "据项目介绍，Papermorph 是一项 AI 技能，可将书籍改编为带有动画和旁白的交互式网页。",
+    "The project describes Papermorph as an AI skill for adapting books into interactive web experiences with animation and narration."
+  ],
+  "tested": false,
+  "type": "resources",
+  "verificationSources": [
+    "https://api.github.com/search/repositories?page=1&per_page=30&q=topic%3Aai-education+archived%3Afalse+fork%3Afalse&sort=stars"
+  ],
+  "verifiedAt": "2026-11-27"
+}

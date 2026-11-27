@@ -1,0 +1,28 @@
+{
+  "addedAt": "2026-11-27",
+  "categories": [
+    [
+      "网页搜索与内容提取",
+      "Web Search and Content Extraction"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-25",
+  "id": "resource-b08ec4022838ca145ecc09e827a8562b6dd2af19af595b72791f9d60ed1e490c",
+  "identity": "mcp:ai.agentapihub/tiktok-instagram-short-video-creator-mcp",
+  "name": "AgentAPIHub — Google SERP, News, Trends & Clean Web-to-Markdown MCP",
+  "registryId": "ai.agentapihub/tiktok-instagram-short-video-creator-mcp",
+  "site": "https://registry.modelcontextprotocol.io/v0.1/servers/ai.agentapihub%2Ftiktok-instagram-short-video-creator-mcp/versions/1.0.0",
+  "sourceSignature": "9e959b06beba3c4e69cbb66d29abc95dd14b66a478e9ec34df65c9f3e55ce7f6",
+  "summary": [
+    "据 AgentAPIHub 介绍，这项 MCP 服务可获取 Google 搜索结果、新闻、趋势和自动补全建议，并将网页转换为 Markdown。",
+    "AgentAPIHub describes an MCP service for retrieving Google search results, news, trends, and autocomplete suggestions, and converting web pages to Markdown."
+  ],
+  "tested": false,
+  "transport": "streamable-http",
+  "type": "mcp",
+  "verificationSources": [
+    "https://registry.modelcontextprotocol.io/v0.1/servers/ai.agentapihub%2Ftiktok-instagram-short-video-creator-mcp/versions/1.0.0"
+  ],
+  "verifiedAt": "2026-11-27",
+  "version": "1.0.0"
+}

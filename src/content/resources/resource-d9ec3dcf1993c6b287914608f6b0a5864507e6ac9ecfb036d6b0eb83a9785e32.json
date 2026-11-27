@@ -1,0 +1,28 @@
+{
+  "addedAt": "2026-11-27",
+  "categories": [
+    [
+      "智能体会话记忆",
+      "Agent Session Memory"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-25",
+  "id": "resource-d9ec3dcf1993c6b287914608f6b0a5864507e6ac9ecfb036d6b0eb83a9785e32",
+  "identity": "github:1048065319",
+  "license": "Apache-2.0",
+  "name": "thedotmack/claude-mem",
+  "repository": "https://github.com/thedotmack/claude-mem",
+  "repositoryId": "1048065319",
+  "site": "https://github.com/thedotmack/claude-mem",
+  "sourceSignature": "b46394104a14b14e2c2db5a5712f195f47a4f58f2deb31f952ddcdb2b335bf1b",
+  "summary": [
+    "据项目介绍，claude-mem 记录智能体的会话活动，利用 AI 压缩记录，并将相关上下文带入后续会话。",
+    "The project says claude-mem records agent activity, compresses it with AI, and brings relevant context into later sessions."
+  ],
+  "tested": false,
+  "type": "tools",
+  "verificationSources": [
+    "https://api.github.com/search/repositories?page=1&per_page=30&q=topic%3Arag+archived%3Afalse+fork%3Afalse&sort=stars"
+  ],
+  "verifiedAt": "2026-11-27"
+}

@@ -1,0 +1,28 @@
+{
+  "addedAt": "2026-11-27",
+  "categories": [
+    [
+      "项目文档与交接",
+      "Project Documentation and Handoffs"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-26",
+  "id": "resource-f7947003862af93ab8cae9014f35de898dbd82ed648ca7d9600cdead5a663e5c",
+  "identity": "github:1216780611",
+  "license": "MIT",
+  "name": "JamesShi96/project-butler",
+  "repository": "https://github.com/JamesShi96/project-butler",
+  "repositoryId": "1216780611",
+  "site": "https://github.com/JamesShi96/project-butler",
+  "sourceSignature": "62c41c780dd5667042d42dc69959f15946e27220ca302965b028fb288470d349",
+  "summary": [
+    "据项目介绍，project-butler 可维护会话日志、项目 Wiki、规则和待办事项，方便在不同的 AI 编程会话之间交接。",
+    "The project describes project-butler as a way to maintain session logs, a project wiki, rules, and to-dos for handoffs between AI coding sessions."
+  ],
+  "tested": false,
+  "type": "workflows",
+  "verificationSources": [
+    "https://api.github.com/search/repositories?page=1&per_page=30&q=topic%3Aai-workflow+archived%3Afalse+fork%3Afalse&sort=stars"
+  ],
+  "verifiedAt": "2026-11-27"
+}

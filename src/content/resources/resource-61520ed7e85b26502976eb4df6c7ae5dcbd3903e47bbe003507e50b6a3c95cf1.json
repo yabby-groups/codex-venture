@@ -1,0 +1,30 @@
+{
+  "addedAt": "2026-11-27",
+  "categories": [
+    [
+      "交互式 Python 开发",
+      "Interactive Python Development"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-25",
+  "id": "resource-61520ed7e85b26502976eb4df6c7ae5dcbd3903e47bbe003507e50b6a3c95cf1",
+  "identity": "openvsx:wuhy.live-coding",
+  "install": "https://open-vsx.org/extension/wuhy/live-coding",
+  "name": "live coding for python",
+  "platforms": [
+    "Open VSX"
+  ],
+  "site": "https://open-vsx.org/extension/wuhy/live-coding",
+  "sourceSignature": "b2dce27a6ad0c0a9e55b8e4f29196574b5c62c19f46e57f3b85bdf2fa4ea7729",
+  "summary": [
+    "据发布说明，这款插件使用 space_tracer 实时求值 Python 代码。",
+    "The listing describes a plugin that uses space_tracer to evaluate Python code in real time."
+  ],
+  "tested": false,
+  "type": "plugins",
+  "verificationSources": [
+    "https://open-vsx.org/api/-/search?offset=0&query=coding+assistant&size=25"
+  ],
+  "verifiedAt": "2026-11-27",
+  "version": "3.1.1"
+}

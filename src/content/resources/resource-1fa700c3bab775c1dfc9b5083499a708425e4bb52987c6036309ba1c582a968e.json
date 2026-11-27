@@ -1,0 +1,28 @@
+{
+  "addedAt": "2026-11-27",
+  "categories": [
+    [
+      "安全事件调查",
+      "Security Incident Investigation"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-26",
+  "id": "resource-1fa700c3bab775c1dfc9b5083499a708425e4bb52987c6036309ba1c582a968e",
+  "identity": "github-skill:1135891523:.github/plugins/azure-kusto-graph-skills/skills/azure-kusto-irql/SKILL.md",
+  "name": "azure-kusto-irql",
+  "repository": "https://github.com/microsoft/skills",
+  "repositoryId": "1135891523",
+  "site": "https://github.com/microsoft/skills/blob/main/.github/plugins/azure-kusto-graph-skills/skills/azure-kusto-irql/SKILL.md",
+  "sourcePath": ".github/plugins/azure-kusto-graph-skills/skills/azure-kusto-irql/SKILL.md",
+  "sourceSignature": "8dc3bd1daec7a3a63db8af19fc554d9c66bd144b39d9e25e7f75aeb781cd5890",
+  "summary": [
+    "据微软介绍，这项技能可将自然语言描述的威胁狩猎问题转换为 Kusto IRQL 查询管道，用于调查登录失败和钓鱼事件等。",
+    "Microsoft describes this skill as turning natural-language threat-hunting questions into Kusto IRQL query pipelines for investigations such as failed logins and phishing."
+  ],
+  "tested": false,
+  "type": "skills",
+  "verificationSources": [
+    "https://github.com/microsoft/skills/blob/main/.github/plugins/azure-kusto-graph-skills/skills/azure-kusto-irql/SKILL.md"
+  ],
+  "verifiedAt": "2026-11-27"
+}

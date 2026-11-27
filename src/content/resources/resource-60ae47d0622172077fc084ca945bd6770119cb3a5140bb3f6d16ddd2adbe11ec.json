@@ -1,0 +1,30 @@
+{
+  "addedAt": "2026-11-27",
+  "categories": [
+    [
+      "嵌入式开发",
+      "Embedded Development"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-25",
+  "id": "resource-60ae47d0622172077fc084ca945bd6770119cb3a5140bb3f6d16ddd2adbe11ec",
+  "identity": "openvsx:sifli.sifli-sdk-codekit",
+  "install": "https://open-vsx.org/extension/SiFli/sifli-sdk-codekit",
+  "name": "sifli-sdk-codekit",
+  "platforms": [
+    "Open VSX"
+  ],
+  "site": "https://open-vsx.org/extension/SiFli/sifli-sdk-codekit",
+  "sourceSignature": "04e5521d262199ac23067fdb4e924a8efe39bed880b6218c0b4ffddab2d84839",
+  "summary": [
+    "据发布说明，这款插件可用于借助 SiFli SDK 开发和调试面向 SiFli 芯片的应用。",
+    "The listing describes a plugin for developing and debugging applications for SiFli chips with the SiFli SDK."
+  ],
+  "tested": false,
+  "type": "plugins",
+  "verificationSources": [
+    "https://open-vsx.org/api/-/search?offset=25&query=language+model&size=25"
+  ],
+  "verifiedAt": "2026-11-27",
+  "version": "1.4.990407"
+}
