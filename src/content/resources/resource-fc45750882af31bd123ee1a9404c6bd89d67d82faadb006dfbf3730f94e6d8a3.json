@@ -1,0 +1,28 @@
+{
+  "addedAt": "2026-11-27",
+  "categories": [
+    [
+      "多智能体工作流自动化",
+      "Multi-Agent Workflow Automation"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-26",
+  "id": "resource-fc45750882af31bd123ee1a9404c6bd89d67d82faadb006dfbf3730f94e6d8a3",
+  "identity": "github:1224575142",
+  "license": "MIT",
+  "name": "Orkas-AI/Orkas",
+  "repository": "https://github.com/Orkas-AI/Orkas",
+  "repositoryId": "1224575142",
+  "site": "https://github.com/Orkas-AI/Orkas",
+  "sourceSignature": "dd4afd5b9af9d76026648d431f76d149d47502231d68567e2feba970d4d1c582",
+  "summary": [
+    "据发布者介绍，这款桌面应用可将目标拆解为待办事项，协调不同分工的智能体，并支持按项目组织工作和定时运行自动化任务。",
+    "The publisher describes a desktop app that breaks goals into to-dos, coordinates specialist agents, and lets users organize work into projects and schedule automations."
+  ],
+  "tested": false,
+  "type": "workflows",
+  "verificationSources": [
+    "https://api.github.com/search/repositories?page=1&per_page=30&q=topic%3Aai-workflow+archived%3Afalse+fork%3Afalse&sort=stars"
+  ],
+  "verifiedAt": "2026-11-27"
+}

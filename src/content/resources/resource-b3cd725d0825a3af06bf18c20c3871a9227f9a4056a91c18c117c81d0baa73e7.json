@@ -1,0 +1,28 @@
+{
+  "addedAt": "2026-11-27",
+  "categories": [
+    [
+      "AI 模型接入与文档处理",
+      "AI Model Access and Document Processing"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-25",
+  "id": "resource-b3cd725d0825a3af06bf18c20c3871a9227f9a4056a91c18c117c81d0baa73e7",
+  "identity": "mcp:ai.2kw/mcp-server",
+  "name": "2kw.ai",
+  "registryId": "ai.2kw/mcp-server",
+  "site": "https://registry.modelcontextprotocol.io/v0.1/servers/ai.2kw%2Fmcp-server/versions/8.0.3",
+  "sourceSignature": "6390c08d41204f422242fbd2d6fdfdee2f03b83a75f2113a31556b235eae98bd",
+  "summary": [
+    "据发布者介绍，这个平台可通过兼容 OpenAI API 的网关访问语言模型，并提供文档信息提取、音频转录和智能体功能。",
+    "The publisher describes a platform for accessing language models through an OpenAI-compatible gateway, extracting information from documents, transcribing audio, and using agents."
+  ],
+  "tested": false,
+  "transport": "stdio",
+  "type": "mcp",
+  "verificationSources": [
+    "https://registry.modelcontextprotocol.io/v0.1/servers/ai.2kw%2Fmcp-server/versions/8.0.3"
+  ],
+  "verifiedAt": "2026-11-27",
+  "version": "8.0.3"
+}

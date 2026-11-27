@@ -1,0 +1,28 @@
+{
+  "addedAt": "2026-11-27",
+  "categories": [
+    [
+      "提示词查找与管理",
+      "Prompt Discovery and Management"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-26",
+  "id": "resource-f68fdae04ea0c3bc8ee79ccebcb3189bcb76d0298a84a425bf3e11e133720315",
+  "identity": "github:606031950",
+  "license": "MIT",
+  "name": "rockbenben/ChatGPT-Shortcut",
+  "repository": "https://github.com/rockbenben/ChatGPT-Shortcut",
+  "repositoryId": "606031950",
+  "site": "https://github.com/rockbenben/ChatGPT-Shortcut",
+  "sourceSignature": "4e9a0d0cd281792ee7ef28b3dbf2600173bdf23ed426265f72a6656fbc82a3fc",
+  "summary": [
+    "发布者提供可搜索的现成提示词库，涵盖 ChatGPT、Claude、Gemini 和 Cursor，可将常用提示词收藏到个人库中。",
+    "The publisher offers a searchable library of ready-to-use prompts for ChatGPT, Claude, Gemini, and Cursor, with the option to save favorites to a personal collection."
+  ],
+  "tested": false,
+  "type": "prompts",
+  "verificationSources": [
+    "https://api.github.com/search/repositories?page=1&per_page=30&q=topic%3Aprompt-templates+archived%3Afalse+fork%3Afalse&sort=stars"
+  ],
+  "verifiedAt": "2026-11-27"
+}

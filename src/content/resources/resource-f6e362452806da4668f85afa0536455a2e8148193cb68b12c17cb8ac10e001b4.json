@@ -1,0 +1,28 @@
+{
+  "addedAt": "2026-11-27",
+  "categories": [
+    [
+      "提示词模板管理",
+      "Prompt Template Management"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-26",
+  "id": "resource-f6e362452806da4668f85afa0536455a2e8148193cb68b12c17cb8ac10e001b4",
+  "identity": "github:1306038089",
+  "license": "MIT",
+  "name": "Ares960826/Quiver",
+  "repository": "https://github.com/Ares960826/Quiver",
+  "repositoryId": "1306038089",
+  "site": "https://github.com/Ares960826/Quiver",
+  "sourceSignature": "a840d3009d7c1471921b898fc8eda54a850ff8a2ac503f1dd98f18adc1c222e8",
+  "summary": [
+    "据发布者介绍，Quiver 可用于整理提示词并调用可重复使用的模板。",
+    "The publisher describes Quiver as a tool for organizing prompts and launching reusable templates."
+  ],
+  "tested": false,
+  "type": "prompts",
+  "verificationSources": [
+    "https://api.github.com/search/repositories?page=2&per_page=30&q=topic%3Aprompt-templates+archived%3Afalse+fork%3Afalse&sort=stars"
+  ],
+  "verifiedAt": "2026-11-27"
+}

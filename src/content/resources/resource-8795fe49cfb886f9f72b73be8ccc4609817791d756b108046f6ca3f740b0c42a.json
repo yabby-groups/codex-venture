@@ -1,0 +1,28 @@
+{
+  "addedAt": "2026-11-27",
+  "categories": [
+    [
+      "机器学习教育",
+      "Machine Learning Education"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-26",
+  "id": "resource-8795fe49cfb886f9f72b73be8ccc4609817791d756b108046f6ca3f740b0c42a",
+  "identity": "github:803017533",
+  "license": "BSD-3-Clause",
+  "name": "hanhuark/machine-learning-for-engineers",
+  "repository": "https://github.com/hanhuark/machine-learning-for-engineers",
+  "repositoryId": "803017533",
+  "site": "https://github.com/hanhuark/machine-learning-for-engineers",
+  "sourceSignature": "c0efe523fa1495ab9802db59ff7384a21a4e2c29763e97cf51a11209a0ab8944",
+  "summary": [
+    "发布者为工程师提供教程、作业和项目，帮助他们掌握 AI 基础知识，并练习将机器学习应用于物理系统。",
+    "The publisher offers tutorials, assignments, and projects for engineers to build AI literacy and practice applying machine learning to physical systems."
+  ],
+  "tested": false,
+  "type": "resources",
+  "verificationSources": [
+    "https://api.github.com/search/repositories?page=1&per_page=30&q=topic%3Amachine-learning-course+archived%3Afalse+fork%3Afalse&sort=stars"
+  ],
+  "verifiedAt": "2026-11-27"
+}

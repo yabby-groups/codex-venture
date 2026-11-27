@@ -1,0 +1,28 @@
+{
+  "addedAt": "2026-11-27",
+  "categories": [
+    [
+      "软件组件设计",
+      "Software Component Design"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-25",
+  "id": "resource-dcaf0fe2aeec861e9d7244928764302f153041a450d497c301c5fa728f8ab60f",
+  "identity": "github:1095991387",
+  "license": "MIT",
+  "name": "ancoleman/ai-design-components",
+  "repository": "https://github.com/ancoleman/ai-design-components",
+  "repositoryId": "1095991387",
+  "site": "https://github.com/ancoleman/ai-design-components",
+  "sourceSignature": "fba013b724c4ef6c2a8a9599eeea3d97a6a9676fbab013f12e65c638a5941666",
+  "summary": [
+    "发布者提供了一组 Claude 技能，用于辅助设计用户界面、用户体验和后端组件。",
+    "The publisher offers Claude skills to guide the design of user interfaces, user experiences, and backend components."
+  ],
+  "tested": false,
+  "type": "tools",
+  "verificationSources": [
+    "https://api.github.com/search/repositories?page=1&per_page=30&q=topic%3Aai-design+archived%3Afalse+fork%3Afalse&sort=stars"
+  ],
+  "verifiedAt": "2026-11-27"
+}

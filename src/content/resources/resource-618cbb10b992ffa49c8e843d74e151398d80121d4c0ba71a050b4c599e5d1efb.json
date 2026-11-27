@@ -1,0 +1,34 @@
+{
+  "addedAt": "2026-11-27",
+  "categories": [
+    [
+      "AI 辅助编程",
+      "AI-Assisted Coding"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-25",
+  "id": "resource-618cbb10b992ffa49c8e843d74e151398d80121d4c0ba71a050b4c599e5d1efb",
+  "identity": "openvsx:agent-system.agent-system",
+  "install": "https://open-vsx.org/extension/agent-system/agent-system",
+  "name": "Agent System — Multi-Agent Coding Assistant",
+  "platforms": [
+    "Open VSX"
+  ],
+  "site": "https://open-vsx.org/extension/agent-system/agent-system",
+  "sourceSignature": "695136e53bf2367216850cd37a2284e823919a9fd5ea7b546ae67f9cc7191abf",
+  "summary": [
+    "据发布者介绍，这款编程助手可将规划、编码、审查和测试分配给不同的智能体，并让你选择由哪个智能体运行工具。",
+    "The publisher describes a coding assistant that lets you assign planning, coding, review, and testing to different agents and choose which agent can run tools."
+  ],
+  "tested": false,
+  "type": "plugins",
+  "verificationSources": [
+    "https://open-vsx.org/api/-/search?offset=0&query=coding+assistant&size=25",
+    "https://open-vsx.org/api/-/search?offset=125&query=language+model&size=25",
+    "https://open-vsx.org/api/-/search?offset=175&query=AI+assistant&size=25",
+    "https://open-vsx.org/api/-/search?offset=200&query=AI+assistant&size=25",
+    "https://open-vsx.org/api/-/search?offset=200&query=Copilot&size=25"
+  ],
+  "verifiedAt": "2026-11-27",
+  "version": "0.12.99"
+}

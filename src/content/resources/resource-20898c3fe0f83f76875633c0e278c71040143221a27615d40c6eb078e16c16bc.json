@@ -1,0 +1,28 @@
+{
+  "addedAt": "2026-11-27",
+  "categories": [
+    [
+      "云资源管理",
+      "Cloud Resource Management"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-26",
+  "id": "resource-20898c3fe0f83f76875633c0e278c71040143221a27615d40c6eb078e16c16bc",
+  "identity": "github-skill:1135891523:.github/plugins/azure-sdk-dotnet/skills/azure-resource-manager-redis-dotnet/SKILL.md",
+  "name": "azure-resource-manager-redis-dotnet",
+  "repository": "https://github.com/microsoft/skills",
+  "repositoryId": "1135891523",
+  "site": "https://github.com/microsoft/skills/blob/main/.github/plugins/azure-sdk-dotnet/skills/azure-resource-manager-redis-dotnet/SKILL.md",
+  "sourcePath": ".github/plugins/azure-sdk-dotnet/skills/azure-resource-manager-redis-dotnet/SKILL.md",
+  "sourceSignature": "d3e9951a0107f908ff5df5b13cc5b5007a7b844fb5ddd5b0d7c61b044ddef1e9",
+  "summary": [
+    "发布者的指南介绍如何使用 Azure Resource Manager 的 .NET SDK 创建 Azure Cache for Redis 实例，并管理防火墙规则、访问密钥、修补计划、异地复制和专用终结点。",
+    "The publisher’s guide shows how to provision Azure Cache for Redis and manage firewall rules, access keys, patch schedules, geo-replication, and private endpoints using the Azure Resource Manager SDK for .NET."
+  ],
+  "tested": false,
+  "type": "skills",
+  "verificationSources": [
+    "https://github.com/microsoft/skills/blob/main/.github/plugins/azure-sdk-dotnet/skills/azure-resource-manager-redis-dotnet/SKILL.md"
+  ],
+  "verifiedAt": "2026-11-27"
+}

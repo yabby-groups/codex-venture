@@ -1,0 +1,28 @@
+{
+  "addedAt": "2026-11-27",
+  "categories": [
+    [
+      "语音合成",
+      "Speech Synthesis"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-26",
+  "id": "resource-1c578370c349badc999df42bd5a61d65794e06a03cea5dacfacdfc9e58399a6e",
+  "identity": "github:593927328",
+  "license": "Apache-2.0",
+  "name": "lifeiteng/vall-e",
+  "repository": "https://github.com/lifeiteng/vall-e",
+  "repositoryId": "593927328",
+  "site": "https://github.com/lifeiteng/vall-e",
+  "sourceSignature": "e5a08a800444c6f664d716bc1b5b5ec11ee2f5203abd0634a5d48a76a2e1ffeb",
+  "summary": [
+    "发布者提供了 VALL-E 的 PyTorch 实现和复现演示，可用于了解零样本文本转语音。",
+    "The publisher provides a PyTorch implementation of VALL-E and a reproduction demo for exploring zero-shot text-to-speech."
+  ],
+  "tested": false,
+  "type": "open-source",
+  "verificationSources": [
+    "https://api.github.com/search/repositories?page=3&per_page=30&q=topic%3Atext-to-speech+archived%3Afalse+fork%3Afalse&sort=stars"
+  ],
+  "verifiedAt": "2026-11-27"
+}

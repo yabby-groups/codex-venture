@@ -1,0 +1,28 @@
+{
+  "addedAt": "2026-11-27",
+  "categories": [
+    [
+      "设计编辑工作流",
+      "Design Editing Workflows"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-26",
+  "id": "resource-fe0bc8dc246ffcdce1ebd25dfeb4a0e3ada2775c626390ce9b4a25b45123daa8",
+  "identity": "github:1214189713",
+  "license": "MIT",
+  "name": "julilaoshi/julilaoshi-design",
+  "repository": "https://github.com/julilaoshi/julilaoshi-design",
+  "repositoryId": "1214189713",
+  "site": "https://github.com/julilaoshi/julilaoshi-design",
+  "sourceSignature": "4ab9d8eca8e843e31127938f90bee5f0dc4dec4e7f16413c0e08443e9bc87779",
+  "summary": [
+    "发布者提供用于编辑 Affinity 和 HTML 设计稿的工作流，并附有浏览器编辑器和计算机操作指引。",
+    "The publisher offers workflows for editing Affinity and HTML designs, along with a browser editor and guidance on computer use."
+  ],
+  "tested": false,
+  "type": "workflows",
+  "verificationSources": [
+    "https://api.github.com/search/repositories?page=2&per_page=30&q=topic%3Aai-workflow+archived%3Afalse+fork%3Afalse&sort=stars"
+  ],
+  "verifiedAt": "2026-11-27"
+}
