@@ -1,0 +1,28 @@
+{
+  "addedAt": "2026-11-28",
+  "categories": [
+    [
+      "Microsoft 365 智能体开发",
+      "Microsoft 365 agent development"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-26",
+  "id": "resource-4334ee5d2c48a32b5c70eba8cd8331a632c6b6a7b514601983cce529b8dfe4e2",
+  "identity": "github-skill:1135891523:.github/plugins/azure-sdk-dotnet/skills/m365-agents-dotnet/SKILL.md",
+  "name": "m365-agents-dotnet",
+  "repository": "https://github.com/microsoft/skills",
+  "repositoryId": "1135891523",
+  "site": "https://github.com/microsoft/skills/blob/main/.github/plugins/azure-sdk-dotnet/skills/m365-agents-dotnet/SKILL.md",
+  "sourcePath": ".github/plugins/azure-sdk-dotnet/skills/m365-agents-dotnet/SKILL.md",
+  "sourceSignature": "2df7d74374c70401260f8a72881be13a6fbc9505c57d2b276ff7f4ea848c5a89",
+  "summary": [
+    "微软的技能节选列出了构建 Microsoft 365 智能体所需的 NuGet 包，涵盖 ASP.NET Core 托管、AgentApplication 路由和 MSAL 身份验证。可先在 .NET 项目中添加 Microsoft.Agents.Hosting.AspNetCore 和 Microsoft.Agents.Authentication.Msal。节选在 appsettings.json 的 TokenValidation 处截断，完成身份验证配置还需查阅完整文档。",
+    "Microsoft’s skill excerpt shows which NuGet packages to add when building a Microsoft 365 agent in .NET with ASP.NET Core hosting, AgentApplication routing, and MSAL authentication. Start with Microsoft.Agents.Hosting.AspNetCore and Microsoft.Agents.Authentication.Msal. The excerpt cuts off at TokenValidation in appsettings.json, so you’ll need the full configuration reference to finish setting up authentication."
+  ],
+  "tested": false,
+  "type": "skills",
+  "verificationSources": [
+    "https://github.com/microsoft/skills/blob/main/.github/plugins/azure-sdk-dotnet/skills/m365-agents-dotnet/SKILL.md"
+  ],
+  "verifiedAt": "2026-11-28"
+}
