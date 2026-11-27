@@ -1,0 +1,28 @@
+{
+  "addedAt": "2026-11-27",
+  "categories": [
+    [
+      "编程代理治理",
+      "Coding Agent Governance"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-26",
+  "id": "resource-b6f7f6ba2a5f41d779cc0442644e017d0f2219f25f8d1f74d04dac54543effa2",
+  "identity": "github:1208266947",
+  "license": "MIT",
+  "name": "KbWen/agentic-os",
+  "repository": "https://github.com/KbWen/agentic-os",
+  "repositoryId": "1208266947",
+  "site": "https://github.com/KbWen/agentic-os",
+  "sourceSignature": "17d7e74c0530fb4fd71e2c5cc862cdf620ff8a02e82961a997f25602f0e1b73c",
+  "summary": [
+    "作者提供了可写入 AGENTS.md 的规则，引导编程代理依次完成规划、构建、审查、测试和交付，并要求每一步都有完成凭据。",
+    "The author provides AGENTS.md rules that guide coding agents through planning, building, reviewing, testing, and shipping, with evidence required to mark each step complete."
+  ],
+  "tested": false,
+  "type": "workflows",
+  "verificationSources": [
+    "https://api.github.com/search/repositories?page=1&per_page=30&q=topic%3Aai-workflow+archived%3Afalse+fork%3Afalse&sort=stars"
+  ],
+  "verifiedAt": "2026-11-27"
+}

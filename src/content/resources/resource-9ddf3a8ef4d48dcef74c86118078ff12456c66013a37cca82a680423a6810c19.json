@@ -1,0 +1,28 @@
+{
+  "addedAt": "2026-11-27",
+  "categories": [
+    [
+      "航空活动查询",
+      "Aviation Event Search"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-25",
+  "id": "resource-9ddf3a8ef4d48dcef74c86118078ff12456c66013a37cca82a680423a6810c19",
+  "identity": "mcp:aero.events/events",
+  "name": "Events.Aero",
+  "registryId": "aero.events/events",
+  "site": "https://registry.modelcontextprotocol.io/v0.1/servers/aero.events%2Fevents/versions/1.0.0",
+  "sourceSignature": "1e2389a8616fd5c4428c23341999e8fb28d8b3efdc3f42ab7ebada3e478ed8ff",
+  "summary": [
+    "据发布者介绍，Events.Aero 是一项 MCP 服务，可用于查找航空展、飞行聚会、工作坊和航空俱乐部活动。",
+    "The publisher describes Events.Aero as an MCP service for finding airshows, fly-ins, workshops, and aviation club meetups."
+  ],
+  "tested": false,
+  "transport": "streamable-http",
+  "type": "mcp",
+  "verificationSources": [
+    "https://registry.modelcontextprotocol.io/v0.1/servers/aero.events%2Fevents/versions/1.0.0"
+  ],
+  "verifiedAt": "2026-11-27",
+  "version": "1.0.0"
+}

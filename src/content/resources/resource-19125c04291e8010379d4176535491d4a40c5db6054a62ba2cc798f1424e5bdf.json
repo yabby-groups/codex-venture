@@ -1,0 +1,29 @@
+{
+  "addedAt": "2026-11-27",
+  "categories": [
+    [
+      "语音识别",
+      "Speech Recognition"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-25",
+  "id": "resource-19125c04291e8010379d4176535491d4a40c5db6054a62ba2cc798f1424e5bdf",
+  "identity": "hf:vasista22/whisper-tamil-small",
+  "name": "vasista22/whisper-tamil-small",
+  "site": "https://huggingface.co/vasista22/whisper-tamil-small",
+  "sourceSignature": "fbdc80903a5b0741006741aa8c8d8ed4b5dec14c36c74a0097f002630e578091",
+  "summary": [
+    "模型卡介绍了如何使用 Whisper Tamil Small 转写单个泰米尔语音频文件，并给出了用于在完整数据集上评估模型的脚本出处。",
+    "The model card describes how to transcribe individual Tamil audio files with Whisper Tamil Small and points to scripts for evaluating the model on a full dataset."
+  ],
+  "tags": [
+    "automatic-speech-recognition"
+  ],
+  "tested": false,
+  "type": "models",
+  "verificationSources": [
+    "https://huggingface.co/api/models?cursor=eyIkb3IiOlt7ImRvd25sb2FkcyI6MTg2NTExLCJfaWQiOnsiJGd0IjoiNjYyYWVhZDQ5NDhiOTA4YTAwODZjYzU5In19LHsiZG93bmxvYWRzIjp7IiRsdCI6MTg2NTExfX0seyJkb3dubG9hZHMiOm51bGx9XSwic2VhcmNoU2VxdWVuY2VUb2tlbiI6IkNLVFMyd0VhQ1NFQUFBQUFlTVFHUVJvT1dneG1LdXJVbEl1UWlnQ0d6RmtpRGxvTVppcnExSlNMa0lvQWhzeFoifQ%3D%3D&direction=-1&full=true&limit=30&pipeline_tag=automatic-speech-recognition&sort=downloads",
+    "https://huggingface.co/vasista22/whisper-tamil-small/raw/main/README.md"
+  ],
+  "verifiedAt": "2026-11-27"
+}

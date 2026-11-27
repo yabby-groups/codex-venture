@@ -1,0 +1,31 @@
+{
+  "addedAt": "2026-11-27",
+  "categories": [
+    [
+      "编程代理启动工具",
+      "Coding Agent Launchers"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-25",
+  "id": "resource-57eb0bf215e19da12e789e545fe02b698607335c4307a06f8c88c3d5c4ee3a71",
+  "identity": "openvsx:mikesoft.vscode-copilot-cli-launcher",
+  "install": "https://open-vsx.org/extension/mikesoft/vscode-copilot-cli-launcher",
+  "name": "Copilot CLI Launcher — Run GitHub Copilot in a Side Terminal",
+  "platforms": [
+    "Open VSX"
+  ],
+  "site": "https://open-vsx.org/extension/mikesoft/vscode-copilot-cli-launcher",
+  "sourceSignature": "3c535ff9cfa60b9dfc9deb12ca1e6e5f935be8b8715247968278cf9246cfa52f",
+  "summary": [
+    "据发布者介绍，这款非官方扩展可通过编辑器工具栏打开新的侧边终端，并在其中启动 GitHub Copilot CLI。",
+    "The publisher describes an unofficial extension that opens a fresh side terminal from the editor toolbar and launches GitHub Copilot CLI there."
+  ],
+  "tested": false,
+  "type": "plugins",
+  "verificationSources": [
+    "https://open-vsx.org/api/-/search?offset=375&query=coding+assistant&size=25",
+    "https://open-vsx.org/api/-/search?offset=50&query=Copilot&size=25"
+  ],
+  "verifiedAt": "2026-11-27",
+  "version": "0.2.11"
+}

@@ -1,0 +1,28 @@
+{
+  "addedAt": "2026-11-27",
+  "categories": [
+    [
+      "大语言模型推理优化",
+      "LLM Inference Optimization"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-26",
+  "id": "resource-175882672ee4dd439e44f88c7dcdb3bc884c89e4917018af723609db55a5d72c",
+  "identity": "github:1320191889",
+  "license": "Apache-2.0",
+  "name": "patchy631/time-to-first-token",
+  "repository": "https://github.com/patchy631/time-to-first-token",
+  "repositoryId": "1320191889",
+  "site": "https://github.com/patchy631/time-to-first-token",
+  "sourceSignature": "3c8f0fb0967521a86e07120895d2f02a9d814daee7316181187919882c8edf1b",
+  "summary": [
+    "作者提供了一份为期 10 周、每天 30 分钟的学习路线，帮助读者学习如何部署和优化大语言模型推理服务。主题包括 vLLM、SGLang、量化、推测解码和基准测试。",
+    "The author outlines a 10-week study plan at 30 minutes a day for learning how to serve and optimize LLM inference. Topics include vLLM, SGLang, quantization, speculative decoding, and benchmarking."
+  ],
+  "tested": false,
+  "type": "open-source",
+  "verificationSources": [
+    "https://api.github.com/search/repositories?page=2&per_page=30&q=topic%3Allm-inference+archived%3Afalse+fork%3Afalse&sort=stars"
+  ],
+  "verifiedAt": "2026-11-27"
+}

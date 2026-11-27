@@ -1,0 +1,28 @@
+{
+  "addedAt": "2026-11-27",
+  "categories": [
+    [
+      "提示词编写",
+      "Prompt Authoring"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-26",
+  "id": "resource-b63af6227a44ed7118c17f4284658c8d310e70fa5e52cffd4069cd2512024d38",
+  "identity": "github:1429154491",
+  "license": "MIT",
+  "name": "ynqa/claude-convey",
+  "repository": "https://github.com/ynqa/claude-convey",
+  "repositoryId": "1429154491",
+  "site": "https://github.com/ynqa/claude-convey",
+  "sourceSignature": "c8620a1162c7eae682957a388eed77272942017429fcaadea51be6046f9fa31b",
+  "summary": [
+    "据作者介绍，claude-convey 可让用户通过选择表单选项来填写 Claude Code 提示词。",
+    "The author describes claude-convey as a way to fill in Claude Code prompts by selecting options in a form."
+  ],
+  "tested": false,
+  "type": "prompts",
+  "verificationSources": [
+    "https://api.github.com/search/repositories?page=2&per_page=30&q=topic%3Aprompt-templates+archived%3Afalse+fork%3Afalse&sort=stars"
+  ],
+  "verifiedAt": "2026-11-27"
+}

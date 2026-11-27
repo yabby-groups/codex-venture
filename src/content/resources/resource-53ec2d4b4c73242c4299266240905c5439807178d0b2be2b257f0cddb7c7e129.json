@@ -1,0 +1,28 @@
+{
+  "addedAt": "2026-11-27",
+  "categories": [
+    [
+      "语言模型学习",
+      "Language Model Education"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-26",
+  "id": "resource-53ec2d4b4c73242c4299266240905c5439807178d0b2be2b257f0cddb7c7e129",
+  "identity": "github:896496103",
+  "license": "Apache-2.0",
+  "name": "mytechnotalent/RE-GPT",
+  "repository": "https://github.com/mytechnotalent/RE-GPT",
+  "repositoryId": "896496103",
+  "site": "https://github.com/mytechnotalent/RE-GPT",
+  "sourceSignature": "6ba51487af94dc3fb741fce6b9bcb9a11a408a3621c82f2a960feb65c7b6cb97",
+  "summary": [
+    "据作者介绍，RE-GPT 通过代码练习带领读者从零构建 GPT 模型，理解其架构。",
+    "The author presents RE-GPT as a hands-on coding guide for building a GPT model from scratch and learning how its architecture works."
+  ],
+  "tested": false,
+  "type": "resources",
+  "verificationSources": [
+    "https://api.github.com/search/repositories?page=1&per_page=30&q=topic%3Aai-education+archived%3Afalse+fork%3Afalse&sort=stars"
+  ],
+  "verifiedAt": "2026-11-27"
+}
