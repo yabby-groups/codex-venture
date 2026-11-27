@@ -1,0 +1,27 @@
+{
+  "addedAt": "2026-11-27",
+  "categories": [
+    [
+      "机器学习教育",
+      "Machine Learning Education"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-26",
+  "id": "resource-1e413814d609f07adc2cf53bd1c782543c766406fd0cfb39fc009003ed0bade0",
+  "identity": "github:83013470",
+  "name": "artonson/ysda-asml-2018",
+  "repository": "https://github.com/artonson/ysda-asml-2018",
+  "repositoryId": "83013470",
+  "site": "https://github.com/artonson/ysda-asml-2018",
+  "sourceSignature": "b118b972e783a647981456ce7c7963dea91d2c9ca77cce8c6cd260c2bfd154ee",
+  "summary": [
+    "该仓库汇集了 Yandex 数据分析学院 2018 年《机器学习中的应用统计》课程资料。",
+    "The repository collects materials from Yandex School of Data Analysis’s 2018 course on applied statistics in machine learning."
+  ],
+  "tested": false,
+  "type": "resources",
+  "verificationSources": [
+    "https://api.github.com/search/repositories?page=1&per_page=30&q=topic%3Amachine-learning-course+archived%3Afalse+fork%3Afalse&sort=stars"
+  ],
+  "verifiedAt": "2026-11-27"
+}

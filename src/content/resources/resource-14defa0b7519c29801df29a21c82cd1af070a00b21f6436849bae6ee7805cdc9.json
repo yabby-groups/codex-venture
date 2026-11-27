@@ -1,0 +1,29 @@
+{
+  "addedAt": "2026-11-27",
+  "categories": [
+    [
+      "语音识别",
+      "Speech Recognition"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-25",
+  "id": "resource-14defa0b7519c29801df29a21c82cd1af070a00b21f6436849bae6ee7805cdc9",
+  "identity": "hf:fluidinference/parakeet-ctc-110m-coreml",
+  "name": "FluidInference/parakeet-ctc-110m-coreml",
+  "site": "https://huggingface.co/FluidInference/parakeet-ctc-110m-coreml",
+  "sourceSignature": "e2644bf2cb22309126a922be5c901d26fb746570501843a5b73575ca0f5d9a4d",
+  "summary": [
+    "FluidInference 的模型卡介绍了用于转录英语音频的 Parakeet CTC 110M Core ML 转换版，并展示了如何用 Python 运行推理。",
+    "FluidInference’s model card describes a Core ML conversion of Parakeet CTC 110M for transcribing English audio and shows how to run inference from Python."
+  ],
+  "tags": [
+    "automatic-speech-recognition"
+  ],
+  "tested": false,
+  "type": "models",
+  "verificationSources": [
+    "https://huggingface.co/FluidInference/parakeet-ctc-110m-coreml/raw/main/README.md",
+    "https://huggingface.co/api/models?cursor=eyIkb3IiOlt7ImRvd25sb2FkcyI6MTEzMzI0LCJfaWQiOnsiJGd0IjoiNmE2YTM5N2VjNTdiNDM2MzJjNjQ0ZWI4In19LHsiZG93bmxvYWRzIjp7IiRsdCI6MTEzMzI0fX0seyJkb3dubG9hZHMiOm51bGx9XSwic2VhcmNoU2VxdWVuY2VUb2tlbiI6IkNOMkR4QUlhQ1NFQUFBQUF3S3I3UUJvT1dneHFhamwreFh0RFl5eGtUcmdpRGxvTWFtbzVmc1Y3UTJNc1pFNjQifQ%3D%3D&direction=-1&full=true&limit=30&pipeline_tag=automatic-speech-recognition&sort=downloads"
+  ],
+  "verifiedAt": "2026-11-27"
+}

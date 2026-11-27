@@ -1,0 +1,28 @@
+{
+  "addedAt": "2026-11-27",
+  "categories": [
+    [
+      "智能体工作流编排",
+      "Agent Workflow Orchestration"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-26",
+  "id": "resource-3e8a02e88d023275f7306b7b8ea1a5c45af6e0dfa322e835ca6b2288d3dd6bcc",
+  "identity": "github:1164005541",
+  "license": "Apache-2.0",
+  "name": "foryourhealth111-pixel/Vibe-Skills",
+  "repository": "https://github.com/foryourhealth111-pixel/Vibe-Skills",
+  "repositoryId": "1164005541",
+  "site": "https://github.com/foryourhealth111-pixel/Vibe-Skills",
+  "sourceSignature": "4c56ca408f3bac52a8d123e8ad50b103ec38a488900e82fc926828f512e870c9",
+  "summary": [
+    "据发布方介绍，Vibe-Skills 可为 AI 智能体选择所需技能，并编排这些技能在工作流中的调用。",
+    "The publisher describes Vibe-Skills as a tool for selecting skills for AI agents and coordinating how those skills are used in workflows."
+  ],
+  "tested": false,
+  "type": "workflows",
+  "verificationSources": [
+    "https://api.github.com/search/repositories?page=1&per_page=30&q=topic%3Aai-workflow+archived%3Afalse+fork%3Afalse&sort=stars"
+  ],
+  "verifiedAt": "2026-11-27"
+}

@@ -1,0 +1,27 @@
+{
+  "addedAt": "2026-11-27",
+  "categories": [
+    [
+      "机器学习项目",
+      "Machine Learning Projects"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-26",
+  "id": "resource-21828ef632371f3b343a3a48783e1feff304e7cc1cc64cab1e765d6bbbab1205",
+  "identity": "github:719104451",
+  "name": "data-flair/machine-learning-projects",
+  "repository": "https://github.com/data-flair/machine-learning-projects",
+  "repositoryId": "719104451",
+  "site": "https://github.com/data-flair/machine-learning-projects",
+  "sourceSignature": "d5e6cc79db6be10fc7c49c046193667b75bc45b38b3ccbd575689a4ab297aac6",
+  "summary": [
+    "DataFlair 汇集了带源代码的机器学习项目，供读者动手练习，涵盖入门、进阶和毕业设计项目。",
+    "DataFlair lists machine learning projects with source code for hands-on practice, from beginner exercises to advanced and final-year projects."
+  ],
+  "tested": false,
+  "type": "resources",
+  "verificationSources": [
+    "https://api.github.com/search/repositories?page=1&per_page=30&q=topic%3Amachine-learning-course+archived%3Afalse+fork%3Afalse&sort=stars"
+  ],
+  "verifiedAt": "2026-11-27"
+}

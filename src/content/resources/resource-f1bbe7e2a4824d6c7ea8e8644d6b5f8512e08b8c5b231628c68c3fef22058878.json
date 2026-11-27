@@ -1,0 +1,31 @@
+{
+  "addedAt": "2026-11-27",
+  "categories": [
+    [
+      "工单与项目管理",
+      "Issue and Project Management"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-25",
+  "id": "resource-f1bbe7e2a4824d6c7ea8e8644d6b5f8512e08b8c5b231628c68c3fef22058878",
+  "identity": "github-skill:1103643573:skills/.curated/linear/SKILL.md",
+  "name": "linear",
+  "platforms": [
+    "Codex"
+  ],
+  "repository": "https://github.com/openai/skills",
+  "repositoryId": "1103643573",
+  "site": "https://github.com/openai/skills/blob/main/skills/.curated/linear/SKILL.md",
+  "sourcePath": "skills/.curated/linear/SKILL.md",
+  "sourceSignature": "2db5409399377f13a4f29f76b0d40a42d3a09b10e779aefbfb0c10b747bc7ae8",
+  "summary": [
+    "该技能的文档介绍了如何在 Codex 中用自然语言通过 Linear MCP 查看、创建和更新 Linear 工单，以及管理项目。",
+    "The skill’s documentation describes how to use natural-language requests in Codex to read, create, and update Linear issues and work with projects through Linear MCP."
+  ],
+  "tested": false,
+  "type": "skills",
+  "verificationSources": [
+    "https://github.com/openai/skills/blob/main/skills/.curated/linear/SKILL.md"
+  ],
+  "verifiedAt": "2026-11-27"
+}

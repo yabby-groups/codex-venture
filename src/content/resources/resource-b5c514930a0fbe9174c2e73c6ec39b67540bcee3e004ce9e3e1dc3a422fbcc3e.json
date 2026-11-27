@@ -1,0 +1,28 @@
+{
+  "addedAt": "2026-11-27",
+  "categories": [
+    [
+      "智能体配置模板",
+      "Agent Configuration Templates"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-25",
+  "id": "resource-b5c514930a0fbe9174c2e73c6ec39b67540bcee3e004ce9e3e1dc3a422fbcc3e",
+  "identity": "github:1150496175",
+  "license": "MIT",
+  "name": "mergisi/awesome-openclaw-agents",
+  "repository": "https://github.com/mergisi/awesome-openclaw-agents",
+  "repositoryId": "1150496175",
+  "site": "https://github.com/mergisi/awesome-openclaw-agents",
+  "sourceSignature": "48c9dca366d120e516101a33bf41c904994d3812236d4e356796a28672fdeb28",
+  "summary": [
+    "该仓库按类别汇集了 OpenClaw 智能体模板，读者可以浏览这些模板，并以此为起点编写自己的 SOUL.md 配置。",
+    "The repository collects OpenClaw agent templates that readers can browse by category and use as starting points for their own SOUL.md configurations."
+  ],
+  "tested": false,
+  "type": "tools",
+  "verificationSources": [
+    "https://api.github.com/search/repositories?page=1&per_page=30&q=topic%3Aai-automation+archived%3Afalse+fork%3Afalse&sort=stars"
+  ],
+  "verifiedAt": "2026-11-27"
+}
