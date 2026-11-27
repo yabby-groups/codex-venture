@@ -9,10 +9,10 @@
 ## 审核与授权
 
 1. GA4 创建属性和 Web 数据流。将 Measurement ID 配置到 Workers Builds 的 `VENTURE_GA4_ID`，将数字属性 ID 配置到统计环境的 `GOOGLE_GA4_PROPERTY_ID`。开启 Google Analytics Data API，为报表用户授予只读访问，授权 `analytics.readonly` OAuth。使用 `GOOGLE_GA4_CLIENT_ID`、`GOOGLE_GA4_CLIENT_SECRET`、`GOOGLE_GA4_REFRESH_TOKEN` 保存凭据。GA4 只有访问者明确选择同意后才加载。
-2. AdSense 注册或绑定已有账号，添加站点并提交审核。按 AdSense 提供的方式验证所有权。可在提交审核前设置 Workers Builds 的 `VENTURE_ADSENSE_PUBLISHER=pub-…`，构建会发布授权卖家行。等站点审核通过后完成身份、地址、税务和收款认证。报表另需 AdSense Management API 和 `adsense.readonly` OAuth。用 `GOOGLE_ADSENSE_ACCOUNT=accounts/pub-…` 和 `GOOGLE_ADSENSE_CLIENT_ID`、`GOOGLE_ADSENSE_CLIENT_SECRET`、`GOOGLE_ADSENSE_REFRESH_TOKEN` 配置。
+2. AdSense 注册或绑定已有账号，添加站点并提交审核。按 AdSense 提供的方式验证所有权。所有权验证使用 `ads.txt`。构建从统一配置的 `ads.publisher` 读取公开发布商 ID，Workers Builds 的 `VENTURE_ADSENSE_PUBLISHER` 可覆盖该值。等站点审核通过后完成身份、地址、税务和收款认证。报表另需 AdSense Management API 和 `adsense.readonly` OAuth。用 `GOOGLE_ADSENSE_ACCOUNT=accounts/pub-…` 和 `GOOGLE_ADSENSE_CLIENT_ID`、`GOOGLE_ADSENSE_CLIENT_SECRET`、`GOOGLE_ADSENSE_REFRESH_TOKEN` 配置。
 3. 在 Google 认证 CMP 中配置法定地区的广告同意及撤回，包括 EEA、英国、瑞士和适用的美国州。在 Workers Builds 设置认证 CMP 提供的 HTTPS 脚本 `VENTURE_CERTIFIED_CMP_SCRIPT`。该脚本需独立引导并暴露 TCF v2 API，且提供适用美国州的隐私信号与撤回界面。使用供应商预览功能验证拒绝、接受、撤回及区域配置。本站对可选统计和广告采用全球主动选择。GPC、DNT 和自动化测试拒绝加载 Google SDK。生产验证避免点按正式广告。
 4. 领取已获审核的广告单元 ID，填入 [统一配置](../config/monetization.json)。确认站点和 CMP 验收后，开启 `ads.enabled`，并在生产构建设置 `VENTURE_ADSENSE_APPROVED=true` 和 `VENTURE_ADSENSE_SERVE=true`。AdSense 控制台关闭自动广告，只使用站点配置的广告位。广告位置限当前有效的实测长文文末。停投可关任一开关并重新部署。
-5. 联盟平台由运营人员选择、注册并确认协议、结算、授权链接和披露。配置项包含唯一 `id`、`category`（`ai-tools`、`saas`、`vps`、`developer-tools`）、`articles`（规范文章路径数组）、`name`、HTTPS `url` 和 `terms`、ISO 日期 `starts` 和 `expires`、`disclosureZh` 和 `disclosureEn`。起日含、截止日不含，按 UTC。活动有变更时重新部署。广告和联盟配置初始均为空。
+5. 联盟平台由运营人员选择、注册并确认协议、结算、授权链接和披露。配置项包含唯一 `id`、`category`（`ai-tools`、`saas`、`vps`、`developer-tools`）、`articles`（规范文章路径数组）、`name`、HTTPS `url` 和 `terms`、ISO 日期 `starts` 和 `expires`、`disclosureZh` 和 `disclosureEn`。起日含、截止日不含，按 UTC。活动有变更时重新部署。广告位和联盟推广配置初始均为空。
 6. Cloudflare 边缘请求需要 `CLOUDFLARE_ZONE_ID` 和只读 Zone Analytics 权限的 `CLOUDFLARE_ZONE_ANALYTICS_TOKEN`。先验证账号套餐允许查询的字段。若缺少明细数据权限，爬虫类别及相关异常保持 UNKNOWN。Search Console 沿用已验证的域名属性和现有 OIDC。需要 VPS 独立同步 Search Console 时，为 VPS 配置只读 OAuth（`GOOGLE_SEARCH_CLIENT_ID`、`GOOGLE_SEARCH_CLIENT_SECRET`、`GOOGLE_SEARCH_REFRESH_TOKEN`）和 `GOOGLE_SEARCH_CONSOLE_PROPERTY`。
 
 ## 私有日报与诊断

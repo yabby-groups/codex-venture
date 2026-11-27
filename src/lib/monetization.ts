@@ -20,12 +20,13 @@ const affiliateSchema = z.object({
 const settings = z.object({
   ads: z.object({
     enabled: z.boolean(),
+    publisher: z.string().regex(/^pub-\d{16}$/).optional(),
     placements: z.record(z.string(), z.string().regex(/^(?:\d{6,20})?$/)),
   }),
   affiliate: z.array(affiliateSchema).refine((rows) => new Set(rows.map(({ id }) => id)).size === rows.length),
 }).parse(config);
 
-export const publisher = z.string().regex(/^pub-\d{16}$/).optional().parse(import.meta.env.VENTURE_ADSENSE_PUBLISHER || undefined);
+export const publisher = z.string().regex(/^pub-\d{16}$/).optional().parse(import.meta.env.VENTURE_ADSENSE_PUBLISHER || settings.ads.publisher);
 export const ga = z.string().regex(/^G-[A-Z0-9]{4,20}$/).optional().parse(import.meta.env.VENTURE_GA4_ID || undefined);
 export const cmp = https.optional().parse(import.meta.env.VENTURE_CERTIFIED_CMP_SCRIPT || undefined);
 export const adsEnabled = settings.ads.enabled && !!publisher && !!cmp &&
