@@ -1,0 +1,28 @@
+{
+  "addedAt": "2026-11-27",
+  "categories": [
+    [
+      "前端界面优化",
+      "Frontend UI Refinement"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-25",
+  "id": "resource-c05d840bf26f9df706604d6258d716460c5da40ce9da0c3b159ef8759fed498c",
+  "identity": "github:1139329853",
+  "license": "MIT",
+  "name": "superdesigndev/superdesign-skill",
+  "repository": "https://github.com/superdesigndev/superdesign-skill",
+  "repositoryId": "1139329853",
+  "site": "https://github.com/superdesigndev/superdesign-skill",
+  "sourceSignature": "dc6b757f074596d0513e8fa74f6f85250b039b8976cd057d4b6d679f927d8a4e",
+  "summary": [
+    "据发布者介绍，这项设计技能可帮助编程智能体优化生成的前端界面。",
+    "The publisher describes a design skill that helps coding agents refine generated frontend interfaces."
+  ],
+  "tested": false,
+  "type": "tools",
+  "verificationSources": [
+    "https://api.github.com/search/repositories?page=1&per_page=30&q=topic%3Aai-design+archived%3Afalse+fork%3Afalse&sort=stars"
+  ],
+  "verifiedAt": "2026-11-27"
+}

@@ -1,0 +1,28 @@
+{
+  "addedAt": "2026-11-27",
+  "categories": [
+    [
+      "图像生成工作流",
+      "Image Generation Workflows"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-26",
+  "id": "resource-94a5a70cff97be3ad9ee53ab24a030c50743cb5f2651fdaa3a349bdeff30df85",
+  "identity": "github:1345611806",
+  "license": "MIT",
+  "name": "GuiYi-Xi/infinite-atelier",
+  "repository": "https://github.com/GuiYi-Xi/infinite-atelier",
+  "repositoryId": "1345611806",
+  "site": "https://github.com/GuiYi-Xi/infinite-atelier",
+  "sourceSignature": "e39fb338815dfc1a2454caf160f74939e3c057e76739594c749b9e375da5a453",
+  "summary": [
+    "据发布者介绍，这个可视化工作区可配置多个提供商的模型、生成图像，并在同一处使用提示词、画布和本地素材。",
+    "The publisher describes a visual workspace for configuring models from multiple providers, generating images, and working with prompts, a canvas, and local assets."
+  ],
+  "tested": false,
+  "type": "workflows",
+  "verificationSources": [
+    "https://api.github.com/search/repositories?page=2&per_page=30&q=topic%3Aai-workflow+archived%3Afalse+fork%3Afalse&sort=stars"
+  ],
+  "verifiedAt": "2026-11-27"
+}

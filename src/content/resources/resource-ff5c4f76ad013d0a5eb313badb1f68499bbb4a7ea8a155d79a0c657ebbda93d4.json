@@ -1,0 +1,28 @@
+{
+  "addedAt": "2026-11-27",
+  "categories": [
+    [
+      "嵌入与重排序模型训练",
+      "Embedding and Reranker Training"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-25",
+  "id": "resource-ff5c4f76ad013d0a5eb313badb1f68499bbb4a7ea8a155d79a0c657ebbda93d4",
+  "identity": "github-skill:1102903896:skills/train-sentence-transformers/SKILL.md",
+  "name": "train-sentence-transformers",
+  "repository": "https://github.com/huggingface/skills",
+  "repositoryId": "1102903896",
+  "site": "https://github.com/huggingface/skills/blob/main/skills/train-sentence-transformers/SKILL.md",
+  "sourcePath": "skills/train-sentence-transformers/SKILL.md",
+  "sourceSignature": "170b6481399aee91f57ba9a408f99efe759cfbdc5c46deef4b0c37610dfd0984",
+  "summary": [
+    "据发布者介绍，这项技能为稠密、稀疏和多向量嵌入模型以及交叉编码器重排序模型提供训练模板和参考资料，涵盖损失函数选择、难负样本挖掘和评估。",
+    "The publisher describes a skill that points readers to training templates and references for dense, sparse, and multi-vector embeddings and cross-encoder rerankers. It covers loss selection, hard-negative mining, and evaluation."
+  ],
+  "tested": false,
+  "type": "skills",
+  "verificationSources": [
+    "https://github.com/huggingface/skills/blob/main/skills/train-sentence-transformers/SKILL.md"
+  ],
+  "verifiedAt": "2026-11-27"
+}

@@ -1,0 +1,28 @@
+{
+  "addedAt": "2026-11-27",
+  "categories": [
+    [
+      "AI 辅助备考",
+      "AI-Assisted Exam Preparation"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-26",
+  "id": "resource-3f189568009fb48145c54d065c8dbbc37f319bd36c2dfa9be2e94261e5e28e4b",
+  "identity": "github:1337899676",
+  "license": "MIT",
+  "name": "jeliael/fakao-ai-exam-engine",
+  "repository": "https://github.com/jeliael/fakao-ai-exam-engine",
+  "repositoryId": "1337899676",
+  "site": "https://github.com/jeliael/fakao-ai-exam-engine",
+  "sourceSignature": "985de7a5c42ac9c6aabdfd79098ced9c19b77a281cfc064da6392014255eefdd",
+  "summary": [
+    "据发布者介绍，这款法考 AI 备考工具覆盖八大科目，提供法条核验、真题解析、模考评分、学习计划和主观题批改。",
+    "The publisher describes an AI study tool for China’s legal professional qualification exam that covers eight subjects and offers statute checks, past-question explanations, mock exam scoring, study plans, and written-answer feedback."
+  ],
+  "tested": false,
+  "type": "resources",
+  "verificationSources": [
+    "https://api.github.com/search/repositories?page=2&per_page=30&q=topic%3Aai-education+archived%3Afalse+fork%3Afalse&sort=stars"
+  ],
+  "verifiedAt": "2026-11-27"
+}

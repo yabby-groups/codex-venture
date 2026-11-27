@@ -1,0 +1,28 @@
+{
+  "addedAt": "2026-11-27",
+  "categories": [
+    [
+      "项目发布视频制作",
+      "Project Launch Videos"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-26",
+  "id": "resource-12d8d252d05ce03a41a9a840ae5aebac05cfece7d091c9b2684d8d5368f508f7",
+  "identity": "github:1271560627",
+  "license": "MIT",
+  "name": "latent-spaces/brag",
+  "repository": "https://github.com/latent-spaces/brag",
+  "repositoryId": "1271560627",
+  "site": "https://github.com/latent-spaces/brag",
+  "sourceSignature": "c0d5c08fd644fd78284a351241f70dadd3cff1606ce13c9335118d0b41636a4d",
+  "summary": [
+    "据发布者介绍，brag 可通过命令行将项目制作成便于分享的发布短视频。",
+    "The publisher describes brag as a command-line tool that turns a project into a short, shareable launch video."
+  ],
+  "tested": false,
+  "type": "open-source",
+  "verificationSources": [
+    "https://api.github.com/search/repositories?page=1&per_page=30&q=topic%3Avideo-generation+archived%3Afalse+fork%3Afalse&sort=stars"
+  ],
+  "verifiedAt": "2026-11-27"
+}

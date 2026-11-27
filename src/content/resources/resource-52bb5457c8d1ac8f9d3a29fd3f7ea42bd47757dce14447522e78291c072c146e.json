@@ -1,0 +1,30 @@
+{
+  "addedAt": "2026-11-27",
+  "categories": [
+    [
+      "编程智能体配置",
+      "Coding Agent Configuration"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-25",
+  "id": "resource-52bb5457c8d1ac8f9d3a29fd3f7ea42bd47757dce14447522e78291c072c146e",
+  "identity": "openvsx:argalla.handsfree-claude-code",
+  "install": "https://open-vsx.org/extension/argalla/handsfree-claude-code",
+  "name": "Handsfree for Claude Code",
+  "platforms": [
+    "Open VSX"
+  ],
+  "site": "https://open-vsx.org/extension/argalla/handsfree-claude-code",
+  "sourceSignature": "2d2a5fe3d3c8d7070d72969b0fdd96cc50414f9cdc8ffc849e5239b093a9f110",
+  "summary": [
+    "据发布者介绍，这款插件用于配置 Claude Code 的自主运行模式，并排查仍然出现权限提示的原因。",
+    "The publisher describes a plugin for configuring autonomous mode in Claude Code and diagnosing why permission prompts still appear."
+  ],
+  "tested": false,
+  "type": "plugins",
+  "verificationSources": [
+    "https://open-vsx.org/api/-/search?offset=50&query=Claude&size=25"
+  ],
+  "verifiedAt": "2026-11-27",
+  "version": "0.1.2"
+}

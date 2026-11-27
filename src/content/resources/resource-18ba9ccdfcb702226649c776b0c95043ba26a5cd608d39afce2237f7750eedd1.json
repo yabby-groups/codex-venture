@@ -1,0 +1,29 @@
+{
+  "addedAt": "2026-11-27",
+  "categories": [
+    [
+      "文本转语音",
+      "Text-to-Speech"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-25",
+  "id": "resource-18ba9ccdfcb702226649c776b0c95043ba26a5cd608d39afce2237f7750eedd1",
+  "identity": "hf:qwen/qwen3-tts-12hz-1.7b-customvoice",
+  "name": "Qwen/Qwen3-TTS-12Hz-1.7B-CustomVoice",
+  "site": "https://huggingface.co/Qwen/Qwen3-TTS-12Hz-1.7B-CustomVoice",
+  "sourceSignature": "10bb01b4253d5a7f43435682bd652ce22c4757f48de4238aa3d9caf87980dc98",
+  "summary": [
+    "Qwen 的模型卡介绍了如何将单条或批量文本转为语音、选择受支持的语言和音色，并按需添加朗读提示。",
+    "Qwen’s model card describes how to synthesize speech from one text or a batch, select a supported language and voice, and optionally provide delivery instructions."
+  ],
+  "tags": [
+    "text-to-speech"
+  ],
+  "tested": false,
+  "type": "models",
+  "verificationSources": [
+    "https://huggingface.co/Qwen/Qwen3-TTS-12Hz-1.7B-CustomVoice/raw/main/README.md",
+    "https://huggingface.co/api/models?direction=-1&full=true&limit=30&pipeline_tag=text-to-speech&sort=downloads"
+  ],
+  "verifiedAt": "2026-11-27"
+}
