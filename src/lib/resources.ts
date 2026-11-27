@@ -1,26 +1,17 @@
 import { getCollection } from 'astro:content';
-import { storyUrl, types, type Story } from './content';
+import { storyUrl, type Story } from './content';
+import { sections, topicLink } from './navigation';
 import { repositorySnapshot } from './repositories';
 import { resourceTypes, type ResourceType } from './resource-schema';
 
 export const resourcePageSize = 12;
-export const resourceBase = (type: ResourceType) => `/topics/${type}/`;
+export const resourceBase = (type: ResourceType) => topicLink(type).href;
+export const resourceInLearn = (type: ResourceType) => type === 'prompts' || type === 'workflows';
+export const resourceSection = (type: ResourceType) => resourceInLearn(type) ? sections.learn : sections.discover;
 export const resourcePage = (type: ResourceType, page: number) =>
   page === 1 ? resourceBase(type) : `${resourceBase(type)}page/${page}/`;
 
-export const directoryCopy: Record<ResourceType, [string, string]> = {
-  skills: ['浏览可为 Agent 增加具体能力的技能，按平台和任务查找。', 'Find skills that give agents specific capabilities, by platform and task.'],
-  plugins: ['查找扩展应用功能的插件及官方安装入口。', 'Find application extensions and their official installation listings.'],
-  mcp: ['按能力查找 MCP 服务器，核对传输方式、部署及权限。', 'Find MCP servers by capability and check their transport, deployment and permissions.'],
-  tools: ['按任务查找工具、运行方式和官方资料。', 'Browse tools by task, how they run and where to learn more.'],
-  models: ['查找模型权重、模态与发布资料。', 'Find model weights, modalities and release documentation.'],
-  'open-source': ['探索有公开代码和官方仓库的项目。', 'Explore projects with public code and official repositories.'],
-  prompts: ['按任务查找可复用的提示词与预期输出。', 'Find reusable prompts and expected outputs by task.'],
-  workflows: ['浏览可复用的工作流、工具组合和操作步骤。', 'Explore reusable workflows, tool combinations and practical steps.'],
-  resources: ['查找参考文档与可复用的实践资料。', 'Find reference documentation and reusable practical resources.'],
-};
-
-export const directoryTitle = (type: ResourceType) => type === 'skills' ? ['AI 技能库', 'Agent Skills'] : types[type];
+export const directoryTitle = (type: ResourceType) => topicLink(type).label;
 
 const profiles = (await getCollection('resources')).map(({ id, data }) => {
   if (id !== data.id) throw new Error(`Resource filename differs from ID: ${id}`);
@@ -59,10 +50,12 @@ export function resourceCatalog(stories: Story[]) {
 }
 
 export type Resource = ReturnType<typeof resourceCatalog>[number];
+export const resourceSearchText = (row: Resource) =>
+  [row.name, row.nameZh, ...row.summary, row.repository, row.site, ...row.platforms,
+    ...row.tags, ...row.categories.flat()].filter(Boolean).join(' ').normalize('NFKC').toLowerCase();
+
+export const resourceDate = (row: Resource) => row.updatedAt ?? row.added;
 export const resourceDirectories = (stories: Story[]) => {
   const resources = Map.groupBy(resourceCatalog(stories), (resource) => resource.type);
-  return resourceTypes.flatMap((type) => {
-    const rows = resources.get(type);
-    return rows?.length ? [{ type, rows }] : [];
-  });
+  return resourceTypes.map((type) => ({ type, rows: resources.get(type) ?? [] }));
 };

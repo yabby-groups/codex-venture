@@ -1,0 +1,98 @@
+---
+import { directoryTitle, type resourceDirectories } from '../lib/resources';
+const { directories } = Astro.props as { directories: ReturnType<typeof resourceDirectories> };
+---
+<section data-discover-search hidden data-pagefind-ignore aria-label="资源搜索 / Resource search">
+  <div class="resource-controls">
+    <label class="resource-search" for="q">
+      <span>搜索资源 / <span lang="en">Search resources</span></span>
+      <input id="q" type="search" placeholder="名称、用途、平台 / Name, task, platform" autocomplete="off" />
+    </label>
+    <label class="resource-sort">
+      <span>资源类型 / <span lang="en">Resource type</span></span>
+      <select data-resource-type>
+        <option value="">全部 / All</option>
+        {directories.map(({ type }) => <option value={type}>{directoryTitle(type).join(' / ')}</option>)}
+      </select>
+    </label>
+  </div>
+  <p data-search-status role="status" hidden></p>
+  <ul class="resource-search-results" data-search-results hidden></ul>
+  <button type="button" data-more-resources hidden>加载更多 <span lang="en">Show more</span></button>
+</section>
+<script>
+  interface SearchRow {
+    name: string;
+    nameZh?: string;
+    type: string;
+    detail: string;
+    source: string;
+    date: string;
+    text: string;
+  }
+
+  const root = document.querySelector<HTMLElement>('[data-discover-search]')!;
+  const search = root.querySelector<HTMLInputElement>('#q')!;
+  const type = root.querySelector<HTMLSelectElement>('[data-resource-type]')!;
+  const status = root.querySelector<HTMLElement>('[data-search-status]')!;
+  const results = root.querySelector<HTMLUListElement>('[data-search-results]')!;
+  const more = root.querySelector<HTMLButtonElement>('[data-more-resources]')!;
+  const pageSize = 12;
+  let limit = pageSize;
+  let index: Promise<SearchRow[]> | undefined;
+  let revision = 0;
+
+  async function update(expanding = false) {
+    const current = ++revision;
+    const terms = search.value.normalize('NFKC').toLowerCase().trim().split(/\s+/).filter(Boolean);
+    const selected = type.value;
+    if (!expanding) status.hidden = results.hidden = more.hidden = true;
+    if (!terms.length && !selected) return;
+
+    status.hidden = false;
+    if (!expanding) status.textContent = '正在搜索… / Searching…';
+    try {
+      index ??= fetch('/discover-index.json').then((response) => {
+        if (!response.ok) throw new Error('Resource index unavailable');
+        return response.json();
+      });
+      const rows = await index;
+      if (current !== revision) return;
+      const matches = rows.filter((row) => (!selected || row.type === selected) &&
+        terms.every((term) => row.text.includes(term)));
+      status.textContent = matches.length ? `${matches.length} 项 / ${matches.length} resources` :
+        '没有匹配资源。请调整关键词或资源类型。 / No matching resources. Try another search or category.';
+      results.replaceChildren(...matches.slice(0, limit).map((row) => {
+        const item = document.createElement('li');
+        const title = document.createElement('a');
+        title.href = row.detail;
+        title.textContent = row.nameZh ? `${row.nameZh} · ${row.name}` : row.name;
+        if (!row.nameZh) title.lang = 'en';
+        const meta = document.createElement('small');
+        const source = document.createElement('a');
+        source.href = row.source;
+        source.textContent = new URL(row.source).hostname;
+        source.lang = 'en';
+        const date = document.createElement('time');
+        date.dateTime = date.textContent = row.date;
+        meta.append(source, ' · ', date);
+        item.append(title, meta);
+        return item;
+      }));
+      results.hidden = !matches.length;
+      if (expanding && document.activeElement === more) {
+        results.children[limit - pageSize]?.querySelector('a')?.focus();
+      }
+      more.hidden = matches.length <= limit;
+    } catch {
+      index = undefined;
+      if (current === revision) status.textContent = '资源搜索暂不可用，请使用分类入口。 / Search is unavailable. Browse by category below.';
+    }
+  }
+
+  const reset = () => { limit = pageSize; void update(); };
+  search.addEventListener('input', reset);
+  type.addEventListener('change', reset);
+  more.addEventListener('click', () => { limit += pageSize; void update(true); });
+  root.hidden = false;
+</script>

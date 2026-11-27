@@ -1,0 +1,10 @@
+{
+  "models": ["AI 模型", "AI Models"],
+  "coding": ["AI 编程", "AI Coding"],
+  "agents": ["AI Agent", "AI Agents"],
+  "image": ["AI 图像", "AI Image"],
+  "video": ["AI 视频", "AI Video"],
+  "audio": ["AI 音频", "AI Audio"],
+  "open-source": ["开源 AI", "Open Source AI"],
+  "briefing": ["每日 AI 简报", "Daily AI Briefing"]
+}

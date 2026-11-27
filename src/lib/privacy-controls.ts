@@ -32,10 +32,6 @@ export function privacyControls() {
     input.checked = consent[input.name as keyof Consent] === true;
   }
   const choice = document.querySelector<HTMLElement>('#analytics-choice');
-  document.querySelector('[data-open-privacy]')?.addEventListener('click', () => {
-    if (control instanceof HTMLDetailsElement) control.open = true;
-    control.querySelector('summary')?.focus();
-  });
   const save = (value: Consent) => {
     try { localStorage.setItem(key, JSON.stringify(value)); } catch { return; }
     if (ga && value.analytics !== true) {

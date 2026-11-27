@@ -1,19 +1,20 @@
-import { resourceDirectories } from './resources';
-import { categories, hubs, isWeekly, types, type Story } from './content';
+import { resourceTypes } from './resource-schema';
+import { isWeekly, type Story } from './content';
+import { hubs, sections, technologyLinks, types } from './navigation';
 
 export const pageSize = 20;
 
 export const listingSections = (stories: Story[]) => {
-const directoryKeys = new Set<string>(resourceDirectories(stories).map(({ type }) => type));
+const directoryKeys = new Set<string>(resourceTypes);
 return [
-  { base: '/news/', zh: '最新资讯', en: 'Latest News', stories: stories.filter((story) => story.collection === 'news' && (!story.data.type || ['news', 'models'].includes(story.data.type))) },
-  { base: '/daily/', zh: '每日 AI 简报', en: 'Daily AI Briefing',
+  { base: sections.news.href, zh: sections.news.label[0], en: sections.news.label[1], stories: stories.filter((story) => story.collection === 'news' && (!story.data.type || ['news', 'models'].includes(story.data.type))) },
+  { base: sections.daily.href, zh: sections.daily.label[0], en: sections.daily.label[1],
     byDate: true,
     stories: stories.filter((story) => story.collection === 'daily' && !isWeekly(story)) },
-  { base: '/weekly/', zh: '每周精选', en: 'Weekly Review',
+  { base: sections.weekly.href, zh: sections.weekly.label[0], en: sections.weekly.label[1],
     stories: stories.filter(isWeekly) },
   ...Object.entries(hubs).map(([key, [zh, en]]) => ({
-    base: `/${key}/`, zh, en,
+    base: sections[key as keyof typeof hubs].href, zh, en,
     topics: Object.entries(types).filter(([id, [, , hub]]) => hub === key && stories.some(({ data }) => data.type === id)),
     stories: stories.filter(({ data }) => data.type && types[data.type][2] === key),
   })),
@@ -22,9 +23,9 @@ return [
     stories: stories.filter((story) => story.collection === 'news' &&
       (story.data.type ?? (story.data.category === 'models' ? 'models' : 'news')) === key),
   })).filter(({ stories }) => stories.length),
-  ...Object.entries(categories).filter(([key]) => key !== 'briefing').map(([key, [zh, en]]) => ({
-    base: `/category/${key}/`, zh, en,
-    stories: stories.filter((story) => story.data.category === key),
+  ...technologyLinks.map(({ href, label: [zh, en] }) => ({
+    base: href, zh, en,
+    stories: stories.filter((story) => href === `/category/${story.data.category}/`),
   })),
 ];
 };

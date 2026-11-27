@@ -79,14 +79,42 @@ try {
   await page.waitForURL(/sort=name/);
   assert(await page.locator('[data-cards] > article').count() > 0);
 
-  const menu = page.locator('.nav-menu summary');
-  await menu.focus();
+  await page.goto(origin + '/discover/');
+  await page.locator('[data-resource-type]').selectOption('workflows');
+  await page.locator('[data-search-results] li').first().waitFor();
+  const expected = await page.locator('.resource-directory-links a[href="/topics/workflows/"]').textContent();
+  assert.equal(Number((await page.locator('[data-search-status]').textContent()).match(/\d+/)[0]),
+    Number(expected.match(/\d+/)[0]));
+  if (await page.locator('[data-more-resources]').isVisible()) {
+    await page.locator('[data-more-resources]').click();
+    await page.waitForFunction(() => document.querySelectorAll('[data-search-results] li').length > 12);
+  }
+  await page.locator('#q').fill('venture-test-no-matching-resource');
+  await page.getByText(/No matching resources/).waitFor();
+  await page.locator('#q').fill('');
+  await page.locator('[data-resource-type]').selectOption('');
+  await page.locator('[data-search-status]').waitFor({ state: 'hidden' });
+
+  const privacy = page.locator('#privacy-settings summary');
+  if (await privacy.count()) {
+    await privacy.focus();
+    await page.keyboard.press('Enter');
+    assert.equal(await page.locator('#privacy-settings[open]').count(), 1);
+    await page.keyboard.press('Escape');
+    assert.equal(await page.locator('#privacy-settings[open]').count(), 0);
+    assert.equal(await privacy.evaluate((element) => element === document.activeElement), true);
+  }
+
+  await page.locator('.masthead-topics a[href="/category/agents/"]').focus();
   await page.keyboard.press('Enter');
-  assert.equal(await page.locator('.nav-menu[open]').count(), 1);
-  assert.equal(await page.locator('.nav-menu [href="/news/"]').count(), 0);
-  await page.keyboard.press('Escape');
-  assert.equal(await page.locator('.nav-menu[open]').count(), 0);
-  console.log(`Checked ${routes.length} routes at four viewport/theme combinations, pagination, Pagefind, resource filters and keyboard navigation`);
+  await page.waitForURL('**/category/agents/');
+  assert.equal(await page.locator('.masthead-topics [aria-current="page"]').getAttribute('href'), '/category/agents/');
+  await page.locator('#theme').click();
+  assert.equal(await page.locator('html').getAttribute('data-theme'), 'light');
+  await page.reload();
+  assert.equal(await page.locator('#theme').getAttribute('aria-pressed'), 'false');
+  console.log(`Checked ${routes.length} routes at four viewport/theme combinations, pagination, Pagefind, resource search and filters, keyboard navigation and theme persistence`);
+
 } finally {
   await browser.close();
 }

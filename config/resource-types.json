@@ -1,0 +1,65 @@
+{
+  "skills": {
+    "mark": "✳",
+    "intro": [
+      "浏览可为 Agent 增加具体能力的技能，按平台和任务查找。",
+      "Find skills that give agents specific capabilities, by platform and task."
+    ]
+  },
+  "plugins": {
+    "mark": "⊞",
+    "intro": [
+      "查找扩展应用功能的插件及官方安装入口。",
+      "Find application extensions and their official installation listings."
+    ]
+  },
+  "mcp": {
+    "mark": "⤳",
+    "intro": [
+      "按能力查找 MCP 服务器，核对传输方式、部署及权限。",
+      "Find MCP servers by capability and check their transport, deployment and permissions."
+    ]
+  },
+  "tools": {
+    "mark": "⌘",
+    "intro": [
+      "按任务查找工具、运行方式和官方资料。",
+      "Browse tools by task, how they run and where to learn more."
+    ]
+  },
+  "models": {
+    "mark": "◈",
+    "intro": [
+      "查找模型权重、模态与发布资料。",
+      "Find model weights, modalities and release documentation."
+    ]
+  },
+  "open-source": {
+    "mark": "⌥",
+    "intro": [
+      "探索有公开代码和官方仓库的项目。",
+      "Explore projects with public code and official repositories."
+    ]
+  },
+  "prompts": {
+    "mark": "❯",
+    "intro": [
+      "按任务查找可复用的提示词与预期输出。",
+      "Find reusable prompts and expected outputs by task."
+    ]
+  },
+  "workflows": {
+    "mark": "→",
+    "intro": [
+      "浏览可复用的工作流、工具组合和操作步骤。",
+      "Explore reusable workflows, tool combinations and practical steps."
+    ]
+  },
+  "resources": {
+    "mark": "▤",
+    "intro": [
+      "查找参考文档与可复用的实践资料。",
+      "Find reference documentation and reusable practical resources."
+    ]
+  }
+}

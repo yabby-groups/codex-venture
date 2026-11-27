@@ -1,7 +1,11 @@
 import { z } from 'astro/zod';
+import resourceKinds from '../../config/resource-types.json';
+
+export { resourceKinds };
+export type ResourceType = keyof typeof resourceKinds;
 
 const pair = z.tuple([z.string().min(1), z.string().min(1)]);
-export const resourceTypes = ['skills', 'plugins', 'mcp', 'tools', 'models', 'open-source', 'prompts', 'workflows', 'resources'] as const;
+export const resourceTypes = Object.keys(resourceKinds) as [ResourceType, ...ResourceType[]];
 const https = z.url({ protocol: /^https$/ }).refine((value) => {
   const url = new URL(value);
   return !url.username && !url.password;
@@ -29,5 +33,3 @@ export const resourceSchema = z.object({
   notes: pair.optional(),
   featured: z.boolean().default(false),
 });
-
-export type ResourceType = typeof resourceTypes[number];

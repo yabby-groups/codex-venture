@@ -3,13 +3,13 @@ import Base from './Base.astro';
 import ListingHeader from '../components/ListingHeader.astro';
 import ResourceCard from '../components/ResourceCard.astro';
 import '../styles/resources.css';
-import { directoryCopy, directoryTitle, resourceBase, resourcePage, resourcePageSize, type Resource } from '../lib/resources';
-import type { ResourceType } from '../lib/resource-schema';
+import { directoryTitle, resourceBase, resourcePage, resourcePageSize, resourceSection, type Resource } from '../lib/resources';
+import { resourceKinds, type ResourceType } from '../lib/resource-schema';
 import { jsonLd, resourceEntitySchema } from '../lib/entities';
 interface Props { type: ResourceType; rows: Resource[]; page?: number }
 const { type, rows, page = 1 } = Astro.props;
 const [zh, en] = directoryTitle(type);
-const intro = directoryCopy[type];
+const intro = resourceKinds[type].intro;
 const base = resourceBase(type);
 const lastPage = Math.ceil(rows.length / resourcePageSize);
 const visible = rows.slice((page - 1) * resourcePageSize, page * resourcePageSize);
@@ -24,7 +24,7 @@ const facets = [
     ['transport', '传输方式 / Transport', rows.flatMap((row) => row.transport ?? [])],
   ] as const).map(([key, label, values]) => ({ key, label, values: values.map((value) => [value, value]) })),
 ].map(({ values, ...facet }) => ({ ...facet, options: [...new Map(values.map(([key, label]) => [key, label])).entries()].sort() }));
-const hub = type === 'prompts' || type === 'workflows' ? ['/learn/', '实践', 'Learn'] : ['/discover/', '发现', 'Discover'];
+const hub = resourceSection(type);
 const schema = { '@context': 'https://schema.org', '@type': 'CollectionPage', url: Astro.url.href,
   name: zh + ' · ' + en, inLanguage: ['zh-CN', 'en'], dateModified: verified,
   mainEntity: { '@type': 'ItemList', numberOfItems: rows.length, itemListElement: visible.map((row, index) => ({
@@ -32,10 +32,10 @@ const schema = { '@context': 'https://schema.org', '@type': 'CollectionPage', ur
     item: resourceEntitySchema(row, Astro.site),
   })) } };
 ---
-<Base title={page === 1 ? zh : zh + ' · ' + page} description={intro.join(' ')}>
+<Base articleNav={hub.href} title={page === 1 ? zh : zh + ' · ' + page} description={intro.join(' ')}>
   <script slot="head" type="application/ld+json" set:html={jsonLd(schema)} />
   <section class="resource-directory" data-directory={base} data-size={resourcePageSize} data-static-page={page} data-pagefind-body>
-    <a class="resource-parent" href={hub[0]}><span aria-hidden="true">←</span> {hub[1]} <span lang="en">{hub[2]}</span></a>
+    <a class="resource-parent" href={hub.href}><span aria-hidden="true">←</span> {hub.label[0]} <span lang="en">{hub.label[1]}</span></a>
     <ListingHeader {zh} {en}>
       <span class="listing-count" role="status" data-pagefind-ignore><span data-result-count>{rows.length}</span> 项 / <span lang="en">resources</span></span>
     </ListingHeader>
@@ -75,7 +75,7 @@ const schema = { '@context': 'https://schema.org', '@type': 'CollectionPage', ur
       <section aria-label="资源结果 / Resource results">
         <p class="resource-error" data-result-error role="status" data-pagefind-ignore></p>
         <div class="resource-grid" data-cards>{visible.map((resource) => <ResourceCard {resource} />)}</div>
-        <p class="resource-empty" data-empty hidden>没有匹配资源。请调整关键词或清除筛选。<span lang="en">No matching resources. Try another search or clear your filters.</span></p>
+        <p class="resource-empty" data-empty hidden={rows.length > 0}>{rows.length ? '没有匹配资源。请调整关键词或清除筛选。' : '此分类暂无收录资源。'}<span lang="en">{rows.length ? 'No matching resources. Try another search or clear your filters.' : 'No resources have been added to this category yet.'}</span></p>
         <nav class="pagination" data-client-pages hidden aria-label="分页 / Pagination" data-pagefind-ignore>
           <button type="button" data-page-action="-1">← 上一页 / <span lang="en">Previous</span></button>
           <span data-page-count></span>

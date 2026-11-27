@@ -1,11 +1,11 @@
 ---
 import '../styles/site.css';
 import AnalyticsChoice from '../components/AnalyticsChoice.astro';
-import { ga } from '../lib/monetization';
-import PrivacyControls from '../components/PrivacyControls.astro';
+import NavLabel from '../components/NavLabel.astro';
+import SiteFooter from '../components/SiteFooter.astro';
 import { jsonLd, organization } from '../lib/entities';
-import { allStories, categories, hubs, types } from '../lib/content';
-const { title = '全球 AI 资讯', description = '每日追踪全球 AI 模型、工具和产品更新。 Daily coverage of AI models, tools and product updates.', article = false, noindex = false, articleNav, ads = false } = Astro.props;
+import { rss, sections, technologyIndex, technologyLink, technologyLinks, topicSection, types, type TechnologyCategory } from '../lib/navigation';
+const { title = '全球 AI 资讯', description = '每日追踪全球 AI 模型、工具和产品更新。 Daily coverage of AI models, tools and product updates.', article = false, noindex = false, articleNav, articleCategory, ads = false } = Astro.props;
 const canonical = new URL(Astro.url.pathname, Astro.site);
 const mode = import.meta.env.VENTURE_WEB_ANALYTICS_MODE || 'manual';
 const beaconToken = import.meta.env.CLOUDFLARE_WEB_ANALYTICS_SITE_TAG || '90f572bbf72d4f6bb3ef71bfdc6a4ab3';
@@ -14,27 +14,15 @@ if (!['automatic', 'manual', 'disabled'].includes(mode) ||
   throw new Error('Invalid Cloudflare Web Analytics build configuration');
 }
 const pageTitle = title + ' · Codex Venture';
-const available = new Set((await allStories()).map((story) => story.data.category));
-const categoryLinks = Object.entries(categories).filter(([key]) => key !== 'briefing' && available.has(key as keyof typeof categories));
-const navigation = [
-  ['/', '首页', 'Home'], ['/news/', '最新资讯', 'Latest'],
-  ...Object.entries(hubs).map(([key, [zh, en]]) => [`/${key}/`, zh, en]),
-  ['/daily/', '每日简报', 'Daily'], ['/weekly/', '每周精选', 'Weekly'],
-];
-const more = [
-  ...categoryLinks.map(([key, [zh, en]]) => [`/category/${key}/`, zh, en]),
-  ['/entities/', '技术主题', 'Technology topics'], ['/archive/', '归档', 'Archive'], ['/tags/', '标签', 'Tags'],
-];
 const pathname = Astro.url.pathname;
-const topic = pathname.split('/')[1] === 'topics' ? pathname.split('/')[2] : '';
-const topicHub = Object.hasOwn(types, topic) ? types[topic as keyof typeof types][2] : undefined;
-const activeNav = articleNav ?? (topicHub ? `/${topicHub}/` : pathname);
-const current = (url: string) => {
-  if (pathname === url) return 'page';
-  if (url !== '/' && activeNav.startsWith(url)) return 'location';
+const [, route, key] = pathname.split('/');
+const topic = route === 'topics' && Object.hasOwn(types, key) ? topicSection(key as keyof typeof types) : undefined;
+const activeNav = articleNav ?? topic?.href ?? pathname;
+const activeTechnology = articleCategory ? technologyLink(articleCategory as TechnologyCategory).href : pathname;
+const current = (href: string, active = activeNav) => {
+  if (pathname === href) return 'page';
+  if (href !== '/' && active.startsWith(href)) return 'location';
 };
-const mobileMenuActive = navigation.slice(2, 6).some(([url]) => current(url));
-const moreMenuActive = more.some(([url]) => current(url));
 
 ---
 <!doctype html>
@@ -47,7 +35,7 @@ const moreMenuActive = more.some(([url]) => current(url));
   <meta name="description" content={description} />
   <link rel="canonical" href={canonical} />
   <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
-  <link rel="alternate" type="application/rss+xml" title="Codex Venture" href="/rss.xml" />
+  <link rel="alternate" type="application/rss+xml" title="Codex Venture" href={rss.href} />
   <meta property="og:site_name" content="Codex Venture" />
   <meta property="og:title" content={pageTitle} />
   <meta property="og:description" content={description} />
@@ -87,41 +75,27 @@ const moreMenuActive = more.some(([url]) => current(url));
   <a class="skip" href="#main">跳至正文 / Skip to content</a>
   <header class="masthead">
     <div class="wrap masthead-inner">
-      <a class="brand" href="/" aria-label="Codex Venture 首页"><img src="/favicon.svg" width="38" height="38" alt="" /><span lang="en">Codex Venture</span></a>
+      <a class="brand" href={sections.home.href} aria-label="Codex Venture 首页 / Home"><img src="/favicon.svg" width="38" height="38" alt="" /><span lang="en">Codex Venture</span></a>
       <div class="utilities">
         <a href="/search/" aria-current={current('/search/')} class="utility" aria-label="搜索 / Search"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="5.5"/><path d="m15 15 4 4"/></svg><span>搜索 <small lang="en">Search</small></span></a>
         <button id="theme" class="utility" type="button" aria-label="深色主题 / Dark theme" hidden><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 15a8 8 0 0 1-11-11 8 8 0 1 0 11 11Z"/></svg></button>
-        {ga && <a class="utility" href="#privacy-settings" data-open-privacy>隐私 <small lang="en">Privacy</small></a>}
-        <a class="utility rss" href="/rss.xml" aria-label="RSS">RSS</a>
+        <a class="utility rss" href={rss.href} aria-label="RSS">RSS</a>
       </div>
     </div>
-    <nav class="wrap primary" aria-label="主导航 / Main navigation">
-      <div class="nav-links">{navigation.map(([url, zh, en]) => <a href={url} aria-current={current(url)}>{zh} <small lang="en">{en}</small></a>)}</div>
-      <details class:list={['nav-menu', { 'nav-menu-current': moreMenuActive, 'nav-menu-mobile-current': mobileMenuActive }]}>
-        <summary>栏目 <small lang="en">Sections</small></summary>
-        <div class="nav-panel">
-          {navigation.slice(2, 6).map(([url, zh, en]) => <a class="mobile-link" href={url} aria-current={current(url)}>{zh} <small lang="en">{en}</small></a>)}
-          {more.map(([url, zh, en]) => <a href={url} aria-current={current(url)}>{zh} <small lang="en">{en}</small></a>)}
-        </div>
-      </details>
+    <nav class="masthead-nav" aria-label="内容 / Content">
+      <ul class="wrap masthead-links">
+        {Object.values(sections).map(({ href, label }) => <li><a href={href} aria-current={current(href)}><NavLabel {label} /></a></li>)}
+      </ul>
+    </nav>
+    <nav class="masthead-nav masthead-topics" aria-label="技术分类 / Technology categories">
+      <ul class="wrap masthead-links">
+        {[...technologyLinks, technologyIndex].map(({ href, label }) => <li><a href={href} aria-current={current(href, activeTechnology)}><NavLabel {label} /></a></li>)}
+      </ul>
     </nav>
   </header>
   <AnalyticsChoice />
   <main id="main" class="wrap"><slot /></main>
-  <footer class="footer">
-    <div class="wrap footer-inner">
-      <div><a class="brand" href="/"><img src="/favicon.svg" width="32" height="32" alt="" /><span lang="en">Codex Venture</span></a>
-        <p>独立运营的全球 AI 技术资讯媒体。<span lang="en">Independent coverage of global AI technology.</span></p>
-        <p>与 OpenAI 无官方隶属关系。<span lang="en">No official affiliation with OpenAI.</span></p>
-      </div>
-      <nav aria-label="页脚栏目 / Footer sections">{navigation.slice(1).map(([url, zh, en]) => <a href={url}>{zh} <small lang="en">{en}</small></a>)}</nav>
-      <nav aria-label="网站信息 / Site information">
-        {[[ '/archive/', '归档', 'Archive'], ['/about/', '关于', 'About'], ['/editorial/', '编辑政策', 'Editorial policy'], ['/stats/', '内容统计', 'Publishing stats'], ['/privacy/', '隐私', 'Privacy'], ['/contact/', '联系', 'Contact'], ['/terms/', '条款', 'Terms'], ['/affiliate-disclosure/', '联盟推广', 'Affiliate disclosure'], ['/tags/', '标签', 'Tags']].map(([url, zh, en]) => <a href={url}>{zh} <small lang="en">{en}</small></a>)}
-        <PrivacyControls {ads} />
-        <a href="/rss.xml">RSS ↗</a><a href="https://github.com/yabby-groups/codex-venture">GitHub ↗</a>
-      </nav>
-    </div>
-  </footer>
+  <SiteFooter {ads} />
   <script>
     document.addEventListener('keydown', (event) => {
       if ((event.metaKey || event.ctrlKey) && event.key.toLowerCase() === 'k') {
@@ -130,14 +104,20 @@ const moreMenuActive = more.some(([url]) => current(url));
         if (input) input.focus();
         else location.assign('/search/');
       }
-      if (event.key === 'Escape') {
-        const menu = document.querySelector<HTMLDetailsElement>('.nav-menu[open]');
-        if (menu) {
-          menu.open = false;
-          menu.querySelector('summary')?.focus();
+      if (event.key === 'Escape' && event.target instanceof Element) {
+        const disclosure = event.target.closest<HTMLDetailsElement>('details[open]');
+        if (disclosure) {
+          disclosure.open = false;
+          disclosure.querySelector('summary')?.focus();
         }
       }
     });
+    for (const links of document.querySelectorAll<HTMLElement>('.masthead-links')) {
+      const active = links.querySelector<HTMLElement>('[aria-current]');
+      if (active && active.getBoundingClientRect().right > links.getBoundingClientRect().right) {
+        links.scrollLeft = active.getBoundingClientRect().left - links.getBoundingClientRect().left;
+      }
+    }
     const button = document.querySelector<HTMLButtonElement>('#theme')!;
     const scheme = matchMedia('(prefers-color-scheme: dark)');
     const dark = () => (document.documentElement.dataset.theme ?? (scheme.matches ? 'dark' : 'light')) === 'dark';

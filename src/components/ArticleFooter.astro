@@ -2,7 +2,7 @@
 import BilingualHeading from './BilingualHeading.astro';
 import { storyUrl, type Story } from '../lib/content';
 import { entityUrl, entities as entityCatalog } from '../lib/entities';
-interface Props { data: Story['data']; related: Story[]; entities: typeof entityCatalog; label: string[]; href: string; verificationSources?: string[] }
+interface Props { data: Story['data']; related: Story[]; entities: typeof entityCatalog; label: readonly [string, string]; href: string; verificationSources?: string[] }
 const { data, related, entities, label, href } = Astro.props;
 const primaryUrls = new Set(data.sources.map(({ url }) => url));
 const verificationUrls = [...new Set(Astro.props.verificationSources ?? [])]

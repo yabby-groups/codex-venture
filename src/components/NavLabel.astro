@@ -1,0 +1,5 @@
+---
+interface Props { label: readonly [string, string] }
+const { label: [zh, en] } = Astro.props;
+---
+{zh === en ? <span lang="en">{en}</span> : <><span>{zh}</span> <small lang="en">{en}</small></>}

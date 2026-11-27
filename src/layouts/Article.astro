@@ -14,7 +14,8 @@ import AdPlacement from '../components/AdPlacement.astro';
 import AffiliateLinks from '../components/AffiliateLinks.astro';
 import { slotFor } from '../lib/monetization';
 import { storyEntities, entitySchema, resourceEntitySchema, jsonLd, organization } from '../lib/entities';
-import { allStories, dateKey, storySection, storyUrl, types, hubs, isWeekly, type Story } from '../lib/content';
+import { sections as siteSections, topicSection } from '../lib/navigation';
+import { allStories, dateKey, storySection, storyUrl, isWeekly, type Story } from '../lib/content';
 import { resourceCatalog, resourceBase, directoryTitle } from '../lib/resources';
 interface Props { story: Story }
 const { story } = Astro.props;
@@ -47,14 +48,13 @@ const related = stories
 const canonical = new URL(storyUrl(story), Astro.site).href;
 const profile = resources.find((row) => row.detail === storyUrl(story));
 const { label, href } = profile ? { label: directoryTitle(profile.type), href: resourceBase(profile.type) } : storySection(story);
-const parent = story.collection === 'daily'
-  ? isWeekly(story) ? 'weekly' : 'daily'
-  : data.type ? types[data.type][2] : 'news';
-const articleNav = `/${parent}/`;
-const parentLabel = parent in hubs ? hubs[parent as keyof typeof hubs] : ['最新资讯', 'Latest'];
+const parentSection = story.collection === 'daily'
+  ? (isWeekly(story) ? siteSections.weekly : siteSections.daily)
+  : data.type ? topicSection(data.type) : siteSections.news;
+const articleNav = parentSection.href;
 const crumbs = [
-  { href: '/', label: ['首页', 'Home'] },
-  ...(story.collection === 'news' ? [{ href: articleNav, label: parentLabel }] : []),
+  siteSections.home,
+  ...(story.collection === 'news' ? [parentSection] : []),
   { href, label },
 ];
 const repo = repositoryFor(story);
@@ -88,7 +88,7 @@ const schema = jsonLd({
   ] }),
 });
 ---
-<Base title={data.titleZh} description={data.summaryZh + ' ' + data.summaryEn} article {articleNav} {ads}>
+<Base title={data.titleZh} description={data.summaryZh + ' ' + data.summaryEn} article {articleNav} articleCategory={data.category} {ads}>
   <Fragment slot="head"><script type="application/ld+json" set:html={schema} /><script type="application/ld+json" set:html={breadcrumb} /><meta property="article:published_time" content={data.published.toISOString()} /></Fragment>
   <article class:list={['editorial-article', { 'article-short': short, 'article-with-rail': showContents }]} data-pagefind-body>
     <ArticleHeader {data} {crumbs} {minutes} />

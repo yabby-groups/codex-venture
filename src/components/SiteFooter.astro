@@ -1,0 +1,28 @@
+---
+import { footerGroups, legalLinks, sections } from '../lib/navigation';
+import NavLabel from './NavLabel.astro';
+import PrivacyControls from './PrivacyControls.astro';
+const { ads = false } = Astro.props;
+---
+<footer class="footer">
+  <div class="wrap footer-inner">
+    <div class="footer-brand">
+      <a class="brand" href={sections.home.href}><img src="/favicon.svg" width="32" height="32" alt="" /><span lang="en">Codex Venture</span></a>
+      <p>全球 AI 资讯、技术发现与实践。<span lang="en">Global AI news, discovery and practice.</span></p>
+      <p>本站独立运营，与 OpenAI 无官方隶属关系。<span lang="en">Independently operated, with no official affiliation with OpenAI.</span></p>
+    </div>
+    {footerGroups.map(({ label, links }, index) => (
+      <nav class="footer-group" aria-labelledby={`footer-group-${index}`}>
+        <h2 id={`footer-group-${index}`}><NavLabel {label} /></h2>
+        <ul>{links.map(({ href, label }) => <li><a href={href}><NavLabel {label} /></a></li>)}</ul>
+      </nav>
+    ))}
+  </div>
+  <div class="wrap footer-legal">
+    <p lang="en">© {new Date().getUTCFullYear()} Codex Venture</p>
+    <nav aria-label="法律与隐私 / Legal and privacy">
+      {legalLinks.map(({ href, label }) => <a href={href}><NavLabel {label} /></a>)}
+      <PrivacyControls {ads} />
+    </nav>
+  </div>
+</footer>

@@ -1,6 +1,6 @@
 import type { APIRoute } from 'astro';
 import { allStories } from '../../../lib/content';
-import { resourceDirectories, resourcePageSize } from '../../../lib/resources';
+import { resourceDirectories, resourcePageSize, resourceSearchText } from '../../../lib/resources';
 
 export async function getStaticPaths() {
   return resourceDirectories(await allStories()).map(({ type, rows }) => ({
@@ -13,8 +13,7 @@ export async function getStaticPaths() {
         license: row.license ? [row.license] : [], install: row.install ? [row.install] : [],
         transport: row.transport ? [row.transport] : [],
       },
-      text: [row.name, row.nameZh, ...row.summary, row.repository, row.site, ...row.platforms,
-        ...row.tags, ...row.categories.flat()].filter(Boolean).join(' ').normalize('NFKC').toLowerCase(),
+      text: resourceSearchText(row),
     })) },
   }));
 }

@@ -1,15 +1,15 @@
 ---
-import type { Resource } from '../lib/resources';
+import { resourceDate, type Resource } from '../lib/resources';
+import { resourceKinds } from '../lib/resource-schema';
 const { resource } = Astro.props as { resource: Resource };
 const { id, name, nameZh, type, detail, categories, platforms, summary, repository, site, verified, tested, notes } = resource;
-const marks = { skills: '✳', plugins: '⊞', mcp: '⤳', tools: '⌘', models: '◈', 'open-source': '⌥', prompts: '❯', workflows: '→', resources: '▤' };
 const repoName = repository && new URL(repository).pathname.slice(1).replace(/\/$/, '');
 const meta = [...new Set([resource.kind, resource.transport, resource.deployment, resource.install, resource.github?.language, resource.license, resource.version].filter(Boolean))];
 const stars = resource.github && new Intl.NumberFormat('en', { notation: 'compact', maximumFractionDigits: 1 }).format(resource.github.stargazers_count);
 ---
 <article class="resource-card" data-resource={id}>
   <header>
-    <span class="resource-mark" aria-hidden="true">{marks[type]}</span>
+    <span class="resource-mark" aria-hidden="true">{resourceKinds[type].mark}</span>
     <div>
       <h3><a href={detail}>{nameZh && nameZh !== name ? <>{nameZh}<span lang="en">{name}</span></> : <bdi lang="en">{name}</bdi>}</a></h3>
       {repoName && repoName !== name && <a class="resource-repo" href={repository} lang="en">{repoName}</a>}
@@ -29,6 +29,11 @@ const stars = resource.github && new Intl.NumberFormat('en', { notation: 'compac
   <footer>
     <div class="resource-verified">
       {tested === true ? '已实测' : tested === false ? '资料核实' : '核实日期'} / <span lang="en">{tested === true ? 'Tested' : tested === false ? 'Documentation checked' : 'Verified'}</span> · <time datetime={verified}>{verified}</time>
+    </div>
+    <div class="resource-verified">
+      {resource.updatedAt && resource.updatedAt > resource.added ?
+        <>更新 / <span lang="en">Updated</span></> : <>收录 / <span lang="en">Added</span></>}
+      {' · '}<time datetime={resourceDate(resource)}>{resourceDate(resource)}</time>
     </div>
     <div class="resource-actions">
       <a href={site}>官网 / <span lang="en">Official</span> ↗</a>

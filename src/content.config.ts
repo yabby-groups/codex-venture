@@ -4,7 +4,7 @@ import { glob } from 'astro/loaders';
 
 import { articleBlock } from './lib/article-blocks';
 import { resourceSchema } from './lib/resource-schema';
-import types from '../config/content-types.json';
+import { categories, types, type TechnologyCategory } from './lib/navigation';
 
 const schema = z.object({
   titleZh: z.string().min(1),
@@ -12,7 +12,7 @@ const schema = z.object({
   summaryZh: z.string().min(1),
   summaryEn: z.string().min(1),
   published: z.iso.datetime({ offset: true }).transform((value) => new Date(value)),
-  category: z.enum(['models', 'coding', 'image', 'video', 'audio', 'agents', 'open-source', 'briefing']),
+  category: z.enum(Object.keys(categories) as [TechnologyCategory, ...TechnologyCategory[]]),
   type: z.enum(Object.keys(types) as [keyof typeof types, ...(keyof typeof types)[]]).optional(),
   updated: z.iso.date().optional(),
   blocks: z.array(articleBlock).max(8).optional(),

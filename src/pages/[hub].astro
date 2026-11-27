@@ -1,7 +1,8 @@
 ---
 import ResourceHub from '../layouts/ResourceHub.astro';
 import Listing from '../layouts/Listing.astro';
-import { allStories, hubs } from '../lib/content';
+import { allStories } from '../lib/content';
+import { hubs } from '../lib/navigation';
 import { listingSections } from '../lib/listing';
 
 export async function getStaticPaths() {

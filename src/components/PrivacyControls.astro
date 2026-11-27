@@ -1,10 +1,11 @@
 ---
+import NavLabel from './NavLabel.astro';
 import { ga, cmp, publisher, adsEnabled } from '../lib/monetization';
 const { ads = false } = Astro.props;
 const client = ads && adsEnabled ? publisher : undefined;
 ---
 {(ga || adsEnabled) && <details id="privacy-settings" data-ga={ga} data-client={client} data-cmp={client ? cmp : undefined}>
-  <summary>隐私设置 <span lang="en">Privacy settings</span></summary>
+  <summary data-open-privacy><NavLabel label={['隐私设置', 'Privacy settings']} /></summary>
   <form>
     {ga && <label><input name="analytics" type="checkbox" /> Google 访问统计 <span lang="en">Analytics</span></label>}
     {adsEnabled && <label><input name="ads" type="checkbox" /> 第三方广告 <span lang="en">Third-party advertising</span></label>}

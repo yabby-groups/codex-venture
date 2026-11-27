@@ -2,6 +2,7 @@ import { pathToFileURL } from 'node:url';
 import { readdirSync, readFileSync } from 'node:fs';
 import { parse } from 'yaml';
 
+const categories = Object.keys(JSON.parse(readFileSync('config/technology-categories.json', 'utf8')));
 const types = JSON.parse(readFileSync('config/content-types.json', 'utf8'));
 
 const read = (directory, collection) => readdirSync(directory).filter((name) => name.endsWith('.md')).map((name) => {
@@ -12,7 +13,6 @@ const read = (directory, collection) => readdirSync(directory).filter((name) => 
   const [, frontmatter, body] = match;
   const data = parse(frontmatter);
   const textFields = ['titleZh', 'titleEn', 'summaryZh', 'summaryEn'];
-  const categories = ['models', 'coding', 'image', 'video', 'audio', 'agents', 'open-source', 'briefing'];
   const slugPattern = /^[a-z0-9]+(?:-[a-z0-9]+)*$/;
   if (!data || textFields.some((key) => typeof data[key] !== 'string' || !data[key].trim()) ||
       !categories.includes(data.category) || !Array.isArray(data.tags) || !data.tags.length ||
