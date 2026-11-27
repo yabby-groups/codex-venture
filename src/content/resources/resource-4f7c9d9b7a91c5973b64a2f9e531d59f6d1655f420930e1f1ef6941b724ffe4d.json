@@ -1,0 +1,28 @@
+{
+  "addedAt": "2026-11-27",
+  "categories": [
+    [
+      "程式開發代理設定",
+      "Coding Agent Configuration"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-26",
+  "id": "resource-4f7c9d9b7a91c5973b64a2f9e531d59f6d1655f420930e1f1ef6941b724ffe4d",
+  "identity": "github:1112272749",
+  "license": "MIT",
+  "name": "madebyaris/advance-minimax-m3-cursor-rules",
+  "repository": "https://github.com/madebyaris/advance-minimax-m3-cursor-rules",
+  "repositoryId": "1112272749",
+  "site": "https://github.com/madebyaris/advance-minimax-m3-cursor-rules",
+  "sourceSignature": "60e9105d889d23b5765551014b8a09327ce79af9b6fc17160f7522261174b710",
+  "summary": [
+    "發布者提供一套搭配 MiniMax M3 的 Cursor 規則，引導程式開發代理先釐清需求，再於開發過程中協調工具使用。",
+    "The publisher provides Cursor rules for MiniMax M3 that guide a coding agent to clarify requirements first and coordinate tool use during coding tasks."
+  ],
+  "tested": false,
+  "type": "workflows",
+  "verificationSources": [
+    "https://api.github.com/search/repositories?page=2&per_page=30&q=topic%3Aai-workflow+archived%3Afalse+fork%3Afalse&sort=stars"
+  ],
+  "verifiedAt": "2026-11-27"
+}

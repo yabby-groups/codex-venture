@@ -1,0 +1,28 @@
+{
+  "addedAt": "2026-11-27",
+  "categories": [
+    [
+      "本機大型語言模型部署",
+      "Local LLM Deployment"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-26",
+  "id": "resource-0f40797640253d7c257b3e2b44e5436d7a1d13367d779c8259bb2f80f82b8a23",
+  "identity": "github:1407997858",
+  "license": "MIT",
+  "name": "mw00/project-maya",
+  "repository": "https://github.com/mw00/project-maya",
+  "repositoryId": "1407997858",
+  "site": "https://github.com/mw00/project-maya",
+  "sourceSignature": "ff88834cd4b14cfa46c7ffee22ccad9dce5ba6d8a6e572687851fdc02ce6083a",
+  "summary": [
+    "據發布者介紹，Project Maya 可在自己的 GPU 上執行 GLM、DeepSeek 等模型，透過單一儀表板管理，並以 API 呼叫模型。",
+    "The publisher describes Project Maya as a way to run models such as GLM and DeepSeek on your own GPUs, manage them from one dashboard, and call them through an API."
+  ],
+  "tested": false,
+  "type": "open-source",
+  "verificationSources": [
+    "https://api.github.com/search/repositories?page=2&per_page=30&q=topic%3Allm-inference+archived%3Afalse+fork%3Afalse&sort=stars"
+  ],
+  "verifiedAt": "2026-11-27"
+}

@@ -1,0 +1,28 @@
+{
+  "addedAt": "2026-11-27",
+  "categories": [
+    [
+      "影像生成提示詞設計",
+      "Image Prompt Design"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-26",
+  "id": "resource-4fc093c425eb749cdb70e5cefec6a21c8d24472753ec5bcab7823df39888e0e5",
+  "identity": "github:1188789262",
+  "license": "MIT",
+  "name": "jeremieLouvaert/ComfyUI-Prompt-Vault",
+  "repository": "https://github.com/jeremieLouvaert/ComfyUI-Prompt-Vault",
+  "repositoryId": "1188789262",
+  "site": "https://github.com/jeremieLouvaert/ComfyUI-Prompt-Vault",
+  "sourceSignature": "d5d97901e4d69131828983bb08e4863f9265606cb63c2512bfb392d7fac1406e",
+  "summary": [
+    "發布者提供攝影提示詞範本與組合工具，可將相機器材、布光配置和底片類型組成 ComfyUI 提示詞。",
+    "The publisher provides photography prompt templates and a builder for combining camera gear, lighting setups, and film stocks into ComfyUI prompts."
+  ],
+  "tested": false,
+  "type": "prompts",
+  "verificationSources": [
+    "https://api.github.com/search/repositories?page=2&per_page=30&q=topic%3Aprompt-templates+archived%3Afalse+fork%3Afalse&sort=stars"
+  ],
+  "verifiedAt": "2026-11-27"
+}

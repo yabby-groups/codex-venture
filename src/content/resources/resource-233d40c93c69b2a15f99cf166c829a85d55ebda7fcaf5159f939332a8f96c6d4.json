@@ -1,0 +1,28 @@
+{
+  "addedAt": "2026-11-27",
+  "categories": [
+    [
+      "人工智慧教學",
+      "AI Education"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-26",
+  "id": "resource-233d40c93c69b2a15f99cf166c829a85d55ebda7fcaf5159f939332a8f96c6d4",
+  "identity": "github:1244255768",
+  "license": "MIT",
+  "name": "dulanjayabhanu/mononeural",
+  "repository": "https://github.com/dulanjayabhanu/mononeural",
+  "repositoryId": "1244255768",
+  "site": "https://github.com/dulanjayabhanu/mononeural",
+  "sourceSignature": "dd626f4eb12635f2e8c5fc34a544e4756688664de14b9c813db5cefca59e6eec",
+  "summary": [
+    "據發布者介紹，Mononeural 是視覺化學習平台，可讓學習者不寫程式就能建立、訓練和測試人工神經元。",
+    "The publisher describes Mononeural as a visual learning platform where learners can build, train, and test artificial neurons without writing code."
+  ],
+  "tested": false,
+  "type": "resources",
+  "verificationSources": [
+    "https://api.github.com/search/repositories?page=2&per_page=30&q=topic%3Aai-education+archived%3Afalse+fork%3Afalse&sort=stars"
+  ],
+  "verifiedAt": "2026-11-27"
+}

@@ -1,0 +1,28 @@
+{
+  "addedAt": "2026-11-27",
+  "categories": [
+    [
+      "模擬試題生成",
+      "Practice Exam Generation"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-26",
+  "id": "resource-2290f4155dd62eb799c19158756157b216d63fca32aa88314f3850bbcf7761d5",
+  "identity": "github:1362595734",
+  "license": "MIT",
+  "name": "niansia/taiwan-exam",
+  "repository": "https://github.com/niansia/taiwan-exam",
+  "repositoryId": "1362595734",
+  "site": "https://github.com/niansia/taiwan-exam",
+  "sourceSignature": "7153cd8d8c9906073f1619a6c07e38dcfc3f24740d175255f86eae23c23bc9ad",
+  "summary": [
+    "據發布者介紹，taiwan-exam 可用 AI 為台灣學測的七個科目編寫原創模擬試題、驗算解答，並分別輸出試題和答案詳解 PDF。",
+    "The publisher says taiwan-exam uses AI to draft original mock exams for seven subjects in Taiwan’s General Scholastic Ability Test, check solutions, and produce separate question and worked-answer PDFs."
+  ],
+  "tested": false,
+  "type": "resources",
+  "verificationSources": [
+    "https://api.github.com/search/repositories?page=2&per_page=30&q=topic%3Aai-education+archived%3Afalse+fork%3Afalse&sort=stars"
+  ],
+  "verifiedAt": "2026-11-27"
+}

@@ -1,0 +1,29 @@
+{
+  "addedAt": "2026-11-27",
+  "categories": [
+    [
+      "語音轉錄",
+      "Speech Transcription"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-25",
+  "id": "resource-1780d2beaea3036b8ca696b516f3cfe412fd96e8e19f49036fe2e954aae186e6",
+  "identity": "hf:handy-computer/cohere-transcribe-03-2026-gguf",
+  "name": "handy-computer/cohere-transcribe-03-2026-gguf",
+  "site": "https://huggingface.co/handy-computer/cohere-transcribe-03-2026-gguf",
+  "sourceSignature": "84cd4f55b33e707a7272d8d14992e3a316e531b06e908343a9c05556f1ba068b",
+  "summary": [
+    "模型卡介紹了 Cohere Transcribe 的 GGUF 量化版本，可將英語、法語和德語音訊轉為文字。",
+    "The model card lists a quantized GGUF version of Cohere Transcribe for turning English, French, and German audio into text."
+  ],
+  "tags": [
+    "automatic-speech-recognition"
+  ],
+  "tested": false,
+  "type": "models",
+  "verificationSources": [
+    "https://huggingface.co/api/models?cursor=eyIkb3IiOlt7ImRvd25sb2FkcyI6MTA2ODU4MywiX2lkIjp7IiRndCI6IjY5ZWVjN2Y2NjA1Y2Q4MTdkY2MwMmMxMCJ9fSx7ImRvd25sb2FkcyI6eyIkbHQiOjEwNjg1ODN9fSx7ImRvd25sb2FkcyI6bnVsbH1dLCJzZWFyY2hTZXF1ZW5jZVRva2VuIjoiQ0ozQ3VnSWFDU0VBQUFBQUowNHdRUm9PV2d4cDdzZjJZRnpZRjl6QUxCQWlEbG9NYWU3SDltQmMyQmZjd0N3USJ9&direction=-1&full=true&limit=30&pipeline_tag=automatic-speech-recognition&sort=downloads",
+    "https://huggingface.co/handy-computer/cohere-transcribe-03-2026-gguf/raw/main/README.md"
+  ],
+  "verifiedAt": "2026-11-27"
+}

@@ -1,0 +1,28 @@
+{
+  "addedAt": "2026-11-27",
+  "categories": [
+    [
+      "會計及稅務資料查詢",
+      "Accounting and Tax Data Lookup"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-25",
+  "id": "resource-84aea48cd0f88f860da69981189ef329c57c323e18eb0e92beeac2de9ce24ba6",
+  "identity": "mcp:ad.tributs/mcp",
+  "name": "Tributs",
+  "registryId": "ad.tributs/mcp",
+  "site": "https://registry.modelcontextprotocol.io/v0.1/servers/ad.tributs%2Fmcp/versions/1.0.0",
+  "sourceSignature": "da3b399e12bca18943b2e014da50dfec2117eb878c3662290bb9317dd44cb9e6",
+  "summary": [
+    "據上架說明，這項 MCP 連線可查詢 Tributs 中的安道爾發票、銀行資料及 IGI 稅務申報。",
+    "The listing describes an MCP connection for looking up Andorran invoices, bank data, and IGI tax filings in Tributs."
+  ],
+  "tested": false,
+  "transport": "streamable-http",
+  "type": "mcp",
+  "verificationSources": [
+    "https://registry.modelcontextprotocol.io/v0.1/servers/ad.tributs%2Fmcp/versions/1.0.0"
+  ],
+  "verifiedAt": "2026-11-27",
+  "version": "1.0.0"
+}

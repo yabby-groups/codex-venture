@@ -1,0 +1,28 @@
+{
+  "addedAt": "2026-11-27",
+  "categories": [
+    [
+      "檢索增強生成",
+      "Retrieval-Augmented Generation"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-25",
+  "id": "resource-b8db509ec67be66ae56a05734821269c226f1ff81e52033e7347dc9f49398791",
+  "identity": "github:730534580",
+  "license": "Apache-2.0",
+  "name": "infiniflow/ragflow",
+  "repository": "https://github.com/infiniflow/ragflow",
+  "repositoryId": "730534580",
+  "site": "https://github.com/infiniflow/ragflow",
+  "sourceSignature": "9ea862152e8627217c16f10bd90151144cd3351750fdc08811fab8cbc774b4c4",
+  "summary": [
+    "據發布者介紹，RAGFlow 是一套檢索增強生成引擎，可為 AI 代理提供檢索到的背景資料。",
+    "The publisher describes RAGFlow as a retrieval-augmented generation engine that supplies retrieved context to AI agents."
+  ],
+  "tested": false,
+  "type": "tools",
+  "verificationSources": [
+    "https://api.github.com/search/repositories?page=1&per_page=30&q=topic%3Arag+archived%3Afalse+fork%3Afalse&sort=stars"
+  ],
+  "verifiedAt": "2026-11-27"
+}

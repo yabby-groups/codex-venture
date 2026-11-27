@@ -1,0 +1,28 @@
+{
+  "addedAt": "2026-11-27",
+  "categories": [
+    [
+      "機器學習實驗追蹤",
+      "ML Experiment Tracking"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-25",
+  "id": "resource-f52be7cfe78a67f6f9b2109e8803d5a0c289004eb2e064eef4138425c4bfdc7f",
+  "identity": "github-skill:1102903896:skills/huggingface-trackio/SKILL.md",
+  "name": "huggingface-trackio",
+  "repository": "https://github.com/huggingface/skills",
+  "repositoryId": "1102903896",
+  "site": "https://github.com/huggingface/skills/blob/main/skills/huggingface-trackio/SKILL.md",
+  "sourcePath": "skills/huggingface-trackio/SKILL.md",
+  "sourceSignature": "e8631be8ccfa112ce6ac63f58b187e3678c6093af02789e3192fd0331c6230f6",
+  "summary": [
+    "技能說明涵蓋使用 Trackio 的 Python API 記錄訓練指標、透過即時儀表板監控、設定 Webhook 警示，以及在命令列查詢指標。",
+    "The skill description covers logging training metrics with Trackio’s Python API, monitoring them on a live dashboard, setting webhook alerts, and retrieving metrics through the CLI."
+  ],
+  "tested": false,
+  "type": "skills",
+  "verificationSources": [
+    "https://github.com/huggingface/skills/blob/main/skills/huggingface-trackio/SKILL.md"
+  ],
+  "verifiedAt": "2026-11-27"
+}
