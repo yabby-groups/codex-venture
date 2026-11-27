@@ -1,0 +1,28 @@
+{
+  "addedAt": "2026-11-27",
+  "categories": [
+    [
+      "视频制作",
+      "Video Composition"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-26",
+  "id": "resource-213f88795a8a759564e6fb8bfe4ca47e1f76ea86056d36ae3e53cd464da4c965",
+  "identity": "github-skill:1137388347:skills/remotion-elements/SKILL.md",
+  "name": "remotion-elements",
+  "repository": "https://github.com/remotion-dev/skills",
+  "repositoryId": "1137388347",
+  "site": "https://github.com/remotion-dev/skills/blob/main/skills/remotion-elements/SKILL.md",
+  "sourcePath": "skills/remotion-elements/SKILL.md",
+  "sourceSignature": "9c5fa28ba7d83d1d5699d07994c251492db13a66bbd21dd537918144dd7b9b2c",
+  "summary": [
+    "发布者文档介绍了如何将标题、图表和字幕等可复用的 React 组件加入 Remotion 项目，在本地编辑源码，并在 Remotion Studio 中预览已注册组件库中的组件。",
+    "The publisher's documentation describes how to add reusable React components such as titles, charts, and captions to a Remotion project, edit their source locally, and preview components from registered libraries in Remotion Studio."
+  ],
+  "tested": false,
+  "type": "skills",
+  "verificationSources": [
+    "https://github.com/remotion-dev/skills/blob/main/skills/remotion-elements/SKILL.md"
+  ],
+  "verifiedAt": "2026-11-27"
+}

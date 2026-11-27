@@ -1,0 +1,27 @@
+{
+  "addedAt": "2026-11-27",
+  "categories": [
+    [
+      "机器学习课程",
+      "Machine Learning Education"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-26",
+  "id": "resource-8f75e16e07a05744311b6e0f1994b2c7123399f0952257f76ff8473e759bf4d3",
+  "identity": "github:147936771",
+  "name": "artonson/hse-applied-statistics-2018",
+  "repository": "https://github.com/artonson/hse-applied-statistics-2018",
+  "repositoryId": "147936771",
+  "site": "https://github.com/artonson/hse-applied-statistics-2018",
+  "sourceSignature": "d2cb7332eafbbabbf5778111cfb4de8e9338f13776f3b9524d0905f6a15e0693",
+  "summary": [
+    "该仓库收录了 HSE 于 2018 年开设的《机器学习中的应用统计》课程资料，可用于自学。",
+    "The repository provides study materials from HSE's 2018 Applied Statistics in Machine Learning course."
+  ],
+  "tested": false,
+  "type": "resources",
+  "verificationSources": [
+    "https://api.github.com/search/repositories?page=1&per_page=30&q=topic%3Amachine-learning-course+archived%3Afalse+fork%3Afalse&sort=stars"
+  ],
+  "verifiedAt": "2026-11-27"
+}

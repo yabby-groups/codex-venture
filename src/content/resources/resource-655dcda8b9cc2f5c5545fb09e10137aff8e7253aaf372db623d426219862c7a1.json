@@ -1,0 +1,30 @@
+{
+  "addedAt": "2026-11-27",
+  "categories": [
+    [
+      "模板代码补全",
+      "Template Code Completion"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-25",
+  "id": "resource-655dcda8b9cc2f5c5545fb09e10137aff8e7253aaf372db623d426219862c7a1",
+  "identity": "openvsx:atkivisolutioninstadotnetmodelgenerator.model-intellisense",
+  "install": "https://open-vsx.org/extension/atkivisolutioninstadotnetmodelgenerator/model-intellisense",
+  "name": "Model IntelliSense for Java Spring Boot Thymeleaf HTML",
+  "platforms": [
+    "Open VSX"
+  ],
+  "site": "https://open-vsx.org/extension/atkivisolutioninstadotnetmodelgenerator/model-intellisense",
+  "sourceSignature": "7b3d8ae105fbf7f0119541c77a6d551a97c05325331909ec231218b1d87c28ab",
+  "summary": [
+    "据发布者介绍，这款扩展可在编辑 Thymeleaf HTML 模板时提供 Spring Boot 模型字段的补全建议。",
+    "The publisher describes an extension that suggests Spring Boot model fields as you edit Thymeleaf HTML templates."
+  ],
+  "tested": false,
+  "type": "plugins",
+  "verificationSources": [
+    "https://open-vsx.org/api/-/search?offset=0&query=language+model&size=25"
+  ],
+  "verifiedAt": "2026-11-27",
+  "version": "2.12.10"
+}

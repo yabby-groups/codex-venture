@@ -1,0 +1,28 @@
+{
+  "addedAt": "2026-11-27",
+  "categories": [
+    [
+      "海关与出口信息查询",
+      "Customs and Export Research"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-25",
+  "id": "resource-b5d625011c84096b6e9e216ccea5476784f9bbf14f7bf8d173a89694e76f153a",
+  "identity": "mcp:agency.zoll/ausfuhr",
+  "name": "zoll.agency",
+  "registryId": "agency.zoll/ausfuhr",
+  "site": "https://registry.modelcontextprotocol.io/v0.1/servers/agency.zoll%2Fausfuhr/versions/1.0.0",
+  "sourceSignature": "27649bd5e758a9db479cda950b0f1f2782f3cd863e85c56936defd2b300d1b0a",
+  "summary": [
+    "据发布者介绍，zoll.agency 是一项用于查询欧盟出口规则和贸易信息的 MCP 资源，涵盖原产地累积规则、优惠原产地证明、国际贸易术语（Incoterms）和商品编码。",
+    "The publisher describes zoll.agency as an MCP resource for looking up EU export rules and trade information, including origin cumulation, proof of preferential origin, Incoterms, and commodity codes."
+  ],
+  "tested": false,
+  "transport": "streamable-http",
+  "type": "mcp",
+  "verificationSources": [
+    "https://registry.modelcontextprotocol.io/v0.1/servers/agency.zoll%2Fausfuhr/versions/1.0.0"
+  ],
+  "verifiedAt": "2026-11-27",
+  "version": "1.0.0"
+}

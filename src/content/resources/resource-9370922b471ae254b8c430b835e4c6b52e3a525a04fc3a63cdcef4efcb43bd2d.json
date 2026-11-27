@@ -1,0 +1,28 @@
+{
+  "addedAt": "2026-11-27",
+  "categories": [
+    [
+      "词汇学习",
+      "Vocabulary Learning"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-26",
+  "id": "resource-9370922b471ae254b8c430b835e4c6b52e3a525a04fc3a63cdcef4efcb43bd2d",
+  "identity": "github:1228907509",
+  "license": "MIT",
+  "name": "orionsheep/wordlink",
+  "repository": "https://github.com/orionsheep/wordlink",
+  "repositoryId": "1228907509",
+  "site": "https://github.com/orionsheep/wordlink",
+  "sourceSignature": "1884459836605f937fa6002afedbde819b7809a244d09bb8b3b755c9f51023eb",
+  "summary": [
+    "据发布者介绍，Wordlink 使用经过微调的 15 亿参数模型，支持在浏览器中离线学习词汇。",
+    "The publisher describes Wordlink as a vocabulary learning tool that uses a fine-tuned 1.5B-parameter model and runs offline in the browser."
+  ],
+  "tested": false,
+  "type": "resources",
+  "verificationSources": [
+    "https://api.github.com/search/repositories?page=1&per_page=30&q=topic%3Aai-education+archived%3Afalse+fork%3Afalse&sort=stars"
+  ],
+  "verifiedAt": "2026-11-27"
+}

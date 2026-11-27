@@ -1,0 +1,29 @@
+{
+  "addedAt": "2026-11-27",
+  "categories": [
+    [
+      "自托管 AI 部署",
+      "Self-Hosted AI Deployment"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-25",
+  "id": "resource-e13f6052024898113a2b97911611b12b55b7217ad156ff24c34a0e88d68d1f4d",
+  "identity": "github:978316230",
+  "license": "Apache-2.0",
+  "name": "kossakovsky/selfhost-ai",
+  "repository": "https://github.com/kossakovsky/selfhost-ai",
+  "repositoryId": "978316230",
+  "site": "https://github.com/kossakovsky/selfhost-ai",
+  "sourceSignature": "52904e57518fe394ffb76f7fbcef8075001d3e5c99d1eecb4ea38a4af5b735b4",
+  "summary": [
+    "据发布者介绍，selfhost-ai 通过 Docker Compose 在自有服务器上部署 Ollama、Open WebUI 和 n8n 等工具，通过 Caddy 自动配置 HTTPS，并提供内置监控。",
+    "The publisher describes selfhost-ai as a Docker Compose installer for deploying tools such as Ollama, Open WebUI, and n8n on your own server, with automatic HTTPS via Caddy and built-in monitoring."
+  ],
+  "tested": false,
+  "type": "tools",
+  "verificationSources": [
+    "https://api.github.com/search/repositories?page=1&per_page=30&q=topic%3Aai-automation+archived%3Afalse+fork%3Afalse&sort=stars",
+    "https://api.github.com/search/repositories?page=11&per_page=30&q=topic%3Arag+archived%3Afalse+fork%3Afalse&sort=stars"
+  ],
+  "verifiedAt": "2026-11-27"
+}

@@ -1,0 +1,28 @@
+{
+  "addedAt": "2026-11-27",
+  "categories": [
+    [
+      "桌面自动化",
+      "Desktop Automation"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-26",
+  "id": "resource-1d07e71e0d3ae8ae617cbedbbec220c00f26c82901aaaef9f835ebf2f250ed3e",
+  "identity": "github:1161958643",
+  "license": "Apache-2.0",
+  "name": "vercel-labs/agent-desktop",
+  "repository": "https://github.com/vercel-labs/agent-desktop",
+  "repositoryId": "1161958643",
+  "site": "https://github.com/vercel-labs/agent-desktop",
+  "sourceSignature": "89e9c1913e6059759483c8dbeed9927a70baa45031875cac009797490c2786e0",
+  "summary": [
+    "据 Vercel Labs 介绍，agent-desktop 为 AI 智能体提供了与桌面交互的命令行界面。",
+    "Vercel Labs describes agent-desktop as a command-line interface that lets AI agents interact with a desktop."
+  ],
+  "tested": false,
+  "type": "open-source",
+  "verificationSources": [
+    "https://api.github.com/search/repositories?page=3&per_page=30&q=topic%3Aai-agents+archived%3Afalse+fork%3Afalse&sort=stars"
+  ],
+  "verifiedAt": "2026-11-27"
+}

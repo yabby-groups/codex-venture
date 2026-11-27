@@ -1,0 +1,28 @@
+{
+  "addedAt": "2026-11-27",
+  "categories": [
+    [
+      "聊天笔记整理",
+      "Chat Note Capture"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-27",
+  "id": "resource-00665bedcce909f9e19d5df7195b29f550c9b48807393be9df4a341a50b3d540",
+  "identity": "github:1274347983",
+  "license": "MIT",
+  "name": "mihkarp/trash-panda",
+  "repository": "https://github.com/mihkarp/trash-panda",
+  "repositoryId": "1274347983",
+  "site": "https://github.com/mihkarp/trash-panda",
+  "sourceSignature": "c145499d765b530b4710a155fbac424a37be04a0e5f7139119e8d109a237ea2e",
+  "summary": [
+    "据发布者介绍，trash-panda 可将 AI 聊天中的待办事项、想法、计划和草稿保存为本地 Markdown 文件。",
+    "The publisher describes trash-panda as a skill for saving to-dos, ideas, plans, and drafts from AI chats to local Markdown files."
+  ],
+  "tested": false,
+  "type": "workflows",
+  "verificationSources": [
+    "https://api.github.com/search/repositories?page=10&per_page=30&q=topic%3Aai-workflow+archived%3Afalse+fork%3Afalse&sort=stars"
+  ],
+  "verifiedAt": "2026-11-27"
+}

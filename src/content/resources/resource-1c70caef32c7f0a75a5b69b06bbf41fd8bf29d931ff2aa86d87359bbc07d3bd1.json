@@ -1,0 +1,28 @@
+{
+  "addedAt": "2026-11-27",
+  "categories": [
+    [
+      "图像模型微调",
+      "Image Model Fine-Tuning"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-26",
+  "id": "resource-1c70caef32c7f0a75a5b69b06bbf41fd8bf29d931ff2aa86d87359bbc07d3bd1",
+  "identity": "github:537940881",
+  "license": "MIT",
+  "name": "JoePenna/Dreambooth-Stable-Diffusion",
+  "repository": "https://github.com/JoePenna/Dreambooth-Stable-Diffusion",
+  "repositoryId": "537940881",
+  "site": "https://github.com/JoePenna/Dreambooth-Stable-Diffusion",
+  "sourceSignature": "62617786b37d089091ad3a0fdd9c8947bfc0e6c468b597ffb53393f3a2b9993e",
+  "summary": [
+    "该仓库介绍了一种利用 Textual Inversion 为 Stable Diffusion 实现 DreamBooth 的方法，重点是针对特定人脸、物体和风格进行训练。",
+    "The repository describes a DreamBooth implementation for Stable Diffusion that uses Textual Inversion and focuses on training for specific faces, objects, and styles."
+  ],
+  "tested": false,
+  "type": "open-source",
+  "verificationSources": [
+    "https://api.github.com/search/repositories?page=2&per_page=30&q=topic%3Aimage-generation+archived%3Afalse+fork%3Afalse&sort=stars"
+  ],
+  "verifiedAt": "2026-11-27"
+}

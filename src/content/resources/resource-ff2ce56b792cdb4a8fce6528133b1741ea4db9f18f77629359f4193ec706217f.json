@@ -1,0 +1,28 @@
+{
+  "addedAt": "2026-11-27",
+  "categories": [
+    [
+      "AI 编程工作流",
+      "AI Coding Workflows"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-26",
+  "id": "resource-ff2ce56b792cdb4a8fce6528133b1741ea4db9f18f77629359f4193ec706217f",
+  "identity": "github:1196768707",
+  "license": "MIT",
+  "name": "clawplays/ospec",
+  "repository": "https://github.com/clawplays/ospec",
+  "repositoryId": "1196768707",
+  "site": "https://github.com/clawplays/ospec",
+  "sourceSignature": "7088cbae360742e3dc5b968e0a0ceb77febdd9b69ddfd2f547f394b843c7b978",
+  "summary": [
+    "据发布者介绍，ospec 可将编程需求整理为规格说明，引导 AI 编程智能体完成规划、实现和验证，并将规格说明与验证记录保存在代码仓库中。",
+    "The publisher describes ospec as a framework for turning coding requests into specifications, guiding AI coding agents through planning, implementation, and verification, and keeping the specs and verification evidence in the repository."
+  ],
+  "tested": false,
+  "type": "workflows",
+  "verificationSources": [
+    "https://api.github.com/search/repositories?page=1&per_page=30&q=topic%3Aai-workflow+archived%3Afalse+fork%3Afalse&sort=stars"
+  ],
+  "verifiedAt": "2026-11-27"
+}
