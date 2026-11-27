@@ -1,0 +1,29 @@
+{
+  "addedAt": "2026-11-27",
+  "categories": [
+    [
+      "文本生成",
+      "Text Generation"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-25",
+  "id": "resource-18311135b7a65a33b554db053e02fa72bdf4bcae0d1839abb83c14f35697fc28",
+  "identity": "hf:bartowski/qwen2.5-32b-instruct-gguf",
+  "name": "bartowski/Qwen2.5-32B-Instruct-GGUF",
+  "site": "https://huggingface.co/bartowski/Qwen2.5-32B-Instruct-GGUF",
+  "sourceSignature": "aa07d77f102ba93932606b45ac427e111a9b496166b83cfd599bfdabed984e9a",
+  "summary": [
+    "该 Hugging Face 条目提供由 bartowski 量化的 GGUF 版 Qwen2.5-32B-Instruct，可用于文本生成和对话。",
+    "The Hugging Face listing provides bartowski’s GGUF quantization of Qwen2.5-32B-Instruct for text generation and chat."
+  ],
+  "tags": [
+    "text-generation"
+  ],
+  "tested": false,
+  "type": "models",
+  "verificationSources": [
+    "https://huggingface.co/api/models?cursor=eyIkb3IiOlt7ImRvd25sb2FkcyI6NTk3NDM1LCJfaWQiOnsiJGd0IjoiNjk4ZDZkYTRlN2UyMDk3ZDAzZTRkYmJhIn19LHsiZG93bmxvYWRzIjp7IiRsdCI6NTk3NDM1fX0seyJkb3dubG9hZHMiOm51bGx9XSwic2VhcmNoU2VxdWVuY2VUb2tlbiI6IkNLcjh0UUlhQ1NFQUFBQUFkanNpUVJvT1dneHBqVzJrNStJSmZRUGsyN29pRGxvTWFZMXRwT2ZpQ1gwRDVOdTYifQ%3D%3D&direction=-1&full=true&limit=30&pipeline_tag=text-generation&sort=downloads",
+    "https://huggingface.co/bartowski/Qwen2.5-32B-Instruct-GGUF/raw/main/README.md"
+  ],
+  "verifiedAt": "2026-11-27"
+}

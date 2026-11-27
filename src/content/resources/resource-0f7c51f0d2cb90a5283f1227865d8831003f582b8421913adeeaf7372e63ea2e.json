@@ -1,0 +1,28 @@
+{
+  "addedAt": "2026-11-27",
+  "categories": [
+    [
+      "演示文稿设计",
+      "Presentation Design"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-26",
+  "id": "resource-0f7c51f0d2cb90a5283f1227865d8831003f582b8421913adeeaf7372e63ea2e",
+  "identity": "github:1219042200",
+  "license": "AGPL-3.0",
+  "name": "op7418/guizang-ppt-skill",
+  "repository": "https://github.com/op7418/guizang-ppt-skill",
+  "repositoryId": "1219042200",
+  "site": "https://github.com/op7418/guizang-ppt-skill",
+  "sourceSignature": "19dc413662a68c4b1fc777958063edba5afa8b084a6daa5ea1a01b8b4c9865f3",
+  "summary": [
+    "据发布者介绍，这项 AI 智能体技能可生成杂志编辑风格或瑞士风格的 HTML 幻灯片，也可生成配图提示词和社交媒体封面。",
+    "The publisher describes an AI agent skill for creating HTML slide decks in editorial magazine or Swiss-style layouts. It can also generate image prompts and social media covers."
+  ],
+  "tested": false,
+  "type": "open-source",
+  "verificationSources": [
+    "https://api.github.com/search/repositories?page=1&per_page=30&q=topic%3Aimage-generation+archived%3Afalse+fork%3Afalse&sort=stars"
+  ],
+  "verifiedAt": "2026-11-27"
+}

@@ -1,0 +1,28 @@
+{
+  "addedAt": "2026-11-27",
+  "categories": [
+    [
+      "职业规划",
+      "Career Planning"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-26",
+  "id": "resource-2ffb503b1d82dd80d2f5a428c6fdc8e7d1095e6e9ae6e990c99b0c2832e88c20",
+  "identity": "github:1119951832",
+  "license": "MIT",
+  "name": "MadsDoodle/Career-Navigator",
+  "repository": "https://github.com/MadsDoodle/Career-Navigator",
+  "repositoryId": "1119951832",
+  "site": "https://github.com/MadsDoodle/Career-Navigator",
+  "sourceSignature": "76da103713852291a21ed871bf4e1b59984345e84f2557146b872275dd3eec70",
+  "summary": [
+    "据发布者介绍，这款 AI 职业规划平台可帮助用户完善简历、找出技能差距、制定学习计划、模拟职业路径，并匹配和申请岗位。",
+    "The publisher describes an AI career platform that helps users work on résumés, identify skill gaps, plan learning, simulate career paths, and find and apply for matching jobs."
+  ],
+  "tested": false,
+  "type": "resources",
+  "verificationSources": [
+    "https://api.github.com/search/repositories?page=2&per_page=30&q=topic%3Aai-education+archived%3Afalse+fork%3Afalse&sort=stars"
+  ],
+  "verifiedAt": "2026-11-27"
+}

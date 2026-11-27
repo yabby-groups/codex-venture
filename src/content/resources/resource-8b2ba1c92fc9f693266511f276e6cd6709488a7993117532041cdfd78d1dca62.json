@@ -1,0 +1,28 @@
+{
+  "addedAt": "2026-11-27",
+  "categories": [
+    [
+      "餐厅与优惠查询",
+      "Restaurant and Deal Discovery"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-25",
+  "id": "resource-8b2ba1c92fc9f693266511f276e6cd6709488a7993117532041cdfd78d1dca62",
+  "identity": "mcp:ae.discond/discond",
+  "name": "Discond",
+  "registryId": "ae.discond/discond",
+  "site": "https://registry.modelcontextprotocol.io/v0.1/servers/ae.discond%2Fdiscond/versions/1.1.0",
+  "sourceSignature": "8b3810b072cece92124fec0471318e85dbb557549e3dad68e68c1156deda43bc",
+  "summary": [
+    "据发布者介绍，这项 MCP 服务可帮助用户查找阿联酋的餐厅，并查看 Fazaa、The Entertainer 和 Talabat 等服务的当前优惠。",
+    "The publisher says this MCP service helps users find UAE restaurants and check current offers from services such as Fazaa, The Entertainer, and Talabat."
+  ],
+  "tested": false,
+  "transport": "streamable-http",
+  "type": "mcp",
+  "verificationSources": [
+    "https://registry.modelcontextprotocol.io/v0.1/servers/ae.discond%2Fdiscond/versions/1.1.0"
+  ],
+  "verifiedAt": "2026-11-27",
+  "version": "1.1.0"
+}

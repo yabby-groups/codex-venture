@@ -1,0 +1,28 @@
+{
+  "addedAt": "2026-11-27",
+  "categories": [
+    [
+      "RSS 阅读与翻译",
+      "RSS Reading and Translation"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-26",
+  "id": "resource-6b351bb0164e421fe8909cdc220aad01f48dff529a78e3e7649056cbfab99f6f",
+  "identity": "github:1265266326",
+  "license": "MIT",
+  "name": "joeseesun/qmreader",
+  "repository": "https://github.com/joeseesun/qmreader",
+  "repositoryId": "1265266326",
+  "site": "https://github.com/joeseesun/qmreader",
+  "sourceSignature": "c8e16077ed95f3210b726e25e743a00b643292c1ad313264e4aced85ab1e331e",
+  "summary": [
+    "据发布者介绍，这款中文 RSS 阅读工作台可管理订阅源、翻译文章以供双语阅读，并按乔木风格改写文章。",
+    "The publisher describes a Chinese-language RSS workbench for managing subscriptions, translating articles for bilingual reading, and rewriting them in the Qiaomu style."
+  ],
+  "tested": false,
+  "type": "workflows",
+  "verificationSources": [
+    "https://api.github.com/search/repositories?page=1&per_page=30&q=topic%3Aai-workflow+archived%3Afalse+fork%3Afalse&sort=stars"
+  ],
+  "verifiedAt": "2026-11-27"
+}

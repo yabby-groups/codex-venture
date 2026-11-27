@@ -1,0 +1,28 @@
+{
+  "addedAt": "2026-11-27",
+  "categories": [
+    [
+      "教学材料制作",
+      "Teaching Material Preparation"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-26",
+  "id": "resource-321af56e1934e28bf82d413ebbce580f6d44adb0ce357d46fbf8ebd4330a2f04",
+  "identity": "github:1341481215",
+  "license": "MIT",
+  "name": "xx-hub/dsh-craft-your-textbook",
+  "repository": "https://github.com/xx-hub/dsh-craft-your-textbook",
+  "repositoryId": "1341481215",
+  "site": "https://github.com/xx-hub/dsh-craft-your-textbook",
+  "sourceSignature": "7259cbcd758b6db6336f428906d7fb45a6fa836db41585c52750b1f304e4e597",
+  "summary": [
+    "据发布者介绍，这套包含人工检查环节的六阶段流程可将教材 PDF 转换为供 AI 导师授课的教学方案，或整理成便于阅读的教材。",
+    "The publisher describes a six-stage workflow with human review checkpoints for turning textbook PDFs into teaching plans for an AI tutor or readable textbooks."
+  ],
+  "tested": false,
+  "type": "resources",
+  "verificationSources": [
+    "https://api.github.com/search/repositories?page=2&per_page=30&q=topic%3Aai-education+archived%3Afalse+fork%3Afalse&sort=stars"
+  ],
+  "verifiedAt": "2026-11-27"
+}

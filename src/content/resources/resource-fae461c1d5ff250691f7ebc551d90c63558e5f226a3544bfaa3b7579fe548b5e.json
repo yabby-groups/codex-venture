@@ -1,0 +1,28 @@
+{
+  "addedAt": "2026-11-27",
+  "categories": [
+    [
+      "AI 资源检索与计算",
+      "AI Resource Discovery and Compute"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-25",
+  "id": "resource-fae461c1d5ff250691f7ebc551d90c63558e5f226a3544bfaa3b7579fe548b5e",
+  "identity": "github-skill:1102903896:hf-mcp/skills/hf-mcp/SKILL.md",
+  "name": "hf-mcp",
+  "repository": "https://github.com/huggingface/skills",
+  "repositoryId": "1102903896",
+  "site": "https://github.com/huggingface/skills/blob/main/hf-mcp/skills/hf-mcp/SKILL.md",
+  "sourcePath": "hf-mcp/skills/hf-mcp/SKILL.md",
+  "sourceSignature": "21376bc3746791d7682babfabefc9abba933164573e41a026f4e9b4c539d82fe",
+  "summary": [
+    "据发布者介绍，这项技能让 AI 助手通过 MCP 连接 Hugging Face Hub，以搜索模型、数据集、Spaces 和论文，获取文档，运行计算任务，并将 Gradio Spaces 用作工具。",
+    "The publisher says this skill connects assistants to the Hugging Face Hub over MCP to search models, datasets, Spaces, and papers, retrieve documentation, run compute jobs, and use Gradio Spaces as tools."
+  ],
+  "tested": false,
+  "type": "skills",
+  "verificationSources": [
+    "https://github.com/huggingface/skills/blob/main/hf-mcp/skills/hf-mcp/SKILL.md"
+  ],
+  "verifiedAt": "2026-11-27"
+}

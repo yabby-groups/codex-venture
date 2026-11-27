@@ -1,0 +1,28 @@
+{
+  "addedAt": "2026-11-27",
+  "categories": [
+    [
+      "软件项目管理",
+      "Software Project Management"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-25",
+  "id": "resource-b9a9e1189cebfa6cc32f8d9cd43f92f356ef75606b4a05dedd72a7ce5c87a2ee",
+  "identity": "github:1040397982",
+  "license": "MIT",
+  "name": "automazeio/ccpm",
+  "repository": "https://github.com/automazeio/ccpm",
+  "repositoryId": "1040397982",
+  "site": "https://github.com/automazeio/ccpm",
+  "sourceSignature": "a7d4d4debe0e3f78b243f3a5f487c018a3c6cc147d8703cb7c37876f7a161a92",
+  "summary": [
+    "据发布者介绍，这套技能系统通过 GitHub Issues 跟踪项目任务，并利用 Git 工作树让多个 AI 智能体并行工作。",
+    "The publisher describes a skill system that uses GitHub Issues to track project work and Git worktrees to let multiple AI agents work in parallel."
+  ],
+  "tested": false,
+  "type": "tools",
+  "verificationSources": [
+    "https://api.github.com/search/repositories?page=1&per_page=30&q=topic%3Aai-coding+archived%3Afalse+fork%3Afalse&sort=stars"
+  ],
+  "verifiedAt": "2026-11-27"
+}
