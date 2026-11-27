@@ -1,0 +1,28 @@
+{
+  "addedAt": "2026-11-27",
+  "categories": [
+    [
+      "AI 播客制作",
+      "AI Podcast Production"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-26",
+  "id": "resource-e4443d8a1403109350e7d8853be99ae3dc32feabbccf46b219107476e28a7175",
+  "identity": "github:933044155",
+  "license": "AGPL-3.0",
+  "name": "miantiao-me/hacker-podcast",
+  "repository": "https://github.com/miantiao-me/hacker-podcast",
+  "repositoryId": "933044155",
+  "site": "https://github.com/miantiao-me/hacker-podcast",
+  "sourceSignature": "50d6cf6284bfac501eb1b41d593cd22f7d8b71ee456fff466dfb6ac21afaf0f6",
+  "summary": [
+    "据项目介绍，该流程每天抓取 Hacker News 热门文章，用 AI 生成中文摘要，再将摘要制作成播客内容。",
+    "The project describes a daily workflow that fetches popular Hacker News articles, uses AI to summarize them in Chinese, and turns the summaries into podcast content."
+  ],
+  "tested": false,
+  "type": "workflows",
+  "verificationSources": [
+    "https://api.github.com/search/repositories?page=1&per_page=30&q=topic%3Aai-workflow+archived%3Afalse+fork%3Afalse&sort=stars"
+  ],
+  "verifiedAt": "2026-11-27"
+}

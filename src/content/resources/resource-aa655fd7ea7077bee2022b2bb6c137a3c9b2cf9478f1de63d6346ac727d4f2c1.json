@@ -1,0 +1,28 @@
+{
+  "addedAt": "2026-11-27",
+  "categories": [
+    [
+      "社交平台数据获取",
+      "Social Platform Data Retrieval"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-25",
+  "id": "resource-aa655fd7ea7077bee2022b2bb6c137a3c9b2cf9478f1de63d6346ac727d4f2c1",
+  "identity": "mcp:ai.agentapigate/telegram-discord-twitch-kick-medium-pinterest-mcp",
+  "name": "ai.agentapigate/telegram-discord-twitch-kick-medium-pinterest-mcp",
+  "registryId": "ai.agentapigate/telegram-discord-twitch-kick-medium-pinterest-mcp",
+  "site": "https://registry.modelcontextprotocol.io/v0.1/servers/ai.agentapigate%2Ftelegram-discord-twitch-kick-medium-pinterest-mcp/versions/1.4.0",
+  "sourceSignature": "f05c79d475c8e5abf3b1ca4e8a7e2392cdb35a088db2f65bd8aefd3dbbbf4e6b",
+  "summary": [
+    "据发布说明，这个 MCP API 可获取 Telegram 频道消息和 Discord 服务器统计数据，也可从 Twitch、Kick、Medium 和 Pinterest 抓取数据。",
+    "The listing describes an MCP API for retrieving Telegram channel messages and Discord server statistics, as well as scraping data from Twitch, Kick, Medium, and Pinterest."
+  ],
+  "tested": false,
+  "transport": "streamable-http",
+  "type": "mcp",
+  "verificationSources": [
+    "https://registry.modelcontextprotocol.io/v0.1/servers/ai.agentapigate%2Ftelegram-discord-twitch-kick-medium-pinterest-mcp/versions/1.4.0"
+  ],
+  "verifiedAt": "2026-11-27",
+  "version": "1.4.0"
+}

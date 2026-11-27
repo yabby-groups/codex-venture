@@ -1,0 +1,27 @@
+{
+  "addedAt": "2026-11-27",
+  "categories": [
+    [
+      "应用机器学习",
+      "Applied Machine Learning"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-26",
+  "id": "resource-79581d5ceff5b03a07068c7778e15f29aab4df3d084b62208f3784e92c525f77",
+  "identity": "github:697695863",
+  "name": "MahanPourhosseini/Water-Treatment-Plant",
+  "repository": "https://github.com/MahanPourhosseini/Water-Treatment-Plant",
+  "repositoryId": "697695863",
+  "site": "https://github.com/MahanPourhosseini/Water-Treatment-Plant",
+  "sourceSignature": "e82ecd95baf2a8eeb1a6dba1637e210f720e1b1e2b9d2592cf409cd5e13c14cb",
+  "summary": [
+    "据仓库介绍，这个 Python 项目使用传感器数据对水处理厂的运行状态进行分类，涵盖数据预处理、探索性分析、模型训练和超参数调优。",
+    "The repository describes a Python project that classifies a water treatment plant’s operating states from sensor data and covers preprocessing, exploratory analysis, model training, and hyperparameter tuning."
+  ],
+  "tested": false,
+  "type": "resources",
+  "verificationSources": [
+    "https://api.github.com/search/repositories?page=2&per_page=30&q=topic%3Amachine-learning-course+archived%3Afalse+fork%3Afalse&sort=stars"
+  ],
+  "verifiedAt": "2026-11-27"
+}

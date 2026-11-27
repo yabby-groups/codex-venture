@@ -1,0 +1,28 @@
+{
+  "addedAt": "2026-11-27",
+  "categories": [
+    [
+      "生成模型训练与推理",
+      "Generative Model Training and Inference"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-26",
+  "id": "resource-1a4623846e56d17a4a3f5538dc7f59610689b9423d7d9f272120858226bea2e8",
+  "identity": "github:871368615",
+  "license": "Apache-2.0",
+  "name": "NVlabs/Sana",
+  "repository": "https://github.com/NVlabs/Sana",
+  "repositoryId": "871368615",
+  "site": "https://github.com/NVlabs/Sana",
+  "sourceSignature": "4ae624cbe0b7b0046bf31c77b8450f1599c6c31c8aafa851ac72012278ffa6dc",
+  "summary": [
+    "据 NVlabs 介绍，SANA 和 Sol 提供生成模型及训练和推理工具，应用涵盖图像与视频生成、世界建模和机器人。",
+    "NVlabs describes SANA and Sol as generative models with tools for training and inference across image and video generation, world modeling, and robotics."
+  ],
+  "tested": false,
+  "type": "open-source",
+  "verificationSources": [
+    "https://api.github.com/search/repositories?page=1&per_page=30&q=topic%3Avideo-generation+archived%3Afalse+fork%3Afalse&sort=stars"
+  ],
+  "verifiedAt": "2026-11-27"
+}

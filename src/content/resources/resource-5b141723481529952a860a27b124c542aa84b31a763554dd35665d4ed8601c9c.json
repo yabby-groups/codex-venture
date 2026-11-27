@@ -1,0 +1,31 @@
+{
+  "addedAt": "2026-11-27",
+  "categories": [
+    [
+      "AI 工作流可视化编辑",
+      "Visual AI Workflow Editing"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-25",
+  "id": "resource-5b141723481529952a860a27b124c542aa84b31a763554dd35665d4ed8601c9c",
+  "identity": "openvsx:breaking-brake.cc-wf-studio",
+  "install": "https://open-vsx.org/extension/breaking-brake/cc-wf-studio",
+  "name": "Claude Code Workflow Studio",
+  "platforms": [
+    "Open VSX"
+  ],
+  "site": "https://open-vsx.org/extension/breaking-brake/cc-wf-studio",
+  "sourceSignature": "bfea11939249c6f85c34bf5096ba814c43e98425a8fdd3d4ae3888c578daf008",
+  "summary": [
+    "据发布说明，可用可视化编辑器为 Claude Code、GitHub Copilot 等 AI 编程助手编排和编辑工作流。",
+    "The listing describes a visual editor for building and editing workflows for AI coding agents such as Claude Code and GitHub Copilot."
+  ],
+  "tested": false,
+  "type": "plugins",
+  "verificationSources": [
+    "https://open-vsx.org/api/-/search?offset=175&query=Copilot&size=25",
+    "https://open-vsx.org/api/-/search?offset=50&query=Claude&size=25"
+  ],
+  "verifiedAt": "2026-11-27",
+  "version": "3.36.0"
+}

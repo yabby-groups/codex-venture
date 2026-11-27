@@ -1,0 +1,27 @@
+{
+  "addedAt": "2026-11-27",
+  "categories": [
+    [
+      "人工智能学习笔记",
+      "AI Study Notes"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-26",
+  "id": "resource-794565239c7317bd06a607d035dc439b4ea37f1db5ff9e766cd0de2b41b52199",
+  "identity": "github:1234419539",
+  "name": "forrestIsRunning/karpathy-wiki-zh",
+  "repository": "https://github.com/forrestIsRunning/karpathy-wiki-zh",
+  "repositoryId": "1234419539",
+  "site": "https://github.com/forrestIsRunning/karpathy-wiki-zh",
+  "sourceSignature": "476afee0a94629056dfdca107fe41b91d5cb91326f55d0a2755c659eafddfc00",
+  "summary": [
+    "阅读有关 Andrej Karpathy 的文章、演讲、论文、项目和 CS231n 课程内容的中文笔记。",
+    "Read Chinese-language notes on Andrej Karpathy’s writing, talks, papers, projects, and CS231n course material."
+  ],
+  "tested": false,
+  "type": "resources",
+  "verificationSources": [
+    "https://api.github.com/search/repositories?page=2&per_page=30&q=topic%3Aai-education+archived%3Afalse+fork%3Afalse&sort=stars"
+  ],
+  "verifiedAt": "2026-11-27"
+}

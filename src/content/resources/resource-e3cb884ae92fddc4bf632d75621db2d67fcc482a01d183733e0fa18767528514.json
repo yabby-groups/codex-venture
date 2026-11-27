@@ -1,0 +1,28 @@
+{
+  "addedAt": "2026-11-27",
+  "categories": [
+    [
+      "提示词模板管理",
+      "Prompt Template Management"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-26",
+  "id": "resource-e3cb884ae92fddc4bf632d75621db2d67fcc482a01d183733e0fa18767528514",
+  "identity": "github:1309181679",
+  "license": "MIT",
+  "name": "erdemtuna/prompt-bank",
+  "repository": "https://github.com/erdemtuna/prompt-bank",
+  "repositoryId": "1309181679",
+  "site": "https://github.com/erdemtuna/prompt-bank",
+  "sourceSignature": "9bb334ae2a72948bef65786e3099be354024ccbcdd69bbbde8695b6d4b52d916",
+  "summary": [
+    "据项目介绍，可将带变量和可选段落的提示词模板保存为本地 Markdown 文件，填写并预览后复制到 AI 工具中。",
+    "The project describes storing reusable prompts in local Markdown with variables and optional sections, then filling in and previewing each prompt before copying it into an AI tool."
+  ],
+  "tested": false,
+  "type": "prompts",
+  "verificationSources": [
+    "https://api.github.com/search/repositories?page=1&per_page=30&q=topic%3Aprompt-templates+archived%3Afalse+fork%3Afalse&sort=stars"
+  ],
+  "verifiedAt": "2026-11-27"
+}

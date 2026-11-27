@@ -1,0 +1,28 @@
+{
+  "addedAt": "2026-11-27",
+  "categories": [
+    [
+      "拉取请求管理",
+      "Pull Request Management"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-26",
+  "id": "resource-1b31db7e7f84be215c273da53b1b49ad5c1acedffd0e76e190fd62ef8862c7a8",
+  "identity": "github-skill:968197216:tools/gemini-cli-bot/.gemini/skills/prs/SKILL.md",
+  "name": "prs",
+  "repository": "https://github.com/google-gemini/gemini-cli",
+  "repositoryId": "968197216",
+  "site": "https://github.com/google-gemini/gemini-cli/blob/main/tools/gemini-cli-bot/.gemini/skills/prs/SKILL.md",
+  "sourcePath": "tools/gemini-cli-bot/.gemini/skills/prs/SKILL.md",
+  "sourceSignature": "96c6243dc0feaf6bdc918e3e015fc1e47aa329a095bc2069681c6f86a0f18302",
+  "summary": [
+    "这份技能文档介绍如何规范 Gemini CLI 机器人暂存 Git 变更、起草 GitHub 拉取请求说明和管理分支的流程。",
+    "This skill describes how to standardize the Gemini CLI bot’s workflow for staging Git changes, drafting GitHub pull request descriptions, and managing branches."
+  ],
+  "tested": false,
+  "type": "skills",
+  "verificationSources": [
+    "https://github.com/google-gemini/gemini-cli/blob/main/tools/gemini-cli-bot/.gemini/skills/prs/SKILL.md"
+  ],
+  "verifiedAt": "2026-11-27"
+}

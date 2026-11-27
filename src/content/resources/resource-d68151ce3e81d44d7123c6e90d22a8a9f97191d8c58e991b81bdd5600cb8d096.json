@@ -1,0 +1,28 @@
+{
+  "addedAt": "2026-11-27",
+  "categories": [
+    [
+      "AI 智能体编排",
+      "AI Agent Orchestration"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-25",
+  "id": "resource-d68151ce3e81d44d7123c6e90d22a8a9f97191d8c58e991b81bdd5600cb8d096",
+  "identity": "github:1224575142",
+  "license": "MIT",
+  "name": "Orkas-AI/Orkas",
+  "repository": "https://github.com/Orkas-AI/Orkas",
+  "repositoryId": "1224575142",
+  "site": "https://github.com/Orkas-AI/Orkas",
+  "sourceSignature": "3930f4061d15f3eb158c9cf2e196999a8f463a98453ffd2f619be081c48e0bd2",
+  "summary": [
+    "据 Orkas 介绍，Commander 可将目标拆成待办任务，并协调专用智能体和外部编程工具。发布说明还列出了项目管理和定时自动化功能。",
+    "Orkas says its Commander turns goals into tasks and coordinates specialist agents and external coding tools. The listing also describes project organization and scheduled automations."
+  ],
+  "tested": false,
+  "type": "tools",
+  "verificationSources": [
+    "https://api.github.com/search/repositories?page=1&per_page=30&q=topic%3Aai-automation+archived%3Afalse+fork%3Afalse&sort=stars"
+  ],
+  "verifiedAt": "2026-11-27"
+}

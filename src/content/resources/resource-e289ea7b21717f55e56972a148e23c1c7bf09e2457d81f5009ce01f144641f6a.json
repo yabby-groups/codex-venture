@@ -1,0 +1,28 @@
+{
+  "addedAt": "2026-11-27",
+  "categories": [
+    [
+      "AI 编程流程管理",
+      "AI Coding Workflow Governance"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-26",
+  "id": "resource-e289ea7b21717f55e56972a148e23c1c7bf09e2457d81f5009ce01f144641f6a",
+  "identity": "github:1124938752",
+  "license": "MIT",
+  "name": "shangyankeji/super-dev",
+  "repository": "https://github.com/shangyankeji/super-dev",
+  "repositoryId": "1124938752",
+  "site": "https://github.com/shangyankeji/super-dev",
+  "sourceSignature": "f24ea133604c8a0c2b3b2bc00f625ba2ca7b4e38cb854214dbf8ebfa8256ae87",
+  "summary": [
+    "据项目介绍，可为 AI 辅助编程引入规格说明、评审、质量检查关卡和流程追溯。",
+    "The project describes a workflow layer for applying specifications, reviews, quality gates, and traceability to AI-assisted coding."
+  ],
+  "tested": false,
+  "type": "workflows",
+  "verificationSources": [
+    "https://api.github.com/search/repositories?page=1&per_page=30&q=topic%3Aai-workflow+archived%3Afalse+fork%3Afalse&sort=stars"
+  ],
+  "verifiedAt": "2026-11-27"
+}
