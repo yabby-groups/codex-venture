@@ -1,0 +1,28 @@
+{
+  "addedAt": "2026-11-27",
+  "categories": [
+    [
+      "终端界面测试",
+      "Terminal UI testing"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-26",
+  "id": "resource-00d47e9246d78d237ede7905ed59b10d3acd6a5fa815b366492fecc82ecd494a",
+  "identity": "github-skill:968197216:.gemini/skills/agent-tui/SKILL.md",
+  "name": "agent-tui",
+  "repository": "https://github.com/google-gemini/gemini-cli",
+  "repositoryId": "968197216",
+  "site": "https://github.com/google-gemini/gemini-cli/blob/main/.gemini/skills/agent-tui/SKILL.md",
+  "sourcePath": ".gemini/skills/agent-tui/SKILL.md",
+  "sourceSignature": "1ec7734200953a656e6643140b3e2df471bcf439c64473b541616a01b6dd397f",
+  "summary": [
+    "agent-tui 文档介绍了如何通过程序操作终端界面、检查界面状态，并在回归测试中验证交互行为。",
+    "The agent-tui documentation describes how to drive terminal interfaces programmatically, inspect their state, and verify interactive behavior in regression tests."
+  ],
+  "tested": false,
+  "type": "skills",
+  "verificationSources": [
+    "https://github.com/google-gemini/gemini-cli/blob/main/.gemini/skills/agent-tui/SKILL.md"
+  ],
+  "verifiedAt": "2026-11-27"
+}

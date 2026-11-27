@@ -1,0 +1,28 @@
+{
+  "addedAt": "2026-11-27",
+  "categories": [
+    [
+      "图像提示词与编辑",
+      "Image prompting and editing"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-26",
+  "id": "resource-8ed8f62b37db2ce4be197b4ce7e1007e75a486e0a16189b77d17715d5fb78da3",
+  "identity": "github:1217942969",
+  "license": "MIT",
+  "name": "wuyoscar/GPT-Image2-Skill",
+  "repository": "https://github.com/wuyoscar/GPT-Image2-Skill",
+  "repositoryId": "1217942969",
+  "site": "https://github.com/wuyoscar/GPT-Image2-Skill",
+  "sourceSignature": "f0b8bc5145d09f46479cc574c0532f8b7f6252c041a57890762b169385f56620",
+  "summary": [
+    "据发布者介绍，你可以在图库和提示词库中查找图像提示词示例，也可以通过智能体技能和命令行工具使用 OpenAI 图像模型生成或编辑图片。",
+    "The publisher describes a prompt gallery and library for finding image prompt examples, plus an agent skill and CLI for generating and editing images with OpenAI image models."
+  ],
+  "tested": false,
+  "type": "prompts",
+  "verificationSources": [
+    "https://api.github.com/search/repositories?page=1&per_page=30&q=topic%3Aprompt-templates+archived%3Afalse+fork%3Afalse&sort=stars"
+  ],
+  "verifiedAt": "2026-11-27"
+}

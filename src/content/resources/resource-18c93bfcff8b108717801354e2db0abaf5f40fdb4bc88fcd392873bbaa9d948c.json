@@ -1,0 +1,29 @@
+{
+  "addedAt": "2026-11-27",
+  "categories": [
+    [
+      "自动语音识别",
+      "Automatic speech recognition"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-25",
+  "id": "resource-18c93bfcff8b108717801354e2db0abaf5f40fdb4bc88fcd392873bbaa9d948c",
+  "identity": "hf:jonatasgrosman/wav2vec2-large-xlsr-53-spanish",
+  "name": "jonatasgrosman/wav2vec2-large-xlsr-53-spanish",
+  "site": "https://huggingface.co/jonatasgrosman/wav2vec2-large-xlsr-53-spanish",
+  "sourceSignature": "24f8df1b480591aec43f2a5a5ae255ac577dd1d071ff7161f8cf9bfe3307cdab",
+  "summary": [
+    "Hugging Face 模型卡将这款 wav2vec2 模型用于西班牙语音频转写，并介绍了通过 HuggingSound 使用它的方法。",
+    "The Hugging Face model card lists this wav2vec2 model for transcribing Spanish audio and describes using it through HuggingSound."
+  ],
+  "tags": [
+    "automatic-speech-recognition"
+  ],
+  "tested": false,
+  "type": "models",
+  "verificationSources": [
+    "https://huggingface.co/api/models?cursor=eyIkb3IiOlt7ImRvd25sb2FkcyI6MTg2NTExLCJfaWQiOnsiJGd0IjoiNjYyYWVhZDQ5NDhiOTA4YTAwODZjYzU5In19LHsiZG93bmxvYWRzIjp7IiRsdCI6MTg2NTExfX0seyJkb3dubG9hZHMiOm51bGx9XSwic2VhcmNoU2VxdWVuY2VUb2tlbiI6IkNLVFMyd0VhQ1NFQUFBQUFlTVFHUVJvT1dneG1LdXJVbEl1UWlnQ0d6RmtpRGxvTVppcnExSlNMa0lvQWhzeFoifQ%3D%3D&direction=-1&full=true&limit=30&pipeline_tag=automatic-speech-recognition&sort=downloads",
+    "https://huggingface.co/jonatasgrosman/wav2vec2-large-xlsr-53-spanish/raw/main/README.md"
+  ],
+  "verifiedAt": "2026-11-27"
+}

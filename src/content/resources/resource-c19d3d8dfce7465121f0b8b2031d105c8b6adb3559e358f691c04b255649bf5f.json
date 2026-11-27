@@ -1,0 +1,28 @@
+{
+  "addedAt": "2026-11-27",
+  "categories": [
+    [
+      "协作设计与原型制作",
+      "Collaborative design and prototyping"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-25",
+  "id": "resource-c19d3d8dfce7465121f0b8b2031d105c8b6adb3559e358f691c04b255649bf5f",
+  "identity": "github:1223170290",
+  "license": "Apache-2.0",
+  "name": "nexu-io/open-design",
+  "repository": "https://github.com/nexu-io/open-design",
+  "repositoryId": "1223170290",
+  "site": "https://github.com/nexu-io/open-design",
+  "sourceSignature": "272769cfbe63e22517d3a3b59776aabc716855517feb0d08057a17abaa5dc383",
+  "summary": [
+    "据发布者介绍，Open Design 提供共享工作区，让团队成员与 AI 智能体一起制作原型、网站、演示文稿和视觉素材，并分享作品、根据反馈迭代。",
+    "The publisher describes Open Design as a shared workspace where teammates and AI agents can create prototypes, websites, presentations, and visual assets, then share work and iterate on feedback."
+  ],
+  "tested": false,
+  "type": "tools",
+  "verificationSources": [
+    "https://api.github.com/search/repositories?page=1&per_page=30&q=topic%3Aai-design+archived%3Afalse+fork%3Afalse&sort=stars"
+  ],
+  "verifiedAt": "2026-11-27"
+}

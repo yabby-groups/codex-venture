@@ -1,0 +1,28 @@
+{
+  "addedAt": "2026-11-27",
+  "categories": [
+    [
+      "提示词工程培训",
+      "Prompt engineering training"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-26",
+  "id": "resource-9097e13b87814a7756acfc36ab9c4494034b7c6b0dd2ccc38fbb13b43d4999c2",
+  "identity": "github:1034701232",
+  "license": "MIT",
+  "name": "timothywarner-org/prompt-pro",
+  "repository": "https://github.com/timothywarner-org/prompt-pro",
+  "repositoryId": "1034701232",
+  "site": "https://github.com/timothywarner-org/prompt-pro",
+  "sourceSignature": "90575bf6dda017e335145adc7ccfe4dfda8a13309e0002eb615571f60ae08da2",
+  "summary": [
+    "据条目介绍，Tim Warner 的 O’Reilly Live Learning 课程讲解如何为 ChatGPT、Claude 和 Copilot 编写适用于业务任务的提示词，也涵盖 MCP 的实现。",
+    "The listing describes Tim Warner’s O’Reilly Live Learning course on writing prompts for business tasks with ChatGPT, Claude, and Copilot. It also covers implementing MCP."
+  ],
+  "tested": false,
+  "type": "prompts",
+  "verificationSources": [
+    "https://api.github.com/search/repositories?page=1&per_page=30&q=topic%3Aprompt-templates+archived%3Afalse+fork%3Afalse&sort=stars"
+  ],
+  "verifiedAt": "2026-11-27"
+}

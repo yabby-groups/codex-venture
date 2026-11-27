@@ -1,0 +1,27 @@
+{
+  "addedAt": "2026-11-27",
+  "categories": [
+    [
+      "软件开发流程自动化",
+      "Software development workflow automation"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-26",
+  "id": "resource-aaa060105eb3936cefb4f6eb2dfd7475afe5241d0424c089ab01625247d11f85",
+  "identity": "github:1216559990",
+  "name": "chaohong-ai/ai-auto-work",
+  "repository": "https://github.com/chaohong-ai/ai-auto-work",
+  "repositoryId": "1216559990",
+  "site": "https://github.com/chaohong-ai/ai-auto-work",
+  "sourceSignature": "88e5ca9eee8a8a0680223d0658da35de888eaf736854ab7a2a0887ce1e126a7f",
+  "summary": [
+    "据发布者介绍，这套工作流利用大语言模型自动执行需求调研、规划、开发和测试，并在流程中评审调研结果、方案和代码。",
+    "The publisher describes an LLM-driven workflow for automating requirements research, planning, development, and testing, with review steps for research, plans, and code."
+  ],
+  "tested": false,
+  "type": "workflows",
+  "verificationSources": [
+    "https://api.github.com/search/repositories?page=2&per_page=30&q=topic%3Aai-workflow+archived%3Afalse+fork%3Afalse&sort=stars"
+  ],
+  "verifiedAt": "2026-11-27"
+}

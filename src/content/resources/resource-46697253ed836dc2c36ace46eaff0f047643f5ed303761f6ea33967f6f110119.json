@@ -1,0 +1,28 @@
+{
+  "addedAt": "2026-11-27",
+  "categories": [
+    [
+      "互动课程制作",
+      "Interactive course authoring"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-26",
+  "id": "resource-46697253ed836dc2c36ace46eaff0f047643f5ed303761f6ea33967f6f110119",
+  "identity": "github:1172281031",
+  "license": "NOASSERTION",
+  "name": "ai-shifu/skills",
+  "repository": "https://github.com/ai-shifu/skills",
+  "repositoryId": "1172281031",
+  "site": "https://github.com/ai-shifu/skills",
+  "sourceSignature": "8284fe62909d9b83c65363c9c2dfb70e6f6b870f6d6c51ebaa3c50360ad48514",
+  "summary": [
+    "据发布者介绍，这套技能可用于在 AI-Shifu 中制作一对一互动课程。",
+    "The publisher describes this collection as a set of skills for creating one-on-one interactive courses with AI-Shifu."
+  ],
+  "tested": false,
+  "type": "resources",
+  "verificationSources": [
+    "https://api.github.com/search/repositories?page=2&per_page=30&q=topic%3Aai-education+archived%3Afalse+fork%3Afalse&sort=stars"
+  ],
+  "verifiedAt": "2026-11-27"
+}

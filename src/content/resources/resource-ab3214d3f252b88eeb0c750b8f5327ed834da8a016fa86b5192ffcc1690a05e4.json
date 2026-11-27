@@ -1,0 +1,28 @@
+{
+  "addedAt": "2026-11-27",
+  "categories": [
+    [
+      "代码库架构梳理",
+      "Codebase architecture mapping"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-26",
+  "id": "resource-ab3214d3f252b88eeb0c750b8f5327ed834da8a016fa86b5192ffcc1690a05e4",
+  "identity": "github:1367044972",
+  "license": "MIT",
+  "name": "Qiuner/birdview",
+  "repository": "https://github.com/Qiuner/birdview",
+  "repositoryId": "1367044972",
+  "site": "https://github.com/Qiuner/birdview",
+  "sourceSignature": "45e222a9f51032804598d6931b6212182d1748aec83d1532336c012513fe34ac",
+  "summary": [
+    "据发布者介绍，Birdview 可用于在借助 AI 修改代码前梳理代码库架构。",
+    "The publisher describes Birdview as a way to map a codebase’s architecture before making AI-assisted code changes."
+  ],
+  "tested": false,
+  "type": "workflows",
+  "verificationSources": [
+    "https://api.github.com/search/repositories?page=1&per_page=30&q=topic%3Aai-workflow+archived%3Afalse+fork%3Afalse&sort=stars"
+  ],
+  "verifiedAt": "2026-11-27"
+}

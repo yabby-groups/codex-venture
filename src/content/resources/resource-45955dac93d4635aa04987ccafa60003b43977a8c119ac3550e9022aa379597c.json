@@ -1,0 +1,28 @@
+{
+  "addedAt": "2026-11-27",
+  "categories": [
+    [
+      "AI 辅导与备考",
+      "AI tutoring and exam preparation"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-26",
+  "id": "resource-45955dac93d4635aa04987ccafa60003b43977a8c119ac3550e9022aa379597c",
+  "identity": "github:1435070197",
+  "license": "AGPL-3.0",
+  "name": "bayshores/godspeed",
+  "repository": "https://github.com/bayshores/godspeed",
+  "repositoryId": "1435070197",
+  "site": "https://github.com/bayshores/godspeed",
+  "sourceSignature": "e1313afe7af443e60b96a50d0ebd3d3a882b368a2cdfaf7244991be6eea37ecb",
+  "summary": [
+    "据 Godspeed 发布者介绍，你可以通过 MCP 应用逐步学习课程内容，用知识图谱记录已掌握的知识点，并为考试做准备。",
+    "The Godspeed publisher describes using an MCP app to study class material step by step, track topics you’ve mastered in a knowledge graph, and prepare for exams."
+  ],
+  "tested": false,
+  "type": "resources",
+  "verificationSources": [
+    "https://api.github.com/search/repositories?page=2&per_page=30&q=topic%3Aai-education+archived%3Afalse+fork%3Afalse&sort=stars"
+  ],
+  "verifiedAt": "2026-11-27"
+}
