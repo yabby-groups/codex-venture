@@ -1,0 +1,30 @@
+{
+  "addedAt": "2026-11-27",
+  "categories": [
+    [
+      "编程计划跟踪",
+      "Coding Plan Tracking"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-25",
+  "id": "resource-4f5426f64abf493e3997864ab2db6a2faa5c4bfbfc8c9c2033eea8754e0422a7",
+  "identity": "openvsx:doronsi.claude-plans-viewer",
+  "install": "https://open-vsx.org/extension/doronsi/claude-plans-viewer",
+  "name": "Claude Plans Viewer",
+  "platforms": [
+    "Open VSX"
+  ],
+  "site": "https://open-vsx.org/extension/doronsi/claude-plans-viewer",
+  "sourceSignature": "87c8cea523933a59594aa151aef58669e150c1fae9a4431b2fa90bf02f075bc6",
+  "summary": [
+    "据介绍，Claude Plans Viewer 可将 Claude Code 计划文件渲染为 Markdown，方便跟踪任务并实时查看计划变更。",
+    "The listing says Claude Plans Viewer renders Claude Code plan files as Markdown and lets readers track tasks and see updates as the plan changes."
+  ],
+  "tested": false,
+  "type": "plugins",
+  "verificationSources": [
+    "https://open-vsx.org/api/-/search?offset=50&query=Claude&size=25"
+  ],
+  "verifiedAt": "2026-11-27",
+  "version": "0.2.1"
+}

@@ -1,0 +1,28 @@
+{
+  "addedAt": "2026-11-27",
+  "categories": [
+    [
+      "机器学习应用部署",
+      "Machine Learning App Deployment"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-25",
+  "id": "resource-fb419207ad66f8db867867428ed04c3667810703363d15d2104a5085a1522ace",
+  "identity": "github-skill:1102903896:skills/huggingface-spaces/SKILL.md",
+  "name": "huggingface-spaces",
+  "repository": "https://github.com/huggingface/skills",
+  "repositoryId": "1102903896",
+  "site": "https://github.com/huggingface/skills/blob/main/skills/huggingface-spaces/SKILL.md",
+  "sourcePath": "skills/huggingface-spaces/SKILL.md",
+  "sourceSignature": "cc879187463c5d140d0f5aae1dc2ba6d647aeeb9ccee78dcf1236922e8850870",
+  "summary": [
+    "该技能文档介绍如何在 Hugging Face Spaces 上构建、部署和调试机器学习应用，涵盖 Gradio、Docker、静态应用、模型加载及 ZeroGPU。",
+    "The skill documentation covers building, deploying, and debugging machine learning apps on Hugging Face Spaces, with guidance on Gradio, Docker, static apps, model loading, and ZeroGPU."
+  ],
+  "tested": false,
+  "type": "skills",
+  "verificationSources": [
+    "https://github.com/huggingface/skills/blob/main/skills/huggingface-spaces/SKILL.md"
+  ],
+  "verifiedAt": "2026-11-27"
+}

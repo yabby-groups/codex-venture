@@ -1,0 +1,28 @@
+{
+  "addedAt": "2026-11-27",
+  "categories": [
+    [
+      "编程智能体提示词设计",
+      "Coding Agent Prompt Design"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-26",
+  "id": "resource-69e312a6a19c9c8bd09f9879564771859a1fa5062388836d3f81f9ce739178b9",
+  "identity": "github:1198155461",
+  "license": "MIT",
+  "name": "repowise-dev/claude-code-prompts",
+  "repository": "https://github.com/repowise-dev/claude-code-prompts",
+  "repositoryId": "1198155461",
+  "site": "https://github.com/repowise-dev/claude-code-prompts",
+  "sourceSignature": "5baaf41c8208983753ff123dc0e481ac99f90905f13e60f13f8044d4d100fdd6",
+  "summary": [
+    "作者提供独立编写的编程智能体提示词模板，涵盖系统提示词、工具提示词、任务委派、记忆管理和多智能体协作。",
+    "The authors provide independently written templates for coding agents, covering system and tool prompts, task delegation, memory management, and coordination across agents."
+  ],
+  "tested": false,
+  "type": "prompts",
+  "verificationSources": [
+    "https://api.github.com/search/repositories?page=1&per_page=30&q=topic%3Aprompt-templates+archived%3Afalse+fork%3Afalse&sort=stars"
+  ],
+  "verifiedAt": "2026-11-27"
+}

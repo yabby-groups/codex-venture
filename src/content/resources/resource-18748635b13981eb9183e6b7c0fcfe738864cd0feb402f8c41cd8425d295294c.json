@@ -1,0 +1,29 @@
+{
+  "addedAt": "2026-11-27",
+  "categories": [
+    [
+      "三维人体重建",
+      "3D Human Reconstruction"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-25",
+  "id": "resource-18748635b13981eb9183e6b7c0fcfe738864cd0feb402f8c41cd8425d295294c",
+  "identity": "hf:3daigc/lhm-1b-hf",
+  "name": "3DAIGC/LHM-1B-HF",
+  "site": "https://huggingface.co/3DAIGC/LHM-1B-HF",
+  "sourceSignature": "01cc31e6d44f563c099adc9b8f647d56d382bb0ff7187116df72e8d863fec86f",
+  "summary": [
+    "模型卡介绍，LHM-1B-HF 可从单张图像重建可用于动画制作的三维人物。",
+    "The model card describes LHM-1B-HF as a model for reconstructing an animatable 3D human from a single image."
+  ],
+  "tags": [
+    "image-to-3d"
+  ],
+  "tested": false,
+  "type": "models",
+  "verificationSources": [
+    "https://huggingface.co/3DAIGC/LHM-1B-HF/raw/main/README.md",
+    "https://huggingface.co/api/models?cursor=eyIkb3IiOlt7ImRvd25sb2FkcyI6MjM1LCJfaWQiOnsiJGd0IjoiNjk0MjY5M2RkMmUxYmMyYWU1NWZiMDNjIn19LHsiZG93bmxvYWRzIjp7IiRsdCI6MjM1fX0seyJkb3dubG9hZHMiOm51bGx9XSwic2VhcmNoU2VxdWVuY2VUb2tlbiI6IkNLNkJwZ0lhQ1NFQUFBQUFBR0J0UUJvT1dneHBRbWs5MHVHOEt1VmZzRHdpRGxvTWFVSnBQZExodkNybFg3QTgifQ%3D%3D&direction=-1&full=true&limit=30&pipeline_tag=image-to-3d&sort=downloads"
+  ],
+  "verifiedAt": "2026-11-27"
+}

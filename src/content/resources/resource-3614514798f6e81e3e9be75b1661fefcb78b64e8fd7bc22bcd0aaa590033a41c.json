@@ -1,0 +1,27 @@
+{
+  "addedAt": "2026-11-27",
+  "categories": [
+    [
+      "阅卷与学业评价",
+      "Grading and Assessment"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-26",
+  "id": "resource-3614514798f6e81e3e9be75b1661fefcb78b64e8fd7bc22bcd0aaa590033a41c",
+  "identity": "github:1010861354",
+  "name": "ZhiquAI/zhiyue3.0",
+  "repository": "https://github.com/ZhiquAI/zhiyue3.0",
+  "repositoryId": "1010861354",
+  "site": "https://github.com/ZhiquAI/zhiyue3.0",
+  "sourceSignature": "b35ea0e2ad5fd153df20812ed0f2ec32509837544dece7b85770d359c2167f95",
+  "summary": [
+    "发布者介绍，智阅 AI 面向初中历史教师，利用光学字符识别和自然语言处理辅助多维度评分及阅卷结果分析。",
+    "The publisher describes 智阅 AI as a grading assistant for middle school history teachers that uses OCR and natural language processing to support scoring across multiple dimensions and analysis of results."
+  ],
+  "tested": false,
+  "type": "resources",
+  "verificationSources": [
+    "https://api.github.com/search/repositories?page=2&per_page=30&q=topic%3Aai-education+archived%3Afalse+fork%3Afalse&sort=stars"
+  ],
+  "verifiedAt": "2026-11-27"
+}

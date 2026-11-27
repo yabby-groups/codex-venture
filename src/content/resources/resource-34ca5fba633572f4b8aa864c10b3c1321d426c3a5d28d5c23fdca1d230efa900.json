@@ -1,0 +1,27 @@
+{
+  "addedAt": "2026-11-27",
+  "categories": [
+    [
+      "环境数据分析",
+      "Environmental Data Analysis"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-26",
+  "id": "resource-34ca5fba633572f4b8aa864c10b3c1321d426c3a5d28d5c23fdca1d230efa900",
+  "identity": "github:698405057",
+  "name": "MahanPourhosseini/LA-Ozone-Concentration-Prediction",
+  "repository": "https://github.com/MahanPourhosseini/LA-Ozone-Concentration-Prediction",
+  "repositoryId": "698405057",
+  "site": "https://github.com/MahanPourhosseini/LA-Ozone-Concentration-Prediction",
+  "sourceSignature": "e91ac6e32a85596092b5134b807129eb215f483c544207e1169377d3d21d77f1",
+  "summary": [
+    "该项目使用 1976 年洛杉矶的臭氧和气象数据，对比三种线性回归做法：使用全部特征、仅使用气温，以及按气温拆分数据。",
+    "The project compares three linear regression approaches on 1976 Los Angeles ozone and weather data: using all features, using temperature alone, and splitting the data by temperature."
+  ],
+  "tested": false,
+  "type": "resources",
+  "verificationSources": [
+    "https://api.github.com/search/repositories?page=2&per_page=30&q=topic%3Amachine-learning-course+archived%3Afalse+fork%3Afalse&sort=stars"
+  ],
+  "verifiedAt": "2026-11-27"
+}

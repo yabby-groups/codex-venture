@@ -1,0 +1,28 @@
+{
+  "addedAt": "2026-11-27",
+  "categories": [
+    [
+      "播客制作",
+      "Podcast Production"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-26",
+  "id": "resource-7cb2be1dd32a666a812e9d5fb415014467996dfec38c8af2e9617e48d24ecbca",
+  "identity": "github:1116778081",
+  "license": "Apache-2.0",
+  "name": "liuminxin45/podflow-studio",
+  "repository": "https://github.com/liuminxin45/podflow-studio",
+  "repositoryId": "1116778081",
+  "site": "https://github.com/liuminxin45/podflow-studio",
+  "sourceSignature": "e9c295ce91f0c9aee6ea8d1f9312508a27936b00d6660a2c3fe4c666e1cde589",
+  "summary": [
+    "发布者将 Podflow Studio 描述为本地优先的新闻播客工作台，涵盖素材研究、事实卡片整理、口播稿撰写、分段配音、音质检查及 RSS 发布包准备，正式发布前由人工终审。",
+    "The publisher describes Podflow Studio as a local-first workspace for researching news, organizing fact cards, drafting scripts, producing voiceovers in segments, checking audio quality, and preparing an RSS publishing package for final human review."
+  ],
+  "tested": false,
+  "type": "workflows",
+  "verificationSources": [
+    "https://api.github.com/search/repositories?page=2&per_page=30&q=topic%3Aai-workflow+archived%3Afalse+fork%3Afalse&sort=stars"
+  ],
+  "verifiedAt": "2026-11-27"
+}

@@ -1,0 +1,28 @@
+{
+  "addedAt": "2026-11-27",
+  "categories": [
+    [
+      "灵性阅读与反思",
+      "Spiritual Reading and Reflection"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-25",
+  "id": "resource-920e55ce946fbfd108050837b549f57faeb33b3d5d471472305ad4096ca64b73",
+  "identity": "mcp:ai.achurch/church",
+  "name": "aChurch.ai",
+  "registryId": "ai.achurch/church",
+  "site": "https://registry.modelcontextprotocol.io/v0.1/servers/ai.achurch%2Fchurch/versions/2.0.2",
+  "sourceSignature": "0d94fc5d07a999a899a8502eaff7b413202751e3a35b52e11a98e5a7ee7e2fbc",
+  "summary": [
+    "据介绍，aChurch.ai 提供 MCP 服务，供人和 AI 智能体参加礼拜、反思、阅读和检索资料，以及提问。",
+    "The listing describes aChurch.ai as an MCP service where people and AI agents can attend services, reflect, browse and search readings, and ask questions."
+  ],
+  "tested": false,
+  "transport": "stdio, streamable-http",
+  "type": "mcp",
+  "verificationSources": [
+    "https://registry.modelcontextprotocol.io/v0.1/servers/ai.achurch%2Fchurch/versions/2.0.2"
+  ],
+  "verifiedAt": "2026-11-27",
+  "version": "2.0.2"
+}

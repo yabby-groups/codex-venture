@@ -1,0 +1,28 @@
+{
+  "addedAt": "2026-11-27",
+  "categories": [
+    [
+      "AI 工程教程",
+      "AI Engineering Tutorials"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-25",
+  "id": "resource-bcb876f3b3be1bc97c1f42054d236a4dd8ebbf1a6339442b97ca0c9701086eec",
+  "identity": "github:876064934",
+  "license": "MIT",
+  "name": "patchy631/ai-engineering-hub",
+  "repository": "https://github.com/patchy631/ai-engineering-hub",
+  "repositoryId": "876064934",
+  "site": "https://github.com/patchy631/ai-engineering-hub",
+  "sourceSignature": "eb085abf0a1c09fc461f2d0d5c2af5f49c8604015addfd93186a721811f05687",
+  "summary": [
+    "据发布者介绍，AI Engineering Hub 汇集了大语言模型、检索增强生成和 AI 智能体实际应用的教程。",
+    "The publisher describes AI Engineering Hub as a tutorial collection for learning about large language models, retrieval-augmented generation, and practical AI agent applications."
+  ],
+  "tested": false,
+  "type": "tools",
+  "verificationSources": [
+    "https://api.github.com/search/repositories?page=1&per_page=30&q=topic%3Arag+archived%3Afalse+fork%3Afalse&sort=stars"
+  ],
+  "verifiedAt": "2026-11-27"
+}
