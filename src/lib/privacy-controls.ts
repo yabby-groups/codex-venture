@@ -19,12 +19,33 @@ export function privacyControls() {
   const { ga, client, cmp } = control.dataset;
   const key = 'venture-privacy-v1';
   let consent: Consent = {};
-  try { consent = JSON.parse(localStorage.getItem(key) || '{}') ?? {}; } catch {}
+  try {
+    const saved = localStorage.getItem(key);
+    if (saved) {
+      const value = JSON.parse(saved);
+      if (value && typeof value === 'object') {
+        consent = { analytics: value.analytics === true, ads: value.ads === true };
+      }
+    }
+  } catch {}
   for (const input of form.querySelectorAll<HTMLInputElement>('input')) {
     input.checked = consent[input.name as keyof Consent] === true;
   }
+  const choice = document.querySelector<HTMLElement>('#analytics-choice');
+  document.querySelector('[data-open-privacy]')?.addEventListener('click', () => {
+    if (control instanceof HTMLDetailsElement) control.open = true;
+    control.querySelector('summary')?.focus();
+  });
   const save = (value: Consent) => {
     try { localStorage.setItem(key, JSON.stringify(value)); } catch { return; }
+    if (ga && value.analytics !== true) {
+      Object.assign(window, { ['ga-disable-' + ga]: true });
+      for (const name of document.cookie.split(';').map(cookie => cookie.split('=')[0].trim())) {
+        if (name !== '_ga' && name !== '_ga_' + ga.slice(2)) continue;
+        document.cookie = name + '=; Max-Age=0; Path=/';
+        document.cookie = name + '=; Max-Age=0; Path=/; Domain=' + location.hostname;
+      }
+    }
     location.reload();
   };
   form.addEventListener('submit', (event) => {
@@ -32,12 +53,16 @@ export function privacyControls() {
     const values = new FormData(form);
     save({ analytics: values.has('analytics'), ads: values.has('ads') });
   });
-  form.querySelector('[data-reject]')?.addEventListener('click', () => save({}));
+  form.querySelector('[data-reject]')?.addEventListener('click', () => save({ analytics: false, ads: false }));
+  for (const button of choice?.querySelectorAll<HTMLButtonElement>('[data-analytics-choice]') ?? []) {
+    button.addEventListener('click', () => save({ ...consent, analytics: button.dataset.analyticsChoice === 'accept' }));
+  }
 
-  if (location.origin !== 'https://codex-venture.com' || navigator.webdriver ||
-      /HeadlessChrome|Codex-Venture-Test/i.test(navigator.userAgent)) return;
   const nav = navigator as Navigator & { globalPrivacyControl?: boolean };
   if (nav.globalPrivacyControl || nav.doNotTrack === '1') return;
+  if (choice && typeof consent.analytics !== 'boolean') choice.hidden = false;
+  if (location.origin !== 'https://codex-venture.com' || navigator.webdriver ||
+      /HeadlessChrome|Codex-Venture-Test/i.test(navigator.userAgent)) return;
   const providers = window as ProviderWindow;
   const script = (src: string) => {
     const element = document.createElement('script');

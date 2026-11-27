@@ -1,0 +1,35 @@
+---
+import { ga } from '../lib/monetization';
+---
+{ga && <section id="analytics-choice" class="wrap" aria-label="访问统计偏好 / Analytics preference" hidden>
+  <p>是否允许 Google Analytics 统计访问？ <a href="/privacy/">隐私政策</a>
+    <span lang="en">Allow Google Analytics to measure visits? <a href="/privacy/">Privacy policy</a></span>
+  </p>
+  <div class="analytics-actions">
+    <button type="button" data-analytics-choice="accept">接受统计 <span lang="en">Accept analytics</span></button>
+    <button type="button" data-analytics-choice="reject">拒绝统计 <span lang="en">Decline analytics</span></button>
+  </div>
+</section>}
+<style>
+  #analytics-choice:not([hidden]) {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-2) var(--space-4);
+    padding-block: var(--space-3);
+    border-bottom: 1px solid var(--line);
+  }
+  #analytics-choice p { margin: 0; }
+  #analytics-choice p > span { display: block; }
+  .analytics-actions { display: flex; flex-wrap: wrap; gap: var(--space-2); }
+  .analytics-actions button {
+    padding: var(--space-2) var(--space-3);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    background: var(--surface);
+    color: var(--ink);
+    font: inherit;
+    cursor: pointer;
+  }
+</style>

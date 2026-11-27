@@ -1,5 +1,7 @@
 ---
 import '../styles/site.css';
+import AnalyticsChoice from '../components/AnalyticsChoice.astro';
+import { ga } from '../lib/monetization';
 import PrivacyControls from '../components/PrivacyControls.astro';
 import { jsonLd, organization } from '../lib/entities';
 import { allStories, categories, hubs, types } from '../lib/content';
@@ -89,6 +91,7 @@ const moreMenuActive = more.some(([url]) => current(url));
       <div class="utilities">
         <a href="/search/" aria-current={current('/search/')} class="utility" aria-label="搜索 / Search"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="5.5"/><path d="m15 15 4 4"/></svg><span>搜索 <small lang="en">Search</small></span></a>
         <button id="theme" class="utility" type="button" aria-label="深色主题 / Dark theme" hidden><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 15a8 8 0 0 1-11-11 8 8 0 1 0 11 11Z"/></svg></button>
+        {ga && <a class="utility" href="#privacy-settings" data-open-privacy>隐私 <small lang="en">Privacy</small></a>}
         <a class="utility rss" href="/rss.xml" aria-label="RSS">RSS</a>
       </div>
     </div>
@@ -103,6 +106,7 @@ const moreMenuActive = more.some(([url]) => current(url));
       </details>
     </nav>
   </header>
+  <AnalyticsChoice />
   <main id="main" class="wrap"><slot /></main>
   <footer class="footer">
     <div class="wrap footer-inner">

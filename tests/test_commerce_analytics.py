@@ -7,8 +7,8 @@ from unittest.mock import patch
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / 'scripts'))
 
-from analytics import commercial_day, period
-from commerce_analytics import adsense, classify, edge
+from analytics import commercial_day, content, period, report, sync_commerce
+from commerce_analytics import adsense, classify, edge, ga4
 from datetime import date
 
 
@@ -42,6 +42,43 @@ class CommerceAnalyticsTests(unittest.TestCase):
             ) as api:
                 self.assertEqual(adsense('2026-11-26')['status'], 'available')
                 self.assertIn('DOMAIN_NAME%3D%3Dcodex-venture.com', api.call_args.args[0])
+
+    @patch.dict(os.environ, {'GOOGLE_GA4_PROPERTY_ID': '123456789'})
+    @patch('commerce_analytics.google_token', return_value='fixture-token')
+    @patch('commerce_analytics.api')
+    def test_ga4_fixture_flows_into_all_report_periods(self, api, token):
+        day = '2026-11-26'
+        api.return_value = {'rowCount': 1, 'rows': [{'metricValues': [
+            {'value': value} for value in ('2', '2', '3', '0')
+        ]}]}
+        snapshot = ga4(day)
+        token.assert_called_once_with('GOOGLE_GA4')
+        self.assertEqual(api.call_count, 3)
+        endpoint, access_token, payload = api.call_args_list[0].args
+        self.assertTrue(endpoint.endswith('/123456789:runReport'))
+        self.assertEqual(access_token, 'fixture-token')
+        self.assertEqual(payload['dateRanges'], [{'startDate': day, 'endDate': day}])
+        self.assertEqual(snapshot['status'], 'available')
+        with tempfile.TemporaryDirectory() as temp:
+            root = Path(temp)
+            with patch('analytics.ga4', side_effect=[snapshot, {'status': 'unavailable'}]), patch(
+                'analytics.adsense', return_value={'status': 'disabled'}
+            ), patch('analytics.edge', return_value={'status': 'disabled'}):
+                sync_commerce(root, [day])
+                sync_commerce(root, [day])
+            for task, today in [('daily', date(2026, 11, 27)), ('weekly', date(2026, 11, 30)),
+                                ('monthly', date(2026, 12, 1))]:
+                with self.subTest(task=task):
+                    start, end = period(task, today)
+                    data = report(root, start, end, content([]))
+                    self.assertEqual(data['monetization'][day]['ga4'], snapshot)
+
+    @patch.dict(os.environ, {'GOOGLE_GA4_PROPERTY_ID': '123456789'})
+    @patch('commerce_analytics.google_token', return_value=None)
+    @patch('commerce_analytics.api')
+    def test_ga4_without_oauth_makes_no_report_request(self, api, token):
+        self.assertEqual(ga4('2026-11-26'), {'status': 'unavailable'})
+        api.assert_not_called()
 
     def test_daily_uses_closed_day(self):
         self.assertEqual(period('daily', date(2026, 11, 27)), (date(2026, 11, 26),) * 2)
