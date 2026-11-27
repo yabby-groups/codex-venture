@@ -1,0 +1,28 @@
+{
+  "addedAt": "2026-11-27",
+  "categories": [
+    [
+      "视频本地化",
+      "Video Localization"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-26",
+  "id": "resource-2eb0e4fab6139531c4aa77d6812c019d4e967c8c82df253f58061314b2ba7892",
+  "identity": "github:575662775",
+  "license": "AGPL-3.0",
+  "name": "ThioJoe/Auto-Synced-Translated-Dubs",
+  "repository": "https://github.com/ThioJoe/Auto-Synced-Translated-Dubs",
+  "repositoryId": "575662775",
+  "site": "https://github.com/ThioJoe/Auto-Synced-Translated-Dubs",
+  "sourceSignature": "9bcc0c99209676407c014820ad1752039bbeb7e81cb103af91269bb221ef6a3d",
+  "summary": [
+    "据发布者介绍，Auto-Synced-Translated-Dubs 可以翻译视频字幕，并通过 AI 语音服务生成与字幕时间戳对齐的配音音轨。",
+    "According to the publisher, Auto-Synced-Translated-Dubs translates a video's subtitle text and uses AI voice services to generate a dubbed audio track aligned with the subtitle timestamps."
+  ],
+  "tested": false,
+  "type": "open-source",
+  "verificationSources": [
+    "https://api.github.com/search/repositories?page=3&per_page=30&q=topic%3Atext-to-speech+archived%3Afalse+fork%3Afalse&sort=stars"
+  ],
+  "verifiedAt": "2026-11-27"
+}

@@ -1,0 +1,28 @@
+{
+  "addedAt": "2026-11-27",
+  "categories": [
+    [
+      "提示词管理",
+      "Prompt Management"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-27",
+  "id": "resource-088c4eb7927fda6bb506646ecb9ae7701e66393801209a079424e163660f0225",
+  "identity": "github:1440795736",
+  "license": "MIT",
+  "name": "Apzx7/dsh-prompt-templates",
+  "repository": "https://github.com/Apzx7/dsh-prompt-templates",
+  "repositoryId": "1440795736",
+  "site": "https://github.com/Apzx7/dsh-prompt-templates",
+  "sourceSignature": "d2149704ed1dc3a6e8a743dd161afbaf633d62fc7bc187e490f0e9886541c48a",
+  "summary": [
+    "据发布者介绍，DSH 支持搜索、筛选和收藏提示词模板，也可用 AI 对模板进行归类。内置 34 条模板，其中 9 条是 AI 编程快捷提示词。",
+    "According to the publisher, DSH lets you search, filter, and favorite prompt templates and use AI to categorize them. It comes with 34 templates, including nine AI coding shortcuts."
+  ],
+  "tested": false,
+  "type": "prompts",
+  "verificationSources": [
+    "https://api.github.com/search/repositories?page=4&per_page=30&q=topic%3Aprompt-templates+archived%3Afalse+fork%3Afalse&sort=stars"
+  ],
+  "verifiedAt": "2026-11-27"
+}

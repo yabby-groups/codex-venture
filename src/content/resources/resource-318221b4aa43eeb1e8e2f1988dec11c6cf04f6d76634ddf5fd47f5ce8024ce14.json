@@ -1,0 +1,28 @@
+{
+  "addedAt": "2026-11-27",
+  "categories": [
+    [
+      "AI 应用开发",
+      "AI Application Development"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-26",
+  "id": "resource-318221b4aa43eeb1e8e2f1988dec11c6cf04f6d76634ddf5fd47f5ce8024ce14",
+  "identity": "github-skill:1135891523:.github/plugins/azure-sdk-dotnet/skills/azure-ai-openai-dotnet/SKILL.md",
+  "name": "azure-ai-openai-dotnet",
+  "repository": "https://github.com/microsoft/skills",
+  "repositoryId": "1135891523",
+  "site": "https://github.com/microsoft/skills/blob/main/.github/plugins/azure-sdk-dotnet/skills/azure-ai-openai-dotnet/SKILL.md",
+  "sourcePath": ".github/plugins/azure-sdk-dotnet/skills/azure-ai-openai-dotnet/SKILL.md",
+  "sourceSignature": "699f618a6d8f3a507effb4e6c2710b9e1f870d9ee05b1af6a259a744aa301d5d",
+  "summary": [
+    "据微软介绍，这项技能指导你在 .NET 应用中使用 Azure OpenAI SDK，实现聊天补全、生成嵌入向量、图像生成、音频转写和助手功能。",
+    "Microsoft describes this skill as guidance for using the Azure OpenAI SDK in .NET applications for chat completions, embeddings, image generation, audio transcription, and assistants."
+  ],
+  "tested": false,
+  "type": "skills",
+  "verificationSources": [
+    "https://github.com/microsoft/skills/blob/main/.github/plugins/azure-sdk-dotnet/skills/azure-ai-openai-dotnet/SKILL.md"
+  ],
+  "verifiedAt": "2026-11-27"
+}

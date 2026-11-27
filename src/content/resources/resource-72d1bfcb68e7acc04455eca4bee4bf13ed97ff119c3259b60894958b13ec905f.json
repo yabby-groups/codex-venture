@@ -1,0 +1,32 @@
+{
+  "addedAt": "2026-11-27",
+  "categories": [
+    [
+      "AI 编程辅助",
+      "AI Coding Assistance"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-25",
+  "id": "resource-72d1bfcb68e7acc04455eca4bee4bf13ed97ff119c3259b60894958b13ec905f",
+  "identity": "openvsx:watta-ai.watta-ai-vscode",
+  "install": "https://open-vsx.org/extension/watta-ai/watta-ai-vscode",
+  "name": "Watta: AI Coding Agent & Chats",
+  "platforms": [
+    "Open VSX"
+  ],
+  "site": "https://open-vsx.org/extension/watta-ai/watta-ai-vscode",
+  "sourceSignature": "1acc17936b9b081bc69dee155367b0152e3469d18c1a7e23d5a694409df12b0e",
+  "summary": [
+    "据发布者介绍，Watta 是一款面向 VS Code 的编程代理和聊天扩展，可编辑多个文件、提供行内代码补全、审查和重构代码，以及编写测试。",
+    "The publisher describes Watta as a coding agent and chat extension for VS Code that can edit multiple files, suggest inline completions, review and refactor code, and write tests."
+  ],
+  "tested": false,
+  "type": "plugins",
+  "verificationSources": [
+    "https://open-vsx.org/api/-/search?offset=25&query=coding+assistant&size=25",
+    "https://open-vsx.org/api/-/search?offset=50&query=coding+assistant&size=25",
+    "https://open-vsx.org/api/-/search?offset=75&query=AI+assistant&size=25"
+  ],
+  "verifiedAt": "2026-11-27",
+  "version": "0.19.25"
+}

@@ -1,0 +1,28 @@
+{
+  "addedAt": "2026-11-27",
+  "categories": [
+    [
+      "提示词模板开发",
+      "Prompt Templating"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-27",
+  "id": "resource-0894ed5b33071bdc98b766beb6cf3ab54ef82e6585424b791e64bcf01b285584",
+  "identity": "github:1174867829",
+  "license": "MIT",
+  "name": "Mattbusel/llm-template",
+  "repository": "https://github.com/Mattbusel/llm-template",
+  "repositoryId": "1174867829",
+  "site": "https://github.com/Mattbusel/llm-template",
+  "sourceSignature": "9f94e9f7f49fe2086de92a6d47fe116843cc92a067cadf8157511b92c5cf5fb9",
+  "summary": [
+    "据发布者介绍，llm-template 是一个 C++17 单头文件库，可注册具名提示词模板，使用 Mustache 风格的变量、循环和条件进行渲染，并通过截短最长的变量值来满足 token 预算。",
+    "The publisher describes llm-template as a single-header C++17 library for registering named prompt templates and rendering them with Mustache-style variables, loops, and conditionals. It can trim the longest variable to fit a token budget."
+  ],
+  "tested": false,
+  "type": "prompts",
+  "verificationSources": [
+    "https://api.github.com/search/repositories?page=3&per_page=30&q=topic%3Aprompt-templates+archived%3Afalse+fork%3Afalse&sort=stars"
+  ],
+  "verifiedAt": "2026-11-27"
+}

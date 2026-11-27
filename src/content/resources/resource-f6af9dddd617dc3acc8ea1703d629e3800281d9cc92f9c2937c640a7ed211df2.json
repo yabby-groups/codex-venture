@@ -1,0 +1,28 @@
+{
+  "addedAt": "2026-11-27",
+  "categories": [
+    [
+      "AI 辅助设计",
+      "AI-Assisted Design"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-25",
+  "id": "resource-f6af9dddd617dc3acc8ea1703d629e3800281d9cc92f9c2937c640a7ed211df2",
+  "identity": "github:1214028719",
+  "license": "MIT",
+  "name": "OpenCoworkAI/open-codesign",
+  "repository": "https://github.com/OpenCoworkAI/open-codesign",
+  "repositoryId": "1214028719",
+  "site": "https://github.com/OpenCoworkAI/open-codesign",
+  "sourceSignature": "7620f24007e564460d6f1d9f69a01562945bb9e1b73c5ee7ea1b9ce11c7131b5",
+  "summary": [
+    "据发布者介绍，Open Codesign 支持使用多种 AI 模型，根据提示词生成原型、演示文稿和 PDF。",
+    "According to the publisher, Open Codesign lets you use multiple AI models to turn prompts into prototypes, slide decks, and PDFs."
+  ],
+  "tested": false,
+  "type": "tools",
+  "verificationSources": [
+    "https://api.github.com/search/repositories?page=1&per_page=30&q=topic%3Aai-design+archived%3Afalse+fork%3Afalse&sort=stars"
+  ],
+  "verifiedAt": "2026-11-27"
+}

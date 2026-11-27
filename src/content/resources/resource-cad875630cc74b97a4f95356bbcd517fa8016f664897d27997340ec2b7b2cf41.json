@@ -1,0 +1,27 @@
+{
+  "addedAt": "2026-11-27",
+  "categories": [
+    [
+      "AI 学习辅导",
+      "AI Tutoring"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-26",
+  "id": "resource-cad875630cc74b97a4f95356bbcd517fa8016f664897d27997340ec2b7b2cf41",
+  "identity": "github:1107964520",
+  "name": "aaryansamanta/ai-ethos",
+  "repository": "https://github.com/aaryansamanta/ai-ethos",
+  "repositoryId": "1107964520",
+  "site": "https://github.com/aaryansamanta/ai-ethos",
+  "sourceSignature": "378ed2a5f49141fc885e6ba168c225deee54d4ab60d2b2fe71b59f9be65b6d2a",
+  "summary": [
+    "AI Ethos 仓库提供 aiethos.org 的网站源代码。据发布者介绍，该网站为教育资源不足的学习者提供多语言 AI 辅导。",
+    "The AI Ethos repository provides the source code for aiethos.org, a site the publisher describes as offering multilingual AI tutoring for underserved learners."
+  ],
+  "tested": false,
+  "type": "resources",
+  "verificationSources": [
+    "https://api.github.com/search/repositories?page=1&per_page=30&q=topic%3Aai-education+archived%3Afalse+fork%3Afalse&sort=stars"
+  ],
+  "verifiedAt": "2026-11-27"
+}

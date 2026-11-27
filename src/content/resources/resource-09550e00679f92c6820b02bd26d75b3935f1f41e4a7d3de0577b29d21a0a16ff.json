@@ -1,0 +1,28 @@
+{
+  "addedAt": "2026-11-27",
+  "categories": [
+    [
+      "参考案例分析",
+      "Reference Analysis"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-27",
+  "id": "resource-09550e00679f92c6820b02bd26d75b3935f1f41e4a7d3de0577b29d21a0a16ff",
+  "identity": "github:1202499510",
+  "license": "MIT",
+  "name": "julilaoshi/takeaway-skill",
+  "repository": "https://github.com/julilaoshi/takeaway-skill",
+  "repositoryId": "1202499510",
+  "site": "https://github.com/julilaoshi/takeaway-skill",
+  "sourceSignature": "48ef33462f0fa4d272d002bbf084fb350731afce73b30f4611d55b404ee9b52c",
+  "summary": [
+    "据发布者介绍，拿来主义 Skill 帮助你从参考案例中提炼可复用的机制，并整理成适配方案、模式卡片和实施简报。",
+    "The publisher describes Takeaway Skill as a workflow for extracting reusable ideas from references and turning them into adaptation options, pattern cards, and implementation briefs."
+  ],
+  "tested": false,
+  "type": "workflows",
+  "verificationSources": [
+    "https://api.github.com/search/repositories?page=3&per_page=30&q=topic%3Aai-workflow+archived%3Afalse+fork%3Afalse&sort=stars"
+  ],
+  "verifiedAt": "2026-11-27"
+}

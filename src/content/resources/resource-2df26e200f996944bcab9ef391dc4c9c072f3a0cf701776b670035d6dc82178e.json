@@ -1,0 +1,28 @@
+{
+  "addedAt": "2026-11-27",
+  "categories": [
+    [
+      "SVG 渲染",
+      "SVG Rendering"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-26",
+  "id": "resource-2df26e200f996944bcab9ef391dc4c9c072f3a0cf701776b670035d6dc82178e",
+  "identity": "github:452769633",
+  "license": "MPL-2.0",
+  "name": "vercel/satori",
+  "repository": "https://github.com/vercel/satori",
+  "repositoryId": "452769633",
+  "site": "https://github.com/vercel/satori",
+  "sourceSignature": "d0135ea25581c2c78d0ee4270e7bfecf7061dc4caa44d79381008ea68cbf10da",
+  "summary": [
+    "据 Vercel 介绍，Satori 是一个将 HTML 和 CSS 转换为 SVG 图形的库。",
+    "Vercel describes Satori as a library for converting HTML and CSS into SVG graphics."
+  ],
+  "tested": false,
+  "type": "open-source",
+  "verificationSources": [
+    "https://api.github.com/search/repositories?page=1&per_page=30&q=topic%3Aimage-generation+archived%3Afalse+fork%3Afalse&sort=stars"
+  ],
+  "verifiedAt": "2026-11-27"
+}
