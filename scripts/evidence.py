@@ -252,6 +252,9 @@ def enrich_candidates(items, candidates, now, limit):
         if topic and (topic.get('attempts', 0) >= 4 or
                       now.date() - datetime.fromisoformat(topic['opened']).date() > timedelta(days=28)):
             continue
+        if any(failure.get('resume', 0) > now.timestamp()
+               for failure in item.get('evidence_result', {}).get('failures', [])):
+            continue
         if last and not (scan.get('pending') or scan.get('tree_queue')) and now - timestamp(last) < timedelta(days=3 if item.get('evidence') else 1):
             continue
         attempted += 1

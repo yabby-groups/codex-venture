@@ -560,7 +560,7 @@ def accept():
                                 topic['url'] = canonical(row['researchUrl'])
                             except ValueError:
                                 pass
-                    else:
+                    elif items[key]['status'] != 'pending':
                         items[key].pop('research', None)
                     items[key].setdefault('editorial_attempts', {})[batch['task']] = evidence_revision(candidate)
             save(ITEMS, items)
