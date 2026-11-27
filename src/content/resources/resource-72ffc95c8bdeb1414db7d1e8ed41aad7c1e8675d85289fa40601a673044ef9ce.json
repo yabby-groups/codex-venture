@@ -1,0 +1,31 @@
+{
+  "addedAt": "2026-11-27",
+  "categories": [
+    [
+      "AI 编程辅助",
+      "AI Coding Assistance"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-25",
+  "id": "resource-72ffc95c8bdeb1414db7d1e8ed41aad7c1e8675d85289fa40601a673044ef9ce",
+  "identity": "openvsx:sourcegraph.cody-ai",
+  "install": "https://open-vsx.org/extension/sourcegraph/cody-ai",
+  "name": "Cody: AI Code Assistant",
+  "platforms": [
+    "Open VSX"
+  ],
+  "site": "https://open-vsx.org/extension/sourcegraph/cody-ai",
+  "sourceSignature": "7efd2d1649b9b189f8894bc263ba389e18a4e873bf640d4ab35609d73cda0b7d",
+  "summary": [
+    "据 Sourcegraph 介绍，Cody 通过自动补全、聊天和命令结合代码库上下文，帮助读者生成代码、编写单元测试和文档，以及理解现有代码。",
+    "Sourcegraph says Cody uses codebase context in autocomplete, chat, and commands to help readers generate code, write unit tests and documentation, and explain existing code."
+  ],
+  "tested": false,
+  "type": "plugins",
+  "verificationSources": [
+    "https://open-vsx.org/api/-/search?offset=0&query=AI+assistant&size=25",
+    "https://open-vsx.org/api/-/search?offset=50&query=coding+assistant&size=25"
+  ],
+  "verifiedAt": "2026-11-27",
+  "version": "1.156.0"
+}

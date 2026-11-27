@@ -1,0 +1,28 @@
+{
+  "addedAt": "2026-11-27",
+  "categories": [
+    [
+      "Python 编程练习",
+      "Python Practice"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-25",
+  "id": "resource-fbd5003350dfa2f4ed4bd85946d258d8d67f0304a4e2dda7265c57b1a12d36c1",
+  "identity": "github:5698643",
+  "license": "NOASSERTION",
+  "name": "flypythoncom/python",
+  "repository": "https://github.com/flypythoncom/python",
+  "repositoryId": "5698643",
+  "site": "https://github.com/flypythoncom/python",
+  "sourceSignature": "675491959be777af135e054d0f132d7a853eee3bf50332e76292487b4f44c207",
+  "summary": [
+    "据发布者介绍，这套 Python 课程由一系列编程挑战组成，AI 编程智能体提供指导，验证脚本检查每道挑战是否完成。",
+    "The publisher describes these Python courses as a series of coding challenges guided by an AI coding agent, with a verification script that checks whether each challenge is complete."
+  ],
+  "tested": false,
+  "type": "tools",
+  "verificationSources": [
+    "https://api.github.com/search/repositories?page=1&per_page=30&q=topic%3Aai-coding+archived%3Afalse+fork%3Afalse&sort=stars"
+  ],
+  "verifiedAt": "2026-11-27"
+}

@@ -1,0 +1,28 @@
+{
+  "addedAt": "2026-11-27",
+  "categories": [
+    [
+      "幻灯片重建",
+      "Slide Reconstruction"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-27",
+  "id": "resource-09ebb6c0359e6c5646a21839faf795b2ec27b57e420c89401f952954dc92dc9b",
+  "identity": "github:1259973614",
+  "license": "MIT",
+  "name": "lirunjie0510/ppt-visual-reconstruction",
+  "repository": "https://github.com/lirunjie0510/ppt-visual-reconstruction",
+  "repositoryId": "1259973614",
+  "site": "https://github.com/lirunjie0510/ppt-visual-reconstruction",
+  "sourceSignature": "68b7a2abbc577528b5a38e23a6922aee2c2b8391592084e354d4cc3e5fd11200",
+  "summary": [
+    "据发布者介绍，这套 Codex 技能工作流可将图片重建为可编辑的 PowerPoint 幻灯片，并输出为 PPTX 文件。",
+    "The publisher describes this Codex skill workflow as a way to reconstruct images as editable PowerPoint slides in PPTX format."
+  ],
+  "tested": false,
+  "type": "workflows",
+  "verificationSources": [
+    "https://api.github.com/search/repositories?page=8&per_page=30&q=topic%3Aai-workflow+archived%3Afalse+fork%3Afalse&sort=stars"
+  ],
+  "verifiedAt": "2026-11-27"
+}

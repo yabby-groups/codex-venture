@@ -1,0 +1,30 @@
+{
+  "addedAt": "2026-11-27",
+  "categories": [
+    [
+      "语音转文字",
+      "Speech-to-Text"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-25",
+  "id": "resource-7322ec1fbe2d657edb0d4d2f3e5e4bf42446452ba20ffe9722a5030de901b8db",
+  "identity": "openvsx:maxdewald.copilot-speech",
+  "install": "https://open-vsx.org/extension/maxdewald/copilot-speech",
+  "name": "Copilot Speech",
+  "platforms": [
+    "Open VSX"
+  ],
+  "site": "https://open-vsx.org/extension/maxdewald/copilot-speech",
+  "sourceSignature": "71b740d81d93ea04dd48f68adc202343073ec258684c8b6d771dab8ff37f3e86",
+  "summary": [
+    "据发布者介绍，Copilot Speech 可在本地将语音转成文字，供 GitHub Copilot Chat 使用。",
+    "The publisher says Copilot Speech transcribes speech locally for use in GitHub Copilot Chat."
+  ],
+  "tested": false,
+  "type": "plugins",
+  "verificationSources": [
+    "https://open-vsx.org/api/-/search?offset=0&query=Copilot&size=25"
+  ],
+  "verifiedAt": "2026-11-27",
+  "version": "0.6.3"
+}

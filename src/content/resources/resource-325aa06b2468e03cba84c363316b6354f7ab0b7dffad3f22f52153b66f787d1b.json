@@ -1,0 +1,28 @@
+{
+  "addedAt": "2026-11-27",
+  "categories": [
+    [
+      "云容量管理",
+      "Cloud Capacity Management"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-26",
+  "id": "resource-325aa06b2468e03cba84c363316b6354f7ab0b7dffad3f22f52153b66f787d1b",
+  "identity": "github-skill:1135891523:.github/plugins/azure-sdk-dotnet/skills/azure-mgmt-fabric-dotnet/SKILL.md",
+  "name": "azure-mgmt-fabric-dotnet",
+  "repository": "https://github.com/microsoft/skills",
+  "repositoryId": "1135891523",
+  "site": "https://github.com/microsoft/skills/blob/main/.github/plugins/azure-sdk-dotnet/skills/azure-mgmt-fabric-dotnet/SKILL.md",
+  "sourcePath": ".github/plugins/azure-sdk-dotnet/skills/azure-mgmt-fabric-dotnet/SKILL.md",
+  "sourceSignature": "f592c1e6823517e6c41f0513fa7c425631d01cf17f6c226b24df3ee9fb9924a6",
+  "summary": [
+    "据 Microsoft 介绍，这项技能指导读者使用 Azure Resource Manager 的 .NET SDK 创建、调整、暂停或恢复 Microsoft Fabric 容量，并检查名称是否可用、列出 SKU。",
+    "Microsoft describes this skill as guidance for using the .NET Azure Resource Manager SDK to provision, scale, suspend, or resume Microsoft Fabric capacities, check name availability, and list SKUs."
+  ],
+  "tested": false,
+  "type": "skills",
+  "verificationSources": [
+    "https://github.com/microsoft/skills/blob/main/.github/plugins/azure-sdk-dotnet/skills/azure-mgmt-fabric-dotnet/SKILL.md"
+  ],
+  "verifiedAt": "2026-11-27"
+}

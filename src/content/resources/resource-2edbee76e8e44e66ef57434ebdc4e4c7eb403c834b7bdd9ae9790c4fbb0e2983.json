@@ -1,0 +1,28 @@
+{
+  "addedAt": "2026-11-27",
+  "categories": [
+    [
+      "线稿提取",
+      "Sketch Extraction"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-26",
+  "id": "resource-2edbee76e8e44e66ef57434ebdc4e4c7eb403c834b7bdd9ae9790c4fbb0e2983",
+  "identity": "github:356085273",
+  "license": "MIT",
+  "name": "Mukosame/Anime2Sketch",
+  "repository": "https://github.com/Mukosame/Anime2Sketch",
+  "repositoryId": "356085273",
+  "site": "https://github.com/Mukosame/Anime2Sketch",
+  "sourceSignature": "8d76d913e76c8a871a962ff9628acb8f12e7b7f0f432620304234bc48567493f",
+  "summary": [
+    "据发布者介绍，Anime2Sketch 可从动漫图像和插画中提取线稿。",
+    "The publisher describes Anime2Sketch as a tool for extracting line sketches from anime images and illustrations."
+  ],
+  "tested": false,
+  "type": "open-source",
+  "verificationSources": [
+    "https://api.github.com/search/repositories?page=2&per_page=30&q=topic%3Aimage-generation+archived%3Afalse+fork%3Afalse&sort=stars"
+  ],
+  "verifiedAt": "2026-11-27"
+}

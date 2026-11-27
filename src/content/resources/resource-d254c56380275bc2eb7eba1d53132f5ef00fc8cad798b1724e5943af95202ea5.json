@@ -1,0 +1,27 @@
+{
+  "addedAt": "2026-11-27",
+  "categories": [
+    [
+      "文本分类",
+      "Text Classification"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-26",
+  "id": "resource-d254c56380275bc2eb7eba1d53132f5ef00fc8cad798b1724e5943af95202ea5",
+  "identity": "github:698859890",
+  "name": "MahanPourhosseini/News-Classification",
+  "repository": "https://github.com/MahanPourhosseini/News-Classification",
+  "repositoryId": "698859890",
+  "site": "https://github.com/MahanPourhosseini/News-Classification",
+  "sourceSignature": "acc6d3ee6a31d014714cdce3de6d32bac8c4d93c3423b1aff3476674f2edc109",
+  "summary": [
+    "据发布者介绍，这个项目以伊朗一家报纸的文章为例，演示新闻文本分类流程，包括数据探索、文本预处理、向量化、划分训练集与测试集，以及训练模型。",
+    "The publisher presents this project as a worked example of classifying articles from an Iranian newspaper, covering data exploration, text preprocessing, vectorization, train-test splitting, and model training."
+  ],
+  "tested": false,
+  "type": "resources",
+  "verificationSources": [
+    "https://api.github.com/search/repositories?page=1&per_page=30&q=topic%3Amachine-learning-course+archived%3Afalse+fork%3Afalse&sort=stars"
+  ],
+  "verifiedAt": "2026-11-27"
+}

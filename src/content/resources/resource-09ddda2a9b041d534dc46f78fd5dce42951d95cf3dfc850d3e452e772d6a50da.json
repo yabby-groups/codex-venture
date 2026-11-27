@@ -1,0 +1,29 @@
+{
+  "addedAt": "2026-11-27",
+  "categories": [
+    [
+      "编程智能体编排",
+      "Coding Agent Orchestration"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-27",
+  "id": "resource-09ddda2a9b041d534dc46f78fd5dce42951d95cf3dfc850d3e452e772d6a50da",
+  "identity": "github:1166598220",
+  "license": "MIT",
+  "name": "viamus/code-genesis",
+  "repository": "https://github.com/viamus/code-genesis",
+  "repositoryId": "1166598220",
+  "site": "https://github.com/viamus/code-genesis",
+  "sourceSignature": "29a874c1437c77fb7f36b1d487d14cd441d97b5aaa18ba626ff704e0e4046023",
+  "summary": [
+    "据发布者介绍，Code-Genesis 是一个 .NET 编排工具，可通过 Claude CLI 并行或顺序运行多个智能体，并隔离各自的上下文、设置审批环节。",
+    "The publisher describes Code-Genesis as a .NET orchestrator for running Claude CLI agents in parallel or in sequence, with isolated contexts and approval steps."
+  ],
+  "tested": false,
+  "type": "workflows",
+  "verificationSources": [
+    "https://api.github.com/search/repositories?page=11&per_page=30&q=topic%3Aai-workflow+archived%3Afalse+fork%3Afalse&sort=stars",
+    "https://api.github.com/search/repositories?page=12&per_page=30&q=topic%3Aai-workflow+archived%3Afalse+fork%3Afalse&sort=stars"
+  ],
+  "verifiedAt": "2026-11-27"
+}

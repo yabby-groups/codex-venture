@@ -1,0 +1,28 @@
+{
+  "addedAt": "2026-11-27",
+  "categories": [
+    [
+      "初创企业与融资研究",
+      "Startup and Funding Research"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-25",
+  "id": "resource-ca877f35b32c22f1fed22c11badf1ba29c14d7e41b56feaf0e2200727c9e3afd",
+  "identity": "mcp:africa.startuplist/mcp",
+  "name": "StartupList Africa",
+  "registryId": "africa.startuplist/mcp",
+  "site": "https://registry.modelcontextprotocol.io/v0.1/servers/africa.startuplist%2Fmcp/versions/1.0.0",
+  "sourceSignature": "c9998c51a8205ddcf205325ff3d566f525224695a70b1a39e123600dd54bb181",
+  "summary": [
+    "据发布者介绍，StartupList Africa 可用于研究非洲初创企业、投资者和融资轮次，每条记录都附有来源链接。",
+    "The publisher says StartupList Africa lets readers research African startups, investors, and funding rounds and follow a source link on each record."
+  ],
+  "tested": false,
+  "transport": "streamable-http",
+  "type": "mcp",
+  "verificationSources": [
+    "https://registry.modelcontextprotocol.io/v0.1/servers/africa.startuplist%2Fmcp/versions/1.0.0"
+  ],
+  "verifiedAt": "2026-11-27",
+  "version": "1.0.0"
+}

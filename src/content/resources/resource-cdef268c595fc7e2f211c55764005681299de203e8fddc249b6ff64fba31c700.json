@@ -1,0 +1,27 @@
+{
+  "addedAt": "2026-11-27",
+  "categories": [
+    [
+      "机器学习入门",
+      "Machine Learning Education"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-26",
+  "id": "resource-cdef268c595fc7e2f211c55764005681299de203e8fddc249b6ff64fba31c700",
+  "identity": "github:718938971",
+  "name": "data-flair/Machine-Learning-Tutorial",
+  "repository": "https://github.com/data-flair/Machine-Learning-Tutorial",
+  "repositoryId": "718938971",
+  "site": "https://github.com/data-flair/Machine-Learning-Tutorial",
+  "sourceSignature": "9dfc17c79316771138a230dcef51f94655b2d9e757b58d07318872936b2ec4d0",
+  "summary": [
+    "据 DataFlair 介绍，这套资料包含机器学习入门教程、练习和实战项目，也提供面试题供读者练习。",
+    "DataFlair describes this collection as a way to learn machine learning through beginner tutorials, exercises, and projects, with interview questions for practice."
+  ],
+  "tested": false,
+  "type": "resources",
+  "verificationSources": [
+    "https://api.github.com/search/repositories?page=1&per_page=30&q=topic%3Amachine-learning-course+archived%3Afalse+fork%3Afalse&sort=stars"
+  ],
+  "verifiedAt": "2026-11-27"
+}
