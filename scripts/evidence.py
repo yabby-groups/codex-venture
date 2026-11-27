@@ -1,6 +1,7 @@
 """Turn approved public documents into bounded editorial evidence."""
 
 import json
+import os
 import http.client
 import re
 import subprocess
@@ -227,6 +228,17 @@ def skill_files(item, repo, deadline):
 
 
 def enrich(items, candidates, now, limit=5):
+    previous = os.environ.get('VENTURE_COLLECTION_LANE')
+    if previous == 'collection':
+        os.environ['VENTURE_COLLECTION_LANE'] = 'research'
+    try:
+        return enrich_candidates(items, candidates, now, limit)
+    finally:
+        if previous == 'collection':
+            os.environ['VENTURE_COLLECTION_LANE'] = previous
+
+
+def enrich_candidates(items, candidates, now, limit):
     checked = now.astimezone(timezone.utc).isoformat()
     deadline = time.monotonic() + 75
     attempted = succeeded = 0
@@ -279,7 +291,7 @@ def enrich(items, candidates, now, limit=5):
         except (OSError, ValueError, KeyError, TypeError, http.client.HTTPException) as error:
             print(f'{key[:12]} evidence: {type(error).__name__}: {error}', flush=True)
             failures.append(evidence_failure(item['url'], error))
-        if topic:
+        if topic and (documents or not any(failure.get('resume') for failure in failures)):
             topic['attempts'] = topic.get('attempts', 0) + 1
         item['evidence_checked'] = checked
         item['evidence_result'] = dict(checked=checked, failures=failures, documents=len(documents))
@@ -304,4 +316,7 @@ def evidence_failure(url, error):
         kind = 'temporary'
     else:
         kind = 'unverifiable'
-    return dict(kind=kind, url=url, reason=str(error)[:300])
+    result = dict(kind=kind, url=getattr(error, 'url', url), reason=str(error)[:300])
+    if isinstance(error, CollectionPaused):
+        result.update(host=error.host, resume=error.resume)
+    return result

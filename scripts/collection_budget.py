@@ -43,9 +43,13 @@ def reserve(host):
     hourly, daily = LIMITS.get(host, (24, 100))
     if row.get('resume', 0) > now.timestamp():
         raise CollectionPaused(host, 'provider rate limit', row['resume'])
-    resource = os.getenv('VENTURE_COLLECTION_LANE') == 'resource'
-    hourly_limit = hourly * 2 // 3 if resource else hourly
-    daily_limit = daily * 2 // 3 if resource else daily
+    lane = os.getenv('VENTURE_COLLECTION_LANE')
+    if lane == 'resource':
+        hourly_limit, daily_limit = hourly * 2 // 3, daily * 2 // 3
+    elif lane == 'collection':
+        hourly_limit, daily_limit = hourly * 5 // 6, daily * 5 // 6
+    else:
+        hourly_limit, daily_limit = hourly, daily
     if row.get('daily', 0) >= daily_limit:
         raise CollectionPaused(host, 'local daily request allowance', (int(now.timestamp()) // 86400 + 1) * 86400)
     if row.get('hourly', 0) >= hourly_limit:

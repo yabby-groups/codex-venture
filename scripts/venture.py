@@ -19,7 +19,7 @@ from decimal import Decimal
 from pathlib import Path
 
 import venture_queue as queue
-from collect import load, save
+from collect import canonical, load, save
 from editor import DATE_ZONE
 from model_cost import configured_price, estimate, worst_case
 from release import ReleaseMarkerMismatch
@@ -166,7 +166,7 @@ def prepare(kind):
     token = secret('github_read', optional=True)
     if token:
         os.environ['VENTURE_GITHUB_READ_TOKEN'] = token
-    os.environ['VENTURE_COLLECTION_LANE'] = 'resource' if kind.startswith('resource-') or kind == 'backfill' else 'news'
+    os.environ['VENTURE_COLLECTION_LANE'] = 'resource' if kind.startswith('resource-') or kind == 'backfill' else 'collection'
     with lock('state'), tempfile.TemporaryDirectory(prefix='venture-collect-') as temp:
         if pending_publication():
             raise RuntimeError('Publication recovery must finish before changing operating state')
@@ -518,6 +518,10 @@ def main():
     for name, argument in (('serve', 'role'), ('health', 'role'), ('run', 'kind'),
                            ('retry', 'task'), ('import-state', 'ref'), ('restore', 'backup')):
         commands.add_parser(name).add_argument(argument)
+    research = commands.add_parser('research')
+    research.add_argument('candidate')
+    research.add_argument('url')
+    research.add_argument('question')
     legacy = commands.add_parser('legacy-cost')
     legacy.add_argument('day')
     legacy.add_argument('amount')
@@ -674,6 +678,21 @@ def budget(db):
 
 def manage(args, db):
     action = args.command
+    if action == 'research':
+        url = canonical(args.url)
+        with lock('state'):
+            if pending_publication():
+                raise RuntimeError('Publication recovery must finish before changing candidate state')
+            items = load(ITEMS, {})
+            item = items.get(args.candidate)
+            if not item or item['status'] not in ('pending', 'expired'):
+                raise ValueError('Expected a pending or expired candidate ID')
+            item['status'] = 'pending'
+            item['research'] = dict(url=url, gap=args.question[:1000], opened=datetime.now(DATE_ZONE).date().isoformat())
+            item.pop('evidence_checked', None)
+            save(ITEMS, items)
+        dispatch(db, 'discover', 'research:' + args.candidate + ':' + str(time.time_ns()))
+        return {'candidate': args.candidate, 'research': url}
     if action == 'init':
         return {'database': str(DB), 'paused': queue.setting(db, 'paused', True)}
     if action == 'health':

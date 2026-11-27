@@ -49,3 +49,11 @@ class EditorialTests(unittest.TestCase):
         self.assertEqual(editorial.decisions(self.draft, self.review, {}), ([], {}))
         with self.assertRaisesRegex(ValueError, 'cover each draft'):
             editorial.decisions(self.draft, {'reviews': []}, {})
+
+    def test_sharpe_article_cannot_be_recommended_as_vertical(self):
+        path = Path(__file__).resolve().parents[1] / 'src/content/news/audit-sharpe-annualization-before-strategy-promotion.md'
+        self.article.update(slug=path.stem, body=path.read_text())
+        self.review['reviews'][0].update(slug=path.stem, audience='vertical')
+        published, ratings = editorial.decisions(self.draft, self.review, {})
+        self.assertEqual(published, [self.article])
+        self.assertEqual(ratings[path.stem]['tier'], 'standard')
