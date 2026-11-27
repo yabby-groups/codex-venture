@@ -12,7 +12,7 @@ from decimal import Decimal
 from pathlib import Path
 from urllib.parse import urlsplit
 
-from collect import collect, load, save
+from collect import canonical, collect, load, save
 from discover import discovery
 from evidence import enrich
 from resource_editor import resource_context
@@ -106,7 +106,9 @@ def prepare(task, queued=False, excluded=()):
             queued = sorted((key for key, item in items.items()
                              if item['status'] == 'pending' or
                              any(item.get('skill_scan', {}).get(field) for field in ('pending', 'tree_queue'))),
-                            key=lambda key: items[key].get('evidence_checked', ''))
+                            key=lambda key: (not bool(items[key].get('research')),
+                                              items[key].get('evidence_checked', ''),
+                                              items[key].get('source', '')))
             counts = enrich(items, queued, now, limit=10)
             save(ITEMS, items)
             path = BATCH.parent / 'collection.json'
@@ -171,7 +173,7 @@ def prepare(task, queued=False, excluded=()):
                         item.get('discovery', {}).get('upstream')) for item in candidates.values())]
         save(BATCH, dict(task=task, date=day, now=now.isoformat(timespec='seconds'),
                          reservation=RUN_BUDGET, unlimited=unlimited, enforce_cost_limit=cost_limited,
-                         reviewStrategy=review_strategy, existingArticles=existing_articles,
+                         selectionVersion=2, reviewStrategy=review_strategy, existingArticles=existing_articles,
                          batches=[dict(candidates=candidates, existingResources=context)]))
         return
 
@@ -227,7 +229,7 @@ def prepare(task, queued=False, excluded=()):
     save(ledger_path, ledger)
     save(BATCH, dict(task=task, date=day, now=now.isoformat(timespec='seconds'),
                      reservation=reserved, unlimited=unlimited,
-                     reviewStrategy=review_strategy, existingArticles=existing_articles,
+                     selectionVersion=2, reviewStrategy=review_strategy, existingArticles=existing_articles,
                      enforce_cost_limit=bool(os.getenv('VENTURE_DAILY_COST_LIMIT')), batches=batches,
                      candidates=batches[0]['candidates']))
 
@@ -371,8 +373,9 @@ def run_model(batch, smoke, receipt, *, yolo=False):
     pitches = {row['id']: row for row in selection['pitches']}
     if len(pitches) != len(selection['pitches']) or not pitches.keys() <= candidates.keys():
         raise ValueError('Invalid editorial candidate IDs')
-    if any(not value.strip() for row in pitches.values() for value in row.values()):
+    if any(not value.strip() for row in pitches.values() for field, value in row.items() if field not in ('researchGap', 'researchUrl')):
         raise ValueError('Incomplete editorial pitch')
+    pitches = {key: row for key, row in pitches.items() if not row['researchGap']}
     if not pitches:
         return dict(draft={'articles': [], 'skipped': []}, review={'reviews': []}, selection=selection)
     selected = {key: candidates[key] for key in pitches}
@@ -521,12 +524,20 @@ def accept():
             if type(response) is not dict or set(response) != {'draft', 'review', 'selection'}:
                 raise ValueError('Missing independently reviewed editorial result')
             selected = response['selection']
+            if batch.get('selectionVersion') != 2:
+                selected = {'pitches': [dict(audience='adjacent', researchGap='', researchUrl='') | row
+                                        for row in selected['pitches']]}
+                response['review'] = {'reviews': [dict(audience='adjacent') | row
+                                                  for row in response['review']['reviews']]}
             if not editorial.conforms(selected, editorial.PITCH):
                 raise ValueError('Invalid editorial selection receipt')
             pitches = {row['id'] for row in selected['pitches']}
             if (len(pitches) != len(selected['pitches']) or not pitches <= part['candidates'].keys()
-                    or any(not value.strip() for row in selected['pitches'] for value in row.values())):
+                    or any(not value.strip() for row in selected['pitches'] for field, value in row.items()
+                           if field not in ('researchGap', 'researchUrl'))):
                 raise ValueError('Invalid selected candidate pitches')
+            research = {row['id']: row for row in selected['pitches'] if row['researchGap']}
+            pitches -= research.keys()
             candidates = {key: part['candidates'][key] for key in pitches}
             draft = response['draft']
             if not editorial.conforms(draft, output_schema(candidates)) or any(
@@ -539,6 +550,18 @@ def accept():
             items = load(ITEMS, {})
             for key, candidate in part['candidates'].items():
                 if key in items:
+                    if key in research and items[key]['status'] == 'pending':
+                        row = research[key]
+                        topic = items[key].setdefault('research', {})
+                        topic.update(gap=row['researchGap'], angle=row['angle'], audience=row['audience'])
+                        topic.setdefault('opened', batch['date'])
+                        if row['researchUrl']:
+                            try:
+                                topic['url'] = canonical(row['researchUrl'])
+                            except ValueError:
+                                pass
+                    else:
+                        items[key].pop('research', None)
                     items[key].setdefault('editorial_attempts', {})[batch['task']] = evidence_revision(candidate)
             save(ITEMS, items)
     save(WORK / 'routes.json', routes)

@@ -12,12 +12,14 @@ def obj(**fields):
 STRING = dict(type='string')
 BOOLEAN = dict(type='boolean')
 INTEGER = dict(type='integer')
+AUDIENCE = dict(type='string', enum=['core', 'adjacent', 'vertical'])
 PITCH = obj(pitches=dict(type='array', items=obj(
     id=STRING, reader=STRING, angle=STRING, payoff=STRING, evidence=STRING,
-    distinction=STRING, reasonToShare=STRING,
+    distinction=STRING, reasonToShare=STRING, audience=AUDIENCE,
+    researchGap=STRING, researchUrl=STRING,
 )))
 REVIEW = obj(reviews=dict(type='array', items=obj(
-    slug=STRING, grounds=STRING, actionable=BOOLEAN,
+    slug=STRING, grounds=STRING, actionable=BOOLEAN, audience=AUDIENCE,
     scores=obj(**dict.fromkeys(DIMENSIONS, INTEGER)),
     gates=obj(**dict.fromkeys(GATES, BOOLEAN)),
 )))
@@ -53,5 +55,5 @@ def decisions(draft, review, strategy):
             continue
         published.append(article)
         tier = 'lead' if score >= limits['lead'] else 'featured' if score >= limits['featured'] else 'standard'
-        ratings[row['slug']] = dict(score=score, tier=tier)
+        ratings[row['slug']] = dict(score=score, tier=tier if row['audience'] == 'core' else 'standard', audience=row['audience'])
     return published, ratings

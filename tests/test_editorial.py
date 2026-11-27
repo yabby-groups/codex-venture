@@ -17,7 +17,7 @@ class EditorialTests(unittest.TestCase):
         self.article.update(tags=[], itemIds=['candidate'], blocks=[], resourceIds=[])
         self.draft = dict(articles=[self.article], skipped=[])
         self.review = {'reviews': [dict(slug='article', grounds='Explains a concrete workflow.',
-                                       actionable=True, scores=dict(editorial.DIMENSIONS),
+                                       actionable=True, audience='core', scores=dict(editorial.DIMENSIONS),
                                        gates=dict.fromkeys(editorial.GATES, True))]}
         self.batch = dict(task='news', candidates={'candidate': {}}, existingResources=[], unlimited=True, enforce_cost_limit=False)
 
@@ -29,7 +29,7 @@ class EditorialTests(unittest.TestCase):
 
     def test_selection_draft_review_run_independently(self):
         pitch = dict.fromkeys(editorial.PITCH['properties']['pitches']['items']['required'], 'reason')
-        pitch['id'] = 'candidate'
+        pitch.update(id='candidate', audience='core', researchGap='', researchUrl='')
         with patch.object(hosted, 'model_call', side_effect=[{'pitches': [pitch]}, self.draft, self.review]) as model:
             response = hosted.run_model(self.batch, False, {})
         self.assertEqual([call.kwargs['stage'] for call in model.call_args_list],
@@ -39,7 +39,7 @@ class EditorialTests(unittest.TestCase):
 
     def test_scores_and_hard_gates(self):
         self.assertEqual(editorial.decisions(self.draft, self.review, {})[1],
-                         {'article': dict(score=100, tier='lead')})
+                         {'article': dict(score=100, tier='lead', audience='core')})
         row = self.review['reviews'][0]
         row['gates']['evidence'] = False
         self.assertEqual(editorial.decisions(self.draft, self.review, {}), ([], {}))

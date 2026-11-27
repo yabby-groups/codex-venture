@@ -9,6 +9,7 @@ from datetime import datetime, timedelta, timezone
 from html.parser import HTMLParser
 from pathlib import Path
 from urllib.parse import quote, urlsplit
+from urllib.error import HTTPError
 
 from collection_budget import CollectionPaused
 from collect import canonical, clean, digest, fetch, load, save, timestamp
@@ -109,7 +110,11 @@ def github_evidence(item, repo):
         try:
             text = document(api + path, plain=True, accept=accept)
             yield record(api + path, label, text)
-        except (OSError, ValueError, http.client.HTTPException):
+        except CollectionPaused:
+            raise
+        except (OSError, ValueError, http.client.HTTPException) as error:
+            if label == 'README':
+                print(f'{api + path}: {type(error).__name__}: {error}', flush=True)
             continue
 
 
@@ -231,10 +236,15 @@ def enrich(items, candidates, now, limit=5):
         item = items[key]
         last = item.get('evidence_checked')
         scan = item.get('skill_scan', {})
+        topic = item.get('research')
+        if topic and (topic.get('attempts', 0) >= 4 or
+                      now.date() - datetime.fromisoformat(topic['opened']).date() > timedelta(days=28)):
+            continue
         if last and not (scan.get('pending') or scan.get('tree_queue')) and now - timestamp(last) < timedelta(days=3 if item.get('evidence') else 1):
             continue
         attempted += 1
         documents = []
+        failures = []
         try:
             if item.get('content_type') == 'skills' and not item.get('discovery', {}).get('skill_path'):
                 repo = github_root(item)
@@ -250,17 +260,48 @@ def enrich(items, candidates, now, limit=5):
                 if item.get('skill_scan', {}).get('seen'):
                     item['status'] = 'superseded'
             else:
+                if topic and topic.get('url'):
+                    link = topic['url']
+                    try:
+                        targeted = record(link, 'Targeted research', document(link))
+                        if targeted['excerpt']:
+                            documents.append(targeted)
+                        else:
+                            failures.append(dict(kind='empty', reason='No extractable text', url=link))
+                    except (OSError, ValueError, http.client.HTTPException) as error:
+                        failures.append(evidence_failure(link, error))
                 for source in evidence_for(item):
                     if source['excerpt']:
                         documents.append(source)
         except CollectionPaused as error:
             print(f'{key[:12]} evidence: {error}', flush=True)
-            continue
+            failures.append(evidence_failure(item['url'], error))
         except (OSError, ValueError, KeyError, TypeError, http.client.HTTPException) as error:
             print(f'{key[:12]} evidence: {type(error).__name__}: {error}', flush=True)
+            failures.append(evidence_failure(item['url'], error))
+        if topic:
+            topic['attempts'] = topic.get('attempts', 0) + 1
         item['evidence_checked'] = checked
+        item['evidence_result'] = dict(checked=checked, failures=failures, documents=len(documents))
         if documents:
-            item['evidence'] = documents[:4]
+            merged = {doc['url']: doc for doc in documents}
+            for doc in item.get('evidence', []):
+                merged.setdefault(doc['url'], doc)
+            item['evidence'] = list(merged.values())[:4]
             item['verified_at'] = checked
             succeeded += 1
     return dict(evidence_attempted=attempted, evidence_succeeded=succeeded)
+
+
+def evidence_failure(url, error):
+    if isinstance(error, HTTPError) and error.code in (404, 410):
+        kind = 'missing'
+    elif (isinstance(error, HTTPError) and error.code in (401, 403, 451)) or (
+        isinstance(error, ValueError) and str(error) in ('blocked by robots.txt', 'crawl delay exceeds collection window')
+    ):
+        kind = 'inaccessible'
+    elif isinstance(error, (CollectionPaused, OSError, http.client.HTTPException)):
+        kind = 'temporary'
+    else:
+        kind = 'unverifiable'
+    return dict(kind=kind, url=url, reason=str(error)[:300])

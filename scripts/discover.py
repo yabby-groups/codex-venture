@@ -81,6 +81,20 @@ def discovery(days=7):
         sources.append(dict(id=f'github-search-{topic}', kind='discovery', category='open-source',
                             url='https://api.github.com/search/repositories?' + query, parse=github_rows))
     now = datetime.now(timezone.utc)
+    questions = (
+        ('local-documents', 'local document assistant'),
+        ('coding-cost', 'llm token cost'),
+        ('creative-video', 'ai video editing'),
+        ('personal-workflows', 'ai personal automation'),
+        ('coding-workflows', 'agent coding workflow'),
+        ('local-workstations', 'local llm workstation'),
+    )
+    direction, search = questions[now.date().toordinal() % len(questions)]
+    query = urlencode({'q': f'{search} in:name,description pushed:>={start} archived:false',
+                       'sort': 'updated', 'per_page': 12})
+    sources.append(dict(id=f'planned-{direction}', kind='discovery', category='open-source',
+                        interval_hours=20, url='https://api.github.com/search/repositories?' + query,
+                        parse=github_rows))
     slot = (now.hour // 6) % 4
     for kind in ('models', 'datasets', 'spaces'):
         sources.append(dict(id='hf-' + kind, kind='discovery', category='models',

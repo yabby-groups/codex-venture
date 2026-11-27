@@ -1,13 +1,20 @@
 import curation from '../../config/editorial-curation.json';
 import type { Story } from './content';
 
-const articles: Record<string, { decision: string; recommendation?: string }> = curation.articles;
+const articles: Record<string, { decision: string; recommendation?: string; audience?: string }> = curation.articles;
 
 export const onEditorialDesk = (story: Story) =>
   story.data.status !== 'archived' && (story.collection !== 'news' || articles[story.id]?.decision !== 'ARCHIVE');
 
+export const onHome = (story: Story) => {
+  const curation = articles[story.id];
+  const audience = curation?.audience ?? story.data.editorial?.audience;
+  return onEditorialDesk(story) && curation?.decision !== 'IMPROVE' &&
+    (audience === undefined || audience === 'core');
+};
+
 export function recommendations(stories: Story[]) {
-  const candidates = stories.filter((story) => story.collection === 'news' && onEditorialDesk(story))
+  const candidates = stories.filter((story) => story.collection === 'news' && onHome(story))
     .map((story) => ({
       story,
       tier: articles[story.id]?.recommendation ?? story.data.editorial?.tier,

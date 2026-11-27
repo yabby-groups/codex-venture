@@ -27,6 +27,18 @@
       "decision": "KEEP",
       "recommendation": "featured",
       "reason": "The conference account traces the dual-GPU design through initialization and power-limit failures, with the results attributed to the speaker."
+    },
+    "audit-sharpe-annualization-before-strategy-promotion": {
+      "decision": "KEEP",
+      "audience": "vertical"
+    },
+    "meta-f3-lightning-independent-feature-releases": {
+      "decision": "KEEP",
+      "audience": "vertical"
+    },
+    "chd-bench-interactive-cardiac-imaging": {
+      "decision": "KEEP",
+      "audience": "vertical"
     }
   },
   "resources": {

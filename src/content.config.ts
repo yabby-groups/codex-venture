@@ -14,7 +14,7 @@ const schema = z.object({
   published: z.iso.datetime({ offset: true }).transform((value) => new Date(value)),
   category: z.enum(Object.keys(categories) as [TechnologyCategory, ...TechnologyCategory[]]),
   type: z.enum(Object.keys(types) as [keyof typeof types, ...(keyof typeof types)[]]).optional(),
-  editorial: z.object({ score: z.number().int().min(0).max(100), tier: z.enum(['standard', 'featured', 'lead']) }).optional(),
+  editorial: z.object({ score: z.number().int().min(0).max(100), tier: z.enum(['standard', 'featured', 'lead']), audience: z.enum(['core', 'adjacent', 'vertical']).optional() }).optional(),
   updated: z.iso.date().optional(),
   blocks: z.array(articleBlock).max(8).optional(),
   verified: z.iso.date().optional(),

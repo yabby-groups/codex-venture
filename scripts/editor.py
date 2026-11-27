@@ -54,6 +54,7 @@ def sync(items, articles):
 def evidence_revision(candidate):
     evidence = {key: value for key, value in candidate.items()
                 if key in ('title', 'url', 'summary', 'documents', 'basis', 'experiment')}
+    evidence['selectionPolicy'] = 2
     evidence['documents'] = [
         {key: value for key, value in doc.items() if key not in ('fetched_at', 'verified_at', 'checked_at')}
         for doc in evidence.get('documents', [])
@@ -95,7 +96,8 @@ def choose(mode, items, now, days=2, strategy=None):
             if mode == 'daily':
                 eligible = eligible and not any(path.startswith('/daily/') for path in articles)
         if eligible and item.get('summary'):
-            priority = (bool(item.get('evidence')), weights.get(item['category'], 0), published)
+            priority = (bool(item.get('research')), bool(details.get('repository_id') or details.get('hn_id')),
+                        weights.get(item['category'], 0), published)
             groups.setdefault(group, []).append((priority, key))
     for group in groups.values():
         group.sort()
@@ -117,6 +119,8 @@ def choose(mode, items, now, days=2, strategy=None):
                     evidence['experiment'] = item['experiment']
             evidence['documents'] = item.get('evidence', [])[:3]
             evidence['lastVerified'] = item.get('verified_at')
+            if item.get('research'):
+                evidence['research'] = item['research']
             evidence['discovery'] = item.get('discovery', {})
             if item.get('editorial_attempts', {}).get(mode) == evidence_revision(evidence):
                 continue
