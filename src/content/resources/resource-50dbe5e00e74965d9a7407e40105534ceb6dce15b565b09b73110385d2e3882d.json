@@ -1,0 +1,31 @@
+{
+  "addedAt": "2026-11-27",
+  "categories": [
+    [
+      "配置管理",
+      "Configuration Management"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-25",
+  "id": "resource-50dbe5e00e74965d9a7407e40105534ceb6dce15b565b09b73110385d2e3882d",
+  "identity": "openvsx:tysoncung.cc-config-switcher",
+  "install": "https://open-vsx.org/extension/tysoncung/cc-config-switcher",
+  "name": "Claude Config Switcher",
+  "platforms": [
+    "Open VSX"
+  ],
+  "site": "https://open-vsx.org/extension/tysoncung/cc-config-switcher",
+  "sourceSignature": "80cc94393634b763f92ae2dd1683195e6fe59cecbd8081ed2a07d2a046555958",
+  "summary": [
+    "据条目介绍，Claude Config Switcher 可通过状态栏控件切换 Claude Code 的配置目录。",
+    "According to the listing, Claude Config Switcher lets you switch between Claude Code configuration directories from a status bar item."
+  ],
+  "tested": false,
+  "type": "plugins",
+  "verificationSources": [
+    "https://open-vsx.org/api/-/search?offset=50&query=Claude&size=25",
+    "https://open-vsx.org/api/-/search?offset=75&query=Claude&size=25"
+  ],
+  "verifiedAt": "2026-11-27",
+  "version": "1.2.3"
+}

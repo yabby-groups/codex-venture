@@ -1,0 +1,28 @@
+{
+  "addedAt": "2026-11-27",
+  "categories": [
+    [
+      "交易策略分析",
+      "Trading Strategy Analysis"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-25",
+  "id": "resource-9501cef16e7ef3338d193cf0514a4e61403fc7537939016cd7dc01f9437412cf",
+  "identity": "mcp:agency.lona/trading",
+  "name": "agency.lona/trading",
+  "registryId": "agency.lona/trading",
+  "site": "https://registry.modelcontextprotocol.io/v0.1/servers/agency.lona%2Ftrading/versions/2.0.0",
+  "sourceSignature": "ebe31236020ce75cb262f3253ff0bdab73667fbd52d03d37cfa75db80fb6cef8",
+  "summary": [
+    "据 MCP 条目介绍，该服务可用于获取市场数据、回测交易策略和分析投资组合。",
+    "The MCP listing describes tools for accessing market data, backtesting trading strategies, and analyzing portfolios."
+  ],
+  "tested": false,
+  "transport": "streamable-http",
+  "type": "mcp",
+  "verificationSources": [
+    "https://registry.modelcontextprotocol.io/v0.1/servers/agency.lona%2Ftrading/versions/2.0.0"
+  ],
+  "verifiedAt": "2026-11-27",
+  "version": "2.0.0"
+}

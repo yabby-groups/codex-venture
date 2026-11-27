@@ -1,0 +1,28 @@
+{
+  "addedAt": "2026-11-27",
+  "categories": [
+    [
+      "多智能体工作流开发",
+      "Multi-Agent Workflow Development"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-26",
+  "id": "resource-82403665b73f866364d077940a3bdb1525bde7444efb52410b97e9a7c3d176ac",
+  "identity": "github:1193465306",
+  "license": "MIT",
+  "name": "iusztinpaul/designing-real-world-ai-agents-workshop",
+  "repository": "https://github.com/iusztinpaul/designing-real-world-ai-agents-workshop",
+  "repositoryId": "1193465306",
+  "site": "https://github.com/iusztinpaul/designing-real-world-ai-agents-workshop",
+  "sourceSignature": "5132aac6b69b95d013a258aad7512abdf804651d2aa7b9df155c2e770ed8faf6",
+  "summary": [
+    "据课程介绍，学员可动手搭建多智能体系统，通过 MCP 服务器提供深度研究智能体和写作工作流。课程材料包括代码、幻灯片和视频。",
+    "The workshop description outlines a hands-on build of a multi-agent system that serves a deep research agent and a writing workflow through MCP servers. The listed materials include code, slides, and video."
+  ],
+  "tested": false,
+  "type": "workflows",
+  "verificationSources": [
+    "https://api.github.com/search/repositories?page=1&per_page=30&q=topic%3Aai-workflow+archived%3Afalse+fork%3Afalse&sort=stars"
+  ],
+  "verifiedAt": "2026-11-27"
+}

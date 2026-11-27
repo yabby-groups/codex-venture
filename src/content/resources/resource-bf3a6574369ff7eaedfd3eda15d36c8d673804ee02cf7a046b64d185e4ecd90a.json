@@ -1,0 +1,28 @@
+{
+  "addedAt": "2026-11-27",
+  "categories": [
+    [
+      "iOS 模拟器测试与调试",
+      "iOS Simulator Testing and Debugging"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-25",
+  "id": "resource-bf3a6574369ff7eaedfd3eda15d36c8d673804ee02cf7a046b64d185e4ecd90a",
+  "identity": "github:258965445",
+  "license": "NOASSERTION",
+  "name": "AvdLee/RocketSimApp",
+  "repository": "https://github.com/AvdLee/RocketSimApp",
+  "repositoryId": "258965445",
+  "site": "https://github.com/AvdLee/RocketSimApp",
+  "sourceSignature": "369efa4a6c63788c603f69036b3065b70961f808c0b3a5327239f1a5de83922b",
+  "summary": [
+    "据发布方介绍，RocketSim 可用于在 Xcode 的 iOS 模拟器中测试和调试应用、监控网络活动，并通过 RocketSim CLI 自动执行任务。",
+    "The publisher describes RocketSim tools for testing and debugging apps in Xcode’s iOS Simulator, monitoring network activity, and automating tasks through the RocketSim CLI."
+  ],
+  "tested": false,
+  "type": "tools",
+  "verificationSources": [
+    "https://api.github.com/search/repositories?page=1&per_page=30&q=topic%3Aai-automation+archived%3Afalse+fork%3Afalse&sort=stars"
+  ],
+  "verifiedAt": "2026-11-27"
+}

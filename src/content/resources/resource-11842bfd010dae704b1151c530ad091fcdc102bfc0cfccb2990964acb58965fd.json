@@ -1,0 +1,28 @@
+{
+  "addedAt": "2026-11-27",
+  "categories": [
+    [
+      "AI 智能体开发",
+      "AI Agent Development"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-26",
+  "id": "resource-11842bfd010dae704b1151c530ad091fcdc102bfc0cfccb2990964acb58965fd",
+  "identity": "github:703411624",
+  "license": "Apache-2.0",
+  "name": "letta-ai/letta",
+  "repository": "https://github.com/letta-ai/letta",
+  "repositoryId": "703411624",
+  "site": "https://github.com/letta-ai/letta",
+  "sourceSignature": "f7f0dbbdfb1ddc4bd750ad4c178cb0df91ae8cff9a78db87d52d4ec0e709f9ee",
+  "summary": [
+    "据项目介绍，Letta 可用于构建能够在多次交互之间保留信息的有状态 AI 智能体。",
+    "Letta describes a platform for building stateful AI agents that retain information across interactions."
+  ],
+  "tested": false,
+  "type": "open-source",
+  "verificationSources": [
+    "https://api.github.com/search/repositories?page=3&per_page=30&q=topic%3Aai-agents+archived%3Afalse+fork%3Afalse&sort=stars"
+  ],
+  "verifiedAt": "2026-11-27"
+}

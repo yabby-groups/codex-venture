@@ -1,0 +1,31 @@
+{
+  "addedAt": "2026-11-27",
+  "categories": [
+    [
+      "设计与代码组件映射",
+      "Design-to-Code Component Mapping"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-25",
+  "id": "resource-fc057e6ff60c01a7b92ad6107484810c3bd8f899e09a8b41ad27949bee2eeb62",
+  "identity": "github-skill:1103643573:skills/.curated/figma-code-connect-components/SKILL.md",
+  "name": "figma-code-connect-components",
+  "platforms": [
+    "Codex"
+  ],
+  "repository": "https://github.com/openai/skills",
+  "repositoryId": "1103643573",
+  "site": "https://github.com/openai/skills/blob/main/skills/.curated/figma-code-connect-components/SKILL.md",
+  "sourcePath": "skills/.curated/figma-code-connect-components/SKILL.md",
+  "sourceSignature": "c333a84c77565cde4fbe61fe8f231fd9bb35138b06d93860829c7929218b4f51",
+  "summary": [
+    "据技能文档介绍，它可以通过 Figma Code Connect 找出尚未建立映射的设计组件，在代码库中查找对应组件，并保存映射关系。",
+    "The skill documentation describes using Figma Code Connect to find unmapped design components, look for matching code components, and save the mappings."
+  ],
+  "tested": false,
+  "type": "skills",
+  "verificationSources": [
+    "https://github.com/openai/skills/blob/main/skills/.curated/figma-code-connect-components/SKILL.md"
+  ],
+  "verifiedAt": "2026-11-27"
+}

@@ -1,0 +1,29 @@
+{
+  "addedAt": "2026-11-27",
+  "categories": [
+    [
+      "图像转三维生成",
+      "Image-to-3D Generation"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-25",
+  "id": "resource-18945e73e6f6aba941a83d49771ae4c8e9c5afa105c310d7d5d971a32793f87b",
+  "identity": "hf:localai-io/trellis.2-4b-gguf",
+  "name": "LocalAI-io/TRELLIS.2-4B-GGUF",
+  "site": "https://huggingface.co/LocalAI-io/TRELLIS.2-4B-GGUF",
+  "sourceSignature": "6462270c09d887be5d6688b0bb19c5fe9b8c167064134da9c148cc102b39e828",
+  "summary": [
+    "LocalAI 将这款基于微软 TRELLIS.2-4B 的 GGUF 模型列为图像转三维模型，可用于从图片生成三维素材。",
+    "LocalAI lists this GGUF version of Microsoft’s TRELLIS.2-4B as a model for generating 3D assets from images."
+  ],
+  "tags": [
+    "image-to-3d"
+  ],
+  "tested": false,
+  "type": "models",
+  "verificationSources": [
+    "https://huggingface.co/LocalAI-io/TRELLIS.2-4B-GGUF/raw/main/README.md",
+    "https://huggingface.co/api/models?direction=-1&full=true&limit=30&pipeline_tag=image-to-3d&sort=downloads"
+  ],
+  "verifiedAt": "2026-11-27"
+}

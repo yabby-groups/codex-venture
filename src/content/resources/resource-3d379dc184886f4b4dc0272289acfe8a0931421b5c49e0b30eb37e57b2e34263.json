@@ -1,0 +1,27 @@
+{
+  "addedAt": "2026-11-27",
+  "categories": [
+    [
+      "回归模型评估",
+      "Regression Model Evaluation"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-26",
+  "id": "resource-3d379dc184886f4b4dc0272289acfe8a0931421b5c49e0b30eb37e57b2e34263",
+  "identity": "github:698653918",
+  "name": "MahanPourhosseini/Body-Fat-Prediction",
+  "repository": "https://github.com/MahanPourhosseini/Body-Fat-Prediction",
+  "repositoryId": "698653918",
+  "site": "https://github.com/MahanPourhosseini/Body-Fat-Prediction",
+  "sourceSignature": "cfcda03f5d45a7124b30d5534d3ea8dbe02be8a0e5a9947db3b70e838e356cfe",
+  "summary": [
+    "据仓库介绍，配套的 Jupyter Notebook 使用 Lasso 和岭回归预测体脂率，并比较两种模型的评估指标。",
+    "The repository description points to a Jupyter notebook that predicts body fat percentage with Lasso and Ridge regression and compares their evaluation metrics."
+  ],
+  "tested": false,
+  "type": "resources",
+  "verificationSources": [
+    "https://api.github.com/search/repositories?page=1&per_page=30&q=topic%3Amachine-learning-course+archived%3Afalse+fork%3Afalse&sort=stars"
+  ],
+  "verifiedAt": "2026-11-27"
+}

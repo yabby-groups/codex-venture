@@ -1,0 +1,28 @@
+{
+  "addedAt": "2026-11-27",
+  "categories": [
+    [
+      "提示词管理",
+      "Prompt Management"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-26",
+  "id": "resource-751256f3649d90489444001fd12938982a75273bafcc703113c33dd18b9c0a1b",
+  "identity": "github:1030272838",
+  "license": "MIT",
+  "name": "prompt-management/cli",
+  "repository": "https://github.com/prompt-management/cli",
+  "repositoryId": "1030272838",
+  "site": "https://github.com/prompt-management/cli",
+  "sourceSignature": "fc89f799e208acadf8b5beee236ed06dc83e9206f0fc5126b6f0ff508d2c2da8",
+  "summary": [
+    "据项目介绍，这款命令行工具可以用 YAML 保存提示词，整理和搜索提示词，并按元数据筛选。",
+    "The project describes a command-line tool for storing prompts in YAML, organizing and searching them, and filtering them by metadata."
+  ],
+  "tested": false,
+  "type": "prompts",
+  "verificationSources": [
+    "https://api.github.com/search/repositories?page=1&per_page=30&q=topic%3Aprompt-templates+archived%3Afalse+fork%3Afalse&sort=stars"
+  ],
+  "verifiedAt": "2026-11-27"
+}
