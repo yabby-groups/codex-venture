@@ -1,0 +1,29 @@
+{
+  "addedAt": "2026-11-27",
+  "categories": [
+    [
+      "文本转语音",
+      "Text-to-Speech"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-25",
+  "id": "resource-194ca0202fdecb58f6d4ebb71a068eed86a5dd09119f61956538bafc7dc55061",
+  "identity": "hf:btsee/oron-tts",
+  "name": "btsee/oron-tts",
+  "site": "https://huggingface.co/btsee/oron-tts",
+  "sourceSignature": "247f92693a9fe374b73fb611a73a5d81387d6ff00c7abf8eaa71140dd7b50b13",
+  "summary": [
+    "使用微调后的 F5-TTS 模型将蒙古语文本转换为语音。模型卡注明输出音频带宽约为 8 kHz。",
+    "Generate Mongolian speech from text using a fine-tuned F5-TTS model. The model card reports an output bandwidth of roughly 8 kHz."
+  ],
+  "tags": [
+    "text-to-speech"
+  ],
+  "tested": false,
+  "type": "models",
+  "verificationSources": [
+    "https://huggingface.co/api/models?cursor=eyIkb3IiOlt7ImRvd25sb2FkcyI6MTc4ODgsIl9pZCI6eyIkZ3QiOiI2YWIyNzhjMjhlZGY1YjRiOTYxN2EwMzkifX0seyJkb3dubG9hZHMiOnsiJGx0IjoxNzg4OH19LHsiZG93bmxvYWRzIjpudWxsfV0sInNlYXJjaFNlcXVlbmNlVG9rZW4iOiJDSy9YeVFJYUNTRUFBQUFBQUhqUlFCb09XZ3hxc25qQ2p0OWJTNVlYb0RraURsb01hcko0d283ZlcwdVdGNkE1In0%3D&direction=-1&full=true&limit=30&pipeline_tag=text-to-speech&sort=downloads",
+    "https://huggingface.co/btsee/oron-tts/raw/main/README.md"
+  ],
+  "verifiedAt": "2026-11-27"
+}

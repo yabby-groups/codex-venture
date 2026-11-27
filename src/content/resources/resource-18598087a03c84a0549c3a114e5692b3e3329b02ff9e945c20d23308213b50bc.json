@@ -1,0 +1,28 @@
+{
+  "addedAt": "2026-11-27",
+  "categories": [
+    [
+      "编程智能体配置",
+      "Coding Agent Configuration"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-26",
+  "id": "resource-18598087a03c84a0549c3a114e5692b3e3329b02ff9e945c20d23308213b50bc",
+  "identity": "github:1013480284",
+  "license": "MIT",
+  "name": "davila7/claude-code-templates",
+  "repository": "https://github.com/davila7/claude-code-templates",
+  "repositoryId": "1013480284",
+  "site": "https://github.com/davila7/claude-code-templates",
+  "sourceSignature": "a2ad2e56b31f431f7723ffbcd95a1a489727e97869ffb39bd73632b2d24e22b7",
+  "summary": [
+    "维护者提供组件目录和命令行工具，用于查找 Claude Code 的智能体、命令、技能、钩子、MCP 集成和配置。",
+    "The maintainer describes a registry and command-line tool for finding Claude Code components such as agents, commands, skills, hooks, MCP integrations, and settings."
+  ],
+  "tested": false,
+  "type": "open-source",
+  "verificationSources": [
+    "https://api.github.com/search/repositories?page=2&per_page=30&q=topic%3Aai-agents+archived%3Afalse+fork%3Afalse&sort=stars"
+  ],
+  "verifiedAt": "2026-11-27"
+}

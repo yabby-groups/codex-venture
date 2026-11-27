@@ -1,0 +1,31 @@
+{
+  "addedAt": "2026-11-27",
+  "categories": [
+    [
+      "编程助手模型集成",
+      "Coding Assistant Model Integration"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-25",
+  "id": "resource-58a7e872a295d85e584c34a601f71fd7970a6491b0fbea20be458a612ae32223",
+  "identity": "openvsx:mikesoft.chutes-model-provider-vscode",
+  "install": "https://open-vsx.org/extension/mikesoft/chutes-model-provider-vscode",
+  "name": "Chutes AI Provider for GitHub Copilot Chat",
+  "platforms": [
+    "Open VSX"
+  ],
+  "site": "https://open-vsx.org/extension/mikesoft/chutes-model-provider-vscode",
+  "sourceSignature": "9dd86eeff159e9ce431c35e626800d55b3492d0a8a889e5cbb25a6ee27e414e2",
+  "summary": [
+    "发布者介绍了一个将 Chutes.ai 上的 DeepSeek、Qwen 等模型接入 GitHub Copilot Chat 的扩展，并称其提供自动发现模型、流式响应和工具调用等功能。",
+    "The publisher describes a provider that brings Chutes.ai models such as DeepSeek and Qwen into GitHub Copilot Chat, with automatic model discovery and features such as streaming and tool calling."
+  ],
+  "tested": false,
+  "type": "plugins",
+  "verificationSources": [
+    "https://open-vsx.org/api/-/search?offset=0&query=language+model&size=25",
+    "https://open-vsx.org/api/-/search?offset=50&query=Copilot&size=25"
+  ],
+  "verifiedAt": "2026-11-27",
+  "version": "0.4.10"
+}

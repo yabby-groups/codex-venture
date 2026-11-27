@@ -1,0 +1,28 @@
+{
+  "addedAt": "2026-11-27",
+  "categories": [
+    [
+      "智能体技能开发",
+      "Agent Skill Development"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-26",
+  "id": "resource-c660edb294186cc99b77bc2d30dd31e16bcb7d54dba945a06065c2cc1521d4a3",
+  "identity": "github:1244859148",
+  "license": "MIT",
+  "name": "joeseesun/qiaomu-meta-skill",
+  "repository": "https://github.com/joeseesun/qiaomu-meta-skill",
+  "repositoryId": "1244859148",
+  "site": "https://github.com/joeseesun/qiaomu-meta-skill",
+  "sourceSignature": "786780718136699582647d1ebb20651dad42e2ff9728584b2fa739306be06b96",
+  "summary": [
+    "维护者介绍了一套工作流，用于将现有流程转化为可研究、可评测并可准备发布的智能体技能。",
+    "The maintainer describes a workflow for turning existing processes into agent skills that can be researched, evaluated, and prepared for release."
+  ],
+  "tested": false,
+  "type": "workflows",
+  "verificationSources": [
+    "https://api.github.com/search/repositories?page=1&per_page=30&q=topic%3Aai-workflow+archived%3Afalse+fork%3Afalse&sort=stars"
+  ],
+  "verifiedAt": "2026-11-27"
+}

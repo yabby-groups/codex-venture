@@ -1,0 +1,27 @@
+{
+  "addedAt": "2026-11-27",
+  "categories": [
+    [
+      "保险费用预测",
+      "Insurance Cost Prediction"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-26",
+  "id": "resource-617a7e1dcc2efac638505d3a0b4621b501a669809bc243874ebe2ff27328f835",
+  "identity": "github:698410727",
+  "name": "MahanPourhosseini/Health-Insurance-Charges-Prediction",
+  "repository": "https://github.com/MahanPourhosseini/Health-Insurance-Charges-Prediction",
+  "repositoryId": "698410727",
+  "site": "https://github.com/MahanPourhosseini/Health-Insurance-Charges-Prediction",
+  "sourceSignature": "61c38dec022ef71fe31c74f4faddd236640ae2b0ebc88f3684e307a5a3f0db0d",
+  "summary": [
+    "通过该医疗保险费用预测项目比较均值法和线性回归。作者报告称，线性回归在该项目中的预测更准确。",
+    "Compare averaging and linear regression in a health insurance charge prediction project. The author reports that linear regression gave more accurate predictions in this project."
+  ],
+  "tested": false,
+  "type": "resources",
+  "verificationSources": [
+    "https://api.github.com/search/repositories?page=1&per_page=30&q=topic%3Amachine-learning-course+archived%3Afalse+fork%3Afalse&sort=stars"
+  ],
+  "verifiedAt": "2026-11-27"
+}

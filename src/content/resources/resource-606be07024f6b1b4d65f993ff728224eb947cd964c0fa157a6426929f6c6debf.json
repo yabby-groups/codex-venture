@@ -1,0 +1,27 @@
+{
+  "addedAt": "2026-11-27",
+  "categories": [
+    [
+      "信用风险建模",
+      "Credit Risk Modeling"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-26",
+  "id": "resource-606be07024f6b1b4d65f993ff728224eb947cd964c0fa157a6426929f6c6debf",
+  "identity": "github:698259805",
+  "name": "MahanPourhosseini/Credit-Risk-Prediction",
+  "repository": "https://github.com/MahanPourhosseini/Credit-Risk-Prediction",
+  "repositoryId": "698259805",
+  "site": "https://github.com/MahanPourhosseini/Credit-Risk-Prediction",
+  "sourceSignature": "34548f571b3dadae5ad819c9811d762cb1d6fcef8f55b469ca035c61634f01b0",
+  "summary": [
+    "通过 Jupyter Notebook 学习如何预处理信用风险数据、处理类别不平衡，并使用精确率、召回率、F1 分数和混淆矩阵评估随机森林分类器。",
+    "Follow a Jupyter Notebook that prepares credit risk data, handles class imbalance, and evaluates a random forest classifier using precision, recall, F1, and a confusion matrix."
+  ],
+  "tested": false,
+  "type": "resources",
+  "verificationSources": [
+    "https://api.github.com/search/repositories?page=1&per_page=30&q=topic%3Amachine-learning-course+archived%3Afalse+fork%3Afalse&sort=stars"
+  ],
+  "verifiedAt": "2026-11-27"
+}

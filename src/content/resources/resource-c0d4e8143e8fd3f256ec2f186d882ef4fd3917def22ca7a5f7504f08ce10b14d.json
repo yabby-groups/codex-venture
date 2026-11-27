@@ -1,0 +1,28 @@
+{
+  "addedAt": "2026-11-27",
+  "categories": [
+    [
+      "AI 辅助研究工作流",
+      "AI-Assisted Research Workflows"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-26",
+  "id": "resource-c0d4e8143e8fd3f256ec2f186d882ef4fd3917def22ca7a5f7504f08ce10b14d",
+  "identity": "github:1261976132",
+  "license": "MIT",
+  "name": "Benboerba620/ai-workspace-hub",
+  "repository": "https://github.com/Benboerba620/ai-workspace-hub",
+  "repositoryId": "1261976132",
+  "site": "https://github.com/Benboerba620/ai-workspace-hub",
+  "sourceSignature": "803fc87d0848acb25c60c45751624a44303ba1d2602d8ecc2a8460af9017e036",
+  "summary": [
+    "维护者介绍了一个面向 Codex、Claude Code 和 Cursor 的研究工作台，用于长期保留研究上下文、导入 Wiki 资料、追踪假设和生成日报。",
+    "The maintainer describes a research workspace for Codex, Claude Code, and Cursor that retains research context over time, imports wiki material, tracks hypotheses, and produces daily reports."
+  ],
+  "tested": false,
+  "type": "workflows",
+  "verificationSources": [
+    "https://api.github.com/search/repositories?page=2&per_page=30&q=topic%3Aai-workflow+archived%3Afalse+fork%3Afalse&sort=stars"
+  ],
+  "verifiedAt": "2026-11-27"
+}

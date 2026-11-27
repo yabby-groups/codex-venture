@@ -1,0 +1,28 @@
+{
+  "addedAt": "2026-11-27",
+  "categories": [
+    [
+      "生活成本查询",
+      "Cost-of-Living Research"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-25",
+  "id": "resource-a0560e23933d393d97b1adea413c4e3164e2351ec071b7b974ad68166dd060f2",
+  "identity": "mcp:ae.brainy/grocery-prices",
+  "name": "Brainy Prices — UAE Cost of Living",
+  "registryId": "ae.brainy/grocery-prices",
+  "site": "https://registry.modelcontextprotocol.io/v0.1/servers/ae.brainy%2Fgrocery-prices/versions/2.0.0",
+  "sourceSignature": "218e217ff621dc5a7ef7f883f7fc0396dd79fa89840930e7ef7e7b315026be92",
+  "summary": [
+    "通过 MCP 服务查询阿联酋的食品杂货、教育、住房、交通、水电、通信和搬迁费用。发布者称这些数据有来源依据。",
+    "Look up UAE living costs through an MCP service covering groceries, schooling, housing, transport, utilities, telecom, and relocation. The publisher says the figures are backed by sources."
+  ],
+  "tested": false,
+  "transport": "streamable-http",
+  "type": "mcp",
+  "verificationSources": [
+    "https://registry.modelcontextprotocol.io/v0.1/servers/ae.brainy%2Fgrocery-prices/versions/2.0.0"
+  ],
+  "verifiedAt": "2026-11-27",
+  "version": "2.0.0"
+}

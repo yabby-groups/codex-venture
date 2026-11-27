@@ -1,0 +1,28 @@
+{
+  "addedAt": "2026-11-27",
+  "categories": [
+    [
+      "图像提示词模板",
+      "Image Prompt Templates"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-26",
+  "id": "resource-cb15e62ff83cdf8dc6e8a16b4bb09e4c96c58d3c9a13427428722ffe5d78dc1f",
+  "identity": "github:1445041483",
+  "license": "NOASSERTION",
+  "name": "picontapLab/prompt-seen",
+  "repository": "https://github.com/picontapLab/prompt-seen",
+  "repositoryId": "1445041483",
+  "site": "https://github.com/picontapLab/prompt-seen",
+  "sourceSignature": "ae2dc7296cf572242cd0cb359b684c6885d0703858e3a5f812c788550512eaa3",
+  "summary": [
+    "浏览图像提示词示例，并按需改写模板，用于图像编辑、产品摄影、海报、人像和插画。",
+    "Browse image prompt examples and adapt templates for tasks such as image editing, product photography, posters, portraits, and illustration."
+  ],
+  "tested": false,
+  "type": "prompts",
+  "verificationSources": [
+    "https://api.github.com/search/repositories?page=2&per_page=30&q=topic%3Aprompt-templates+archived%3Afalse+fork%3Afalse&sort=stars"
+  ],
+  "verifiedAt": "2026-11-27"
+}

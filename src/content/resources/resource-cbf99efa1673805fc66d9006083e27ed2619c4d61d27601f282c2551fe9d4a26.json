@@ -1,0 +1,27 @@
+{
+  "addedAt": "2026-11-27",
+  "categories": [
+    [
+      "通用提示词模板",
+      "General-Purpose Prompt Templates"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-26",
+  "id": "resource-cbf99efa1673805fc66d9006083e27ed2619c4d61d27601f282c2551fe9d4a26",
+  "identity": "github:1201979354",
+  "name": "theluckystrike/claudhq.com",
+  "repository": "https://github.com/theluckystrike/claudhq.com",
+  "repositoryId": "1201979354",
+  "site": "https://github.com/theluckystrike/claudhq.com",
+  "sourceSignature": "5ea0c34070359e9eeb9b7b88798e4938b87037b38adff8b3abf1005fa8be412f",
+  "summary": [
+    "发布者称，该提示词库支持搜索、筛选、复制和收藏用于编程、写作、分析及商务任务的 Claude 提示词模板。",
+    "The publisher says you can search, filter, copy, and save Claude prompt templates for coding, writing, analysis, and business tasks."
+  ],
+  "tested": false,
+  "type": "prompts",
+  "verificationSources": [
+    "https://api.github.com/search/repositories?page=2&per_page=30&q=topic%3Aprompt-templates+archived%3Afalse+fork%3Afalse&sort=stars"
+  ],
+  "verifiedAt": "2026-11-27"
+}

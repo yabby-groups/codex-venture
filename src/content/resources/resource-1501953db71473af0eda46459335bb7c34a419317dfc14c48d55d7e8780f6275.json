@@ -1,0 +1,28 @@
+{
+  "addedAt": "2026-11-27",
+  "categories": [
+    [
+      "许可文档查询",
+      "Licensing Reference"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-26",
+  "id": "resource-1501953db71473af0eda46459335bb7c34a419317dfc14c48d55d7e8780f6275",
+  "identity": "github-skill:1137388347:skills/remotion-license/SKILL.md",
+  "name": "remotion-license",
+  "repository": "https://github.com/remotion-dev/skills",
+  "repositoryId": "1137388347",
+  "site": "https://github.com/remotion-dev/skills/blob/main/skills/remotion-license/SKILL.md",
+  "sourcePath": "skills/remotion-license/SKILL.md",
+  "sourceSignature": "078a8760b50249eb58f405c9c5f2cc968a07667a3864fee26a22335c9fa4fc1a",
+  "summary": [
+    "通过此技能查阅 Remotion 的许可文档、许可常见问题和条款。",
+    "Use this skill to find Remotion’s license documentation, licensing FAQ, and terms and conditions."
+  ],
+  "tested": false,
+  "type": "skills",
+  "verificationSources": [
+    "https://github.com/remotion-dev/skills/blob/main/skills/remotion-license/SKILL.md"
+  ],
+  "verifiedAt": "2026-11-27"
+}
