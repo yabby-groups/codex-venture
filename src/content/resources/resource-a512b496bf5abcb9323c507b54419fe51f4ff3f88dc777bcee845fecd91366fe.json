@@ -1,0 +1,28 @@
+{
+  "addedAt": "2026-11-27",
+  "categories": [
+    [
+      "计算机视觉质检",
+      "Computer Vision for Quality Inspection"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-26",
+  "id": "resource-a512b496bf5abcb9323c507b54419fe51f4ff3f88dc777bcee845fecd91366fe",
+  "identity": "github:697742581",
+  "name": "MahanPourhosseini/Metal-Nut-Defect-Detection",
+  "repository": "https://github.com/MahanPourhosseini/Metal-Nut-Defect-Detection",
+  "repositoryId": "697742581",
+  "site": "https://github.com/MahanPourhosseini/Metal-Nut-Defect-Detection",
+  "sourceSignature": "95bd75163610b1a100543365d2e9e0924c5352277290aa108fbbcb51fff45862",
+  "summary": [
+    "据发布者介绍，该案例展示了如何将迁移学习用于金属螺母的缺陷检测。",
+    "The publisher presents a case study for exploring how transfer learning can be applied to defect detection in metal nuts."
+  ],
+  "tested": false,
+  "type": "resources",
+  "verificationSources": [
+    "https://api.github.com/search/repositories?page=1&per_page=30&q=topic%3Amachine-learning-course+archived%3Afalse+fork%3Afalse&sort=stars",
+    "https://api.github.com/search/repositories?page=2&per_page=30&q=topic%3Amachine-learning-course+archived%3Afalse+fork%3Afalse&sort=stars"
+  ],
+  "verifiedAt": "2026-11-27"
+}

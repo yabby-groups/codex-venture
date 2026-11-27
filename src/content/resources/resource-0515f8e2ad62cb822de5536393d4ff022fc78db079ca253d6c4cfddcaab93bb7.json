@@ -1,0 +1,28 @@
+{
+  "addedAt": "2026-11-27",
+  "categories": [
+    [
+      "营销工作流",
+      "Marketing Workflows"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-27",
+  "id": "resource-0515f8e2ad62cb822de5536393d4ff022fc78db079ca253d6c4cfddcaab93bb7",
+  "identity": "github:1452184828",
+  "license": "MIT",
+  "name": "Fully-Powered-AI/marketing-workflow-templates",
+  "repository": "https://github.com/Fully-Powered-AI/marketing-workflow-templates",
+  "repositoryId": "1452184828",
+  "site": "https://github.com/Fully-Powered-AI/marketing-workflow-templates",
+  "sourceSignature": "d93bdc819feac12c7c08b1bcd051b244eb1ff1eb6655529d634e27e8f55454bd",
+  "summary": [
+    "据 Fully Powered AI 介绍，这套 AI 工作流模板可用于修改营销文案、规划内容和撰写创作者简报。",
+    "Fully Powered AI describes a collection of AI workflow templates for editing marketing copy, planning content, and writing briefs for creators."
+  ],
+  "tested": false,
+  "type": "prompts",
+  "verificationSources": [
+    "https://api.github.com/search/repositories?page=7&per_page=30&q=topic%3Aprompt-templates+archived%3Afalse+fork%3Afalse&sort=stars"
+  ],
+  "verifiedAt": "2026-11-27"
+}

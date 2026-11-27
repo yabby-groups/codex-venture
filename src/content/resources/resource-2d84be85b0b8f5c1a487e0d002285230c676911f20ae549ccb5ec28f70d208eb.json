@@ -1,0 +1,28 @@
+{
+  "addedAt": "2026-11-27",
+  "categories": [
+    [
+      "AI 智能体开发",
+      "AI Agent Development"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-26",
+  "id": "resource-2d84be85b0b8f5c1a487e0d002285230c676911f20ae549ccb5ec28f70d208eb",
+  "identity": "github-skill:1135891523:.github/plugins/azure-sdk-dotnet/skills/azure-ai-agents-persistent-dotnet/SKILL.md",
+  "name": "azure-ai-agents-persistent-dotnet",
+  "repository": "https://github.com/microsoft/skills",
+  "repositoryId": "1135891523",
+  "site": "https://github.com/microsoft/skills/blob/main/.github/plugins/azure-sdk-dotnet/skills/azure-ai-agents-persistent-dotnet/SKILL.md",
+  "sourcePath": ".github/plugins/azure-sdk-dotnet/skills/azure-ai-agents-persistent-dotnet/SKILL.md",
+  "sourceSignature": "4ebf3798752a64ec390ae9a1778792afc51d2f38049ee03a807e2e1306fa49f4",
+  "summary": [
+    "技能节选介绍了如何通过 Azure AI Agents Persistent SDK for .NET 管理智能体、会话线程、消息和运行任务，流式获取响应，并使用函数调用和文件搜索等工具。",
+    "The skill excerpt describes using the Azure AI Agents Persistent SDK for .NET to manage agents, conversation threads, messages, and runs, stream responses, and use tools such as function calling and file search."
+  ],
+  "tested": false,
+  "type": "skills",
+  "verificationSources": [
+    "https://github.com/microsoft/skills/blob/main/.github/plugins/azure-sdk-dotnet/skills/azure-ai-agents-persistent-dotnet/SKILL.md"
+  ],
+  "verifiedAt": "2026-11-27"
+}

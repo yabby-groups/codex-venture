@@ -1,0 +1,28 @@
+{
+  "addedAt": "2026-11-27",
+  "categories": [
+    [
+      "Kubernetes 开发",
+      "Kubernetes Development"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-25",
+  "id": "resource-ed8649843a7e489d9fa22ddf00bd0d75999fcf54eac3ec82ec2c919f267852c3",
+  "identity": "github:454467716",
+  "license": "MIT",
+  "name": "metalbear-co/mirrord",
+  "repository": "https://github.com/metalbear-co/mirrord",
+  "repositoryId": "454467716",
+  "site": "https://github.com/metalbear-co/mirrord",
+  "sourceSignature": "9f743a621a474c216376f40af1bdf8d88d64f7489ff8c872494b46b3399dfab9",
+  "summary": [
+    "据发布者介绍，mirrord 可让开发者在本机或 AI 智能体环境中运行进程，并使用 Kubernetes Pod 的环境变量、DNS、网络和流量。",
+    "According to the publisher, mirrord lets developers run a process locally or in an AI agent’s environment while using a Kubernetes pod’s environment variables, DNS, networking, and traffic."
+  ],
+  "tested": false,
+  "type": "tools",
+  "verificationSources": [
+    "https://api.github.com/search/repositories?page=1&per_page=30&q=topic%3Aai-coding+archived%3Afalse+fork%3Afalse&sort=stars"
+  ],
+  "verifiedAt": "2026-11-27"
+}

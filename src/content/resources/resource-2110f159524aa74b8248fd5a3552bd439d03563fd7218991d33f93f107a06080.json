@@ -1,0 +1,28 @@
+{
+  "addedAt": "2026-11-27",
+  "categories": [
+    [
+      "AI 智能体应用案例",
+      "AI Agent Use Cases"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-26",
+  "id": "resource-2110f159524aa74b8248fd5a3552bd439d03563fd7218991d33f93f107a06080",
+  "identity": "github:906251482",
+  "license": "MIT",
+  "name": "ashishpatel26/500-AI-Agents-Projects",
+  "repository": "https://github.com/ashishpatel26/500-AI-Agents-Projects",
+  "repositoryId": "906251482",
+  "site": "https://github.com/ashishpatel26/500-AI-Agents-Projects",
+  "sourceSignature": "2b12d2e02fb55337c5e7e27cb8424dab3a282643dec4f2906ce6ceb737eddb3e",
+  "summary": [
+    "据发布者介绍，这份精选合集可用于查阅医疗、金融、教育和零售等领域的 AI 智能体应用案例，并提供相关实现项目的链接。",
+    "The publisher describes a curated collection for browsing AI agent use cases in fields such as healthcare, finance, education, and retail, with links to implementation projects."
+  ],
+  "tested": false,
+  "type": "open-source",
+  "verificationSources": [
+    "https://api.github.com/search/repositories?page=2&per_page=30&q=topic%3Aai-agents+archived%3Afalse+fork%3Afalse&sort=stars"
+  ],
+  "verifiedAt": "2026-11-27"
+}

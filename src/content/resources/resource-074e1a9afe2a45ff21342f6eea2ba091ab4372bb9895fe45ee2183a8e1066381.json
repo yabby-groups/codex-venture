@@ -1,0 +1,28 @@
+{
+  "addedAt": "2026-11-27",
+  "categories": [
+    [
+      "AI 治理",
+      "AI Governance"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-27",
+  "id": "resource-074e1a9afe2a45ff21342f6eea2ba091ab4372bb9895fe45ee2183a8e1066381",
+  "identity": "github:1253658873",
+  "license": "NOASSERTION",
+  "name": "policani/ai-artifact-lifecycle-governance-system",
+  "repository": "https://github.com/policani/ai-artifact-lifecycle-governance-system",
+  "repositoryId": "1253658873",
+  "site": "https://github.com/policani/ai-artifact-lifecycle-governance-system",
+  "sourceSignature": "4b890c5b51947ee2b5de7459383d677086ac13788a8ef4a8e82ef53520f9e8b7",
+  "summary": [
+    "据发布者介绍，这套框架可在业务正式依赖 AI 工具、智能体、仪表盘和自动化流程之前，对它们进行分类，并决定是否提升使用级别、降级或退役。",
+    "The publisher describes a framework for classifying AI tools, agents, dashboards, and automations and deciding whether to advance, downgrade, or retire them before relying on them in business operations."
+  ],
+  "tested": false,
+  "type": "workflows",
+  "verificationSources": [
+    "https://api.github.com/search/repositories?page=13&per_page=30&q=topic%3Aai-workflow+archived%3Afalse+fork%3Afalse&sort=stars"
+  ],
+  "verifiedAt": "2026-11-27"
+}

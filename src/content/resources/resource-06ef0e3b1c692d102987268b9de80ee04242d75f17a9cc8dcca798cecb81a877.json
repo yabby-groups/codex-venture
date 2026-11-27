@@ -1,0 +1,28 @@
+{
+  "addedAt": "2026-11-27",
+  "categories": [
+    [
+      "AI 辅助软件开发",
+      "AI-Assisted Software Development"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-27",
+  "id": "resource-06ef0e3b1c692d102987268b9de80ee04242d75f17a9cc8dcca798cecb81a877",
+  "identity": "github:1132629402",
+  "license": "MIT",
+  "name": "AvinashP/AgentsAtlas",
+  "repository": "https://github.com/AvinashP/AgentsAtlas",
+  "repositoryId": "1132629402",
+  "site": "https://github.com/AvinashP/AgentsAtlas",
+  "sourceSignature": "fffb701a7f47c257299e29f61f58db27db9f1b3d07f137480b5575540b30ac86",
+  "summary": [
+    "据发布者介绍，AgentsAtlas 提供一套由 8 条命令组成的工作流，可用 Claude Code 和 Codex 在新的上下文中推进软件项目。",
+    "The publisher describes AgentsAtlas as an eight-command workflow for structuring software project work with Claude Code and Codex using fresh context."
+  ],
+  "tested": false,
+  "type": "workflows",
+  "verificationSources": [
+    "https://api.github.com/search/repositories?page=8&per_page=30&q=topic%3Aai-workflow+archived%3Afalse+fork%3Afalse&sort=stars"
+  ],
+  "verifiedAt": "2026-11-27"
+}

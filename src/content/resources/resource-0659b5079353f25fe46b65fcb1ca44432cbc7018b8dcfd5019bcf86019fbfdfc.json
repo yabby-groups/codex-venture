@@ -1,0 +1,28 @@
+{
+  "addedAt": "2026-11-27",
+  "categories": [
+    [
+      "社交媒体内容创作",
+      "Social Media Content Creation"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-27",
+  "id": "resource-0659b5079353f25fe46b65fcb1ca44432cbc7018b8dcfd5019bcf86019fbfdfc",
+  "identity": "github:1358866306",
+  "license": "MIT",
+  "name": "FuzzyLogic112/xhs-content-workflow",
+  "repository": "https://github.com/FuzzyLogic112/xhs-content-workflow",
+  "repositoryId": "1358866306",
+  "site": "https://github.com/FuzzyLogic112/xhs-content-workflow",
+  "sourceSignature": "5bfdd10c581cb93d79b51ffe96f9ec15daaf56568e93ec9b81aa2f495ca4a7ac",
+  "summary": [
+    "据发布者介绍，这套提示词工作流通过结构化选题卡衔接策划与撰写，可产出小红书正文、5 个备选标题、3 个面向不同平台的改写版本和 3 条配图提示词。",
+    "The publisher describes a two-stage prompt workflow that uses a structured topic card to hand off planning to drafting and produce a Xiaohongshu post, five headline options, three platform adaptations, and three image prompts."
+  ],
+  "tested": false,
+  "type": "prompts",
+  "verificationSources": [
+    "https://api.github.com/search/repositories?page=3&per_page=30&q=topic%3Aprompt-templates+archived%3Afalse+fork%3Afalse&sort=stars"
+  ],
+  "verifiedAt": "2026-11-27"
+}
