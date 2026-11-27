@@ -1,0 +1,28 @@
+{
+  "addedAt": "2026-11-28",
+  "categories": [
+    [
+      "Azure 资源预配",
+      "Azure resource provisioning"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-26",
+  "id": "resource-38bbf83fec3da65e79d6ce88454c85a05ef3c1264e44dc0a7bbccba12c09e359",
+  "identity": "github-skill:1135891523:.github/plugins/azure-sdk-dotnet/skills/azure-resource-manager-durabletask-dotnet/SKILL.md",
+  "name": "azure-resource-manager-durabletask-dotnet",
+  "repository": "https://github.com/microsoft/skills",
+  "repositoryId": "1135891523",
+  "site": "https://github.com/microsoft/skills/blob/main/.github/plugins/azure-sdk-dotnet/skills/azure-resource-manager-durabletask-dotnet/SKILL.md",
+  "sourcePath": ".github/plugins/azure-sdk-dotnet/skills/azure-resource-manager-durabletask-dotnet/SKILL.md",
+  "sourceSignature": "6b5dab90f2185fc13f48df3272b19c6d3afaf3976cebc4818168045e158c631f",
+  "summary": [
+    "微软的这份 .NET 技能指南列出了所需的 NuGet 包，方便在 .NET 预配代码中管理 Durable Task Scheduler、Task Hub 和保留策略。安装部分列出 Azure.ResourceManager.DurableTask 和 Azure.Identity。指南仅涵盖 Azure Resource Manager 管理平面操作。",
+    "Microsoft’s .NET skill shows which NuGet packages to add to manage Durable Task Schedulers, Task Hubs, and retention policies from .NET provisioning code. The setup lists Azure.ResourceManager.DurableTask and Azure.Identity. The skill covers Azure Resource Manager management-plane operations only."
+  ],
+  "tested": false,
+  "type": "skills",
+  "verificationSources": [
+    "https://github.com/microsoft/skills/blob/main/.github/plugins/azure-sdk-dotnet/skills/azure-resource-manager-durabletask-dotnet/SKILL.md"
+  ],
+  "verifiedAt": "2026-11-28"
+}
