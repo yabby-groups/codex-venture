@@ -1,0 +1,28 @@
+{
+  "addedAt": "2026-11-27",
+  "categories": [
+    [
+      "AI 辅导",
+      "AI Tutoring"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-26",
+  "id": "resource-72bc919ae941461e5e4df9fdaa69c20330234769f05ccb383c2ef942238e8c5e",
+  "identity": "github:1152693947",
+  "license": "NOASSERTION",
+  "name": "abubokkor-cse/EduMind-AI-Virtual-Teacher",
+  "repository": "https://github.com/abubokkor-cse/EduMind-AI-Virtual-Teacher",
+  "repositoryId": "1152693947",
+  "site": "https://github.com/abubokkor-cse/EduMind-AI-Virtual-Teacher",
+  "sourceSignature": "de5538ef14bfc27c5c12c28dee4687f33220669d0a7ded3d9eba955086edcef4",
+  "summary": [
+    "项目介绍了一款由 Gemini Live API 驱动的虚拟教师，可与实时同步口型的 3D 化身进行语音对话，也提供图像生成、测验和研究功能。",
+    "The project describes a virtual tutor powered by Gemini Live API for voice conversations with a lip-synced 3D avatar, image generation, quizzes, and research."
+  ],
+  "tested": false,
+  "type": "resources",
+  "verificationSources": [
+    "https://api.github.com/search/repositories?page=2&per_page=30&q=topic%3Aai-education+archived%3Afalse+fork%3Afalse&sort=stars"
+  ],
+  "verifiedAt": "2026-11-27"
+}

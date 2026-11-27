@@ -1,0 +1,28 @@
+{
+  "addedAt": "2026-11-27",
+  "categories": [
+    [
+      "广告活动与短片剪辑",
+      "Advertising Campaigns and Clip Editing"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-25",
+  "id": "resource-a7c4ac1f7e176958e3235639da743488a2b8bb526c63a419c1d2cdb15ab0b46e",
+  "identity": "mcp:africa.ugc/ugc",
+  "name": "UGC, the Human Ad Network",
+  "registryId": "africa.ugc/ugc",
+  "site": "https://registry.modelcontextprotocol.io/v0.1/servers/africa.ugc%2Fugc/versions/1.0.0",
+  "sourceSignature": "a5151f674e57f2904ef004bfb04381908c90ebaf0e084310a7faeda22049fe75",
+  "summary": [
+    "发布方将其描述为一项 MCP 资源，可在聊天中处理广告活动、剪辑内容和访问 Clip Studio。",
+    "The publisher describes an MCP resource for working with advertising campaigns, clipping content, and accessing Clip Studio from chat."
+  ],
+  "tested": false,
+  "transport": "streamable-http",
+  "type": "mcp",
+  "verificationSources": [
+    "https://registry.modelcontextprotocol.io/v0.1/servers/africa.ugc%2Fugc/versions/1.0.0"
+  ],
+  "verifiedAt": "2026-11-27",
+  "version": "1.0.0"
+}

@@ -1,0 +1,29 @@
+{
+  "addedAt": "2026-11-27",
+  "categories": [
+    [
+      "文本生成",
+      "Text Generation"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-25",
+  "id": "resource-1990561d22cd5449c601c04b64b8eb3339fc71a85ec983c01962083cdeabb282",
+  "identity": "hf:ornith-ai/ornith-1.5-397b-gguf",
+  "name": "ornith-ai/Ornith-1.5-397B-GGUF",
+  "site": "https://huggingface.co/ornith-ai/Ornith-1.5-397B-GGUF",
+  "sourceSignature": "62750267fc37006b0c82b4ea10cb31615b6ccfc6cc4d88ae1da9a7e403eb65e7",
+  "summary": [
+    "模型卡将 Ornith-1.5-397B-GGUF 介绍为文本生成模型，并演示如何用 llama.cpp 提供兼容 OpenAI 的 API，用于工具调用和编码智能体工作流。",
+    "The model card describes Ornith-1.5-397B-GGUF as a text-generation model and shows how to serve it with llama.cpp through an OpenAI-compatible API for tool calling and coding-agent workflows."
+  ],
+  "tags": [
+    "text-generation"
+  ],
+  "tested": false,
+  "type": "models",
+  "verificationSources": [
+    "https://huggingface.co/api/models?cursor=eyIkb3IiOlt7ImRvd25sb2FkcyI6MTg4MzY3OCwiX2lkIjp7IiRndCI6IjZhM2NiNGVkYjllZjcwOTRjMGM4MGQzNSJ9fSx7ImRvd25sb2FkcyI6eyIkbHQiOjE4ODM2Nzh9fSx7ImRvd25sb2FkcyI6bnVsbH1dLCJzZWFyY2hTZXF1ZW5jZVRva2VuIjoiQ0lEdHNBSWFDU0VBQUFBQUhyNDhRUm9PV2d4cVBMVHR1ZTl3bE1ESURUVWlEbG9NYWp5MDdibnZjSlRBeUEwMSJ9&direction=-1&full=true&limit=30&pipeline_tag=text-generation&sort=downloads",
+    "https://huggingface.co/ornith-ai/Ornith-1.5-397B-GGUF/raw/main/README.md"
+  ],
+  "verifiedAt": "2026-11-27"
+}

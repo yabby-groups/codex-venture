@@ -1,0 +1,28 @@
+{
+  "addedAt": "2026-11-27",
+  "categories": [
+    [
+      "机器学习学习资料",
+      "Machine Learning Education"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-26",
+  "id": "resource-6dda8c2429912f9e91446fb812e899a1c4adf6a9d681f10f37b3821b722c050f",
+  "identity": "github:735725421",
+  "license": "Unlicense",
+  "name": "knakamura13/cs7641-ml-study-materials-2023",
+  "repository": "https://github.com/knakamura13/cs7641-ml-study-materials-2023",
+  "repositoryId": "735725421",
+  "site": "https://github.com/knakamura13/cs7641-ml-study-materials-2023",
+  "sourceSignature": "db4e42a2891b4fd634075a4eb932e8448d4f74453ce35faa33718789849923bd",
+  "summary": [
+    "该仓库汇集了 OMSCS CS7641《机器学习》课程的学习资料，供读者复习课程主题。",
+    "The repository collects study materials for reviewing topics from the OMSCS CS7641 Machine Learning course."
+  ],
+  "tested": false,
+  "type": "resources",
+  "verificationSources": [
+    "https://api.github.com/search/repositories?page=1&per_page=30&q=topic%3Amachine-learning-course+archived%3Afalse+fork%3Afalse&sort=stars"
+  ],
+  "verifiedAt": "2026-11-27"
+}

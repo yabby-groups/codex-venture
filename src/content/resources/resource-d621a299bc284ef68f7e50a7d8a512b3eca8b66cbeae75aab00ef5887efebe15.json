@@ -1,0 +1,28 @@
+{
+  "addedAt": "2026-11-27",
+  "categories": [
+    [
+      "低代码应用开发",
+      "Low-Code Application Development"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-25",
+  "id": "resource-d621a299bc284ef68f7e50a7d8a512b3eca8b66cbeae75aab00ef5887efebe15",
+  "identity": "github:159152904",
+  "license": "Apache-2.0",
+  "name": "jeecgboot/JeecgBoot",
+  "repository": "https://github.com/jeecgboot/JeecgBoot",
+  "repositoryId": "159152904",
+  "site": "https://github.com/jeecgboot/JeecgBoot",
+  "sourceSignature": "8b755f2c839174fd1e19803c37204b2f6b3e3cdfc90d485477c5a9e50c83aabd",
+  "summary": [
+    "项目将其描述为面向业务系统的 AI 低代码平台，可辅助生成数据库表、应用代码、表单和工作流，并提供构建 AI 聊天和知识库应用的工具。",
+    "The project describes an AI-assisted low-code platform for building business applications. It lists generation of database tables, application code, forms, and workflows, alongside tools for building AI chat and knowledge-base applications."
+  ],
+  "tested": false,
+  "type": "tools",
+  "verificationSources": [
+    "https://api.github.com/search/repositories?page=1&per_page=30&q=topic%3Arag+archived%3Afalse+fork%3Afalse&sort=stars"
+  ],
+  "verifiedAt": "2026-11-27"
+}

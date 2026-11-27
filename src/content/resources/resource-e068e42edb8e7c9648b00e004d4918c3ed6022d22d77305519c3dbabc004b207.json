@@ -1,0 +1,28 @@
+{
+  "addedAt": "2026-11-27",
+  "categories": [
+    [
+      "AI 编码工作流",
+      "AI Coding Workflows"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-26",
+  "id": "resource-e068e42edb8e7c9648b00e004d4918c3ed6022d22d77305519c3dbabc004b207",
+  "identity": "github:1250957639",
+  "license": "MIT",
+  "name": "withkynam/vibecode-pro-max-kit",
+  "repository": "https://github.com/withkynam/vibecode-pro-max-kit",
+  "repositoryId": "1250957639",
+  "site": "https://github.com/withkynam/vibecode-pro-max-kit",
+  "sourceSignature": "25fd65676b79400d694aa8e8f7f392217524a65d834fbce9c68472cdb7fb4029",
+  "summary": [
+    "项目介绍了一套规范驱动的编码工具包，利用智能体和技能组织实现工作，并在不同任务之间保留项目上下文。",
+    "The project describes a spec-driven coding toolkit that uses agents and skills to organize implementation and retain project context across tasks."
+  ],
+  "tested": false,
+  "type": "workflows",
+  "verificationSources": [
+    "https://api.github.com/search/repositories?page=1&per_page=30&q=topic%3Aai-workflow+archived%3Afalse+fork%3Afalse&sort=stars"
+  ],
+  "verifiedAt": "2026-11-27"
+}

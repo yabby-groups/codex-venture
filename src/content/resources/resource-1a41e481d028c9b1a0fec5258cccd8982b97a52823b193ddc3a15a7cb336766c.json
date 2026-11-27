@@ -1,0 +1,28 @@
+{
+  "addedAt": "2026-11-27",
+  "categories": [
+    [
+      "视频编辑",
+      "Video Editing"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-26",
+  "id": "resource-1a41e481d028c9b1a0fec5258cccd8982b97a52823b193ddc3a15a7cb336766c",
+  "identity": "github:1434445560",
+  "license": "MIT",
+  "name": "D3voz/openjutsu",
+  "repository": "https://github.com/D3voz/openjutsu",
+  "repositoryId": "1434445560",
+  "site": "https://github.com/D3voz/openjutsu",
+  "sourceSignature": "ba9f5b2e1f8ef1b1fa8c9b661178d73ba98829586774139116e477808c708a25",
+  "summary": [
+    "项目介绍了一套基于 ComfyUI 的本地视频角色替换工作流，使用 MiniMax H3，并通过 FLUX.3 Klein 调整光照。",
+    "The project describes a local ComfyUI workflow for replacing characters in videos, using MiniMax H3 and FLUX.3 Klein for relighting."
+  ],
+  "tested": false,
+  "type": "open-source",
+  "verificationSources": [
+    "https://api.github.com/search/repositories?page=2&per_page=30&q=topic%3Avideo-generation+archived%3Afalse+fork%3Afalse&sort=stars"
+  ],
+  "verifiedAt": "2026-11-27"
+}

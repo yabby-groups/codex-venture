@@ -1,0 +1,28 @@
+{
+  "addedAt": "2026-11-27",
+  "categories": [
+    [
+      "应用可观测性",
+      "Application Observability"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-26",
+  "id": "resource-1a900a254315e2bb73cef073625ea4d4bea9c80dbc547a09b9f12b81ed7dd2b4",
+  "identity": "github-skill:1135891523:.github/plugins/azure-observability/skills/connect-observability/SKILL.md",
+  "name": "connect-observability",
+  "repository": "https://github.com/microsoft/skills",
+  "repositoryId": "1135891523",
+  "site": "https://github.com/microsoft/skills/blob/main/.github/plugins/azure-observability/skills/connect-observability/SKILL.md",
+  "sourcePath": ".github/plugins/azure-observability/skills/connect-observability/SKILL.md",
+  "sourceSignature": "4f0831a6ee3edbed6c1b49a94e1a13b1f8d5a015219644700edc71b157e414ff",
+  "summary": [
+    "微软将这项实验性技能描述为查找或连接 Azure 应用及 Foundry 智能体遥测数据的向导，用于监控、告警和故障排查，并帮助确认任务所需的数据范围和访问权限。",
+    "Microsoft describes an experimental skill for finding or connecting telemetry from Azure applications or Foundry agents for monitoring, alerting, and troubleshooting. It guides readers through confirming the telemetry scope and access needed for the task."
+  ],
+  "tested": false,
+  "type": "skills",
+  "verificationSources": [
+    "https://github.com/microsoft/skills/blob/main/.github/plugins/azure-observability/skills/connect-observability/SKILL.md"
+  ],
+  "verifiedAt": "2026-11-27"
+}
