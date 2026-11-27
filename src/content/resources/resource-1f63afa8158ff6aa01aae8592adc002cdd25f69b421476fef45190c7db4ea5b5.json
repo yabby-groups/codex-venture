@@ -1,0 +1,28 @@
+{
+  "addedAt": "2026-11-27",
+  "categories": [
+    [
+      "动画视频制作",
+      "Animated Video Creation"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-26",
+  "id": "resource-1f63afa8158ff6aa01aae8592adc002cdd25f69b421476fef45190c7db4ea5b5",
+  "identity": "github:1321408165",
+  "license": "MIT",
+  "name": "kaomei/stickman-video-director",
+  "repository": "https://github.com/kaomei/stickman-video-director",
+  "repositoryId": "1321408165",
+  "site": "https://github.com/kaomei/stickman-video-director",
+  "sourceSignature": "fb7fa0f9cb42d4f66364d22f289f06fe6083e48fef720b1d06c0d84fca9b4f18",
+  "summary": [
+    "据发布者介绍，这项智能体技能可将脚本转换为带有配音、字幕和音效的火柴人动画。",
+    "The publisher describes an agent skill for turning scripts into stick-figure animations with voice-over, captions, and sound effects."
+  ],
+  "tested": false,
+  "type": "open-source",
+  "verificationSources": [
+    "https://api.github.com/search/repositories?page=1&per_page=30&q=topic%3Avideo-generation+archived%3Afalse+fork%3Afalse&sort=stars"
+  ],
+  "verifiedAt": "2026-11-27"
+}

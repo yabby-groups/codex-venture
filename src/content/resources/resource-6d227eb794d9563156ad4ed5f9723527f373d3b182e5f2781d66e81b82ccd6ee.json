@@ -1,0 +1,30 @@
+{
+  "addedAt": "2026-11-27",
+  "categories": [
+    [
+      "AI 用量监控",
+      "AI Usage Monitoring"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-25",
+  "id": "resource-6d227eb794d9563156ad4ed5f9723527f373d3b182e5f2781d66e81b82ccd6ee",
+  "identity": "openvsx:smith89k.claude-swap-status",
+  "install": "https://open-vsx.org/extension/smith89k/claude-swap-status",
+  "name": "Claude Swap Status",
+  "platforms": [
+    "Open VSX"
+  ],
+  "site": "https://open-vsx.org/extension/smith89k/claude-swap-status",
+  "sourceSignature": "e011b7cc2690a8ce523a17ba3a23c6d1a5cbb1f3c33df4c0e9a0ee050a35a576",
+  "summary": [
+    "据发布者介绍，这款扩展借助 claude-swap 在状态栏显示 Claude Code 用量。",
+    "The publisher describes a status bar extension that uses claude-swap to display Claude Code usage."
+  ],
+  "tested": false,
+  "type": "plugins",
+  "verificationSources": [
+    "https://open-vsx.org/api/-/search?offset=25&query=Claude&size=25"
+  ],
+  "verifiedAt": "2026-11-27",
+  "version": "0.2.2"
+}

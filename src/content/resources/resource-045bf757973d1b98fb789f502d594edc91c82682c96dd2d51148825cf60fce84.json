@@ -1,0 +1,28 @@
+{
+  "addedAt": "2026-11-27",
+  "categories": [
+    [
+      "AI 编程工作流",
+      "AI Coding Workflows"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-27",
+  "id": "resource-045bf757973d1b98fb789f502d594edc91c82682c96dd2d51148825cf60fce84",
+  "identity": "github:1085731923",
+  "license": "AGPL-3.0",
+  "name": "jwadow/agentic-prompts",
+  "repository": "https://github.com/jwadow/agentic-prompts",
+  "repositoryId": "1085731923",
+  "site": "https://github.com/jwadow/agentic-prompts",
+  "sourceSignature": "870e2681bc258806e2a7d4f4ad8355ddf1b0bf96606f704a07728f924518c913",
+  "summary": [
+    "发布者提供提示词和配置模板，可用于自定义编程智能体的角色，并设置 AI 辅助开发工作流。",
+    "The publisher provides prompt and configuration templates for defining custom coding agent roles and setting up AI-assisted development workflows."
+  ],
+  "tested": false,
+  "type": "workflows",
+  "verificationSources": [
+    "https://api.github.com/search/repositories?page=5&per_page=30&q=topic%3Aai-workflow+archived%3Afalse+fork%3Afalse&sort=stars"
+  ],
+  "verifiedAt": "2026-11-27"
+}

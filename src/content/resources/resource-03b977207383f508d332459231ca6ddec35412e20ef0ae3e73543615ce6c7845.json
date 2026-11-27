@@ -1,0 +1,28 @@
+{
+  "addedAt": "2026-11-27",
+  "categories": [
+    [
+      "设计工作流",
+      "Design Workflows"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-27",
+  "id": "resource-03b977207383f508d332459231ca6ddec35412e20ef0ae3e73543615ce6c7845",
+  "identity": "github:1453615933",
+  "license": "MIT",
+  "name": "Fully-Powered-AI/design-workflow-templates",
+  "repository": "https://github.com/Fully-Powered-AI/design-workflow-templates",
+  "repositoryId": "1453615933",
+  "site": "https://github.com/Fully-Powered-AI/design-workflow-templates",
+  "sourceSignature": "2534ee9b01ba318317cd6ee08160a18af1ca64e028e896dee547d3fafa8bc8f7",
+  "summary": [
+    "发布者提供的模板可用于制定用户研究计划、记录设计交接、检查无障碍性和审查设计系统。",
+    "The publisher offers templates for planning user research, documenting design handoffs, checking accessibility, and auditing design systems."
+  ],
+  "tested": false,
+  "type": "prompts",
+  "verificationSources": [
+    "https://api.github.com/search/repositories?page=8&per_page=30&q=topic%3Aprompt-templates+archived%3Afalse+fork%3Afalse&sort=stars"
+  ],
+  "verifiedAt": "2026-11-27"
+}

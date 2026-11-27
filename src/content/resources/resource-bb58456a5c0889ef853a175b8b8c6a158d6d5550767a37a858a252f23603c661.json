@@ -1,0 +1,28 @@
+{
+  "addedAt": "2026-11-27",
+  "categories": [
+    [
+      "游戏社区管理",
+      "Game Community Moderation"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-25",
+  "id": "resource-bb58456a5c0889ef853a175b8b8c6a158d6d5550767a37a858a252f23603c661",
+  "identity": "mcp:ac.mizan/registry",
+  "name": "Mizan",
+  "registryId": "ac.mizan/registry",
+  "site": "https://registry.modelcontextprotocol.io/v0.1/servers/ac.mizan%2Fregistry/versions/1.2.0",
+  "sourceSignature": "a0177bfa979c33bd85ad8e8c6d6039a3ee7c529c353f22a41f42d2f04461090e",
+  "summary": [
+    "据发布者介绍，Mizan 可查询游戏社区封禁名单和 Steam 自身记录中的玩家封禁信息。",
+    "The publisher says Mizan lets readers look up player bans from game community ban lists and Steam’s own records."
+  ],
+  "tested": false,
+  "transport": "streamable-http",
+  "type": "mcp",
+  "verificationSources": [
+    "https://registry.modelcontextprotocol.io/v0.1/servers/ac.mizan%2Fregistry/versions/1.2.0"
+  ],
+  "verifiedAt": "2026-11-27",
+  "version": "1.2.0"
+}

@@ -1,0 +1,30 @@
+{
+  "addedAt": "2026-11-27",
+  "categories": [
+    [
+      "提示词管理",
+      "Prompt Management"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-25",
+  "id": "resource-6d8f52668032955449ada95eae9084638f47362c5c559b808aa229fd725fe86c",
+  "identity": "openvsx:howell.cursor-assistant",
+  "install": "https://open-vsx.org/extension/Howell/cursor-assistant",
+  "name": "提示词分享助手",
+  "platforms": [
+    "Open VSX"
+  ],
+  "site": "https://open-vsx.org/extension/Howell/cursor-assistant",
+  "sourceSignature": "837e085f3cdfd19b58e9d700b683bb30a29a88fd2c74cb7116a5aebfea98aa89",
+  "summary": [
+    "据发布者介绍，这款扩展支持搜索、收藏、分享和导出提示词。",
+    "The publisher lists features for searching, saving, sharing, and exporting prompts."
+  ],
+  "tested": false,
+  "type": "plugins",
+  "verificationSources": [
+    "https://open-vsx.org/api/-/search?offset=25&query=AI+assistant&size=25"
+  ],
+  "verifiedAt": "2026-11-27",
+  "version": "0.1.15"
+}

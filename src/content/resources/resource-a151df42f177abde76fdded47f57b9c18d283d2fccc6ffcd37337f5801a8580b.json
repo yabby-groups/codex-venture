@@ -1,0 +1,28 @@
+{
+  "addedAt": "2026-11-27",
+  "categories": [
+    [
+      "AI 基础学习",
+      "AI Fundamentals"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-26",
+  "id": "resource-a151df42f177abde76fdded47f57b9c18d283d2fccc6ffcd37337f5801a8580b",
+  "identity": "github:1275409602",
+  "license": "NOASSERTION",
+  "name": "dvbs2000/visible-ai",
+  "repository": "https://github.com/dvbs2000/visible-ai",
+  "repositoryId": "1275409602",
+  "site": "https://github.com/dvbs2000/visible-ai",
+  "sourceSignature": "c2f10da11118b0d10a9a3b056587e382b9d1cc5bf8a550ab9e2529957debba91",
+  "summary": [
+    "据发布者介绍，这本面向零基础读者的图解书从单个神经元讲起，逐步引导读者动手搭建 AI 应用。",
+    "The publisher describes an illustrated beginner’s book that starts with a single neuron and guides readers through building an AI application."
+  ],
+  "tested": false,
+  "type": "resources",
+  "verificationSources": [
+    "https://api.github.com/search/repositories?page=1&per_page=30&q=topic%3Aai-education+archived%3Afalse+fork%3Afalse&sort=stars"
+  ],
+  "verifiedAt": "2026-11-27"
+}

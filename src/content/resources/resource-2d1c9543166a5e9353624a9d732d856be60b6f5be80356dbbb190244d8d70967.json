@@ -1,0 +1,28 @@
+{
+  "addedAt": "2026-11-27",
+  "categories": [
+    [
+      "内容审核",
+      "Content Moderation"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-26",
+  "id": "resource-2d1c9543166a5e9353624a9d732d856be60b6f5be80356dbbb190244d8d70967",
+  "identity": "github-skill:1135891523:.github/plugins/azure-sdk-java/skills/azure-ai-contentsafety-java/SKILL.md",
+  "name": "azure-ai-contentsafety-java",
+  "repository": "https://github.com/microsoft/skills",
+  "repositoryId": "1135891523",
+  "site": "https://github.com/microsoft/skills/blob/main/.github/plugins/azure-sdk-java/skills/azure-ai-contentsafety-java/SKILL.md",
+  "sourcePath": ".github/plugins/azure-sdk-java/skills/azure-ai-contentsafety-java/SKILL.md",
+  "sourceSignature": "336a5e615d18c1f0b19486f354f69c2ad13bdc526cc37aa8a47fac535aedeab5",
+  "summary": [
+    "据微软介绍，这项技能可帮助开发 Java 内容审核应用，使用 Azure AI Content Safety SDK 检测文本和图片中的有害内容，并管理屏蔽列表。",
+    "Microsoft describes a skill for building Java moderation applications that use the Azure AI Content Safety SDK to analyze text and images for harmful content and manage blocklists."
+  ],
+  "tested": false,
+  "type": "skills",
+  "verificationSources": [
+    "https://github.com/microsoft/skills/blob/main/.github/plugins/azure-sdk-java/skills/azure-ai-contentsafety-java/SKILL.md"
+  ],
+  "verifiedAt": "2026-11-27"
+}

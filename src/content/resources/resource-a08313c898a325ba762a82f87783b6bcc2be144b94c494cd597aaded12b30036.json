@@ -1,0 +1,28 @@
+{
+  "addedAt": "2026-11-27",
+  "categories": [
+    [
+      "机器学习实践",
+      "Machine Learning Practice"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-26",
+  "id": "resource-a08313c898a325ba762a82f87783b6bcc2be144b94c494cd597aaded12b30036",
+  "identity": "github:192596198",
+  "license": "MIT",
+  "name": "wlodpawlowski/machine-learning-udacity",
+  "repository": "https://github.com/wlodpawlowski/machine-learning-udacity",
+  "repositoryId": "192596198",
+  "site": "https://github.com/wlodpawlowski/machine-learning-udacity",
+  "sourceSignature": "bea5949e22767e511681b5859f705ba86a9b3180ea1955473da3b176c686a78f",
+  "summary": [
+    "作者分享了自己在 Udacity 机器学习课程中完成的小项目，可供读者作为实践示例参考。",
+    "The author shares mini-projects from a Udacity machine learning course that readers can review as practical examples."
+  ],
+  "tested": false,
+  "type": "resources",
+  "verificationSources": [
+    "https://api.github.com/search/repositories?page=1&per_page=30&q=topic%3Amachine-learning-course+archived%3Afalse+fork%3Afalse&sort=stars"
+  ],
+  "verifiedAt": "2026-11-27"
+}
