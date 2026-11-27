@@ -1,0 +1,28 @@
+{
+  "addedAt": "2026-11-27",
+  "categories": [
+    [
+      "编码智能体工作流",
+      "Coding agent workflows"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-27",
+  "id": "resource-0890dd141c17725d413be7b520c4d1961c143e84572f438fb75b3ff1121b60de",
+  "identity": "github:1136950982",
+  "license": "MIT",
+  "name": "joaolozano-lendario/athena-os",
+  "repository": "https://github.com/joaolozano-lendario/athena-os",
+  "repositoryId": "1136950982",
+  "site": "https://github.com/joaolozano-lendario/athena-os",
+  "sourceSignature": "abf686ac06489de3a520a8684146003fd671890662f7094b857960a933bd48c1",
+  "summary": [
+    "据发布者介绍，Athena OS 提供一组斜杠命令，用于在 Claude Code 中组织 AI 工作流。",
+    "The publisher describes Athena OS as a set of slash commands for organizing AI workflows in Claude Code."
+  ],
+  "tested": false,
+  "type": "workflows",
+  "verificationSources": [
+    "https://api.github.com/search/repositories?page=6&per_page=30&q=topic%3Aai-workflow+archived%3Afalse+fork%3Afalse&sort=stars"
+  ],
+  "verifiedAt": "2026-11-27"
+}

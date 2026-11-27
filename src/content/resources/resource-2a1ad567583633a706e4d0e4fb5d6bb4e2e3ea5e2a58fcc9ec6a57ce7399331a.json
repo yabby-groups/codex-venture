@@ -1,0 +1,29 @@
+{
+  "addedAt": "2026-11-27",
+  "categories": [
+    [
+      "视频制作自动化",
+      "Video production automation"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-26",
+  "id": "resource-2a1ad567583633a706e4d0e4fb5d6bb4e2e3ea5e2a58fcc9ec6a57ce7399331a",
+  "identity": "github:1038201582",
+  "license": "MIT",
+  "name": "darkzOGx/youtube-automation-agent",
+  "repository": "https://github.com/darkzOGx/youtube-automation-agent",
+  "repositoryId": "1038201582",
+  "site": "https://github.com/darkzOGx/youtube-automation-agent",
+  "sourceSignature": "840d8f1f5a5c88ddafeba981f857c8d2b849f646a2c82aa0ee705927d8c353e6",
+  "summary": [
+    "据发布者介绍，这个 YouTube 智能体可调研选题、起草脚本、生成旁白和画面，并在用户批准后发布视频。",
+    "The publisher says this YouTube agent researches topics, drafts scripts, generates narration and visuals, and publishes videos after user approval."
+  ],
+  "tested": false,
+  "type": "open-source",
+  "verificationSources": [
+    "https://api.github.com/search/repositories?page=1&per_page=30&q=topic%3Avideo-generation+archived%3Afalse+fork%3Afalse&sort=stars",
+    "https://api.github.com/search/repositories?page=9&per_page=30&q=topic%3Aai-agents+archived%3Afalse+fork%3Afalse&sort=stars"
+  ],
+  "verifiedAt": "2026-11-27"
+}

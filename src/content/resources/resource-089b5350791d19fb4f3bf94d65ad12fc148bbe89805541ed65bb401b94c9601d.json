@@ -1,0 +1,28 @@
+{
+  "addedAt": "2026-11-27",
+  "categories": [
+    [
+      "智能体工作流编排",
+      "Agent workflow orchestration"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-27",
+  "id": "resource-089b5350791d19fb4f3bf94d65ad12fc148bbe89805541ed65bb401b94c9601d",
+  "identity": "github:1159386695",
+  "license": "Apache-2.0",
+  "name": "madeinplutofabio/neural-computation-protocol",
+  "repository": "https://github.com/madeinplutofabio/neural-computation-protocol",
+  "repositoryId": "1159386695",
+  "site": "https://github.com/madeinplutofabio/neural-computation-protocol",
+  "sourceSignature": "48d03ddf108debd7be4c2d8859f9e326c45495c4c791b7f1c09dc1486429950c",
+  "summary": [
+    "据发布者介绍，NCP 可将名为 Bricks 的沙箱组件组合成可审计、可重放的智能体工作流图。",
+    "The publisher describes NCP as a way to compose sandboxed components called Bricks into agent workflow graphs that can be audited and replayed."
+  ],
+  "tested": false,
+  "type": "workflows",
+  "verificationSources": [
+    "https://api.github.com/search/repositories?page=5&per_page=30&q=topic%3Aai-workflow+archived%3Afalse+fork%3Afalse&sort=stars"
+  ],
+  "verifiedAt": "2026-11-27"
+}

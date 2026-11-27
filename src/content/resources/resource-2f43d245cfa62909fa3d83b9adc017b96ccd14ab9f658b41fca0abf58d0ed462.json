@@ -1,0 +1,28 @@
+{
+  "addedAt": "2026-11-27",
+  "categories": [
+    [
+      "可观测性故障排查",
+      "Observability troubleshooting"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-26",
+  "id": "resource-2f43d245cfa62909fa3d83b9adc017b96ccd14ab9f658b41fca0abf58d0ed462",
+  "identity": "github-skill:1135891523:.github/plugins/azure-observability/skills/troubleshoot-observability/SKILL.md",
+  "name": "troubleshoot-observability",
+  "repository": "https://github.com/microsoft/skills",
+  "repositoryId": "1135891523",
+  "site": "https://github.com/microsoft/skills/blob/main/.github/plugins/azure-observability/skills/troubleshoot-observability/SKILL.md",
+  "sourcePath": ".github/plugins/azure-observability/skills/troubleshoot-observability/SKILL.md",
+  "sourceSignature": "f324af9bb3044796c8c2dd8b527b48d575d39fa33ff28257ff326d19ebb0dd18",
+  "summary": [
+    "据 Microsoft 介绍，这个 Copilot 技能可引导用户结合遥测数据、监控和告警，排查 Azure 中应用或智能体的故障与延迟。",
+    "Microsoft describes this Copilot skill as a guide for investigating application or agent failures and latency in Azure using telemetry, monitoring, and alerts."
+  ],
+  "tested": false,
+  "type": "skills",
+  "verificationSources": [
+    "https://github.com/microsoft/skills/blob/main/.github/plugins/azure-observability/skills/troubleshoot-observability/SKILL.md"
+  ],
+  "verifiedAt": "2026-11-27"
+}

@@ -1,0 +1,29 @@
+{
+  "addedAt": "2026-11-27",
+  "categories": [
+    [
+      "代码库搜索",
+      "Codebase search"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-25",
+  "id": "resource-f2444c05408456e54e6f17d15e71a7aa6419b4f2275637e61cfb67ad94858949",
+  "identity": "github:997125912",
+  "license": "MIT",
+  "name": "zilliztech/claude-context",
+  "repository": "https://github.com/zilliztech/claude-context",
+  "repositoryId": "997125912",
+  "site": "https://github.com/zilliztech/claude-context",
+  "sourceSignature": "bded06f0e84b16ee39fe2b2bc2affb1fe3ebfd71fdbcb181641fb539452f45b1",
+  "summary": [
+    "据 Zilliz 介绍，Claude Context 是一个 MCP 工具，可让 Claude Code 在代码库中搜索与当前任务相关的上下文。",
+    "Zilliz describes Claude Context as an MCP tool that lets Claude Code search a codebase for relevant context."
+  ],
+  "tested": false,
+  "type": "tools",
+  "verificationSources": [
+    "https://api.github.com/search/repositories?page=1&per_page=30&q=topic%3Aai-coding+archived%3Afalse+fork%3Afalse&sort=stars",
+    "https://api.github.com/search/repositories?page=3&per_page=30&q=topic%3Arag+archived%3Afalse+fork%3Afalse&sort=stars"
+  ],
+  "verifiedAt": "2026-11-27"
+}

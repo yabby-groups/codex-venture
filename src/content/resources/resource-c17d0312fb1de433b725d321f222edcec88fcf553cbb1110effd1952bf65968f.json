@@ -1,0 +1,27 @@
+{
+  "addedAt": "2026-11-27",
+  "categories": [
+    [
+      "探索性数据分析",
+      "Exploratory data analysis"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-26",
+  "id": "resource-c17d0312fb1de433b725d321f222edcec88fcf553cbb1110effd1952bf65968f",
+  "identity": "github:699010604",
+  "name": "MahanPourhosseini/Breast-Cancer-Gene-Expression-Analysis",
+  "repository": "https://github.com/MahanPourhosseini/Breast-Cancer-Gene-Expression-Analysis",
+  "repositoryId": "699010604",
+  "site": "https://github.com/MahanPourhosseini/Breast-Cancer-Gene-Expression-Analysis",
+  "sourceSignature": "e2cda25c389bdc4f7454264dffe128ffbf7b2b37dd0bcb595c048fa4bdbdb9be",
+  "summary": [
+    "作者提供了一个 Python 示例，演示如何加载、整理和可视化 METABRIC 乳腺癌基因表达数据。",
+    "The author presents a Python example of loading, preparing, and visualizing data from the METABRIC breast cancer gene expression dataset."
+  ],
+  "tested": false,
+  "type": "resources",
+  "verificationSources": [
+    "https://api.github.com/search/repositories?page=1&per_page=30&q=topic%3Amachine-learning-course+archived%3Afalse+fork%3Afalse&sort=stars"
+  ],
+  "verifiedAt": "2026-11-27"
+}

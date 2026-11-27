@@ -1,0 +1,28 @@
+{
+  "addedAt": "2026-11-27",
+  "categories": [
+    [
+      "广告调研",
+      "Advertising research"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-25",
+  "id": "resource-c3a72a5bf6938bb42967d98abfd9c18904c5a954d6d3e759b0d8a63db538491e",
+  "identity": "mcp:ai.agentapihub/facebook-meta-google-tiktok-ads-library-api-mcp",
+  "name": "ai.agentapihub/facebook-meta-google-tiktok-ads-library-api-mcp",
+  "registryId": "ai.agentapihub/facebook-meta-google-tiktok-ads-library-api-mcp",
+  "site": "https://registry.modelcontextprotocol.io/v0.1/servers/ai.agentapihub%2Ffacebook-meta-google-tiktok-ads-library-api-mcp/versions/1.5.0",
+  "sourceSignature": "94044be4aed8dfd9cf558549d3bce631dc7017c7a7191ccb46a1c8d14a0255b7",
+  "summary": [
+    "据发布者介绍，这个 MCP 服务器可采集 Facebook 帖子，以及 Meta 广告资料库、Google 广告透明度中心和 TikTok 创意中心的广告条目。",
+    "The publisher describes an MCP server for collecting Facebook posts and ad listings from Meta Ad Library, Google Ads Transparency, and TikTok Creative Center."
+  ],
+  "tested": false,
+  "transport": "streamable-http",
+  "type": "mcp",
+  "verificationSources": [
+    "https://registry.modelcontextprotocol.io/v0.1/servers/ai.agentapihub%2Ffacebook-meta-google-tiktok-ads-library-api-mcp/versions/1.5.0"
+  ],
+  "verifiedAt": "2026-11-27",
+  "version": "1.5.0"
+}
