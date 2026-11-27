@@ -46,6 +46,8 @@ class EditorialTests(unittest.TestCase):
         row['gates']['evidence'] = True
         row['scores']['utility'] = 0
         row['scores']['interest'] = 24
+        self.assertEqual(editorial.decisions(self.draft, self.review, {})[0], [self.article])
+        row['actionable'] = False
         self.assertEqual(editorial.decisions(self.draft, self.review, {}), ([], {}))
         with self.assertRaisesRegex(ValueError, 'cover each draft'):
             editorial.decisions(self.draft, {'reviews': []}, {})

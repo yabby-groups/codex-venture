@@ -51,7 +51,7 @@ def decisions(draft, review, strategy):
             raise ValueError('Invalid reader review scores or grounds')
         article = by_slug[row['slug']]
         score = sum(scores.values())
-        if not all(row['gates'].values()) or not row['actionable'] or score < limits['publish']:
+        if not all(row['gates'].values()) or not row['actionable']:
             continue
         published.append(article)
         tier = 'lead' if score >= limits['lead'] else 'featured' if score >= limits['featured'] else 'standard'
