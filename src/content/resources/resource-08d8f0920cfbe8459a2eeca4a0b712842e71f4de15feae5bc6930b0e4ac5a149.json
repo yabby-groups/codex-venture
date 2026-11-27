@@ -1,0 +1,28 @@
+{
+  "addedAt": "2026-11-27",
+  "categories": [
+    [
+      "编程智能体工作流",
+      "Coding Agent Workflows"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-27",
+  "id": "resource-08d8f0920cfbe8459a2eeca4a0b712842e71f4de15feae5bc6930b0e4ac5a149",
+  "identity": "github:1246465492",
+  "license": "MIT",
+  "name": "Maximumsoft-Co-LTD/claude-flightdeck",
+  "repository": "https://github.com/Maximumsoft-Co-LTD/claude-flightdeck",
+  "repositoryId": "1246465492",
+  "site": "https://github.com/Maximumsoft-Co-LTD/claude-flightdeck",
+  "sourceSignature": "b20dab80c6530fe8af97db1ce6956d8ffd874a0acb799411cd6d507fe18b19aa",
+  "summary": [
+    "发布者将 Claude Flightdeck 描述为一套组织 Claude Code 工作流的工具，提供专用智能体、可复用技能、自动代码规范与密钥检查，以及六阶段评审流程。",
+    "The publisher describes Claude Flightdeck as a toolkit for organizing Claude Code work with specialized agents, reusable skills, automated lint and secret checks, and a six-stage review process."
+  ],
+  "tested": false,
+  "type": "workflows",
+  "verificationSources": [
+    "https://api.github.com/search/repositories?page=13&per_page=30&q=topic%3Aai-workflow+archived%3Afalse+fork%3Afalse&sort=stars"
+  ],
+  "verifiedAt": "2026-11-27"
+}

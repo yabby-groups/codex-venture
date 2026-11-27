@@ -1,0 +1,28 @@
+{
+  "addedAt": "2026-11-27",
+  "categories": [
+    [
+      "程序化视频制作",
+      "Programmatic Video Creation"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-26",
+  "id": "resource-30b7f851460ebd463b918db9db382e8c6923aa512ca5cf6dd17d1c2d02250eec",
+  "identity": "github-skill:1137388347:skills/remotion-best-practices/SKILL.md",
+  "name": "remotion-best-practices",
+  "repository": "https://github.com/remotion-dev/skills",
+  "repositoryId": "1137388347",
+  "site": "https://github.com/remotion-dev/skills/blob/main/skills/remotion-best-practices/SKILL.md",
+  "sourcePath": "skills/remotion-best-practices/SKILL.md",
+  "sourceSignature": "a5c867255f1813515cbf02c4b113b5e5e2edd7e77aa605075c90ecb3122912f5",
+  "summary": [
+    "技能摘录显示，它可在编程智能体创建 Remotion 视频或合成项目时，引导智能体查阅相应参考文档。",
+    "The skill excerpt shows how it directs coding agents to the relevant Remotion reference when creating a video or composition."
+  ],
+  "tested": false,
+  "type": "skills",
+  "verificationSources": [
+    "https://github.com/remotion-dev/skills/blob/main/skills/remotion-best-practices/SKILL.md"
+  ],
+  "verifiedAt": "2026-11-27"
+}

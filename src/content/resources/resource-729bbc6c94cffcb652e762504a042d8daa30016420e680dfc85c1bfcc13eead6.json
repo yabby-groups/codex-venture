@@ -1,0 +1,30 @@
+{
+  "addedAt": "2026-11-27",
+  "categories": [
+    [
+      "编程智能体通知",
+      "Coding Agent Notifications"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-25",
+  "id": "resource-729bbc6c94cffcb652e762504a042d8daa30016420e680dfc85c1bfcc13eead6",
+  "identity": "openvsx:mrcarrotlabs.copilot-ntfy",
+  "install": "https://open-vsx.org/extension/MrCarrotLabs/copilot-ntfy",
+  "name": "Copilot Mobile Notifier",
+  "platforms": [
+    "Open VSX"
+  ],
+  "site": "https://open-vsx.org/extension/MrCarrotLabs/copilot-ntfy",
+  "sourceSignature": "17bcfabebb6550ee7b12f189bf5a2018ec8bdce7af25806f6a184371a54076b1",
+  "summary": [
+    "据发布者介绍，Copilot Mobile Notifier 会在 GitHub Copilot 智能体任务完成时通过 ntfy.sh 发送通知。",
+    "The publisher says Copilot Mobile Notifier sends an ntfy.sh notification when a GitHub Copilot agent job completes."
+  ],
+  "tested": false,
+  "type": "plugins",
+  "verificationSources": [
+    "https://open-vsx.org/api/-/search?offset=0&query=Copilot&size=25"
+  ],
+  "verifiedAt": "2026-11-27",
+  "version": "1.6.11"
+}

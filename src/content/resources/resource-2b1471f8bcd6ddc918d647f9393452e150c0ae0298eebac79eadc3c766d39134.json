@@ -1,0 +1,28 @@
+{
+  "addedAt": "2026-11-27",
+  "categories": [
+    [
+      "视频生成",
+      "Video Generation"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-26",
+  "id": "resource-2b1471f8bcd6ddc918d647f9393452e150c0ae0298eebac79eadc3c766d39134",
+  "identity": "github:1027579552",
+  "license": "Apache-2.0",
+  "name": "Wan-Video/Wan2.2",
+  "repository": "https://github.com/Wan-Video/Wan2.2",
+  "repositoryId": "1027579552",
+  "site": "https://github.com/Wan-Video/Wan2.2",
+  "sourceSignature": "ca20ffae95154508d7a98e8eb68bd87db1e6dca769f71b66652a616702d1b094",
+  "summary": [
+    "Wan2.2 项目提供一系列用于生成视频的模型。",
+    "The Wan2.2 project provides a family of generative models for creating video."
+  ],
+  "tested": false,
+  "type": "open-source",
+  "verificationSources": [
+    "https://api.github.com/search/repositories?page=1&per_page=30&q=topic%3Avideo-generation+archived%3Afalse+fork%3Afalse&sort=stars"
+  ],
+  "verifiedAt": "2026-11-27"
+}

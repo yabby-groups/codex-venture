@@ -1,0 +1,27 @@
+{
+  "addedAt": "2026-11-27",
+  "categories": [
+    [
+      "销售触达自动化",
+      "Sales Outreach Automation"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-25",
+  "id": "resource-f450032b7a691856e16bc8fdd9caaab0a4e6124c3d407df8761a11c10316c65e",
+  "identity": "github:836899473",
+  "name": "kaymen99/sales-outreach-automation-langgraph",
+  "repository": "https://github.com/kaymen99/sales-outreach-automation-langgraph",
+  "repositoryId": "836899473",
+  "site": "https://github.com/kaymen99/sales-outreach-automation-langgraph",
+  "sourceSignature": "a97e5c435a8c81ad064db1d35f6ebe1b9004e76d614e759df34dee9b51e637f5",
+  "summary": [
+    "据发布者介绍，这套 LangGraph 工作流使用 AI 智能体调研和筛选销售线索、起草个性化触达消息，并可连接 HubSpot、Airtable 或 Google Sheets。",
+    "The publisher describes a LangGraph workflow that uses AI agents to research and qualify sales leads, draft personalized outreach, and connect with HubSpot, Airtable, or Google Sheets."
+  ],
+  "tested": false,
+  "type": "tools",
+  "verificationSources": [
+    "https://api.github.com/search/repositories?page=1&per_page=30&q=topic%3Aai-automation+archived%3Afalse+fork%3Afalse&sort=stars"
+  ],
+  "verifiedAt": "2026-11-27"
+}

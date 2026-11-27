@@ -1,0 +1,27 @@
+{
+  "addedAt": "2026-11-27",
+  "categories": [
+    [
+      "机器学习练习",
+      "Machine Learning Practice"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-26",
+  "id": "resource-c97409ff0f9229b839d26b72743d6969b8dcc5fe3afff370c79ae98dafd85621",
+  "identity": "github:881214307",
+  "name": "MudasirNaeem1/MachineLearning-Course-from-LUMSx-ilmX",
+  "repository": "https://github.com/MudasirNaeem1/MachineLearning-Course-from-LUMSx-ilmX",
+  "repositoryId": "881214307",
+  "site": "https://github.com/MudasirNaeem1/MachineLearning-Course-from-LUMSx-ilmX",
+  "sourceSignature": "ceab904d8f3ec5b0c53b5e67d4617fc5400884586ad770c90763b1ae91b3d97f",
+  "summary": [
+    "作者分享了自己完成的机器学习课程作业，读者可参考其中的解题过程。",
+    "The author shares their completed machine learning course assignments, which readers can consult as worked examples."
+  ],
+  "tested": false,
+  "type": "resources",
+  "verificationSources": [
+    "https://api.github.com/search/repositories?page=1&per_page=30&q=topic%3Amachine-learning-course+archived%3Afalse+fork%3Afalse&sort=stars"
+  ],
+  "verifiedAt": "2026-11-27"
+}

@@ -1,0 +1,29 @@
+{
+  "addedAt": "2026-11-27",
+  "categories": [
+    [
+      "界面设计与无障碍",
+      "UI Design and Accessibility"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-25",
+  "id": "resource-f59a2914f0dab12e0ebabeda7f949324afc9d354d8c1fb426b5e20c45be22bac",
+  "identity": "github:1248249886",
+  "license": "MIT",
+  "name": "Laith0003/ux-skill",
+  "repository": "https://github.com/Laith0003/ux-skill",
+  "repositoryId": "1248249886",
+  "site": "https://github.com/Laith0003/ux-skill",
+  "sourceSignature": "8453ec2d61655445338a4b2e8eb0d1652f537e4ea8e58b793a56b67dd1b1732b",
+  "summary": [
+    "据发布者介绍，ux-skill 可按设计规则检查界面，并生成带有 WCAG 检查、支持阿拉伯语和从右到左布局的设计系统。",
+    "The publisher describes ux-skill as a toolkit for checking interface designs against design rules and generating design systems with WCAG checks, Arabic support, and right-to-left layouts."
+  ],
+  "tested": false,
+  "type": "tools",
+  "verificationSources": [
+    "https://api.github.com/search/repositories?page=1&per_page=30&q=topic%3Aai-design+archived%3Afalse+fork%3Afalse&sort=stars",
+    "https://api.github.com/search/repositories?page=13&per_page=30&q=topic%3Aai-coding+archived%3Afalse+fork%3Afalse&sort=stars"
+  ],
+  "verifiedAt": "2026-11-27"
+}

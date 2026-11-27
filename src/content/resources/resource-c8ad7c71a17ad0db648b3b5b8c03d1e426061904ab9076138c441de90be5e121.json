@@ -1,0 +1,28 @@
+{
+  "addedAt": "2026-11-27",
+  "categories": [
+    [
+      "搜索与品牌调研",
+      "Search and Brand Research"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-25",
+  "id": "resource-c8ad7c71a17ad0db648b3b5b8c03d1e426061904ab9076138c441de90be5e121",
+  "identity": "mcp:agency.goji/goji",
+  "name": "agency.goji/goji",
+  "registryId": "agency.goji/goji",
+  "site": "https://registry.modelcontextprotocol.io/v0.1/servers/agency.goji%2Fgoji/versions/1.0.1",
+  "sourceSignature": "31dabfd2d66dcee2487e06511390d2da0d98e061515c2ed66623f556b0f2ed00",
+  "summary": [
+    "据 GOJI 介绍，其 MCP 服务可依据 GOJI 已发布的资料，回答有关答案引擎优化（AEO）、搜索引擎优化（SEO）、网站和品牌的问题。",
+    "GOJI describes its MCP server as a way to ask questions about answer engine optimization (AEO), search engine optimization (SEO), websites, and branding using GOJI’s published material."
+  ],
+  "tested": false,
+  "transport": "streamable-http",
+  "type": "mcp",
+  "verificationSources": [
+    "https://registry.modelcontextprotocol.io/v0.1/servers/agency.goji%2Fgoji/versions/1.0.1"
+  ],
+  "verifiedAt": "2026-11-27",
+  "version": "1.0.1"
+}

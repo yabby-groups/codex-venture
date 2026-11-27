@@ -1,0 +1,28 @@
+{
+  "addedAt": "2026-11-27",
+  "categories": [
+    [
+      "课程设计与开发",
+      "Course Design and Development"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-26",
+  "id": "resource-c8ecd2a80dd4d6d562b8ec0e6d6356f28925de4fcab56b44279decd647da57e4",
+  "identity": "github:1237819602",
+  "license": "MIT",
+  "name": "minicoursegenerator/skills-for-course-creators",
+  "repository": "https://github.com/minicoursegenerator/skills-for-course-creators",
+  "repositoryId": "1237819602",
+  "site": "https://github.com/minicoursegenerator/skills-for-course-creators",
+  "sourceSignature": "d5c265d949c737bfe33051a4298f92ea317302ff3cea90b97bc5fd9f952e81bd",
+  "summary": [
+    "发布者整理了一份智能体技能目录，供教育工作者和教学设计人员查找用于课程调研、教材制作、角色扮演练习和课程交付的技能。",
+    "The publisher curates agent skills that educators and instructional designers can browse for course research, learning materials, role-play exercises, and course delivery."
+  ],
+  "tested": false,
+  "type": "resources",
+  "verificationSources": [
+    "https://api.github.com/search/repositories?page=2&per_page=30&q=topic%3Aai-education+archived%3Afalse+fork%3Afalse&sort=stars"
+  ],
+  "verifiedAt": "2026-11-27"
+}

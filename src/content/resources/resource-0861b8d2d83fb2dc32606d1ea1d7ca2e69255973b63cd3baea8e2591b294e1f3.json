@@ -1,0 +1,28 @@
+{
+  "addedAt": "2026-11-27",
+  "categories": [
+    [
+      "工程项目管理",
+      "Engineering Project Management"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-27",
+  "id": "resource-0861b8d2d83fb2dc32606d1ea1d7ca2e69255973b63cd3baea8e2591b294e1f3",
+  "identity": "github:1453526815",
+  "license": "MIT",
+  "name": "Fully-Powered-AI/engineering-firm-workflow-templates",
+  "repository": "https://github.com/Fully-Powered-AI/engineering-firm-workflow-templates",
+  "repositoryId": "1453526815",
+  "site": "https://github.com/Fully-Powered-AI/engineering-firm-workflow-templates",
+  "sourceSignature": "9e31e74ab6f251a7d14c936f41fc187c814a8cdb656fb655f8fd4e0c32a74265",
+  "summary": [
+    "发布者提供面向工程项目经理和协调员的 AI 工作流模板，可用于准备信息请求（RFI）、规划现场踏勘和检查项目问题。",
+    "The publisher provides AI workflow templates that engineering project managers and coordinators can use to prepare requests for information (RFIs), plan site visits, and check project issues."
+  ],
+  "tested": false,
+  "type": "prompts",
+  "verificationSources": [
+    "https://api.github.com/search/repositories?page=5&per_page=30&q=topic%3Aprompt-templates+archived%3Afalse+fork%3Afalse&sort=stars"
+  ],
+  "verifiedAt": "2026-11-27"
+}
