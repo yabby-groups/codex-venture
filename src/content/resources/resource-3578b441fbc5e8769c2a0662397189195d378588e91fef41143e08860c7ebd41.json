@@ -1,0 +1,28 @@
+{
+  "addedAt": "2026-11-27",
+  "categories": [
+    [
+      "视频字幕格式化",
+      "Video caption formatting"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-26",
+  "id": "resource-3578b441fbc5e8769c2a0662397189195d378588e91fef41143e08860c7ebd41",
+  "identity": "github-skill:1137388347:skills/remotion-captions/SKILL.md",
+  "name": "remotion-captions",
+  "repository": "https://github.com/remotion-dev/skills",
+  "repositoryId": "1137388347",
+  "site": "https://github.com/remotion-dev/skills/blob/main/skills/remotion-captions/SKILL.md",
+  "sourcePath": "skills/remotion-captions/SKILL.md",
+  "sourceSignature": "c2aaeb88ab6250f01561267ebdba54d646f42eda6592ef5f56e4483b40e5e0dd",
+  "summary": [
+    "使用这项 Remotion 技能，将字幕整理为可复用的字幕轨道，用于显示和制作动画。文档片段展示了如何从 @remotion/captions 导入 Caption 类型，并要求将字幕数据处理为符合该类型的 JSON。",
+    "Use this Remotion skill to prepare a reusable subtitle track for display and animation. The excerpt shows how to import the Caption type from @remotion/captions and specifies that caption data must be processed as JSON conforming to that type."
+  ],
+  "tested": false,
+  "type": "skills",
+  "verificationSources": [
+    "https://github.com/remotion-dev/skills/blob/main/skills/remotion-captions/SKILL.md"
+  ],
+  "verifiedAt": "2026-11-27"
+}
