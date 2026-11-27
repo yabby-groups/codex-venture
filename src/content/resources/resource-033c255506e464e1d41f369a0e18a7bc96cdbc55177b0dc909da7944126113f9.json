@@ -1,0 +1,28 @@
+{
+  "addedAt": "2026-11-27",
+  "categories": [
+    [
+      "AI 智能体编排",
+      "AI Agent Orchestration"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-27",
+  "id": "resource-033c255506e464e1d41f369a0e18a7bc96cdbc55177b0dc909da7944126113f9",
+  "identity": "github:1467833263",
+  "license": "MIT",
+  "name": "somakant/agent-command-centre",
+  "repository": "https://github.com/somakant/agent-command-centre",
+  "repositoryId": "1467833263",
+  "site": "https://github.com/somakant/agent-command-centre",
+  "sourceSignature": "9038027969f7cdefb1bc3366f31302abd0111d58b86b7628c9af10b59b3f6b4c",
+  "summary": [
+    "发布者提供了一套方案，用于定时运行由 Claude 驱动的智能体团队，并在对外发送任何内容前进行人工审批。",
+    "The publisher provides a blueprint for running a team of Claude agents on a schedule and requiring human approval before anything is sent externally."
+  ],
+  "tested": false,
+  "type": "prompts",
+  "verificationSources": [
+    "https://api.github.com/search/repositories?page=7&per_page=30&q=topic%3Aprompt-templates+archived%3Afalse+fork%3Afalse&sort=stars"
+  ],
+  "verifiedAt": "2026-11-27"
+}

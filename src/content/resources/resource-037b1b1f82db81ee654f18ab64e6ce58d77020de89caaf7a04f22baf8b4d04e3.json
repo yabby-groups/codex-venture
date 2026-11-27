@@ -1,0 +1,28 @@
+{
+  "addedAt": "2026-11-27",
+  "categories": [
+    [
+      "多智能体协作",
+      "Multi-Agent Collaboration"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-27",
+  "id": "resource-037b1b1f82db81ee654f18ab64e6ce58d77020de89caaf7a04f22baf8b4d04e3",
+  "identity": "github:1171245656",
+  "license": "MIT",
+  "name": "AliceLJY/telegram-ai-bridge",
+  "repository": "https://github.com/AliceLJY/telegram-ai-bridge",
+  "repositoryId": "1171245656",
+  "site": "https://github.com/AliceLJY/telegram-ai-bridge",
+  "sourceSignature": "88a1dac355c036eab08a47c58eddc9c20c07427c0a4d9e500e0d7bc5a0b3c8fa",
+  "summary": [
+    "据发布者介绍，这款可自托管的桥接工具让 Claude Code、Codex、Agy 和 Kimi 通过 A2A-TG 消息协议在 Telegram 群组里协作。",
+    "According to the publisher, this self-hosted bridge lets Claude Code, Codex, Agy, and Kimi collaborate in Telegram groups through the A2A-TG messaging protocol."
+  ],
+  "tested": false,
+  "type": "workflows",
+  "verificationSources": [
+    "https://api.github.com/search/repositories?page=5&per_page=30&q=topic%3Aai-workflow+archived%3Afalse+fork%3Afalse&sort=stars"
+  ],
+  "verifiedAt": "2026-11-27"
+}

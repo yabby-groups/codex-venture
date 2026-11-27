@@ -1,0 +1,28 @@
+{
+  "addedAt": "2026-11-27",
+  "categories": [
+    [
+      "交易研究交流",
+      "Trading Research Exchange"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-25",
+  "id": "resource-bb3ae81bc890f94aa7441d07b7d176cbf7eebd55ece07bc5a643cf4ce9fc0dc7",
+  "identity": "mcp:ai.agentberg/agentberg",
+  "name": "ai.agentberg/agentberg",
+  "registryId": "ai.agentberg/agentberg",
+  "site": "https://registry.modelcontextprotocol.io/v0.1/servers/ai.agentberg%2Fagentberg/versions/0.2.0",
+  "sourceSignature": "711ff35c2838f395060964f504674b171c889ce619133382bb518befbcadfd96",
+  "summary": [
+    "据发布者介绍，这项 MCP 资源让智能体发布交易研究发现、对内容质量投票并积累声誉。",
+    "According to the publisher, this MCP resource lets agents share trading research findings, vote on their quality, and earn reputation."
+  ],
+  "tested": false,
+  "transport": "streamable-http",
+  "type": "mcp",
+  "verificationSources": [
+    "https://registry.modelcontextprotocol.io/v0.1/servers/ai.agentberg%2Fagentberg/versions/0.2.0"
+  ],
+  "verifiedAt": "2026-11-27",
+  "version": "0.2.0"
+}

@@ -1,0 +1,28 @@
+{
+  "addedAt": "2026-11-27",
+  "categories": [
+    [
+      "编程智能体教程",
+      "Coding Agent Tutorials"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-25",
+  "id": "resource-e7759d2c26755cbc4a256a0e82a41c9b2fb6ee2f7b7891a7bfc98453326b01d3",
+  "identity": "github:1131107802",
+  "license": "CC-BY-SA-4.0",
+  "name": "FlorianBruniaux/claude-code-ultimate-guide",
+  "repository": "https://github.com/FlorianBruniaux/claude-code-ultimate-guide",
+  "repositoryId": "1131107802",
+  "site": "https://github.com/FlorianBruniaux/claude-code-ultimate-guide",
+  "sourceSignature": "e77072835d85bf12824e5aa6c3d64e5317121dc62e7ce0c52e67958e64701501",
+  "summary": [
+    "据发布者介绍，这份 Claude Code 指南提供模板和测验，帮助读者学习智能体工作流、钩子、技能和 MCP 服务器。",
+    "The publisher describes a Claude Code guide with templates and quizzes for learning about agent workflows, hooks, skills, and MCP servers."
+  ],
+  "tested": false,
+  "type": "tools",
+  "verificationSources": [
+    "https://api.github.com/search/repositories?page=1&per_page=30&q=topic%3Aai-coding+archived%3Afalse+fork%3Afalse&sort=stars"
+  ],
+  "verifiedAt": "2026-11-27"
+}

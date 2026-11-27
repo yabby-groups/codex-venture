@@ -1,0 +1,28 @@
+{
+  "addedAt": "2026-11-27",
+  "categories": [
+    [
+      "API 清单管理",
+      "API Inventory Management"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-26",
+  "id": "resource-2ae8a764ea373b4c734a563aea485949d8b93058cac9283cd2f407b1ff07f86f",
+  "identity": "github-skill:1135891523:.github/plugins/azure-sdk-dotnet/skills/azure-mgmt-apicenter-dotnet/SKILL.md",
+  "name": "azure-mgmt-apicenter-dotnet",
+  "repository": "https://github.com/microsoft/skills",
+  "repositoryId": "1135891523",
+  "site": "https://github.com/microsoft/skills/blob/main/.github/plugins/azure-sdk-dotnet/skills/azure-mgmt-apicenter-dotnet/SKILL.md",
+  "sourcePath": ".github/plugins/azure-sdk-dotnet/skills/azure-mgmt-apicenter-dotnet/SKILL.md",
+  "sourceSignature": "0504c0e92e4e2be7d034cdf2ed8172adbba47396691051a6d29cbe8d348596a6",
+  "summary": [
+    "据微软介绍，这项技能可帮助你使用 Azure API Center 的 .NET SDK 集中管理 API 清单，包括 API 版本、定义、部署和元数据架构。",
+    "Microsoft describes a skill for using the Azure API Center .NET SDK to manage a central API inventory, including API versions, definitions, deployments, and metadata schemas."
+  ],
+  "tested": false,
+  "type": "skills",
+  "verificationSources": [
+    "https://github.com/microsoft/skills/blob/main/.github/plugins/azure-sdk-dotnet/skills/azure-mgmt-apicenter-dotnet/SKILL.md"
+  ],
+  "verifiedAt": "2026-11-27"
+}

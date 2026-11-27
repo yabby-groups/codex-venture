@@ -1,0 +1,29 @@
+{
+  "addedAt": "2026-11-27",
+  "categories": [
+    [
+      "短视频创作",
+      "Short Video Creation"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-26",
+  "id": "resource-1f50b89d583d2bd601cb20d8e16f25543a75ac2afdd4d1554a89e7d574afec67",
+  "identity": "github:1091534692",
+  "license": "Apache-2.0",
+  "name": "ATH-MaaS/Pixelle-Video",
+  "repository": "https://github.com/ATH-MaaS/Pixelle-Video",
+  "repositoryId": "1091534692",
+  "site": "https://github.com/ATH-MaaS/Pixelle-Video",
+  "sourceSignature": "d4c9294fe2c4fdb0f124f5941902b2f7df4daf0370a54f43cbf884a7a0285c26",
+  "summary": [
+    "据发布者介绍，Pixelle-Video 是一款用 AI 全自动制作短视频的引擎。",
+    "The publisher describes Pixelle-Video as an AI engine for fully automating short-video creation."
+  ],
+  "tested": false,
+  "type": "open-source",
+  "verificationSources": [
+    "https://api.github.com/search/repositories?page=1&per_page=30&q=topic%3Aimage-generation+archived%3Afalse+fork%3Afalse&sort=stars",
+    "https://api.github.com/search/repositories?page=1&per_page=30&q=topic%3Avideo-generation+archived%3Afalse+fork%3Afalse&sort=stars"
+  ],
+  "verifiedAt": "2026-11-27"
+}

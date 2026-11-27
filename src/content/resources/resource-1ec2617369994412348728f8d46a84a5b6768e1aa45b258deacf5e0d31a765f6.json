@@ -1,0 +1,28 @@
+{
+  "addedAt": "2026-11-27",
+  "categories": [
+    [
+      "模型集成",
+      "Model Integration"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-26",
+  "id": "resource-1ec2617369994412348728f8d46a84a5b6768e1aa45b258deacf5e0d31a765f6",
+  "identity": "github:755804236",
+  "license": "AGPL-3.0",
+  "name": "HanaokaYuzu/Gemini-API",
+  "repository": "https://github.com/HanaokaYuzu/Gemini-API",
+  "repositoryId": "755804236",
+  "site": "https://github.com/HanaokaYuzu/Gemini-API",
+  "sourceSignature": "d1c51b08f3e8beaab89f29d752bac74ac554acadc6f641177ebdbc50385eb556",
+  "summary": [
+    "据发布者介绍，这是一个通过逆向工程实现的 Python 接口，可与 Google Gemini 网页应用交互。",
+    "The publisher describes a Python interface for interacting with the Google Gemini web app, built through reverse engineering."
+  ],
+  "tested": false,
+  "type": "open-source",
+  "verificationSources": [
+    "https://api.github.com/search/repositories?page=2&per_page=30&q=topic%3Aimage-generation+archived%3Afalse+fork%3Afalse&sort=stars"
+  ],
+  "verifiedAt": "2026-11-27"
+}

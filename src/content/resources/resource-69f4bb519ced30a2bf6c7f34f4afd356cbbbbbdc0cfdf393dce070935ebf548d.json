@@ -1,0 +1,30 @@
+{
+  "addedAt": "2026-11-27",
+  "categories": [
+    [
+      "智能体轮次计时",
+      "Agent Turn Timing"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-25",
+  "id": "resource-69f4bb519ced30a2bf6c7f34f4afd356cbbbbbdc0cfdf393dce070935ebf548d",
+  "identity": "openvsx:larspunx.coding-time",
+  "install": "https://open-vsx.org/extension/larspunx/coding-time",
+  "name": "Coding Time",
+  "platforms": [
+    "Open VSX"
+  ],
+  "site": "https://open-vsx.org/extension/larspunx/coding-time",
+  "sourceSignature": "06ea101991ab39c7ab8365d93e2bbd3f340f0ba7786cb81c181ad36f2dca75dc",
+  "summary": [
+    "据发布者介绍，Coding Time 会在状态栏实时计时，并让你查看每轮智能体交互的耗时和每日汇总。",
+    "According to the publisher, Coding Time shows a live timer in the status bar and lets you review how long individual agent turns took and see a daily summary."
+  ],
+  "tested": false,
+  "type": "plugins",
+  "verificationSources": [
+    "https://open-vsx.org/api/-/search?offset=0&query=coding+assistant&size=25"
+  ],
+  "verifiedAt": "2026-11-27",
+  "version": "1.0.0"
+}

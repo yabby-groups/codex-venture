@@ -1,0 +1,27 @@
+{
+  "addedAt": "2026-11-27",
+  "categories": [
+    [
+      "自适应辅导",
+      "Adaptive Tutoring"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-26",
+  "id": "resource-9971afafb2bc2b75b937e66b60f16717aaa52433f417b8faf17ba64c621f6991",
+  "identity": "github:1116048012",
+  "name": "fenago/LearnGraph",
+  "repository": "https://github.com/fenago/LearnGraph",
+  "repositoryId": "1116048012",
+  "site": "https://github.com/fenago/LearnGraph",
+  "sourceSignature": "2b20b106d500e3ab31729d3604736eb61f45df1fefece776b93cb37b8f81a58f",
+  "summary": [
+    "据发布者介绍，LearnGraph 是一个基于图的系统，可让大语言模型根据不同学习者的情况调整辅导内容。",
+    "The publisher describes LearnGraph as a graph-based system for adapting LLM tutoring to individual learners."
+  ],
+  "tested": false,
+  "type": "resources",
+  "verificationSources": [
+    "https://api.github.com/search/repositories?page=2&per_page=30&q=topic%3Aai-education+archived%3Afalse+fork%3Afalse&sort=stars"
+  ],
+  "verifiedAt": "2026-11-27"
+}

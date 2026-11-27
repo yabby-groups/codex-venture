@@ -1,0 +1,28 @@
+{
+  "addedAt": "2026-11-27",
+  "categories": [
+    [
+      "自适应评估与教学",
+      "Adaptive Assessment and Instruction"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-26",
+  "id": "resource-9fd6b84cebe241e84fa37a0383a977d0482bfb55a9df480ff73c8f4ba76b526a",
+  "identity": "github:1156297573",
+  "license": "MIT",
+  "name": "vanderbilt-data-science/knowledge-spaces",
+  "repository": "https://github.com/vanderbilt-data-science/knowledge-spaces",
+  "repositoryId": "1156297573",
+  "site": "https://github.com/vanderbilt-data-science/knowledge-spaces",
+  "sourceSignature": "43bfdb2372a3de6eb592fda38734ca34564b52e0251a647648e980cd3eb1208b",
+  "summary": [
+    "据发布者介绍，这套资源包含 10 项 Claude Code 技能，可运用知识空间理论将课程材料转化为知识图谱，并支持自适应测评、个性化学习材料和按需教学规划。",
+    "The publisher describes ten Claude Code skills that apply Knowledge Space Theory to turn course materials into knowledge graphs and support adaptive assessments, personalized materials, and just-in-time lesson planning."
+  ],
+  "tested": false,
+  "type": "resources",
+  "verificationSources": [
+    "https://api.github.com/search/repositories?page=1&per_page=30&q=topic%3Aai-education+archived%3Afalse+fork%3Afalse&sort=stars"
+  ],
+  "verifiedAt": "2026-11-27"
+}
