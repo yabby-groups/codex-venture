@@ -30,8 +30,7 @@ def ga4(day):
     property_id = os.getenv('GOOGLE_GA4_PROPERTY_ID', '')
     if not re.fullmatch(r'[0-9]+', property_id):
         return {'status': 'disabled'}
-    auth = result(lambda: google_token('GOOGLE_GA4'))
-    token = auth.get('data')
+    token = os.getenv('GOOGLE_GA4_ACCESS_TOKEN') or result(lambda: google_token('GOOGLE_GA4')).get('data')
     if not token:
         return {'status': 'unavailable'}
 

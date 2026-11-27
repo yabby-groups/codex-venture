@@ -82,6 +82,21 @@ jobs:
           access_token_scopes: https://www.googleapis.com/auth/webmasters.readonly
           create_credentials_file: false
           export_environment_variables: false
+      - id: ga4
+        if: >-
+          (steps.task.outputs.task == 'sync' || steps.task.outputs.task == 'backfill' ||
+          steps.task.outputs.task == 'smoke-test') && steps.task.outputs.domain != 'search' &&
+          vars.GOOGLE_GA4_PROPERTY_ID != '' &&
+          vars.GOOGLE_WORKLOAD_IDENTITY_PROVIDER != '' && vars.GOOGLE_SERVICE_ACCOUNT != ''
+        uses: google-github-actions/auth@v3
+        continue-on-error: true
+        with:
+          workload_identity_provider: ${{ vars.GOOGLE_WORKLOAD_IDENTITY_PROVIDER }}
+          service_account: ${{ vars.GOOGLE_SERVICE_ACCOUNT }}
+          token_format: access_token
+          access_token_scopes: https://www.googleapis.com/auth/analytics.readonly
+          create_credentials_file: false
+          export_environment_variables: false
       - name: Sync or generate requested report
         if: steps.task.outputs.task != ''
         env:
@@ -93,6 +108,7 @@ jobs:
           CLOUDFLARE_WEB_ANALYTICS_SITE_TAG: ${{ vars.CLOUDFLARE_WEB_ANALYTICS_SITE_TAG }}
           CLOUDFLARE_ZONE_ID: ${{ vars.CLOUDFLARE_ZONE_ID }}
           CLOUDFLARE_ZONE_ANALYTICS_TOKEN: ${{ secrets.CLOUDFLARE_ZONE_ANALYTICS_TOKEN }}
+          GOOGLE_GA4_ACCESS_TOKEN: ${{ steps.ga4.outputs.access_token }}
           GOOGLE_GA4_PROPERTY_ID: ${{ vars.GOOGLE_GA4_PROPERTY_ID }}
           GOOGLE_GA4_CLIENT_ID: ${{ secrets.GOOGLE_GA4_CLIENT_ID }}
           GOOGLE_GA4_CLIENT_SECRET: ${{ secrets.GOOGLE_GA4_CLIENT_SECRET }}
