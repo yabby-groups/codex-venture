@@ -1,0 +1,28 @@
+{
+  "addedAt": "2026-11-27",
+  "categories": [
+    [
+      "智能体编排",
+      "Agent Orchestration"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-26",
+  "id": "resource-ec26bbdb8222e8f6473c9dae9e28fd7780acf1132046e05996235b02d9eaadf6",
+  "identity": "github:1374053853",
+  "license": "GPL-3.0",
+  "name": "OrbitZore/pcl",
+  "repository": "https://github.com/OrbitZore/pcl",
+  "repositoryId": "1374053853",
+  "site": "https://github.com/OrbitZore/pcl",
+  "sourceSignature": "c407eb4c5b5b3a6b63c5fad3b3b313e3004d4fba6a169124fd52a9945c758af1",
+  "summary": [
+    "据发布者介绍，PCL 是用于编排大语言模型智能体的领域专用语言，模板层使用 PCL，脚本层使用 Python。",
+    "The publisher describes PCL as a domain-specific language for orchestrating LLM agents with PCL templates and Python scripts."
+  ],
+  "tested": false,
+  "type": "prompts",
+  "verificationSources": [
+    "https://api.github.com/search/repositories?page=2&per_page=30&q=topic%3Aprompt-templates+archived%3Afalse+fork%3Afalse&sort=stars"
+  ],
+  "verifiedAt": "2026-11-27"
+}

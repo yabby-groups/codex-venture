@@ -1,0 +1,28 @@
+{
+  "addedAt": "2026-11-27",
+  "categories": [
+    [
+      "网页界面自动化",
+      "Web Interface Automation"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-26",
+  "id": "resource-1acef446da73112e5cbae16a468b541b75ee5f7f2d3f48212b0b1c250b08fdd6",
+  "identity": "github:1062458369",
+  "license": "MIT",
+  "name": "alibaba/page-agent",
+  "repository": "https://github.com/alibaba/page-agent",
+  "repositoryId": "1062458369",
+  "site": "https://github.com/alibaba/page-agent",
+  "sourceSignature": "2be277d9ff7e4abc572d3bd8410cf0ec6a2a397f759895ffa52c4c76aa21883f",
+  "summary": [
+    "据发布者介绍，page-agent 是在网页内运行的 JavaScript 智能体，可用自然语言指令操作网页界面。",
+    "The publisher describes page-agent as an in-page JavaScript agent that lets users control a web interface with natural-language commands."
+  ],
+  "tested": false,
+  "type": "open-source",
+  "verificationSources": [
+    "https://api.github.com/search/repositories?page=3&per_page=30&q=topic%3Aai-agents+archived%3Afalse+fork%3Afalse&sort=stars"
+  ],
+  "verifiedAt": "2026-11-27"
+}

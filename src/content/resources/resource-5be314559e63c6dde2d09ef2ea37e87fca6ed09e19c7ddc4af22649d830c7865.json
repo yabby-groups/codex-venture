@@ -1,0 +1,31 @@
+{
+  "addedAt": "2026-11-27",
+  "categories": [
+    [
+      "模型配额监控",
+      "Model Quota Monitoring"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-25",
+  "id": "resource-5be314559e63c6dde2d09ef2ea37e87fca6ed09e19c7ddc4af22649d830c7865",
+  "identity": "openvsx:hiroomi.model-usage-display",
+  "install": "https://open-vsx.org/extension/hiroomi/model-usage-display",
+  "name": "Model Usage Display",
+  "platforms": [
+    "Open VSX"
+  ],
+  "site": "https://open-vsx.org/extension/hiroomi/model-usage-display",
+  "sourceSignature": "73f5b7f57caedc7fc57989acf7d46ead3063ca9832b04e80092dd67aee7b0aee",
+  "summary": [
+    "据发布者介绍，这款非官方扩展可在状态栏显示 Antigravity 的剩余模型配额，在仪表板中按模型查看，并提供配额重置时间通知。",
+    "The publisher says this unofficial extension displays remaining Antigravity model quotas in the status bar, breaks them down by model in a dashboard, and sends reset-time notifications."
+  ],
+  "tested": false,
+  "type": "plugins",
+  "verificationSources": [
+    "https://open-vsx.org/api/-/search?offset=0&query=language+model&size=25",
+    "https://open-vsx.org/api/-/search?offset=475&query=Claude&size=25"
+  ],
+  "verifiedAt": "2026-11-27",
+  "version": "1.2.5"
+}

@@ -1,0 +1,28 @@
+{
+  "addedAt": "2026-11-27",
+  "categories": [
+    [
+      "事件驱动开发",
+      "Event-Driven Development"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-26",
+  "id": "resource-1e674cc92a39b0319b5b2211a60917f8a77ed50fa05fef31f8c85f2bc286d2e6",
+  "identity": "github-skill:1135891523:.github/plugins/azure-sdk-dotnet/skills/azure-eventgrid-dotnet/SKILL.md",
+  "name": "azure-eventgrid-dotnet",
+  "repository": "https://github.com/microsoft/skills",
+  "repositoryId": "1135891523",
+  "site": "https://github.com/microsoft/skills/blob/main/.github/plugins/azure-sdk-dotnet/skills/azure-eventgrid-dotnet/SKILL.md",
+  "sourcePath": ".github/plugins/azure-sdk-dotnet/skills/azure-eventgrid-dotnet/SKILL.md",
+  "sourceSignature": "02edcc9971795d459d9f201664d59afa7760d5d132512aa34b67fd3bb0d2f3a9",
+  "summary": [
+    "据微软介绍，这项技能指导开发者在 .NET 中通过 Azure Event Grid 发布和消费事件，包括使用 CloudEvent 和 EventGridEvent。",
+    "Microsoft describes this skill as guidance for publishing and consuming Azure Event Grid events in .NET, including working with CloudEvent and EventGridEvent."
+  ],
+  "tested": false,
+  "type": "skills",
+  "verificationSources": [
+    "https://github.com/microsoft/skills/blob/main/.github/plugins/azure-sdk-dotnet/skills/azure-eventgrid-dotnet/SKILL.md"
+  ],
+  "verifiedAt": "2026-11-27"
+}

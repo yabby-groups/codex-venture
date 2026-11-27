@@ -1,0 +1,28 @@
+{
+  "addedAt": "2026-11-27",
+  "categories": [
+    [
+      "智能体协作开发",
+      "Collaborative Agent Development"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-25",
+  "id": "resource-d821c56d2661da5817af7ae8abb403288f13cbec7da7f868bd38f52387b8234c",
+  "identity": "github:632871628",
+  "license": "NOASSERTION",
+  "name": "Agenta-AI/agenta",
+  "repository": "https://github.com/Agenta-AI/agenta",
+  "repositoryId": "632871628",
+  "site": "https://github.com/Agenta-AI/agenta",
+  "sourceSignature": "2fb4ef0c90d0a83322ec57f86849322cf1631cdbc6037533c4fcec16dc8efc3c",
+  "summary": [
+    "据发布者介绍，Agenta 提供共享工作空间，供团队协作构建智能体和自动化流程。",
+    "The publisher describes Agenta as a shared workspace for teams to build agents and automations."
+  ],
+  "tested": false,
+  "type": "tools",
+  "verificationSources": [
+    "https://api.github.com/search/repositories?page=1&per_page=30&q=topic%3Aai-automation+archived%3Afalse+fork%3Afalse&sort=stars"
+  ],
+  "verifiedAt": "2026-11-27"
+}

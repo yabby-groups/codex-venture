@@ -1,0 +1,28 @@
+{
+  "addedAt": "2026-11-27",
+  "categories": [
+    [
+      "编程学习",
+      "Programming Education"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-26",
+  "id": "resource-7e3771ad1bdb63d07012a23db16d5b24d5c325464af8ea45938a95c7da40897d",
+  "identity": "github:1075529639",
+  "license": "MIT",
+  "name": "NickScherbakov/codementor-ai-platform",
+  "repository": "https://github.com/NickScherbakov/codementor-ai-platform",
+  "repositoryId": "1075529639",
+  "site": "https://github.com/NickScherbakov/codementor-ai-platform",
+  "sourceSignature": "fe0596ff1b19f7477b4cd3d3a6cc212d7de77e988bfec389ac7b6645f45c7d27",
+  "summary": [
+    "据发布者介绍，学习者可通过自适应 AI 辅导和交互式挑战练习编程，即时运行代码，并借助学习分析跟踪进度。",
+    "The publisher says learners can practice programming with adaptive AI tutoring, interactive challenges, and real-time code execution, and track their progress with learning analytics."
+  ],
+  "tested": false,
+  "type": "resources",
+  "verificationSources": [
+    "https://api.github.com/search/repositories?page=2&per_page=30&q=topic%3Aai-education+archived%3Afalse+fork%3Afalse&sort=stars"
+  ],
+  "verifiedAt": "2026-11-27"
+}

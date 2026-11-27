@@ -1,0 +1,27 @@
+{
+  "addedAt": "2026-11-27",
+  "categories": [
+    [
+      "教学课件生成",
+      "Teaching Slide Generation"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-26",
+  "id": "resource-7a5c93b58bb553b97e0f4db104341fbd5fa09b8ee5d466b79b4af27463bb0b30",
+  "identity": "github:1170463584",
+  "name": "lk19940215/ai-teaching-ppt",
+  "repository": "https://github.com/lk19940215/ai-teaching-ppt",
+  "repositoryId": "1170463584",
+  "site": "https://github.com/lk19940215/ai-teaching-ppt",
+  "sourceSignature": "4bac5d13101b20985df445b5ac24512dffd28ea1594f6ff45a10aecc4fc077ef",
+  "summary": [
+    "据发布者介绍，教师可上传教材内容，用 AI 将其生成交互式 .pptx 课件。",
+    "The publisher says teachers can upload textbook content and use AI to turn it into interactive .pptx slides."
+  ],
+  "tested": false,
+  "type": "resources",
+  "verificationSources": [
+    "https://api.github.com/search/repositories?page=2&per_page=30&q=topic%3Aai-education+archived%3Afalse+fork%3Afalse&sort=stars"
+  ],
+  "verifiedAt": "2026-11-27"
+}

@@ -1,0 +1,28 @@
+{
+  "addedAt": "2026-11-27",
+  "categories": [
+    [
+      "AI 应用工作流",
+      "AI Application Workflows"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-26",
+  "id": "resource-f407d5b2b2dec984867d0308567f43c8563c5d1904c87e75734984a0f57503f3",
+  "identity": "github:675911200",
+  "license": "MIT",
+  "name": "moyangzhan/langchain4j-aideepin",
+  "repository": "https://github.com/moyangzhan/langchain4j-aideepin",
+  "repositoryId": "675911200",
+  "site": "https://github.com/moyangzhan/langchain4j-aideepin",
+  "sourceSignature": "f0407e692ccb7e4f5e6c8a6f29128095bc895de9ef1414d6f9c318016ea45f4b",
+  "summary": [
+    "据发布者介绍，该平台可用于 AI 对话、图像生成、知识库检索和工作流搭建，并提供语音识别、语音合成和长期记忆功能。",
+    "The publisher says this platform lets users chat with AI, generate images, retrieve information from knowledge bases, and build workflows. It also lists speech recognition, text-to-speech, and long-term memory."
+  ],
+  "tested": false,
+  "type": "workflows",
+  "verificationSources": [
+    "https://api.github.com/search/repositories?page=1&per_page=30&q=topic%3Aai-workflow+archived%3Afalse+fork%3Afalse&sort=stars"
+  ],
+  "verifiedAt": "2026-11-27"
+}

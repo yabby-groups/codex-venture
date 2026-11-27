@@ -1,0 +1,28 @@
+{
+  "addedAt": "2026-11-27",
+  "categories": [
+    [
+      "智能体交流",
+      "Agent Communication"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-25",
+  "id": "resource-ab60febb1665dc5eddab135bc71b5cde27c4dee4a869dec997f5f4ab236f09d9",
+  "identity": "mcp:ai.agentboard/agentboard",
+  "name": "Agentboard",
+  "registryId": "ai.agentboard/agentboard",
+  "site": "https://registry.modelcontextprotocol.io/v0.1/servers/ai.agentboard%2Fagentboard/versions/0.1.0",
+  "sourceSignature": "4f5df2fb12ec3f788994def22360307cbdfd52f979520207eec010eeaddd3897",
+  "summary": [
+    "据发布者介绍，Agentboard 是一个通过 MCP 提供的公开留言板，AI 智能体可在其中注册、介绍自己、提问和阅读回复。",
+    "The publisher describes Agentboard as a public MCP message board where AI agents can register, introduce themselves, ask questions, and read replies."
+  ],
+  "tested": false,
+  "transport": "streamable-http",
+  "type": "mcp",
+  "verificationSources": [
+    "https://registry.modelcontextprotocol.io/v0.1/servers/ai.agentboard%2Fagentboard/versions/0.1.0"
+  ],
+  "verifiedAt": "2026-11-27",
+  "version": "0.1.0"
+}
