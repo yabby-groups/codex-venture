@@ -1,0 +1,30 @@
+{
+  "addedAt": "2026-11-28",
+  "categories": [
+    [
+      "编程助手接入本地模型",
+      "Local models in coding assistants"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-25",
+  "id": "resource-85395e464fcf8194f01a2222b5d7abb7c0fe225de62a072685cc02a0d6c83afa",
+  "identity": "openvsx:xardiant.strata-copilot-chat",
+  "install": "https://open-vsx.org/extension/xardiant/strata-copilot-chat",
+  "name": "Strata for Copilot Chat",
+  "platforms": [
+    "Open VSX"
+  ],
+  "site": "https://open-vsx.org/extension/xardiant/strata-copilot-chat",
+  "sourceSignature": "e040d7a6e73e64e6aeff6cffe86f26ebf40f590d13012dfdc944242cacd2bc4e",
+  "summary": [
+    "从 Open VSX 安装 Strata for Copilot Chat，即可在 GitHub Copilot Chat 中调用由 Strata 提供的本地模型。据发布者介绍，扩展支持工具调用和图像输入，并会在 Strata 重启后自动重连。使用时需要运行提供 OpenAI 兼容端点的本地 Strata 服务。 https://open-vsx.org/extension/xardiant/strata-copilot-chat",
+    "Install Strata for Copilot Chat from Open VSX to use local models served by Strata in GitHub Copilot Chat. The publisher says the extension supports tool calls and image inputs and reconnects automatically when Strata restarts. It requires a local Strata service with an OpenAI-compatible endpoint. https://open-vsx.org/extension/xardiant/strata-copilot-chat"
+  ],
+  "tested": false,
+  "type": "plugins",
+  "verificationSources": [
+    "https://open-vsx.org/api/-/search?offset=50&query=Copilot&size=25"
+  ],
+  "verifiedAt": "2026-11-28",
+  "version": "0.3.0"
+}
