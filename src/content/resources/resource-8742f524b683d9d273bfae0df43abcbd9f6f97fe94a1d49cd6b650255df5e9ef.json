@@ -1,0 +1,31 @@
+{
+  "addedAt": "2026-11-28",
+  "categories": [
+    [
+      "AI 聊天语音听写",
+      "Voice dictation for AI chat"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-25",
+  "id": "resource-8742f524b683d9d273bfae0df43abcbd9f6f97fe94a1d49cd6b650255df5e9ef",
+  "identity": "openvsx:yusishuma.voice-input-assistant",
+  "install": "https://open-vsx.org/extension/yusishuma/voice-input-assistant",
+  "name": "语音输入助手",
+  "platforms": [
+    "Open VSX"
+  ],
+  "site": "https://open-vsx.org/extension/yusishuma/voice-input-assistant",
+  "sourceSignature": "acd7fc6c750869fb0f05127fff03946c1364324348eaf70e017c1eb93aa506b0",
+  "summary": [
+    "据发布者介绍，这款扩展使用 Vosk 离线识别语音，自动补充标点，再将文字粘贴到 AI 聊天输入框。默认唤醒词为「小助小助」，结束词为「完毕」。可从 Open VSX 获取该扩展。https://open-vsx.org/extension/yusishuma/voice-input-assistant",
+    "The publisher says this extension uses Vosk for offline speech recognition, adds punctuation, and pastes the transcript into an AI chat input. The default wake and stop phrases are 小助小助 and 完毕. Get the extension from its Open VSX listing. https://open-vsx.org/extension/yusishuma/voice-input-assistant"
+  ],
+  "tested": false,
+  "type": "plugins",
+  "verificationSources": [
+    "https://open-vsx.org/api/-/search?offset=50&query=AI+assistant&size=25",
+    "https://open-vsx.org/api/-/search?offset=75&query=coding+assistant&size=25"
+  ],
+  "verifiedAt": "2026-11-28",
+  "version": "2.0.0"
+}

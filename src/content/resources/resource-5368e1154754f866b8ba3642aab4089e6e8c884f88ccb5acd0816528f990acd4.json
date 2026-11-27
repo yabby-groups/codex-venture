@@ -1,0 +1,28 @@
+{
+  "addedAt": "2026-11-28",
+  "categories": [
+    [
+      "GitHub 议题分流",
+      "GitHub issue triage"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-26",
+  "id": "resource-5368e1154754f866b8ba3642aab4089e6e8c884f88ccb5acd0816528f990acd4",
+  "identity": "github-skill:968197216:tools/caretaker-agent/cloudrun/triage-worker/.gemini/skills/quality/SKILL.md",
+  "name": "quality",
+  "repository": "https://github.com/google-gemini/gemini-cli",
+  "repositoryId": "968197216",
+  "site": "https://github.com/google-gemini/gemini-cli/blob/main/tools/caretaker-agent/cloudrun/triage-worker/.gemini/skills/quality/SKILL.md",
+  "sourcePath": "tools/caretaker-agent/cloudrun/triage-worker/.gemini/skills/quality/SKILL.md",
+  "sourceSignature": "152ab3f0f09925b8a50772fa653d3c2fe26cc4620e5def3bfcadf81846455ae0",
+  "summary": [
+    "将 GitHub 议题的标题和正文交给 quality 技能，按其规则生成 JSON 分流结果。该规则仅将提供了足够复现细节的系统性代码缺陷标为 OK，因此由用户自定义配置引起的问题不属于这一档。",
+    "Use the quality skill’s rubric to turn a GitHub issue title and body into a JSON triage assessment. The rubric reserves an OK rating for reports of systemic code defects with enough detail to reproduce the problem, so issues arising from user-defined settings fall outside that rating."
+  ],
+  "tested": false,
+  "type": "skills",
+  "verificationSources": [
+    "https://github.com/google-gemini/gemini-cli/blob/main/tools/caretaker-agent/cloudrun/triage-worker/.gemini/skills/quality/SKILL.md"
+  ],
+  "verifiedAt": "2026-11-28"
+}
