@@ -1,0 +1,28 @@
+{
+  "addedAt": "2026-11-27",
+  "categories": [
+    [
+      "考试监控与反馈",
+      "Exam Monitoring and Feedback"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-26",
+  "id": "resource-b9f07118e110ba7186749d0549180a4a8db196963d223b81f5ffe19ae442f293",
+  "identity": "github:1102587687",
+  "license": "MIT",
+  "name": "RakeshBabuGajula/Exam_Intellect",
+  "repository": "https://github.com/RakeshBabuGajula/Exam_Intellect",
+  "repositoryId": "1102587687",
+  "site": "https://github.com/RakeshBabuGajula/Exam_Intellect",
+  "sourceSignature": "54fba5bbb923e2661330c1a9bb97914f33a7ea9ec4b1339f3ba5cdf2b2175659",
+  "summary": [
+    "据发布者介绍，ExamIntellect 提供一个仪表板，可实时监控考试、接收提醒、跟踪考试场次、查看学生表现，并自动发送反馈邮件。",
+    "The publisher describes ExamIntellect as a dashboard for monitoring live exams, receiving real-time alerts, tracking sessions, reviewing student performance, and sending automated feedback emails."
+  ],
+  "tested": false,
+  "type": "resources",
+  "verificationSources": [
+    "https://api.github.com/search/repositories?page=2&per_page=30&q=topic%3Aai-education+archived%3Afalse+fork%3Afalse&sort=stars"
+  ],
+  "verifiedAt": "2026-11-27"
+}

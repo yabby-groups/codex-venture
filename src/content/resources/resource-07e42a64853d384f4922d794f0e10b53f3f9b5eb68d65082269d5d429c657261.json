@@ -1,0 +1,28 @@
+{
+  "addedAt": "2026-11-27",
+  "categories": [
+    [
+      "AI 工作流编排",
+      "AI Workflow Orchestration"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-27",
+  "id": "resource-07e42a64853d384f4922d794f0e10b53f3f9b5eb68d65082269d5d429c657261",
+  "identity": "github:1136916732",
+  "license": "MIT",
+  "name": "smileynet/line-cook",
+  "repository": "https://github.com/smileynet/line-cook",
+  "repositoryId": "1136916732",
+  "site": "https://github.com/smileynet/line-cook",
+  "sourceSignature": "06b0f9c410609b833976cdbcf3210aa6422e68947a7e02f38d325c26b3f2d311",
+  "summary": [
+    "据发布者介绍，这套工作流将 AI 任务分为准备、执行、交付和收尾四个阶段，并为执行过程设置约束。",
+    "The publisher describes a workflow that runs AI tasks with guardrails across four stages: prep, cook, serve, and tidy."
+  ],
+  "tested": false,
+  "type": "workflows",
+  "verificationSources": [
+    "https://api.github.com/search/repositories?page=7&per_page=30&q=topic%3Aai-workflow+archived%3Afalse+fork%3Afalse&sort=stars"
+  ],
+  "verifiedAt": "2026-11-27"
+}

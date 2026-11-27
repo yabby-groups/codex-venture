@@ -1,0 +1,27 @@
+{
+  "addedAt": "2026-11-27",
+  "categories": [
+    [
+      "机器学习教学",
+      "Machine Learning Education"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-26",
+  "id": "resource-ac37728f04d2d085a3f84cc09fd9a697ea4364370e486c17d40b441e3c024439",
+  "identity": "github:880490900",
+  "name": "AliValizade/ML_in_Uni",
+  "repository": "https://github.com/AliValizade/ML_in_Uni",
+  "repositoryId": "880490900",
+  "site": "https://github.com/AliValizade/ML_in_Uni",
+  "sourceSignature": "ad906e8242aa8bb99b0e652ceb1847dcc07c9525c4ebe58c150e18719f71f970",
+  "summary": [
+    "发布者分享了 Sadjad University 的机器学习课程材料，可用于通过 Python 学习回归、岭回归、感知机、线性判别分析和模型评估。",
+    "The publisher shares Sadjad University coursework for studying regression, ridge regression, the perceptron, linear discriminant analysis, and model evaluation with Python."
+  ],
+  "tested": false,
+  "type": "resources",
+  "verificationSources": [
+    "https://api.github.com/search/repositories?page=1&per_page=30&q=topic%3Amachine-learning-course+archived%3Afalse+fork%3Afalse&sort=stars"
+  ],
+  "verifiedAt": "2026-11-27"
+}

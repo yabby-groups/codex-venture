@@ -1,0 +1,28 @@
+{
+  "addedAt": "2026-11-27",
+  "categories": [
+    [
+      "AI 辅助项目管理",
+      "AI-Assisted Project Management"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-27",
+  "id": "resource-080b93020f62f11ad12f5688c82b71651b4fe56b1a76d3e3973970985fc60d00",
+  "identity": "github:1264246623",
+  "license": "MIT",
+  "name": "maysunAI/T00-zh",
+  "repository": "https://github.com/maysunAI/T00-zh",
+  "repositoryId": "1264246623",
+  "site": "https://github.com/maysunAI/T00-zh",
+  "sourceSignature": "17f34e1570cb617095c620db843f0fd2d034625d02bc20b2bd0ab65bf75bae84",
+  "summary": [
+    "发布者将 AI00 中文原版定位为一套与 Claude Code 协作管理多个个人项目的开发框架。",
+    "The publisher presents the original Chinese edition of the AI00 framework for working with Claude Code to manage multiple personal projects."
+  ],
+  "tested": false,
+  "type": "workflows",
+  "verificationSources": [
+    "https://api.github.com/search/repositories?page=13&per_page=30&q=topic%3Aai-workflow+archived%3Afalse+fork%3Afalse&sort=stars"
+  ],
+  "verifiedAt": "2026-11-27"
+}

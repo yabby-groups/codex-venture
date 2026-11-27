@@ -1,0 +1,30 @@
+{
+  "addedAt": "2026-11-27",
+  "categories": [
+    [
+      "文本转语音",
+      "Text-to-Speech"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-25",
+  "id": "resource-701f14d2d22f11820691be3432d3ba4ed75e5acdfe6eb8a2dd659c583dcb59fe",
+  "identity": "openvsx:larspunx.coding-voice",
+  "install": "https://open-vsx.org/extension/larspunx/coding-voice",
+  "name": "Coding Voice",
+  "platforms": [
+    "Open VSX"
+  ],
+  "site": "https://open-vsx.org/extension/larspunx/coding-voice",
+  "sourceSignature": "334c27108a77935138c500e2c4180a38379d4d7ec0ba840e21074c172a493995",
+  "summary": [
+    "据发布者介绍，Coding Voice 会在提示词处理完毕后朗读智能体的回复，支持在状态栏播放或暂停、使用多种语言，以及接入用户自己的文本转语音 API 密钥。",
+    "The publisher says Coding Voice reads agent responses aloud when a prompt finishes, with status-bar playback controls, multiple languages, and a user-supplied text-to-speech API key."
+  ],
+  "tested": false,
+  "type": "plugins",
+  "verificationSources": [
+    "https://open-vsx.org/api/-/search?offset=0&query=coding+assistant&size=25"
+  ],
+  "verifiedAt": "2026-11-27",
+  "version": "1.2.0"
+}

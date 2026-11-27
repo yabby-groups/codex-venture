@@ -1,0 +1,28 @@
+{
+  "addedAt": "2026-11-27",
+  "categories": [
+    [
+      "文档数据提取",
+      "Document Data Extraction"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-26",
+  "id": "resource-2dcbec9cb788e88eeba1d50a0dc582104ac2ee18d1ecf71246f71383e4d9b51e",
+  "identity": "github-skill:1135891523:.github/plugins/azure-sdk-java/skills/azure-ai-formrecognizer-java/SKILL.md",
+  "name": "azure-ai-formrecognizer-java",
+  "repository": "https://github.com/microsoft/skills",
+  "repositoryId": "1135891523",
+  "site": "https://github.com/microsoft/skills/blob/main/.github/plugins/azure-sdk-java/skills/azure-ai-formrecognizer-java/SKILL.md",
+  "sourcePath": ".github/plugins/azure-sdk-java/skills/azure-ai-formrecognizer-java/SKILL.md",
+  "sourceSignature": "159a3d60368f5f1d766d9a7b32273ee202f54f5475a12ba1669d35038518edd1",
+  "summary": [
+    "发布者提供一项技能，帮助开发者使用 Azure AI 文档智能 Java SDK 提取文档中的文本、表格和键值对，并构建自定义文档模型。",
+    "The publisher provides a skill for using the Azure AI Document Intelligence Java SDK to extract text, tables, and key-value pairs from documents and to build custom document models."
+  ],
+  "tested": false,
+  "type": "skills",
+  "verificationSources": [
+    "https://github.com/microsoft/skills/blob/main/.github/plugins/azure-sdk-java/skills/azure-ai-formrecognizer-java/SKILL.md"
+  ],
+  "verifiedAt": "2026-11-27"
+}

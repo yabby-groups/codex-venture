@@ -1,0 +1,28 @@
+{
+  "addedAt": "2026-11-27",
+  "categories": [
+    [
+      "广告创作与调研",
+      "Ad Creation and Research"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-25",
+  "id": "resource-bef340fd66ca4bfef68a5a6392fe3171f4bf5b6a3dbd7c60c26c219c755f5488",
+  "identity": "mcp:ai.adrio/adrio",
+  "name": "Adrio",
+  "registryId": "ai.adrio/adrio",
+  "site": "https://registry.modelcontextprotocol.io/v0.1/servers/ai.adrio%2Fadrio/versions/1.0.1",
+  "sourceSignature": "da5e8eb77e4ce33b81f6f1654ea02f8f784d82c09b35398ca06c1b55d5855452",
+  "summary": [
+    "据发布者介绍，Adrio 可用 AI 制作 Facebook 和 Instagram 广告素材，并调研竞争对手的广告。",
+    "The publisher says Adrio lets you use AI to create Facebook and Instagram ad creatives and research competitors’ ads."
+  ],
+  "tested": false,
+  "transport": "streamable-http",
+  "type": "mcp",
+  "verificationSources": [
+    "https://registry.modelcontextprotocol.io/v0.1/servers/ai.adrio%2Fadrio/versions/1.0.1"
+  ],
+  "verifiedAt": "2026-11-27",
+  "version": "1.0.1"
+}

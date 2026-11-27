@@ -1,0 +1,28 @@
+{
+  "addedAt": "2026-11-27",
+  "categories": [
+    [
+      "数据分析与大语言模型推理",
+      "Data Analytics and LLM Inference"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-26",
+  "id": "resource-232b6a879969c6d1d21f1e126ff82d1146101e36374e2a19576761c9c550896c",
+  "identity": "github:394089041",
+  "license": "Apache-2.0",
+  "name": "spiceai/spiceai",
+  "repository": "https://github.com/spiceai/spiceai",
+  "repositoryId": "394089041",
+  "site": "https://github.com/spiceai/spiceai",
+  "sourceSignature": "929e71d51ee065fb70c515080ab6d92653a09a2882d64ab557f3d4213eb54fed",
+  "summary": [
+    "据发布者介绍，Spice 是一款用 Rust 编写的引擎，可为业务数据库增加实时分析能力，并为使用这些数据的应用和智能体提供 SQL 查询、搜索和大语言模型推理。",
+    "The publisher describes Spice as a Rust engine that adds real-time analytics to an operational database and provides SQL queries, search, and LLM inference for apps and agents that use that data."
+  ],
+  "tested": false,
+  "type": "open-source",
+  "verificationSources": [
+    "https://api.github.com/search/repositories?page=2&per_page=30&q=topic%3Allm-inference+archived%3Afalse+fork%3Afalse&sort=stars"
+  ],
+  "verifiedAt": "2026-11-27"
+}

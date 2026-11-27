@@ -1,0 +1,28 @@
+{
+  "addedAt": "2026-11-27",
+  "categories": [
+    [
+      "社交媒体图片设计",
+      "Social Media Graphic Design"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-26",
+  "id": "resource-2a00c621db78207169d68f585a9a0052d989554c8c4f617d3a6962c2e2ef2d43",
+  "identity": "github:1251263546",
+  "license": "AGPL-3.0",
+  "name": "op7418/guizang-social-card-skill",
+  "repository": "https://github.com/op7418/guizang-social-card-skill",
+  "repositoryId": "1251263546",
+  "site": "https://github.com/op7418/guizang-social-card-skill",
+  "sourceSignature": "0cce6e27d3d948d3123d0bce5e763ca7ec00a071446ef3c9029f9a1884a736cd",
+  "summary": [
+    "据发布者介绍，这项技能可生成小红书多图帖和微信公众号 21:9 与 1:1 成套封面，并将单文件 HTML 设计转换为 PNG。",
+    "The publisher says this skill generates Xiaohongshu carousels and paired 21:9 and 1:1 WeChat Official Account covers, converting single-file HTML designs to PNG."
+  ],
+  "tested": false,
+  "type": "open-source",
+  "verificationSources": [
+    "https://api.github.com/search/repositories?page=1&per_page=30&q=topic%3Aimage-generation+archived%3Afalse+fork%3Afalse&sort=stars"
+  ],
+  "verifiedAt": "2026-11-27"
+}

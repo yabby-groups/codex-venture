@@ -1,0 +1,30 @@
+{
+  "addedAt": "2026-11-27",
+  "categories": [
+    [
+      "模型可视化",
+      "Model Visualization"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-25",
+  "id": "resource-6f390a20f6bd839afce9a7fa6035772cbd53a4864ae9415f88a591fa90aaf1cf",
+  "identity": "openvsx:tensorviz.tensorviz-vscode",
+  "install": "https://open-vsx.org/extension/tensorviz/tensorviz-vscode",
+  "name": "tensorViz — PyTorch & JAX Model Visualizer",
+  "platforms": [
+    "Open VSX"
+  ],
+  "site": "https://open-vsx.org/extension/tensorviz/tensorviz-vscode",
+  "sourceSignature": "e463264dbd981ef035c492993877f2052004c5369c6a20c466708e71c1747267",
+  "summary": [
+    "据发布者介绍，tensorViz 可查看 PyTorch 和 JAX/Flax 模型图、检查张量形状、跳转到 Python 源代码，并查看 PyTorch 模型架构的变更。",
+    "The publisher says tensorViz lets you explore PyTorch and JAX/Flax model graphs, inspect tensor shapes, jump to Python source, and review PyTorch architecture changes."
+  ],
+  "tested": false,
+  "type": "plugins",
+  "verificationSources": [
+    "https://open-vsx.org/api/-/search?offset=25&query=language+model&size=25"
+  ],
+  "verifiedAt": "2026-11-27",
+  "version": "1.0.3"
+}
