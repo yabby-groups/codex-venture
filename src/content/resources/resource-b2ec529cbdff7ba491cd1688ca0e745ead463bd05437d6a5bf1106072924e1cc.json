@@ -1,0 +1,28 @@
+{
+  "addedAt": "2026-11-27",
+  "categories": [
+    [
+      "游戏界面设计",
+      "Game UI Design"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-26",
+  "id": "resource-b2ec529cbdff7ba491cd1688ca0e745ead463bd05437d6a5bf1106072924e1cc",
+  "identity": "github:1322626388",
+  "license": "MIT",
+  "name": "guiguiyan930-source/game-ui-design-workflow",
+  "repository": "https://github.com/guiguiyan930-source/game-ui-design-workflow",
+  "repositoryId": "1322626388",
+  "site": "https://github.com/guiguiyan930-source/game-ui-design-workflow",
+  "sourceSignature": "a7a40752cfeef6d2e6865cff117639a9596a4f4e5e6991344bf1259b499d0b15",
+  "summary": [
+    "据项目介绍，这套 Cursor Agent Skills 工作流可生成游戏界面原型、切换视觉风格、将设计延展到新页面，并将页面拆分为组件。它通过 Spec-Kit 文档、视觉契约和资源清单协调多页面设计。",
+    "The project describes a Cursor Agent Skills workflow for generating game UI prototypes, switching visual styles, extending designs to new screens, and breaking screens into components. It uses Spec-Kit documents, visual contracts, and asset inventories to coordinate design decisions across screens."
+  ],
+  "tested": false,
+  "type": "workflows",
+  "verificationSources": [
+    "https://api.github.com/search/repositories?page=1&per_page=30&q=topic%3Aai-workflow+archived%3Afalse+fork%3Afalse&sort=stars"
+  ],
+  "verifiedAt": "2026-11-27"
+}

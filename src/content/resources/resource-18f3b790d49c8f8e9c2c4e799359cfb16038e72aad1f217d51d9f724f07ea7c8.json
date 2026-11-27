@@ -1,0 +1,29 @@
+{
+  "addedAt": "2026-11-27",
+  "categories": [
+    [
+      "文本生成",
+      "Text Generation"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-25",
+  "id": "resource-18f3b790d49c8f8e9c2c4e799359cfb16038e72aad1f217d51d9f724f07ea7c8",
+  "identity": "hf:qwen/qwen2.5-3b-instruct",
+  "name": "Qwen/Qwen2.5-3B-Instruct",
+  "site": "https://huggingface.co/Qwen/Qwen2.5-3B-Instruct",
+  "sourceSignature": "be80af210ee634b05756a42fd9cb871aa7f0c917d04e3f7b9b5a2098edfd8776",
+  "summary": [
+    "Qwen 将 Qwen2.5-3B-Instruct 列为文本生成模型，可根据提示生成英文回复。",
+    "Qwen lists Qwen2.5-3B-Instruct as a text-generation model for producing English responses to prompts."
+  ],
+  "tags": [
+    "text-generation"
+  ],
+  "tested": false,
+  "type": "models",
+  "verificationSources": [
+    "https://huggingface.co/Qwen/Qwen2.5-3B-Instruct/raw/main/README.md",
+    "https://huggingface.co/api/models?direction=-1&full=true&limit=30&pipeline_tag=text-generation&sort=downloads"
+  ],
+  "verifiedAt": "2026-11-27"
+}

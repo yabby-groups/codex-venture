@@ -1,0 +1,28 @@
+{
+  "addedAt": "2026-11-27",
+  "categories": [
+    [
+      "AI 智能体管理",
+      "AI Agent Management"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-26",
+  "id": "resource-ac28509baaf32841513a816df79852adbe399da368d196d05976cf29e40f4b29",
+  "identity": "github:1193239504",
+  "license": "MIT",
+  "name": "Stanshy/AgentHub",
+  "repository": "https://github.com/Stanshy/AgentHub",
+  "repositoryId": "1193239504",
+  "site": "https://github.com/Stanshy/AgentHub",
+  "sourceSignature": "a2d6d45782e1a80e80a8eca2cd44000d7953e3dc9e20e4e33c8314051f152ecf",
+  "summary": [
+    "据项目介绍，AgentHub 可在一个 Electron 应用中集中管理 AI 智能体，并通过技能、钩子和文件监视器提高工作流的可追踪性。",
+    "The project describes AgentHub as an Electron app for managing AI agents in one place and using skills, hooks, and file watchers to make workflows easier to trace."
+  ],
+  "tested": false,
+  "type": "workflows",
+  "verificationSources": [
+    "https://api.github.com/search/repositories?page=2&per_page=30&q=topic%3Aai-workflow+archived%3Afalse+fork%3Afalse&sort=stars"
+  ],
+  "verifiedAt": "2026-11-27"
+}

@@ -1,0 +1,28 @@
+{
+  "addedAt": "2026-11-27",
+  "categories": [
+    [
+      "搜索与数据访问",
+      "Search and Data Access"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-25",
+  "id": "resource-967e9d90f1221ebab7a1d34e363b0c9a51fd735f172df44697438801f484dfa1",
+  "identity": "mcp:ai.agentapigate/youtube-transcript-video-subtitles-search-mcp",
+  "name": "AgentAPIHub — Zero-Signup x402 Base USDC Data & Search MCP Hub",
+  "registryId": "ai.agentapigate/youtube-transcript-video-subtitles-search-mcp",
+  "site": "https://registry.modelcontextprotocol.io/v0.1/servers/ai.agentapigate%2Fyoutube-transcript-video-subtitles-search-mcp/versions/1.0.0",
+  "sourceSignature": "c4788a4f7d257a22fb11fac1409c3fc2de7d4069bf290c8eaa35cd2c0df92c97",
+  "summary": [
+    "据发布者介绍，AgentAPIHub 是一个 MCP 中心，可接入搜索、X、视频、商业、招聘和美国证交会 EDGAR 数据。",
+    "The publisher describes AgentAPIHub as an MCP hub for accessing search, X, video, commerce, job listings, and SEC EDGAR data."
+  ],
+  "tested": false,
+  "transport": "streamable-http",
+  "type": "mcp",
+  "verificationSources": [
+    "https://registry.modelcontextprotocol.io/v0.1/servers/ai.agentapigate%2Fyoutube-transcript-video-subtitles-search-mcp/versions/1.0.0"
+  ],
+  "verifiedAt": "2026-11-27",
+  "version": "1.0.0"
+}

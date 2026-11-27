@@ -1,0 +1,28 @@
+{
+  "addedAt": "2026-11-27",
+  "categories": [
+    [
+      "个性化辅导",
+      "Personalized Tutoring"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-26",
+  "id": "resource-4996911bd019d29363ccf34adc8535b16e4543655e6b474a3d8fd52c4258dee9",
+  "identity": "github:1177971308",
+  "license": "MIT",
+  "name": "Li-Evan/BloomTutor",
+  "repository": "https://github.com/Li-Evan/BloomTutor",
+  "repositoryId": "1177971308",
+  "site": "https://github.com/Li-Evan/BloomTutor",
+  "sourceSignature": "ffff7bd3eb7276c3d3e435f123df0ee1b66e79139bf49b4a4f346802dfe05bc1",
+  "summary": [
+    "据项目介绍，BloomTutor 通过引导式提问开展辅导，并根据学习者调整课程，提供 Claude Code 技能和自托管网页应用。",
+    "The project describes BloomTutor as an AI tutor that uses guiding questions and adapts lessons to the learner, with a Claude Code skill and a self-hosted web app."
+  ],
+  "tested": false,
+  "type": "resources",
+  "verificationSources": [
+    "https://api.github.com/search/repositories?page=1&per_page=30&q=topic%3Aai-education+archived%3Afalse+fork%3Afalse&sort=stars"
+  ],
+  "verifiedAt": "2026-11-27"
+}

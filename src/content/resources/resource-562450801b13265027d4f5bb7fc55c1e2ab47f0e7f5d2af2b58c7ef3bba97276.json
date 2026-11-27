@@ -1,0 +1,33 @@
+{
+  "addedAt": "2026-11-27",
+  "categories": [
+    [
+      "聊天记录管理",
+      "Chat History Management"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-25",
+  "id": "resource-562450801b13265027d4f5bb7fc55c1e2ab47f0e7f5d2af2b58c7ef3bba97276",
+  "identity": "openvsx:arbuzov.copilot-chat-history",
+  "install": "https://open-vsx.org/extension/arbuzov/copilot-chat-history",
+  "name": "Copilot Chat History",
+  "platforms": [
+    "Open VSX"
+  ],
+  "site": "https://open-vsx.org/extension/arbuzov/copilot-chat-history",
+  "sourceSignature": "87731d5f56793c13b93389c956543e90544fdae5c685897d1109590176680fc0",
+  "summary": [
+    "据发布者介绍，这款扩展可按工作区浏览、搜索和管理 GitHub Copilot 聊天记录。",
+    "The listing describes an extension for browsing, searching, and managing GitHub Copilot chat history by workspace."
+  ],
+  "tested": false,
+  "type": "plugins",
+  "verificationSources": [
+    "https://open-vsx.org/api/-/search?offset=200&query=AI+assistant&size=25",
+    "https://open-vsx.org/api/-/search?offset=25&query=Copilot&size=25",
+    "https://open-vsx.org/api/-/search?offset=325&query=coding+assistant&size=25",
+    "https://open-vsx.org/api/-/search?offset=350&query=coding+assistant&size=25"
+  ],
+  "verifiedAt": "2026-11-27",
+  "version": "1.2.3"
+}

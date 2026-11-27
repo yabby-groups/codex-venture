@@ -1,0 +1,28 @@
+{
+  "addedAt": "2026-11-27",
+  "categories": [
+    [
+      "云服务建议管理",
+      "Cloud Recommendation Management"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-26",
+  "id": "resource-01fcc6ad0dd2a659f0faca4244e5a94078f7216d4d4f105886e554e79da7e6cc",
+  "identity": "github-skill:1135891523:.github/plugins/azure-advisor/skills/azure-advisor/SKILL.md",
+  "name": "azure-advisor",
+  "repository": "https://github.com/microsoft/skills",
+  "repositoryId": "1135891523",
+  "site": "https://github.com/microsoft/skills/blob/main/.github/plugins/azure-advisor/skills/azure-advisor/SKILL.md",
+  "sourcePath": ".github/plugins/azure-advisor/skills/azure-advisor/SKILL.md",
+  "sourceSignature": "2acbc5bfca669ee41a12e927f58a6bce149cb428c39fda4b9b0c5978e60cddc0",
+  "summary": [
+    "据微软介绍，这项技能可用于查看 Azure Advisor 建议、确定处理优先级、查询服务退役信息，以及更新建议状态。",
+    "Microsoft describes this skill as a way to review and prioritize Azure Advisor recommendations, check service retirements, and update recommendation status."
+  ],
+  "tested": false,
+  "type": "skills",
+  "verificationSources": [
+    "https://github.com/microsoft/skills/blob/main/.github/plugins/azure-advisor/skills/azure-advisor/SKILL.md"
+  ],
+  "verifiedAt": "2026-11-27"
+}

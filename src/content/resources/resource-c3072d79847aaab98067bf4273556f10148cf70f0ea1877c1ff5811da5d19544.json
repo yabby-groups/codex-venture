@@ -1,0 +1,28 @@
+{
+  "addedAt": "2026-11-27",
+  "categories": [
+    [
+      "微信操作自动化",
+      "WeChat Automation"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-25",
+  "id": "resource-c3072d79847aaab98067bf4273556f10148cf70f0ea1877c1ff5811da5d19544",
+  "identity": "github:1227123001",
+  "license": "MIT",
+  "name": "wq19901103wq/wechat-mac-rpa",
+  "repository": "https://github.com/wq19901103wq/wechat-mac-rpa",
+  "repositoryId": "1227123001",
+  "site": "https://github.com/wq19901103wq/wechat-mac-rpa",
+  "sourceSignature": "ea03e06a9f8636a5c5ce572ffcf119caf648c46a4c01e99e55972874de88bee7",
+  "summary": [
+    "据发布者介绍，该框架结合多模态视觉感知与大语言模型智能体，实现微信界面操作自动化。",
+    "The publisher describes a framework that combines multimodal visual perception with an LLM agent to automate interactions with WeChat."
+  ],
+  "tested": false,
+  "type": "tools",
+  "verificationSources": [
+    "https://api.github.com/search/repositories?page=1&per_page=30&q=topic%3Aai-automation+archived%3Afalse+fork%3Afalse&sort=stars"
+  ],
+  "verifiedAt": "2026-11-27"
+}

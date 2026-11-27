@@ -1,0 +1,27 @@
+{
+  "addedAt": "2026-11-27",
+  "categories": [
+    [
+      "大语言模型教学",
+      "LLM Education"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-26",
+  "id": "resource-4671603003ede4cfa00758d34a5192a28bbd17ac20e472a3d22e12564e75173b",
+  "identity": "github:994497117",
+  "name": "leannchen86/llm-arithmetic-manim",
+  "repository": "https://github.com/leannchen86/llm-arithmetic-manim",
+  "repositoryId": "994497117",
+  "site": "https://github.com/leannchen86/llm-arithmetic-manim",
+  "sourceSignature": "ed43febffe3b09cdde046098c6280a764b54a598180a9aea32b70f90920da1da",
+  "summary": [
+    "作者提供 Manim 动画，演示大语言模型如何表示和转换算术提示。",
+    "The author provides Manim animations that illustrate how large language models represent and transform arithmetic prompts."
+  ],
+  "tested": false,
+  "type": "resources",
+  "verificationSources": [
+    "https://api.github.com/search/repositories?page=2&per_page=30&q=topic%3Aai-education+archived%3Afalse+fork%3Afalse&sort=stars"
+  ],
+  "verifiedAt": "2026-11-27"
+}
