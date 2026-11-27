@@ -1,0 +1,30 @@
+{
+  "addedAt": "2026-11-28",
+  "categories": [
+    [
+      "编辑器无障碍",
+      "Editor Accessibility"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-25",
+  "id": "resource-8ccd3bb27945433bbaafc480b603f9b262b0215d51e79a17568496004ea74043",
+  "identity": "openvsx:yechielby.copilot-chat-rtl",
+  "install": "https://open-vsx.org/extension/yechielby/copilot-chat-rtl",
+  "name": "GitHub Copilot Chat RTL Support",
+  "platforms": [
+    "Open VSX"
+  ],
+  "site": "https://open-vsx.org/extension/yechielby/copilot-chat-rtl",
+  "sourceSignature": "402237f55d549211dc1407ba27f5ab86e63a2ce6234c4a9c8fdf51e9dbea773b",
+  "summary": [
+    "可从 Open VSX 安装。发布者列出的宿主包括 VS Code、Cursor 和 Antigravity。使用 ⇄ 按钮可将 GitHub Copilot Chat 消息切换为从右到左、右对齐的排版，方便阅读希伯来语、阿拉伯语或波斯语。代码块和其余界面仍保持从左到右。https://open-vsx.org/extension/yechielby/copilot-chat-rtl",
+    "Install from Open VSX. The publisher lists VS Code, Cursor, and Antigravity as supported hosts. Use the ⇄ toggle to right-align GitHub Copilot Chat messages for Hebrew, Arabic, or Persian. Code blocks and the surrounding interface stay left-to-right. https://open-vsx.org/extension/yechielby/copilot-chat-rtl"
+  ],
+  "tested": false,
+  "type": "plugins",
+  "verificationSources": [
+    "https://open-vsx.org/api/-/search?offset=25&query=Copilot&size=25"
+  ],
+  "verifiedAt": "2026-11-28",
+  "version": "0.1.4"
+}
