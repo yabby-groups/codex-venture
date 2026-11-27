@@ -1,0 +1,31 @@
+{
+  "addedAt": "2026-11-27",
+  "categories": [
+    [
+      "智能体配置迁移",
+      "Agent configuration migration"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-25",
+  "id": "resource-f2fb63a1599e7c06bdd742d4aa622a6ce54f6c438fe4919e93598ea83781a3fd",
+  "identity": "github-skill:1103643573:skills/.curated/migrate-to-codex/SKILL.md",
+  "name": "migrate-to-codex",
+  "platforms": [
+    "Codex"
+  ],
+  "repository": "https://github.com/openai/skills",
+  "repositoryId": "1103643573",
+  "site": "https://github.com/openai/skills/blob/main/skills/.curated/migrate-to-codex/SKILL.md",
+  "sourcePath": "skills/.curated/migrate-to-codex/SKILL.md",
+  "sourceSignature": "8f377c36c2a7ea0fd96671092fcff26c201db674b5657b9e5058173d6cd9cc08",
+  "summary": [
+    "该技能的说明涵盖将受支持的 Claude Code 指令、技能、智能体和 MCP 配置迁移到 Codex 的项目级或全局文件。",
+    "The skill description covers migrating supported Claude Code instructions, skills, agents, and MCP settings into project-level or global Codex files."
+  ],
+  "tested": false,
+  "type": "skills",
+  "verificationSources": [
+    "https://github.com/openai/skills/blob/main/skills/.curated/migrate-to-codex/SKILL.md"
+  ],
+  "verifiedAt": "2026-11-27"
+}

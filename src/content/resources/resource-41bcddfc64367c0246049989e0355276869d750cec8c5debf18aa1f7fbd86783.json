@@ -1,0 +1,28 @@
+{
+  "addedAt": "2026-11-27",
+  "categories": [
+    [
+      "编程智能体上下文管理",
+      "Coding agent context management"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-26",
+  "id": "resource-41bcddfc64367c0246049989e0355276869d750cec8c5debf18aa1f7fbd86783",
+  "identity": "github:1122851911",
+  "license": "MIT",
+  "name": "knowns-dev/knowns",
+  "repository": "https://github.com/knowns-dev/knowns",
+  "repositoryId": "1122851911",
+  "site": "https://github.com/knowns-dev/knowns",
+  "sourceSignature": "dcb832331f9f111fd7cab1b0ccd7dd49616d4bbaa951234fb3674ebfe6ebf64a",
+  "summary": [
+    "项目介绍提出将任务、文档、规格和架构决策保存在代码仓库的 Markdown 文件中，供编程智能体工作时查阅。",
+    "The project describes keeping tasks, documentation, specifications, and architectural decisions in repository Markdown so coding agents can refer to them while working."
+  ],
+  "tested": false,
+  "type": "workflows",
+  "verificationSources": [
+    "https://api.github.com/search/repositories?page=1&per_page=30&q=topic%3Aai-workflow+archived%3Afalse+fork%3Afalse&sort=stars"
+  ],
+  "verifiedAt": "2026-11-27"
+}

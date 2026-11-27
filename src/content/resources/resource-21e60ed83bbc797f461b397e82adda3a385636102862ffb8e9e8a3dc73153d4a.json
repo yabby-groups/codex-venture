@@ -1,0 +1,28 @@
+{
+  "addedAt": "2026-11-27",
+  "categories": [
+    [
+      "机器学习入门",
+      "Machine learning education"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-26",
+  "id": "resource-21e60ed83bbc797f461b397e82adda3a385636102862ffb8e9e8a3dc73153d4a",
+  "identity": "github:769274315",
+  "license": "NOASSERTION",
+  "name": "egaoharu-kensei/ML-algorithms-from-scratch.-Course-for-beginners",
+  "repository": "https://github.com/egaoharu-kensei/ML-algorithms-from-scratch.-Course-for-beginners",
+  "repositoryId": "769274315",
+  "site": "https://github.com/egaoharu-kensei/ML-algorithms-from-scratch.-Course-for-beginners",
+  "sourceSignature": "73067d12e7a1065633179f0cf9444ae6b1678e9d54ebc6bb47a837ab859a1ac4",
+  "summary": [
+    "课程面向初学者，通过用 Python 从零实现算法来学习经典机器学习。",
+    "The course introduces classical machine learning by having beginners implement algorithms from scratch in Python."
+  ],
+  "tested": false,
+  "type": "resources",
+  "verificationSources": [
+    "https://api.github.com/search/repositories?page=1&per_page=30&q=topic%3Amachine-learning-course+archived%3Afalse+fork%3Afalse&sort=stars"
+  ],
+  "verifiedAt": "2026-11-27"
+}

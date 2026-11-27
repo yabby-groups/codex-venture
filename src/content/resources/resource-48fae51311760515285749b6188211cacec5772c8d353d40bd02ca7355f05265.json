@@ -1,0 +1,28 @@
+{
+  "addedAt": "2026-11-27",
+  "categories": [
+    [
+      "AI 辅助短剧制作",
+      "AI-assisted short drama production"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-26",
+  "id": "resource-48fae51311760515285749b6188211cacec5772c8d353d40bd02ca7355f05265",
+  "identity": "github:1251280424",
+  "license": "NOASSERTION",
+  "name": "Tenney95/AI-Canvas-tauri",
+  "repository": "https://github.com/Tenney95/AI-Canvas-tauri",
+  "repositoryId": "1251280424",
+  "site": "https://github.com/Tenney95/AI-Canvas-tauri",
+  "sourceSignature": "11d7c6d70c35bffad187d2d757be52073054fd7c5715d6f35f2d96f7e18799b6",
+  "summary": [
+    "项目介绍提供了用于编写短剧剧本、管理角色和制作分镜的画布，并配有图像与视频生成和剪辑工具。",
+    "The project describes a canvas for writing scripts, managing characters, and storyboarding short dramas, with tools for generating images and video and editing footage."
+  ],
+  "tested": false,
+  "type": "workflows",
+  "verificationSources": [
+    "https://api.github.com/search/repositories?page=1&per_page=30&q=topic%3Aai-workflow+archived%3Afalse+fork%3Afalse&sort=stars"
+  ],
+  "verifiedAt": "2026-11-27"
+}

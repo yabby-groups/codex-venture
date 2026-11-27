@@ -1,0 +1,28 @@
+{
+  "addedAt": "2026-11-27",
+  "categories": [
+    [
+      "提示词设计",
+      "Prompt design"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-26",
+  "id": "resource-41aae9eef8627ebedda4f8a83bf284c81bbbe125566da090042231f835233e5c",
+  "identity": "github:940595178",
+  "license": "Apache-2.0",
+  "name": "synaptiai/prompt-decorators",
+  "repository": "https://github.com/synaptiai/prompt-decorators",
+  "repositoryId": "940595178",
+  "site": "https://github.com/synaptiai/prompt-decorators",
+  "sourceSignature": "4482e8f8838ed104010522a080b2a3a3ddc183052e1dac0a8e1c068ae826a1e8",
+  "summary": [
+    "项目提供规范和 Python 参考实现，可组合提示词装饰器，引导语言模型生成响应。",
+    "The project provides a specification and a Python reference implementation for combining prompt decorators that guide how language models respond."
+  ],
+  "tested": false,
+  "type": "prompts",
+  "verificationSources": [
+    "https://api.github.com/search/repositories?page=1&per_page=30&q=topic%3Aprompt-templates+archived%3Afalse+fork%3Afalse&sort=stars"
+  ],
+  "verifiedAt": "2026-11-27"
+}

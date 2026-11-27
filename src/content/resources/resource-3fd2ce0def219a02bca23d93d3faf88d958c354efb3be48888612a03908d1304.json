@@ -1,0 +1,28 @@
+{
+  "addedAt": "2026-11-27",
+  "categories": [
+    [
+      "提示词流程自动化",
+      "Prompt workflow automation"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-26",
+  "id": "resource-3fd2ce0def219a02bca23d93d3faf88d958c354efb3be48888612a03908d1304",
+  "identity": "github:864098168",
+  "license": "NOASSERTION",
+  "name": "thibaultyou/prompt-library",
+  "repository": "https://github.com/thibaultyou/prompt-library",
+  "repositoryId": "864098168",
+  "site": "https://github.com/thibaultyou/prompt-library",
+  "sourceSignature": "89fd7a90d6f1b953bc0a2518909606c4ab8ba18cee03ef1bee29d6b7d05817cd",
+  "summary": [
+    "项目介绍提供了精选提示词库和命令行工具，可在本地或持续集成流程中运行提示词。",
+    "The project describes a curated prompt library and a command-line tool for running prompts locally or in continuous integration pipelines."
+  ],
+  "tested": false,
+  "type": "prompts",
+  "verificationSources": [
+    "https://api.github.com/search/repositories?page=1&per_page=30&q=topic%3Aprompt-templates+archived%3Afalse+fork%3Afalse&sort=stars"
+  ],
+  "verifiedAt": "2026-11-27"
+}

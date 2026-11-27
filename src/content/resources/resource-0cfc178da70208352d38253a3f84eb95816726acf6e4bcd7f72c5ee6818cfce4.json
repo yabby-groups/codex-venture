@@ -1,0 +1,28 @@
+{
+  "addedAt": "2026-11-27",
+  "categories": [
+    [
+      "个人 AI 助理",
+      "Personal AI assistance"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-26",
+  "id": "resource-0cfc178da70208352d38253a3f84eb95816726acf6e4bcd7f72c5ee6818cfce4",
+  "identity": "github:522158088",
+  "license": "MIT",
+  "name": "zhayujie/CowAgent",
+  "repository": "https://github.com/zhayujie/CowAgent",
+  "repositoryId": "522158088",
+  "site": "https://github.com/zhayujie/CowAgent",
+  "sourceSignature": "78a592afa84ea6be9bda4916f149f4162a09b305da5685779ee34ce0626fe6c6",
+  "summary": [
+    "项目介绍将 CowAgent 定位为个人 AI 助理，可规划任务、调用工具和技能，并在不同任务中利用记忆和已有知识。",
+    "The project describes CowAgent as a personal AI assistant that plans tasks, runs tools and skills, and uses memory and stored knowledge across tasks."
+  ],
+  "tested": false,
+  "type": "open-source",
+  "verificationSources": [
+    "https://api.github.com/search/repositories?page=2&per_page=30&q=topic%3Aai-agents+archived%3Afalse+fork%3Afalse&sort=stars"
+  ],
+  "verifiedAt": "2026-11-27"
+}

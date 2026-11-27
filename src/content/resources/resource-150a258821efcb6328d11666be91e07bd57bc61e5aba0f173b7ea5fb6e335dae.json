@@ -1,0 +1,29 @@
+{
+  "addedAt": "2026-11-27",
+  "categories": [
+    [
+      "语音转写与翻译",
+      "Speech transcription and translation"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-25",
+  "id": "resource-150a258821efcb6328d11666be91e07bd57bc61e5aba0f173b7ea5fb6e335dae",
+  "identity": "hf:openai/whisper-large-v2",
+  "name": "openai/whisper-large-v2",
+  "site": "https://huggingface.co/openai/whisper-large-v2",
+  "sourceSignature": "ff8ff22dd31292395f3dc44cd86592b655a3a2d913ae168c90d174c4adaaed99",
+  "summary": [
+    "模型卡介绍了如何将 Whisper Large v2 与 WhisperProcessor 配合使用，转写多语种语音或将其翻译成英语。模型卡也指出，准确率因语言和方言而异，输出可能包含音频中未说出的词语。",
+    "The model card describes using Whisper Large v2 with WhisperProcessor to transcribe multilingual speech or translate it into English. It notes that accuracy varies by language and dialect and that outputs may include words absent from the audio."
+  ],
+  "tags": [
+    "automatic-speech-recognition"
+  ],
+  "tested": false,
+  "type": "models",
+  "verificationSources": [
+    "https://huggingface.co/api/models?cursor=eyIkb3IiOlt7ImRvd25sb2FkcyI6MTEzMzI0LCJfaWQiOnsiJGd0IjoiNmE2YTM5N2VjNTdiNDM2MzJjNjQ0ZWI4In19LHsiZG93bmxvYWRzIjp7IiRsdCI6MTEzMzI0fX0seyJkb3dubG9hZHMiOm51bGx9XSwic2VhcmNoU2VxdWVuY2VUb2tlbiI6IkNOMkR4QUlhQ1NFQUFBQUF3S3I3UUJvT1dneHFhamwreFh0RFl5eGtUcmdpRGxvTWFtbzVmc1Y3UTJNc1pFNjQifQ%3D%3D&direction=-1&full=true&limit=30&pipeline_tag=automatic-speech-recognition&sort=downloads",
+    "https://huggingface.co/openai/whisper-large-v2/raw/main/README.md"
+  ],
+  "verifiedAt": "2026-11-27"
+}
