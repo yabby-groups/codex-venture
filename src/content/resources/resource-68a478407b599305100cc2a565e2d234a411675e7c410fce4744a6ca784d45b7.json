@@ -1,0 +1,27 @@
+{
+  "addedAt": "2026-11-27",
+  "categories": [
+    [
+      "AI 实战学习",
+      "Applied AI education"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-26",
+  "id": "resource-68a478407b599305100cc2a565e2d234a411675e7c410fce4744a6ca784d45b7",
+  "identity": "github:1098036116",
+  "name": "shychee/py_ai_tutorial",
+  "repository": "https://github.com/shychee/py_ai_tutorial",
+  "repositoryId": "1098036116",
+  "site": "https://github.com/shychee/py_ai_tutorial",
+  "sourceSignature": "5e8dd8ed792c8a75cab4386d0a0509776cd211a37aceb72186d7ab16e3043533",
+  "summary": [
+    "据作者介绍，这套教程面向 Python 后端工程师，通过 17 个行业项目练习机器学习、深度学习和大模型应用开发。",
+    "The author presents 17 industry projects for Python backend engineers to practice machine learning, deep learning, and large-model application development."
+  ],
+  "tested": false,
+  "type": "resources",
+  "verificationSources": [
+    "https://api.github.com/search/repositories?page=2&per_page=30&q=topic%3Aai-education+archived%3Afalse+fork%3Afalse&sort=stars"
+  ],
+  "verifiedAt": "2026-11-27"
+}

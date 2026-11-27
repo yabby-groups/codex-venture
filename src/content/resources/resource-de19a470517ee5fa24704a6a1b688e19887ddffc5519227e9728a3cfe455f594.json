@@ -1,0 +1,28 @@
+{
+  "addedAt": "2026-11-27",
+  "categories": [
+    [
+      "研究知识管理",
+      "Research knowledge management"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-26",
+  "id": "resource-de19a470517ee5fa24704a6a1b688e19887ddffc5519227e9728a3cfe455f594",
+  "identity": "github:1259565283",
+  "license": "MIT",
+  "name": "iusztinpaul/ai-research-os-workshop",
+  "repository": "https://github.com/iusztinpaul/ai-research-os-workshop",
+  "repositoryId": "1259565283",
+  "site": "https://github.com/iusztinpaul/ai-research-os-workshop",
+  "sourceSignature": "93b6764c483d43ba7cef6c8cf5ee1ad3bee6ef0fe49f9c0a36e152443625f91a",
+  "summary": [
+    "这套工作坊通过幻灯片、视频和代码，介绍如何将个人知识库改造成由 AI 智能体持续维护的研究资料库。",
+    "The workshop uses slides, video, and code to show how to turn a personal knowledge base into a research archive maintained by AI agents."
+  ],
+  "tested": false,
+  "type": "workflows",
+  "verificationSources": [
+    "https://api.github.com/search/repositories?page=2&per_page=30&q=topic%3Aai-workflow+archived%3Afalse+fork%3Afalse&sort=stars"
+  ],
+  "verifiedAt": "2026-11-27"
+}

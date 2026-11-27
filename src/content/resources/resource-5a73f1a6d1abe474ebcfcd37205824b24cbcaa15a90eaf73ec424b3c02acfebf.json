@@ -1,0 +1,31 @@
+{
+  "addedAt": "2026-11-27",
+  "categories": [
+    [
+      "AI 编程辅助",
+      "AI coding assistance"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-25",
+  "id": "resource-5a73f1a6d1abe474ebcfcd37205824b24cbcaa15a90eaf73ec424b3c02acfebf",
+  "identity": "openvsx:gnassro.phi-agent",
+  "install": "https://open-vsx.org/extension/gnassro/phi-agent",
+  "name": "Phi — Pi AI Agent",
+  "platforms": [
+    "Open VSX"
+  ],
+  "site": "https://open-vsx.org/extension/gnassro/phi-agent",
+  "sourceSignature": "0286711575bf854446a2c62f9cbf27e4e0b94106140dd36958ea1728d6775674",
+  "summary": [
+    "据发布者介绍，Phi 将 Pi 编程智能体带入 VS Code，可接续会话，并实时查看智能体结合编辑器上下文生成的回复。",
+    "The publisher describes Phi as a way to use the Pi coding agent in VS Code, resume sessions, and see responses stream in as the agent uses editor context."
+  ],
+  "tested": false,
+  "type": "plugins",
+  "verificationSources": [
+    "https://open-vsx.org/api/-/search?offset=100&query=AI+assistant&size=25",
+    "https://open-vsx.org/api/-/search?offset=50&query=coding+assistant&size=25"
+  ],
+  "verifiedAt": "2026-11-27",
+  "version": "0.11.1"
+}

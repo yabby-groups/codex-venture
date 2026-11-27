@@ -1,0 +1,28 @@
+{
+  "addedAt": "2026-11-27",
+  "categories": [
+    [
+      "图像提示词编写",
+      "Image prompt writing"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-26",
+  "id": "resource-d1b1869c878fd662acfb4337a2703983d1afe87ba3b2ccec1b309911979b7b63",
+  "identity": "github:1191279929",
+  "license": "MIT",
+  "name": "Hainrixz/claude-banana",
+  "repository": "https://github.com/Hainrixz/claude-banana",
+  "repositoryId": "1191279929",
+  "site": "https://github.com/Hainrixz/claude-banana",
+  "sourceSignature": "b0eb800dcd469f0a6ff3fe66ca3c9deb1eb12cb3c664ef3859440f82c4554a56",
+  "summary": [
+    "据发布者介绍，claude-banana 采用七部分结构，并提供九种领域模式，帮助用户把初步构想写成图像生成提示词。",
+    "The publisher describes claude-banana as an agent that turns rough ideas into image generation prompts using a seven-part structure and modes for nine domains."
+  ],
+  "tested": false,
+  "type": "prompts",
+  "verificationSources": [
+    "https://api.github.com/search/repositories?page=1&per_page=30&q=topic%3Aprompt-templates+archived%3Afalse+fork%3Afalse&sort=stars"
+  ],
+  "verifiedAt": "2026-11-27"
+}

@@ -1,0 +1,28 @@
+{
+  "addedAt": "2026-11-27",
+  "categories": [
+    [
+      "旅行信息查询",
+      "Travel search"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-25",
+  "id": "resource-a3c21909dbe25c1a579dd561115139fe32cc9f3430d95dd98054c7dc3525af1c",
+  "identity": "mcp:ae.beachclubs/mcp",
+  "name": "BeachClubs.ae",
+  "registryId": "ae.beachclubs/mcp",
+  "site": "https://registry.modelcontextprotocol.io/v0.1/servers/ae.beachclubs%2Fmcp/versions/0.3.0",
+  "sourceSignature": "96bfe17040d51ce59a60afb27636f2568433549cb727344db862ba85e4e7dec9",
+  "summary": [
+    "据发布者介绍，这项 MCP 服务可搜索阿联酋七个酋长国的海滩俱乐部，并查询日票价格、设施、营业时间和活动。",
+    "The publisher says this MCP service lets you search for beach clubs across all seven emirates of the UAE and look up day-pass prices, amenities, opening hours, and events."
+  ],
+  "tested": false,
+  "transport": "streamable-http",
+  "type": "mcp",
+  "verificationSources": [
+    "https://registry.modelcontextprotocol.io/v0.1/servers/ae.beachclubs%2Fmcp/versions/0.3.0"
+  ],
+  "verifiedAt": "2026-11-27",
+  "version": "0.3.0"
+}

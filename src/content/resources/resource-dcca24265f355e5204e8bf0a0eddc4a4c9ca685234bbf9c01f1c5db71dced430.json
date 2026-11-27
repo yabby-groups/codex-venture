@@ -1,0 +1,28 @@
+{
+  "addedAt": "2026-11-27",
+  "categories": [
+    [
+      "AI 工作流编排",
+      "AI workflow orchestration"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-26",
+  "id": "resource-dcca24265f355e5204e8bf0a0eddc4a4c9ca685234bbf9c01f1c5db71dced430",
+  "identity": "github:1319927892",
+  "license": "AGPL-3.0",
+  "name": "alikon-art/DeterminFlow",
+  "repository": "https://github.com/alikon-art/DeterminFlow",
+  "repositoryId": "1319927892",
+  "site": "https://github.com/alikon-art/DeterminFlow",
+  "sourceSignature": "1134b59eac929b9b80f89769afd6ac07faf96025a4713b40aca93be4534abdb8",
+  "summary": [
+    "据发布者介绍，DeterminFlow 是一个运行时，用于构建、验证和恢复复杂的 AI 工作流，并将其部署为服务。",
+    "The publisher describes DeterminFlow as a runtime for building, validating, and recovering complex AI workflows and deploying them as services."
+  ],
+  "tested": false,
+  "type": "workflows",
+  "verificationSources": [
+    "https://api.github.com/search/repositories?page=1&per_page=30&q=topic%3Aai-workflow+archived%3Afalse+fork%3Afalse&sort=stars"
+  ],
+  "verifiedAt": "2026-11-27"
+}

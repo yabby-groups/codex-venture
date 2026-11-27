@@ -1,0 +1,28 @@
+{
+  "addedAt": "2026-11-27",
+  "categories": [
+    [
+      "机器学习课程",
+      "Machine learning education"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-26",
+  "id": "resource-6a5f2abb270e23ea881ee0cf9a8107bf346a3cd72b09839b4f8c3ed261c12183",
+  "identity": "github:1335734984",
+  "license": "MIT",
+  "name": "meharuhanzz/machine-learning-15days",
+  "repository": "https://github.com/meharuhanzz/machine-learning-15days",
+  "repositoryId": "1335734984",
+  "site": "https://github.com/meharuhanzz/machine-learning-15days",
+  "sourceSignature": "9b9babd6952b070bff6aca673969f94f719f8750d34e981878c9a8ff9121dfcc",
+  "summary": [
+    "据作者介绍，这门 15 天的 Python 课程带读者推导机器学习算法、从零实现并与 scikit-learn 的结果对照，还提供 5 个 Streamlit 项目实例。",
+    "The author’s 15-day Python course walks through deriving machine learning algorithms, implementing them from scratch, and checking results against scikit-learn. It also includes five worked Streamlit projects."
+  ],
+  "tested": false,
+  "type": "resources",
+  "verificationSources": [
+    "https://api.github.com/search/repositories?page=2&per_page=30&q=topic%3Amachine-learning-course+archived%3Afalse+fork%3Afalse&sort=stars"
+  ],
+  "verifiedAt": "2026-11-27"
+}

@@ -1,0 +1,28 @@
+{
+  "addedAt": "2026-11-27",
+  "categories": [
+    [
+      "音频语言模型",
+      "Audio language models"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-26",
+  "id": "resource-19ab957f7ab1c280995a900349eb30fce2ac2353acfb7232584a92cce301c637",
+  "identity": "github:587701234",
+  "license": "MIT",
+  "name": "enhuiz/vall-e",
+  "repository": "https://github.com/enhuiz/vall-e",
+  "repositoryId": "587701234",
+  "site": "https://github.com/enhuiz/vall-e",
+  "sourceSignature": "42bf241b61f30919b8035ac9d1c163f3de0de766e5a9e4acb5928c751f83e5df",
+  "summary": [
+    "据仓库介绍，这是 VALL-E 音频语言模型的非官方 PyTorch 实现，可供读者研究其实现方式。",
+    "The repository describes itself as an unofficial PyTorch implementation for studying how the VALL-E audio language model is implemented."
+  ],
+  "tested": false,
+  "type": "open-source",
+  "verificationSources": [
+    "https://api.github.com/search/repositories?page=2&per_page=30&q=topic%3Atext-to-speech+archived%3Afalse+fork%3Afalse&sort=stars"
+  ],
+  "verifiedAt": "2026-11-27"
+}

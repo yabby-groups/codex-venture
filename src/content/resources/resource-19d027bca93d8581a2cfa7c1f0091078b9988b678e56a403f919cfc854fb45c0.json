@@ -1,0 +1,28 @@
+{
+  "addedAt": "2026-11-27",
+  "categories": [
+    [
+      "多媒体处理",
+      "Multimedia processing"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-26",
+  "id": "resource-19d027bca93d8581a2cfa7c1f0091078b9988b678e56a403f919cfc854fb45c0",
+  "identity": "github-skill:1137388347:skills/remotion-multimedia/SKILL.md",
+  "name": "remotion-multimedia",
+  "repository": "https://github.com/remotion-dev/skills",
+  "repositoryId": "1137388347",
+  "site": "https://github.com/remotion-dev/skills/blob/main/skills/remotion-multimedia/SKILL.md",
+  "sourcePath": "skills/remotion-multimedia/SKILL.md",
+  "sourceSignature": "d9450da10240f96732638f3b816823c8885284f42fc7cb25d489e272a0b0df12",
+  "summary": [
+    "这份指南介绍如何在浏览器中用 Mediabunny 读取音频文件的时长，单位为秒。",
+    "The guide shows how to use Mediabunny to read an audio file’s duration in seconds in the browser."
+  ],
+  "tested": false,
+  "type": "skills",
+  "verificationSources": [
+    "https://github.com/remotion-dev/skills/blob/main/skills/remotion-multimedia/SKILL.md"
+  ],
+  "verifiedAt": "2026-11-27"
+}
