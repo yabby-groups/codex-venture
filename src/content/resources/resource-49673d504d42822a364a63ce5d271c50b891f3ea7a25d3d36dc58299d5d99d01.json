@@ -1,0 +1,28 @@
+{
+  "addedAt": "2026-11-27",
+  "categories": [
+    [
+      "编程智能体工作流",
+      "Coding agent workflows"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-26",
+  "id": "resource-49673d504d42822a364a63ce5d271c50b891f3ea7a25d3d36dc58299d5d99d01",
+  "identity": "github:1254212325",
+  "license": "MIT",
+  "name": "jturntdev/krypton",
+  "repository": "https://github.com/jturntdev/krypton",
+  "repositoryId": "1254212325",
+  "site": "https://github.com/jturntdev/krypton",
+  "sourceSignature": "761f8e9b27221a2738ab63be05e0aef0c14638547417b35a0149720a6621b254",
+  "summary": [
+    "据发布者介绍，Krypton 可帮助编程智能体按目标规划任务，并在确认任务完成前要求提供证据。",
+    "The publisher describes Krypton as a workflow for planning AI coding agent tasks around goals and requiring evidence before accepting completion."
+  ],
+  "tested": false,
+  "type": "workflows",
+  "verificationSources": [
+    "https://api.github.com/search/repositories?page=2&per_page=30&q=topic%3Aai-workflow+archived%3Afalse+fork%3Afalse&sort=stars"
+  ],
+  "verifiedAt": "2026-11-27"
+}

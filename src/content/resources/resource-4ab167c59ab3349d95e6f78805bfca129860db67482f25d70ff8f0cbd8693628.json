@@ -1,0 +1,28 @@
+{
+  "addedAt": "2026-11-27",
+  "categories": [
+    [
+      "多智能体研究",
+      "Multi-agent research"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-26",
+  "id": "resource-4ab167c59ab3349d95e6f78805bfca129860db67482f25d70ff8f0cbd8693628",
+  "identity": "github:1226607711",
+  "license": "NOASSERTION",
+  "name": "Starlight143/crucible",
+  "repository": "https://github.com/Starlight143/crucible",
+  "repositoryId": "1226607711",
+  "site": "https://github.com/Starlight143/crucible",
+  "sourceSignature": "f11eb3f5fefdfbf4758ae4dba252cf4f3d7078225098bd7c5faa8136176db7e2",
+  "summary": [
+    "据发布者介绍，Crucible 可协调多个智能体并行收集证据，从七个角度展开讨论，在分析中进行风险检查，并生成结构化结果。",
+    "The publisher describes Crucible as a research workflow that coordinates agents to gather evidence in parallel, debate it from seven perspectives, and apply risk checks during analysis before producing structured results."
+  ],
+  "tested": false,
+  "type": "workflows",
+  "verificationSources": [
+    "https://api.github.com/search/repositories?page=2&per_page=30&q=topic%3Aai-workflow+archived%3Afalse+fork%3Afalse&sort=stars"
+  ],
+  "verifiedAt": "2026-11-27"
+}

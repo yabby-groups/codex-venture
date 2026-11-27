@@ -1,0 +1,28 @@
+{
+  "addedAt": "2026-11-27",
+  "categories": [
+    [
+      "大模型上下文压缩",
+      "LLM context compression"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-25",
+  "id": "resource-b7d568274349c99b6a2b72ccf1fbbdb7470f6cda4e84cea211d722525cca2479",
+  "identity": "github:1129940957",
+  "license": "Apache-2.0",
+  "name": "headroomlabs-ai/headroom",
+  "repository": "https://github.com/headroomlabs-ai/headroom",
+  "repositoryId": "1129940957",
+  "site": "https://github.com/headroomlabs-ai/headroom",
+  "sourceSignature": "a2ab2d8e35337e1f5ac0f9c28adec804e3426902562b338ffbdf1cf0304993c5",
+  "summary": [
+    "据发布者介绍，Headroom 提供库、代理和 MCP 服务器，可在工具输出、日志、文件及检索增强生成（RAG）的文本片段送入语言模型之前压缩这些内容。",
+    "The publisher offers Headroom as a library, proxy, and MCP server for compressing tool outputs, logs, files, and retrieval-augmented generation (RAG) chunks before they reach a language model."
+  ],
+  "tested": false,
+  "type": "tools",
+  "verificationSources": [
+    "https://api.github.com/search/repositories?page=1&per_page=30&q=topic%3Arag+archived%3Afalse+fork%3Afalse&sort=stars"
+  ],
+  "verifiedAt": "2026-11-27"
+}

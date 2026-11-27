@@ -1,0 +1,28 @@
+{
+  "addedAt": "2026-11-27",
+  "categories": [
+    [
+      "编程智能体实践",
+      "Coding agent practices"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-25",
+  "id": "resource-83263ee268dd28f06b61d29cefc96ae4de99e398c3f2d0986490dfb569bdf291",
+  "identity": "mcp:academy.ase/periodic-system",
+  "name": "Agentic Engineering Periodic System",
+  "registryId": "academy.ase/periodic-system",
+  "site": "https://registry.modelcontextprotocol.io/v0.1/servers/academy.ase%2Fperiodic-system/versions/2026.4.1",
+  "sourceSignature": "f9d9955fcd6fb9bf5321eabae7477af8d97e7d45a317d5f6430eb56a47dc6cfa",
+  "summary": [
+    "据条目介绍，这项 MCP 资源汇集了使用编程智能体开发软件的实践，每项实践都附有可在自己代码仓库中执行的检查。",
+    "The listing describes an MCP resource for exploring software development practices that use coding agents, with a check for each practice that you can apply to your own repository."
+  ],
+  "tested": false,
+  "transport": "streamable-http",
+  "type": "mcp",
+  "verificationSources": [
+    "https://registry.modelcontextprotocol.io/v0.1/servers/academy.ase%2Fperiodic-system/versions/2026.4.1"
+  ],
+  "verifiedAt": "2026-11-27",
+  "version": "2026.4.1"
+}

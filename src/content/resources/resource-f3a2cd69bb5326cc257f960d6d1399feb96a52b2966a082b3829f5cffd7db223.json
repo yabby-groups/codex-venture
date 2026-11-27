@@ -1,0 +1,31 @@
+{
+  "addedAt": "2026-11-27",
+  "categories": [
+    [
+      "ASP.NET Core 开发",
+      "ASP.NET Core development"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-25",
+  "id": "resource-f3a2cd69bb5326cc257f960d6d1399feb96a52b2966a082b3829f5cffd7db223",
+  "identity": "github-skill:1103643573:skills/.curated/aspnet-core/SKILL.md",
+  "name": "aspnet-core",
+  "platforms": [
+    "Codex"
+  ],
+  "repository": "https://github.com/openai/skills",
+  "repositoryId": "1103643573",
+  "site": "https://github.com/openai/skills/blob/main/skills/.curated/aspnet-core/SKILL.md",
+  "sourcePath": "skills/.curated/aspnet-core/SKILL.md",
+  "sourceSignature": "7c1b1b4bc20c9c68d089f9e2ec795813dae7dd32495fc5d174da8140f5598e71",
+  "summary": [
+    "技能说明介绍了如何构建、审查和重构 ASP.NET Core 应用，涵盖选择应用模型、配置请求管道，以及使用 Blazor 或 Web API。",
+    "The skill description presents guidance for building, reviewing, and refactoring ASP.NET Core applications, including choosing an app model, configuring the request pipeline, and working with Blazor or web APIs."
+  ],
+  "tested": false,
+  "type": "skills",
+  "verificationSources": [
+    "https://github.com/openai/skills/blob/main/skills/.curated/aspnet-core/SKILL.md"
+  ],
+  "verifiedAt": "2026-11-27"
+}

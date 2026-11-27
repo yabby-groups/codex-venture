@@ -1,0 +1,29 @@
+{
+  "addedAt": "2026-11-27",
+  "categories": [
+    [
+      "语音识别",
+      "Speech recognition"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-25",
+  "id": "resource-16a2fb9184c18ddbe37d5759764ed63084776ad156ae316fa48ba57e6891d79d",
+  "identity": "hf:classla/wav2vec2-xls-r-parlaspeech-hr",
+  "name": "classla/wav2vec2-xls-r-parlaspeech-hr",
+  "site": "https://huggingface.co/classla/wav2vec2-xls-r-parlaspeech-hr",
+  "sourceSignature": "358b036f6e0d63e748d75b2d4f22b44aa443584f0a998828dedeee1b48933405",
+  "summary": [
+    "模型卡将这款 Wav2Vec2 XLS-R 模型列为克罗地亚语语音转写模型，并展示了使用 Transformers 时如何读取示例音频。",
+    "The model card lists this Wav2Vec2 XLS-R model for transcribing Croatian audio and shows how to load example audio for use with Transformers."
+  ],
+  "tags": [
+    "automatic-speech-recognition"
+  ],
+  "tested": false,
+  "type": "models",
+  "verificationSources": [
+    "https://huggingface.co/api/models?cursor=eyIkb3IiOlt7ImRvd25sb2FkcyI6MTEzMzI0LCJfaWQiOnsiJGd0IjoiNmE2YTM5N2VjNTdiNDM2MzJjNjQ0ZWI4In19LHsiZG93bmxvYWRzIjp7IiRsdCI6MTEzMzI0fX0seyJkb3dubG9hZHMiOm51bGx9XSwic2VhcmNoU2VxdWVuY2VUb2tlbiI6IkNOMkR4QUlhQ1NFQUFBQUF3S3I3UUJvT1dneHFhamwreFh0RFl5eGtUcmdpRGxvTWFtbzVmc1Y3UTJNc1pFNjQifQ%3D%3D&direction=-1&full=true&limit=30&pipeline_tag=automatic-speech-recognition&sort=downloads",
+    "https://huggingface.co/classla/wav2vec2-xls-r-parlaspeech-hr/raw/main/README.md"
+  ],
+  "verifiedAt": "2026-11-27"
+}

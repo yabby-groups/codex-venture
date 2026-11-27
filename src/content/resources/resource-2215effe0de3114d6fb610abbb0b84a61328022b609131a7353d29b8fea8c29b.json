@@ -1,0 +1,28 @@
+{
+  "addedAt": "2026-11-27",
+  "categories": [
+    [
+      "学习与备考",
+      "Study and exam preparation"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-26",
+  "id": "resource-2215effe0de3114d6fb610abbb0b84a61328022b609131a7353d29b8fea8c29b",
+  "identity": "github:1076088070",
+  "license": "NOASSERTION",
+  "name": "GPA95/SGPA",
+  "repository": "https://github.com/GPA95/SGPA",
+  "repositoryId": "1076088070",
+  "site": "https://github.com/GPA95/SGPA",
+  "sourceSignature": "039c9b58f29896c870f3ef38a6c05d56b1dcb359c6a9947d2008d8dd0defabe0",
+  "summary": [
+    "据发布者介绍，SGPA 是一款基于 Streamlit 的学习应用，使用 Gemini 2.5 Flash 讲解概念、总结 PDF、生成练习题并评估作答。",
+    "The publisher describes SGPA as a Streamlit study app that uses Gemini 2.5 Flash to explain concepts, summarize PDFs, generate practice quizzes, and evaluate answers."
+  ],
+  "tested": false,
+  "type": "resources",
+  "verificationSources": [
+    "https://api.github.com/search/repositories?page=2&per_page=30&q=topic%3Aai-education+archived%3Afalse+fork%3Afalse&sort=stars"
+  ],
+  "verifiedAt": "2026-11-27"
+}

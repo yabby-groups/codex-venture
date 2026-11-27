@@ -1,0 +1,28 @@
+{
+  "addedAt": "2026-11-27",
+  "categories": [
+    [
+      "本地大模型对话",
+      "Local LLM chat"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-26",
+  "id": "resource-0efc6c04cd4e3280c3e7f2179b98fc112619cb7cad20b1dc13ab1cd50ee83fdf",
+  "identity": "github:726390185",
+  "license": "MIT",
+  "name": "foldl/chatllm.cpp",
+  "repository": "https://github.com/foldl/chatllm.cpp",
+  "repositoryId": "726390185",
+  "site": "https://github.com/foldl/chatllm.cpp",
+  "sourceSignature": "43c37774ddc2f4efbe7ffda0cbd97f87f5874a541d4a0381ce6dd7f566050480",
+  "summary": [
+    "据项目介绍，chatllm.cpp 用 C++ 实现了多个模型，可在自己的电脑上使用 CPU 或 GPU 与模型实时对话。",
+    "The project describes chatllm.cpp as a C++ implementation for chatting in real time with several models on your own computer using a CPU or GPU."
+  ],
+  "tested": false,
+  "type": "open-source",
+  "verificationSources": [
+    "https://api.github.com/search/repositories?page=3&per_page=30&q=topic%3Allm-inference+archived%3Afalse+fork%3Afalse&sort=stars"
+  ],
+  "verifiedAt": "2026-11-27"
+}
