@@ -1,11 +1,12 @@
 ---
 import '../styles/site.css';
+import PrivacyControls from '../components/PrivacyControls.astro';
 import { jsonLd, organization } from '../lib/entities';
 import { allStories, categories, hubs, types } from '../lib/content';
-const { title = '全球 AI 资讯', description = '每日追踪全球 AI 模型、工具和产品更新。 Daily coverage of AI models, tools and product updates.', article = false, noindex = false, articleNav } = Astro.props;
+const { title = '全球 AI 资讯', description = '每日追踪全球 AI 模型、工具和产品更新。 Daily coverage of AI models, tools and product updates.', article = false, noindex = false, articleNav, ads = false } = Astro.props;
 const canonical = new URL(Astro.url.pathname, Astro.site);
-const mode = import.meta.env.VENTURE_WEB_ANALYTICS_MODE || 'automatic';
-const beaconToken = import.meta.env.CLOUDFLARE_WEB_ANALYTICS_SITE_TAG;
+const mode = import.meta.env.VENTURE_WEB_ANALYTICS_MODE || 'manual';
+const beaconToken = import.meta.env.CLOUDFLARE_WEB_ANALYTICS_SITE_TAG || '90f572bbf72d4f6bb3ef71bfdc6a4ab3';
 if (!['automatic', 'manual', 'disabled'].includes(mode) ||
     (mode === 'manual' && !/^[a-zA-Z0-9_-]{16,64}$/.test(beaconToken || ''))) {
   throw new Error('Invalid Cloudflare Web Analytics build configuration');
@@ -54,8 +55,18 @@ const moreMenuActive = more.some(([url]) => current(url));
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:title" content={pageTitle} />
   <meta name="twitter:description" content={description} />
-  {mode === 'manual' && <script is:inline defer src="https://static.cloudflareinsights.com/beacon.min.js"
-    data-cf-beacon={JSON.stringify({ token: beaconToken })}></script>}
+  {mode === 'manual' && <script is:inline define:vars={{ beaconToken }}>
+    document.addEventListener('DOMContentLoaded', () => {
+      const src = 'https://static.cloudflareinsights.com/beacon.min.js';
+      if (location.origin !== 'https://codex-venture.com' || navigator.webdriver ||
+          /HeadlessChrome|Codex-Venture-Test/i.test(navigator.userAgent) ||
+          document.querySelector('script[src^="' + src + '"]')) return;
+      const beacon = document.createElement('script');
+      beacon.src = src;
+      beacon.dataset.cfBeacon = JSON.stringify({ token: beaconToken });
+      document.head.append(beacon);
+    }, { once: true });
+  </script>}
   {noindex && <meta name="robots" content="noindex,follow" />}
   <script is:inline>
     try {
@@ -101,7 +112,8 @@ const moreMenuActive = more.some(([url]) => current(url));
       </div>
       <nav aria-label="页脚栏目 / Footer sections">{navigation.slice(1).map(([url, zh, en]) => <a href={url}>{zh} <small lang="en">{en}</small></a>)}</nav>
       <nav aria-label="网站信息 / Site information">
-        {[[ '/archive/', '归档', 'Archive'], ['/about/', '关于', 'About'], ['/editorial/', '编辑政策', 'Editorial policy'], ['/stats/', '内容统计', 'Publishing stats'], ['/privacy/', '隐私', 'Privacy'], ['/tags/', '标签', 'Tags']].map(([url, zh, en]) => <a href={url}>{zh} <small lang="en">{en}</small></a>)}
+        {[[ '/archive/', '归档', 'Archive'], ['/about/', '关于', 'About'], ['/editorial/', '编辑政策', 'Editorial policy'], ['/stats/', '内容统计', 'Publishing stats'], ['/privacy/', '隐私', 'Privacy'], ['/contact/', '联系', 'Contact'], ['/terms/', '条款', 'Terms'], ['/affiliate-disclosure/', '联盟推广', 'Affiliate disclosure'], ['/tags/', '标签', 'Tags']].map(([url, zh, en]) => <a href={url}>{zh} <small lang="en">{en}</small></a>)}
+        <PrivacyControls {ads} />
         <a href="/rss.xml">RSS ↗</a><a href="https://github.com/yabby-groups/codex-venture">GitHub ↗</a>
       </nav>
     </div>

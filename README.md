@@ -45,3 +45,5 @@ npm run preview
 ## 免费资讯采集
 
 固定来源见 [来源注册表](config/sources.yaml)。主动发现、二次证据、平台访问条件和实测记录见 [免费采集运营说明](docs/free-collection.md)。采集服务费用为零，编辑使用现有模型预算。
+
+广告、联盟推广、流量诊断与人工审核步骤见 [流量与商业化运营](docs/monetization.md)。

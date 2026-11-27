@@ -1,16 +1,18 @@
 """Private daily snapshots and reproducible period reports."""
 from collections import Counter, defaultdict
-from datetime import date, datetime, timedelta
+from datetime import date, datetime, timedelta, timezone
 from zoneinfo import ZoneInfo
 from decimal import Decimal
 import os
 from pathlib import Path
 import re
 import sys
+from statistics import median
 from urllib.parse import urlsplit
 
 from analytics_sources import bing, cloudflare, google, myna_billing
 from collect import canonical, load, save
+from commerce_analytics import adsense, affiliate, edge, exported_requests, ga4, google_token
 from editor import DATE_ZONE, metadata
 from geo import bing_citation_export, referral_totals
 
@@ -73,7 +75,7 @@ def content(articles):
 
 
 def period(task, today):
-    end = today if task == 'daily' else today - timedelta(days=1)
+    end = today - timedelta(days=1)
     if task == 'weekly':
         end = today - timedelta(days=today.weekday() + 1)
         return end - timedelta(days=6), end
@@ -103,8 +105,11 @@ def report(root, start, end, stats):
     provider_days = Counter()
     ai_referrals = Counter()
     referral_days = 0
+    all_referrals = Counter()
+    commercial = {}
     totals = defaultdict(dict)
     for day in dates:
+        commercial[day] = commercial_day(root, day)
         traffic = load(root / 'traffic' / (day + '.json'), {})
         search = load(root / 'search' / 'google' / (day + '.json'), {})
         for provider, snapshot in [('cloudflare', traffic), ('google', search)]:
@@ -117,6 +122,9 @@ def report(root, start, end, stats):
         referrals = enabled_data(traffic, 'referrers')
         if referrals is not None:
             ai_referrals.update(referral_totals(referrals))
+            for row in referrals:
+                host = row['dimensions'].get('refererHost') or '(direct / unknown)'
+                all_referrals[host] += row['count']
             referral_days += 1
         search_totals = enabled_data(search, 'totals')
         if search_totals and search_totals['rows']:
@@ -137,6 +145,24 @@ def report(root, start, end, stats):
             keyword = row['keys'][0]
             keyword_clicks[keyword] += row['clicks']
             keyword_impressions[keyword] += row['impressions']
+    latest_search = next(({
+        'date': previous.isoformat(),
+        'metrics': snapshot['metrics'],
+        'timezone': 'America/Los_Angeles',
+    } for previous in (end - timedelta(days=offset) for offset in range(8))
+        if (snapshot := load(root / 'search/google' / (previous.isoformat() + '.json'), {}))
+        .get('status') == 'available'), 'UNKNOWN')
+    next_topics = [
+        {'path': path, 'views': count, 'category': paths[path]['category']}
+        for path, count in views.most_common(20)
+    ]
+    strategy = {
+        'preferred_formats': ['original-practice', 'deployment-tutorial', 'hands-on-review', 'product-comparison'],
+        'audience_evidence': next_topics[:5] or 'UNKNOWN',
+        'search_evidence_day': latest_search['date'] if isinstance(latest_search, dict) else 'UNKNOWN',
+        'action': ('Plan a documented follow-up for the strongest observed topics.'
+                   if next_topics else 'Preserve current topic weights until article traffic is available.'),
+    }
     projects = Counter()
     for path, count in views.items():
         for project in paths[path]['projects']:
@@ -180,6 +206,9 @@ def report(root, start, end, stats):
                      'verified_crawler_logs': 'UNKNOWN', 'bing_ai_citations': citation_data,
                      'google_ai_performance': 'UNKNOWN'},
                 observed_days=provider_days, daily_metrics=totals,
+                browser_visits={day: totals[day].get('visits', 'UNKNOWN') for day in dates},
+                referrer_pageviews=dict(all_referrals.most_common(30)) if referral_days else 'UNKNOWN',
+                latest_final_search=latest_search, monetization=commercial, next_content=strategy,
                 new_articles={d: stats['days'].get(d, 0) for d in dates},
                 top_articles=[{'path': path, 'views': count, **paths[path]}
                               for path, count in views.most_common(20)],
@@ -205,6 +234,70 @@ def report(root, start, end, stats):
                 if published and not unknown else None)
 
 
+def commercial_day(root, day):
+    def evidence(snapshot):
+        return snapshot if snapshot.get('status') == 'available' else 'UNKNOWN'
+
+    current = load(root / 'commerce/edge' / (day + '.json'), {})
+    hourly = enabled_data(current, 'hourly')
+    history = []
+    for previous in (date.fromisoformat(day) - timedelta(days=n) for n in range(1, 8)):
+        snapshot = load(root / 'commerce/edge' / (previous.isoformat() + '.json'), {})
+        values = (enabled_data(snapshot, 'hourly') or {}).get('rows', [])
+        if values:
+            history.append(max(row['count'] for row in values))
+    peak = 'UNKNOWN'
+    if hourly and hourly['rows']:
+        row = max(hourly['rows'], key=lambda item: item['count'])
+        baseline = median(history) if len(history) >= 3 else None
+        peak = {'hour': row['dimensions']['datetimeHour'], 'requests': row['count'],
+                'baseline_days': len(history), 'median_daily_peak': baseline,
+                'above_3x_baseline': row['count'] >= 3 * baseline if baseline else 'UNKNOWN'}
+    return {
+        'peak_diagnostic': peak,
+        'ga4': evidence(load(root / 'commerce/ga4' / (day + '.json'), {})),
+        'adsense': evidence(load(root / 'commerce/adsense' / (day + '.json'), {})),
+        'edge_requests': evidence(current),
+        'request_classification': evidence(exported_requests(root / 'imports/requests' / (day + '.ndjson'))),
+        'affiliate': evidence(affiliate(root / 'imports/affiliate' / (day + '.json'))),
+    }
+
+
+def sync_commerce(root, days):
+    providers = {}
+    for day in days:
+        for name, adapter in [('ga4', ga4), ('adsense', adsense), ('edge', edge)]:
+            snapshot = adapter(day)
+            path = root / 'commerce' / name / (day + '.json')
+            if snapshot['status'] == 'available' or not path.exists():
+                save(path, snapshot)
+            providers[name] = snapshot['status']
+    return providers
+
+
+def operator_daily(root, articles):
+    day = datetime.now(timezone.utc).date() - timedelta(days=1)
+    # Keep the reporting window stable across retries and provider timezones.
+    snapshot = cloudflare(day.isoformat())
+    path = root / 'traffic' / (day.isoformat() + '.json')
+    if snapshot['status'] == 'available' or not path.exists():
+        save(path, snapshot)
+    sync_commerce(root, days_between(day - timedelta(days=2), day))
+    if os.getenv('GOOGLE_SEARCH_CONSOLE_PROPERTY'):
+        search_day = datetime.now(ZoneInfo('America/Los_Angeles')).date() - timedelta(days=3)
+        from analytics_sources import result
+        token = result(lambda: google_token('GOOGLE_SEARCH')).get('data')
+        if token:
+            os.environ['GOOGLE_ACCESS_TOKEN'] = token
+        snapshot = google(search_day.isoformat())
+        path = root / 'search/google' / (search_day.isoformat() + '.json')
+        if snapshot['status'] == 'available' or not path.exists():
+            save(path, snapshot)
+    articles = content(articles)
+    save(root / 'reports/daily' / (day.isoformat() + '.json'), report(root, day, day, articles))
+    return {'analytics_day': day.isoformat()}
+
+
 def store():
     location = os.getenv('ANALYTICS_STORE')
     if location and (Path(location) / '.git').is_dir():
@@ -215,10 +308,14 @@ def store():
 def sync(root, task, today, lookback):
     providers = {}
     if task in ('all', 'traffic'):
-        for day in days_between(today - timedelta(days=lookback), today - timedelta(days=1)):
+        latest = datetime.now(timezone.utc).date() - timedelta(days=1)
+        for day in days_between(latest - timedelta(days=lookback - 1), latest):
             snapshot = cloudflare(day)
-            save(root / 'traffic' / (day + '.json'), snapshot)
+            path = root / 'traffic' / (day + '.json')
+            if snapshot['status'] == 'available' or not path.exists():
+                save(path, snapshot)
             providers['Cloudflare RUM'] = snapshot['status']
+        providers.update(sync_commerce(root, days_between(latest - timedelta(days=min(lookback, 3) - 1), latest)))
     if task in ('all', 'search'):
         search_day = datetime.now(ZoneInfo('America/Los_Angeles')).date()
         end = search_day - timedelta(days=3)

@@ -41,7 +41,7 @@ INTERVALS = {'collect': 15, 'discover': 30, 'news': 30, 'resource-discover': 30,
              'resource-sync': 30, 'practices': 120, 'stories': 120,
              'resource-refresh': 360, 'backfill': 1440}
 PRIORITIES = {'collect': 25, 'news': 25, 'backfill': 1, 'resource-refresh': 5}
-PHASES = {'scheduler': {'backup'}, 'collector': set(INTERVALS) | {'daily', 'weekly'},
+PHASES = {'scheduler': {'backup'}, 'collector': set(INTERVALS) | {'daily', 'weekly', 'analytics-daily'},
           'editor': {'edit'}, 'publisher': {'publish', 'verify'}}
 CONTENT = ('src/content/news', 'src/content/daily', 'src/content/resources')
 
@@ -128,6 +128,8 @@ def schedule(db):
                 continue
             if not live(db, kind):
                 dispatch(db, kind, f'{kind}:{int(now.timestamp()) // (interval * 60)}')
+        if now.hour >= 12:
+            dispatch(db, 'analytics-daily', f'analytics-daily:{now.date()}')
         if now.hour >= 20:
             dispatch(db, 'daily', f'daily:{now.date()}')
             if now.weekday() == 6:
@@ -340,6 +342,13 @@ def phase(task, kind, payload):
         return verify(payload)
     if kind == 'backup':
         return backup()
+    if kind == 'analytics-daily':
+        from analytics import operator_daily
+        from editor import metadata
+        with lock('state'):
+            checkout()
+            articles = metadata(REPO)
+        return operator_daily(PRIVATE / 'analytics', articles)
     return prepare(kind)
 
 

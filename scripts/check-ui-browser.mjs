@@ -5,7 +5,9 @@ import { chromium } from 'playwright';
 const origin = process.argv[2] ?? 'http://127.0.0.1:4383';
 const browser = await chromium.launch(process.env.VENTURE_CHROME ? { executablePath: process.env.VENTURE_CHROME } : {});
 try {
-  const page = await browser.newPage();
+  const page = await browser.newPage({ userAgent: 'Codex-Venture-Test/1.0' });
+  await page.route('**/*', (route) => new URL(route.request().url()).origin === new URL(origin).origin
+    ? route.continue() : route.abort());
   const routes = (await readdir('dist', { recursive: true }))
     .filter((path) => path.endsWith('index.html'))
     .map((path) => '/' + path.slice(0, -'index.html'.length));

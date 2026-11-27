@@ -68,7 +68,9 @@ def target(path):
 def check():
     pages = {path: Page(path) for path in ROOT.rglob('*.html')}
     for mandatory in ('index.html', 'daily/index.html', 'news/index.html', 'tags/index.html', 'archive/index.html',
-                      'search/index.html', 'about/index.html', 'robots.txt', 'pagefind/pagefind.js'):
+                      'search/index.html', 'about/index.html', 'contact/index.html', 'terms/index.html',
+                      'privacy/index.html', 'affiliate-disclosure/index.html', 'ads.txt',
+                      'robots.txt', 'pagefind/pagefind.js'):
         if not (ROOT / mandatory).is_file():
             raise ValueError(f'missing {mandatory}')
     robot_groups((ROOT / 'robots.txt').read_text(), require_sitemap=True)

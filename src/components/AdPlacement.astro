@@ -1,0 +1,12 @@
+---
+import { slotFor } from '../lib/monetization';
+const { placement } = Astro.props;
+const slot = slotFor(placement);
+---
+{slot && <template data-venture-ad>
+  <aside aria-label="广告 / Advertisement">
+    <small>广告 <span lang="en">Advertisement</span></small>
+    <ins class="adsbygoogle" style="display:block" data-ad-slot={slot}
+      data-ad-format="auto" data-full-width-responsive="true"></ins>
+  </aside>
+</template>}

@@ -4,7 +4,7 @@
 
 | 平台 | 操作 |
 | --- | --- |
-| Cloudflare | 在账号的 **Observability → Analytics → Web Analytics** 添加 `codex-venture.com`，选择 Automatic。生产站 Astro 默认不写入 Beacon。只有确认边缘无法注入时，先在后台关闭自动注入，再在 Workers Builds 设置 `VENTURE_WEB_ANALYTICS_MODE=manual` 和官方片段的 `CLOUDFLARE_WEB_ANALYTICS_SITE_TAG`。部署后检查 HTML、浏览器脚本请求及 Beacon 上报。 |
+| Cloudflare | 在账号的 **Observability → Analytics → Web Analytics** 添加 `codex-venture.com`，使用已配置的公开站点标识。本站默认为手动加载，并检测边缘已注入的 Beacon。部署后检查浏览器脚本请求及 Beacon 上报。详见 [流量与商业化运营](monetization.md)。 |
 | Cloudflare API | 创建限定到目标账号的 **Account → Account Analytics → Read** Token，独立于部署权限。设置下表变量和 Secret。通过 smoke test 核查 Dataset、字段与回溯范围。 |
 | Google Search Console | 添加 Domain Property `codex-venture.com`，把 Google 提供的 TXT 记录加到域名根并完成验证。也可用已验证的 URL-prefix Property。通过界面提交 `https://codex-venture.com/sitemap-index.xml`。 |
 | Google 授权 | 在 Google Cloud 启用 Search Console API，创建专用服务账号和 GitHub OIDC Workload Identity Provider。将条件限定为 `yabby-groups/codex-venture` 的 `refs/heads/main`，仅给匹配的主体授予该服务账号的 Workload Identity User。把服务账号加入 Search Console 属性，先使用受限权限核查搜索与 URL Inspection。同步请求使用 `webmasters.readonly`。 |
@@ -35,7 +35,7 @@
 
 ## 生产验收
 
-- Cloudflare 已自动注入。生产首页验证只加载一个 Beacon，七天真实 RUM 回补通过。独立访客维持 `unavailable`。[Actions 回补](https://github.com/yabby-groups/codex-venture/actions/runs/45395089942)
+- 早期上线时验证了自动注入与 RUM 回补。后续调整见商业化运营说明。独立访客维持 `unavailable`。[Actions 回补](https://github.com/yabby-groups/codex-venture/actions/runs/45395089942)
 - Google Domain Property 已验证并提交 Sitemap。GitHub Actions 通过 OIDC 获取只读访问令牌，搜索总览、页面、关键词、国家、设备和两次 URL 索引抽查均写入私库。[Actions 验收](https://github.com/yabby-groups/codex-venture/actions/runs/45396576280)
 - Bing 已通过 Cloudflare 的 DNS-only CNAME 验证所有权，Sitemap 已提交并显示处理中。真实 API 查询通过，搜索总览、页面、关键词和抓取统计均已写入私库。首次查询四类均返回空列表，等待 Bing 生成数据。[Actions 验收](https://github.com/yabby-groups/codex-venture/actions/runs/45399335721)
 - 私有统计仓库已通过可写 deploy key 验证跨运行持久化。模型实际费率等待网关账单资料。
@@ -46,7 +46,7 @@
 | --- | --- |
 | 03:35 | Cloudflare RUM 回补 |
 | 06:35 | 搜索数据回补 |
-| 23:35 | 当日报告 |
+| 23:35 | 最近结束日期报告 |
 | 周一 07:15 | 上周报告和条件式 Codex 分析 |
 | 每月一日 07:45 | 上月报告 |
 | 每次采编运行 | 按阶段记录采集、模型、发布和公网验收 |

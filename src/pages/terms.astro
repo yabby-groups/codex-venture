@@ -1,0 +1,15 @@
+---
+import Base from '../layouts/Base.astro';
+import BilingualParagraph from '../components/BilingualParagraph.astro';
+---
+<Base title="使用条款">
+  <article class="article">
+    <h1 class="page-heading">使用条款<span lang="en">Terms of use</span></h1>
+    <div class="prose">
+      <BilingualParagraph zh="本站提供技术资讯和实践记录。部署、定价、版本和兼容性可能随时间变化，实施前请核对原始文档与当前环境。"
+        en="We publish technical news and practice reports. Deployment instructions, pricing, versions and compatibility can change. Check the primary documentation and your environment before using them." />
+      <BilingualParagraph zh="第三方产品的交易、服务及退款适用该供应商的条款。请遵守文章及所引用材料各自适用的许可。"
+        en="Purchases, service and refunds for third-party products are governed by the provider's terms. Respect the applicable licenses for our articles and cited material." />
+    </div>
+  </article>
+</Base>

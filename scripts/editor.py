@@ -34,8 +34,8 @@ def output_schema(candidates=None):
     return obj(dict(articles=dict(type='array', items=obj(fields)), skipped=candidate_ids))
 
 
-def metadata():
-    return json.loads(subprocess.check_output(['node', 'scripts/metadata.mjs'], text=True))
+def metadata(site=None):
+    return json.loads(subprocess.check_output(['node', 'scripts/metadata.mjs'], text=True, cwd=site))
 
 
 def sync(items, articles):

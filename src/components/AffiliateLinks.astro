@@ -1,0 +1,22 @@
+---
+import { affiliateFor } from '../lib/monetization';
+const links = affiliateFor(Astro.props.path);
+---
+{links.length > 0 && <aside class="article-notice">
+  <p>通过以下推广链接购买时，本站可能获得佣金。 <a href="/affiliate-disclosure/">联盟推广声明</a></p>
+  <p lang="en">We may earn a commission if you buy through these links. <a href="/affiliate-disclosure/">Affiliate disclosure</a></p>
+  <ul>{links.map(({ url, name, disclosureZh, disclosureEn, expires }) =>
+    <li data-affiliate-expires={expires}><a href={url} rel="sponsored nofollow noopener">{name}</a>
+      <span lang="zh-CN"> {disclosureZh}</span> <span lang="en">{disclosureEn}</span>
+    </li>)}</ul>
+</aside>}
+<script>
+  const today = new Date().toISOString().slice(0, 10);
+  for (const item of document.querySelectorAll<HTMLElement>('[data-affiliate-expires]')) {
+    if (today >= (item.dataset.affiliateExpires ?? '')) {
+      const section = item.closest('aside');
+      item.remove();
+      if (!section?.querySelector('li')) section?.remove();
+    }
+  }
+</script>

@@ -1,0 +1,14 @@
+---
+import Base from '../layouts/Base.astro';
+import BilingualParagraph from '../components/BilingualParagraph.astro';
+---
+<Base title="联系我们">
+  <article class="article">
+    <h1 class="page-heading">联系我们<span lang="en">Contact</span></h1>
+    <div class="prose">
+      <BilingualParagraph zh="文章纠错、站点故障及一般反馈可通过 GitHub Issues 提交。请提供相关页面地址，并省略个人资料和账号凭据。"
+        en="Use GitHub Issues for corrections, site problems and general feedback. Include the relevant page URL and omit personal information and account credentials." />
+      <p><a href="https://github.com/yabby-groups/codex-venture/issues">提交反馈 <span lang="en">Open an issue</span></a></p>
+    </div>
+  </article>
+</Base>
