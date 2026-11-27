@@ -1,0 +1,30 @@
+{
+  "addedAt": "2026-11-28",
+  "categories": [
+    [
+      "3D 模型检查",
+      "3D model inspection"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-25",
+  "id": "resource-899a9c39de3c494ff282f509e62d19bd9ccbecc78ac49058f3b3f377554f0e86",
+  "identity": "openvsx:zovo.3d-model-viewer",
+  "install": "https://open-vsx.org/extension/zovo/3d-model-viewer",
+  "name": "STL Viewer, OBJ Viewer, GLB & glTF Viewer",
+  "platforms": [
+    "Open VSX"
+  ],
+  "site": "https://open-vsx.org/extension/zovo/3d-model-viewer",
+  "sourceSignature": "bc35bf4f980920f84bbc6b4ce58bd3e8850c2b6bd4edd53235add2281117a159",
+  "summary": [
+    "从 Open VSX 获取此扩展，即可在 VS Code 中检查 STL、OBJ 和 glTF/GLB 模型。据发布者介绍，扩展可离线运行，并支持点到点测距、线框视图和 glTF 动画播放。",
+    "Get the viewer from Open VSX to inspect STL, OBJ, and glTF/GLB models in VS Code. The publisher says it works offline and supports point-to-point measurements, wireframe views, and glTF animation playback."
+  ],
+  "tested": false,
+  "type": "plugins",
+  "verificationSources": [
+    "https://open-vsx.org/api/-/search?offset=0&query=language+model&size=25"
+  ],
+  "verifiedAt": "2026-11-28",
+  "version": "0.2.13"
+}

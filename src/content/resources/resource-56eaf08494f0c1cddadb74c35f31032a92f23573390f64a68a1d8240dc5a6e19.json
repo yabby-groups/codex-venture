@@ -1,0 +1,28 @@
+{
+  "addedAt": "2026-11-28",
+  "categories": [
+    [
+      "事件流处理",
+      "Event streaming"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-26",
+  "id": "resource-56eaf08494f0c1cddadb74c35f31032a92f23573390f64a68a1d8240dc5a6e19",
+  "identity": "github-skill:1135891523:.github/plugins/azure-sdk-dotnet/skills/azure-eventhub-dotnet/SKILL.md",
+  "name": "azure-eventhub-dotnet",
+  "repository": "https://github.com/microsoft/skills",
+  "repositoryId": "1135891523",
+  "site": "https://github.com/microsoft/skills/blob/main/.github/plugins/azure-sdk-dotnet/skills/azure-eventhub-dotnet/SKILL.md",
+  "sourcePath": ".github/plugins/azure-sdk-dotnet/skills/azure-eventhub-dotnet/SKILL.md",
+  "sourceSignature": "66838f762d51a5d54cdd0fed3b448462f21fb8470ab8f0c91b72324de4a075bb",
+  "summary": [
+    "微软的技能节选说明了如何在 .NET 项目中添加 `Azure.Messaging.EventHubs` 包，以向 Azure Event Hubs 发送事件并从中接收事件。若使用 `EventProcessorClient` 保存消费进度以便后续恢复，还需添加 `Azure.Storage.Blobs` 包。",
+    "Microsoft’s skill excerpt shows how to add `Azure.Messaging.EventHubs` to a .NET project to send events and receive them from Azure Event Hubs. For consumers that need to resume from saved positions, its `EventProcessorClient` checkpointing setup also requires `Azure.Storage.Blobs`."
+  ],
+  "tested": false,
+  "type": "skills",
+  "verificationSources": [
+    "https://github.com/microsoft/skills/blob/main/.github/plugins/azure-sdk-dotnet/skills/azure-eventhub-dotnet/SKILL.md"
+  ],
+  "verifiedAt": "2026-11-28"
+}
