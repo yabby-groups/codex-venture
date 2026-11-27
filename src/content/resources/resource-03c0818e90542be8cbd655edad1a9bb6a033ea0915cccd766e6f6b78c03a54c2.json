@@ -1,0 +1,28 @@
+{
+  "addedAt": "2026-11-27",
+  "categories": [
+    [
+      "Kubernetes 故障排查",
+      "Kubernetes troubleshooting"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-26",
+  "id": "resource-03c0818e90542be8cbd655edad1a9bb6a033ea0915cccd766e6f6b78c03a54c2",
+  "identity": "github-skill:1135891523:.github/plugins/aks-skills/skills/aks-troubleshooting/SKILL.md",
+  "name": "aks-troubleshooting",
+  "repository": "https://github.com/microsoft/skills",
+  "repositoryId": "1135891523",
+  "site": "https://github.com/microsoft/skills/blob/main/.github/plugins/aks-skills/skills/aks-troubleshooting/SKILL.md",
+  "sourcePath": ".github/plugins/aks-skills/skills/aks-troubleshooting/SKILL.md",
+  "sourceSignature": "765c4e36e3258bf31d2e16d6187543d26493df021931721a33b3842752ca3390",
+  "summary": [
+    "据微软介绍，该技能可用只读方式排查 Azure Kubernetes Service 的实时故障，并针对工作负载、节点、网络、入口流量或升级问题生成结构化报告。",
+    "Microsoft describes a read-only skill for investigating live Azure Kubernetes Service incidents and preparing a structured report on workload, node, networking, ingress, or upgrade issues."
+  ],
+  "tested": false,
+  "type": "skills",
+  "verificationSources": [
+    "https://github.com/microsoft/skills/blob/main/.github/plugins/aks-skills/skills/aks-troubleshooting/SKILL.md"
+  ],
+  "verifiedAt": "2026-11-27"
+}

@@ -1,0 +1,28 @@
+{
+  "addedAt": "2026-11-27",
+  "categories": [
+    [
+      "拉取请求工作流",
+      "Pull request workflows"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-26",
+  "id": "resource-b51d509641a7d778f576edab42fd18f7e1d4793d6eb82f1fd96cd0e0a7762dd1",
+  "identity": "github:1123446919",
+  "license": "MIT",
+  "name": "gmickel/flow-next",
+  "repository": "https://github.com/gmickel/flow-next",
+  "repositoryId": "1123446919",
+  "site": "https://github.com/gmickel/flow-next",
+  "sourceSignature": "f3e948ab3841adc979248f062c5954e9d89b728b9917a3710e388dc8f2c3d12c",
+  "summary": [
+    "据发布者介绍，该插件可将缺陷、想法或工单转化为拉取请求，流程包括编写规格、按风险组织跨模型评审以及质量验证，并在仓库中保留验证记录。",
+    "The publisher describes a workflow plugin that takes a bug, idea, or ticket through specification, risk-based review across models, and QA to produce a pull request with verification records kept in the repository."
+  ],
+  "tested": false,
+  "type": "workflows",
+  "verificationSources": [
+    "https://api.github.com/search/repositories?page=1&per_page=30&q=topic%3Aai-workflow+archived%3Afalse+fork%3Afalse&sort=stars"
+  ],
+  "verifiedAt": "2026-11-27"
+}

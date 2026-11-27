@@ -1,0 +1,28 @@
+{
+  "addedAt": "2026-11-27",
+  "categories": [
+    [
+      "学习目标关系梳理",
+      "Learning objective mapping"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-26",
+  "id": "resource-4ac0d28333aba7d7340878351c3465685bb49586f57f08ff56a7b10491a4e93e",
+  "identity": "github:1307725456",
+  "license": "MIT",
+  "name": "wwlwgo/cn-primary-math-knowledge-graph",
+  "repository": "https://github.com/wwlwgo/cn-primary-math-knowledge-graph",
+  "repositoryId": "1307725456",
+  "site": "https://github.com/wwlwgo/cn-primary-math-knowledge-graph",
+  "sourceSignature": "1c204b46845eb3a21deab781ed7b1a4a9fe56718eb985d25213eff2cdc340354",
+  "summary": [
+    "发布者将其描述为一套可追溯、可验证的数据集，可用于梳理和核查中国小学数学微知识点之间的先修关系。",
+    "The publisher describes a dataset for tracing and checking prerequisite relationships between fine-grained learning objectives in Chinese primary-school mathematics."
+  ],
+  "tested": false,
+  "type": "resources",
+  "verificationSources": [
+    "https://api.github.com/search/repositories?page=2&per_page=30&q=topic%3Aai-education+archived%3Afalse+fork%3Afalse&sort=stars"
+  ],
+  "verifiedAt": "2026-11-27"
+}

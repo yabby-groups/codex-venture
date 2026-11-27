@@ -1,0 +1,28 @@
+{
+  "addedAt": "2026-11-27",
+  "categories": [
+    [
+      "智能体会话管理",
+      "Agent session management"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-26",
+  "id": "resource-b60e5254b5b3d27aaa4501db3d4bca44cf8539937742f4493a5e94498cf8dc63",
+  "identity": "github:1154060369",
+  "license": "MIT",
+  "name": "anombyte93/atlas-session-lifecycle",
+  "repository": "https://github.com/anombyte93/atlas-session-lifecycle",
+  "repositoryId": "1154060369",
+  "site": "https://github.com/anombyte93/atlas-session-lifecycle",
+  "sourceSignature": "1d09f741400c04c5bafead5ca745aa425b0781d0c2ff79b2099549423c5be50a",
+  "summary": [
+    "据发布者介绍，该工作流可为 Claude Code 保留跨会话记忆，并归档会话资料。",
+    "The publisher describes a Claude Code workflow for retaining memory across sessions and archiving session material."
+  ],
+  "tested": false,
+  "type": "workflows",
+  "verificationSources": [
+    "https://api.github.com/search/repositories?page=2&per_page=30&q=topic%3Aai-workflow+archived%3Afalse+fork%3Afalse&sort=stars"
+  ],
+  "verifiedAt": "2026-11-27"
+}

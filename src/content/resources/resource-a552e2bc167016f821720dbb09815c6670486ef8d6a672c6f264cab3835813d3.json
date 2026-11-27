@@ -1,0 +1,27 @@
+{
+  "addedAt": "2026-11-27",
+  "categories": [
+    [
+      "提示词设计",
+      "Prompt design"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-26",
+  "id": "resource-a552e2bc167016f821720dbb09815c6670486ef8d6a672c6f264cab3835813d3",
+  "identity": "github:1357987246",
+  "name": "Zvyan/PromptForge",
+  "repository": "https://github.com/Zvyan/PromptForge",
+  "repositoryId": "1357987246",
+  "site": "https://github.com/Zvyan/PromptForge",
+  "sourceSignature": "4422a19f8f0ba51efcdf27b512cdb5878eb15140c7187916ecb358cd44d07848",
+  "summary": [
+    "据发布者介绍，该框架提供网页界面和命令行工具，可使用结构化模板和预设来设计 AI 智能体的提示词。",
+    "The publisher describes a framework with a web interface and CLI for working with structured prompt templates and presets for AI agents."
+  ],
+  "tested": false,
+  "type": "prompts",
+  "verificationSources": [
+    "https://api.github.com/search/repositories?page=1&per_page=30&q=topic%3Aprompt-templates+archived%3Afalse+fork%3Afalse&sort=stars"
+  ],
+  "verifiedAt": "2026-11-27"
+}

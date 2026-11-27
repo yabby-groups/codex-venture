@@ -1,0 +1,28 @@
+{
+  "addedAt": "2026-11-27",
+  "categories": [
+    [
+      "个人研究助手",
+      "Personal research assistants"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-25",
+  "id": "resource-c6b6a78169c03d80f2ab686d01d913e16fce2a7feb901a88e6eb60a5156aa599",
+  "identity": "github:396569538",
+  "license": "AGPL-3.0",
+  "name": "khoj-ai/khoj",
+  "repository": "https://github.com/khoj-ai/khoj",
+  "repositoryId": "396569538",
+  "site": "https://github.com/khoj-ai/khoj",
+  "sourceSignature": "9ff14d41f300f7db53c1711e7467359f8604a6315a37ea0883f3cfc071f49b87",
+  "summary": [
+    "据发布者介绍，这款助手可自行托管，能根据网页或个人文档回答问题，也可用于创建自定义智能体和定时执行自动化任务。",
+    "The publisher describes a self-hostable assistant for answering questions from the web or your documents, building custom agents, and scheduling automated tasks."
+  ],
+  "tested": false,
+  "type": "tools",
+  "verificationSources": [
+    "https://api.github.com/search/repositories?page=1&per_page=30&q=topic%3Arag+archived%3Afalse+fork%3Afalse&sort=stars"
+  ],
+  "verifiedAt": "2026-11-27"
+}

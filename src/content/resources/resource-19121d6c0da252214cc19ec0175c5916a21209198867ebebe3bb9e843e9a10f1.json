@@ -1,0 +1,29 @@
+{
+  "addedAt": "2026-11-27",
+  "categories": [
+    [
+      "图像转 3D",
+      "Image-to-3D generation"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-25",
+  "id": "resource-19121d6c0da252214cc19ec0175c5916a21209198867ebebe3bb9e843e9a10f1",
+  "identity": "hf:monstermmorpg/secourses_rock",
+  "name": "MonsterMMORPG/SECourses_Rock",
+  "site": "https://huggingface.co/MonsterMMORPG/SECourses_Rock",
+  "sourceSignature": "243b5b56f001cbb816e2511bbf2eebbe5c210316c1bd9f55e3dcd1eaabc76a2b",
+  "summary": [
+    "模型卡将该模型描述为 TRELLIS 的图像条件版本，可根据输入图像生成 3D 内容。",
+    "The model card describes an image-conditioned version of TRELLIS that generates 3D content from an input image."
+  ],
+  "tags": [
+    "image-to-3d"
+  ],
+  "tested": false,
+  "type": "models",
+  "verificationSources": [
+    "https://huggingface.co/MonsterMMORPG/SECourses_Rock/raw/main/README.md",
+    "https://huggingface.co/api/models?cursor=eyIkb3IiOlt7ImRvd25sb2FkcyI6MjE5MCwiX2lkIjp7IiRndCI6IjZhYzY0YmJmNWJlOTg1ZGVkYjgxMTJjMyJ9fSx7ImRvd25sb2FkcyI6eyIkbHQiOjIxOTB9fSx7ImRvd25sb2FkcyI6bnVsbH1dLCJzZWFyY2hTZXF1ZW5jZVRva2VuIjoiQ1A3aXNBSWFDU0VBQUFBQUFCeWhRQm9PV2d4cXhrdS9XK21GM3R1QkVzTWlEbG9NYXNaTHYxdnBoZDdiZ1JMRCJ9&direction=-1&full=true&limit=30&pipeline_tag=image-to-3d&sort=downloads"
+  ],
+  "verifiedAt": "2026-11-27"
+}

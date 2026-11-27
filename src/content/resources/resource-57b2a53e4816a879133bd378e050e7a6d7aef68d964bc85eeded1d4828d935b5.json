@@ -1,0 +1,30 @@
+{
+  "addedAt": "2026-11-27",
+  "categories": [
+    [
+      "智能体状态监控",
+      "Agent status monitoring"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-25",
+  "id": "resource-57b2a53e4816a879133bd378e050e7a6d7aef68d964bc85eeded1d4828d935b5",
+  "identity": "openvsx:decard.claude-code-statusline",
+  "install": "https://open-vsx.org/extension/decard/claude-code-statusline",
+  "name": "Claude Code Statusline",
+  "platforms": [
+    "Open VSX"
+  ],
+  "site": "https://open-vsx.org/extension/decard/claude-code-statusline",
+  "sourceSignature": "5f90485adb8a17819e372e987c633077e7a3d7a9799af0fc7075f9a1f6154d63",
+  "summary": [
+    "据扩展条目介绍，它可在 VS Code 状态栏显示 Claude Code 智能体的运行状态。",
+    "According to the listing, the extension displays Claude Code agent state in the VS Code status bar."
+  ],
+  "tested": false,
+  "type": "plugins",
+  "verificationSources": [
+    "https://open-vsx.org/api/-/search?offset=50&query=Claude&size=25"
+  ],
+  "verifiedAt": "2026-11-27",
+  "version": "0.2.0"
+}

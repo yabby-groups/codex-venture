@@ -1,0 +1,28 @@
+{
+  "addedAt": "2026-11-27",
+  "categories": [
+    [
+      "企业与职位数据查询",
+      "Company and job data lookup"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-25",
+  "id": "resource-9cf2822fcba322fb50dc95efc170b7d226cab5e7adeb43310e015d6c65d21b62",
+  "identity": "mcp:ai.agentapigate/job-postings-company-ats-career-search-mcp",
+  "name": "AgentAPIHub — LinkedIn B2B Profiles, Company KYB & 5-ATS Live Job Postings MCP",
+  "registryId": "ai.agentapigate/job-postings-company-ats-career-search-mcp",
+  "site": "https://registry.modelcontextprotocol.io/v0.1/servers/ai.agentapigate%2Fjob-postings-company-ats-career-search-mcp/versions/1.0.0",
+  "sourceSignature": "b46c72b3b7a924c325027fad9c86ed5285f2a83f31b672ef6160e26de6bf0abe",
+  "summary": [
+    "据发布者介绍，该 MCP 服务器可查询 LinkedIn 个人与企业资料、Workday、Greenhouse 和 Lever 上的职位，以及来自 GLEIF 和 Companies House 的企业核验数据。",
+    "The publisher lists an MCP server for querying LinkedIn profiles and company pages, job postings from Workday, Greenhouse, and Lever, and business verification data from GLEIF and Companies House."
+  ],
+  "tested": false,
+  "transport": "streamable-http",
+  "type": "mcp",
+  "verificationSources": [
+    "https://registry.modelcontextprotocol.io/v0.1/servers/ai.agentapigate%2Fjob-postings-company-ats-career-search-mcp/versions/1.0.0"
+  ],
+  "verifiedAt": "2026-11-27",
+  "version": "1.0.0"
+}
