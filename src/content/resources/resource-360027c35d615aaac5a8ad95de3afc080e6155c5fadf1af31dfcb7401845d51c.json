@@ -1,0 +1,28 @@
+{
+  "addedAt": "2026-11-28",
+  "categories": [
+    [
+      "代码审查",
+      "Code Review"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-26",
+  "id": "resource-360027c35d615aaac5a8ad95de3afc080e6155c5fadf1af31dfcb7401845d51c",
+  "identity": "github-skill:968197216:.gemini/skills/review-duplication/SKILL.md",
+  "name": "review-duplication",
+  "repository": "https://github.com/google-gemini/gemini-cli",
+  "repositoryId": "968197216",
+  "site": "https://github.com/google-gemini/gemini-cli/blob/main/.gemini/skills/review-duplication/SKILL.md",
+  "sourcePath": ".gemini/skills/review-duplication/SKILL.md",
+  "sourceSignature": "6e5216e5ee5620ac4d142d4c5be594793ce536aa6551bf2a85b21c257acbd806",
+  "summary": [
+    "发布者提供的 review-duplication 审查清单可帮助你判断代码变更是否重复实现了仓库中的已有逻辑。先梳理变更中的核心逻辑，再追踪依赖，并到可能存放共享工具或组件的目录中查找。示例路径采用特定的仓库结构，需按项目实际布局调整。",
+    "The publisher’s review-duplication checklist helps you check whether a code change reimplements logic already in the repository. Start with the changed logic, then trace dependencies and check likely locations for shared utilities or components. The example paths follow a specific repository layout, so adapt them to your project."
+  ],
+  "tested": false,
+  "type": "skills",
+  "verificationSources": [
+    "https://github.com/google-gemini/gemini-cli/blob/main/.gemini/skills/review-duplication/SKILL.md"
+  ],
+  "verifiedAt": "2026-11-28"
+}
