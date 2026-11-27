@@ -367,12 +367,17 @@ def run_model(batch, smoke, receipt, *, yolo=False):
 
     candidates = batch['candidates']
     existing = batch.get('existingArticles', [])
-    selection = run('editorial-selection', editorial.PITCH, dict(candidates=candidates, existingArticles=existing))
+    pitch_fields = editorial.PITCH['properties']['pitches']['items']['properties']
+    selection_schema = editorial.obj(pitches=dict(type='array', items=editorial.obj(
+        **(pitch_fields | {'id': dict(type='string', enum=list(candidates))})
+    )))
+    selection = run('editorial-selection', selection_schema, dict(candidates=candidates, existingArticles=existing))
     if not editorial.conforms(selection, editorial.PITCH):
         raise ValueError('Invalid editorial selection')
     pitches = {row['id']: row for row in selection['pitches']}
-    if len(pitches) != len(selection['pitches']) or not pitches.keys() <= candidates.keys():
+    if not pitches.keys() <= candidates.keys():
         raise ValueError('Invalid editorial candidate IDs')
+    selection['pitches'] = list(pitches.values())
     if any(not value.strip() for row in pitches.values() for field, value in row.items() if field not in ('researchGap', 'researchUrl')):
         raise ValueError('Incomplete editorial pitch')
     pitches = {key: row for key, row in pitches.items() if not row['researchGap']}
