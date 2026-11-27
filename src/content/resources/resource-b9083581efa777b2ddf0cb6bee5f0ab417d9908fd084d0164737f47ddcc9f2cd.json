@@ -1,0 +1,28 @@
+{
+  "addedAt": "2026-11-27",
+  "categories": [
+    [
+      "视频广告制作",
+      "Video Ad Production"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-25",
+  "id": "resource-b9083581efa777b2ddf0cb6bee5f0ab417d9908fd084d0164737f47ddcc9f2cd",
+  "identity": "mcp:ai.adkix/adkix",
+  "name": "adkix",
+  "registryId": "ai.adkix/adkix",
+  "site": "https://registry.modelcontextprotocol.io/v0.1/servers/ai.adkix%2Fadkix/versions/1.0.0",
+  "sourceSignature": "51febf9f43ac6b828bfe53149a7247b8754537f05a103e34ca793b6028a7d435",
+  "summary": [
+    "据发布者介绍，adkix 可根据网站制作 9:16 竖屏短视频广告，涵盖脚本、选角、配音、镜头和配乐。",
+    "The publisher says adkix turns a website into a short 9:16 video ad, handling the script, casting, voice, shots, and music."
+  ],
+  "tested": false,
+  "transport": "streamable-http",
+  "type": "mcp",
+  "verificationSources": [
+    "https://registry.modelcontextprotocol.io/v0.1/servers/ai.adkix%2Fadkix/versions/1.0.0"
+  ],
+  "verifiedAt": "2026-11-27",
+  "version": "1.0.0"
+}

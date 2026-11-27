@@ -1,0 +1,30 @@
+{
+  "addedAt": "2026-11-27",
+  "categories": [
+    [
+      "文字方向与本地化",
+      "Text Direction and Localization"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-25",
+  "id": "resource-67f8922b3cef275852e7d3d4c2efa45708c71cacc2c11cd7aa6fe792b754fb31",
+  "identity": "openvsx:waelabosamra.copilot-rtl",
+  "install": "https://open-vsx.org/extension/WaelAboSamra/copilot-rtl",
+  "name": "Copilot RTL",
+  "platforms": [
+    "Open VSX"
+  ],
+  "site": "https://open-vsx.org/extension/WaelAboSamra/copilot-rtl",
+  "sourceSignature": "ecc1edd4bcbac632bd0f13ab0448d7e4d8450ce92f2363d0d3136780a7d8107e",
+  "summary": [
+    "据发布者介绍，Copilot RTL 可将 Copilot Chat 切换为从右到左的布局，便于使用阿拉伯语。",
+    "The publisher says Copilot RTL switches Copilot Chat to a right-to-left layout for Arabic."
+  ],
+  "tested": false,
+  "type": "plugins",
+  "verificationSources": [
+    "https://open-vsx.org/api/-/search?offset=0&query=Copilot&size=25"
+  ],
+  "verifiedAt": "2026-11-27",
+  "version": "0.3.0"
+}

@@ -1,0 +1,28 @@
+{
+  "addedAt": "2026-11-27",
+  "categories": [
+    [
+      "负责任 AI 教育",
+      "Responsible AI Education"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-26",
+  "id": "resource-972a3c6bb3055592a5d960895d947fd59ab74e05c87044b3dfcaefa7a276f43e",
+  "identity": "github:1107964627",
+  "license": "NOASSERTION",
+  "name": "aaryansamanta/nextgen-ai",
+  "repository": "https://github.com/aaryansamanta/nextgen-ai",
+  "repositoryId": "1107964627",
+  "site": "https://github.com/aaryansamanta/nextgen-ai",
+  "sourceSignature": "be46db84274a1de912fc05a1db595eafda347c48e8468322d613eb9c6d09d58c",
+  "summary": [
+    "该组织介绍了由学生主导的研讨会和全球大使计划，面向关注 AI 伦理与普及的读者。",
+    "The organization describes student-led seminars and a global ambassador program for readers interested in AI ethics and making AI more accessible."
+  ],
+  "tested": false,
+  "type": "resources",
+  "verificationSources": [
+    "https://api.github.com/search/repositories?page=1&per_page=30&q=topic%3Aai-education+archived%3Afalse+fork%3Afalse&sort=stars"
+  ],
+  "verifiedAt": "2026-11-27"
+}

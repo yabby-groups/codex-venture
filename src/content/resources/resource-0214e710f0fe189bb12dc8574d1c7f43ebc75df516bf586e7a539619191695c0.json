@@ -1,0 +1,28 @@
+{
+  "addedAt": "2026-11-27",
+  "categories": [
+    [
+      "项目治理",
+      "Project Governance"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-27",
+  "id": "resource-0214e710f0fe189bb12dc8574d1c7f43ebc75df516bf586e7a539619191695c0",
+  "identity": "github:1251867125",
+  "license": "NOASSERTION",
+  "name": "policani/pmo-governance-operations-log",
+  "repository": "https://github.com/policani/pmo-governance-operations-log",
+  "repositoryId": "1251867125",
+  "site": "https://github.com/policani/pmo-governance-operations-log",
+  "sourceSignature": "35813943d83ba402b374fadab4cfa32a0d86ecc613d12e00202c445f3d1fac6c",
+  "summary": [
+    "据发布者介绍，这份 AI 辅助的项目管理办公室日志可将运营动态整理为决策、待办事项、风险记录和需升级处理的问题，也可用于会前准备和跟踪后续事项的负责人。",
+    "The publisher describes an AI-assisted project management office log that helps turn operational updates into decisions, action items, risk records, and escalations. It also supports meeting preparation and tracking who owns each follow-up."
+  ],
+  "tested": false,
+  "type": "workflows",
+  "verificationSources": [
+    "https://api.github.com/search/repositories?page=11&per_page=30&q=topic%3Aai-workflow+archived%3Afalse+fork%3Afalse&sort=stars"
+  ],
+  "verifiedAt": "2026-11-27"
+}

@@ -1,0 +1,28 @@
+{
+  "addedAt": "2026-11-27",
+  "categories": [
+    [
+      "编辑配图制作",
+      "Editorial Image Production"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-25",
+  "id": "resource-e5fd61bf98bc0c55d747465ad5117ac9ac722cf8801aee8db0933d5a0897bd58",
+  "identity": "github:1331044795",
+  "license": "MIT",
+  "name": "jiahuiqu17/paper-signal",
+  "repository": "https://github.com/jiahuiqu17/paper-signal",
+  "repositoryId": "1331044795",
+  "site": "https://github.com/jiahuiqu17/paper-signal",
+  "sourceSignature": "a5a01ff330d720d72e49667c4502c4a199018047dee0dec23b8f36d3a5d39651",
+  "summary": [
+    "据发布者介绍，paper-signal 是一套面向 Agent Skills 的工作流程，可围绕主题确定美术方向、生成极简独立刊物风格的系列配图，并检查生成的位图质量。",
+    "The publisher describes paper-signal as an Agent Skills workflow for setting art direction around a subject, generating minimalist zine-style images as a series, and checking the quality of the resulting bitmaps."
+  ],
+  "tested": false,
+  "type": "tools",
+  "verificationSources": [
+    "https://api.github.com/search/repositories?page=1&per_page=30&q=topic%3Aai-design+archived%3Afalse+fork%3Afalse&sort=stars"
+  ],
+  "verifiedAt": "2026-11-27"
+}

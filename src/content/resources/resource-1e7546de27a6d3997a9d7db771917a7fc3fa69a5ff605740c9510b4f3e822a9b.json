@@ -1,0 +1,28 @@
+{
+  "addedAt": "2026-11-27",
+  "categories": [
+    [
+      "本地大模型推理",
+      "Local LLM Inference"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-26",
+  "id": "resource-1e7546de27a6d3997a9d7db771917a7fc3fa69a5ff605740c9510b4f3e822a9b",
+  "identity": "github:1456590729",
+  "license": "MIT",
+  "name": "opensetlabs/openset-llm",
+  "repository": "https://github.com/opensetlabs/openset-llm",
+  "repositoryId": "1456590729",
+  "site": "https://github.com/opensetlabs/openset-llm",
+  "sourceSignature": "2a5a658de53caab1e79ef480e685601b3438a2886040e5714bae043ec50b965e",
+  "summary": [
+    "据发布者介绍，OpenSet LLM 可在本地通过 CPU 运行语言模型推理，并提供兼容 OpenAI API 的服务接口。",
+    "The publisher says OpenSet LLM runs language model inference locally on a CPU and exposes an OpenAI-compatible server interface."
+  ],
+  "tested": false,
+  "type": "open-source",
+  "verificationSources": [
+    "https://api.github.com/search/repositories?page=2&per_page=30&q=topic%3Allm-inference+archived%3Afalse+fork%3Afalse&sort=stars"
+  ],
+  "verifiedAt": "2026-11-27"
+}

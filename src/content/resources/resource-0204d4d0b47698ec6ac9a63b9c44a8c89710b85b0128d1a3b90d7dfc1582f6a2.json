@@ -1,0 +1,28 @@
+{
+  "addedAt": "2026-11-27",
+  "categories": [
+    [
+      "会议工作流程",
+      "Meeting Workflows"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-27",
+  "id": "resource-0204d4d0b47698ec6ac9a63b9c44a8c89710b85b0128d1a3b90d7dfc1582f6a2",
+  "identity": "github:1472122456",
+  "license": "NOASSERTION",
+  "name": "getobserver/playbooks",
+  "repository": "https://github.com/getobserver/playbooks",
+  "repositoryId": "1472122456",
+  "site": "https://github.com/getobserver/playbooks",
+  "sourceSignature": "d77afc750a555c0a522d6d2aff429a5e7b39153c4ac2a2e497045d475ee2edf8",
+  "summary": [
+    "发布者提供用于 Observer 的提示词、快捷操作和会议笔记模板，适用于销售、研究和招聘会议。",
+    "The publisher provides prompts, Quick Actions, and note templates for use in Observer during sales, research, and hiring meetings."
+  ],
+  "tested": false,
+  "type": "prompts",
+  "verificationSources": [
+    "https://api.github.com/search/repositories?page=7&per_page=30&q=topic%3Aprompt-templates+archived%3Afalse+fork%3Afalse&sort=stars"
+  ],
+  "verifiedAt": "2026-11-27"
+}

@@ -1,0 +1,28 @@
+{
+  "addedAt": "2026-11-27",
+  "categories": [
+    [
+      "云资源管理",
+      "Cloud Resource Management"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-26",
+  "id": "resource-26678e30b16d59860453e22b87d44152254e7269134c25e15ba979ca503b43a0",
+  "identity": "github-skill:1135891523:.github/plugins/azure-sdk-dotnet/skills/azure-mgmt-arizeaiobservabilityeval-dotnet/SKILL.md",
+  "name": "azure-mgmt-arizeaiobservabilityeval-dotnet",
+  "repository": "https://github.com/microsoft/skills",
+  "repositoryId": "1135891523",
+  "site": "https://github.com/microsoft/skills/blob/main/.github/plugins/azure-sdk-dotnet/skills/azure-mgmt-arizeaiobservabilityeval-dotnet/SKILL.md",
+  "sourcePath": ".github/plugins/azure-sdk-dotnet/skills/azure-mgmt-arizeaiobservabilityeval-dotnet/SKILL.md",
+  "sourceSignature": "c7123cf8c18413a3d4c0b6519fa56e437ded471f67e4d96959b6085cedc92984",
+  "summary": [
+    "这项技能介绍如何使用 Azure Resource Manager 的 .NET SDK 管理 Azure 上的 Arize AI 组织，以及创建、更新或删除 Arize AI 可观测性与评估资源。",
+    "The skill describes how to use the Azure Resource Manager SDK for .NET to manage Arize AI organizations on Azure and create, update, or delete Arize AI Observability and Evaluation resources."
+  ],
+  "tested": false,
+  "type": "skills",
+  "verificationSources": [
+    "https://github.com/microsoft/skills/blob/main/.github/plugins/azure-sdk-dotnet/skills/azure-mgmt-arizeaiobservabilityeval-dotnet/SKILL.md"
+  ],
+  "verifiedAt": "2026-11-27"
+}

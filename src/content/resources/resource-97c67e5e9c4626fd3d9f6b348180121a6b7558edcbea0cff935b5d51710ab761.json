@@ -1,0 +1,27 @@
+{
+  "addedAt": "2026-11-27",
+  "categories": [
+    [
+      "需求预测",
+      "Demand Forecasting"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-26",
+  "id": "resource-97c67e5e9c4626fd3d9f6b348180121a6b7558edcbea0cff935b5d51710ab761",
+  "identity": "github:697781467",
+  "name": "MahanPourhosseini/Bike-Sharing-Trends",
+  "repository": "https://github.com/MahanPourhosseini/Bike-Sharing-Trends",
+  "repositoryId": "697781467",
+  "site": "https://github.com/MahanPourhosseini/Bike-Sharing-Trends",
+  "sourceSignature": "203cdb929328d4c5188b897cd9d01d873f9f62ee9507021b46933afe0a79f6ca",
+  "summary": [
+    "发布者提供了一个 Python 项目，可用于学习如何用回归模型预测自行车租赁需求，涵盖数据预处理、探索性分析和模型评估。",
+    "The publisher presents a Python project for studying how to forecast bike rental demand with regression models. It covers data preprocessing, exploratory analysis, and model evaluation."
+  ],
+  "tested": false,
+  "type": "resources",
+  "verificationSources": [
+    "https://api.github.com/search/repositories?page=1&per_page=30&q=topic%3Amachine-learning-course+archived%3Afalse+fork%3Afalse&sort=stars"
+  ],
+  "verifiedAt": "2026-11-27"
+}

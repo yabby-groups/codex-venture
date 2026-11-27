@@ -1,0 +1,28 @@
+{
+  "addedAt": "2026-11-27",
+  "categories": [
+    [
+      "软件开发流程",
+      "Software Development Workflows"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-27",
+  "id": "resource-01cb2efbb5bbd1e060c2168883d807bee2867427aed90710cb015035291c246f",
+  "identity": "github:1227926063",
+  "license": "GPL-3.0",
+  "name": "onlygian/G-Forge",
+  "repository": "https://github.com/onlygian/G-Forge",
+  "repositoryId": "1227926063",
+  "site": "https://github.com/onlygian/G-Forge",
+  "sourceSignature": "ff665ce1da43747ab2f977168d497c6e9ba99ef1c19c5e0de3da6d1f1f1d85d6",
+  "summary": [
+    "据发布者介绍，G-Forge 为 Claude Code 项目提供规划、审查和记录工作成果的流程，并通过 Git 钩子强制执行提交前检查。",
+    "The publisher describes G-Forge as a workflow for planning, reviewing, and documenting work on Claude Code projects, with a Git hook that enforces a check before commits."
+  ],
+  "tested": false,
+  "type": "workflows",
+  "verificationSources": [
+    "https://api.github.com/search/repositories?page=10&per_page=30&q=topic%3Aai-workflow+archived%3Afalse+fork%3Afalse&sort=stars"
+  ],
+  "verifiedAt": "2026-11-27"
+}
