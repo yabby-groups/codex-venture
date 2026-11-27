@@ -1,0 +1,28 @@
+{
+  "addedAt": "2026-11-27",
+  "categories": [
+    [
+      "AI 项目组合评估",
+      "AI Portfolio Evaluation"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-27",
+  "id": "resource-00ac048f3c3e3645a1072c4d61de7cfb75f9c97dbc3232ff5bd9344f92bb74bd",
+  "identity": "github:1251866950",
+  "license": "NOASSERTION",
+  "name": "policani/ai-opportunity-intelligence-review-system",
+  "repository": "https://github.com/policani/ai-opportunity-intelligence-review-system",
+  "repositoryId": "1251866950",
+  "site": "https://github.com/policani/ai-opportunity-intelligence-review-system",
+  "sourceSignature": "1cbf98f746421b4d961b68412e49c9754e1fa9ead9b3592ad860787930a3d9a8",
+  "summary": [
+    "据发布者介绍，这套流程可梳理 AI 创意的架构、待验证事项和治理措施，再决定是自建、采购、暂缓，还是优先改进现有流程。",
+    "The publisher describes a workflow for outlining an AI idea’s architecture, identifying what needs to be validated, and defining governance controls before deciding whether to build, buy, wait, or improve the existing process first."
+  ],
+  "tested": false,
+  "type": "workflows",
+  "verificationSources": [
+    "https://api.github.com/search/repositories?page=11&per_page=30&q=topic%3Aai-workflow+archived%3Afalse+fork%3Afalse&sort=stars"
+  ],
+  "verifiedAt": "2026-11-27"
+}

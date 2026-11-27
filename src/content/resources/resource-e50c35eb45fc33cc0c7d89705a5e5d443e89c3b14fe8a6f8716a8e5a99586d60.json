@@ -1,0 +1,28 @@
+{
+  "addedAt": "2026-11-27",
+  "categories": [
+    [
+      "代码检索与编辑",
+      "Code Search and Editing"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-25",
+  "id": "resource-e50c35eb45fc33cc0c7d89705a5e5d443e89c3b14fe8a6f8716a8e5a99586d60",
+  "identity": "github:953683578",
+  "license": "NOASSERTION",
+  "name": "oraios/serena",
+  "repository": "https://github.com/oraios/serena",
+  "repositoryId": "953683578",
+  "site": "https://github.com/oraios/serena",
+  "sourceSignature": "33267e2269310949d72a54169ca5643e66779fc1671fd98a626b89b1802174f6",
+  "summary": [
+    "据发布者介绍，Serena 是一套 MCP 工具，可让编程代理通过语义检索查找相关代码并进行编辑。",
+    "The publisher describes Serena as an MCP toolkit that lets coding agents find relevant code through semantic retrieval and edit it."
+  ],
+  "tested": false,
+  "type": "tools",
+  "verificationSources": [
+    "https://api.github.com/search/repositories?page=1&per_page=30&q=topic%3Aai-coding+archived%3Afalse+fork%3Afalse&sort=stars"
+  ],
+  "verifiedAt": "2026-11-27"
+}

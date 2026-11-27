@@ -1,0 +1,28 @@
+{
+  "addedAt": "2026-11-27",
+  "categories": [
+    [
+      "GPU 推理故障排查",
+      "GPU Inference Troubleshooting"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-26",
+  "id": "resource-233ba7e78c0c40e30637eeafa8e5486bb6c2652521c8a4cdcb25b04df6fa4e0a",
+  "identity": "github-skill:1135891523:.github/plugins/aks-skills/skills/aks-gpu-inference/SKILL.md",
+  "name": "aks-gpu-inference",
+  "repository": "https://github.com/microsoft/skills",
+  "repositoryId": "1135891523",
+  "site": "https://github.com/microsoft/skills/blob/main/.github/plugins/aks-skills/skills/aks-gpu-inference/SKILL.md",
+  "sourcePath": ".github/plugins/aks-skills/skills/aks-gpu-inference/SKILL.md",
+  "sourceSignature": "5ee31b2efdc959062eebae0dca4296eae5f9cf26c90f1f2281c8d3f2e698c48e",
+  "summary": [
+    "据 Microsoft 介绍，这项技能利用只读信息排查 AKS GPU 推理和 KAITO 故障，包括 GPU Pod 长时间处于 Pending 状态、模型加载时内存不足，以及工作区未就绪。",
+    "Microsoft describes a skill that uses read-only evidence to diagnose AKS GPU inference and KAITO incidents, including pending GPU pods, out-of-memory errors during model loading, and workspaces that fail to become ready."
+  ],
+  "tested": false,
+  "type": "skills",
+  "verificationSources": [
+    "https://github.com/microsoft/skills/blob/main/.github/plugins/aks-skills/skills/aks-gpu-inference/SKILL.md"
+  ],
+  "verifiedAt": "2026-11-27"
+}

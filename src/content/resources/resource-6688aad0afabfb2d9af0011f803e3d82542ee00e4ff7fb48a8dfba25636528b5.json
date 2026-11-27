@@ -1,0 +1,31 @@
+{
+  "addedAt": "2026-11-27",
+  "categories": [
+    [
+      "多模型聊天",
+      "Multi-Model Chat"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-25",
+  "id": "resource-6688aad0afabfb2d9af0011f803e3d82542ee00e4ff7fb48a8dfba25636528b5",
+  "identity": "openvsx:modelflare.modelflare",
+  "install": "https://open-vsx.org/extension/modelflare/modelflare",
+  "name": "Modelflare",
+  "platforms": [
+    "Open VSX"
+  ],
+  "site": "https://open-vsx.org/extension/modelflare/modelflare",
+  "sourceSignature": "f5f5445a1be61a9e8c986448626f0f558c9c9c1101e22205fc6f9846f8231f21",
+  "summary": [
+    "据发布者介绍，这款扩展可在 VS Code 聊天界面中调用你的 Modelflare Smart API Key 所提供的模型，例如 GPT、Claude 和 Gemini。",
+    "According to the publisher, the extension lets you chat in VS Code with models available through your Modelflare Smart API Key, such as GPT, Claude, and Gemini."
+  ],
+  "tested": false,
+  "type": "plugins",
+  "verificationSources": [
+    "https://open-vsx.org/api/-/search?offset=25&query=language+model&size=25",
+    "https://open-vsx.org/api/-/search?offset=425&query=Claude&size=25"
+  ],
+  "verifiedAt": "2026-11-27",
+  "version": "0.1.0"
+}

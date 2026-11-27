@@ -1,0 +1,27 @@
+{
+  "addedAt": "2026-11-27",
+  "categories": [
+    [
+      "大语言模型采样实验",
+      "LLM Sampling Experiments"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-26",
+  "id": "resource-955d58bbdbd474db2b4416a648c2927e18f493c426c51146257de5c41ed57e98",
+  "identity": "github:1426879872",
+  "name": "Burakkylmz/llm-sampling-lab",
+  "repository": "https://github.com/Burakkylmz/llm-sampling-lab",
+  "repositoryId": "1426879872",
+  "site": "https://github.com/Burakkylmz/llm-sampling-lab",
+  "sourceSignature": "dca31f178bb0a193f86923b259ee1fc1d03901ac922f02b303cc5273e6a4f7d0",
+  "summary": [
+    "据发布者介绍，可通过可复现的模拟、可视化和 Groq API 实验，观察温度、Top-k 和 Top-p 如何影响词元概率和生成结果的多样性。",
+    "The publisher describes reproducible simulations, visualizations, and Groq API experiments for exploring how temperature, top-k, and top-p affect token probabilities and output diversity."
+  ],
+  "tested": false,
+  "type": "resources",
+  "verificationSources": [
+    "https://api.github.com/search/repositories?page=2&per_page=30&q=topic%3Aai-education+archived%3Afalse+fork%3Afalse&sort=stars"
+  ],
+  "verifiedAt": "2026-11-27"
+}

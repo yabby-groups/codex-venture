@@ -1,0 +1,28 @@
+{
+  "addedAt": "2026-11-27",
+  "categories": [
+    [
+      "语音合成服务部署",
+      "Text-to-Speech Hosting"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-26",
+  "id": "resource-1e6c3cc94d102f2548b01577489c1aeaf31b5a652adef5064b5ed83ee1d04063",
+  "identity": "github:993746345",
+  "license": "MIT",
+  "name": "devnen/Chatterbox-TTS-Server",
+  "repository": "https://github.com/devnen/Chatterbox-TTS-Server",
+  "repositoryId": "993746345",
+  "site": "https://github.com/devnen/Chatterbox-TTS-Server",
+  "sourceSignature": "8b358fed64bdf2b58362c7139fcbd4c71b04c581310b2a1d86a8b9aea273a5be",
+  "summary": [
+    "据发布者介绍，这款可自行部署的 Chatterbox 语音合成服务支持通过网页界面或 API 将文本转为音频、选择预设音色，以及处理有声书篇幅的文本。",
+    "The publisher describes a self-hosted Chatterbox text-to-speech server that lets you convert text to audio through a web interface or API, choose preset voices, and process audiobook-length text."
+  ],
+  "tested": false,
+  "type": "open-source",
+  "verificationSources": [
+    "https://api.github.com/search/repositories?page=3&per_page=30&q=topic%3Atext-to-speech+archived%3Afalse+fork%3Afalse&sort=stars"
+  ],
+  "verifiedAt": "2026-11-27"
+}

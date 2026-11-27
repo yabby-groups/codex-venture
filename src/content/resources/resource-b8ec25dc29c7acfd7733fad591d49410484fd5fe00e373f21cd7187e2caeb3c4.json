@@ -1,0 +1,28 @@
+{
+  "addedAt": "2026-11-27",
+  "categories": [
+    [
+      "零售服务匹配",
+      "Retail Service Matching"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-25",
+  "id": "resource-b8ec25dc29c7acfd7733fad591d49410484fd5fe00e373f21cd7187e2caeb3c4",
+  "identity": "mcp:ai.advisorsai/service-navigator",
+  "name": "Advisors AI — Route a Store Need to a Service",
+  "registryId": "ai.advisorsai/service-navigator",
+  "site": "https://registry.modelcontextprotocol.io/v0.1/servers/ai.advisorsai%2Fservice-navigator/versions/1.1.0",
+  "sourceSignature": "fc0838b8fac429494e991d6dd6dde3e6fd330ffc262fa7b682592788a824b07f",
+  "summary": [
+    "据发布者介绍，这项 MCP 资源可根据门店描述的问题匹配服务，并返回服务申请链接。",
+    "According to the publisher, this MCP resource matches a store’s stated problem to a service and returns a link for requesting it."
+  ],
+  "tested": false,
+  "transport": "streamable-http",
+  "type": "mcp",
+  "verificationSources": [
+    "https://registry.modelcontextprotocol.io/v0.1/servers/ai.advisorsai%2Fservice-navigator/versions/1.1.0"
+  ],
+  "verifiedAt": "2026-11-27",
+  "version": "1.1.0"
+}
