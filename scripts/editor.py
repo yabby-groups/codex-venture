@@ -54,7 +54,7 @@ def sync(items, articles):
 def evidence_revision(candidate):
     evidence = {key: value for key, value in candidate.items()
                 if key in ('title', 'url', 'summary', 'documents', 'basis', 'experiment')}
-    evidence['selectionPolicy'] = 2
+    evidence['selectionPolicy'] = 3
     evidence['documents'] = [
         {key: value for key, value in doc.items() if key not in ('fetched_at', 'verified_at', 'checked_at')}
         for doc in evidence.get('documents', [])
