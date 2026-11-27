@@ -1,0 +1,27 @@
+{
+  "addedAt": "2026-11-27",
+  "categories": [
+    [
+      "编程智能体工作流",
+      "Coding agent workflows"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-26",
+  "id": "resource-bedf55c0e7fe28cb818cc5a2fb5b9e87dd88d00e9dd66738df0cd2ece3c3f818",
+  "identity": "github:1147470802",
+  "name": "rohitg00/pro-workflow",
+  "repository": "https://github.com/rohitg00/pro-workflow",
+  "repositoryId": "1147470802",
+  "site": "https://github.com/rohitg00/pro-workflow",
+  "sourceSignature": "e4ff0ca9788889bedde2f992464c1805695ce99be0612bf585c3e2645537b11f",
+  "summary": [
+    "据发布者介绍，pro-workflow 可在 Claude Code 会话之间保留用户的纠正反馈，并利用并行工作树和智能体团队协调编程任务。",
+    "The publisher describes pro-workflow as a way to carry user corrections across Claude Code sessions and coordinate coding tasks with parallel worktrees and agent teams."
+  ],
+  "tested": false,
+  "type": "workflows",
+  "verificationSources": [
+    "https://api.github.com/search/repositories?page=1&per_page=30&q=topic%3Aai-workflow+archived%3Afalse+fork%3Afalse&sort=stars"
+  ],
+  "verifiedAt": "2026-11-27"
+}

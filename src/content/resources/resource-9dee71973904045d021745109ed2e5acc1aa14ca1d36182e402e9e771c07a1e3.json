@@ -1,0 +1,28 @@
+{
+  "addedAt": "2026-11-27",
+  "categories": [
+    [
+      "联盟营销报表",
+      "Affiliate reporting"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-25",
+  "id": "resource-9dee71973904045d021745109ed2e5acc1aa14ca1d36182e402e9e771c07a1e3",
+  "identity": "mcp:ai.agenticaffiliate/affiliate-networks-mcp",
+  "name": "Affiliate Networks MCP",
+  "registryId": "ai.agenticaffiliate/affiliate-networks-mcp",
+  "site": "https://registry.modelcontextprotocol.io/v0.1/servers/ai.agenticaffiliate%2Faffiliate-networks-mcp/versions/0.19.0",
+  "sourceSignature": "3fef74f1f0721f58537254c88ec1fba234e2d61eb0d8d6170ebb425d7742756e",
+  "summary": [
+    "据发布者介绍，Affiliate Networks MCP 可使用读者自己的 API 密钥，在 AI 客户端中查看联盟营销网络的报表。发布者将大多数适配器标为实验性。",
+    "The publisher says Affiliate Networks MCP lets readers access affiliate network reports from an AI client using their own API keys. Most adapters are described as experimental."
+  ],
+  "tested": false,
+  "transport": "stdio, streamable-http",
+  "type": "mcp",
+  "verificationSources": [
+    "https://registry.modelcontextprotocol.io/v0.1/servers/ai.agenticaffiliate%2Faffiliate-networks-mcp/versions/0.19.0"
+  ],
+  "verifiedAt": "2026-11-27",
+  "version": "0.19.0"
+}

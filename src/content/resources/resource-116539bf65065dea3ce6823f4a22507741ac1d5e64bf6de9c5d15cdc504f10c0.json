@@ -1,0 +1,28 @@
+{
+  "addedAt": "2026-11-27",
+  "categories": [
+    [
+      "终端界面测试",
+      "Terminal UI testing"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-26",
+  "id": "resource-116539bf65065dea3ce6823f4a22507741ac1d5e64bf6de9c5d15cdc504f10c0",
+  "identity": "github-skill:968197216:.gemini/skills/tui-tester/SKILL.md",
+  "name": "tui-tester",
+  "repository": "https://github.com/google-gemini/gemini-cli",
+  "repositoryId": "968197216",
+  "site": "https://github.com/google-gemini/gemini-cli/blob/main/.gemini/skills/tui-tester/SKILL.md",
+  "sourcePath": ".gemini/skills/tui-tester/SKILL.md",
+  "sourceSignature": "29022895599f6276624518684daae5e0eb11313b9d0bafa9fc972a87934a9e76",
+  "summary": [
+    "tui-tester 指南介绍如何自动检查 Gemini CLI 在不同终端尺寸和状态下的交互与渲染效果，并发现交互流程中的回归问题。",
+    "The tui-tester guide shows how to automate checks of Gemini CLI interactions and rendering across terminal sizes and states, and how to catch regressions in interactive workflows."
+  ],
+  "tested": false,
+  "type": "skills",
+  "verificationSources": [
+    "https://github.com/google-gemini/gemini-cli/blob/main/.gemini/skills/tui-tester/SKILL.md"
+  ],
+  "verifiedAt": "2026-11-27"
+}

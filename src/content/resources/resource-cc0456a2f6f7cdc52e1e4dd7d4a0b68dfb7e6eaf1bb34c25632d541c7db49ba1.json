@@ -1,0 +1,27 @@
+{
+  "addedAt": "2026-11-27",
+  "categories": [
+    [
+      "求职申请辅助",
+      "Job application assistance"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-25",
+  "id": "resource-cc0456a2f6f7cdc52e1e4dd7d4a0b68dfb7e6eaf1bb34c25632d541c7db49ba1",
+  "identity": "github:827945025",
+  "name": "kaymen99/Upwork-AI-jobs-applier",
+  "repository": "https://github.com/kaymen99/Upwork-AI-jobs-applier",
+  "repositoryId": "827945025",
+  "site": "https://github.com/kaymen99/Upwork-AI-jobs-applier",
+  "sourceSignature": "1729afddefeaa13ef756b7346120aa1f4cd9d05048e9c5f378a6c8bcc6b2d8e0",
+  "summary": [
+    "据发布者介绍，Upwork AI Jobs Applier 使用 AI 智能体查找和筛选 Upwork 职位，并根据读者的技能和经验起草有针对性的求职信、辅助准备面试。",
+    "The publisher says Upwork AI Jobs Applier uses AI agents to find and screen Upwork listings, draft tailored cover letters, and help readers prepare for interviews based on their skills and experience."
+  ],
+  "tested": false,
+  "type": "tools",
+  "verificationSources": [
+    "https://api.github.com/search/repositories?page=1&per_page=30&q=topic%3Aai-automation+archived%3Afalse+fork%3Afalse&sort=stars"
+  ],
+  "verifiedAt": "2026-11-27"
+}

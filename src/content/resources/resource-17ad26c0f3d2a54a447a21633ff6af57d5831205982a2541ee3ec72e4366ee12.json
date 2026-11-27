@@ -1,0 +1,29 @@
+{
+  "addedAt": "2026-11-27",
+  "categories": [
+    [
+      "产品视频制作",
+      "Product video production"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-26",
+  "id": "resource-17ad26c0f3d2a54a447a21633ff6af57d5831205982a2541ee3ec72e4366ee12",
+  "identity": "github:1305663861",
+  "license": "Apache-2.0",
+  "name": "Vincentwei1021/video-shotcraft",
+  "repository": "https://github.com/Vincentwei1021/video-shotcraft",
+  "repositoryId": "1305663861",
+  "site": "https://github.com/Vincentwei1021/video-shotcraft",
+  "sourceSignature": "ca974043287db970181905d02b7afc995e9a9b101fe8392d25945efeea567dcd",
+  "summary": [
+    "据发布者介绍，Video Shotcraft 提供镜头方案卡、动态预览、节拍同步和声音设计功能，可用于在 Remotion 中制作可编辑的产品宣传视频。",
+    "The publisher describes Video Shotcraft as a way to build editable product promos in Remotion using shot recipe cards, motion previews, beat syncing, and sound design."
+  ],
+  "tested": false,
+  "type": "open-source",
+  "verificationSources": [
+    "https://api.github.com/search/repositories?page=1&per_page=30&q=topic%3Avideo-generation+archived%3Afalse+fork%3Afalse&sort=stars",
+    "https://api.github.com/search/repositories?page=4&per_page=30&q=topic%3Aai-agents+archived%3Afalse+fork%3Afalse&sort=stars"
+  ],
+  "verifiedAt": "2026-11-27"
+}

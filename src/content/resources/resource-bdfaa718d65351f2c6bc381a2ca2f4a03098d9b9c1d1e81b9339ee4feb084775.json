@@ -1,0 +1,28 @@
+{
+  "addedAt": "2026-11-27",
+  "categories": [
+    [
+      "演示文稿大纲编排",
+      "Presentation outlining"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-26",
+  "id": "resource-bdfaa718d65351f2c6bc381a2ca2f4a03098d9b9c1d1e81b9339ee4feb084775",
+  "identity": "github:1238426179",
+  "license": "NOASSERTION",
+  "name": "LearnPrompt/humanize-ppt",
+  "repository": "https://github.com/LearnPrompt/humanize-ppt",
+  "repositoryId": "1238426179",
+  "site": "https://github.com/LearnPrompt/humanize-ppt",
+  "sourceSignature": "a5f8834951f8899e3c552718b02cdbe9ca9b5415cf1281d8507e89da67e7ac38",
+  "summary": [
+    "据发布者介绍，humanize-ppt 使用抽象语法树来组织 AI 辅助生成的演示文稿大纲。",
+    "The publisher describes humanize-ppt as a workflow for structuring AI-assisted presentation outlines using an abstract syntax tree."
+  ],
+  "tested": false,
+  "type": "workflows",
+  "verificationSources": [
+    "https://api.github.com/search/repositories?page=1&per_page=30&q=topic%3Aai-workflow+archived%3Afalse+fork%3Afalse&sort=stars"
+  ],
+  "verifiedAt": "2026-11-27"
+}

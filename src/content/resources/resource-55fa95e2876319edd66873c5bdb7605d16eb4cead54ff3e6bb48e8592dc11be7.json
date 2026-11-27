@@ -1,0 +1,27 @@
+{
+  "addedAt": "2026-11-27",
+  "categories": [
+    [
+      "AI 培训资料",
+      "AI training materials"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-26",
+  "id": "resource-55fa95e2876319edd66873c5bdb7605d16eb4cead54ff3e6bb48e8592dc11be7",
+  "identity": "github:1356866069",
+  "name": "MissAlpha-AI-Labs532/MissAlpha-AI-Labs-Free-MasterClasses-PromptBooks-28th-June-2026",
+  "repository": "https://github.com/MissAlpha-AI-Labs532/MissAlpha-AI-Labs-Free-MasterClasses-PromptBooks-28th-June-2026",
+  "repositoryId": "1356866069",
+  "site": "https://github.com/MissAlpha-AI-Labs532/MissAlpha-AI-Labs-Free-MasterClasses-PromptBooks-28th-June-2026",
+  "sourceSignature": "d1bba9e312a8155ea3ce05ced9793e41534c8c1f2ccd2f7076273dc85d0af161",
+  "summary": [
+    "据 MissAlpha AI Labs 介绍，这套提示词工具包和培训资料可用于练习提示词工程、使用 AI 智能体，以及用 Python 探索生成式 AI。",
+    "MissAlpha AI Labs describes a collection of prompt kits and training materials for practicing prompt engineering, working with AI agents, and exploring generative AI with Python."
+  ],
+  "tested": false,
+  "type": "resources",
+  "verificationSources": [
+    "https://api.github.com/search/repositories?page=2&per_page=30&q=topic%3Aai-education+archived%3Afalse+fork%3Afalse&sort=stars"
+  ],
+  "verifiedAt": "2026-11-27"
+}
