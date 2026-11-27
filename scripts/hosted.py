@@ -19,7 +19,8 @@ from resource_editor import resource_context
 import resource_ingest
 import operations_queue
 import original
-from editor import ITEMS, DATE_ZONE, RUN_BUDGET, choose, metadata, output_schema, sync, write_articles
+import editorial
+from editor import ITEMS, DATE_ZONE, RUN_BUDGET, choose, evidence_revision, metadata, output_schema, sync, write_articles
 from model_cost import configured_price, event_usage, worst_case
 from release import PROBE_HEADERS, probe
 
@@ -117,6 +118,10 @@ def prepare(task, queued=False, excluded=()):
         return
     slug = 'weekly-' + day if task == 'weekly' else day
     rules = strategy() if os.getenv('VENTURE_STRATEGY_AUTO_UPDATE') == 'true' else load(Path('config/editorial-strategy.json'), {})
+    review_strategy = {'reader_review': editorial.thresholds(load(Path('config/editorial-strategy.json'), {}))}
+    existing_articles = sorted(articles, key=lambda row: row.get('published', ''), reverse=True)
+    existing_articles = [{key: row[key] for key in ('slug', 'titleZh', 'titleEn', 'sources') if key in row}
+                         for row in existing_articles[:80]]
     eligible = {key: item for key, item in items.items() if key not in excluded} if excluded else items
     candidates = (resource_ingest.prepare(task, os.getenv('RESOURCE_TYPE') or 'all', day, capacity=12 if queued else 12 * BATCH_SLOTS, coverage=coverage.get('resources'), excluded=excluded)
                   if resource_task else choose(task, eligible, now, days if task in ('weekly', 'backfill') else 2, rules))
@@ -166,6 +171,7 @@ def prepare(task, queued=False, excluded=()):
                         item.get('discovery', {}).get('upstream')) for item in candidates.values())]
         save(BATCH, dict(task=task, date=day, now=now.isoformat(timespec='seconds'),
                          reservation=RUN_BUDGET, unlimited=unlimited, enforce_cost_limit=cost_limited,
+                         reviewStrategy=review_strategy, existingArticles=existing_articles,
                          batches=[dict(candidates=candidates, existingResources=context)]))
         return
 
@@ -183,7 +189,7 @@ def prepare(task, queued=False, excluded=()):
     model = (os.getenv('CODEX_ADVANCED_MODEL') if task == 'weekly' else None) or os.getenv('CODEX_MODEL')
     price = configured_price('venture', model, day)
     root = store()
-    slots = BATCH_SLOTS if resource_task or task in ('news', 'backfill') or task in original.TYPES else 1
+    slots = BATCH_SLOTS if resource_task else 1
     remaining = dict(items)
     batches = []
     profiles = resource_context() if not resource_task and task in ('news', 'backfill') else []
@@ -221,6 +227,7 @@ def prepare(task, queued=False, excluded=()):
     save(ledger_path, ledger)
     save(BATCH, dict(task=task, date=day, now=now.isoformat(timespec='seconds'),
                      reservation=reserved, unlimited=unlimited,
+                     reviewStrategy=review_strategy, existingArticles=existing_articles,
                      enforce_cost_limit=bool(os.getenv('VENTURE_DAILY_COST_LIMIT')), batches=batches,
                      candidates=batches[0]['candidates']))
 
@@ -317,8 +324,9 @@ def invoke(*, yolo=False):
         usage = {field: sum(row['usage'][field] for row in charged) for field in fields}
         print(f"Observed model tokens: {usage['input_tokens']} input, {usage['output_tokens']} output")
     completed = sum(response is not None for response in responses)
-    print(f'Model sessions: {len(charged)} attempted, {completed} completed')
-    save(MODEL / 'receipt.json', {**receipts[0], 'usage': usage, 'sessions': len(charged),
+    sessions = sum(row['sessions'] for row in charged)
+    print(f'Model sessions: {sessions} attempted, {completed} batches completed')
+    save(MODEL / 'receipt.json', {**receipts[0], 'usage': usage, 'sessions': sessions,
                                 'status': 'partial' if failure and completed else 'failed' if failure else 'success',
                                 'batches': receipts, 'duration_seconds': round(time.monotonic() - started, 3)})
     if failure and not completed:
@@ -328,13 +336,65 @@ def invoke(*, yolo=False):
 
 
 def run_model(batch, smoke, receipt, *, yolo=False):
+    resource = batch['task'].startswith('resource-')
+    if smoke or resource:
+        return model_call(batch, smoke, receipt, yolo=yolo)
+
+    stages = []
+    receipt['stages'] = stages
+
+    def run(stage, schema, payload):
+        stage_receipt = {'stage': stage, 'sessions': 0, 'usage': None}
+        stages.append(stage_receipt)
+        try:
+            return model_call(batch, False, stage_receipt, yolo=yolo, stage=stage, schema_override=schema,
+                              payload_override=payload)
+        finally:
+            attempted = [row for row in stages if row['sessions']]
+            receipt['sessions'] = len(attempted)
+            receipt.update({key: stage_receipt[key] for key in ('model', 'effort') if key in stage_receipt})
+            if attempted and all(row['usage'] is not None for row in attempted):
+                fields = set.intersection(*(set(row['usage']) for row in attempted))
+                receipt['usage'] = {field: sum(row['usage'][field] for row in attempted) for field in fields}
+            else:
+                receipt['usage'] = None
+            usage = receipt['usage']
+            if ((not batch['unlimited'] or batch['enforce_cost_limit']) and usage and
+                    usage['input_tokens'] + usage['output_tokens'] > batch['reservation']):
+                raise RuntimeError('Editorial stages exceeded the batch reservation')
+
+    candidates = batch['candidates']
+    existing = batch.get('existingArticles', [])
+    selection = run('editorial-selection', editorial.PITCH, dict(candidates=candidates, existingArticles=existing))
+    if not editorial.conforms(selection, editorial.PITCH):
+        raise ValueError('Invalid editorial selection')
+    pitches = {row['id']: row for row in selection['pitches']}
+    if len(pitches) != len(selection['pitches']) or not pitches.keys() <= candidates.keys():
+        raise ValueError('Invalid editorial candidate IDs')
+    if any(not value.strip() for row in pitches.values() for value in row.values()):
+        raise ValueError('Incomplete editorial pitch')
+    if not pitches:
+        return dict(draft={'articles': [], 'skipped': []}, review={'reviews': []}, selection=selection)
+    selected = {key: candidates[key] for key in pitches}
+    draft = run('editor', output_schema(selected), dict(candidates=selected, pitches=pitches,
+                                                       existingResources=batch['existingResources']))
+    if not editorial.conforms(draft, output_schema(selected)):
+        raise ValueError('Invalid draft')
+    review = run('reader-review', editorial.REVIEW, dict(articles=draft['articles'], candidates=selected,
+                                                       existingArticles=existing)) if draft['articles'] else {'reviews': []}
+    editorial.decisions(draft, review, batch.get('reviewStrategy', {}))
+    return dict(draft=draft, review=review, selection=selection)
+
+
+def model_call(batch, smoke, receipt, *, yolo=False, stage=None, schema_override=None, payload_override=None):
     with tempfile.TemporaryDirectory(prefix='venture-edit-') as directory:
         workspace = Path(directory)
         schema, result = workspace / 'schema.json', workspace / 'result.json'
         instructions = workspace / 'instructions.txt'
         instructions.write_text(
             'Call the fixed venture_smoke check tool and return its marker as JSON.' if smoke else
-            (REPOSITORY / ('ops/resource-editor.md' if batch['task'].startswith('resource-') else 'ops/editor.md')).read_text()
+            (REPOSITORY / (f'ops/{stage}.md' if stage else
+                           'ops/resource-editor.md' if batch['task'].startswith('resource-') else 'ops/editor.md')).read_text()
         )
         receipt['sessions'] = 0
         config(smoke, instructions, workspace / '.codex', yolo=yolo)
@@ -346,9 +406,13 @@ def run_model(batch, smoke, receipt, *, yolo=False):
         payload = {key: batch[key] for key in ('date', 'candidates', 'existingResources')}
         if batch['task'].startswith('resource-'):
             payload = dict(candidates=resource_ingest.editorial_input(batch['candidates']))
+        if payload_override is not None:
+            payload = {'date': batch['date'], **payload_override}
         prompt = json.dumps(dict(mode=batch['task'], **payload), ensure_ascii=False, separators=(',', ':'))
         print(f'Editorial stdin: {len(prompt.encode())} bytes for {len(batch["candidates"])} candidates')
         schema_data = resource_ingest.SCHEMA if batch['task'].startswith('resource-') else output_schema(batch['candidates'])
+        if schema_override is not None:
+            schema_data = schema_override
         if smoke:
             schema_data = dict(type='object', properties={'marker': {'type': 'string'}},
                                required=['marker'], additionalProperties=False)
@@ -454,14 +518,36 @@ def accept():
                 counts[key] += stats[key]
             directories.update(row['type'] for row in part['candidates'].values())
         else:
-            routes.extend(accept_articles({**batch, **part}, response))
+            if type(response) is not dict or set(response) != {'draft', 'review', 'selection'}:
+                raise ValueError('Missing independently reviewed editorial result')
+            selected = response['selection']
+            if not editorial.conforms(selected, editorial.PITCH):
+                raise ValueError('Invalid editorial selection receipt')
+            pitches = {row['id'] for row in selected['pitches']}
+            if (len(pitches) != len(selected['pitches']) or not pitches <= part['candidates'].keys()
+                    or any(not value.strip() for row in selected['pitches'] for value in row.values())):
+                raise ValueError('Invalid selected candidate pitches')
+            candidates = {key: part['candidates'][key] for key in pitches}
+            draft = response['draft']
+            if not editorial.conforms(draft, output_schema(candidates)) or any(
+                not set(article['itemIds']) <= pitches for article in draft['articles']
+            ) or not set(draft['skipped']) <= pitches:
+                raise ValueError('Draft contains unselected evidence')
+            accepted, ratings = editorial.decisions(draft, response['review'], batch.get('reviewStrategy', {}))
+            routes.extend(accept_articles({**batch, **part, 'candidates': candidates},
+                                          dict(articles=accepted, skipped=[]), ratings))
+            items = load(ITEMS, {})
+            for key, candidate in part['candidates'].items():
+                if key in items:
+                    items[key].setdefault('editorial_attempts', {})[batch['task']] = evidence_revision(candidate)
+            save(ITEMS, items)
     save(WORK / 'routes.json', routes)
     save(WORK / 'resources-published.json', counts)
     print('Resource decisions:', json.dumps(counts), flush=True)
     save(WORK / 'resource-routes.json', [f'topics/{kind}/index.json' for kind in sorted(directories)])
 
 
-def accept_articles(batch, response):
+def accept_articles(batch, response, ratings):
     if type(response) is not dict or set(response) != {'articles', 'skipped'}:
         raise ValueError('Invalid editorial response')
     if type(response['articles']) is not list or not string_list(response['skipped'], len(batch['candidates']), 64):
@@ -489,8 +575,10 @@ def accept_articles(batch, response):
         raise ValueError('Batch date is invalid')
     if batch['task'] in ('daily', 'weekly'):
         for article in response['articles']:
+            original_slug = article['slug']
             article['slug'] = ('weekly-' if batch['task'] == 'weekly' else '') + batch['date']
-    skipped = write_articles(response, batch['task'], batch['candidates'], now)
+            ratings[article['slug']] = ratings.pop(original_slug)
+    skipped = write_articles(response, batch['task'], batch['candidates'], now, ratings=ratings)
     articles = metadata()
     items = load(ITEMS, {})
     sync(items, articles)

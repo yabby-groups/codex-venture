@@ -27,7 +27,7 @@ const verificationUrls = [...new Set(Astro.props.verificationSources ?? [])]
   </section>
   {related.length > 0 && <section aria-label="相关阅读 / Related reading">
     <BilingualHeading zh="相关阅读" en="Related reading" />
-    <ul class="article-related">{related.map((item) => <li><a href={storyUrl(item)}><span lang="zh-CN">{item.data.titleZh}</span><span lang="en">{item.data.titleEn}</span></a></li>)}</ul>
+    <ul class="article-related" data-related-articles>{related.map((item) => <li><a href={storyUrl(item)}><span lang="zh-CN">{item.data.titleZh}</span><span lang="en">{item.data.titleEn}</span></a></li>)}</ul>
   </section>}
   {entities.length > 0 && <section aria-label="技术主题 / Technology topics">
     <BilingualHeading zh="技术主题" en="Technology topics" />

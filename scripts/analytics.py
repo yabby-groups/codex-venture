@@ -67,6 +67,8 @@ def content(articles):
         projects.update(repos)
         inventory[path] = {'category': category, 'kind': kind, 'date': day.isoformat(),
                            'sources': sorted(domains), 'projects': sorted(repos)}
+        if article.get('editorial'):
+            inventory[path]['editorial'] = article['editorial']
     return dict(total=len(articles), kinds=kinds, categories=categories, sources=len(sources),
                 unique_github_projects=len(projects), days=days, weeks=weeks, months=months,
                 source_coverage=sum(bool(a['sources']) for a in articles) / len(articles) if articles else None,
@@ -92,6 +94,59 @@ def days_between(start, end):
 def enabled_data(snapshot, key):
     item = snapshot.get('metrics', {}).get(key, {})
     return item.get('data') if item.get('status') == 'available' else None
+
+
+def reader_performance(paths, commercial, clicks, impressions):
+    observed = Counter()
+    by_path = defaultdict(Counter)
+    content_events = {'article_copy', 'related_article_click'} | {
+        f'article_depth_{level}' for level in (25, 50, 75, 100)
+    }
+    for day in commercial.values():
+        snapshot = day['ga4']
+        if not isinstance(snapshot, dict):
+            continue
+        for metric in ('pages', 'content_events', 'recommendations'):
+            result = enabled_data(snapshot, metric)
+            if result is None:
+                continue
+            observed[metric] += 1
+            for row in result.get('rows', []):
+                if 'dimensionValues' not in row:
+                    continue
+                dimensions = [value['value'] for value in row['dimensionValues']]
+                values = [value['value'] for value in row['metricValues']]
+                if metric == 'pages':
+                    path = route(dimensions[0])
+                    if path in paths:
+                        views, seconds, _ = values
+                        by_path[path].update(views=int(views), engagement_seconds=float(seconds))
+                else:
+                    event, value = dimensions
+                    allowed = content_events if metric == 'content_events' else {'editorial_impression', 'editorial_click'}
+                    path = route(value)
+                    if event in allowed and path in paths:
+                        by_path[path][event] += int(values[0])
+    articles = {}
+    for path, article in paths.items():
+        if 'editorial' not in article:
+            continue
+        counts = by_path.get(path, {})
+        views = counts.get('views')
+        exposed = counts.get('editorial_impression', 0)
+        articles[path] = {
+            'editorial': article['editorial'],
+            'ga4_reported': dict(counts),
+            'sample': ('unavailable' if not observed['pages'] else 'no_reported_views' if not views
+                       else 'insufficient' if views < 100 else 'observed'),
+            'engagement_seconds_per_view': counts['engagement_seconds'] / views if views else None,
+            'recommendation_clicks_per_impression': counts.get('editorial_click', 0) / exposed if exposed and counts.get('editorial_click') is not None else None,
+            'search_clicks': clicks.get(path) if path in impressions else None,
+            'search_impressions': impressions.get(path),
+        }
+    return {'observed_days': dict(observed), 'articles': articles,
+            'scope': 'Reported consented GA4 rows, subject to row limits and privacy thresholds'}
+
 
 
 def report(root, start, end, stats):
@@ -209,6 +264,7 @@ def report(root, start, end, stats):
                 browser_visits={day: totals[day].get('visits', 'UNKNOWN') for day in dates},
                 referrer_pageviews=dict(all_referrals.most_common(30)) if referral_days else 'UNKNOWN',
                 latest_final_search=latest_search, monetization=commercial, next_content=strategy,
+                reader_performance=reader_performance(paths, commercial, clicks, impressions),
                 new_articles={d: stats['days'].get(d, 0) for d in dates},
                 top_articles=[{'path': path, 'views': count, **paths[path]}
                               for path, count in views.most_common(20)],

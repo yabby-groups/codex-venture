@@ -53,7 +53,7 @@ class CommerceAnalyticsTests(unittest.TestCase):
         ]}]}
         snapshot = ga4(day)
         token.assert_called_once_with('GOOGLE_GA4')
-        self.assertEqual(api.call_count, 3)
+        self.assertEqual(api.call_count, 6)
         endpoint, access_token, payload = api.call_args_list[0].args
         self.assertTrue(endpoint.endswith('/123456789:runReport'))
         self.assertEqual(access_token, 'fixture-token')

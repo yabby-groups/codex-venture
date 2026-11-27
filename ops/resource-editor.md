@@ -6,3 +6,9 @@ category. Attribute publisher claims and omit unsupported details. Do not infer 
 testing, platform compatibility, licenses, permissions, or pricing. Decline abandoned,
 duplicative, unsafe, or low-information listings. Leave uncertain or unprocessed keys out
 of the result so they remain eligible. Return only the requested JSON.
+
+Require a concrete task and adoption reason that hold up against comparable tools. Where
+relevant, the evidence must identify how to start, the supported host or interface, and a
+material permission, dependency or operating limitation. For prompts and workflows, verify
+the input, reusable artifact and expected result. A registry description or README tagline
+alone is insufficient. State a consequential limitation in both languages when supported.

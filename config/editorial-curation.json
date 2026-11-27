@@ -1,0 +1,38 @@
+{
+  "articles": {
+    "evaluate-ai-eval-tools-with-one-shared-task": {
+      "decision": "KEEP",
+      "recommendation": "lead",
+      "reason": "A shared task, review roles and observable outputs give evaluation teams a repeatable comparison."
+    },
+    "property-rag-address-field-roles": {
+      "decision": "KEEP",
+      "recommendation": "featured",
+      "reason": "A constructed cross-district fixture exposes a retrieval failure and gives readers a concrete regression check."
+    },
+    "venture-evidence-publication-workflow": {
+      "decision": "KEEP",
+      "recommendation": "featured",
+      "reason": "A dated first-party workflow traces candidate IDs, source checks and public deployment."
+    },
+    "google-org-2026-phd-fellowship-funding": {
+      "decision": "ARCHIVE",
+      "reason": "The official funding announcement dominates the article and leaves most readers without an application step or technical takeaway."
+    },
+    "disk-alerts-on-call-response-workflow": {
+      "decision": "IMPROVE",
+      "reason": "The response checklist is useful. A concrete AI service example and a reusable alert configuration would make its audience and application clearer."
+    },
+    "qubes-os-local-inference-dual-gpu-laptop": {
+      "decision": "KEEP",
+      "recommendation": "featured",
+      "reason": "The conference account traces the dual-GPU design through initialization and power-limit failures, with the results attributed to the speaker."
+    }
+  },
+  "resources": {
+    "venture-publication": {
+      "decision": "KEEP",
+      "reason": "The directory entry leads to a first-party publication walkthrough."
+    }
+  }
+}

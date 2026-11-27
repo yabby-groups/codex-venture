@@ -7,7 +7,7 @@ const repoName = repository && new URL(repository).pathname.slice(1).replace(/\/
 const meta = [...new Set([resource.kind, resource.transport, resource.deployment, resource.install, resource.github?.language, resource.license, resource.version].filter(Boolean))];
 const stars = resource.github && new Intl.NumberFormat('en', { notation: 'compact', maximumFractionDigits: 1 }).format(resource.github.stargazers_count);
 ---
-<article class="resource-card" data-resource={id}>
+<article class="resource-card" data-resource={id} data-resource-outbound>
   <header>
     <span class="resource-mark" aria-hidden="true">{resourceKinds[type].mark}</span>
     <div>

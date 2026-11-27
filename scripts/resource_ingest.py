@@ -250,7 +250,7 @@ def editorial_input(candidates):
         entry = dict(name=row['name'], type=row['type'], description=row['description'])
         if row['evidence'] != row['description']:
             entry['excerpt'] = row['evidence'][:1900]
-        for field in ('platforms', 'transport'):
+        for field in ('platforms', 'transport', 'install', 'deployment', 'version', 'license'):
             if row.get(field):
                 entry[field] = row[field]
         compact[key] = entry

@@ -2,98 +2,32 @@
 import Base from '../layouts/Base.astro';
 import StoryList from '../components/StoryList.astro';
 import SectionHeading from '../components/SectionHeading.astro';
-import Repository from '../components/Repository.astro';
-import { allStories, dateKey, isWeekly, storyUrl, storySection, type Story } from '../lib/content';
-import { directoryTitle, resourceBase, resourceCatalog } from '../lib/resources';
-import { categories } from '../lib/navigation';
-import { repositoryFor } from '../lib/repositories';
-const stories = await allStories();
-const news = stories.filter((story) => story.collection === 'news' && (!story.data.type || ['news', 'models'].includes(story.data.type)));
-const ecosystem = stories.filter(({ data }) => data.type && !['news', 'models'].includes(data.type));
-const briefing = stories.find((story) => story.collection === 'daily' && !isWeekly(story));
-const weekly = stories.find(isWeekly);
-const lead = news[0] ?? briefing ?? weekly;
-const resources = resourceCatalog(stories);
-const recentResources = [...resources].sort((a, b) =>
-  (b.updatedAt ?? b.addedAt).localeCompare(a.updatedAt ?? a.addedAt) || a.id.localeCompare(b.id));
-const latestStory = stories[0]?.data.published;
-const latestResource = recentResources[0]?.updatedAt ?? recentResources[0]?.addedAt;
-const latest = [latestStory && dateKey(latestStory), latestResource].filter(Boolean).sort().at(-1);
-const resourceDesks = (['skills', 'mcp', 'tools', 'models'] as const).map((key) => ({
-  key, rows: recentResources.filter(({ type }) => type === key).slice(0, 3),
-})).filter(({ rows }) => rows.length);
-const desks = (['coding', 'agents', 'models'] as const).map((key) => ({
-  key, label: categories[key], stories: news.filter(({ data }) => data.category === key).slice(0, 3),
-})).filter((desk) => desk.stories.length);
-const open = news.filter(({ data }) => data.category === 'open-source');
-const projects = [...new Map(open.flatMap((story) => {
-  const repo = repositoryFor(story);
-  return repo ? [[repo.name.toLowerCase(), { repo, story }] as const] : [];
-})).values()].slice(0, 3);
-const starred = projects.filter(({ repo }) => repo.snapshot).sort((a, b) => (b.repo.snapshot?.stargazers_count ?? 0) - (a.repo.snapshot?.stargazers_count ?? 0));
-const editions = [briefing, weekly].filter((story): story is Story => Boolean(story));
+import { dateKey, storyUrl, allStories } from '../lib/content';
+import { recommendations, onEditorialDesk } from '../lib/editorial';
+const stories = (await allStories()).filter(onEditorialDesk);
+const { lead, picks } = recommendations(stories);
+const focus = picks.filter((story) => story !== lead);
+const latest = stories[0] && dateKey(stories[0].data.published);
 ---
 <Base>
   <header class="edition">
-    <h1>全球 AI 资讯与实践<span lang="en">Global AI News & Practice</span></h1>
+    <h1>发现与实践 AI<span lang="en">Discover and Use AI</span></h1>
     {latest && <div>最近发布 <span lang="en">Latest update</span> <time datetime={latest}>{latest} · UTC+8</time></div>}
   </header>
-  {lead && <section class="lead-grid" aria-label="头条 / Top stories">
-    <article class="lead">
+  {picks.length > 0 && <section class="lead-grid" aria-label="编辑精选 / Editor’s picks" data-editorial-recommendations>
+    {lead && <article class="lead">
       <div class="kicker"><span>头条</span><span lang="en">Top story</span></div>
       <h2><a href={storyUrl(lead)}>{lead.data.titleZh}<span lang="en">{lead.data.titleEn}</span></a></h2>
       <p>{lead.data.summaryZh}<span lang="en">{lead.data.summaryEn}</span></p>
       <a class="read-link" href={storyUrl(lead)}>阅读全文 <span lang="en">Read story ↗</span></a>
-    </article>
-    <div class="lead-side">
-      <SectionHeading zh="值得关注" en="In focus" />
-      <StoryList stories={news.slice(1, 4)} nested compact />
-    </div>
+    </article>}
+    {focus.length > 0 && <div class="lead-side">
+      <SectionHeading zh="编辑精选" en="Editor’s picks" />
+      <StoryList stories={focus} nested compact />
+    </div>}
   </section>}
-  <div class="reading-grid home-feed">
-    <section>
-      <SectionHeading zh="最新资讯" en="Latest news" variant="major" href="/news/" />
-      <StoryList stories={news.slice(0, 7)} nested />
-    </section>
-    <aside class="rail">
-      {ecosystem.length > 0 && <section>
-        <SectionHeading zh="生态与实践" en="Ecosystem & practice" href="/discover/" />
-        <StoryList stories={ecosystem.slice(0, 4)} nested compact />
-      </section>}
-      {editions.length > 0 && <section class="editions">
-        <SectionHeading zh="简报与精选" en="Briefings & reviews" />
-        {editions.map((story) => {
-          const section = storySection(story);
-          return <div class="edition-item">
-            <a class="kicker" href={section.href}>{section.label[0]}<span lang="en">{section.label[1]} ↗</span></a>
-            <h3><a href={storyUrl(story)}>{story.data.titleZh}<span lang="en">{story.data.titleEn}</span></a></h3>
-            <time datetime={story.data.published.toISOString()}>{dateKey(story.data.published)}</time>
-          </div>;
-        })}
-      </section>}
-      {open.length > 0 && <section>
-        <SectionHeading zh="GitHub 开源项目" en="Open-source projects" href="/category/open-source/" />
-        {projects.length > 0 ? projects.map(({ repo, story }) => <Repository {repo} {story} />) : <StoryList stories={open.slice(0, 3)} nested compact />}
-      </section>}
-      {starred.length > 1 && <section>
-        <SectionHeading zh="已收录项目星标排行" en="GitHub stars among featured projects" />
-        <ol class="project-ranking">{starred.map(({ repo }) => <li><a href={repo.url}>{repo.name}</a><span>{repo.snapshot?.stargazers_count.toLocaleString('en-US')}</span></li>)}</ol>
-      </section>}
-    </aside>
-  </div>
-  {resourceDesks.length > 0 && <section>
-    <SectionHeading zh="最新资源" en="Latest resources" href="/discover/" />
-    <div class="desk-grid">{resourceDesks.map(({ key, rows }) => <section>
-      <SectionHeading zh={directoryTitle(key)[0]} en={directoryTitle(key)[1]} href={resourceBase(key)} />
-      <ul>{rows.map((row) => <li>
-        <a href={row.detail}>{row.nameZh ?? row.name}</a>
-        {row.nameZh && row.nameZh !== row.name && <span lang="en"> {row.name}</span>}
-        {' · '}<time datetime={row.updatedAt ?? row.addedAt}>{row.updatedAt ?? row.addedAt}</time>
-      </li>)}</ul>
-    </section>)}</div>
-  </section>}
-  {desks.length > 0 && <div class="desk-grid">{desks.map(({ key, label, stories }) => <section>
-    <SectionHeading zh={label[0]} en={key === 'agents' ? 'Agents · Skills · MCP' : label[1]} href={`/category/${key}/`} />
-    <StoryList {stories} nested compact />
-  </section>)}</div>}
+  <section>
+    <SectionHeading zh="最新发布" en="Latest articles" variant="major" href="/archive/" />
+    <StoryList stories={stories.filter((story) => !picks.includes(story)).slice(0, 9)} nested />
+  </section>
 </Base>

@@ -73,6 +73,61 @@ export function privacyControls() {
     gtag('js', new Date());
     gtag('config', ga, { allow_google_signals: false, allow_ad_personalization_signals: false });
     script('https://www.googletagmanager.com/gtag/js?id=' + ga);
+    const article = document.querySelector<HTMLElement>('[data-content-article]');
+    const canonicalPath = /^\/(news|daily)\/[a-z0-9-]+\/$/;
+    const path = location.pathname;
+    const recommend = document.querySelector('[data-editorial-recommendations]');
+    const event = (name: string, fields: Record<string, string | number> = {}) =>
+      gtag('event', name, fields);
+    if (recommend) {
+      const impressions = new Set<string>();
+      const visibility = new IntersectionObserver((entries) => {
+        for (const { target, isIntersecting } of entries) {
+          if (!isIntersecting) continue;
+          const destination = (target as HTMLAnchorElement).pathname;
+          if (!impressions.has(destination)) event('editorial_impression', { destination });
+          impressions.add(destination);
+          visibility.unobserve(target);
+        }
+      }, { threshold: 0.5 });
+      for (const link of recommend.querySelectorAll<HTMLAnchorElement>('h2 a, h3 a')) {
+        if (canonicalPath.test(link.pathname)) visibility.observe(link);
+      }
+    }
+    if (article && canonicalPath.test(path)) {
+      const observed = new Set<number>();
+      const depth = () => {
+        const { top, height } = article.getBoundingClientRect();
+        if (!height) return;
+        const percent = (window.innerHeight - top) * 100 / height;
+        for (const level of [25, 50, 75, 100]) {
+          if (percent < level || observed.has(level)) continue;
+          observed.add(level);
+          event('article_depth_' + level);
+        }
+      };
+      window.addEventListener('scroll', depth, { passive: true });
+      depth();
+      if (path.startsWith('/news/')) {
+        document.addEventListener('venture-copy-success', () => event('article_copy'));
+      }
+    }
+    document.addEventListener('click', (click) => {
+      if (!(click.target instanceof Element)) return;
+      const link = click.target.closest<HTMLAnchorElement>('a[href]');
+      if (!link) return;
+      if (link.origin === location.origin && canonicalPath.test(link.pathname)) {
+        if (link.closest('[data-editorial-recommendations]')) {
+          event('editorial_click', { destination: link.pathname });
+        } else if (link.closest('[data-related-articles]')) {
+          event('related_article_click', { destination: link.pathname });
+        }
+      } else if (link.protocol === 'https:' && link.origin !== location.origin &&
+          link.closest('[data-resource-outbound]')) {
+        event('resource_outbound', { host: link.hostname });
+      }
+    });
+
   }
   if (!client || !cmp || consent.ads !== true) return;
   let loaded = false;

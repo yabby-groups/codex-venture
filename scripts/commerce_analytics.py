@@ -49,7 +49,10 @@ def ga4(day):
     metrics = {
         'totals': result(lambda: query([], ['sessions', 'activeUsers', 'screenPageViews', 'keyEvents'])),
         'sources': result(lambda: query(['sessionSourceMedium'], ['sessions', 'keyEvents'])),
-        'pages': result(lambda: query(['pagePath'], ['screenPageViews'])),
+        'pages': result(lambda: query(['pagePath'], ['screenPageViews', 'userEngagementDuration', 'activeUsers'])),
+        'content_events': result(lambda: query(['eventName', 'pagePath'], ['eventCount'])),
+        'audience': result(lambda: query(['newVsReturning'], ['activeUsers', 'userEngagementDuration'])),
+        'recommendations': result(lambda: query(['eventName', 'customEvent:destination'], ['eventCount'])),
     }
     return {'status': metrics['totals']['status'], 'timezone': 'GA4 property setting',
             'scope': 'Consented GA4 activity', 'metrics': metrics}

@@ -90,7 +90,7 @@ const schema = jsonLd({
 ---
 <Base title={data.titleZh} description={data.summaryZh + ' ' + data.summaryEn} article {articleNav} articleCategory={data.category} {ads}>
   <Fragment slot="head"><script type="application/ld+json" set:html={schema} /><script type="application/ld+json" set:html={breadcrumb} /><meta property="article:published_time" content={data.published.toISOString()} /></Fragment>
-  <article class:list={['editorial-article', { 'article-short': short, 'article-with-rail': showContents }]} data-pagefind-body>
+  <article class:list={['editorial-article', { 'article-short': short, 'article-with-rail': showContents }]} data-pagefind-body data-content-article>
     <ArticleHeader {data} {crumbs} {minutes} />
     <meta data-pagefind-meta={`section:${label[0]}`} />
     <meta data-pagefind-meta={`sectionEn:${label[1]}`} />

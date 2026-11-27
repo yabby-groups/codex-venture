@@ -26,6 +26,7 @@ def output_schema(candidates=None):
     if candidates:
         candidate_ids = {**strings, 'items': {**string, 'enum': list(candidates)}}
     fields = {key: string for key in ('slug', 'titleZh', 'titleEn', 'summaryZh', 'summaryEn', 'category', 'body', 'type', 'version')}
+    fields['body'] = {**string, 'maxLength': 12000}
     fields.update(tags=strings, itemIds=candidate_ids, blocks=BLOCKS, resourceIds=strings)
 
     def obj(properties):
@@ -48,6 +49,17 @@ def sync(items, articles):
                 entry['articles'] = sorted(set(entry.get('articles', [])) | {article})
                 if story['collection'] == 'news':
                     entry['status'] = 'published'
+
+
+def evidence_revision(candidate):
+    evidence = {key: value for key, value in candidate.items()
+                if key in ('title', 'url', 'summary', 'documents', 'basis', 'experiment')}
+    evidence['documents'] = [
+        {key: value for key, value in doc.items() if key not in ('fetched_at', 'verified_at', 'checked_at')}
+        for doc in evidence.get('documents', [])
+    ]
+    return digest(json.dumps(evidence, ensure_ascii=False, sort_keys=True))
+
 
 
 def choose(mode, items, now, days=2, strategy=None):
@@ -106,6 +118,8 @@ def choose(mode, items, now, days=2, strategy=None):
             evidence['documents'] = item.get('evidence', [])[:3]
             evidence['lastVerified'] = item.get('verified_at')
             evidence['discovery'] = item.get('discovery', {})
+            if item.get('editorial_attempts', {}).get(mode) == evidence_revision(evidence):
+                continue
             size = len(json.dumps(evidence, ensure_ascii=False).encode())
             if size + used_bytes <= byte_limit:
                 candidates[key] = evidence
@@ -115,7 +129,7 @@ def choose(mode, items, now, days=2, strategy=None):
     return candidates
 
 
-def write_articles(response, mode, candidates, now):
+def write_articles(response, mode, candidates, now, *, ratings=None):
     day = now.date().isoformat()
     writes = {}
     existing_ids = {row['id'] for row in resource_context()}
@@ -183,6 +197,8 @@ def write_articles(response, mode, candidates, now):
             raise ValueError(f'article already exists: {slug}')
         tags = (re.sub(r'[^a-z0-9]+', '-', tag.lower()).strip('-') for tag in article['tags'])
         article['tags'] = list(dict.fromkeys(tag for tag in tags if tag))
+        if ratings is not None:
+            article['editorial'] = ratings[slug]
         article['published'] = now.isoformat(timespec='seconds')
         article['sources'] = [dict(title=item['title'], url=item['url']) for item in evidence]
         primary_links = {source['url'] for source in article['sources']}

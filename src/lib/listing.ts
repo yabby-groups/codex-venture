@@ -1,3 +1,4 @@
+import { onEditorialDesk } from './editorial';
 import { resourceTypes } from './resource-schema';
 import { isWeekly, type Story } from './content';
 import { hubs, sections, technologyLinks, types } from './navigation';
@@ -5,6 +6,7 @@ import { hubs, sections, technologyLinks, types } from './navigation';
 export const pageSize = 20;
 
 export const listingSections = (stories: Story[]) => {
+stories = stories.filter(onEditorialDesk);
 const directoryKeys = new Set<string>(resourceTypes);
 return [
   { base: sections.news.href, zh: sections.news.label[0], en: sections.news.label[1], stories: stories.filter((story) => story.collection === 'news' && (!story.data.type || ['news', 'models'].includes(story.data.type))) },

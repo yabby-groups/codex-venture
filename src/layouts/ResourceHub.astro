@@ -5,6 +5,7 @@ import ResourceCard from '../components/ResourceCard.astro';
 import StoryList from '../components/StoryList.astro';
 import SectionHeading from '../components/SectionHeading.astro';
 import { directoryTitle, resourceBase, resourceDate, resourceDirectories, resourceInLearn } from '../lib/resources';
+import { onEditorialDesk, recommendations } from '../lib/editorial';
 import type { Story } from '../lib/content';
 import { sections, types, topicLink } from '../lib/navigation';
 import ResourceSearch from '../components/ResourceSearch.astro';
@@ -18,14 +19,16 @@ const intro = learning
   : ['探索 AI 技能、插件、模型和工具，快速找到官方资料与实践指南。', 'Explore AI skills, extensions, models and tools with links to official references and practical guides.'];
 const directories = resourceDirectories(stories).filter(({ type }) => !learning || resourceInLearn(type));
 const resources = directories.flatMap(({ rows }) => rows);
-const featured = learning ? resources.filter((row) => row.featured).slice(0, 3) : [];
-const recent = [...resources].sort((a, b) => b.added.localeCompare(a.added) || a.id.localeCompare(b.id)).slice(0, 3);
+const featured = resources.filter((row) => row.featured).slice(0, 3);
+const desk = stories.filter(onEditorialDesk);
+const selected = recommendations(desk).picks.filter(({ data }) => data.type && types[data.type][2] === hub);
+const recent = learning ? [] : [...resources].sort((a, b) => b.added.localeCompare(a.added) || a.id.localeCompare(b.id)).slice(0, 3);
 const updated = learning ? [] : resources
   .filter((row) => row.updatedAt && row.updatedAt > row.added)
   .sort((a, b) => resourceDate(b).localeCompare(resourceDate(a)) || a.id.localeCompare(b.id))
   .slice(0, 3);
 const articleTopics = Object.entries(types).filter(([key, [, , owner]]) =>
-  owner === hub && stories.some(({ data }) => data.type === key));
+  owner === hub && desk.some(({ data }) => data.type === key));
 const editorialTopics = articleTopics.filter(([key]) => !directories.some(({ type }) => type === key));
 ---
 <Base title={zh} description={intro.join(' ')}>
@@ -41,12 +44,20 @@ const editorialTopics = articleTopics.filter(([key]) => !directories.some(({ typ
       })}
       {learning && editorialTopics.map(([key, [zh, en]]) => <a href={topicLink(key as keyof typeof types).href}><strong>{zh}</strong><span lang="en">{en}</span></a>)}
     </nav>
+    {selected.length > 0 && <section class="resource-hub-section">
+      <SectionHeading zh="编辑推荐" en="Editor’s picks" />
+      <StoryList stories={selected} nested />
+    </section>}
+    {learning && articleTopics.map(([key, [zh, en]]) => <section class="resource-hub-section">
+      <SectionHeading {zh} {en} href={topicLink(key as keyof typeof types).href} />
+      <StoryList stories={desk.filter(({ data }) => data.type === key).slice(0, 4)} nested />
+    </section>)}
     {featured.length > 0 && <section class="resource-hub-section">
       <SectionHeading zh="编辑精选" en="Editor’s picks" />
       <div class="resource-grid">{featured.map((resource) => <ResourceCard {resource} />)}</div>
     </section>}
     {recent.length > 0 && <section class="resource-hub-section">
-      <SectionHeading zh={learning ? '可复用的实践' : '最新收录'} en={learning ? 'Ready to reuse' : 'Recently added'} />
+      <SectionHeading zh="最新收录" en="Recently added" />
       <div class="resource-grid">{recent.map((resource) => <ResourceCard {resource} />)}</div>
     </section>}
     {!learning && <section class="resource-hub-section">
@@ -55,9 +66,5 @@ const editorialTopics = articleTopics.filter(([key]) => !directories.some(({ typ
         <p>暂无更新记录。 <span lang="en">No updates recorded yet.</span></p>}
     </section>}
     {!learning && !resources.length && <p>暂无收录资源。 <span lang="en">No resources have been added yet.</span></p>}
-    {learning && articleTopics.map(([key, [zh, en]]) => <section class="resource-hub-section">
-      <SectionHeading {zh} {en} href={topicLink(key as keyof typeof types).href} />
-      <StoryList stories={stories.filter(({ data }) => data.type === key).slice(0, 4)} nested />
-    </section>)}
   </div>
 </Base>

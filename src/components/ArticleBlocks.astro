@@ -51,6 +51,7 @@ const languageLabel = { json: 'JSON', yaml: 'YAML', toml: 'TOML', bash: 'Bash', 
         try {
           await navigator.clipboard.writeText(source.content.textContent ?? '');
           status.textContent = '已复制 / Copied';
+          document.dispatchEvent(new Event('venture-copy-success'));
         } catch {
           status.textContent = '复制失败 / Copy failed';
         }
