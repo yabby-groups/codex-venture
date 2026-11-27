@@ -1,0 +1,28 @@
+{
+  "addedAt": "2026-11-28",
+  "categories": [
+    [
+      "Azure SDK 身份验证",
+      "Azure SDK authentication"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-26",
+  "id": "resource-450fdc518c767e8db0fd8233b5308621dc9bd9ae626182075589c55ca401daa5",
+  "identity": "github-skill:1135891523:.github/plugins/azure-sdk-dotnet/skills/azure-identity-dotnet/SKILL.md",
+  "name": "azure-identity-dotnet",
+  "repository": "https://github.com/microsoft/skills",
+  "repositoryId": "1135891523",
+  "site": "https://github.com/microsoft/skills/blob/main/.github/plugins/azure-sdk-dotnet/skills/azure-identity-dotnet/SKILL.md",
+  "sourcePath": ".github/plugins/azure-sdk-dotnet/skills/azure-identity-dotnet/SKILL.md",
+  "sourceSignature": "c53c78c336942aabd16be52a023002f2b2f5994e994b1241a916506cc3c89d11",
+  "summary": [
+    "微软的指南以 Azure Blob Storage 为例，介绍如何在 .NET 中使用 Microsoft Entra ID 为 Azure SDK 客户端进行身份验证。可通过 `dotnet add package Azure.Identity` 添加 NuGet 包。ASP.NET Core 示例演示了如何按运行环境选择凭据。使用用户分配的托管标识示例时，需要提供该标识的客户端 ID。",
+    "Microsoft’s guide shows how to authenticate Azure SDK clients in .NET with Microsoft Entra ID, using Azure Blob Storage as an example. Add the Azure.Identity NuGet package with `dotnet add package Azure.Identity`. The ASP.NET Core example shows how to choose credentials by environment. To use the user-assigned managed identity example, you need that identity’s client ID."
+  ],
+  "tested": false,
+  "type": "skills",
+  "verificationSources": [
+    "https://github.com/microsoft/skills/blob/main/.github/plugins/azure-sdk-dotnet/skills/azure-identity-dotnet/SKILL.md"
+  ],
+  "verifiedAt": "2026-11-28"
+}
