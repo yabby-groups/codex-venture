@@ -1,0 +1,28 @@
+{
+  "addedAt": "2026-11-27",
+  "categories": [
+    [
+      "AI 编程工作流",
+      "AI coding workflows"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-25",
+  "id": "resource-b9632c3a52c63884f8b903dffb5f5c18bd28b648170fe23cf543a57aefbd442a",
+  "identity": "github:1186742994",
+  "license": "MIT",
+  "name": "jnMetaCode/superpowers-zh",
+  "repository": "https://github.com/jnMetaCode/superpowers-zh",
+  "repositoryId": "1186742994",
+  "site": "https://github.com/jnMetaCode/superpowers-zh",
+  "sourceSignature": "842537dbbceae00c634e9e529e27c9580f4a530ca04b03855159bcd1b7d2da8a",
+  "summary": [
+    "据发布者介绍，superpowers-zh 为 Superpowers AI 编程工具集提供中文本地化，并附带四项新增技能。",
+    "The publisher describes superpowers-zh as a Chinese localization of the Superpowers AI coding toolkit with four additional skills."
+  ],
+  "tested": false,
+  "type": "tools",
+  "verificationSources": [
+    "https://api.github.com/search/repositories?page=1&per_page=30&q=topic%3Aai-coding+archived%3Afalse+fork%3Afalse&sort=stars"
+  ],
+  "verifiedAt": "2026-11-27"
+}

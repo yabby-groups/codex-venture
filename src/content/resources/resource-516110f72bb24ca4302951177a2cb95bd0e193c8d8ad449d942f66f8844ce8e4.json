@@ -1,0 +1,28 @@
+{
+  "addedAt": "2026-11-27",
+  "categories": [
+    [
+      "提示词模板",
+      "Prompt templates"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-26",
+  "id": "resource-516110f72bb24ca4302951177a2cb95bd0e193c8d8ad449d942f66f8844ce8e4",
+  "identity": "github:1125124311",
+  "license": "Apache-2.0",
+  "name": "promptg/starter-packs",
+  "repository": "https://github.com/promptg/starter-packs",
+  "repositoryId": "1125124311",
+  "site": "https://github.com/promptg/starter-packs",
+  "sourceSignature": "1fe8ec67887893d7999ff74108cb76f90ec56063c2ceb357184648a58fa0bf88",
+  "summary": [
+    "PromptG 为其命令行工具提供整理好的 JSON 入门包，方便复用其中的提示词和模板。",
+    "PromptG publishes curated JSON packs of prompts and templates for use with the PromptG CLI."
+  ],
+  "tested": false,
+  "type": "prompts",
+  "verificationSources": [
+    "https://api.github.com/search/repositories?page=2&per_page=30&q=topic%3Aprompt-templates+archived%3Afalse+fork%3Afalse&sort=stars"
+  ],
+  "verifiedAt": "2026-11-27"
+}

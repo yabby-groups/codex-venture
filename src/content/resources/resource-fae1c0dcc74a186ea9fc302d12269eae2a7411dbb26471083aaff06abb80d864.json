@@ -1,0 +1,31 @@
+{
+  "addedAt": "2026-11-27",
+  "categories": [
+    [
+      "生成艺术",
+      "Generative art"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-25",
+  "id": "resource-fae1c0dcc74a186ea9fc302d12269eae2a7411dbb26471083aaff06abb80d864",
+  "identity": "github-skill:1061953414:skills/algorithmic-art/SKILL.md",
+  "name": "algorithmic-art",
+  "platforms": [
+    "Claude"
+  ],
+  "repository": "https://github.com/anthropics/skills",
+  "repositoryId": "1061953414",
+  "site": "https://github.com/anthropics/skills/blob/main/skills/algorithmic-art/SKILL.md",
+  "sourcePath": "skills/algorithmic-art/SKILL.md",
+  "sourceSignature": "3e5d6c12d85d6ffe81a47cb6f800e46767c4291f5242b3945dac6a44e5b25196",
+  "summary": [
+    "该技能文档介绍如何用 p5.js 创作原创生成艺术，通过固定随机种子复现结果，并在交互式查看器中探索不同参数。",
+    "The skill documentation describes how to create original generative art in p5.js, reproduce results with seeded randomness, and explore parameters in an interactive viewer."
+  ],
+  "tested": false,
+  "type": "skills",
+  "verificationSources": [
+    "https://github.com/anthropics/skills/blob/main/skills/algorithmic-art/SKILL.md"
+  ],
+  "verifiedAt": "2026-11-27"
+}

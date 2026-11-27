@@ -1,0 +1,28 @@
+{
+  "addedAt": "2026-11-27",
+  "categories": [
+    [
+      "AI 工作流交接",
+      "AI workflow handoff"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-26",
+  "id": "resource-64e425e2077ffaec93317ffaa0dab25bcfcee3ac9790f4221ad741c4e5f0f8e0",
+  "identity": "github:1319037828",
+  "license": "MIT",
+  "name": "RongNianXin/ChatGPT-Workflows",
+  "repository": "https://github.com/RongNianXin/ChatGPT-Workflows",
+  "repositoryId": "1319037828",
+  "site": "https://github.com/RongNianXin/ChatGPT-Workflows",
+  "sourceSignature": "772cd82c4e1ce9da1073c3a4c871c86b610adf4d5f8bc5f383b1eae1f47e784e",
+  "summary": [
+    "据发布者介绍，该项目汇集了可验证、可在中途交接的 ChatGPT 和 Codex 工作流，并提供网页增强功能和本地工具。",
+    "The publisher describes workflows for ChatGPT and Codex that readers can verify and hand off partway through, along with web enhancements and local tools."
+  ],
+  "tested": false,
+  "type": "workflows",
+  "verificationSources": [
+    "https://api.github.com/search/repositories?page=2&per_page=30&q=topic%3Aai-workflow+archived%3Afalse+fork%3Afalse&sort=stars"
+  ],
+  "verifiedAt": "2026-11-27"
+}

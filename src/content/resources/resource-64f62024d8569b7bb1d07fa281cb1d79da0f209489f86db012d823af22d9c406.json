@@ -1,0 +1,28 @@
+{
+  "addedAt": "2026-11-27",
+  "categories": [
+    [
+      "视频制作",
+      "Video production"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-26",
+  "id": "resource-64f62024d8569b7bb1d07fa281cb1d79da0f209489f86db012d823af22d9c406",
+  "identity": "github:1232927836",
+  "license": "Apache-2.0",
+  "name": "whystrohm/shotkit",
+  "repository": "https://github.com/whystrohm/shotkit",
+  "repositoryId": "1232927836",
+  "site": "https://github.com/whystrohm/shotkit",
+  "sourceSignature": "6e920b7a1a4da501680de099bbf577c0791173434a870dda03cd8421ac1e69ec",
+  "summary": [
+    "据发布者介绍，Shotkit 可用于在看板上规划视频镜头、逐帧检查画面，并渲染多种尺寸的成片。",
+    "The publisher presents Shotkit as a video workflow for planning shots on a board, reviewing individual frames, and rendering at multiple sizes."
+  ],
+  "tested": false,
+  "type": "workflows",
+  "verificationSources": [
+    "https://api.github.com/search/repositories?page=2&per_page=30&q=topic%3Aai-workflow+archived%3Afalse+fork%3Afalse&sort=stars"
+  ],
+  "verifiedAt": "2026-11-27"
+}

@@ -1,0 +1,27 @@
+{
+  "addedAt": "2026-11-27",
+  "categories": [
+    [
+      "提示词设计",
+      "Prompt design"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-26",
+  "id": "resource-555faae398fed1e00a242f71b9c8ede52ea9b6f95bb31684c7568fb5cb5c6ba9",
+  "identity": "github:1014312657",
+  "name": "thibaultyou/prompt-blueprint",
+  "repository": "https://github.com/thibaultyou/prompt-blueprint",
+  "repositoryId": "1014312657",
+  "site": "https://github.com/thibaultyou/prompt-blueprint",
+  "sourceSignature": "6f87b06cd40828a7dbe11aea6a7f705ac6bd3c2ee468f5dfc2531cbd78bf37c9",
+  "summary": [
+    "据发布者介绍，Prompt Blueprint 提供元提示词和 AI 智能体，可将简短需求转化为提示词。",
+    "The publisher describes Prompt Blueprint as a toolkit with meta-prompts and an AI agent for turning brief requirements into prompts."
+  ],
+  "tested": false,
+  "type": "prompts",
+  "verificationSources": [
+    "https://api.github.com/search/repositories?page=1&per_page=30&q=topic%3Aprompt-templates+archived%3Afalse+fork%3Afalse&sort=stars"
+  ],
+  "verifiedAt": "2026-11-27"
+}

@@ -1,0 +1,28 @@
+{
+  "addedAt": "2026-11-27",
+  "categories": [
+    [
+      "广告调研",
+      "Advertising research"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-25",
+  "id": "resource-8671e03975b931331017ecf5639eefcef94811995851b523b914684542a9f6bd",
+  "identity": "mcp:ad.pantheon/mcp",
+  "name": "Pantheon",
+  "registryId": "ad.pantheon/mcp",
+  "site": "https://registry.modelcontextprotocol.io/v0.1/servers/ad.pantheon%2Fmcp/versions/1.0.0",
+  "sourceSignature": "177f841e074c58a62ed595c2112ef91feaf46bb7a9b9653031b17ac595e52c78",
+  "summary": [
+    "据条目介绍，Pantheon 的 MCP 集成可用于查看 Meta 广告资料库和竞品广告，以及 Pantheon 账户中的品牌语调资料、虚拟形象和推广方案简报。",
+    "According to the listing, Pantheon's MCP integration lets readers access Meta Ads Library content, competitor ads, and brand voice guides, avatars, and offer briefs from their Pantheon account."
+  ],
+  "tested": false,
+  "transport": "streamable-http",
+  "type": "mcp",
+  "verificationSources": [
+    "https://registry.modelcontextprotocol.io/v0.1/servers/ad.pantheon%2Fmcp/versions/1.0.0"
+  ],
+  "verifiedAt": "2026-11-27",
+  "version": "1.0.0"
+}

@@ -1,0 +1,28 @@
+{
+  "addedAt": "2026-11-27",
+  "categories": [
+    [
+      "本地大模型推理",
+      "Local LLM inference"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-26",
+  "id": "resource-0f614a8bfb45418d3b2dd3bd3f29f8a057fb2f905ef53c2a5e76fd9784269ec5",
+  "identity": "github:1203116301",
+  "license": "Apache-2.0",
+  "name": "NightMean/OlliteRT",
+  "repository": "https://github.com/NightMean/OlliteRT",
+  "repositoryId": "1203116301",
+  "site": "https://github.com/NightMean/OlliteRT",
+  "sourceSignature": "bbe2e8bbf512f46554e728cf91a5a798581da5ad051a0b500659fab12be829b8",
+  "summary": [
+    "据发布者介绍，OlliteRT 可在安卓手机上运行本地大模型推理服务，并提供兼容 OpenAI 的 API。",
+    "The publisher describes OlliteRT as a way to serve an LLM locally from an Android phone through an OpenAI-compatible API."
+  ],
+  "tested": false,
+  "type": "open-source",
+  "verificationSources": [
+    "https://api.github.com/search/repositories?page=3&per_page=30&q=topic%3Allm-inference+archived%3Afalse+fork%3Afalse&sort=stars"
+  ],
+  "verifiedAt": "2026-11-27"
+}

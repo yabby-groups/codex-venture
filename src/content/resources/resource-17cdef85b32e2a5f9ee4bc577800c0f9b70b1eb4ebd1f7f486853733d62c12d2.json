@@ -1,0 +1,29 @@
+{
+  "addedAt": "2026-11-27",
+  "categories": [
+    [
+      "多模态文本生成",
+      "Multimodal text generation"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-25",
+  "id": "resource-17cdef85b32e2a5f9ee4bc577800c0f9b70b1eb4ebd1f7f486853733d62c12d2",
+  "identity": "hf:qwen/qwen3.6-27b",
+  "name": "Qwen/Qwen3.6-27B",
+  "site": "https://huggingface.co/Qwen/Qwen3.6-27B",
+  "sourceSignature": "7d0757e782e6087f50f3e74a6390e688421b0c38394bf22fd980eeae609001b3",
+  "summary": [
+    "Qwen 将 Qwen3.6-27B 列为图文转文本模型，可根据图像和文本输入生成文字。",
+    "Qwen lists Qwen3.6-27B as an image-text-to-text model for generating text from image and text inputs."
+  ],
+  "tags": [
+    "image-text-to-text"
+  ],
+  "tested": false,
+  "type": "models",
+  "verificationSources": [
+    "https://huggingface.co/Qwen/Qwen3.6-27B/raw/main/README.md",
+    "https://huggingface.co/api/models?cursor=eyIkb3IiOlt7ImRvd25sb2FkcyI6MjM3OTk4NSwiX2lkIjp7IiRndCI6IjZhN2YzMDEwZTM2YjRjY2JkZTYxNzhkYiJ9fSx7ImRvd25sb2FkcyI6eyIkbHQiOjIzNzk5ODV9fSx7ImRvd25sb2FkcyI6bnVsbH1dLCJzZWFyY2hTZXF1ZW5jZVRva2VuIjoiQ01DanhnSWFDU0VBQUFDQWFDaENRUm9PV2d4cWZ6QVE0MnRNeTk1aGVOc2lEbG9NYW44d0VPTnJUTXZlWVhqYiJ9&direction=-1&full=true&limit=30&pipeline_tag=image-text-to-text&sort=downloads"
+  ],
+  "verifiedAt": "2026-11-27"
+}

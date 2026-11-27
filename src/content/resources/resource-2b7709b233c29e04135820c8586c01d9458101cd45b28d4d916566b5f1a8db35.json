@@ -1,0 +1,28 @@
+{
+  "addedAt": "2026-11-27",
+  "categories": [
+    [
+      "AI 认证备考",
+      "AI certification preparation"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-26",
+  "id": "resource-2b7709b233c29e04135820c8586c01d9458101cd45b28d4d916566b5f1a8db35",
+  "identity": "github:1274519136",
+  "license": "MIT",
+  "name": "timothywarner-org/ai901-cert-buddy-claude",
+  "repository": "https://github.com/timothywarner-org/ai901-cert-buddy-claude",
+  "repositoryId": "1274519136",
+  "site": "https://github.com/timothywarner-org/ai901-cert-buddy-claude",
+  "sourceSignature": "bc42d05ad2d6cfdf8acedc6f6ac467cae3814057662569a5301c6774441e9719",
+  "summary": [
+    "据发布者介绍，这款 Claude Code 学习助手可用于备考 Azure AI Fundamentals（AI-901），提供练习题、Microsoft Foundry 实验和学习计划，并通过 MCP 参考 Microsoft Learn 资料。",
+    "The publisher describes a Claude Code study companion for Azure AI Fundamentals (AI-901), with practice questions, Microsoft Foundry labs, and study plans. It draws on Microsoft Learn via MCP."
+  ],
+  "tested": false,
+  "type": "resources",
+  "verificationSources": [
+    "https://api.github.com/search/repositories?page=2&per_page=30&q=topic%3Aai-education+archived%3Afalse+fork%3Afalse&sort=stars"
+  ],
+  "verifiedAt": "2026-11-27"
+}
