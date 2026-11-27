@@ -1,0 +1,28 @@
+{
+  "addedAt": "2026-11-28",
+  "categories": [
+    [
+      "视频预览",
+      "Video preview"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-26",
+  "id": "resource-57b911cb5d59379d366789ef8e4469ffb584c43b9f9df7fdde840a148d6a2f48",
+  "identity": "github-skill:1137388347:skills/remotion-studio/SKILL.md",
+  "name": "remotion-studio",
+  "repository": "https://github.com/remotion-dev/skills",
+  "repositoryId": "1137388347",
+  "site": "https://github.com/remotion-dev/skills/blob/main/skills/remotion-studio/SKILL.md",
+  "sourcePath": "skills/remotion-studio/SKILL.md",
+  "sourceSignature": "f6a3fa1c4e99b1dbd059ed1fb656caff116c99dca056c6031d1eb29438e057f1",
+  "summary": [
+    "该技能的文档说明如何在 Cursor 中用 `npx remotion studio` 启动 Remotion Studio。Remotion 项目须能正常运行，Studio 会在浏览器中打开，方便你预览视频修改效果，再决定如何调整。",
+    "The skill’s documentation shows how to open Remotion Studio from Cursor with `npx remotion studio`. Once the Remotion project can run, Studio opens in the browser so you can review video edits before making further changes."
+  ],
+  "tested": false,
+  "type": "skills",
+  "verificationSources": [
+    "https://github.com/remotion-dev/skills/blob/main/skills/remotion-studio/SKILL.md"
+  ],
+  "verifiedAt": "2026-11-28"
+}
