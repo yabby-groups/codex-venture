@@ -1,0 +1,28 @@
+{
+  "addedAt": "2026-11-28",
+  "categories": [
+    [
+      "事故响应文档",
+      "Incident response documentation"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-27",
+  "id": "resource-4eb6b9614d156da5839c91bd5b0747395b87bd33e4642765653a4e63fc6fc884",
+  "identity": "github:1340580863",
+  "license": "CC-BY-4.0",
+  "name": "hyderhusainarastu/incident-runbook-template",
+  "repository": "https://github.com/hyderhusainarastu/incident-runbook-template",
+  "repositoryId": "1340580863",
+  "site": "https://github.com/hyderhusainarastu/incident-runbook-template",
+  "sourceSignature": "c2de90be9bb0792561662120c3aae236db1791382192be798698b9082409da10",
+  "summary": [
+    "发布者提供了一份可填写的 Markdown 排障手册模板，每份针对一种反复出现的服务故障。先对故障分类，再查看日志，按优先级排列故障征兆，并注明每条征兆无法证明什么。两个虚构案例演示了填写方法，配套指南说明如何将事故发现转化为静态检查。",
+    "The publisher provides a fill-in Markdown runbook for one recurring service failure. Classify the failure before reading logs, rank its signatures, and record what each signal fails to establish. Two fictional examples show how to fill in the template, and a companion guide explains how to turn an incident finding into a static check."
+  ],
+  "tested": false,
+  "type": "prompts",
+  "verificationSources": [
+    "https://api.github.com/search/repositories?page=8&per_page=30&q=topic%3Aprompt-templates+archived%3Afalse+fork%3Afalse&sort=stars"
+  ],
+  "verifiedAt": "2026-11-28"
+}
