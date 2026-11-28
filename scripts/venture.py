@@ -42,7 +42,7 @@ INTERVALS = {'collect': 15, 'discover': 30, 'news': 30, 'resource-discover': 30,
              'growth-demand': 360, 'resource-refresh': 360, 'backfill': 1440}
 PRIORITIES = {'collect': 25, 'news': 25, 'backfill': 1, 'resource-refresh': 5}
 PHASES = {'scheduler': {'backup'}, 'collector': set(INTERVALS) | {'daily', 'weekly', 'analytics-daily'},
-          'editor': {'edit'}, 'publisher': {'publish', 'verify'}}
+          'editor': {'edit'}, 'publisher': {'publish', 'verify', 'search-notify'}}
 CONTENT = ('src/content/news', 'src/content/daily', 'src/content/resources')
 
 
@@ -343,6 +343,9 @@ def phase(task, kind, payload):
         return publish(task, payload)
     if kind == 'verify':
         return verify(payload)
+    if kind == 'search-notify':
+        from search_notify import indexnow
+        return indexnow(PRIVATE / 'growth/indexnow', payload['routes'])
     if kind == 'backup':
         return backup()
     if kind == 'growth-demand':
@@ -421,6 +424,9 @@ def complete(db, row, owner, payload, result):
     if kind == 'verify':
         queue.store(db, 'production', {**result, 'verified_at': time.time()})
         queue.store(db, 'published:' + payload['kind'], time.time())
+        if payload['routes']:
+            queue.enqueue(db, 'publisher', 'search-notify', 'search-notify:' + payload['sha'],
+                          {'routes': payload['routes']}, 10)
     if kind == 'edit':
         known = settle(db, task, result.get('receipt', {}))
         if 'error' in result:
