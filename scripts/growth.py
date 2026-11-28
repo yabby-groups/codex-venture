@@ -9,7 +9,7 @@ from original import issues
 
 
 QUESTION = re.compile(r"\?|^(how|why|can|does|what|which|anyone|is there|looking for)\b", re.I)
-HN_TOPIC = re.compile(r'\b(llms?|local models?|ollama|codex|chatgpt|claude|openrouter|ai)\b', re.I)
+HN_TOPIC = re.compile(r'\b(llms?|local models?|ollama|codex|chatgpt|claude|openrouter|ai|stable diffusion|comfyui)\b', re.I)
 WEIGHTS = dict(demand=25, utility=20, click=15, novelty=15, search=10, longevity=10, sharing=5)
 
 
@@ -22,11 +22,21 @@ def question_rows(parser, topic=None):
 
 
 def sources():
-    hn = urlencode(dict(query='LLM', tags='ask_hn', hitsPerPage=20))
     github = urlencode(dict(q='repo:openai/codex is:issue is:open comments:>1', sort='updated', per_page=20))
-    return [
-        dict(id='demand-hn', kind='discovery', category='models', content_type='tutorials',
-             url='https://hn.algolia.com/api/v1/search_by_date?' + hn, parse=question_rows(hn_rows, HN_TOPIC)),
+    hn = [
+        dict(id=provider, kind='discovery', category=category, content_type='tutorials',
+             url='https://hn.algolia.com/api/v1/search_by_date?' +
+             urlencode(dict(query=query, tags='ask_hn', hitsPerPage=20)),
+             parse=question_rows(hn_rows, HN_TOPIC))
+        for provider, query, category in (
+            ('demand-hn', 'LLM', 'models'),
+            ('demand-hn-chatgpt', 'ChatGPT', 'models'),
+            ('demand-hn-ollama', 'Ollama', 'models'),
+            ('demand-hn-creation', 'AI image', 'models'),
+            ('demand-hn-automation', 'AI automation', 'agents'),
+        )
+    ]
+    return hn + [
         dict(id='demand-github', kind='discovery', category='coding', content_type='tutorials',
              url='https://api.github.com/search/issues?' + github, parse=question_rows(issues)),
     ]
@@ -53,7 +63,7 @@ def discover(root, items_path, health_path, now):
     for item_id, item in sorted(items.items()):
         details = item.get('discovery', {})
         question = details.get('demand_question')
-        if (not question or (item['source'] == 'demand-hn' and not HN_TOPIC.search(question))
+        if (not question or (item['source'].startswith('demand-hn') and not HN_TOPIC.search(question))
                 or timestamp(item['published']) < now - timedelta(days=30)):
             continue
         url = details.get('discussion') or item['url']

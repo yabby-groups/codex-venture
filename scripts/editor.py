@@ -99,7 +99,7 @@ def choose(mode, items, now, days=2, strategy=None):
             if mode == 'daily':
                 eligible = eligible and not any(path.startswith('/daily/') for path in articles)
         if eligible and item.get('summary'):
-            priority = (bool(item.get('research')), details.get('demand_priority', 0), bool(details.get('repository_id') or details.get('hn_id')),
+            priority = (bool(details.get('demand_id')), bool(item.get('research')), details.get('demand_priority', 0), bool(details.get('repository_id') or details.get('hn_id')),
                         weights.get(item['category'], 0), published)
             groups.setdefault(group, []).append((priority, key))
     for group in groups.values():

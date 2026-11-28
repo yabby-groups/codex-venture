@@ -27,8 +27,9 @@ WORK = Path(os.environ.get('RUNNER_TEMP', '.venture-runtime')) / 'venture'
 def ready(section, item):
     documents = item.get('evidence') or []
     return (item['status'] == 'pending' and item.get('content_type') in TYPES[section]
-            and any(doc.get('excerpt') and not doc['label'].startswith('Community discussion')
-                    for doc in documents))
+            and (item.get('discovery', {}).get('demand_id')
+                 or any(doc.get('excerpt') and not doc['label'].startswith('Community discussion')
+                        for doc in documents)))
 
 
 def issues(body):
