@@ -1,0 +1,28 @@
+{
+  "addedAt": "2026-11-28",
+  "categories": [
+    [
+      "Azure Marketplace 资源管理",
+      "Azure Marketplace resource management"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-26",
+  "id": "resource-c924ae9bc54b848ce36cf75bb1f368d18eec20a0428f62f16bd43fa919dd6531",
+  "identity": "github-skill:1135891523:.github/plugins/azure-sdk-dotnet/skills/azure-mgmt-mongodbatlas-dotnet/SKILL.md",
+  "name": "azure-mgmt-mongodbatlas-dotnet",
+  "repository": "https://github.com/microsoft/skills",
+  "repositoryId": "1135891523",
+  "site": "https://github.com/microsoft/skills/blob/main/.github/plugins/azure-sdk-dotnet/skills/azure-mgmt-mongodbatlas-dotnet/SKILL.md",
+  "sourcePath": ".github/plugins/azure-sdk-dotnet/skills/azure-mgmt-mongodbatlas-dotnet/SKILL.md",
+  "sourceSignature": "c664ca39cda1b905adf0912ec2f2d7dc29d443221355a49ad7b5786230d0e848",
+  "summary": [
+    "微软的指南面向 .NET 开发者，介绍如何通过 Azure Resource Manager 创建、更新、列出和删除 MongoDB Atlas 组织资源，以接入 Azure Marketplace。可先添加 Azure.ResourceManager.MongoDBAtlas 和 Azure.Identity 两个 NuGet 包。该 SDK 的管理范围仅限 Azure 侧的组织资源，Atlas 集群和数据库不在其范围内。",
+    "Microsoft’s guide shows .NET developers how to create, update, list, and delete MongoDB Atlas organization resources through Azure Resource Manager for Azure Marketplace integration. Start by adding the Azure.ResourceManager.MongoDBAtlas and Azure.Identity NuGet packages. The SDK is limited to Azure-side organization resources. Atlas clusters and databases are outside its scope."
+  ],
+  "tested": false,
+  "type": "skills",
+  "verificationSources": [
+    "https://github.com/microsoft/skills/blob/main/.github/plugins/azure-sdk-dotnet/skills/azure-mgmt-mongodbatlas-dotnet/SKILL.md"
+  ],
+  "verifiedAt": "2026-11-28"
+}
