@@ -1,0 +1,28 @@
+{
+  "addedAt": "2026-11-28",
+  "categories": [
+    [
+      "技能编写",
+      "Skill Authoring"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-26",
+  "id": "resource-b539e9c81b5b04ace3e899580e74c51148ac05128d6d4144569d49a2c11d5210",
+  "identity": "github-skill:968197216:packages/core/src/skills/builtin/skill-creator/SKILL.md",
+  "name": "skill-creator",
+  "repository": "https://github.com/google-gemini/gemini-cli",
+  "repositoryId": "968197216",
+  "site": "https://github.com/google-gemini/gemini-cli/blob/main/packages/core/src/skills/builtin/skill-creator/SKILL.md",
+  "sourcePath": "packages/core/src/skills/builtin/skill-creator/SKILL.md",
+  "sourceSignature": "c19eb1ebe496512a926ea50d62e8c6d841093f53d4bf838c1ec0db4c80957f07",
+  "summary": [
+    "按发布者的指南，从 Gemini CLI 中重复执行的任务实例出发，在 `SKILL.md` 中定义可复用的技能，再打包成 `.skill` 文件，以便安装到工作区或用户级。指南指出，Gemini CLI 只依据文件开头 YAML 元数据中的 `name` 和 `description` 字段判断何时使用该技能。",
+    "Use the publisher’s guide to turn concrete examples of a recurring Gemini CLI task into a reusable skill. Define it in `SKILL.md`, then package it as a `.skill` file for workspace- or user-level installation. The guide says Gemini CLI uses only the `name` and `description` fields in the YAML front matter to decide when to use the skill."
+  ],
+  "tested": false,
+  "type": "skills",
+  "verificationSources": [
+    "https://github.com/google-gemini/gemini-cli/blob/main/packages/core/src/skills/builtin/skill-creator/SKILL.md"
+  ],
+  "verifiedAt": "2026-11-28"
+}
