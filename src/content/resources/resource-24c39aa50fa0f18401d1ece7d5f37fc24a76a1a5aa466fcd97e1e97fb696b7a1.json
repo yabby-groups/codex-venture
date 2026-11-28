@@ -1,0 +1,29 @@
+{
+  "addedAt": "2026-11-28",
+  "categories": [
+    [
+      "文生视频",
+      "Text-to-video generation"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-25",
+  "id": "resource-24c39aa50fa0f18401d1ece7d5f37fc24a76a1a5aa466fcd97e1e97fb696b7a1",
+  "identity": "hf:instantx/minimax-h3-turbo-lora-diffusers",
+  "name": "InstantX/MiniMax-H3-Turbo-Lora-Diffusers",
+  "site": "https://huggingface.co/InstantX/MiniMax-H3-Turbo-Lora-Diffusers",
+  "sourceSignature": "d544ad14e3db154697aad6b1f2f21e9ea5bf4d4f427a1ddc09a4d450b54624d2",
+  "summary": [
+    "InstantX 提供 Turbo LoRA 适配器，可在 Diffusers 中复用 MiniMax-H3 基础模型，从文本生成视频。模型卡说明，当时已发布的 Diffusers 版本尚不支持 MiniMax-H3，需从 main 分支安装 Diffusers，并安装 PEFT。",
+    "InstantX provides a Turbo LoRA adapter for generating video from text with MiniMax-H3 in Diffusers. It reuses the MiniMax-H3 base model. To get started, the model card directs users to install Diffusers from its main branch and add PEFT, because the released Diffusers builds documented there lack MiniMax-H3 support."
+  ],
+  "tags": [
+    "text-to-video"
+  ],
+  "tested": false,
+  "type": "models",
+  "verificationSources": [
+    "https://huggingface.co/InstantX/MiniMax-H3-Turbo-Lora-Diffusers/raw/main/README.md",
+    "https://huggingface.co/api/models?cursor=eyIkb3IiOlt7ImRvd25sb2FkcyI6NTMwNiwiX2lkIjp7IiRndCI6IjY5ZTk2Y2Y1ZjgyZDU4OWQzMjYyMzhlYSJ9fSx7ImRvd25sb2FkcyI6eyIkbHQiOjUzMDZ9fSx7ImRvd25sb2FkcyI6bnVsbH1dLCJzZWFyY2hTZXF1ZW5jZVRva2VuIjoiQ0xidXdRSWFDU0VBQUFBQUFMcTBRQm9PV2d4cDZXejErQzFZblRKaU9Pb2lEbG9NYWVsczlmZ3RXSjB5WWpqcSJ9&direction=-1&full=true&limit=30&pipeline_tag=text-to-video&sort=downloads"
+  ],
+  "verifiedAt": "2026-11-28"
+}
