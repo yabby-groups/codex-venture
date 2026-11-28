@@ -1,3 +1,4 @@
+from copy import deepcopy
 import sys
 import unittest
 from pathlib import Path
@@ -38,12 +39,37 @@ class EditorialTests(unittest.TestCase):
     def test_selection_draft_review_run_independently(self):
         pitch = dict.fromkeys(editorial.PITCH['properties']['pitches']['items']['required'], 'reason')
         pitch.update(id='candidate', audience='core', researchGap='', researchUrl='')
-        with patch.object(hosted, 'model_call', side_effect=[{'pitches': [pitch]}, self.draft, self.review]) as model:
+        editing_review = {'reviews': [dict(self.review['reviews'][0], revision='')]}
+        with patch.object(hosted, 'model_call', side_effect=[{'pitches': [pitch]}, self.draft, editing_review]) as model:
             response = hosted.run_model(self.batch, False, {})
         self.assertEqual([call.kwargs['stage'] for call in model.call_args_list],
                          ['editorial-selection', 'editor', 'reader-review'])
         self.assertEqual(model.call_args.kwargs['payload_override']['articles'], self.draft['articles'])
         self.assertEqual(response['review'], self.review)
+
+    def test_targeted_revision_requires_a_fresh_review(self):
+        pitch = dict.fromkeys(editorial.PITCH['properties']['pitches']['items']['required'], 'reason')
+        pitch.update(id='candidate', audience='core', researchGap='', researchUrl='')
+        selection = {'pitches': [pitch]}
+        initial = {'reviews': [dict(self.review['reviews'][0], actionable=False, revision='Open with the result.')]}
+        revised = deepcopy(self.draft)
+        revised['articles'][0]['body'] = 'The result comes first.'
+        with patch.object(hosted, 'model_call', side_effect=[selection, self.draft, initial, revised, self.review]) as model:
+            response = hosted.run_model(self.batch, False, {})
+        self.assertEqual(model.call_count, 5)
+        self.assertEqual(model.call_args_list[3].kwargs['payload_override']['revision'][0]['instruction'],
+                         'Open with the result.')
+        self.assertEqual(editorial.decisions(response['draft'], response['review'], {})[0], revised['articles'])
+
+    def test_fact_failure_cannot_trigger_style_revision(self):
+        pitch = dict.fromkeys(editorial.PITCH['properties']['pitches']['items']['required'], 'reason')
+        pitch.update(id='candidate', audience='core', researchGap='', researchUrl='')
+        failed = dict(self.review['reviews'][0], actionable=False, revision='Change the lead.')
+        failed['gates']['truth'] = False
+        with patch.object(hosted, 'model_call', side_effect=[{'pitches': [pitch]}, self.draft, {'reviews': [failed]}]) as model:
+            response = hosted.run_model(self.batch, False, {})
+        self.assertEqual(model.call_count, 3)
+        self.assertEqual(editorial.decisions(response['draft'], response['review'], {})[0], [])
 
     def test_traced_selection_requires_candidate_reason(self):
         self.batch['selectionVersion'] = 3

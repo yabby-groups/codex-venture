@@ -23,6 +23,9 @@ REVIEW = obj(reviews=dict(type='array', items=obj(
     scores=obj(**dict.fromkeys(DIMENSIONS, INTEGER)),
     gates=obj(**dict.fromkeys(GATES, BOOLEAN)),
 )))
+EDITING_REVIEW = obj(reviews=dict(type='array', items=obj(
+    **REVIEW['properties']['reviews']['items']['properties'], revision=STRING,
+)))
 
 
 def thresholds(strategy):

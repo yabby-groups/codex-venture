@@ -23,8 +23,9 @@
 .article-content .bilingual-paragraph [lang="en"], .article-lead [lang="en"] { margin-top: .2rem; }
 .prose { font-size: clamp(1.0625rem, 1.6vw, 1.125rem); line-height: 1.76; }
 .prose > :first-child { margin-top: 0; }
-.prose p[lang="zh-CN"] { margin: 0 0 .22rem; }
-.prose p[lang="en"] { margin: 0 0 1.18rem; max-width: 77ch; }
+.prose p[lang="zh-CN"] { margin: 0 0 .28rem; }
+.prose p[lang="en"] { margin: 0 0 clamp(1.3rem, 3.5vw, 1.7rem); max-width: 68ch; }
+.prose p[lang="en"]:last-child { margin-bottom: 0; }
 .prose h2, .article-block h2, .article-footer h2 { font: 700 clamp(1.18rem, 2.7vw, 1.5rem)/1.35 var(--sans); margin: 1.5em 0 .5em; scroll-margin-top: 1rem; }
 .prose h2 [lang="en"], .article-block h2 [lang="en"], .article-footer h2 [lang="en"] { font: 600 .76em/1.35 var(--sans); color: var(--muted); margin-top: .16rem; }
 .prose li + li { margin-top: .5rem; }

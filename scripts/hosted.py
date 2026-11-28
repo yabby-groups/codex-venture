@@ -310,7 +310,8 @@ def invoke(*, yolo=False):
                    'estimated_cost': None, 'sessions': 0}
         receipts.append(receipt)
         try:
-            response = run_model({**batch, **part}, smoke, receipt, yolo=yolo)
+            response = run_model({**batch, **part}, smoke, receipt, yolo=yolo,
+                                 deadline=started + EDIT_WINDOW)
             responses.append(response)
             receipt['status'] = 'success'
         except (RuntimeError, OSError, ValueError) as error:
@@ -337,7 +338,7 @@ def invoke(*, yolo=False):
         save(MODEL / 'response.json', responses)
 
 
-def run_model(batch, smoke, receipt, *, yolo=False):
+def run_model(batch, smoke, receipt, *, yolo=False, deadline=None):
     resource = batch['task'].startswith('resource-')
     if smoke or resource:
         return model_call(batch, smoke, receipt, yolo=yolo)
@@ -418,13 +419,67 @@ def run_model(batch, smoke, receipt, *, yolo=False):
         receipt['candidate_dispositions']['unwritten'] = unwritten
     if not editorial.conforms(draft, output_schema(selected)):
         raise ValueError('Invalid draft')
-    review = run('reader-review', editorial.REVIEW, dict(articles=draft['articles'], candidates=selected,
-                                                       existingArticles=existing)) if draft['articles'] else {'reviews': []}
+    review_payload = dict(articles=draft['articles'], candidates=selected, existingArticles=existing)
+    review = run('reader-review', editorial.EDITING_REVIEW, review_payload) if draft['articles'] else {'reviews': []}
+    if not editorial.conforms(review, editorial.EDITING_REVIEW):
+        raise ValueError('Invalid editing review')
+    revision = {row['slug']: row['revision'].strip() for row in review['reviews']}
+    review = {'reviews': [{key: value for key, value in row.items() if key != 'revision'}
+                          for row in review['reviews']]}
     accepted, _ = editorial.decisions(draft, review, batch.get('reviewStrategy', {}))
+    repairable = {row['slug'] for row in review['reviews']
+                  if not row['actionable'] and all(row['gates'].values()) and revision[row['slug']]}
+    usage = receipt['usage'] if stages else None
+    has_budget = ((batch['unlimited'] and not batch['enforce_cost_limit'])
+                  or (usage and 2 * (usage['input_tokens'] + usage['output_tokens']) <= batch['reservation']))
+    if repairable and has_budget and (deadline is None or time.monotonic() + 2 * MODEL_TIMEOUT <= deadline):
+        originals = {article['slug']: article for article in draft['articles'] if article['slug'] in repairable}
+        try:
+            revised, reread = revise_articles(run, batch, {
+                key: selected[key] for article in originals.values() for key in article['itemIds']
+            }, pitches, existing, originals, revision)
+        except (RuntimeError, OSError, ValueError) as error:
+            usage = receipt['usage']
+            if (not batch['unlimited'] or batch['enforce_cost_limit']) and (
+                    usage is None or usage['input_tokens'] + usage['output_tokens'] > batch['reservation']):
+                raise
+            receipt['revision_error'] = str(error)
+        else:
+            if revised:
+                receipt['initial_revision_reviews'] = [
+                    dict(row, revision=revision[row['slug']]) for row in review['reviews']
+                    if row['slug'] in repairable
+                ]
+                replacements = {article['slug']: article for article in revised}
+                draft['articles'] = [replacements.get(a['slug'], a) for a in draft['articles']]
+                review['reviews'] = [row for row in review['reviews'] if row['slug'] not in replacements] + reread['reviews']
+                accepted, _ = editorial.decisions(draft, review, batch.get('reviewStrategy', {}))
     if traced:
         receipt['candidate_dispositions']['reviews'] = review['reviews']
         receipt['candidate_dispositions']['accepted'] = [article['slug'] for article in accepted]
     return dict(draft=draft, review=review, selection=selection)
+
+
+def revise_articles(run, batch, sources, pitches, existing, originals, instructions):
+    schema = output_schema(sources)
+    changes = run('editor', schema, dict(
+        candidates=sources, pitches={key: pitches[key] for key in sources},
+        existingResources=batch['existingResources'],
+        revision=[dict(article=article, instruction=instructions[slug]) for slug, article in originals.items()],
+    ))
+    if not editorial.conforms(changes, schema):
+        raise ValueError('Invalid targeted revision')
+    revised = changes['articles']
+    if (changes['skipped'] or len({a['slug'] for a in revised}) != len(revised)
+            or any(a['slug'] not in originals or any(a[field] != originals[a['slug']][field]
+                   for field in ('itemIds', 'type')) for a in revised)):
+        raise ValueError('Targeted revision changed article identity or evidence')
+    if not revised:
+        return [], {'reviews': []}
+    review = run('reader-review', editorial.REVIEW,
+                 dict(articles=revised, candidates=sources, existingArticles=existing))
+    editorial.decisions(changes, review, batch.get('reviewStrategy', {}))
+    return revised, review
 
 
 def validate_candidate_dispositions(candidates, positive, negative):

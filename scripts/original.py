@@ -19,6 +19,8 @@ API = 'https://api.github.com/repos/yabby-groups/codex-venture'
 PUBLIC_PATHS = (
     'scripts/hosted.py', 'scripts/operations_queue.py', 'scripts/collect.py',
     'scripts/evidence.py', 'scripts/resource_ingest.py', 'scripts/check.py',
+    'scripts/editorial.py', 'scripts/growth.py', 'scripts/practice_probe.py',
+    'tests/test_editorial.py', 'tests/test_growth.py',
     '.github/workflows/venture.yml', 'astro.config.mjs', 'wrangler.jsonc',
 )
 WORK = Path(os.environ.get('RUNNER_TEMP', '.venture-runtime')) / 'venture'
@@ -101,8 +103,11 @@ def operations(section, items, now):
             run = next((row for row in runs if row['head_sha'] == revision
                         and row['head_branch'] == 'main' and row['event'] in ('schedule', 'workflow_dispatch')
                         and row['conclusion'] and type(row['id']) is int), None)
-            docs = [record(url, 'Public production commit', subject + '\nChanged entry points: ' +
-                           ', '.join(row['filename'] for row in files))]
+            docs = [record(url, 'Public production commit', entry['message'].strip() +
+                           '\nChanged entry points: ' + ', '.join(row['filename'] for row in files))]
+            for row in files:
+                if row.get('patch'):
+                    docs.append(record(url, f"Public code diff for {row['filename']}", row['patch']))
             if run:
                 docs.append(record(f"{PROJECT}/actions/runs/{run['id']}", 'Public Actions run',
                                    f"Trigger: {run['event']}. Conclusion: {run['conclusion']}. "
