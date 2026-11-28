@@ -1,0 +1,28 @@
+{
+  "addedAt": "2026-11-28",
+  "categories": [
+    [
+      ".NET 消息处理",
+      ".NET Message Processing"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-26",
+  "id": "resource-7783106146e242e9561fd47998c821a843c462b9fd1beff91a1ad981bf57d9a4",
+  "identity": "github-skill:1135891523:.github/plugins/azure-sdk-dotnet/skills/azure-servicebus-dotnet/SKILL.md",
+  "name": "azure-servicebus-dotnet",
+  "repository": "https://github.com/microsoft/skills",
+  "repositoryId": "1135891523",
+  "site": "https://github.com/microsoft/skills/blob/main/.github/plugins/azure-sdk-dotnet/skills/azure-servicebus-dotnet/SKILL.md",
+  "sourcePath": ".github/plugins/azure-sdk-dotnet/skills/azure-servicebus-dotnet/SKILL.md",
+  "sourceSignature": "b804b592ee3d5b2c6d9282effdf86f7e4035f80f816d9394d2166fe1d6fccf4f",
+  "summary": [
+    "微软的这项技能涵盖 Azure Service Bus 的队列处理、主题订阅和死信处理，并提供在 ASP.NET Core 项目中通过依赖注入注册客户端的起点。文档中的配置使用 Azure.Messaging.ServiceBus 和 Azure.Identity 两个包。",
+    "Microsoft’s skill covers queue processing, topic subscriptions, and dead-letter handling with Azure Service Bus. It gives ASP.NET Core projects a starting point for wiring the client through dependency injection. The documented setup uses the Azure.Messaging.ServiceBus and Azure.Identity packages."
+  ],
+  "tested": false,
+  "type": "skills",
+  "verificationSources": [
+    "https://github.com/microsoft/skills/blob/main/.github/plugins/azure-sdk-dotnet/skills/azure-servicebus-dotnet/SKILL.md"
+  ],
+  "verifiedAt": "2026-11-28"
+}
