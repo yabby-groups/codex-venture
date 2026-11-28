@@ -1,0 +1,28 @@
+{
+  "addedAt": "2026-11-28",
+  "categories": [
+    [
+      "文档数据提取",
+      "Document data extraction"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-26",
+  "id": "resource-a0b8688cbbb377a8209307035cc72f3fbd93898031641918926a620838933c76",
+  "identity": "github-skill:1135891523:.github/plugins/azure-sdk-dotnet/skills/azure-ai-document-intelligence-dotnet/SKILL.md",
+  "name": "azure-ai-document-intelligence-dotnet",
+  "repository": "https://github.com/microsoft/skills",
+  "repositoryId": "1135891523",
+  "site": "https://github.com/microsoft/skills/blob/main/.github/plugins/azure-sdk-dotnet/skills/azure-ai-document-intelligence-dotnet/SKILL.md",
+  "sourcePath": ".github/plugins/azure-sdk-dotnet/skills/azure-ai-document-intelligence-dotnet/SKILL.md",
+  "sourceSignature": "1db83f8a53ad58bbc0dcf01ba5a6d9f11cd94f1f66c93eb5a63411f7069f1000",
+  "summary": [
+    "微软的 .NET 指南列出了入门所需的 NuGet 包 Azure.AI.DocumentIntelligence 和 Azure.Identity。指南介绍如何使用 Azure 服务的预置模型从发票和收据中提取文本、表格和结构化字段，也可用自定义模型处理其他版式的文档。",
+    "Microsoft’s .NET guide lists Azure.AI.DocumentIntelligence and Azure.Identity as the NuGet packages to add. It describes using the Azure service’s prebuilt models to extract text, tables, and structured fields from invoices and receipts, with custom models for other document layouts."
+  ],
+  "tested": false,
+  "type": "skills",
+  "verificationSources": [
+    "https://github.com/microsoft/skills/blob/main/.github/plugins/azure-sdk-dotnet/skills/azure-ai-document-intelligence-dotnet/SKILL.md"
+  ],
+  "verifiedAt": "2026-11-28"
+}
