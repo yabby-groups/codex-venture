@@ -1,0 +1,29 @@
+{
+  "addedAt": "2026-11-28",
+  "categories": [
+    [
+      "代码生成",
+      "Code generation"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-25",
+  "id": "resource-2538ae71b1946ae6920eafb0371bdd6dec17e9154091457c2861907f42217f12",
+  "identity": "hf:qwen/qwen2.5-coder-32b-instruct",
+  "name": "Qwen/Qwen2.5-Coder-32B-Instruct",
+  "site": "https://huggingface.co/Qwen/Qwen2.5-Coder-32B-Instruct",
+  "sourceSignature": "88c95124115933173f431fc559c6ceb6f302f01a8f98b05c36ebd67b992d6692",
+  "summary": [
+    "通过 Hugging Face Transformers 使用 Qwen2.5-Coder-32B-Instruct，根据自然语言指令生成代码。Qwen 的模型卡将文本生成列为使用接口，建议采用最新版 Transformers，并指出低于 4.37.0 的版本会报错。",
+    "Generate code from natural-language instructions with Qwen2.5-Coder-32B-Instruct through Hugging Face Transformers. Qwen's model card lists text generation as the interface, recommends the latest Transformers release, and warns that versions below 4.37.0 produce an error."
+  ],
+  "tags": [
+    "text-generation"
+  ],
+  "tested": false,
+  "type": "models",
+  "verificationSources": [
+    "https://huggingface.co/Qwen/Qwen2.5-Coder-32B-Instruct/raw/main/README.md",
+    "https://huggingface.co/api/models?cursor=eyIkb3IiOlt7ImRvd25sb2FkcyI6NTk3NDM1LCJfaWQiOnsiJGd0IjoiNjk4ZDZkYTRlN2UyMDk3ZDAzZTRkYmJhIn19LHsiZG93bmxvYWRzIjp7IiRsdCI6NTk3NDM1fX0seyJkb3dubG9hZHMiOm51bGx9XSwic2VhcmNoU2VxdWVuY2VUb2tlbiI6IkNLcjh0UUlhQ1NFQUFBQUFkanNpUVJvT1dneHBqVzJrNStJSmZRUGsyN29pRGxvTWFZMXRwT2ZpQ1gwRDVOdTYifQ%3D%3D&direction=-1&full=true&limit=30&pipeline_tag=text-generation&sort=downloads"
+  ],
+  "verifiedAt": "2026-11-28"
+}

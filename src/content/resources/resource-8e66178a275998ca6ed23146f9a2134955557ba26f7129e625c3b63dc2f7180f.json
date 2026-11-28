@@ -1,0 +1,28 @@
+{
+  "addedAt": "2026-11-28",
+  "categories": [
+    [
+      "机器学习实验基础设施管理",
+      "ML experiment infrastructure management"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-26",
+  "id": "resource-8e66178a275998ca6ed23146f9a2134955557ba26f7129e625c3b63dc2f7180f",
+  "identity": "github-skill:1135891523:.github/plugins/azure-sdk-dotnet/skills/azure-mgmt-weightsandbiases-dotnet/SKILL.md",
+  "name": "azure-mgmt-weightsandbiases-dotnet",
+  "repository": "https://github.com/microsoft/skills",
+  "repositoryId": "1135891523",
+  "site": "https://github.com/microsoft/skills/blob/main/.github/plugins/azure-sdk-dotnet/skills/azure-mgmt-weightsandbiases-dotnet/SKILL.md",
+  "sourcePath": ".github/plugins/azure-sdk-dotnet/skills/azure-mgmt-weightsandbiases-dotnet/SKILL.md",
+  "sourceSignature": "1917fb9cb7174a8410066db979ce64a5afaada5e1133e82f380a39b3b8e5f530",
+  "summary": [
+    "使用微软的 .NET 技能指南查找和管理 Azure 资源组中的 Weights & Biases 实例，指南也涵盖单点登录管理。按指南先添加预发行版 Azure.ResourceManager.WeightsAndBiases 和 Azure.Identity，再使用实例的主机地址和 W&B API 密钥将 Python wandb 客户端连接到已部署的实例。",
+    "Use Microsoft's .NET skill to look up and manage a Weights & Biases instance in an Azure resource group, with SSO covered as an administration task. The guide starts with the prerelease Azure.ResourceManager.WeightsAndBiases package and Azure.Identity, then shows how to connect the Python wandb client to the deployed instance using its host URL and a W&B API key."
+  ],
+  "tested": false,
+  "type": "skills",
+  "verificationSources": [
+    "https://github.com/microsoft/skills/blob/main/.github/plugins/azure-sdk-dotnet/skills/azure-mgmt-weightsandbiases-dotnet/SKILL.md"
+  ],
+  "verifiedAt": "2026-11-28"
+}
