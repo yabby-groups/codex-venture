@@ -1,0 +1,28 @@
+{
+  "addedAt": "2026-11-28",
+  "categories": [
+    [
+      "拉取请求反馈梳理",
+      "Pull request review triage"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-26",
+  "id": "resource-abfdd71ddd05d2a56167a53853e7332007fe9aee98115a209a8010cd8c93b1f6",
+  "identity": "github-skill:968197216:.gemini/skills/pr-address-comments/SKILL.md",
+  "name": "pr-address-comments",
+  "repository": "https://github.com/google-gemini/gemini-cli",
+  "repositoryId": "968197216",
+  "site": "https://github.com/google-gemini/gemini-cli/blob/main/.gemini/skills/pr-address-comments/SKILL.md",
+  "sourcePath": ".gemini/skills/pr-address-comments/SKILL.md",
+  "sourceSignature": "9fed6354f7f85803ac8abfc7adeaecd925e0d56b8111964d4c2a92830fa109ee",
+  "summary": [
+    "用于梳理 Gemini CLI 当前分支上的 GitHub 拉取请求反馈。技能文档以 `scripts/fetch-pr-info.js` 为入口，需要 GitHub CLI（`gh`）。它结合改动差异、提交记录和评论，简述已解决的讨论，并给待处理的讨论编号。由你选定要处理的评论后，才开始修改。",
+    "For the GitHub pull request on the current Gemini CLI branch, the skill’s guide starts with `scripts/fetch-pr-info.js` and requires the GitHub CLI (`gh`). It uses the diff, commit history, and comments to summarize resolved threads and number open ones. You choose which comments to address before any fixes begin."
+  ],
+  "tested": false,
+  "type": "skills",
+  "verificationSources": [
+    "https://github.com/google-gemini/gemini-cli/blob/main/.gemini/skills/pr-address-comments/SKILL.md"
+  ],
+  "verifiedAt": "2026-11-28"
+}
