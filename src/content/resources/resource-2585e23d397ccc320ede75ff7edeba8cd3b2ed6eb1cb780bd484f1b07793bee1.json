@@ -1,0 +1,29 @@
+{
+  "addedAt": "2026-11-28",
+  "categories": [
+    [
+      "文本与图片翻译",
+      "Text and image translation"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-25",
+  "id": "resource-2585e23d397ccc320ede75ff7edeba8cd3b2ed6eb1cb780bd484f1b07793bee1",
+  "identity": "hf:infomaniak-ai/vllm-translategemma-4b-it",
+  "name": "Infomaniak-AI/vllm-translategemma-4b-it",
+  "site": "https://huggingface.co/Infomaniak-AI/vllm-translategemma-4b-it",
+  "sourceSignature": "b3b91a4c8516844bb82f6f7053603788ecac845629294943aaf2ecc662665051",
+  "summary": [
+    "Infomaniak AI 提供面向 vLLM 部署的 TranslateGemma 4B 配置，可直接翻译文本，也可提取并翻译图片中的文字。模型卡说明了针对 vLLM 调整的聊天模板、RoPE 配置和序列结束标记。使用前需登录 Hugging Face 并接受 Google 的使用许可，再用模型的翻译聊天模板组织输入。该模板仅支持用户和助手角色。",
+    "Infomaniak AI provides a vLLM-oriented configuration of TranslateGemma 4B for translating text or extracting and translating text from images. The model card describes changes to the chat template, RoPE settings, and end-of-sequence token for vLLM deployment. To get started, sign in to Hugging Face and accept Google’s usage license, then format inputs with the model’s translation chat template, which supports only user and assistant roles."
+  ],
+  "tags": [
+    "image-text-to-text"
+  ],
+  "tested": false,
+  "type": "models",
+  "verificationSources": [
+    "https://huggingface.co/Infomaniak-AI/vllm-translategemma-4b-it/raw/main/README.md",
+    "https://huggingface.co/api/models?cursor=eyIkb3IiOlt7ImRvd25sb2FkcyI6ODUyNTI5LCJfaWQiOnsiJGd0IjoiNjdhZGJhMWUzYmRkNzEzMjVlYjc0ZDI3In19LHsiZG93bmxvYWRzIjp7IiRsdCI6ODUyNTI5fX0seyJkb3dubG9hZHMiOm51bGx9XSwic2VhcmNoU2VxdWVuY2VUb2tlbiI6IkNOR0M2d0VhQ1NFQUFBQUFZZ1FxUVJvT1dneG5yYm9lTzkxeE1sNjNUU2NpRGxvTVo2MjZIanZkY1RKZXQwMG4ifQ%3D%3D&direction=-1&full=true&limit=30&pipeline_tag=image-text-to-text&sort=downloads"
+  ],
+  "verifiedAt": "2026-11-28"
+}
