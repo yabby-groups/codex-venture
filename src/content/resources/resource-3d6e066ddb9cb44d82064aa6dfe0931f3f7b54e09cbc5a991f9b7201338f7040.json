@@ -2,8 +2,8 @@
   "addedAt": "2026-11-25",
   "categories": [
     [
-      "本機程式開發輔助",
-      "Local Coding Assistance"
+      "本地 AI 编程辅助",
+      "Local AI coding assistance"
     ]
   ],
   "firstDiscoveredAt": "2026-11-25",
@@ -15,18 +15,19 @@
     "Open VSX"
   ],
   "site": "https://open-vsx.org/extension/reflexor-app/reflexor",
-  "sourceSignature": "72320d97c8e432363aa3b07c7bf1bbb737828bb326279221ad7ed5501ec736bb",
+  "sourceSignature": "f03981c2cd08622a15e1a4db95c84676a156b8e1035d8635018f3201272416c9",
   "summary": [
-    "據發布者介紹，Reflexor 提供本機行內程式碼補全，也能透過本機檢索回答與程式碼庫相關的問題。",
-    "The publisher says Reflexor offers local inline code completions and lets you ask questions about your codebase using local retrieval."
+    "发布者称，Reflexor 提供本地代码行内补全和代码库问答，代理执行操作前会请求批准。可从 Open VSX 获取扩展，在发布者列出的编辑器（如 VS Code）中使用，并接入 Ollama 或 LM Studio 等本地模型后端。https://open-vsx.org/extension/reflexor-app/reflexor",
+    "Reflexor’s publisher says the extension provides local inline completions and codebase chat, with an agent that asks for approval before acting. Install it from Open VSX for a listed editor such as VS Code, and use a local model backend such as Ollama or LM Studio. https://open-vsx.org/extension/reflexor-app/reflexor"
   ],
   "tested": false,
   "type": "plugins",
-  "updatedAt": "2026-11-27",
+  "updatedAt": "2026-11-28",
   "verificationSources": [
     "https://open-vsx.org/api/-/search?offset=25&query=coding+assistant&size=25",
-    "https://open-vsx.org/api/-/search?offset=50&query=AI+assistant&size=25"
+    "https://open-vsx.org/api/-/search?offset=50&query=AI+assistant&size=25",
+    "https://open-vsx.org/api/-/search?offset=625&query=Copilot&size=25"
   ],
-  "verifiedAt": "2026-11-27",
-  "version": "0.7.10"
+  "verifiedAt": "2026-11-28",
+  "version": "0.7.11"
 }
