@@ -1,0 +1,28 @@
+{
+  "addedAt": "2026-11-28",
+  "categories": [
+    [
+      ".NET 搜索应用开发",
+      ".NET search application development"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-26",
+  "id": "resource-9fb477ead06320585efd25bfd761ab62525992aa48408d165fa531bc0a0c2f10",
+  "identity": "github-skill:1135891523:.github/plugins/azure-sdk-dotnet/skills/azure-search-documents-dotnet/SKILL.md",
+  "name": "azure-search-documents-dotnet",
+  "repository": "https://github.com/microsoft/skills",
+  "repositoryId": "1135891523",
+  "site": "https://github.com/microsoft/skills/blob/main/.github/plugins/azure-sdk-dotnet/skills/azure-search-documents-dotnet/SKILL.md",
+  "sourcePath": ".github/plugins/azure-sdk-dotnet/skills/azure-search-documents-dotnet/SKILL.md",
+  "sourceSignature": "b0ebb92c6c358cfdf0381234b0adf33746cac3010b6976b97a511209ba7ada26",
+  "summary": [
+    "微软的指南介绍如何在使用 Azure AI Search 的 .NET 应用中接入全文、向量、语义或混合搜索。先安装指南列出的 Azure.Search.Documents 和 Azure.Identity NuGet 包，再用 SearchClient 查询和操作文档，用 SearchIndexClient 管理索引，用 SearchIndexerClient 管理索引器和技能集。",
+    "Microsoft’s guide shows where to start when adding full-text, vector, semantic, or hybrid search to a .NET application backed by Azure AI Search. Install the Azure.Search.Documents and Azure.Identity NuGet packages listed in the guide. Use SearchClient for queries and document operations, SearchIndexClient for index management, and SearchIndexerClient for indexers and skillsets."
+  ],
+  "tested": false,
+  "type": "skills",
+  "verificationSources": [
+    "https://github.com/microsoft/skills/blob/main/.github/plugins/azure-sdk-dotnet/skills/azure-search-documents-dotnet/SKILL.md"
+  ],
+  "verifiedAt": "2026-11-28"
+}
