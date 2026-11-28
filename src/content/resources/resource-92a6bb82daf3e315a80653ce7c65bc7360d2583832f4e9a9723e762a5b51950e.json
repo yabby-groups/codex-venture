@@ -1,0 +1,28 @@
+{
+  "addedAt": "2026-11-28",
+  "categories": [
+    [
+      "视频合成编辑",
+      "Video Composition Editing"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-26",
+  "id": "resource-92a6bb82daf3e315a80653ce7c65bc7360d2583832f4e9a9723e762a5b51950e",
+  "identity": "github-skill:1137388347:skills/remotion-interactivity/SKILL.md",
+  "name": "remotion-interactivity",
+  "repository": "https://github.com/remotion-dev/skills",
+  "repositoryId": "1137388347",
+  "site": "https://github.com/remotion-dev/skills/blob/main/skills/remotion-interactivity/SKILL.md",
+  "sourcePath": "skills/remotion-interactivity/SKILL.md",
+  "sourceSignature": "b9f46d0fb2613bacf3bf312064234ba8da317756702480b63617a70971d839d1",
+  "summary": [
+    "该技能说明如何组织新建或现有 Remotion 合成的 JSX，让你在 Remotion Studio 中独立选择、移动、裁剪时间轴条目或调整其样式。由外部数据驱动或逐帧计算的图层仍由代码控制，无法在 Studio 中编辑。",
+    "The skill shows how to structure JSX in new or existing Remotion compositions so you can select, move, trim, or style timeline items independently in Remotion Studio. Layers driven by external data or computed per frame remain programmatic and cannot be edited in Studio."
+  ],
+  "tested": false,
+  "type": "skills",
+  "verificationSources": [
+    "https://github.com/remotion-dev/skills/blob/main/skills/remotion-interactivity/SKILL.md"
+  ],
+  "verifiedAt": "2026-11-28"
+}
