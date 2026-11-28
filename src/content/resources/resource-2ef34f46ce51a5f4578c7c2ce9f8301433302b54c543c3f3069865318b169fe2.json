@@ -1,0 +1,28 @@
+{
+  "addedAt": "2026-11-28",
+  "categories": [
+    [
+      "文档修订工作流",
+      "Document revision workflows"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-27",
+  "id": "resource-2ef34f46ce51a5f4578c7c2ce9f8301433302b54c543c3f3069865318b169fe2",
+  "identity": "github:1304824006",
+  "license": "NOASSERTION",
+  "name": "2youg1/md2prompt",
+  "repository": "https://github.com/2youg1/md2prompt",
+  "repositoryId": "1304824006",
+  "site": "https://github.com/2youg1/md2prompt",
+  "sourceSignature": "76074bde31c2214536c25608133b49baa46eaea5babc473e1de786217b5669c4",
+  "summary": [
+    "打开本地单文件 HTML 编辑器，编辑 Markdown 或 JSONL。发布者称，编辑器会自动记录改动，并可一键导出按协议排版的 Prompt.md，方便把修订指令交回 AI 助手。资料列出的输入格式为 Markdown 和 JSONL。",
+    "Open the local single-file HTML editor and edit Markdown or JSONL. The publisher says the editor records changes as you work and exports a protocol-formatted Prompt.md in one click so you can send the revision instructions back to an AI assistant. The documented input formats are Markdown and JSONL."
+  ],
+  "tested": false,
+  "type": "workflows",
+  "verificationSources": [
+    "https://api.github.com/search/repositories?page=9&per_page=30&q=topic%3Aai-workflow+archived%3Afalse+fork%3Afalse&sort=stars"
+  ],
+  "verifiedAt": "2026-11-28"
+}
