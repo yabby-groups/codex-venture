@@ -1,0 +1,28 @@
+{
+  "addedAt": "2026-11-28",
+  "categories": [
+    [
+      "Azure 资源预配",
+      "Azure Resource Provisioning"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-26",
+  "id": "resource-a4b629ce7bcba0f5fa264ab2cdeb47f71b313cd00cebd71d93e0197d887d1760",
+  "identity": "github-skill:1135891523:.github/plugins/azure-sdk-dotnet/skills/azure-resource-manager-playwright-dotnet/SKILL.md",
+  "name": "azure-resource-manager-playwright-dotnet",
+  "repository": "https://github.com/microsoft/skills",
+  "repositoryId": "1135891523",
+  "site": "https://github.com/microsoft/skills/blob/main/.github/plugins/azure-sdk-dotnet/skills/azure-resource-manager-playwright-dotnet/SKILL.md",
+  "sourcePath": ".github/plugins/azure-sdk-dotnet/skills/azure-resource-manager-playwright-dotnet/SKILL.md",
+  "sourceSignature": "02ae34b5d8666f8126f78bc976be1af2dd866d3e4cb3ee534c9a7cfaa833d636",
+  "summary": [
+    "微软的这项 .NET 技能介绍如何通过 Azure Resource Manager 预配 Playwright Testing 工作区、检查名称是否可用并管理工作区配额。先在 .NET 项目中添加 Azure.ResourceManager.Playwright 和 Azure.Identity 两个包。该 SDK 仅用于管理平面操作，运行测试需要另一个 SDK。",
+    "Microsoft’s .NET skill covers using Azure Resource Manager to provision Playwright Testing workspaces, check name availability, and manage workspace quotas. Add Azure.ResourceManager.Playwright and Azure.Identity to your .NET project to get started. The SDK covers management-plane operations only. Running tests requires a separate SDK."
+  ],
+  "tested": false,
+  "type": "skills",
+  "verificationSources": [
+    "https://github.com/microsoft/skills/blob/main/.github/plugins/azure-sdk-dotnet/skills/azure-resource-manager-playwright-dotnet/SKILL.md"
+  ],
+  "verifiedAt": "2026-11-28"
+}
