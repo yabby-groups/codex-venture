@@ -1,0 +1,28 @@
+{
+  "addedAt": "2026-11-28",
+  "categories": [
+    [
+      "云成本优化",
+      "Cloud Cost Optimization"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-26",
+  "id": "resource-64d9bf95623e49fccdb83de8cfa328d87f721a2d37a14d2aba7eed2cbc28e219",
+  "identity": "github-skill:1135891523:.github/plugins/azure-advisor/skills/azure-advisor-cost-optimization/SKILL.md",
+  "name": "azure-advisor-cost-optimization",
+  "repository": "https://github.com/microsoft/skills",
+  "repositoryId": "1135891523",
+  "site": "https://github.com/microsoft/skills/blob/main/.github/plugins/azure-advisor/skills/azure-advisor-cost-optimization/SKILL.md",
+  "sourcePath": ".github/plugins/azure-advisor/skills/azure-advisor-cost-optimization/SKILL.md",
+  "sourceSignature": "c8f9025b622053e1ca2d8f49bcb9bdafe9b585e42b51660b3d5f83d848a667ac",
+  "summary": [
+    "据微软介绍，此技能可审查 Azure Advisor 标记的闲置资源，并在删除前评估安全性，涵盖服务组中的资源。它依赖现有的 Advisor 工具，仅处理「成本 → 闲置资源」类别的建议。",
+    "Microsoft says this skill reviews idle resources flagged by Azure Advisor and checks whether they can be safely deleted, including resources in Service Groups. It requires existing Advisor tools and is limited to Cost → IdleResources findings."
+  ],
+  "tested": false,
+  "type": "skills",
+  "verificationSources": [
+    "https://github.com/microsoft/skills/blob/main/.github/plugins/azure-advisor/skills/azure-advisor-cost-optimization/SKILL.md"
+  ],
+  "verifiedAt": "2026-11-28"
+}
