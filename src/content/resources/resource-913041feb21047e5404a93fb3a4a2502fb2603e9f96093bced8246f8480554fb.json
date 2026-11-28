@@ -1,0 +1,28 @@
+{
+  "addedAt": "2026-11-28",
+  "categories": [
+    [
+      "拉取请求审查",
+      "Pull request review"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-26",
+  "id": "resource-913041feb21047e5404a93fb3a4a2502fb2603e9f96093bced8246f8480554fb",
+  "identity": "github-skill:968197216:.gemini/skills/async-pr-review/SKILL.md",
+  "name": "async-pr-review",
+  "repository": "https://github.com/google-gemini/gemini-cli",
+  "repositoryId": "968197216",
+  "site": "https://github.com/google-gemini/gemini-cli/blob/main/.gemini/skills/async-pr-review/SKILL.md",
+  "sourcePath": ".gemini/skills/async-pr-review/SKILL.md",
+  "sourceSignature": "fb4c5a3d0eecf326b0f839f3de26fd415869851d0ea81f4c6973c3ea8d2e4e5b",
+  "summary": [
+    "据技能文档，可在 Gemini CLI 中请求审查当前 Git 项目的拉取请求。可复用脚本会在后台运行预检、执行由 Gemini 驱动的测试计划，并生成代码审查结果。该流程需要以无界面模式运行 `gemini` 命令，并使用临时 Git 工作树，避免改动主工作区。",
+    "The skill’s documentation says you can ask Gemini CLI to review a pull request in the current Git project. Reusable scripts run preflight checks, execute Gemini-powered test plans, and produce a code review in the background. The workflow requires the `gemini` executable in headless mode and uses a temporary Git worktree to keep the main checkout undisturbed."
+  ],
+  "tested": false,
+  "type": "skills",
+  "verificationSources": [
+    "https://github.com/google-gemini/gemini-cli/blob/main/.gemini/skills/async-pr-review/SKILL.md"
+  ],
+  "verifiedAt": "2026-11-28"
+}
