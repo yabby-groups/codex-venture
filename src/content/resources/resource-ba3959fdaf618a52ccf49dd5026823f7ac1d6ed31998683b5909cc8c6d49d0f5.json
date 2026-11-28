@@ -1,0 +1,28 @@
+{
+  "addedAt": "2026-11-28",
+  "categories": [
+    [
+      "实时语音应用开发",
+      "Real-time voice app development"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-26",
+  "id": "resource-ba3959fdaf618a52ccf49dd5026823f7ac1d6ed31998683b5909cc8c6d49d0f5",
+  "identity": "github-skill:1135891523:.github/plugins/azure-sdk-dotnet/skills/azure-ai-voicelive-dotnet/SKILL.md",
+  "name": "azure-ai-voicelive-dotnet",
+  "repository": "https://github.com/microsoft/skills",
+  "repositoryId": "1135891523",
+  "site": "https://github.com/microsoft/skills/blob/main/.github/plugins/azure-sdk-dotnet/skills/azure-ai-voicelive-dotnet/SKILL.md",
+  "sourcePath": ".github/plugins/azure-sdk-dotnet/skills/azure-ai-voicelive-dotnet/SKILL.md",
+  "sourceSignature": "4eb46f7471cf6206a610d1e5b9d9c5f8b347c1547b02a7371c057574868ef6c4",
+  "summary": [
+    "微软的指南介绍如何用 Azure AI Voice Live 搭建 .NET 语音助手，并通过同一 WebSocket 会话双向传输音频。先添加 `Azure.AI.VoiceLive` 和 `Azure.Identity` 软件包。示例配置的输入和输出均采用 16 位 PCM，推荐采样率为 24 kHz。",
+    "Microsoft’s guide shows how to start a .NET voice assistant with Azure AI Voice Live and stream audio in both directions over a single WebSocket session. Start by adding the `Azure.AI.VoiceLive` and `Azure.Identity` packages. The documented setup uses 16-bit PCM for input and output, with 24 kHz recommended."
+  ],
+  "tested": false,
+  "type": "skills",
+  "verificationSources": [
+    "https://github.com/microsoft/skills/blob/main/.github/plugins/azure-sdk-dotnet/skills/azure-ai-voicelive-dotnet/SKILL.md"
+  ],
+  "verifiedAt": "2026-11-28"
+}
