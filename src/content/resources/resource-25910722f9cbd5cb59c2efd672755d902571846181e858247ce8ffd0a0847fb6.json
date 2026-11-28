@@ -1,0 +1,29 @@
+{
+  "addedAt": "2026-11-28",
+  "categories": [
+    [
+      "多语言语音转写",
+      "Multilingual Speech Transcription"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-25",
+  "id": "resource-25910722f9cbd5cb59c2efd672755d902571846181e858247ce8ffd0a0847fb6",
+  "identity": "hf:deepdml/faster-whisper-large-v3-turbo-ct2",
+  "name": "deepdml/faster-whisper-large-v3-turbo-ct2",
+  "site": "https://huggingface.co/deepdml/faster-whisper-large-v3-turbo-ct2",
+  "sourceSignature": "3cb1073ccab61a1a1b95576f5aafa2543d464814fe81ccb8a53b91a4ede1bbf3",
+  "summary": [
+    "通过 Python 的 faster-whisper 使用 Whisper large-v3-turbo 模型转写音频。发布者列出英语、中文、日语等八种语言，并演示如何用 `WhisperModel(\"deepdml/faster-whisper-large-v3-turbo-ct2\")` 加载模型。示例仅演示模型加载，未展示如何传入音频。",
+    "Transcribe audio in Python with the Whisper large-v3-turbo model through faster-whisper. The publisher lists eight languages, including English, Chinese, and Japanese, and shows how to load the model with `WhisperModel(\"deepdml/faster-whisper-large-v3-turbo-ct2\")`. The example stops at model loading and does not show how to submit audio."
+  ],
+  "tags": [
+    "automatic-speech-recognition"
+  ],
+  "tested": false,
+  "type": "models",
+  "verificationSources": [
+    "https://huggingface.co/api/models?cursor=eyIkb3IiOlt7ImRvd25sb2FkcyI6MTA2ODU4MywiX2lkIjp7IiRndCI6IjY5ZWVjN2Y2NjA1Y2Q4MTdkY2MwMmMxMCJ9fSx7ImRvd25sb2FkcyI6eyIkbHQiOjEwNjg1ODN9fSx7ImRvd25sb2FkcyI6bnVsbH1dLCJzZWFyY2hTZXF1ZW5jZVRva2VuIjoiQ0ozQ3VnSWFDU0VBQUFBQUowNHdRUm9PV2d4cDdzZjJZRnpZRjl6QUxCQWlEbG9NYWU3SDltQmMyQmZjd0N3USJ9&direction=-1&full=true&limit=30&pipeline_tag=automatic-speech-recognition&sort=downloads",
+    "https://huggingface.co/deepdml/faster-whisper-large-v3-turbo-ct2/raw/main/README.md"
+  ],
+  "verifiedAt": "2026-11-28"
+}
