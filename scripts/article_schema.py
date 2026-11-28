@@ -35,7 +35,9 @@ def conforms(value, schema):
             conforms(value[key], field) for key, field in fields.items()
         )
     if schema['type'] == 'array':
-        return type(value) is list and len(value) <= 12 and all(conforms(item, schema['items']) for item in value)
+        return type(value) is list and len(value) <= schema.get('maxItems', 12) and all(
+            conforms(item, schema['items']) for item in value
+        )
     if schema['type'] in ('boolean', 'integer'):
         return type(value) is {'boolean': bool, 'integer': int}[schema['type']]
     return isinstance(value, str) and len(value) <= schema.get('maxLength', 6000) and value in schema.get('enum', [value])

@@ -382,7 +382,10 @@ def run_model(batch, smoke, receipt, *, yolo=False):
         selection_fields['rejections'] = reasons
     selection_schema = editorial.obj(**selection_fields)
     selection = run('editorial-selection', selection_schema, dict(candidates=candidates, existingArticles=existing))
+    if traced:
+        reasons['maxItems'] = len(candidates)
     if not editorial.conforms(selection, selection_schema):
+        receipt['selection_response'] = selection
         raise ValueError('Invalid editorial selection schema')
     rejections = selection.pop('rejections', [])
     if traced:
