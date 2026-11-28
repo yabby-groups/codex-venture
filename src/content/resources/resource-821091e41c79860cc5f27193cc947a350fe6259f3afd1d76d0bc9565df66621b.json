@@ -1,0 +1,28 @@
+{
+  "addedAt": "2026-11-28",
+  "categories": [
+    [
+      "软件开发规格编写",
+      "Software Specification Writing"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-26",
+  "id": "resource-821091e41c79860cc5f27193cc947a350fe6259f3afd1d76d0bc9565df66621b",
+  "identity": "github-skill:968197216:tools/caretaker-agent/cloudrun/triage-worker/.gemini/skills/spec_generator/SKILL.md",
+  "name": "spec_generator",
+  "repository": "https://github.com/google-gemini/gemini-cli",
+  "repositoryId": "968197216",
+  "site": "https://github.com/google-gemini/gemini-cli/blob/main/tools/caretaker-agent/cloudrun/triage-worker/.gemini/skills/spec_generator/SKILL.md",
+  "sourcePath": "tools/caretaker-agent/cloudrun/triage-worker/.gemini/skills/spec_generator/SKILL.md",
+  "sourceSignature": "b609fd689d36c4e43c9c21da5a7ec2f6f7cd40505743d329ae627c4c1cfd4fd3",
+  "summary": [
+    "据技能说明，可根据软件 Issue 和代码库检查结果生成可复用的 JSON 实现规格，供开发代理使用，并明确应在哪些文件中修改代码。文件清单仅收录已在仓库中核实的路径，因此需要访问代码库。",
+    "The skill excerpt describes using a software issue and repository inspection to produce a reusable JSON implementation spec for a developer agent. The spec identifies where changes should go. Its file list is limited to paths verified in the repository, so the workflow requires access to the codebase."
+  ],
+  "tested": false,
+  "type": "skills",
+  "verificationSources": [
+    "https://github.com/google-gemini/gemini-cli/blob/main/tools/caretaker-agent/cloudrun/triage-worker/.gemini/skills/spec_generator/SKILL.md"
+  ],
+  "verifiedAt": "2026-11-28"
+}
