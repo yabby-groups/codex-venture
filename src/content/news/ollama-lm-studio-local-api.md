@@ -1,8 +1,8 @@
 ---
-titleZh: "Ollama 与 LM Studio 的本地 API 怎么选"
-titleEn: "Choosing between Ollama and LM Studio for a local API"
-summaryZh: "按现有客户端接口和模型管理方式选择本地运行工具。"
-summaryEn: "Choose a local runner based on your client protocol and model management needs."
+titleZh: "Ollama 和 LM Studio 都能接 OpenAI 客户端，先试你用的那个端点"
+titleEn: "Ollama and LM Studio both take OpenAI clients. Start with the endpoint you use"
+summaryZh: "换本地模型服务前，用同一个小请求验证接口，再决定要不要改客户端。"
+summaryEn: "Before switching local model servers, try the same small request on both and see whether your client needs changes."
 type: "comparisons"
 category: "models"
 published: "2026-11-24T22:00:00+08:00"
@@ -11,19 +11,17 @@ version: "Current API documentation"
 status: "current"
 tested: false
 tags: ["local-inference","apple-silicon"]
-sources: [{"title":"Choosing between Ollama and LM Studio for a local API","url":"https://lmstudio.ai/docs/developer/openai-compat"},{"title":"Ollama native API","url":"https://docs.ollama.com/api/introduction"},{"title":"Ollama macOS documentation","url":"https://docs.ollama.com/macos"}]
-updated: "2026-11-24"
-blocks: [{"kind": "comparison", "title": {"zh": "按现有客户端选入口", "en": "Choose by your existing client"}, "columns": [{"zh": "比较项", "en": "Criterion"}, {"zh": "Ollama 侧", "en": "Ollama"}, {"zh": "LM Studio 侧", "en": "LM Studio"}], "rows": [[{"zh": "操作入口", "en": "Starting point"}, {"zh": "终端命令与本地 API", "en": "Terminal commands and local API"}, {"zh": "桌面界面与兼容端点", "en": "Desktop interface and compatible endpoint"}], [{"zh": "已有客户端", "en": "Existing client"}, {"zh": "从客户端实际需要的方法开始，核对原生接口。", "en": "Start with the operations your client needs and check the native API."}, {"zh": "用已有 OpenAI 客户端验证所用的方法。", "en": "Check the methods you use with your existing OpenAI client."}], [{"zh": "第一项验证", "en": "First check"}, {"zh": "列出本机模型，确认目标模型已下载。", "en": "List local models and confirm the target model is present."}, {"zh": "向本地服务发送一个脱敏请求。", "en": "Send a request with nonsensitive data to the local server."}]]}]
+sources: [{"title":"Ollama OpenAI compatibility","url":"https://docs.ollama.com/api/openai-compatibility"},{"title":"Choosing between Ollama and LM Studio for a local API","url":"https://lmstudio.ai/docs/developer/openai-compat"},{"title":"Ollama native API","url":"https://docs.ollama.com/api/introduction"},{"title":"Ollama macOS documentation","url":"https://docs.ollama.com/macos"}]
+updated: "2026-11-28"
 ---
+<p lang="zh-CN">把已有 OpenAI 客户端接到本地时，两个入口都值得先试。Ollama 的兼容地址是 <code>http://localhost:11434/v1</code>，LM Studio 的文档示例用 <code>http://localhost:1234/v1</code>。切换时还要换成各自服务里可用的模型标识。</p>
 
-<p lang="zh-CN">如果你已有一个 OpenAI 客户端，迁移前先列出它实际使用的方法。LM Studio 文档给出本地兼容服务地址 <code>http://localhost:1234/v1</code>。如果主要靠终端脚本启动和管理模型，Ollama 的 macOS 文档提供了对应的起点。</p>
+<p lang="en">You can start with either server if you already have an OpenAI client. Ollama’s compatible base URL is <code>http://localhost:11434/v1</code>. LM Studio’s documentation uses <code>http://localhost:1234/v1</code>. When you switch, also set the model ID to one available on that server.</p>
 
-<p lang="en">If you already have an OpenAI client, list the methods it actually uses before migrating. LM Studio documents its local compatible server at <code>http://localhost:1234/v1</code>. If shell scripts drive model startup and management, the Ollama macOS documentation provides a starting point.</p>
+<p lang="zh-CN">如果脚本实际用的是 <code>POST /v1/chat/completions</code>，先在两个本地服务上用同一条无敏感内容的短消息试一次。看客户端能否解析回答。只有业务用流式时，再核对分段和结束条件。用其他端点时，逐项查两份兼容文档。<a href="https://docs.ollama.com/api/openai-compatibility">Ollama 兼容接口</a> · <a href="https://lmstudio.ai/docs/developer/openai-compat">LM Studio 兼容接口</a></p>
 
-<p lang="zh-CN">模型权重的许可证需要单独核对。下面的选择表基于公开文档，未测吞吐、延迟或内存占用。</p>
+<p lang="en">If your script calls <code>POST /v1/chat/completions</code>, send the same short, non-sensitive prompt to both local servers. Check that the client can parse the reply. If your workflow streams, check the chunk format and termination as well. For other endpoints, check the compatibility docs for each server. <a href="https://docs.ollama.com/api/openai-compatibility">Ollama compatibility</a> · <a href="https://lmstudio.ai/docs/developer/openai-compat">LM Studio compatibility</a></p>
 
-<p lang="en">Check the license of the model weights separately. The table is based on public documentation. Throughput, latency, and memory use were not measured.</p>
+<p lang="zh-CN">客户端要是两边都能跑，再根据模型管理方式选。偏好桌面界面可从 LM Studio 开始，已有 Ollama 原生 API 脚本则可继续沿用。先把基地址和模型标识放在配置里，回退时只需改配置。</p>
 
-<p lang="zh-CN">Ollama 原生 API 默认基地址是 <code>http://localhost:11434/api</code>。同时维护两个客户端时，把基地址与模型标识分开配置，并为各自调用的方法保留一条最小验证请求。对于流式响应，分别检查分段解析和结束条件。</p>
-
-<p lang="en">The Ollama native API defaults to <code>http://localhost:11434/api</code>. When maintaining both clients, configure the base URL and model identifier separately and keep a minimal verification request for each operation you use. For streaming responses, check chunk parsing and termination separately.</p>
+<p lang="en">If the client works with both, choose by how you want to manage models. LM Studio is a starting point if you prefer a desktop interface. If you already have scripts built around Ollama’s native API, you can keep using them. Put the base URL and model ID in configuration so you can switch back easily.</p>

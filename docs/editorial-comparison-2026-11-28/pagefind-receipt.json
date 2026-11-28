@@ -1,0 +1,14 @@
+{
+  "tool": "Pagefind",
+  "version": "1.6.0",
+  "environment": "Darwin arm64",
+  "command": "pagefind --site .",
+  "status": "passed",
+  "service_cost_usd": 0,
+  "exit_code": 0,
+  "output": "Running Pagefind v1.6.0 (Extended)\nDiscovered 2 languages: en, zh-cn\nIndexed 2 languages\nIndexed 2 pages\nIndexed 9 words\nIndexed 0 filters\nIndexed 0 sorts\nFinished in 0.018 seconds",
+  "languages": [
+    "en",
+    "zh-cn"
+  ]
+}
