@@ -1,0 +1,28 @@
+{
+  "addedAt": "2026-11-28",
+  "categories": [
+    [
+      "查询结果图可视化",
+      "Query result graph visualization"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-26",
+  "id": "resource-afb3037f678d827f780c6362436c5d0731fe6b39b7368645b9d493d0bb608cf9",
+  "identity": "github-skill:1135891523:.github/plugins/azure-kusto-graph-skills/skills/azure-kusto-irql-graph/SKILL.md",
+  "name": "azure-kusto-irql-graph",
+  "repository": "https://github.com/microsoft/skills",
+  "repositoryId": "1135891523",
+  "site": "https://github.com/microsoft/skills/blob/main/.github/plugins/azure-kusto-graph-skills/skills/azure-kusto-irql-graph/SKILL.md",
+  "sourcePath": ".github/plugins/azure-kusto-graph-skills/skills/azure-kusto-irql-graph/SKILL.md",
+  "sourceSignature": "2b84928927aac4c190447015a9b1cec63a7d11af63b7b56c6510781de9130e2a",
+  "summary": [
+    "微软的这项技能接收 KQL 或 IRQL 查询，以及对所需节点和关系的描述。它生成 Lift_To_Graph 映射并组合已存储的 IRQL 函数，以便在 Kusto Explorer 中渲染、折叠或丰富关系图。你可以复用现有的表格查询。通过自然语言指定源查询仅支持简单场景。",
+    "Microsoft’s skill takes a KQL or IRQL query and a description of the nodes and relationships you want to see. It generates a Lift_To_Graph mapping and assembles stored IRQL functions to render, fold, or enrich the graph in Kusto Explorer. This lets you reuse an existing tabular query. Natural-language requests for the source query are limited to basic cases."
+  ],
+  "tested": false,
+  "type": "skills",
+  "verificationSources": [
+    "https://github.com/microsoft/skills/blob/main/.github/plugins/azure-kusto-graph-skills/skills/azure-kusto-irql-graph/SKILL.md"
+  ],
+  "verifiedAt": "2026-11-28"
+}
