@@ -9,13 +9,14 @@ from original import issues
 
 
 QUESTION = re.compile(r"\?|^(how|why|can|does|what|which|anyone|is there|looking for)\b", re.I)
+HN_TOPIC = re.compile(r'\b(llms?|local models?|ollama|codex|chatgpt|claude|openrouter|ai)\b', re.I)
 WEIGHTS = dict(demand=25, utility=20, click=15, novelty=15, search=10, longevity=10, sharing=5)
 
 
-def question_rows(parser):
+def question_rows(parser, topic=None):
     def parse(body):
         for title, url, published, summary, details in parser(body):
-            if QUESTION.search(title):
+            if QUESTION.search(title) and (topic is None or topic.search(title)):
                 yield title, url, published, summary, {**details, 'demand_question': title}
     return parse
 
@@ -25,7 +26,7 @@ def sources():
     github = urlencode(dict(q='repo:openai/codex is:issue is:open comments:>1', sort='updated', per_page=20))
     return [
         dict(id='demand-hn', kind='discovery', category='models', content_type='tutorials',
-             url='https://hn.algolia.com/api/v1/search_by_date?' + hn, parse=question_rows(hn_rows)),
+             url='https://hn.algolia.com/api/v1/search_by_date?' + hn, parse=question_rows(hn_rows, HN_TOPIC)),
         dict(id='demand-github', kind='discovery', category='coding', content_type='tutorials',
              url='https://api.github.com/search/issues?' + github, parse=question_rows(issues)),
     ]
@@ -52,7 +53,8 @@ def discover(root, items_path, health_path, now):
     for item_id, item in sorted(items.items()):
         details = item.get('discovery', {})
         question = details.get('demand_question')
-        if not question or timestamp(item['published']) < now - timedelta(days=30):
+        if (not question or (item['source'] == 'demand-hn' and not HN_TOPIC.search(question))
+                or timestamp(item['published']) < now - timedelta(days=30)):
             continue
         url = details.get('discussion') or item['url']
         key = index.get(url) or next((
@@ -63,7 +65,14 @@ def discover(root, items_path, health_path, now):
         row['evidence'][url] = {'item_id': item_id, 'published': item['published'],
                                 'observed': item['discovered'], 'source': url.split('/')[2]}
         index[url] = key
+    for item in items.values():
+        details = item.get('discovery', {})
+        details.pop('demand_id', None)
+        details.pop('demand_priority', None)
     for key, row in list(pool.items()):
+        if any(lead['source'] == 'news.ycombinator.com' for lead in row['evidence'].values()) and not HN_TOPIC.search(row['question']):
+            del pool[key]
+            continue
         evidence = list(row['evidence'].values())
         active = [lead for lead in evidence if timestamp(lead['published']) >= now - timedelta(days=30)]
         coverage = sorted({route for lead in evidence

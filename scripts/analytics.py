@@ -349,6 +349,10 @@ def operator_daily(root, articles):
         path = root / 'search/google' / (search_day.isoformat() + '.json')
         if snapshot['status'] == 'available' or not path.exists():
             save(path, snapshot)
+    bing_path = root / 'search/bing' / (day.isoformat() + '.json')
+    bing_snapshot = bing()
+    if bing_snapshot['status'] == 'available' or not bing_path.exists():
+        save(bing_path, bing_snapshot)
     articles = content(articles)
     save(root / 'reports/daily' / (day.isoformat() + '.json'), report(root, day, day, articles))
     return {'analytics_day': day.isoformat()}
