@@ -1,0 +1,29 @@
+{
+  "addedAt": "2026-11-28",
+  "categories": [
+    [
+      "语言模型评估",
+      "Language Model Evaluation"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-25",
+  "id": "resource-21db0eb5b48937a36fcf4344e6f69ff34f4ac2901be5195a89a8166a156a3cc4",
+  "identity": "hf:openai-community/gpt2-large",
+  "name": "openai-community/gpt2-large",
+  "site": "https://huggingface.co/openai-community/gpt2-large",
+  "sourceSignature": "55848c70c7be114123b63b4608b97b83354cbe243aa613df5c55bbc2f1817e01",
+  "summary": [
+    "通过 Hugging Face 的文本生成管线使用 openai-community/gpt2-large，将其作为英文文本续写的零样本基线。模型卡列出的评估数据集包括 LAMBADA 和 WikiText，并提醒生成内容可能复现有害的刻板印象。",
+    "Use openai-community/gpt2-large through Hugging Face’s text-generation pipeline as a zero-shot baseline for English text continuation. The model card identifies LAMBADA and WikiText among its evaluation datasets and warns that outputs can reproduce harmful stereotypes."
+  ],
+  "tags": [
+    "text-generation"
+  ],
+  "tested": false,
+  "type": "models",
+  "verificationSources": [
+    "https://huggingface.co/api/models?cursor=eyIkb3IiOlt7ImRvd25sb2FkcyI6MTg4MzY3OCwiX2lkIjp7IiRndCI6IjZhM2NiNGVkYjllZjcwOTRjMGM4MGQzNSJ9fSx7ImRvd25sb2FkcyI6eyIkbHQiOjE4ODM2Nzh9fSx7ImRvd25sb2FkcyI6bnVsbH1dLCJzZWFyY2hTZXF1ZW5jZVRva2VuIjoiQ0lEdHNBSWFDU0VBQUFBQUhyNDhRUm9PV2d4cVBMVHR1ZTl3bE1ESURUVWlEbG9NYWp5MDdibnZjSlRBeUEwMSJ9&direction=-1&full=true&limit=30&pipeline_tag=text-generation&sort=downloads",
+    "https://huggingface.co/openai-community/gpt2-large/raw/main/README.md"
+  ],
+  "verifiedAt": "2026-11-28"
+}

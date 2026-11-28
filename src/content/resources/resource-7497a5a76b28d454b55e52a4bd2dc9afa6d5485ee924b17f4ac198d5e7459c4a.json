@@ -1,0 +1,28 @@
+{
+  "addedAt": "2026-11-28",
+  "categories": [
+    [
+      "身份与认证集成",
+      "Identity and Authentication Integration"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-26",
+  "id": "resource-7497a5a76b28d454b55e52a4bd2dc9afa6d5485ee924b17f4ac198d5e7459c4a",
+  "identity": "github-skill:1135891523:.github/plugins/azure-sdk-dotnet/skills/microsoft-azure-webjobs-extensions-authentication-events-dotnet/SKILL.md",
+  "name": "microsoft-azure-webjobs-extensions-authentication-events-dotnet",
+  "repository": "https://github.com/microsoft/skills",
+  "repositoryId": "1135891523",
+  "site": "https://github.com/microsoft/skills/blob/main/.github/plugins/azure-sdk-dotnet/skills/microsoft-azure-webjobs-extensions-authentication-events-dotnet/SKILL.md",
+  "sourcePath": ".github/plugins/azure-sdk-dotnet/skills/microsoft-azure-webjobs-extensions-authentication-events-dotnet/SKILL.md",
+  "sourceSignature": "81ceabf0862ac03cf8770d95688985c1e283fd81239e497c5393cbc4cb238ad3",
+  "summary": [
+    "微软的指南介绍如何使用 .NET Azure Functions 触发器，在 Microsoft Entra ID 签发令牌时添加自定义声明，或处理属性收集事件。先添加 Microsoft.Azure.WebJobs.Extensions.AuthenticationEvents 包。部署后，需要在 Entra ID 中注册 Function App 的 API，并创建自定义身份验证扩展。",
+    "Microsoft’s guide shows how to use .NET Azure Functions triggers to add custom claims at Microsoft Entra ID token issuance or handle attribute collection. Start by adding the Microsoft.Azure.WebJobs.Extensions.AuthenticationEvents package. After deployment, register the Function App API and create a custom authentication extension in Entra ID."
+  ],
+  "tested": false,
+  "type": "skills",
+  "verificationSources": [
+    "https://github.com/microsoft/skills/blob/main/.github/plugins/azure-sdk-dotnet/skills/microsoft-azure-webjobs-extensions-authentication-events-dotnet/SKILL.md"
+  ],
+  "verifiedAt": "2026-11-28"
+}
