@@ -1,0 +1,31 @@
+{
+  "addedAt": "2026-11-28",
+  "categories": [
+    [
+      "模型 API 接入",
+      "Model API integration"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-25",
+  "id": "resource-933751d571987036042eb98bfcc1dba457985c9b2ee6b8e683212f3774de4bdc",
+  "identity": "openvsx:zoneyottazenith.ucantransit",
+  "install": "https://open-vsx.org/extension/ZoneYottaZenith/ucantransit",
+  "name": "UCanTransit for Copilot",
+  "platforms": [
+    "Open VSX"
+  ],
+  "site": "https://open-vsx.org/extension/ZoneYottaZenith/ucantransit",
+  "sourceSignature": "429305653c5e5860c471e6707da5db10a1c58fb3e419fbb1d3d636a1adec1ddb",
+  "summary": [
+    "发布者称，UCanTransit 可将官方或中转 API 端点接入 GitHub Copilot Chat。从 Open VSX 安装后，需填写端点 URL 和 API 密钥。据发布者介绍，扩展可自动识别 OpenAI、Anthropic 和 Gemini 协议，并支持并行使用多个端点。https://open-vsx.org/extension/ZoneYottaZenith/ucantransit",
+    "The publisher says UCanTransit connects GitHub Copilot Chat to official or relay API endpoints. Install it from Open VSX and provide an endpoint URL and API key. The extension reportedly detects OpenAI, Anthropic, and Gemini protocols and supports using multiple endpoints in parallel. https://open-vsx.org/extension/ZoneYottaZenith/ucantransit"
+  ],
+  "tested": false,
+  "type": "plugins",
+  "verificationSources": [
+    "https://open-vsx.org/api/-/search?offset=25&query=Copilot&size=25",
+    "https://open-vsx.org/api/-/search?offset=725&query=language+model&size=25"
+  ],
+  "verifiedAt": "2026-11-28",
+  "version": "0.6.0"
+}
