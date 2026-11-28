@@ -1,0 +1,28 @@
+{
+  "addedAt": "2026-11-28",
+  "categories": [
+    [
+      "云监控资源管理",
+      "Cloud monitoring resource management"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-26",
+  "id": "resource-af47870a7b21e7364b54ea89b5de76c7264912901a2014b972ebb738c8f8034b",
+  "identity": "github-skill:1135891523:.github/plugins/azure-sdk-dotnet/skills/azure-mgmt-applicationinsights-dotnet/SKILL.md",
+  "name": "azure-mgmt-applicationinsights-dotnet",
+  "repository": "https://github.com/microsoft/skills",
+  "repositoryId": "1135891523",
+  "site": "https://github.com/microsoft/skills/blob/main/.github/plugins/azure-sdk-dotnet/skills/azure-mgmt-applicationinsights-dotnet/SKILL.md",
+  "sourcePath": ".github/plugins/azure-sdk-dotnet/skills/azure-mgmt-applicationinsights-dotnet/SKILL.md",
+  "sourceSignature": "8ceae3621b705c03c467378f7e1bbed104bf632e0aa4824acf98a1d16267d399",
+  "summary": [
+    "微软的技能指南介绍如何通过 Azure Resource Manager 的 .NET SDK，以代码创建 Application Insights 组件、可用性测试和工作簿。开始前，需在 .NET 项目中添加 Azure.ResourceManager.ApplicationInsights 和 Azure.Identity 两个包。",
+    "Microsoft’s skill shows how to use the Azure Resource Manager SDK for .NET to provision Application Insights components, availability tests, and workbooks from code. The setup requires adding both Azure.ResourceManager.ApplicationInsights and Azure.Identity to the .NET project."
+  ],
+  "tested": false,
+  "type": "skills",
+  "verificationSources": [
+    "https://github.com/microsoft/skills/blob/main/.github/plugins/azure-sdk-dotnet/skills/azure-mgmt-applicationinsights-dotnet/SKILL.md"
+  ],
+  "verifiedAt": "2026-11-28"
+}
