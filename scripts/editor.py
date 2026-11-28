@@ -55,6 +55,9 @@ def evidence_revision(candidate):
     evidence = {key: value for key, value in candidate.items()
                 if key in ('title', 'url', 'summary', 'documents', 'basis', 'experiment')}
     evidence['selectionPolicy'] = 4
+    demand = candidate.get('discovery', {})
+    if demand.get('demand_id'):
+        evidence['demand'] = {key: demand[key] for key in ('demand_id', 'demand_question') if key in demand}
     evidence['documents'] = [
         {key: value for key, value in doc.items() if key not in ('fetched_at', 'verified_at', 'checked_at')}
         for doc in evidence.get('documents', [])

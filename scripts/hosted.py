@@ -173,7 +173,7 @@ def prepare(task, queued=False, excluded=()):
                         item.get('discovery', {}).get('upstream')) for item in candidates.values())]
         save(BATCH, dict(task=task, date=day, now=now.isoformat(timespec='seconds'),
                          reservation=RUN_BUDGET, unlimited=unlimited, enforce_cost_limit=cost_limited,
-                         selectionVersion=2, reviewStrategy=review_strategy, existingArticles=existing_articles,
+                         selectionVersion=3, reviewStrategy=review_strategy, existingArticles=existing_articles,
                          batches=[dict(candidates=candidates, existingResources=context)]))
         return
 
@@ -229,7 +229,7 @@ def prepare(task, queued=False, excluded=()):
     save(ledger_path, ledger)
     save(BATCH, dict(task=task, date=day, now=now.isoformat(timespec='seconds'),
                      reservation=reserved, unlimited=unlimited,
-                     selectionVersion=2, reviewStrategy=review_strategy, existingArticles=existing_articles,
+                     selectionVersion=3, reviewStrategy=review_strategy, existingArticles=existing_articles,
                      enforce_cost_limit=bool(os.getenv('VENTURE_DAILY_COST_LIMIT')), batches=batches,
                      candidates=batches[0]['candidates']))
 
@@ -352,6 +352,7 @@ def run_model(batch, smoke, receipt, *, yolo=False):
             return model_call(batch, False, stage_receipt, yolo=yolo, stage=stage, schema_override=schema,
                               payload_override=payload)
         finally:
+            stage_receipt['candidate_count'] = len(payload.get('candidates', {}))
             attempted = [row for row in stages if row['sessions']]
             receipt['sessions'] = len(attempted)
             receipt.update({key: stage_receipt[key] for key in ('model', 'effort') if key in stage_receipt})
@@ -367,11 +368,26 @@ def run_model(batch, smoke, receipt, *, yolo=False):
 
     candidates = batch['candidates']
     existing = batch.get('existingArticles', [])
+    traced = batch.get('selectionVersion', 0) >= 3
+    if traced:
+        from growth import relevant_coverage
+        existing = relevant_coverage(existing, candidates)
     pitch_fields = editorial.PITCH['properties']['pitches']['items']['properties']
-    selection_schema = editorial.obj(pitches=dict(type='array', items=editorial.obj(
-        **(pitch_fields | {'id': dict(type='string', enum=list(candidates))})
-    )))
+    candidate_id = dict(type='string', enum=list(candidates))
+    selection_fields = {'pitches': dict(type='array', items=editorial.obj(
+        **(pitch_fields | {'id': candidate_id})
+    ))}
+    reasons = dict(type='array', items=editorial.obj(id=candidate_id, reason=dict(type='string')))
+    if traced:
+        selection_fields['rejections'] = reasons
+    selection_schema = editorial.obj(**selection_fields)
     selection = run('editorial-selection', selection_schema, dict(candidates=candidates, existingArticles=existing))
+    if not editorial.conforms(selection, selection_schema):
+        raise ValueError('Invalid editorial selection schema')
+    rejections = selection.pop('rejections', [])
+    if traced:
+        validate_candidate_dispositions(candidates, selection['pitches'], rejections)
+        receipt['candidate_dispositions'] = {'pitches': selection['pitches'], 'rejections': rejections}
     if not editorial.conforms(selection, editorial.PITCH):
         raise ValueError('Invalid editorial selection')
     pitches = {row['id']: row for row in selection['pitches']}
@@ -384,14 +400,36 @@ def run_model(batch, smoke, receipt, *, yolo=False):
     if not pitches:
         return dict(draft={'articles': [], 'skipped': []}, review={'reviews': []}, selection=selection)
     selected = {key: candidates[key] for key in pitches}
-    draft = run('editor', output_schema(selected), dict(candidates=selected, pitches=pitches,
-                                                       existingResources=batch['existingResources']))
+    schema = output_schema(selected)
+    if traced:
+        schema = editorial.obj(articles=schema['properties']['articles'], unwritten=reasons)
+    draft = run('editor', schema, dict(candidates=selected, pitches=pitches,
+                                      existingResources=batch['existingResources']))
+    if traced:
+        if not editorial.conforms(draft, schema):
+            raise ValueError('Invalid traced draft')
+        unwritten = draft.pop('unwritten')
+        draft['skipped'] = []
+        written = {key for article in draft['articles'] for key in article['itemIds']}
+        validate_candidate_dispositions(selected, [{'id': key} for key in written], unwritten)
+        receipt['candidate_dispositions']['unwritten'] = unwritten
     if not editorial.conforms(draft, output_schema(selected)):
         raise ValueError('Invalid draft')
     review = run('reader-review', editorial.REVIEW, dict(articles=draft['articles'], candidates=selected,
                                                        existingArticles=existing)) if draft['articles'] else {'reviews': []}
-    editorial.decisions(draft, review, batch.get('reviewStrategy', {}))
+    accepted, _ = editorial.decisions(draft, review, batch.get('reviewStrategy', {}))
+    if traced:
+        receipt['candidate_dispositions']['reviews'] = review['reviews']
+        receipt['candidate_dispositions']['accepted'] = [article['slug'] for article in accepted]
     return dict(draft=draft, review=review, selection=selection)
+
+
+def validate_candidate_dispositions(candidates, positive, negative):
+    ids = [row['id'] for row in positive + negative]
+    if len(ids) != len(candidates) or set(ids) != set(candidates):
+        raise ValueError('Each candidate needs exactly one disposition')
+    if any(not row['reason'].strip() for row in negative):
+        raise ValueError('Missing candidate disposition reason')
 
 
 def model_call(batch, smoke, receipt, *, yolo=False, stage=None, schema_override=None, payload_override=None):
@@ -529,7 +567,7 @@ def accept():
             if type(response) is not dict or set(response) != {'draft', 'review', 'selection'}:
                 raise ValueError('Missing independently reviewed editorial result')
             selected = response['selection']
-            if batch.get('selectionVersion') != 2:
+            if batch.get('selectionVersion', 0) < 2:
                 selected = {'pitches': [dict(audience='adjacent', researchGap='', researchUrl='') | row
                                         for row in selected['pitches']]}
                 response['review'] = {'reviews': [dict(audience='adjacent') | row

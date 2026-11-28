@@ -37,6 +37,30 @@ class EditorialTests(unittest.TestCase):
         self.assertEqual(model.call_args.kwargs['payload_override']['articles'], self.draft['articles'])
         self.assertEqual(response['review'], self.review)
 
+    def test_traced_selection_requires_candidate_reason(self):
+        self.batch['selectionVersion'] = 3
+        with patch.object(hosted, 'model_call', return_value={'pitches': [], 'rejections': []}):
+            with self.assertRaisesRegex(ValueError, 'exactly one disposition'):
+                hosted.run_model(self.batch, False, {})
+        result = {'pitches': [], 'rejections': [{'id': 'candidate', 'reason': 'Already covered'}]}
+        receipt = {}
+        with patch.object(hosted, 'model_call', return_value=result) as model:
+            hosted.run_model(self.batch, False, receipt)
+        self.assertEqual(model.call_count, 1)
+        self.assertEqual(receipt['candidate_dispositions']['rejections'][0]['reason'], 'Already covered')
+
+    def test_traced_writer_must_explain_empty_draft(self):
+        self.batch['selectionVersion'] = 3
+        pitch = dict.fromkeys(editorial.PITCH['properties']['pitches']['items']['required'], 'reason')
+        pitch.update(id='candidate', audience='core', researchGap='', researchUrl='')
+        selection = {'pitches': [pitch], 'rejections': []}
+        draft = {'articles': [], 'unwritten': [{'id': 'candidate', 'reason': 'Evidence was removed'}]}
+        receipt = {}
+        with patch.object(hosted, 'model_call', side_effect=[selection, draft]) as model:
+            hosted.run_model(self.batch, False, receipt)
+        self.assertEqual(model.call_count, 2)
+        self.assertEqual(receipt['candidate_dispositions']['unwritten'][0]['reason'], 'Evidence was removed')
+
     def test_scores_and_hard_gates(self):
         self.assertEqual(editorial.decisions(self.draft, self.review, {})[1],
                          {'article': dict(score=100, tier='lead', audience='core')})

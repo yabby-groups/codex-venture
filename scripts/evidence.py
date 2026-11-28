@@ -255,7 +255,13 @@ def enrich_candidates(items, candidates, now, limit):
         if any(failure.get('resume', 0) > now.timestamp()
                for failure in item.get('evidence_result', {}).get('failures', [])):
             continue
-        if last and not (scan.get('pending') or scan.get('tree_queue')) and now - timestamp(last) < timedelta(days=3 if item.get('evidence') else 1):
+        target = topic.get('url') if topic else None
+        known_urls = {doc['url'] for doc in item.get('evidence', [])}
+        new_target = target and target not in known_urls and not any(
+            failure.get('url') == target for failure in item.get('evidence_result', {}).get('failures', [])
+        )
+        if (last and not new_target and not (scan.get('pending') or scan.get('tree_queue'))
+                and now - timestamp(last) < timedelta(days=3 if item.get('evidence') else 1)):
             continue
         attempted += 1
         documents = []
@@ -275,8 +281,8 @@ def enrich_candidates(items, candidates, now, limit):
                 if item.get('skill_scan', {}).get('seen'):
                     item['status'] = 'superseded'
             else:
-                if topic and topic.get('url'):
-                    link = topic['url']
+                if target and target not in known_urls:
+                    link = target
                     try:
                         targeted = record(link, 'Targeted research', document(link))
                         if targeted['excerpt']:

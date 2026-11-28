@@ -167,3 +167,18 @@ def distribution(root, routes, articles, sha):
         }})
         count += 1
     return count
+
+
+def relevant_coverage(articles, candidates):
+    """Keep exact source matches and a small set of title matches."""
+    urls = {candidate.get('url') for candidate in candidates.values()}
+    urls.update(doc['url'] for candidate in candidates.values() for doc in candidate.get('documents', []))
+    titles = [tokens(candidate.get('title', '')) for candidate in candidates.values()]
+    ranked = []
+    for index, article in enumerate(articles):
+        exact = any(source['url'] in urls for source in article.get('sources', []))
+        words = tokens(article.get('titleEn', ''))
+        overlap = max((len(words & title) for title in titles), default=0)
+        if exact or overlap >= 2:
+            ranked.append((not exact, -overlap, index, article))
+    return [row[3] for row in sorted(ranked)[:12]]
