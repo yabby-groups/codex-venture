@@ -1,0 +1,29 @@
+{
+  "addedAt": "2026-11-28",
+  "categories": [
+    [
+      "多模态问答",
+      "Multimodal question answering"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-25",
+  "id": "resource-2411400c188b9722ea784305f7b20ae7cdbf4eb3f58b8dade17bb13213d57067",
+  "identity": "hf:qwen/qwen3.8-flash-next",
+  "name": "Qwen/Qwen3.8-Flash-Next",
+  "site": "https://huggingface.co/Qwen/Qwen3.8-Flash-Next",
+  "sourceSignature": "ae004a6f952fd0767dcab602fe32032c8b654dbefce47f334e00cb98b22d3384",
+  "summary": [
+    "用 Qwen3.8-Flash-Next 回答有关图片或视频的问题，并获得文本答复。Qwen 提供 Transformers 格式的权重和配置文件，以及使用 OpenAI Python 客户端聊天补全接口的示例。模型默认先输出推理内容，再给出最终答复。Qwen 文档说明了如何直接获取答复，示例中的视频帧采样设置仅在 vLLM 中受支持。",
+    "Use Qwen3.8-Flash-Next to answer prompts about images or video and get text responses. Qwen provides Transformers-format weights and configuration files, plus an example using the OpenAI Python client’s chat completions interface. The model outputs reasoning before the final answer by default. Qwen documents a direct-response mode, and the example’s video frame-sampling controls require vLLM."
+  ],
+  "tags": [
+    "image-text-to-text"
+  ],
+  "tested": false,
+  "type": "models",
+  "verificationSources": [
+    "https://huggingface.co/Qwen/Qwen3.8-Flash-Next/raw/main/README.md",
+    "https://huggingface.co/api/models?cursor=eyIkb3IiOlt7ImRvd25sb2FkcyI6MjM3OTk4NSwiX2lkIjp7IiRndCI6IjZhN2YzMDEwZTM2YjRjY2JkZTYxNzhkYiJ9fSx7ImRvd25sb2FkcyI6eyIkbHQiOjIzNzk5ODV9fSx7ImRvd25sb2FkcyI6bnVsbH1dLCJzZWFyY2hTZXF1ZW5jZVRva2VuIjoiQ01DanhnSWFDU0VBQUFDQWFDaENRUm9PV2d4cWZ6QVE0MnRNeTk1aGVOc2lEbG9NYW44d0VPTnJUTXZlWVhqYiJ9&direction=-1&full=true&limit=30&pipeline_tag=image-text-to-text&sort=downloads"
+  ],
+  "verifiedAt": "2026-11-28"
+}
