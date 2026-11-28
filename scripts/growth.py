@@ -128,11 +128,12 @@ def daily(root, analytics, stamp, articles):
                            key=lambda pair: pair[1]['measured_score'], reverse=True)
     save(root / 'reports' / (stamp + '.json'), {
         'version': 1, 'facts': {'windows': windows, 'demand_sources': demand.get('sources', {}),
-                               'distribution_drafts': len(list((root / 'distribution').glob('*.json')))},
+                               'distribution_drafts': len(list((root / 'distribution').glob('*.json')))
+                               if (root / 'distribution').exists() else None},
         'inferences': {'refresh_candidates': refresh},
         'hypotheses': {'demand': [dict(row, id=key) for key, row in opportunities
                                   if row['status'] == 'research'][:12]},
-        'executed': ['analytics sync', 'search CTR scan'],
+        'executed': ['read provider snapshots', 'search CTR scan'],
         'planned': ['review source evidence for leading opportunities'],
         'blocked': ['automatic social distribution requires channel authorization'],
     })

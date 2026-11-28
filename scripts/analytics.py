@@ -411,7 +411,8 @@ def main(task, domain='all', lookback='7'):
     if task == 'sync':
         sync(root, domain, today, min(30, max(1, int(lookback))))
         return
-    stats = content(metadata())
+    articles = metadata()
+    stats = content(articles)
     save(root / 'content' / (today.isoformat() + '.json'), stats)
     start, end = period(task, today)
     if os.getenv('GOOGLE_GA4_PROPERTY_ID'):
@@ -421,6 +422,9 @@ def main(task, domain='all', lookback='7'):
             if snapshot['status'] == 'available' or not path.exists():
                 save(path, snapshot)
     data = report(root, start, end, stats)
+    if task == 'daily':
+        from growth import daily
+        daily(root / 'growth', root, end.isoformat(), articles)
     save(root / 'reports' / task / (end.isoformat() + '.json'), data)
     summary = os.getenv('GITHUB_STEP_SUMMARY')
     if summary:
