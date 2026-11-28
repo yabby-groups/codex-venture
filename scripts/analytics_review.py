@@ -11,6 +11,7 @@ from analytics import period, store
 from collect import CATEGORIES, load, save
 from editor import DATE_ZONE
 import hosted
+from editorial import thresholds
 from model_cost import configured_price, estimate, event_usage
 
 DEFAULT = Path('config/editorial-strategy.json')
@@ -24,12 +25,24 @@ def valid(strategy):
                     for key, value in strategy['category_weights'].items()))
 
 
-def strategy():
+def strategy(use_override=True):
     root = store()
     value = load(root / 'strategy/current.json', {}) if root else {}
     if isinstance(value, dict):
+        value = dict(value)
+        version = value.pop('version', 1)
         value.pop('max_articles', None)
-    return value if valid(value) else load(DEFAULT, {})
+        value.pop('reader_review', None)
+    else:
+        version = None
+    baseline = load(DEFAULT, {})
+    if type(baseline.get('version')) is not int or baseline['version'] != 1 or not valid({
+            key: value for key, value in baseline.items() if key not in ('version', 'reader_review')}):
+        raise ValueError('Invalid editorial strategy baseline')
+    baseline['reader_review'] = thresholds(baseline)
+    if use_override and type(version) is int and version == 1 and valid(value):
+        baseline.update(value)
+    return baseline
 
 
 def context():
@@ -128,7 +141,7 @@ def main():
         try:
             result = subprocess.run(['codex', 'exec', '--skip-git-repo-check', '--ephemeral', '--json',
                 '--sandbox', 'read-only', '--output-schema', str(schema), '-o', str(response), '-'],
-                input=json.dumps({'metrics': safe, 'strategy': current}), text=True, cwd=workspace,
+                input=json.dumps({'metrics': safe, 'strategy': {key: current[key] for key in ('category_weights', 'candidate_limit')}}), text=True, cwd=workspace,
                 env=env, capture_output=True, timeout=240)
             events = []
             for line in result.stdout.splitlines():
@@ -148,12 +161,13 @@ def main():
             receipt['status'] = 'success'
             proposed = review['strategy']
             proposed['category_weights'] = {k: v for k, v in proposed['category_weights'].items() if v}
+            proposed = {**current, **proposed}
             if os.getenv('VENTURE_STRATEGY_AUTO_UPDATE') == 'true' and current != proposed:
                 save(root / 'strategy/history' / (stamp + '.json'), {
                     'before': current, 'after': proposed,
                     'report': 'reports/weekly/' + stamp + '.json',
                     'evidence': review['evidence'], 'reason': review['reason'], 'target': review['target'],
-                    'verification': review['verification'],
+                    'verification': review['verification'], 'observation_days': 7,
                     'rollback': 'Restore before as strategy/current.json and disable auto update if needed.'})
                 save(root / 'strategy/current.json', proposed)
             save(output, review)

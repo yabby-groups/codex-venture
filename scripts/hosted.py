@@ -119,8 +119,8 @@ def prepare(task, queued=False, excluded=()):
                                 else 'NO_NEW_CONTENT')
         return
     slug = 'weekly-' + day if task == 'weekly' else day
-    rules = strategy() if os.getenv('VENTURE_STRATEGY_AUTO_UPDATE') == 'true' else load(Path('config/editorial-strategy.json'), {})
-    review_strategy = {'reader_review': editorial.thresholds(load(Path('config/editorial-strategy.json'), {}))}
+    rules = strategy(use_override=os.getenv('VENTURE_STRATEGY_AUTO_UPDATE') == 'true')
+    review_strategy = {'reader_review': rules['reader_review']}
     existing_articles = sorted(articles, key=lambda row: row.get('published', ''), reverse=True)
     existing_articles = [{key: row[key] for key in ('slug', 'titleZh', 'titleEn', 'sources') if key in row}
                          for row in existing_articles[:80]]

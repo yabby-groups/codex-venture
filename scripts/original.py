@@ -139,7 +139,8 @@ def prepare(section, items, now):
                       and row.get('content_type') in TYPES[section] and not row.get('basis')),
                      key=lambda key: items[key]['published'], reverse=True)
     # Check new and recently published accounts first, then retry older sources.
-    pending.sort(key=lambda key: items[key].get('evidence_checked', ''))
+    pending.sort(key=lambda key: (items[key].get('evidence_checked', ''),
+                                  -items[key].get('discovery', {}).get('demand_priority', 0)))
     enrich(items, pending, now, limit=8)
 
 

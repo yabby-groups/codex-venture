@@ -39,7 +39,7 @@ DEPLOY_WAIT_SECONDS = 480
 DEPLOY_RECHECK_SECONDS = 60
 INTERVALS = {'collect': 15, 'discover': 30, 'news': 30, 'resource-discover': 30,
              'resource-sync': 30, 'practices': 120, 'stories': 120,
-             'resource-refresh': 360, 'backfill': 1440}
+             'growth-demand': 360, 'resource-refresh': 360, 'backfill': 1440}
 PRIORITIES = {'collect': 25, 'news': 25, 'backfill': 1, 'resource-refresh': 5}
 PHASES = {'scheduler': {'backup'}, 'collector': set(INTERVALS) | {'daily', 'weekly', 'analytics-daily'},
           'editor': {'edit'}, 'publisher': {'publish', 'verify'}}
@@ -304,7 +304,10 @@ def verify(payload):
             hosted.health()
         except ReleaseMarkerMismatch as error:
             return {'deployment_pending': str(error)}
-        return {'sha': current, 'publication_sha': payload['sha'],
+        from editor import metadata
+        from growth import distribution
+        drafts = distribution(PRIVATE / 'growth', payload['routes'], metadata(REPO), payload['sha'])
+        return {'distribution_drafts_created': drafts, 'sha': current, 'publication_sha': payload['sha'],
                 'release': Path('dist/release.txt').read_text().strip(), 'verified': True,
                 'coverage': load(Path('dist/coverage.json'), {})}
 
@@ -342,13 +345,30 @@ def phase(task, kind, payload):
         return verify(payload)
     if kind == 'backup':
         return backup()
+    if kind == 'growth-demand':
+        from growth import discover
+        token = secret('github_read', optional=True)
+        if token:
+            os.environ['VENTURE_GITHUB_READ_TOKEN'] = token
+        with lock('state'):
+            if pending_publication():
+                raise RuntimeError('Publication recovery must finish before demand collection')
+            checkout()
+            os.chdir(REPO)
+            result = discover(PRIVATE / 'growth', Path('state/items.json'), STATE / 'health.json',
+                              datetime.now(DATE_ZONE))
+            save(ITEMS, load(Path('state/items.json'), {}))
+        return result
     if kind == 'analytics-daily':
         from analytics import operator_daily
         from editor import metadata
         with lock('state'):
             checkout()
             articles = metadata(REPO)
-        return operator_daily(PRIVATE / 'analytics', articles)
+        from growth import daily
+        analytics = PRIVATE / 'analytics'
+        result = operator_daily(analytics, articles)
+        return {**result, **daily(PRIVATE / 'growth', analytics, result['analytics_day'], articles)}
     return prepare(kind)
 
 

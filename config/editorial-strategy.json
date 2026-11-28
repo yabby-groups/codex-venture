@@ -1,5 +1,10 @@
 {
+  "version": 1,
   "category_weights": {},
   "candidate_limit": 18,
-  "reader_review": { "publish": 75, "featured": 85, "lead": 90 }
+  "reader_review": {
+    "publish": 75,
+    "featured": 85,
+    "lead": 90
+  }
 }
