@@ -1,0 +1,28 @@
+{
+  "addedAt": "2026-11-28",
+  "categories": [
+    [
+      "Azure 数据库管理",
+      "Azure database administration"
+    ]
+  ],
+  "firstDiscoveredAt": "2026-11-26",
+  "id": "resource-9a31bf376c3e654d3b3af486004824d8808a0b8d0185bee5ea32754eae34f19d",
+  "identity": "github-skill:1135891523:.github/plugins/azure-sdk-dotnet/skills/azure-resource-manager-mysql-dotnet/SKILL.md",
+  "name": "azure-resource-manager-mysql-dotnet",
+  "repository": "https://github.com/microsoft/skills",
+  "repositoryId": "1135891523",
+  "site": "https://github.com/microsoft/skills/blob/main/.github/plugins/azure-sdk-dotnet/skills/azure-resource-manager-mysql-dotnet/SKILL.md",
+  "sourcePath": ".github/plugins/azure-sdk-dotnet/skills/azure-resource-manager-mysql-dotnet/SKILL.md",
+  "sourceSignature": "0126e6e17457ca69dcda00d11603eb819590c1b8b4e7b85d619b99b281972026",
+  "summary": [
+    "参考 Microsoft 的 C# 示例，通过 Azure Resource Manager 管理 Azure Database for MySQL 灵活服务器。指南从添加 Azure.ResourceManager.MySql 和 Azure.Identity 包入手，演示如何在 .NET 中管理按 IP 地址范围设置的防火墙规则、服务器配置和 Microsoft Entra ID 管理员。示例仅适用于 Azure MySQL 灵活服务器。",
+    "Use Microsoft’s C# examples to manage Azure Database for MySQL Flexible Server through Azure Resource Manager. The guide starts with the Azure.ResourceManager.MySql and Azure.Identity packages and shows how to work with IP-range firewall rules, server settings, and Microsoft Entra ID administrators from .NET. The examples are specific to Azure MySQL Flexible Server."
+  ],
+  "tested": false,
+  "type": "skills",
+  "verificationSources": [
+    "https://github.com/microsoft/skills/blob/main/.github/plugins/azure-sdk-dotnet/skills/azure-resource-manager-mysql-dotnet/SKILL.md"
+  ],
+  "verifiedAt": "2026-11-28"
+}
