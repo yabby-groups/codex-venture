@@ -6,9 +6,17 @@ from unittest.mock import patch
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / 'scripts'))
 import editorial
 import hosted
+import original
 
 
 class EditorialTests(unittest.TestCase):
+    def test_community_demand_is_eligible_before_primary_evidence(self):
+        item = dict(status='pending', content_type='tutorials', discovery={'demand_id': 'demand'})
+        self.assertIs(original.ready('practices', item), True)
+        self.assertIs(original.ready('stories', item), False)
+        item['discovery'] = {}
+        self.assertIs(original.ready('practices', item), False)
+
     def setUp(self):
         self.article = dict.fromkeys(
             ('slug', 'titleZh', 'titleEn', 'summaryZh', 'summaryEn', 'category', 'body', 'type', 'version'),
